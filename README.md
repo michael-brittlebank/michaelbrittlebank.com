@@ -15,7 +15,7 @@
 
 ### 3
 * import scale finder
-* 
+* import bubbles
 
 ### 4
 * create photo album system
