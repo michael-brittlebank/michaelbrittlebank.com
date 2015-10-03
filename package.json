@@ -1,0 +1,19 @@
+{
+  "name": "Mikestumpf.com",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mike-stumpf/mikestumpf.com"
+  },
+  "author": "mstumpf818",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mike-stumpf/mikestumpf.com/issues"
+  },
+  "homepage": "https://github.com/mike-stumpf/mikestumpf.com",
+  "dependencies": {
+    "express": "^4.13.3"
+  }
+}
