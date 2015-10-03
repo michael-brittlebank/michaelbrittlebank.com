@@ -1,0 +1,20 @@
+{
+  "name": "mikestumpf.com",
+  "version": "1.0.0",
+  "authors": [
+    "mstumpf818 <mike.a.stumpf@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bower-foundation": "~4.0.0",
+    "foundation": "~5.5.2",
+    "components-font-awesome": "~4.4.0"
+  }
+}

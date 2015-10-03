@@ -1,0 +1,37 @@
+<script>
+</script>
+<header>
+    <nav class="top-bar contain-to-grid" data-topbar role="navigation" data-options="is_hover: true">
+        <ul class="title-area">
+            <li class="name">
+            </li>
+            <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+        </ul>
+
+        <section class="top-bar-section">
+            <ul class="right">
+                {{#each headerMenu}}
+                    {{#compare children.length 0 operator=">"}}
+                        <li class="has-dropdown">
+                            {{#if url}}
+                                <a href="/{{url}}">{{title}}</a>
+                            {{else}}
+                                <a>{{title}}</a>
+                            {{/if}}
+                            <ul class="dropdown">
+                                {{#each children}}
+                                    <li><a href="/{{url}}">{{title}}</a></li>
+                                {{/each}}
+                            </ul>
+                        </li>
+                    {{else}}
+                        <li><a href="/{{url}}">{{title}}</a></li>
+                    {{/compare}}
+                {{/each}}
+            </ul>
+            <ul class="left">
+                <li><a href="/"><img class="logo-image" src="{{headerOptions.logo}}" alt="{{headerOptions.title}}"/></a></li>
+            </ul>
+        </section>
+    </nav>
+</header>

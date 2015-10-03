@@ -1,0 +1,6 @@
+{
+  "app":{
+    "serverPort": 3000,
+    "serverUrl": "localhost"
+  }
+}
