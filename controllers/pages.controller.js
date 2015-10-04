@@ -1,36 +1,34 @@
-var zero = require('../services/zero'),
+var /* packages */
+    promise = require('bluebird'),
+/* services */
+    webapp = require('../services/webapp.service'),
+    contentfulService = require('../services/contentful.service'),
+    errorService = require('../services/error.service'),
     pages = {};
 
-pages.default500Page = function(req, res, next){
-    res.locals.meta = {
-        title: '500',
-        description: '500 meta description'
-    };
-    res.locals.page = {
-        title: 'this is the 500 page',
-        body: 'errors!'
-    };
-    return res.render('500');
-};
-
-pages.default404Page = function(req, res, next){
-    res.locals.meta = {
-        title: '404',
-        description: '404 meta description'
-    };
-    res.locals.page = {
-        title: 'Oops, 404',
-        body: 'There seems that there was an error.  Please try again later'
-    };
-    return res.render('404');
-};
-
+/**
+ * Main Routes
+ */
 pages.getIndex = function(req, res, next) {
-    res.locals.page = {
-        title: 'homepage',
-        body: 'homepage body'
+    var params = {
+        content_type: contentfulService.contentTypes.pages,
+        'fields.url[in]': 'index',
+        limit: 1
     };
-    return res.render('index');
+    return promise
+        .all([contentfulService.getEntries(params)])
+        .then(function (results) {
+            var entries = results[0];
+            console.log(entries);
+            res.locals.page = {
+                title: 'homepage',
+                body: 'homepage body'
+            };
+            return res.render('index');
+        })
+        .catch(function(err){
+            return next(err);
+        });
 };
 
 module.exports = pages;

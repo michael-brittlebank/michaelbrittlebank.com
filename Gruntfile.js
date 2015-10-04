@@ -58,8 +58,9 @@ module.exports = function(grunt) {
         nodemon: {
             script: 'app.js',
             options: {
-                ext: 'js,json',
-                watch: ['Gruntfile.js', 'app.js', 'config', 'controllers', 'routes', 'services', 'scripts/server']
+                nodeArgs: ['--debug'],
+                ext: 'js',
+                watch: watchFiles.backJS
             }
         },
         open : {
