@@ -4,6 +4,7 @@ var /* packages */
     webapp = require('../services/webapp.service'),
     contentfulService = require('../services/contentful.service'),
     errorService = require('../services/error.service'),
+    logger = require('../lib/logger'),
     pages = {};
 
 /**
@@ -19,7 +20,7 @@ pages.getIndex = function(req, res, next) {
         .all([contentfulService.getEntries(params)])
         .then(function (results) {
             var entries = results[0];
-            console.log(entries);
+            logger.log('debug','these are entries',entries);
             res.locals.page = {
                 title: 'homepage',
                 body: 'homepage body'

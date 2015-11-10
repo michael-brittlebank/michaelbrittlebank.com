@@ -46,7 +46,7 @@ app.use('/', pageRoutes);
  */
 app.use(methodOverride());
 app.use(function(err, req, res, next) {
-    console.error(err.stack);
+    logger.log('error','error middleware',err.stack);
     next(err);
 });
 app.use(function(err, req, res, next) {
