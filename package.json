@@ -41,6 +41,7 @@
     "grunt-newer": "1.1.1",
     "grunt-nodemon": "0.4.0",
     "grunt-open": "0.2.3",
-    "load-grunt-tasks": "^3.3.0"
+    "load-grunt-tasks": "^3.3.0",
+    "winston": "^2.1.0"
   }
 }

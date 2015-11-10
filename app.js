@@ -7,8 +7,9 @@ var /* packages */
     path = require('path'),
 /* config */
     config = require('./config/config'),
-    /* services */
+/* services */
     webapp = require('./services/webapp.service'),
+    logger = require('./lib/logger'),
 /* routes and controllers */
     pageRoutes = require('./routes/pages.routes');
 
@@ -84,5 +85,5 @@ app.use(function(err, req, res, next) {
  * Server start
  */
 var server = app.listen(3000, function () {
-    console.log('App listening at '+config.app.serverUrl+' on port '+config.app.serverPort);
+    logger.log('info','App listening at '+config.app.serverUrl+' on port '+config.app.serverPort);
 });
