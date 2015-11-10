@@ -14,16 +14,15 @@
 * 
 
 ### 3
-* import scale finder
+* import scale finder & register as bower package
 * import bubbles
 
 ### 4
 * create photo album system
-* 
+* add mocha tests
 
 ### 5
 * import WP and WP reading list
-* 
 
 ## Future
 * Dynamic art creator
