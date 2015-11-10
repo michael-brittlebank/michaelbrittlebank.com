@@ -11,7 +11,8 @@ var /* packages */
     webapp = require('./services/webapp.service'),
     logger = require('./lib/logger'),
 /* routes and controllers */
-    pageRoutes = require('./routes/pages.routes');
+    pageRoutes = require('./routes/pages.routes'),
+    pageController = require('./controllers/pages.controller');
 
 var app = express();
 
@@ -46,37 +47,18 @@ app.use('/', pageRoutes);
  */
 app.use(methodOverride());
 app.use(function(err, req, res, next) {
-    logger.log('error','error middleware',err.stack);
-    next(err);
-});
-app.use(function(err, req, res, next) {
     var status = err.status?err.status:webapp.status.internal_server_error;
     res.status(status);
+    logger.log('error',status,JSON.stringify(err));
     if (!webapp.app.isLiveConfig()){
         res.json(err);
     }
     else {
         if (err.status === webapp.status.not_found){
-            res.locals.meta = {
-                title: '404 page',
-                description: '404 not found'
-            };
-            res.locals.page = {
-                title: '404 page',
-                body: 'not found'
-            };
-            return res.render('404');
+            pageController.get404Page(req, res, next);
         }
         else {
-            res.locals.meta = {
-                title: '500 page',
-                description: '500 error'
-            };
-            res.locals.page = {
-                title: '500 error page',
-                body: '500 body'
-            };
-            return res.render('500');
+            pageController.get500Page(req, res, next);
         }
     }
 });
