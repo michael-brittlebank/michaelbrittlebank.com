@@ -134,7 +134,7 @@ module.exports = function(grunt) {
             },
             frontJS: {
                 files: watchFiles.frontJS,
-                tasks: ['jshint','uglify:dev'],
+                tasks: ['jshint','uglify:default'],
                 options: {
                     livereload: true
                 }
