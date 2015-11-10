@@ -1,7 +1,7 @@
 module.exports = function(grunt) {
     require('load-grunt-tasks')(grunt);
     var watchFiles = {
-        backJS: ['Gruntfile.js', 'app.js', 'config/**/*.js', 'controllers/**/*.js', 'routes/**/*.js', 'services/**/*.js'],
+        backJS: ['Gruntfile.js', 'app.js', 'config/**/*.js', 'controllers/**/*.js', 'routes/**/*.js', 'services/**/*.js', 'models/**/*.js', 'lib/**/*.js'],
         frontCSS: ['scss/**/*.scss'],
         frontJS: ['scripts/**/*.js'],
         frontViews: ['views/**/*.hbs']
@@ -107,8 +107,8 @@ module.exports = function(grunt) {
             default: {
                 files: {
                     'public/js/app.main.min.js': [
-                        'scripts/client/app.js',
-                        'scripts/client/*'
+                        'scripts/index.js',
+                        'scripts/*'
                     ]
                 },
                 options: {

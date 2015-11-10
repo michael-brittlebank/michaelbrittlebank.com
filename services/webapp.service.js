@@ -1,5 +1,7 @@
 var /* packages */
     handlebars = require('handlebars'),
+    logger = require('../lib/logger'),
+    marked = require('marked'),
     webapp = {
         app: {
             environment: String(process.env.NODE_ENV),
@@ -54,6 +56,31 @@ webapp.hbsHelpers = {
             return options.inverse(this);
         }
     }
+};
+
+/**
+ * Helper Functions ----------------------------------------------------------
+ */
+
+webapp.getFirstResult = function(data){
+    if (data && data.length > 0){
+        return data[0];
+    }
+    else {
+        return false;
+    }
+};
+
+webapp.simpleNullCheck = function(object,key){
+    return object && object.hasOwnProperty(key) && object[key];
+};
+
+webapp.getValueFromKey = function(object,key){
+    return webapp.simpleNullCheck(object,key)?object[key]:'';
+};
+
+webapp.getHTMLValueFromKey = function(object,key){
+    return webapp.simpleNullCheck(object,key)?marked(object[key]):'';
 };
 
 module.exports = webapp;

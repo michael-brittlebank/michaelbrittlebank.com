@@ -20,10 +20,10 @@ pages.getIndex = function(req, res, next) {
     };
     return promise
         .all([contentfulService.getEntries(params)])
-        .then(function (results) {
-            var entries = results[0];
-            logger.log('info','these are entries',JSON.stringify(entries));
-            res.locals.page = contentModels.getPageModel(entries);
+        .then(function (response) {
+            var content = response[0];
+            logger.log('info','this is the page',JSON.stringify(content));
+            res.locals.page = contentfulService.pageDigest(content);
             return res.render('index');
         })
         .catch(function(err){
@@ -34,19 +34,16 @@ pages.getIndex = function(req, res, next) {
 pages.get500Page = function(req, res, next) {
     var params = {
         content_type: contentfulService.contentTypes.pages,
-        'fields.url[in]': 'index',
+        'fields.url[in]': '500',
         limit: 1
     };
     return promise
         .all([contentfulService.getEntries(params)])
-        .then(function (results) {
-            var entries = results[0];
-            logger.log('info','these are entries',JSON.stringify(entries));
-            res.locals.page = {
-                title: '500',
-                body: '500 body'
-            };
-            return res.render('index');
+        .then(function (response) {
+            var content = response[0];
+            logger.log('info','this is the page',JSON.stringify(content));
+            res.locals.page = contentfulService.pageDigest(content);
+            return res.render('500');
         })
         .catch(function(err){
             return next(err);
@@ -56,19 +53,16 @@ pages.get500Page = function(req, res, next) {
 pages.get404Page = function(req, res, next) {
     var params = {
         content_type: contentfulService.contentTypes.pages,
-        'fields.url[in]': 'index',
+        'fields.url[in]': '404',
         limit: 1
     };
     return promise
         .all([contentfulService.getEntries(params)])
-        .then(function (results) {
-            var entries = results[0];
-            logger.log('info','these are entries',JSON.stringify(entries));
-            res.locals.page = {
-                title: '404',
-                body: '404 body'
-            };
-            return res.render('index');
+        .then(function (response) {
+            var content = response[0];
+            logger.log('info','this is the page',JSON.stringify(content));
+            res.locals.page = contentfulService.pageDigest(content);
+            return res.render('404');
         })
         .catch(function(err){
             return next(err);
