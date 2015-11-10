@@ -84,6 +84,7 @@ app.use(function(err, req, res, next) {
 /**
  * Server start
  */
-var server = app.listen(3000, function () {
-    logger.log('info','App listening at '+config.app.serverUrl+' on port '+config.app.serverPort);
+app.set('port', config.app.serverPort || 3000);
+var server = app.listen(app.get('port'), function() {
+    logger.log('info','Server listening at http://' + config.app.serverUrl + ':' + server.address().port);
 });

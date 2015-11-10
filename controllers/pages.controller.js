@@ -20,7 +20,7 @@ pages.getIndex = function(req, res, next) {
         .all([contentfulService.getEntries(params)])
         .then(function (results) {
             var entries = results[0];
-            logger.log('debug','these are entries',entries);
+            logger.log('info','these are entries',JSON.stringify(entries));
             res.locals.page = {
                 title: 'homepage',
                 body: 'homepage body'
