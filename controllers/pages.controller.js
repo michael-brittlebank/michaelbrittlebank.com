@@ -1,5 +1,7 @@
 var /* packages */
     promise = require('bluebird'),
+/* models */
+    contentModels = require('../models/content.model'),
 /* services */
     webapp = require('../services/webapp.service'),
     contentfulService = require('../services/contentful.service'),
@@ -21,10 +23,7 @@ pages.getIndex = function(req, res, next) {
         .then(function (results) {
             var entries = results[0];
             logger.log('info','these are entries',JSON.stringify(entries));
-            res.locals.page = {
-                title: 'homepage',
-                body: 'homepage body'
-            };
+            res.locals.page = contentModels.getPageModel(entries);
             return res.render('index');
         })
         .catch(function(err){
