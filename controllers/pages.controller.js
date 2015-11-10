@@ -22,7 +22,6 @@ pages.getIndex = function(req, res, next) {
         .all([contentfulService.getEntries(params)])
         .then(function (response) {
             var content = response[0];
-            logger.log('info','this is the page',JSON.stringify(content));
             res.locals.page = contentfulService.pageDigest(content);
             return res.render('index');
         })
@@ -41,7 +40,6 @@ pages.get500Page = function(req, res, next) {
         .all([contentfulService.getEntries(params)])
         .then(function (response) {
             var content = response[0];
-            logger.log('info','this is the page',JSON.stringify(content));
             res.locals.page = contentfulService.pageDigest(content);
             return res.render('500');
         })
@@ -60,7 +58,6 @@ pages.get404Page = function(req, res, next) {
         .all([contentfulService.getEntries(params)])
         .then(function (response) {
             var content = response[0];
-            logger.log('info','this is the page',JSON.stringify(content));
             res.locals.page = contentfulService.pageDigest(content);
             return res.render('404');
         })
