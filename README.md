@@ -9,10 +9,10 @@
 ## Iterations
 
 ### 1
-* get nodejs app up
-* connect with contentful
-* get basic pages up
-* 
+* ~~get basic nodejs app up~~
+* ~~connect with contentful~~
+* ~~get basic pages up~~
+* add content blocks
 
 ### 2
 * styling
