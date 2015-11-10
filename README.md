@@ -1,4 +1,11 @@
 # mikestumpf.com
+
+## How to set up dev environment
+* git clone https://github.com/mike-stumpf/mikestumpf.com.git localFolder
+* cd localFolder
+* npm install
+* bower install
+
 ## Iterations
 
 ### 1
