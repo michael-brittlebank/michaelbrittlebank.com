@@ -22,8 +22,13 @@ var app = express();
 app.use(favicon(__dirname + '/public/images/favicon.ico'));
 
 // view engine setup
+var hbs = exphbs.create({
+    defaultLayout: 'layout',
+    extname: '.hbs',
+    helpers: webapp.hbsHelpers
+});
 app.set('views', path.join(__dirname, 'views'));
-app.engine('.hbs',exphbs({defaultLayout: 'layout', extname: '.hbs'}));
+app.engine('.hbs', hbs.engine);
 app.set('view engine', '.hbs');
 
 app.use(compression({

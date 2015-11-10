@@ -27,31 +27,33 @@ webapp.status = {
     service_unavailable: 503
 };
 
-module.exports = webapp;
+webapp.hbsHelpers = {
+    compare: function(lvalue, rvalue, options) {
+        //https://gist.github.com/doginthehat/1890659
+        if (arguments.length !== 3) {
+            throw new Error("Handlebars Helper 'compare' needs 3 parameters");
+        }
+        var operator = options.hash.operator || "==";
+        var operators = {
+            '==':		function(l,r) { return l == r; },
+            '===':	function(l,r) { return l === r; },
+            '!=':		function(l,r) { return l != r; },
+            '<':		function(l,r) { return l < r; },
+            '>':		function(l,r) { return l > r; },
+            '<=':		function(l,r) { return l <= r; },
+            '>=':		function(l,r) { return l >= r; },
+            'typeof':	function(l,r) { return typeof l == r; }
+        };
+        if (!operators[operator]) {
+            throw new Error("Handlebars Helper 'compare' doesn't know the operator " + operator);
+        }
+        var result = operators[operator](lvalue,rvalue);
+        if(result) {
+            return options.fn(this);
+        } else {
+            return options.inverse(this);
+        }
+    }
+};
 
-handlebars.registerHelper('compare', function(lvalue, rvalue, options) {
-    //https://gist.github.com/doginthehat/1890659
-    if (arguments.length !== 3) {
-        throw new Error("Handlebars Helper 'compare' needs 3 parameters");
-    }
-    var operator = options.hash.operator || "==";
-    var operators = {
-        '==':		function(l,r) { return l == r; },
-        '===':	function(l,r) { return l === r; },
-        '!=':		function(l,r) { return l != r; },
-        '<':		function(l,r) { return l < r; },
-        '>':		function(l,r) { return l > r; },
-        '<=':		function(l,r) { return l <= r; },
-        '>=':		function(l,r) { return l >= r; },
-        'typeof':	function(l,r) { return typeof l == r; }
-    };
-    if (!operators[operator]) {
-        throw new Error("Handlebars Helper 'compare' doesn't know the operator " + operator);
-    }
-    var result = operators[operator](lvalue,rvalue);
-    if(result) {
-        return options.fn(this);
-    } else {
-        return options.inverse(this);
-    }
-});
+module.exports = webapp;
