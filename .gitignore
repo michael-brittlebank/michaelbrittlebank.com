@@ -33,3 +33,7 @@ bower_components
 
 #Compiled Files
 public
+
+#log files
+debug.log
+exceptions.log

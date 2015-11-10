@@ -4,8 +4,12 @@ var /* packages */
     promise = require('bluebird'),
 /* config */
     config = require('../config/config'),
+/* models */
+    contentModel = require('../models/content.model'),
 /* services */
     errorService = require('./error.service'),
+    webapp = require('./webapp.service'),
+    logger = require('../lib/logger'),
     contentfulService = {};
 
 contentfulService.contentTypes = {
@@ -61,6 +65,18 @@ contentfulService.getEntries = function(params){
                 }
             });
         });
+    }
+};
+
+contentfulService.pageDigest = function (data) {
+    if (data.length){
+        data = webapp.getFirstResult(data);
+    }
+    if (data){
+        return contentModel.getPageModel(data);
+    }
+    else {
+        return {};
     }
 };
 
