@@ -7,6 +7,7 @@ var marked = require('marked'),
 contentModels.getPageModel = function(data){
     if (webapp.simpleNullCheck(data,'fields')){
         var fields = data.fields;
+        logger.log('info','fields',JSON.stringify(data));
         return {
             id: data.sys.id,
             title: webapp.getValueFromKey(fields,'title'),
