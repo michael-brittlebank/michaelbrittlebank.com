@@ -15,10 +15,9 @@
 * add content blocks
 
 ### 2
-* styling
+* styling - color scheme dependent on time of day and temperature
 * content entry in contentful
 * set up analytics
-* 
 
 ### 3
 * import scale finder & register as bower package
