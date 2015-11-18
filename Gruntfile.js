@@ -2,9 +2,9 @@ module.exports = function(grunt) {
     require('load-grunt-tasks')(grunt);
     var watchFiles = {
         backJS: ['Gruntfile.js', 'app.js', 'config/**/*.js', 'controllers/**/*.js', 'routes/**/*.js', 'services/**/*.js', 'models/**/*.js', 'lib/**/*.js'],
-        frontCSS: ['scss/**/*.scss'],
-        frontJS: ['scripts/**/*.js'],
-        frontViews: ['views/**/*.hbs']
+        frontCSS: ['webapp/scss/**/*.scss'],
+        frontJS: ['webapp/js/**/*.js'],
+        frontViews: ['webapp/views/**/*.hbs']
     };
     grunt.initConfig({
         concurrent: {
@@ -21,9 +21,9 @@ module.exports = function(grunt) {
         copy :{
             coreImages: {
                 expand: true,
-                cwd: 'assets/images/',
+                cwd: 'webapp/assets/images/',
                 src: '*.ico',
-                dest: 'public/images/',
+                dest: 'webapp/public/images/',
                 flatten: true,
                 filter: 'isFile'
             }
@@ -40,9 +40,9 @@ module.exports = function(grunt) {
             default: {
                 files: [{
                     expand: true,
-                    cwd: 'assets/images/',
+                    cwd: 'webapp/assets/images/',
                     src: ['**/*.{png,jpg,gif,svg,jpeg}'],
-                    dest: 'public/images',
+                    dest: 'webapp/public/images',
                     flatten: true
                 }]
             }
@@ -71,7 +71,7 @@ module.exports = function(grunt) {
         sass: {
             all: {
                 files: {
-                    'public/css/app.min.css': 'scss/app.scss'
+                    'webapp/public/css/app.min.css': 'webapp/scss/app.scss'
                 },
                 options: {
                     style: 'compressed',
@@ -86,17 +86,17 @@ module.exports = function(grunt) {
         uglify: {
             build: {
                 files: {
-                    'public/js/app.header.min.js': [
+                    'webapp/public/js/app.header.min.js': [
                         "bower_components/fastclick/lib/fastclick.js"
                     ],
-                    'public/js/app.footer.min.js': [
+                    'webapp/public/js/app.footer.min.js': [
                         "bower_components/jquery/dist/jquery.min.js",
                         "bower_components/modernizr/modernizr.js",
                         "bower_components/foundation/js/foundation.min.js"
                     ],
-                    'public/js/app.main.min.js': [
-                        'scripts/client/app.js',
-                        'scripts/client/*'
+                    'webapp/public/js/app.main.min.js': [
+                        'webapp/js/app.js',
+                        'webapp/js/*'
                     ]
                 },
                 options: {
@@ -106,9 +106,9 @@ module.exports = function(grunt) {
             },
             default: {
                 files: {
-                    'public/js/app.main.min.js': [
-                        'scripts/index.js',
-                        'scripts/*'
+                    'webapp/public/js/app.main.min.js': [
+                        'webapp/js/index.js',
+                        'webapp/js/*'
                     ]
                 },
                 options: {
