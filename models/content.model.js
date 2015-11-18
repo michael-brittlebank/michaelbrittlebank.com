@@ -1,5 +1,4 @@
-var marked = require('marked'),
-    webapp = require('../services/webapp.service'),
+var webapp = require('../services/webapp.service'),
     logger = require('../lib/logger'),
     contentModels = {};
 
