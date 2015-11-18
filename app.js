@@ -42,6 +42,11 @@ app.use(compression({
 
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use(function(req, res, next) {
+// routes middleware
+    logger.log('info','calling route - '+req.method+' '+req.originalUrl);
+    next();
+});
 /**
  * Routes
  */
