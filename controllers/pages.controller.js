@@ -1,11 +1,8 @@
 var /* packages */
     promise = require('bluebird'),
-/* models */
-    contentModels = require('../models/content.model'),
 /* services */
-    webapp = require('../services/webapp.service'),
     contentfulService = require('../services/contentful.service'),
-    errorService = require('../services/error.service'),
+    contentService = require('../services/content.service'),
     logger = require('../lib/logger'),
     pages = {};
 
@@ -22,7 +19,7 @@ pages.getIndex = function(req, res, next) {
         .all([contentfulService.getEntries(params)])
         .then(function (response) {
             var content = response[0];
-            res.locals.page = contentfulService.pageDigest(content);
+            res.locals.page = contentService.pageDigest(content);
             return res.render('index');
         })
         .catch(function(err){
@@ -40,7 +37,7 @@ pages.get500Page = function(req, res, next) {
         .all([contentfulService.getEntries(params)])
         .then(function (response) {
             var content = response[0];
-            res.locals.page = contentfulService.pageDigest(content);
+            res.locals.page = contentService.pageDigest(content);
             return res.render('500');
         })
         .catch(function(err){
@@ -58,7 +55,7 @@ pages.get404Page = function(req, res, next) {
         .all([contentfulService.getEntries(params)])
         .then(function (response) {
             var content = response[0];
-            res.locals.page = contentfulService.pageDigest(content);
+            res.locals.page = contentService.pageDigest(content);
             return res.render('404');
         })
         .catch(function(err){
