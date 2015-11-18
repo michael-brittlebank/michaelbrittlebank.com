@@ -19,15 +19,17 @@ var app = express();
 /**
  * Settings
  */
-app.use(favicon(__dirname + '/public/images/favicon.ico'));
+app.use(favicon(__dirname + '/webapp/public/images/favicon.ico'));
 
 // view engine setup
 var hbs = exphbs.create({
     defaultLayout: 'layout',
     extname: '.hbs',
-    helpers: webapp.hbsHelpers
+    helpers: webapp.hbsHelpers,
+    layoutsDir: 'webapp/views/layouts',
+    partialsDir: 'webapp/views/partials'
 });
-app.set('views', path.join(__dirname, 'views'));
+app.set('views', path.join(__dirname, 'webapp/views'));
 app.engine('.hbs', hbs.engine);
 app.set('view engine', '.hbs');
 
@@ -40,7 +42,7 @@ app.use(compression({
     level: 3
 }));
 
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'webapp/public')));
 
 app.use(function(req, res, next) {
 // routes middleware
