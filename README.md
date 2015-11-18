@@ -12,7 +12,7 @@
 * ~~get basic nodejs app up~~
 * ~~connect with contentful~~
 * ~~get basic pages up~~
-* add content blocks
+* ~~add content blocks~~
 
 ### 2
 * styling - color scheme dependent on time of day and temperature
