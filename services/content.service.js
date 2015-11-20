@@ -17,7 +17,7 @@ contentService.pageDigest = function (data) {
     }
 };
 
-contentService.contentBlocksDigest = function(data){
+contentService.contentBlockDigest = function(data){
     var result = {},
         i = 1;
     if(data) {
