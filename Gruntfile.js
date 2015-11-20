@@ -92,7 +92,9 @@ module.exports = function(grunt) {
                     'webapp/public/js/app.footer.min.js': [
                         "bower_components/jquery/dist/jquery.min.js",
                         "bower_components/modernizr/modernizr.js",
-                        "bower_components/foundation/js/foundation.min.js"
+                        "bower_components/foundation/js/foundation.min.js",
+                        "bower_components/velocity/velocity.min.js",
+                        "bower_components/velocity/velocity.ui.min.js"
                     ],
                     'webapp/public/js/app.main.min.js': [
                         'webapp/js/app.js',

@@ -15,6 +15,7 @@
   "dependencies": {
     "bower-foundation": "~4.0.0",
     "foundation": "~5.5.2",
-    "components-font-awesome": "~4.4.0"
+    "components-font-awesome": "~4.4.0",
+    "velocity": "~1.2.3"
   }
 }
