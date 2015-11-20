@@ -47,6 +47,10 @@ app.use(express.static(path.join(__dirname, 'webapp/public')));
 app.use(function(req, res, next) {
 // routes middleware
     logger.log('info','calling route - '+req.method+' '+req.originalUrl);
+    res.locals.meta = {
+        siteName: 'mikestumpf.com',
+        requestedUrl: 'http://mikestumpf.com'+req.originalUrl
+    };
     next();
 });
 /**
@@ -57,13 +61,24 @@ app.use('/', pageRoutes);
 /**
  * Error Handlers
  */
-app.use(methodOverride());
-app.use(function(err, req, res, next) {
-    var status = err.status?err.status:webapp.status.internal_server_error;
-    res.status(status);
-    logger.log('error',status,JSON.stringify(err));
-    if (!webapp.app.isLiveConfig()){
-        res.json(err);
+// catch 404 and forward to error handler
+app.use(function(req, res, next) {
+    logger.log('error','not found error - '+req.method+' '+req.originalUrl);
+    var err = new Error('Not Found');
+    err.status = webapp.status.not_found;
+    next(err);
+});
+
+// error handlers
+app.use(function (err, req, res, next) {
+    logger.log('error','internal server error',JSON.stringify(err));
+    var code = err.status || webapp.status.internal_server_error;
+    if (!webapp.app.isLiveConfig()) {
+        return res.status(code).json({
+            error: true,
+            code: code,
+            data: {message: err.message}
+        });
     }
     else {
         if (err.status === webapp.status.not_found){
@@ -74,6 +89,7 @@ app.use(function(err, req, res, next) {
         }
     }
 });
+
 
 /**
  * Server start

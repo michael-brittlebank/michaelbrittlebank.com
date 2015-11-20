@@ -71,6 +71,15 @@ webapp.getFirstResult = function(data){
     }
 };
 
+webapp.getImageUrl = function(data){
+    if (webapp.simpleNullCheck(data,'fields')){
+        return data.fields.file.url;
+    }
+    else {
+        return '';
+    }
+};
+
 webapp.simpleNullCheck = function(object,key){
     return object && object.hasOwnProperty(key) && object[key];
 };
@@ -81,6 +90,10 @@ webapp.getValueFromKey = function(object,key){
 
 webapp.getHTMLValueFromKey = function(object,key){
     return webapp.simpleNullCheck(object,key)?marked(object[key]):'';
+};
+
+webapp.getImageValueFromKey = function(object,key){
+    return webapp.simpleNullCheck(object,key)?webapp.getImageUrl(object[key]):'';
 };
 
 module.exports = webapp;
