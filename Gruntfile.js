@@ -26,6 +26,14 @@ module.exports = function(grunt) {
                 dest: 'webapp/public/images/',
                 flatten: true,
                 filter: 'isFile'
+            },
+            fonts: {
+                expand: true,
+                cwd: 'webapp/fonts/',
+                src: '**',
+                dest: 'webapp/public/fonts/',
+                flatten: false,
+                filter: 'isFile'
             }
         },
         env: {
@@ -166,6 +174,7 @@ module.exports = function(grunt) {
         'newer:uglify:build',
         'newer:sass',
         'newer:copy:coreImages',
+        'newer:copy:fonts',
         'newer:imagemin'
     ]);
 
@@ -176,6 +185,7 @@ module.exports = function(grunt) {
         'newer:uglify:build',
         'newer:sass',
         'newer:copy:coreImages',
+        'newer:copy:fonts',
         'newer:imagemin',
         'concurrent'
     ]);

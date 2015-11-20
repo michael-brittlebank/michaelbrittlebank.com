@@ -14,5 +14,9 @@
 @media #{$xxlarge-only} { }
 
 * {
-  font-family: $font-lato;
+  font-family: $font-open-sans-condensed!important;
+}
+
+p {
+  font-family: $font-texgyre-regular!important;
 }

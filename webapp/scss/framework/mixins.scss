@@ -1,117 +1,22 @@
-@mixin border-radius($radius) {
-  -webkit-border-radius: $radius;
-  -moz-border-radius: $radius;
-  -ms-border-radius: $radius;
-  border-radius: $radius;
-}
-
-@mixin unselectable {
-  -webkit-user-select: none;  /* Chrome all / Safari all */
-  -moz-user-select: none;     /* Firefox all */
-  -ms-user-select: none;      /* IE 10+ */
-  /* No support for these yet, use at own risk */
-  -o-user-select: none;
-  user-select: none;
-}
-
-@mixin columns($count, $gap) {
-  -webkit-column-count: $count; /* Chrome, Safari, Opera */
-  -moz-column-count: $count; /* Firefox */
-  column-count: $count;
-  -webkit-column-gap: $gap; /* Chrome, Safari, Opera */
-  -moz-column-gap: $gap; /* Firefox */
-  column-gap: $gap;
-}
-
-@mixin break-inside($status){
-  -webkit-column-break-inside: $status;
-  page-break-inside: $status;
-  break-inside: $status;
-}
-
-@mixin filter($filter, $value){
-  -webkit-filter: $filter($value+"px");
-  filter: $filter($value+"px");
-}
-
-@mixin transform-translate($x, $y){
-  -ms-transform: translateX($x) translateY($y);
-  -webkit-transform: translateX($x) translateY($y);
-  transform: translateX($x) translateY($y);
-}
-
-@mixin opacity($opacity){
-  /* IE 8 */
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity="+$opacity*100+")";
-  /* IE 5-7 */
-  filter: alpha(opacity=$opacity*100);
-  /* Netscape */
-  -moz-opacity: $opacity;
-  /* Safari 1.x */
-  -khtml-opacity: $opacity;
-  /* Good browsers */
-  opacity: $opacity;
-}
-
-@mixin link-hover($color){
-  color: scale-color($color, $lightness: -50%);
-}
-
-@mixin link-init($color){
-  color:$color;
-  transition: color 300ms ease-out;
-}
-
-@mixin transition($element, $duration:300ms, $timingFunction:ease-out, $delay:0s){
-  -webkit-transition: $element $duration $timingFunction $delay;
-  -moz-transition: $element $duration $timingFunction $delay;
-  -o-transition: $element $duration $timingFunction $delay;
-  transition: $element $duration $timingFunction $delay;
-}
-
-@mixin animation($animationName, $duration:2s, $timingFunction:linear, $delay:0s, $iterationCount:infinite, $direction:normal){
-  -webkit-animation: $animationName $duration $timingFunction $delay $iterationCount $direction;
-  -moz-animation: $animationName $duration $timingFunction $delay $iterationCount $direction;
-  -o-animation: $animationName $duration $timingFunction $delay $iterationCount $direction;
-  animation: $animationName $duration $timingFunction $delay $iterationCount $direction;
-}
-
-@mixin keyframeAnimation($animationName, $from, $to){
-  @-webkit-keyframes #{$animationName} {
-    from {
-      transform: $from;
-    }
-    to {
-      transform: $to;
-    }
+@mixin font-face($name, $path, $weight: null, $style: null, $exts: eot woff ttf svg) {
+  $src: null;
+  $extmods: (
+          eot: "?",
+          svg: "#" + str-replace($name, " ", "_")
+  );
+  $formats: (
+          otf: "opentype",
+          ttf: "truetype"
+  );
+  @each $ext in $exts {
+    $extmod: if(map-has-key($extmods, $ext), $ext + map-get($extmods, $ext), $ext);
+    $format: if(map-has-key($formats, $ext), map-get($formats, $ext), $ext);
+    $src: append($src, url(quote($path + "." + $extmod)) format(quote($format)), comma);
   }
-  @-moz-keyframes #{$animationName} {
-    from {
-      transform: $from;
-    }
-    to {
-      transform: $to;
-    }
+  @font-face {
+    font-family: quote($name);
+    font-style: $style;
+    font-weight: $weight;
+    src: $src;
   }
-  @-o-keyframes #{$animationName} {
-    from {
-      transform: $from;
-    }
-    to {
-      transform: $to;
-    }
-  }
-  @keyframes #{$animationName} {
-    from {
-      transform: $from;
-    }
-    to {
-      transform: $to;
-    }
-  }
-}
-@mixin box-shadow($hOffset, $vOffset, $blurRadius, $color, $spreadRadius:0){
-  -webkit-box-shadow: $hOffset $vOffset $blurRadius $spreadRadius $color;
-  -moz-box-shadow: $hOffset $vOffset $blurRadius $spreadRadius $color;
-  box-shadow: $hOffset $vOffset $blurRadius $spreadRadius $color;
 }

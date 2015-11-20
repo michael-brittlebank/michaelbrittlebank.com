@@ -84,12 +84,12 @@
 
 // Animation
 
-@mixin animation($args) {
-  -webkit-animation: $args;
-  -moz-animation: $args;
-  -ms-animation: $args;
-  -o-animation: $args;
-  animation: $args;
+@mixin animation($animationName, $duration:2s, $timingFunction:linear, $delay:0s, $iterationCount:infinite, $direction:normal){
+  -webkit-animation: $animationName $duration $timingFunction $delay $iterationCount $direction;
+  -moz-animation: $animationName $duration $timingFunction $delay $iterationCount $direction;
+  -ms-animation: $animationName $duration $timingFunction $delay $iterationCount $direction;
+  -o-animation: $animationName $duration $timingFunction $delay $iterationCount $direction;
+  animation: $animationName $duration $timingFunction $delay $iterationCount $direction;
 }
 @mixin animation-delay($delay) {
   -webkit-animation-delay: $delay;
@@ -157,19 +157,21 @@
 
 // Border Radius
 
-@mixin border-radius($args) {
-  -webkit-border-radius: $args;
-  border-radius: $args;
-
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  -ms-border-radius: $radius;
+  border-radius: $radius;
   background-clip: padding-box;
 }
 
 
 // Box Shadows
 
-@mixin box-shadow($args) {
-  -webkit-box-shadow: $args;
-  box-shadow: $args;
+@mixin box-shadow($hOffset, $vOffset, $blurRadius, $color, $spreadRadius:0){
+  -webkit-box-shadow: $hOffset $vOffset $blurRadius $spreadRadius $color;
+  -moz-box-shadow: $hOffset $vOffset $blurRadius $spreadRadius $color;
+  box-shadow: $hOffset $vOffset $blurRadius $spreadRadius $color;
 }
 @mixin inner-shadow($args) {
   @include box-shadow(inset $args);
@@ -193,10 +195,13 @@
 
 // Columns
 
-@mixin columns($args) {
-  -webkit-columns: $args;
-  -moz-columns: $args;
-  columns: $args;
+@mixin columns($count, $gap) {
+  -webkit-column-count: $count; /* Chrome, Safari, Opera */
+  -moz-column-count: $count; /* Firefox */
+  column-count: $count;
+  -webkit-column-gap: $gap; /* Chrome, Safari, Opera */
+  -moz-column-gap: $gap; /* Firefox */
+  column-gap: $gap;
 }
 @mixin column-count($count) {
   -webkit-column-count: $count;
@@ -217,6 +222,12 @@
   -webkit-column-rule: $args;
   -moz-column-rule: $args;
   column-rule: $args;
+}
+
+@mixin break-inside($status){
+  -webkit-column-break-inside: $status;
+  page-break-inside: $status;
+  break-inside: $status;
 }
 
 
@@ -283,13 +294,18 @@
 
 // Opacity
 
-@mixin opacity($factor) {
-  $iefactor: $factor*100;
-  -ms-filter: "progid:DXImageTransform@mixin Microsoft@mixin Alpha(Opacity=#{iefactor})";
-  filter: "alpha(opacity=(#{iefactor}))";
-  opacity: $factor;
+@mixin opacity($opacity){
+  /* IE 8 */
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity="+$opacity*100+")";
+  /* IE 5-7 */
+  filter: alpha(opacity=$opacity*100);
+  /* Netscape */
+  -moz-opacity: $opacity;
+  /* Safari 1.x */
+  -khtml-opacity: $opacity;
+  /* Good browsers */
+  opacity: $opacity;
 }
-
 
 // Text Shadow
 
@@ -345,12 +361,12 @@
 
 // Transitions
 
-@mixin transition($args:200ms) {
-  -webkit-transition: $args;
-  -moz-transition: $args;
-  -o-transition: $args;
-  -ms-transition: $args;
-  transition: $args;
+@mixin transition($element, $duration:300ms, $timingFunction:ease-out, $delay:0s){
+  -webkit-transition: $element $duration $timingFunction $delay;
+  -moz-transition: $element $duration $timingFunction $delay;
+  -o-transition: $element $duration $timingFunction $delay;
+  -ms-transition: $element $duration $timingFunction $delay;
+  transition: $element $duration $timingFunction $delay;
 }
 @mixin transition-delay($delay:0) {
   -webkit-transition-delay: $delay;
@@ -490,4 +506,13 @@
   -moz-animation: $animationName $duration $timingFunction $delay $iterationCount $direction;
   -o-animation: $animationName $duration $timingFunction $delay $iterationCount $direction;
   animation: $animationName $duration $timingFunction $delay $iterationCount $direction;
+}
+
+@mixin unselectable {
+  -webkit-user-select: none;  /* Chrome all / Safari all */
+  -moz-user-select: none;     /* Firefox all */
+  -ms-user-select: none;      /* IE 10+ */
+  /* No support for these yet, use at own risk */
+  -o-user-select: none;
+  user-select: none;
 }
