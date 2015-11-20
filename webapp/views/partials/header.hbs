@@ -30,7 +30,20 @@
                 {{/each}}
             </ul>
             <ul class="left">
-                <li><a href="/"><img class="logo-image" src="{{headerOptions.logo}}" alt="{{headerOptions.title}}"/></a></li>
+                <li>
+                    <svg width="100" height="100">
+                        <defs>
+                            <linearGradient id="gradient" x1="0%" y1="0" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:rgb(183,1,1);stop-opacity:1"></stop>
+                                <stop offset="100%" style="stop-color:rgb(0,61,165);stop-opacity:1"></stop>
+                            </linearGradient>
+                        </defs>
+                        <circle cx="50" cy="50" r="35" stroke="white" stroke-width="3" fill="url(#gradient)"></circle>
+                        <text x="35" y="52.5" style="fill:white;" class="logo-font">M
+                            <tspan x="52.5" y="65" class="logo-font">S</tspan>
+                        </text>
+                    </svg>
+                </li>
             </ul>
         </section>
     </nav>

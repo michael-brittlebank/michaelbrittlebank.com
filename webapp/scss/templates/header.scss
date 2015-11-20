@@ -1,5 +1,7 @@
 header {
-  .logo-image {
-    height:45px;
+  .logo-font {
+    font-family: $font-texgyre-italic;
+    font-size: rem-calc(25);
+    @include text-shadow(2px 2px #808080);
   }
 }
