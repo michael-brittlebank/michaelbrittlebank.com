@@ -1,5 +1,5 @@
 var webapp = require('../services/webapp.service'),
-    logger = require('../lib/logger'),
+    logger = require('../services/logger.service'),
     contentModels = {};
 
 //since content is coming from contentful api instead of from db, departing from traditional model structure

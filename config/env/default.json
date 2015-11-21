@@ -6,6 +6,12 @@
   "contentful": {
     "spaceId": "qiqlnlpznam2",
     "accessToken": "8ee7608ad9bb52af9d350a5158c97c2c1d13ccc4eedc542f8cd3e2f11321d13c",
-    "secure": true
+    "secure": true,
+    "contentTypes": {
+      "pages": "5MIVc6WpXig2mQuYC2uSEq",
+      "contentBlock": "2df9NEJipCG8K6OmwKo0Gu",
+      "quote": "3NHr6etUzK0OQUa0OsEAiC",
+      "menu": "4sSMFpCdWgo2YcYUwuQ20E"
+    }
   }
 }

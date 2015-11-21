@@ -1,15 +1,17 @@
 var /* packages */
-    _ = require('lodash'),
     contentful = require('contentful'),
-    promise = require('bluebird'),
 /* config */
     config = require('../config/config'),
 /* services */
     errorService = require('./error.service'),
+    logger = require('./logger.service'),
     contentfulService = {};
 
 contentfulService.contentTypes = {
-    pages: 'page'
+    pages: config.contentful.contentTypes.pages,
+    contentBlock: config.contentful.contentTypes.contentBlock,
+    quote: config.contentful.contentTypes.quote,
+    menu: config.contentful.contentTypes.menu
 };
 
 var client = contentful.createClient({
@@ -19,6 +21,20 @@ var client = contentful.createClient({
     host: 'cdn.contentful.com'
 });
 
+contentfulService.getContentTypes = function(){
+    client.contentTypes()
+        .then(function(contentTypes){
+            if(contentTypes){
+                contentTypes.forEach(function(entry){
+                    logger.log('info','content type: '+entry.name+' id: '+entry.sys.id);
+                });
+            }
+        })
+        .catch(function(err){
+            throw new errorService.InternalServerError('Contentful client error: '+JSON.stringify(err));
+        });
+};
+
 /**
  * Gets all contentful entries based on query parameters
  *
@@ -26,42 +42,14 @@ var client = contentful.createClient({
  * @return {Object} Returns contentful entries or error object
  */
 contentfulService.getEntries = function(params){
-    if (params && params.hasOwnProperty('content_type')){
-        return client.contentTypes()
-            .then(function(contentTypes){
-                var foundContentType = _.find(contentTypes, function (contentType) {
-                    return contentType.name.toLowerCase() === params.content_type.toLowerCase();
-                });
-                if (foundContentType){
-                    params.content_type = foundContentType.sys.id;
-                    return client.entries(params)
-                        .then(function(entries) {
-                            return entries;
-                        })
-                        .catch(function(){
-                            throw new errorService.NotFoundError('Entry not found with params: '+JSON.stringify(params));
-                        });
-                }
-                else {
-                    throw new errorService.NotFoundError('Content type not found: '+params.content_type);
-                }
-            })
-            .catch(function(err){
-                throw new errorService.NotFoundError('Content type not found: '+params.content_type);
-            });
-    }
-    else {
-        return new promise(function (resolve, reject) {
-            client.entries(params, function (err, statusList, body) {
-                if (err) {
-                    reject(err);
-                }
-                else {
-                    resolve(body);
-                }
-            });
+    params.include = 10;
+    return client.entries(params)
+        .then(function(entries) {
+            return entries;
+        })
+        .catch(function(){
+            throw new errorService.NotFoundError('Entries not found with params: '+JSON.stringify(params));
         });
-    }
 };
 
 module.exports = contentfulService;

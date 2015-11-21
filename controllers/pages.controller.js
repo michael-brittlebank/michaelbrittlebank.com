@@ -3,7 +3,7 @@ var /* packages */
 /* services */
     contentfulService = require('../services/contentful.service'),
     contentService = require('../services/content.service'),
-    logger = require('../lib/logger'),
+    logger = require('../services/logger.service'),
     pages = {};
 
 /**

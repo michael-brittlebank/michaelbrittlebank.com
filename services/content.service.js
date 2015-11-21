@@ -2,7 +2,7 @@ var /* models */
     contentModel = require('../models/content.model'),
 /* services */
     webapp = require('./webapp.service'),
-    logger = require('../lib/logger'),
+    logger = require('../services/logger.service'),
     contentService = {};
 
 contentService.pageDigest = function (data) {

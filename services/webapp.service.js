@@ -1,6 +1,6 @@
 var /* packages */
     handlebars = require('handlebars'),
-    logger = require('../lib/logger'),
+    logger = require('./logger.service'),
     marked = require('marked'),
     webapp = {
         app: {

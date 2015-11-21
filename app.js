@@ -9,7 +9,7 @@ var /* packages */
     config = require('./config/config'),
 /* services */
     webapp = require('./services/webapp.service'),
-    logger = require('./lib/logger'),
+    logger = require('./services/logger.service'),
 /* routes and controllers */
     pageRoutes = require('./routes/pages.routes'),
     pageController = require('./controllers/pages.controller');
