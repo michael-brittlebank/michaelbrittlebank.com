@@ -51,6 +51,14 @@ app.use(function(req, res, next) {
         siteName: 'mikestumpf.com',
         requestedUrl: 'http://mikestumpf.com'+req.originalUrl
     };
+    res.locals.menu = {//todo, make dynamic
+        headerMenu: [
+            {
+                title: 'Portfolio',
+                url: '/portfolio'
+            }
+        ]
+    };
     next();
 });
 /**
