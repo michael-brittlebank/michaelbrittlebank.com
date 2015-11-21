@@ -42,4 +42,33 @@ contentModels.getContentBlockModel = function(data){
     }
 };
 
+contentModels.getMenuModel = function(data){
+    if (webapp.simpleNullCheck(data,'fields')){
+        var fields = data.fields,
+            contentService = require('../services/content.service');
+        return {
+            id: data.sys.id,
+            menuLocation: webapp.getValueFromKey(fields,'menuLocation').toLowerCase(),
+            children: webapp.simpleNullCheck(fields,'children')?contentService.menuItemDigest(fields.children):[]
+        };
+    }
+    else {
+        return {};
+    }
+};
+
+contentModels.getMenuItemModel = function(data){
+    if (webapp.simpleNullCheck(data,'fields')){
+        var fields = data.fields;
+        return {
+            id: data.sys.id,
+            title: webapp.simpleNullCheck(fields, 'linkTitle')?webapp.getValueFromKey(fields,'linkTitle'):webapp.getValueFromKey(fields,'title'),
+            url: webapp.getValueFromKey(fields,'url')
+        };
+    }
+    else {
+        return {};
+    }
+};
+
 module.exports = contentModels;

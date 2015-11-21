@@ -10,6 +10,8 @@ var /* packages */
 /* services */
     webapp = require('./services/webapp.service'),
     logger = require('./services/logger.service'),
+    contentfulService = require('./services/contentful.service'),
+    contentService = require('./services/content.service'),
 /* routes and controllers */
     pageRoutes = require('./routes/pages.routes'),
     pageController = require('./controllers/pages.controller');
@@ -47,19 +49,22 @@ app.use(express.static(path.join(__dirname, 'webapp/public')));
 app.use(function(req, res, next) {
 // routes middleware
     logger.log('info','calling route - '+req.method+' '+req.originalUrl);
-    res.locals.meta = {
-        siteName: 'mikestumpf.com',
-        requestedUrl: 'http://mikestumpf.com'+req.originalUrl
+    var params = {
+        content_type: contentfulService.contentTypes.menu
     };
-    res.locals.menu = {//todo, make dynamic
-        headerMenu: [
-            {
-                title: 'Portfolio',
-                url: '/portfolio'
-            }
-        ]
-    };
-    next();
+    return contentfulService.getEntries(params)
+        .then(function (response) {
+            res.locals.menu = contentService.menuDigest(response);
+            res.locals.meta = {
+                siteName: 'mikestumpf.com',
+                requestedUrl: 'http://mikestumpf.com'+req.originalUrl
+            };
+            next();
+        })
+        .catch(function(err){
+            logger.log('error','Contentful client error',JSON.stringify(err));
+            return next(err);
+        });
 });
 /**
  * Routes

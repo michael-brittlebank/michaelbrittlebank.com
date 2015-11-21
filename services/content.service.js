@@ -29,4 +29,26 @@ contentService.contentBlockDigest = function(data){
     return result;
 };
 
+contentService.menuDigest = function(data){
+    var result = {},
+        model;
+    if(data) {
+        data.forEach(function (entry) {
+            model = contentModel.getMenuModel(entry);
+            result[model.menuLocation] = model;
+        });
+    }
+    return result;
+};
+
+contentService.menuItemDigest = function(data){
+    var result = [];
+    if(data) {
+        data.forEach(function (entry) {
+            result.push(contentModel.getMenuItemModel(entry));
+        });
+    }
+    return result;
+};
+
 module.exports = contentService;
