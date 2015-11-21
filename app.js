@@ -59,6 +59,11 @@ app.use(function(req, res, next) {
                 siteName: 'mikestumpf.com',
                 requestedUrl: 'http://mikestumpf.com'+req.originalUrl
             };
+            res.locals.site = {
+                linkedIn: 'https://www.linkedin.com/in/mikestumpf',
+                github: 'https://github.com/mike-stumpf',
+                music: 'http://mikestumpf.com/scales'
+            };
             next();
         })
         .catch(function(err){
