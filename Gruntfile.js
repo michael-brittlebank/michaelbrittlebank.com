@@ -85,8 +85,7 @@ module.exports = function(grunt) {
                     style: 'compressed',
                     trace: true,
                     loadPath: [
-                        "bower_components/foundation/scss",
-                        "bower_components/components-font-awesome/scss"
+                        "bower_components/foundation-sites/scss"
                     ]
                 }
             }

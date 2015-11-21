@@ -1,22 +1,11 @@
-@media #{$small-up} { }
-@media #{$small-only} { }
-
-@media #{$medium-up} { }
-@media #{$medium-only} { }
-
-@media #{$large-up} { }
-@media #{$large-only} { }
-
-@media #{$xlarge-up} { }
-@media #{$xlarge-only} { }
-
-@media #{$xxlarge-up} { }
-@media #{$xxlarge-only} { }
-
 *, h1,h2,h3,h4,h5,a,li,blockquote {
   font-family: $font-open-sans-condensed;
 }
 
 p {
   font-family: $font-texgyre-regular;
+}
+
+a {
+  @include transition-with-defaults(color);
 }
