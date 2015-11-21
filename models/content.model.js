@@ -13,6 +13,8 @@ contentModels.getPageModel = function(data){
             id: data.sys.id,
             title: webapp.getValueFromKey(fields,'title'),
             body: webapp.getHTMLValueFromKey(fields,'body'),
+            linkTitle: webapp.simpleNullCheck(fields, 'linkTitle'),
+            url: webapp.getUrlValueFromKey(fields,'url'),
             content: webapp.simpleNullCheck(fields,'children')?contentService.contentBlockDigest(fields.children):{},
             categories: webapp.simpleNullCheck(fields,'categories')?fields.categories.join(', '):{},
             tags: webapp.simpleNullCheck(fields,'tags')?fields.tags.join(', '):{},
@@ -63,7 +65,7 @@ contentModels.getMenuItemModel = function(data){
         return {
             id: data.sys.id,
             title: webapp.simpleNullCheck(fields, 'linkTitle')?webapp.getValueFromKey(fields,'linkTitle'):webapp.getValueFromKey(fields,'title'),
-            url: webapp.getValueFromKey(fields,'url')
+            url: webapp.getUrlValueFromKey(fields,'url')
         };
     }
     else {

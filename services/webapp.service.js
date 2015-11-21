@@ -80,6 +80,22 @@ webapp.getImageUrl = function(data){
     }
 };
 
+webapp.filterUrl = function(data){
+    if (data){
+        if (data === 'index'){
+            data = '/';
+        }
+        else {
+            //test http/https, mailto:, and urls already starting with '/'
+            if (!/^((http|https):\/\/)/.test(url) && !/^(mailto:)/.test(url) &&
+                url.indexOf('/') !== 0) {
+                data = '/' + data;
+            }
+        }
+    }
+    return data;
+};
+
 webapp.simpleNullCheck = function(object,key){
     return object && object.hasOwnProperty(key) && object[key];
 };
@@ -94,6 +110,10 @@ webapp.getHTMLValueFromKey = function(object,key){
 
 webapp.getImageValueFromKey = function(object,key){
     return webapp.simpleNullCheck(object,key)?webapp.getImageUrl(object[key]):'';
+};
+
+webapp.getUrlValueFromKey = function(object,key){
+    return webapp.simpleNullCheck(object,key)?webapp.filterUrl(object[key]):'';
 };
 
 module.exports = webapp;
