@@ -3,6 +3,7 @@ var /* packages */
     logger = require('./logger.service'),
     config = require('../config/config'),
     marked = require('marked'),
+    striptags = require('striptags'),
     webapp = {
         app: {
             environment: String(process.env.NODE_ENV),
@@ -111,6 +112,14 @@ webapp.filterUrl = function(data){
 
 webapp.getDefaultMetaTitle = function(title){
     return 'Mike Stumpf | '+title;
+};
+
+webapp.getExcerpt = function(data){
+    data = striptags(data);
+    if (data.length > 160){
+        data = data.substring(0, data.lastIndexOf(' ',160));
+    }
+    return data;
 };
 
 webapp.simpleNullCheck = function(object,key){

@@ -21,7 +21,7 @@ contentModels.getPageModel = function(data){
             publishedTime: createdAt.substring(0,createdAt.lastIndexOf('.'))+'-4:00',//GMT
             modifiedTime: modifiedAt.substring(0,modifiedAt.lastIndexOf('.'))+'-4:00',
             metaTitle: webapp.simpleNullCheck(fields,'metaTitle')?webapp.getValueFromKey(fields,'metaTitle'):webapp.getDefaultMetaTitle(webapp.getValueFromKey(fields,'title')),
-            metaDescription: webapp.getValueFromKey(fields,'metaDescription'),//todo, default meta description
+            metaDescription: webapp.simpleNullCheck(fields,'metaDescription')?webapp.getValueFromKey(fields,'metaDescription'):webapp.getExcerpt(webapp.getHTMLValueFromKey(fields,'body')),
             metaImage: webapp.simpleNullCheck(fields,'metaImage')?webapp.getImageUrl(fields.metaImage):''//todo, default meta image
         };
     }
