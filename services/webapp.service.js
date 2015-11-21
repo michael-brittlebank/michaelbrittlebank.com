@@ -55,6 +55,18 @@ webapp.hbsHelpers = {
         } else {
             return options.inverse(this);
         }
+    },
+    eachReverse: function(context) {
+        var options = arguments[arguments.length - 1],
+            result = '';
+        if (context && context.length > 0) {
+            for (var i = context.length - 1; i >= 0; i--) {
+                result += options.fn(context[i]);
+            }
+        } else {
+            result = options.inverse(this);
+        }
+        return result;
     }
 };
 

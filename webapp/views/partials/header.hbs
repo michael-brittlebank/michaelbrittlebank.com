@@ -2,7 +2,7 @@
     <nav class="top-bar contain-to-grid" data-topbar role="navigation" data-options="is_hover: true">
         <section class="top-bar-section">
             <ul class="menu align-right">
-                {{#each menu.header.children}}
+                {{#eachReverse menu.header.children}}
                     {{#compare children.length 0 operator=">"}}
                         <li class="has-dropdown">
                             {{#if url}}
@@ -19,7 +19,7 @@
                     {{else}}
                         <li><a href="{{url}}">{{title}}</a></li>
                     {{/compare}}
-                {{/each}}
+                {{/eachReverse}}
             </ul>
         </section>
     </nav>
