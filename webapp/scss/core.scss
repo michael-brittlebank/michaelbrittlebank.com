@@ -13,7 +13,7 @@
 @media #{$xxlarge-up} { }
 @media #{$xxlarge-only} { }
 
-*, h1,h2,h3,h4,h5,blockquote {
+*, h1,h2,h3,h4,h5,a,li,blockquote {
   font-family: $font-open-sans-condensed;
 }
 

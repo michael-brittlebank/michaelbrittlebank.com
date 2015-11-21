@@ -4,11 +4,11 @@
 @include font-face(texgyreschola-bold, /fonts/texgyreschola-bold/texgyreschola-bold-webfont);
 @include font-face(texgyreschola-bolditalic, /fonts/texgyreschola-bolditalic/texgyreschola-bolditalic-webfont);
 
-$font-open-sans-condensed: 'Open Sans Condensed', sans-serif;//todo, add serif and sans-serif fallbacks
-$font-texgyre-regular: 'texgyreschola-regular', serif;
-$font-texgyre-italic: 'texgyreschola-italic', serif;
-$font-texgyre-bold: 'texgyreschola-bold', serif;
-$font-texgyre-bolditalic: 'texgyreschola-bolditalic', serif;
+$font-open-sans-condensed: 'Open Sans Condensed', "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+$font-texgyre-regular: 'texgyreschola-regular', Georgia, Cambria, "Times New Roman", Times, serif;
+$font-texgyre-italic: 'texgyreschola-italic', Georgia, Cambria, "Times New Roman", Times, serif;
+$font-texgyre-bold: 'texgyreschola-bold', Georgia, Cambria, "Times New Roman", Times, serif;
+$font-texgyre-bolditalic: 'texgyreschola-bolditalic', Georgia, Cambria, "Times New Roman", Times, serif;
 
 $font-weight-light: 300;
 $font-weight-medium: 400;
