@@ -1,6 +1,7 @@
 var /* packages */
     handlebars = require('handlebars'),
     logger = require('./logger.service'),
+    config = require('../config/config'),
     marked = require('marked'),
     webapp = {
         app: {
@@ -106,6 +107,10 @@ webapp.filterUrl = function(data){
         }
     }
     return data;
+};
+
+webapp.getDefaultMetaTitle = function(title){
+    return 'Mike Stumpf | '+title;
 };
 
 webapp.simpleNullCheck = function(object,key){

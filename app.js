@@ -56,13 +56,13 @@ app.use(function(req, res, next) {
         .then(function (response) {
             res.locals.menu = contentService.menuDigest(response);
             res.locals.meta = {
-                siteName: 'mikestumpf.com',
-                requestedUrl: 'http://mikestumpf.com'+req.originalUrl
+                siteName: config.app.hostName,
+                requestedUrl: config.app.protocol+config.app.hostName+req.originalUrl
             };
             res.locals.site = {
                 linkedIn: 'https://www.linkedin.com/in/mikestumpf',
                 github: 'https://github.com/mike-stumpf',
-                music: 'http://mikestumpf.com/scales'
+                music: config.app.protocol+config.app.hostName+'/scales'
             };
             next();
         })

@@ -20,7 +20,7 @@ contentModels.getPageModel = function(data){
             tags: webapp.simpleNullCheck(fields,'tags')?fields.tags.join(', '):{},
             publishedTime: createdAt.substring(0,createdAt.lastIndexOf('.'))+'-4:00',//GMT
             modifiedTime: modifiedAt.substring(0,modifiedAt.lastIndexOf('.'))+'-4:00',
-            metaTitle: webapp.getValueFromKey(fields,'metaTitle'),//todo, default meta title
+            metaTitle: webapp.simpleNullCheck(fields,'metaTitle')?webapp.getValueFromKey(fields,'metaTitle'):webapp.getDefaultMetaTitle(webapp.getValueFromKey(fields,'title')),
             metaDescription: webapp.getValueFromKey(fields,'metaDescription'),//todo, default meta description
             metaImage: webapp.simpleNullCheck(fields,'metaImage')?webapp.getImageUrl(fields.metaImage):''//todo, default meta image
         };
