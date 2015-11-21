@@ -87,8 +87,8 @@ webapp.filterUrl = function(data){
         }
         else {
             //test http/https, mailto:, and urls already starting with '/'
-            if (!/^((http|https):\/\/)/.test(url) && !/^(mailto:)/.test(url) &&
-                url.indexOf('/') !== 0) {
+            if (!/^((http|https):\/\/)/.test(data) && !/^(mailto:)/.test(data) &&
+                data.indexOf('/') !== 0) {
                 data = '/' + data;
             }
         }

@@ -13,4 +13,6 @@ if(!webapp.app.isLiveConfig()){
     router.get('/404',pagesCtrl.get404Page);
 }
 
+router.get('/*',pagesCtrl.getDefaultPage);
+
 module.exports = router;
