@@ -14,6 +14,7 @@ var /* packages */
     contentService = require('./services/content.service'),
 /* routes and controllers */
     pageRoutes = require('./routes/pages.routes'),
+    localRoutes = require('./routes/local.routes'),
     pageController = require('./controllers/pages.controller');
 
 var app = express();
@@ -49,32 +50,40 @@ app.use(express.static(path.join(__dirname, 'webapp/public')));
 app.use(function(req, res, next) {
 // routes middleware
     logger.log('info','calling route - '+req.method+' '+req.originalUrl);
-    var params = {
-        content_type: contentfulService.contentTypes.menu
-    };
-    return contentfulService.getEntries(params)
-        .then(function (response) {
-            res.locals.menu = contentService.menuDigest(response);
-            res.locals.meta = {
-                siteName: config.app.hostName,
-                requestedUrl: config.app.protocol+config.app.hostName+req.originalUrl
-            };
-            res.locals.site = {
-                linkedIn: 'https://www.linkedin.com/in/mikestumpf',
-                github: 'https://github.com/mike-stumpf',
-                music: config.app.protocol+config.app.hostName+'/scales'
-            };
-            next();
-        })
-        .catch(function(err){
-            logger.log('error','Contentful client error',JSON.stringify(err));
-            return next(err);
-        });
+    if (!webapp.app.isLocalConfig()) {
+        var params = {
+            content_type: contentfulService.contentTypes.menu
+        };
+        return contentfulService.getEntries(params)
+            .then(function (response) {
+                res.locals.menu = contentService.menuDigest(response);
+                res.locals.meta = {
+                    siteName: config.app.hostName,
+                    requestedUrl: config.app.protocol + config.app.hostName + req.originalUrl
+                };
+                res.locals.site = {
+                    linkedIn: 'https://www.linkedin.com/in/mikestumpf',
+                    github: 'https://github.com/mike-stumpf',
+                    music: config.app.protocol + config.app.hostName + '/scales'
+                };
+                next();
+            })
+            .catch(function (err) {
+                logger.log('error', 'Contentful client error', JSON.stringify(err));
+                return next(err);
+            });
+    }
+    next();
 });
 /**
  * Routes
  */
-app.use('/', pageRoutes);
+if (webapp.app.isLocalConfig()){
+    app.use('/', localRoutes);
+}
+else {
+    app.use('/', pageRoutes);
+}
 
 /**
  * Error Handlers

@@ -31,13 +31,16 @@ bubbles.createCircles = function(num, classes){
 
 bubbles.animationQueue = function(){
     function step(timestamp) {
+        var progress,
+            x,
+            y;
         for (var i = 0; i < bubbles.nodeList.length; i++){
             if(!bubbles.nodeList[i].start) {
                 bubbles.nodeList[i].start = timestamp;
             }
-            var progress = (timestamp - bubbles.nodeList[i].start) / bubbles.nodeList[i].duration / 1000;
-            var x = progress * site.screen.windowHeight/bubbles.nodeList[i].sinWidth;
-            var y = 2 * Math.sin(x);
+            progress = (timestamp - bubbles.nodeList[i].start) / bubbles.nodeList[i].duration / 1000;
+            x = progress * site.screen.windowHeight/bubbles.nodeList[i].sinWidth;
+            y = 2 * Math.sin(x);
             bubbles.nodeList[i].node.style.bottom = Math.min(site.screen.windowWidth, bubbles.nodeList[i].sinWidth * x) + 'px';
             bubbles.nodeList[i].node.style.left = site.screen.windowHeight/2 + (bubbles.nodeList[i].sinWidth * y) + 'px';
             if(progress >= 1) {

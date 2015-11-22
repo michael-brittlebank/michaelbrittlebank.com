@@ -23,7 +23,7 @@ pages.getIndex = function(req, res, next) {
             res.locals.page = contentService.pageDigest(content);
             return res.render('index');
         })
-        .catch(function(err){
+        .catch(function (err) {
             return next(err);
         });
 };
@@ -31,7 +31,7 @@ pages.getIndex = function(req, res, next) {
 pages.getDefaultPage = function(req, res, next) {
     var params = {
         content_type: contentfulService.contentTypes.pages,
-        'fields.url[in]': req.originalUrl.replace(/^\/|\/$/g,''),
+        'fields.url[in]': req.originalUrl.replace(/^\/|\/$/g, ''),
         limit: 1
     };
     return promise
@@ -39,7 +39,7 @@ pages.getDefaultPage = function(req, res, next) {
         .then(function (response) {
             var page = contentService.pageDigest(response[0]);
             res.locals.page = page;
-            if (webapp.simpleNullCheck(page,'layout')) {
+            if (webapp.simpleNullCheck(page, 'layout')) {
                 switch (page.layout) {
                     case 'Bubbles':
                         res.render('page-bubbles');
@@ -54,7 +54,7 @@ pages.getDefaultPage = function(req, res, next) {
                 res.render('page');
             }
         })
-        .catch(function(err){
+        .catch(function (err) {
             return next(err);
         });
 };
@@ -72,7 +72,7 @@ pages.get500Page = function(req, res, next) {
             res.locals.page = contentService.pageDigest(content);
             return res.render('500');
         })
-        .catch(function(err){
+        .catch(function (err) {
             return next(err);
         });
 };
@@ -90,7 +90,7 @@ pages.get404Page = function(req, res, next) {
             res.locals.page = contentService.pageDigest(content);
             return res.render('404');
         })
-        .catch(function(err){
+        .catch(function (err) {
             return next(err);
         });
 };

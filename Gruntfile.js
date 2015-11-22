@@ -42,6 +42,9 @@ module.exports = function(grunt) {
             },
             dev: {
                 NODE_ENV: 'development'
+            },
+            local: {
+                NODE_ENV: 'local'
             }
         },
         imagemin: {
@@ -179,6 +182,18 @@ module.exports = function(grunt) {
     // Default task, run jshint, copy custom client side js scripts, then start server and watch
     grunt.registerTask('dev', [
         'env:dev',
+        'loadConfig',
+        'newer:uglify:build',
+        'newer:sass',
+        'newer:copy:coreImages',
+        'newer:copy:fonts',
+        'newer:imagemin',
+        'concurrent'
+    ]);
+
+    // When no internet is available, run jshint, copy custom client side js scripts, then start server and watch
+    grunt.registerTask('local', [
+        'env:local',
         'loadConfig',
         'newer:uglify:build',
         'newer:sass',

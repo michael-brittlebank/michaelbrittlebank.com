@@ -8,10 +8,13 @@ var /* packages */
         app: {
             environment: String(process.env.NODE_ENV),
             isLiveConfig: function(){
-                return webapp.app.environment === "default";
+                return webapp.app.environment === 'default';
             },
             isDevConfig: function(){
-                return webapp.app.environment === "development";
+                return webapp.app.environment === 'development';
+            },
+            isLocalConfig: function(){
+                return webapp.app.environment === 'local';
             }
         }
     };
@@ -35,9 +38,9 @@ webapp.hbsHelpers = {
     compare: function(lvalue, rvalue, options) {
         //https://gist.github.com/doginthehat/1890659
         if (arguments.length !== 3) {
-            throw new Error("Handlebars Helper 'compare' needs 3 parameters");
+            throw new Error('Handlebars Helper "compare" needs 3 parameters');
         }
-        var operator = options.hash.operator || "==";
+        var operator = options.hash.operator || '==';
         var operators = {
             '==':		function(l,r) { return l == r; },
             '===':	function(l,r) { return l === r; },
@@ -49,7 +52,7 @@ webapp.hbsHelpers = {
             'typeof':	function(l,r) { return typeof l == r; }
         };
         if (!operators[operator]) {
-            throw new Error("Handlebars Helper 'compare' doesn't know the operator " + operator);
+            throw new Error('Handlebars Helper "compare" doesn\'t know the operator ' + operator);
         }
         var result = operators[operator](lvalue,rvalue);
         if(result) {
