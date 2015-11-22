@@ -16,6 +16,7 @@ contentModels.getPageModel = function(data){
             linkTitle: webapp.simpleNullCheck(fields, 'linkTitle'),
             url: webapp.getUrlValueFromKey(fields,'url'),
             content: webapp.simpleNullCheck(fields,'children')?contentService.contentBlockDigest(fields.children):{},
+            layout: webapp.getValueFromKey(fields,'layout'),
             categories: webapp.simpleNullCheck(fields,'categories')?fields.categories.join(', '):{},
             tags: webapp.simpleNullCheck(fields,'tags')?fields.tags.join(', '):{},
             publishedTime: createdAt.substring(0,createdAt.lastIndexOf('.'))+'-4:00',//GMT

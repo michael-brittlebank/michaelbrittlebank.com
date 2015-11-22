@@ -3,6 +3,7 @@ var /* packages */
 /* services */
     contentfulService = require('../services/contentful.service'),
     contentService = require('../services/content.service'),
+    webapp = require('../services/webapp.service'),
     logger = require('../services/logger.service'),
     pages = {};
 
@@ -30,15 +31,29 @@ pages.getIndex = function(req, res, next) {
 pages.getDefaultPage = function(req, res, next) {
     var params = {
         content_type: contentfulService.contentTypes.pages,
-        'fields.url[in]': req.originalUrl.replace(/\//g,''),
+        'fields.url[in]': req.originalUrl.replace(/^\/|\/$/g,''),
         limit: 1
     };
     return promise
         .all([contentfulService.getEntries(params)])
         .then(function (response) {
-            var content = response[0];
-            res.locals.page = contentService.pageDigest(content);
-            return res.render('page');
+            var page = contentService.pageDigest(response[0]);
+            res.locals.page = page;
+            console.log(JSON.stringify(page));
+            if (webapp.simpleNullCheck(page,'layout')) {
+                switch (page.layout) {
+                    case 'Bubbles':
+                        res.render('page-bubbles');
+                        break;
+                    case 'Scales':
+                        res.render('page-scales');
+                        break;
+                    default:
+                        res.render('page');
+                }
+            } else {
+                res.render('page');
+            }
         })
         .catch(function(err){
             return next(err);
