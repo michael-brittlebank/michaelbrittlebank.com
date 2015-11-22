@@ -48,6 +48,7 @@ app.use(compression({
 app.use(express.static(path.join(__dirname, 'webapp/public')));
 
 app.use(function(req, res, next) {
+    //todo, test for contentful connection
 // routes middleware
     logger.log('info','calling route - '+req.method+' '+req.originalUrl);
     if (!webapp.app.isLocalConfig()) {
