@@ -10,6 +10,14 @@ bubbles.types = {
     largeBubble: 'large-bubble bubble'
 };
 
+bubbles.resetPath = function(node){
+    node.duration = site.getRandomInt(10, 18);
+    node.sinWidth = site.getRandomInt(100, site.screen.windowWidth/4);
+    node.start = null;
+    node.progress = null;
+    return node;
+};
+
 bubbles.createBubbles = function(num, classes){
     var node,
         bubbleContainer = document.getElementById('bubble-container'),
@@ -18,11 +26,11 @@ bubbles.createBubbles = function(num, classes){
         bottom,
         width,
         height,
-        nodeAttr;
+        domNode;
     for (var i = 0; i < num; i++){
         left = site.getRandomInt(0,site.screen.windowWidth);
         bottom = site.getRandomInt(0,site.screen.windowHeight);
-        nodeAttr = {};
+        node = {};
         switch(classes){
             case bubbles.types.smallBubble:
                 width = height = site.getRandomInt(5,25);
@@ -34,18 +42,14 @@ bubbles.createBubbles = function(num, classes){
                 width = height = site.getRandomInt(50,75);
                 break;
         }
-        node = document.createElement('div');
-        node.setAttribute('id', 'bubble'+currentBubbleNum);
-        node.setAttribute('class', classes);
-        node.style.width = width+'px';
-        node.style.height = height+'px';
-        bubbleContainer.appendChild(node);
-        nodeAttr.node = node;
-        nodeAttr.duration = site.getRandomInt(10, 18);
-        nodeAttr.sinWidth = site.getRandomInt(100, site.screen.windowWidth/4);
-        nodeAttr.start = null;
-        nodeAttr.progress = null;
-        bubbles.nodeList.push(nodeAttr);
+        domNode = document.createElement('div');
+        domNode.setAttribute('id', 'bubble'+currentBubbleNum);
+        domNode.setAttribute('class', classes);
+        domNode.style.width = width+'px';
+        domNode.style.height = height+'px';
+        bubbleContainer.appendChild(domNode);
+        node.node = domNode;
+        bubbles.nodeList.push(bubbles.resetPath(node));
         currentBubbleNum++;
     }
 };
@@ -67,7 +71,7 @@ bubbles.animationQueue = function(){
             bubbles.nodeList[i].node.style.bottom = Math.min(site.screen.windowWidth, bubbles.nodeList[i].sinWidth * x)-offsetModifier + 'px';
             bubbles.nodeList[i].node.style.left = site.screen.windowHeight/2 + (bubbles.nodeList[i].sinWidth * y) + 'px';
             if(progress >= 1) {
-                bubbles.nodeList[i].start = null;
+                bubbles.nodeList[i] = bubbles.resetPath(bubbles.nodeList[i]);
             }
         }
         requestAnimationFrame(step);
