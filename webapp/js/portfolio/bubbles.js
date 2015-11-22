@@ -30,6 +30,7 @@ bubbles.createCircles = function(num, classes){
 };
 
 bubbles.animationQueue = function(){
+    //todo, replace with velocity
     function step(timestamp) {
         var progress,
             x,
@@ -53,9 +54,9 @@ bubbles.animationQueue = function(){
     requestAnimationFrame(step);
 };
 
-bubbles.init = function() {
-    bubbles.createCircles(25, 'small-circle circle');
-    bubbles.createCircles(15, 'medium-circle circle');
-    bubbles.createCircles(10, 'large-circle circle');
+bubbles.init = function(smallBubbles, mediumBubbles, largeBubbles) {
+    bubbles.createCircles(smallBubbles, 'small-circle circle');
+    bubbles.createCircles(mediumBubbles, 'medium-circle circle');
+    bubbles.createCircles(largeBubbles, 'large-circle circle');
     bubbles.animationQueue();
 };

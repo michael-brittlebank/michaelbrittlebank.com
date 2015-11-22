@@ -1,13 +1,22 @@
 <main class="row page portfolio bubbles">
-    <div class="small-12 columns">
-        these are all the bubbles
-        {{{page.body}}}
-    </div>
     <div id="bubble-container">
         <script type="text/javascript">
             $(function(){
-                bubbles.init();
+                bubbles.init(25,15,15);
             });
         </script>
+    </div>
+    <div class="small-12 columns">
+        these are all the bubbles
+        {{{page.body}}}
+        <label for="smallBubbles">Small Bubbles</label>
+        <input id="smallBubbles" type="number" value="25"/>
+        <label for="mediumBubbles">Medium Bubbles</label>
+        <input id="mediumBubbles" type="number" value="15"/>
+        <label for="largeBubbles">Large Bubbles</label>
+        <input id="largeBubbles" type="number" value="15"/>
+        <button id="updateQuantity">Update Quantity</button>
+        <button id="startBubbles">Start Bubbles</button>
+        <button id="stopBubbles">Stop Bubbles</button>
     </div>
 </main>
