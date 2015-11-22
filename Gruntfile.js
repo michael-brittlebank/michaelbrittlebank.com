@@ -107,7 +107,7 @@ module.exports = function(grunt) {
                     ],
                     'webapp/public/js/app.main.min.js': [
                         'webapp/js/app.js',
-                        'webapp/js/*'
+                        'webapp/js/**/*.js'
                     ]
                 },
                 options: {
@@ -119,7 +119,7 @@ module.exports = function(grunt) {
                 files: {
                     'webapp/public/js/app.main.min.js': [
                         'webapp/js/index.js',
-                        'webapp/js/*'
+                        'webapp/js/**/*.js'
                     ]
                 },
                 options: {

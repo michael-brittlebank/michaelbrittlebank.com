@@ -48,6 +48,7 @@ bubbles.animationQueue = function(){
             }
         }
         requestAnimationFrame(step);
+
     }
     requestAnimationFrame(step);
 };
