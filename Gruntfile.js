@@ -94,10 +94,9 @@ module.exports = function(grunt) {
             build: {
                 files: {
                     'webapp/public/js/app.header.min.js': [
-                        "bower_components/fastclick/lib/fastclick.js"
+                        "bower_components/jquery/dist/jquery.min.js"
                     ],
                     'webapp/public/js/app.footer.min.js': [
-                        "bower_components/jquery/dist/jquery.min.js",
                         "bower_components/modernizr/modernizr.js",
                         "bower_components/foundation/js/foundation.min.js",
                         "bower_components/velocity/velocity.min.js",

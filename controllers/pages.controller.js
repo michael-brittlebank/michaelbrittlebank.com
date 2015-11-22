@@ -39,7 +39,6 @@ pages.getDefaultPage = function(req, res, next) {
         .then(function (response) {
             var page = contentService.pageDigest(response[0]);
             res.locals.page = page;
-            console.log(JSON.stringify(page));
             if (webapp.simpleNullCheck(page,'layout')) {
                 switch (page.layout) {
                     case 'Bubbles':
