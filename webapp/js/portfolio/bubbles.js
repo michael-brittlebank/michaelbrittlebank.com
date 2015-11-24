@@ -55,7 +55,6 @@ bubbles.createBubbles = function(num, classes){
 };
 
 bubbles.animationQueue = function(){
-    //todo, replace with velocity
     function step(timestamp) {
         var offsetModifier = 100,
             progress,
@@ -75,7 +74,6 @@ bubbles.animationQueue = function(){
             }
         }
         requestAnimationFrame(step);
-
     }
     requestAnimationFrame(step);
 };

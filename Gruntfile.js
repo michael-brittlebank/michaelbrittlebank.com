@@ -112,7 +112,8 @@ module.exports = function(grunt) {
                 },
                 options: {
                     sourceMap: true,
-                    preserveComments: false
+                    preserveComments: false,
+                    screwIE8: true
                 }
             },
             default: {
@@ -125,7 +126,8 @@ module.exports = function(grunt) {
                 options: {
                     banner: '/*! <%= grunt.template.today("yyyy-mm-dd") %> */\n',
                     sourceMap: true,
-                    preserveComments: false
+                    preserveComments: false,
+                    screwIE8: true
                 }
             }
         },
