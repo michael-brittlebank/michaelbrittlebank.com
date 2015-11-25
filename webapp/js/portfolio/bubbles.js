@@ -11,7 +11,7 @@ bubbles.types = {
 };
 
 bubbles.resetPath = function(node){
-    node.duration = site.getRandomInt(10, 18);
+    node.duration = site.getRandomInt(10, 20);
     node.sinWidth = site.getRandomInt(100, site.screen.windowWidth/4);
     node.start = null;
     node.progress = null;
@@ -51,22 +51,26 @@ bubbles.createBubbles = function(num, classes){
 };
 
 bubbles.animationQueue = function(){
-    function step(timestamp) {
+    function step(timestamp){
         var offsetModifier = site.screen.windowHeight * 0.1,
             modifiedHeight = site.screen.windowHeight + offsetModifier,
             progress,
             x,
             y;
         for (var i = 0; i < bubbles.nodeList.length; i++){
-            if(!bubbles.nodeList[i].start) {
+            if(!bubbles.nodeList[i].start){
                 bubbles.nodeList[i].start = timestamp;
             }
             progress = (timestamp - bubbles.nodeList[i].start) / bubbles.nodeList[i].duration / 1000;
             x = progress * modifiedHeight / bubbles.nodeList[i].sinWidth;
-            y = 2 * Math.sin(x);
+            if (i % 2 === 0){
+                y = 2 * Math.sin(x);
+            } else {
+                y = 2 * Math.cos(x);
+            }
             bubbles.nodeList[i].node.style.bottom = Math.min(site.screen.windowHeight, (bubbles.nodeList[i].sinWidth * x)- offsetModifier) + 'px';
             bubbles.nodeList[i].node.style.left = site.screen.windowWidth / 2 + (bubbles.nodeList[i].sinWidth * y) + 'px';
-            if(progress >= 1) {
+            if(progress >= 1){
                 bubbles.nodeList[i] = bubbles.resetPath(bubbles.nodeList[i]);
             }
         }
