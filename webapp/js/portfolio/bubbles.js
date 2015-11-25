@@ -22,14 +22,10 @@ bubbles.createBubbles = function(num, classes){
     var node,
         bubbleContainer = document.getElementById('bubble-container'),
         currentBubbleNum = 1,
-        left,
-        bottom,
         width,
         height,
         domNode;
     for (var i = 0; i < num; i++){
-        left = site.getRandomInt(0,site.screen.windowWidth);
-        bottom = site.getRandomInt(0,site.screen.windowHeight);
         node = {};
         switch(classes){
             case bubbles.types.smallBubble:
@@ -56,7 +52,8 @@ bubbles.createBubbles = function(num, classes){
 
 bubbles.animationQueue = function(){
     function step(timestamp) {
-        var offsetModifier = 100,
+        var offsetModifier = site.screen.windowHeight * 0.1,
+            modifiedHeight = site.screen.windowHeight + offsetModifier,
             progress,
             x,
             y;
@@ -65,10 +62,10 @@ bubbles.animationQueue = function(){
                 bubbles.nodeList[i].start = timestamp;
             }
             progress = (timestamp - bubbles.nodeList[i].start) / bubbles.nodeList[i].duration / 1000;
-            x = progress * (site.screen.windowHeight+offsetModifier)/bubbles.nodeList[i].sinWidth;
+            x = progress * modifiedHeight / bubbles.nodeList[i].sinWidth;
             y = 2 * Math.sin(x);
-            bubbles.nodeList[i].node.style.bottom = Math.min(site.screen.windowWidth, bubbles.nodeList[i].sinWidth * x)-offsetModifier + 'px';
-            bubbles.nodeList[i].node.style.left = site.screen.windowHeight/2 + (bubbles.nodeList[i].sinWidth * y) + 'px';
+            bubbles.nodeList[i].node.style.bottom = Math.min(site.screen.windowHeight, (bubbles.nodeList[i].sinWidth * x)- offsetModifier) + 'px';
+            bubbles.nodeList[i].node.style.left = site.screen.windowWidth / 2 + (bubbles.nodeList[i].sinWidth * y) + 'px';
             if(progress >= 1) {
                 bubbles.nodeList[i] = bubbles.resetPath(bubbles.nodeList[i]);
             }
