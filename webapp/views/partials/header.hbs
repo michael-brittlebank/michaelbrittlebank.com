@@ -1,6 +1,6 @@
 <header>
-    <nav class="top-bar contain-to-grid" data-topbar role="navigation" data-options="is_hover: true">
-        <section class="top-bar-section">
+    <div class="row">
+        <div class="small-12 columns">
             <ul class="menu align-right">
                 {{#eachReverse menu.header.children}}
                     {{#compare children.length 0 operator=">"}}
@@ -21,6 +21,6 @@
                     {{/compare}}
                 {{/eachReverse}}
             </ul>
-        </section>
-    </nav>
+        </div>
+    </div>
 </header>

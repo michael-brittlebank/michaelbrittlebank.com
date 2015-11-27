@@ -1,7 +1,13 @@
 header {
-  .logo-font {
-    font-family: $font-texgyre-italic;
-    font-size: rem-calc(25);
-    @include text-shadow(2px 2px #808080);
+  a {
+    color: $black;
+    font-size: rem-calc(20);
+    font-family: $font-open-sans-condensed;
+    text-transform: uppercase;
+    @include raw-transition(color 300ms ease-out 0s, background-color 300ms ease-out 0s);
+    &:hover {
+      color: $white;
+      background-color: $black;
+    }
   }
 }

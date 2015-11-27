@@ -501,6 +501,14 @@
   transition: $element $duration $timingFunction $delay;
 }
 
+@mixin raw-transition($transition...){
+  -webkit-transition: $transition;
+  -moz-transition: $transition;
+  -o-transition: $transition;
+  -ms-transition: $transition;
+  transition: $transition;
+}
+
 @mixin animate($animationName, $duration:2s, $timingFunction:linear, $delay:0s, $iterationCount:infinite, $direction:normal){
   -webkit-animation: $animationName $duration $timingFunction $delay $iterationCount $direction;
   -moz-animation: $animationName $duration $timingFunction $delay $iterationCount $direction;
