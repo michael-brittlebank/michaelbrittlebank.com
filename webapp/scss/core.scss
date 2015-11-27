@@ -1,11 +1,12 @@
-*, h1,h2,h3,h4,h5,a,li,blockquote {
+h1,h2,h3,h4,h5,a,li,blockquote {
   font-family: $font-open-sans-condensed;
 }
-
 p {
   font-family: $font-texgyre-regular;
 }
-
 a {
   @include transition-with-defaults(color);
+}
+.column-width-2 {
+  @include column-count(2);
 }

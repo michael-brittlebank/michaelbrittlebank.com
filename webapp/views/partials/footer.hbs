@@ -1,37 +1,43 @@
 <footer class="row">
-    <div class="small-12 columns">
-        <div class="row">
-            <div class="small-4 columns">
+    <div class="small-12 medium-4 columns">
+        <h5>Find Me</h5>
+        <ul class="menu vertical column-width-2">
+            <li>
                 <a href="{{site.linkedIn}}" target="_blank"><i class="fa fa-linkedin"></i></a>
-            </div>
-            <div class="small-4 columns">
+            </li>
+            <li>
                 <a href="{{site.github}}" target="_blank"><i class="fa fa-github-alt"></i></a>
-            </div>
-            <div class="small-4 columns">
-                <a href="{{site.music}}" target="_blank"><i class="fa fa-music"></i></a>
-            </div>
-        </div>
+            </li>
+            <!--<div class="small-4 columns">-->
+            <!--<a href="{{site.music}}" target="_blank"><i class="fa fa-music"></i></a>-->
+            <!--</div>-->
+        </ul>
     </div>
-    <div class="small-12 columns">
-        Portfolio
-        {{#each menu.portfolio.children}}
-            {{#compare children.length 0 operator=">"}}
-                <li class="has-dropdown">
-                    {{#if url}}
-                        <a href="{{url}}">{{title}}</a>
-                    {{else}}
-                        <a>{{title}}</a>
-                    {{/if}}
-                    <ul class="dropdown">
-                        {{#each children}}
-                            <li><a href="{{url}}">{{title}}</a></li>
-                        {{/each}}
-                    </ul>
-                </li>
-            {{else}}
-                <li><a href="{{url}}">{{title}}</a></li>
-            {{/compare}}
-        {{/each}}
+    <div class="small-12 medium-4 columns">
+        <h5>Portfolio</h5>
+        <ul class="menu vertical column-width-2">
+            {{#each menu.portfolio.children}}
+                {{#compare children.length 0 operator=">"}}
+                    <li class="has-dropdown">
+                        {{#if url}}
+                            <a href="{{url}}">{{title}}</a>
+                        {{else}}
+                            <a>{{title}}</a>
+                        {{/if}}
+                        <ul class="dropdown">
+                            {{#each children}}
+                                <li><a href="{{url}}">{{title}}</a></li>
+                            {{/each}}
+                        </ul>
+                    </li>
+                {{else}}
+                    <li><a href="{{url}}">{{title}}</a></li>
+                {{/compare}}
+            {{/each}}
+        </ul>
+    </div>
+    <div class="small-12 medium-4 columns">
+        <h5>Resume</h5>
     </div>
 </footer>
 
