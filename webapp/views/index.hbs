@@ -1,11 +1,24 @@
-<main class="row page homepage">
-    <div class="small-12 columns">
-        {{{page.body}}}
-    </div>
-    <div class="small-12 columns">
-        {{page.content.block1.title}}
-        {{{page.content.block1.body}}}
-    </div>
+<main class="page homepage">
+    <section class="row">
+        <div class="small-12 columns">
+            {{{page.body}}}
+        </div>
+    </section>
+    <section class="row square-blocks align-middle">
+        {{#each page.content}}
+            <div class="small-12 medium-6 columns">
+                {{#if body}}
+                    <a href="{{linkUrl}}">
+                        {{title}}
+                        {{{body}}}
+                    </a>
+                {{else}}
+                    {{title}}
+                    <img src="{{image}}" alt="some image"/>
+                {{/if}}
+            </div>
+        {{/each}}
+    </section>
 </main>
 <script type="text/javascript">
     $(function(){
