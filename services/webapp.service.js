@@ -80,8 +80,13 @@ webapp.hbsHelpers = {
  */
 
 webapp.getFirstResult = function(data){
-    if (data && data.length > 0){
-        return data[0];
+    if (data){
+        if (data.length > 0){
+            return data[0];
+        }
+        else {
+            return data;
+        }
     }
     else {
         return false;
@@ -89,6 +94,7 @@ webapp.getFirstResult = function(data){
 };
 
 webapp.getImageUrl = function(data){
+    data = webapp.getFirstResult(data);
     if (webapp.simpleNullCheck(data,'fields')){
         return data.fields.file.url;
     }

@@ -13,7 +13,7 @@ contentModels.getPageModel = function(data){
             id: data.sys.id,
             title: webapp.getValueFromKey(fields,'title'),
             body: webapp.getHTMLValueFromKey(fields,'body'),
-            linkTitle: webapp.simpleNullCheck(fields, 'linkTitle'),
+            linkTitle: webapp.getValueFromKey(fields, 'linkTitle'),
             url: webapp.getUrlValueFromKey(fields,'url'),
             content: webapp.simpleNullCheck(fields,'children')?contentService.contentBlockDigest(fields.children):{},
             layout: webapp.getValueFromKey(fields,'layout'),
@@ -33,11 +33,25 @@ contentModels.getPageModel = function(data){
 
 contentModels.getContentBlockModel = function(data){
     if (webapp.simpleNullCheck(data,'fields')){
-        var fields = data.fields;
+        var fields = data.fields,
+            linkTitle,
+            linkUrl;
+        if (webapp.simpleNullCheck(fields,'internalLink')){
+            var internalLink = webapp.getValueFromKey(fields,'internalLink');
+            linkTitle = webapp.getValueFromKey(internalLink.fields,'linkTitle');
+            linkUrl = webapp.getUrlValueFromKey(internalLink.fields,'url');
+        }
+        else {
+            linkTitle = webapp.getValueFromKey(fields,'externalLinkUrl');
+            linkUrl = webapp.getValueFromKey(fields,'externalLinkTitle');
+        }
         return {
             id: data.sys.id,
             title: webapp.getValueFromKey(fields,'title'),
-            body: webapp.getHTMLValueFromKey(fields,'body')
+            body: webapp.getHTMLValueFromKey(fields,'body'),
+            linkTitle: linkTitle,
+            linkUrl: linkUrl,
+            image: webapp.simpleNullCheck(fields,'featuredImage')?webapp.getImageUrl(fields.featuredImage):''
         };
     }
     else {
