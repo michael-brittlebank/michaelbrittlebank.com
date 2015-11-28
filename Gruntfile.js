@@ -113,7 +113,10 @@ module.exports = function(grunt) {
                 options: {
                     sourceMap: true,
                     preserveComments: false,
-                    screwIE8: true
+                    compress: true,
+                    mangle: true,
+                    mangleProperties: true,
+                    reserveDOMProperties: true
                 }
             },
             default: {
@@ -127,7 +130,10 @@ module.exports = function(grunt) {
                     banner: '/*! <%= grunt.template.today("yyyy-mm-dd") %> */\n',
                     sourceMap: true,
                     preserveComments: false,
-                    screwIE8: true
+                    compress: true,
+                    mangle: true,
+                    mangleProperties: true,
+                    reserveDOMProperties: true
                 }
             }
         },
