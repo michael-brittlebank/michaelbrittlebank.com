@@ -3,6 +3,8 @@ var /* packages */
     exphbs = require('express-handlebars'),
     express = require('express'),
     favicon = require('serve-favicon'),
+    helmet = require('helmet'),
+    contentLength = require('express-content-length-validator'),
     methodOverride = require('method-override'),
     path = require('path'),
 /* config */
@@ -22,6 +24,12 @@ var app = express();
 /**
  * Settings
  */
+
+//security extensions
+app.use(helmet());
+app.use(contentLength.validateMax({max: 9999}));
+
+//favicon
 app.use(favicon(__dirname + '/webapp/public/images/favicon.ico'));
 
 // view engine setup
