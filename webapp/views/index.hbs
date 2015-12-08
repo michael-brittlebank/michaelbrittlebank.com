@@ -6,7 +6,7 @@
     </section>
     <section class="row square-blocks align-stretch">
         {{#each page.content}}
-            <div class="small-12 medium-6 columns">
+            <div class="small-12 medium-6 columns order-{{addition @index 1}} {{gridOrder @index "medium"}}">
                 {{#if body}}
                     <a href="{{linkUrl}}">
                         {{title}}

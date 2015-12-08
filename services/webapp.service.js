@@ -72,6 +72,23 @@ webapp.hbsHelpers = {
             result = options.inverse(this);
         }
         return result;
+    },
+    addition: function(value,add){
+        return parseInt(value)+parseInt(add);
+    },
+    gridOrder: function(index, size) {
+        index = parseInt(index)+1;
+        if (index % 4 === 0 || index % 4 === 3){
+            //skip the first two blocks in a group
+            if (index % 2 === 0){
+                return size+'-order-'+(index-1);
+            } else {
+                return size+'-order-'+(index+1);
+            }
+        }
+        else {
+            return size+'-order-'+index;
+        }
     }
 };
 
