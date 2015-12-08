@@ -106,7 +106,7 @@ module.exports = function(grunt) {
                         "bower_components/velocity/velocity.ui.min.js"
                     ],
                     'webapp/public/js/app.main.min.js': [
-                        'webapp/js/app.js',
+                        'webapp/js/webapp.js',
                         'webapp/js/**/*.js'
                     ]
                 },

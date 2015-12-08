@@ -11,8 +11,8 @@ bubbles.types = {
 };
 
 bubbles.resetPath = function(node){
-    node.duration = site.getRandomInt(10, 20);
-    node.sinWidth = site.getRandomInt(100, site.screen.windowWidth/4);
+    node.duration = site.helpers.getRandomInt(10, 20);
+    node.sinWidth = site.helpers.getRandomInt(100, site.screen.windowWidth/4);
     node.start = null;
     node.progress = null;
     return node;
@@ -29,13 +29,13 @@ bubbles.createBubbles = function(num, classes){
         node = {};
         switch(classes){
             case bubbles.types.smallBubble:
-                width = height = site.getRandomInt(5,25);
+                width = height = site.helpers.getRandomInt(5,25);
                 break;
             case bubbles.types.mediumBubble:
-                width = height = site.getRandomInt(25,50);
+                width = height = site.helpers.getRandomInt(25,50);
                 break;
             case bubbles.types.largeBubble:
-                width = height = site.getRandomInt(50,75);
+                width = height = site.helpers.getRandomInt(50,75);
                 break;
         }
         domNode = document.createElement('div');

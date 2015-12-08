@@ -1,27 +1,30 @@
 <main class="page homepage">
     <section class="row">
-        <div class="small-12 columns">
+        <div class="small-12 columns expand-in">
             {{{page.body}}}
         </div>
     </section>
     <section class="row square-blocks align-stretch">
         {{#each page.content}}
-            <div class="small-12 medium-6 columns order-{{addition @index 1}} {{gridOrder @index "medium"}}">
-                {{#if body}}
-                    <a href="{{linkUrl}}">
-                        {{title}}
-                        {{{body}}}
-                    </a>
-                {{else}}
+            {{#if body}}
+                <div id="homepage-block-{{addition @index 1}}" class="body-highlight small-12 medium-6 columns order-{{addition @index 1}} {{gridOrder @index "medium"}}"
+                     data-url="{{linkUrl}}">
+                    {{{body}}}
+                    <div class="hover-filter hover-filter-back">&nbsp;</div>
+                    <div class="hover-filter hover-filter-front">&nbsp;</div>
+                    <div class="hover-filter hover-filter-text">{{title}}</div>
+                </div>
+            {{else}}
+                <div id="homepage-block-{{addition @index 1}}" class="image-highlight small-12 medium-6 columns order-{{addition @index 1}} {{gridOrder @index "medium"}}">
                     {{title}}
                     <img src="{{image}}" alt="some image"/>
-                {{/if}}
-            </div>
+                </div>
+            {{/if}}
         {{/each}}
     </section>
 </main>
 <script type="text/javascript">
     $(function(){
-        $(".page div").velocity("transition.expandIn");
+        homepage.init();
     });
 </script>

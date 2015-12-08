@@ -1,8 +1,29 @@
 .square-blocks {
   div {
     text-align: center;
-    i {
-      font-size: rem-calc(120);
+    position: relative;
+    &.body-highlight {
+      .fa {
+        font-size: rem-calc(120);
+      }
+      .hover-filter {
+        position:absolute;
+        left:0;
+        right:0;
+        bottom:0;
+        height: 0;
+        &.hover-filter-back {
+          background-color: black;
+          opacity: 0.8;
+        }
+        &.hover-filter-front {
+          background-color: blue;
+          opacity: 0.6;
+        }
+        &.hover-filter-text {
+          color: white;
+        }
+      }
     }
   }
 }

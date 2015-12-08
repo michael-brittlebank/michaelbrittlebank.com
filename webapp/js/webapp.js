@@ -7,8 +7,10 @@ site.screen = {
     windowHeight: window.innerHeight|| site.screen.documentElement.clientHeight|| site.screen.body.clientHeight
 };
 
-site.getRandomInt = function(min, max) {
-    return Math.floor(Math.random() * (max - min)) + min;
+site.helpers = {
+    getRandomInt: function (min, max) {
+        return Math.floor(Math.random() * (max - min)) + min;
+    }
 };
 
 site.init = function(){
