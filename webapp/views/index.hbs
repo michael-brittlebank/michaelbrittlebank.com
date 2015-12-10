@@ -7,15 +7,19 @@
     <section class="row square-blocks align-stretch">
         {{#each page.content}}
             {{#if body}}
-                <div id="homepage-block-{{addition @index 1}}" class="body-highlight small-12 medium-6 columns order-{{addition @index 1}} {{gridOrder @index "medium"}}"
+                <div id="homepage-block-{{addition @index 1}}" class="grid-block body-highlight small-12 medium-6 columns order-{{addition @index 1}} {{gridOrder @index "medium"}}"
                      data-url="{{linkUrl}}">
-                    {{{body}}}
+                    <div class="block-body">
+                        {{{body}}}
+                    </div>
                     <div class="hover-filter hover-filter-back">&nbsp;</div>
                     <div class="hover-filter hover-filter-front">&nbsp;</div>
-                    <div class="hover-filter hover-filter-text">{{title}}</div>
+                    <div class="hover-filter hover-filter-text">
+                        <h2>{{title}}</h2>
+                    </div>
                 </div>
             {{else}}
-                <div id="homepage-block-{{addition @index 1}}" class="image-highlight small-12 medium-6 columns order-{{addition @index 1}} {{gridOrder @index "medium"}}">
+                <div id="homepage-block-{{addition @index 1}}" class="grid-block image-highlight small-12 medium-6 columns order-{{addition @index 1}} {{gridOrder @index "medium"}}">
                     {{title}}
                     <img src="{{image}}" alt="some image"/>
                 </div>

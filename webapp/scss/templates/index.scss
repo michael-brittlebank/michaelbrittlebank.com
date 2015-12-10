@@ -3,8 +3,18 @@
     text-align: center;
     position: relative;
     &.body-highlight {
-      .fa {
-        font-size: rem-calc(120);
+      .block-body {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        height: 105px;
+        .fa {
+          color: $color-badgers-red;
+          font-size: rem-calc(120);
+        }
       }
       .hover-filter {
         position:absolute;
@@ -12,15 +22,18 @@
         right:0;
         bottom:0;
         height: 0;
+        margin: auto;
         &.hover-filter-back {
-          background-color: black;
-          opacity: 0.8;
+          background-color: $color-jays-dark-blue;
+          @include opacity(0.8);
         }
         &.hover-filter-front {
-          background-color: blue;
-          opacity: 0.6;
+          background-color: $color-jays-light-blue;
+          @include opacity(0.9);
         }
         &.hover-filter-text {
+          @include opacity(0);
+          top: 0;
           color: white;
         }
       }
