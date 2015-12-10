@@ -4,7 +4,7 @@
             {{{page.body}}}
         </div>
     </section>
-    <section class="row square-blocks align-stretch">
+    <section class="row square-blocks">
         {{#each page.content}}
             {{#if body}}
                 <div id="homepage-block-{{addition @index 1}}" class="grid-block body-highlight small-12 medium-6 columns order-{{addition @index 1}} {{gridOrder @index "medium"}}"
@@ -21,8 +21,13 @@
                 </div>
             {{else}}
                 <div id="homepage-block-{{addition @index 1}}" class="grid-block image-highlight small-12 medium-6 columns order-{{addition @index 1}} {{gridOrder @index "medium"}}">
-                    {{title}}
-                    <img src="{{image}}" alt="some image"/>
+                    <div class="block-body">
+                        <img src="{{image}}" alt="{{title}}"/>
+                    </div>
+                    <div class="hover-filter hover-filter-back">&nbsp;</div>
+                    <div class="hover-filter hover-filter-text">
+                        <h4>{{title}}</h4>
+                    </div>
                 </div>
             {{/if}}
         {{/each}}
