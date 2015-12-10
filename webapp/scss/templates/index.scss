@@ -39,6 +39,10 @@
             font-size: rem-calc(40);
           }
         }
+        &.hover-filter-overlay {
+          cursor: pointer;
+          @include opacity(0);
+        }
       }
     }
   }
