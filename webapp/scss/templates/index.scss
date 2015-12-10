@@ -10,10 +10,24 @@
         right: 0;
         bottom: 0;
         margin: auto;
-        height: 105px;
-        .fa {
-          color: $color-dark-grey;
-          font-size: rem-calc(120);
+        height: rem-calc(240);
+        .fa-stack {
+          width: rem-calc(240);
+          height: rem-calc(240);
+          line-height: rem-calc(240);
+          .fa {
+            color: $color-black;
+            &.fa-stack-2x {
+              font-size: rem-calc(240);
+
+            }
+            &.fa-stack-1x {
+              font-size: rem-calc(120);
+            }
+            &.fa-inverse {
+              color: $color-white;
+            }
+          }
         }
       }
       .hover-filter {
