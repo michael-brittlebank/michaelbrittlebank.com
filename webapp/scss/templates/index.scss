@@ -34,7 +34,10 @@
         &.hover-filter-text {
           @include opacity(0);
           top: 0;
-          color: white;
+          h2 {
+            color: white;
+            font-size: rem-calc(40);
+          }
         }
       }
     }
