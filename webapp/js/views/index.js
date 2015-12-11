@@ -98,6 +98,7 @@ homepage.init = function(){
     $(window).load(function(){
             homepage.grid.makeSquare();
             homepage.grid.revealBlocks();
+            $('.banner').velocity({opacity:0.5},{duration:1500});
         })
         .resize(function() {
             homepage.grid.makeSquare();

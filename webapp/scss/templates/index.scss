@@ -4,7 +4,7 @@
     @include breakpoint(large) {
       height:150px;
     }
-    @include opacity(0.5);
+    @include opacity(0);
     &.top {
       background-color: $color-badgers-red;
     }
