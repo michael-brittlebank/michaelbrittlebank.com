@@ -21,7 +21,9 @@ pages.getIndex = function(req, res, next) {
         .then(function (response) {
             var content = response[0];
             res.locals.page = contentService.pageDigest(content);
-            return res.render('index');
+            return res.render('index', {
+                layout: 'layout-index'
+            });
         })
         .catch(function (err) {
             return next(err);
@@ -42,10 +44,13 @@ pages.getDefaultPage = function(req, res, next) {
             if (webapp.simpleNullCheck(page, 'layout')) {
                 switch (page.layout) {
                     case 'Bubbles':
-                        res.render('page-bubbles');
+                        res.render('portfolio-bubbles');
                         break;
                     case 'Scales':
-                        res.render('page-scales');
+                        res.render('portfolio-scales');
+                        break;
+                    case 'Portfolio':
+                        res.render('page-portfolio');
                         break;
                     default:
                         res.render('page');

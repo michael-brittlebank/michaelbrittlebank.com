@@ -1,8 +1,6 @@
 <main class="page homepage">
     <section class="row">
-        <div class="small-12 columns expand-in">
-            {{{page.body}}}
-        </div>
+        <div class="small-12 banner top">&nbsp;</div>
     </section>
     <section class="row square-blocks">
         {{#each page.content}}
@@ -26,11 +24,14 @@
                     </div>
                     <div class="hover-filter hover-filter-back">&nbsp;</div>
                     <div class="hover-filter hover-filter-text">
-                        <h4>{{title}}</h4>
+                        <h3>{{title}}</h3>
                     </div>
                 </div>
             {{/if}}
         {{/each}}
+    </section>
+    <section class="row">
+        <div class="small-12 banner bottom">&nbsp;</div>
     </section>
 </main>
 <script type="text/javascript">

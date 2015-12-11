@@ -1,85 +1,100 @@
-.square-blocks {
-  div {
-    text-align: center;
-    position: relative;
-    padding: 0;
-    &.body-highlight {
-      .block-body {
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        margin: auto;
-        height: rem-calc(240);
-        .fa-stack {
-          width: rem-calc(240);
-          height: rem-calc(240);
-          line-height: rem-calc(240);
-          .fa {
-            color: $color-black;
-            &.fa-stack-2x {
-              font-size: rem-calc(240);
-
-            }
-            &.fa-stack-1x {
-              font-size: rem-calc(120);
-            }
-            &.fa-inverse {
-              color: $color-white;
-            }
-          }
-        }
-      }
-      .hover-filter {
-        position:absolute;
-        left:0;
-        right:0;
-        bottom:0;
-        height: 0;
-        margin: auto;
-        &.hover-filter-back {
-          background-color: $color-jays-dark-blue;
-          @include opacity(0.8);
-        }
-        &.hover-filter-front {
-          background-color: $color-jays-light-blue;
-          @include opacity(0.9);
-        }
-        &.hover-filter-text {
-          top: 0;
-          @include opacity(0);
-          h2 {
-            color: white;
-            font-size: rem-calc(40);
-          }
-        }
-        &.hover-filter-overlay {
-          cursor: pointer;
-          @include opacity(0);
-        }
-      }
+.page.homepage {
+  .banner {
+    height:100px;
+    @include breakpoint(large) {
+      height:150px;
     }
-    &.image-highlight {
-      .hover-filter {
-        position:absolute;
-        left:0;
-        right:0;
-        bottom:0;
-        margin: auto;
-        &.hover-filter-back {
-          height: 100%;
-          width: 0;
-          background-color: $color-grey;
-          @include opacity(0.8);
+    @include opacity(0.5);
+    &.top {
+      background-color: $color-badgers-red;
+    }
+    &.bottom {
+      background-color: black;
+    }
+  }
+  .square-blocks {
+    div {
+      text-align: center;
+      position: relative;
+      padding: 0;
+      &.body-highlight {
+        .block-body {
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          margin: auto;
+          height: rem-calc(240);
+          .fa-stack {
+            width: rem-calc(240);
+            height: rem-calc(240);
+            line-height: rem-calc(240);
+            .fa {
+              color: $color-black;
+              &.fa-stack-2x {
+                font-size: rem-calc(240);
+
+              }
+              &.fa-stack-1x {
+                font-size: rem-calc(120);
+              }
+              &.fa-inverse {
+                color: $color-white;
+              }
+            }
+          }
         }
-        &.hover-filter-text {
-          top: 75%;
-          height:0;
-          @include opacity(0);
-          h4 {
-            color: white;
-            font-size: rem-calc(25);
+        .hover-filter {
+          position: absolute;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          height: 0;
+          margin: auto;
+          &.hover-filter-back {
+            background-color: $color-jays-dark-blue;
+            @include opacity(0.8);
+          }
+          &.hover-filter-front {
+            background-color: $color-jays-light-blue;
+            @include opacity(0.9);
+          }
+          &.hover-filter-text {
+            top: 0;
+            @include opacity(0);
+            h2 {
+              color: white;
+              font-size: rem-calc(40);
+            }
+          }
+          &.hover-filter-overlay {
+            cursor: pointer;
+            @include opacity(0);
+          }
+        }
+      }
+      &.image-highlight {
+        .hover-filter {
+          position: absolute;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          margin: auto;
+          &.hover-filter-back {
+            height: 100%;
+            width: 0;
+            background-color: $color-grey;
+            @include opacity(0.65);
+          }
+          &.hover-filter-text {
+            top: 75%;
+            height: 0;
+            @include opacity(0);
+            h3 {
+              color: white;
+              font-size: rem-calc(35);
+            }
           }
         }
       }
