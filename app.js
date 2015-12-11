@@ -16,6 +16,7 @@ var /* packages */
     contentService = require('./services/content.service'),
 /* routes and controllers */
     pageRoutes = require('./routes/pages.routes'),
+    portfolioRoutes = require('./routes/portfolio.routes'),
     localRoutes = require('./routes/local.routes'),
     pageController = require('./controllers/pages.controller');
 
@@ -91,6 +92,7 @@ if (webapp.app.isLocalConfig()){
     app.use('/', localRoutes);
 }
 else {
+    app.use('/portfolio/*', portfolioRoutes);
     app.use('/', pageRoutes);
 }
 

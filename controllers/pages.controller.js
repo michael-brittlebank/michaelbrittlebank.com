@@ -43,12 +43,6 @@ pages.getDefaultPage = function(req, res, next) {
             res.locals.page = page;
             if (webapp.simpleNullCheck(page, 'layout')) {
                 switch (page.layout) {
-                    case 'Bubbles':
-                        res.render('portfolio-bubbles');
-                        break;
-                    case 'Scales':
-                        res.render('portfolio-scales');
-                        break;
                     case 'Portfolio':
                         res.render('page-portfolio');
                         break;

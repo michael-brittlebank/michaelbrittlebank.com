@@ -9,6 +9,7 @@ var /* packages */
 
 contentfulService.contentTypes = {
     pages: config.contentful.contentTypes.pages,
+    portfolio: config.contentful.contentTypes.portfolio,
     contentBlock: config.contentful.contentTypes.contentBlock,
     quote: config.contentful.contentTypes.quote,
     menu: config.contentful.contentTypes.menu

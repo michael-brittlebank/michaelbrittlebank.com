@@ -17,6 +17,18 @@ contentService.pageDigest = function (data) {
     }
 };
 
+contentService.portfolioDigest = function(data){
+    if (data.length){
+        data = webapp.getFirstResult(data);
+    }
+    if (data){
+        return contentModel.getPortfolioModel(data);
+    }
+    else {
+        return {};
+    }
+};
+
 contentService.contentBlockDigest = function(data){
     var result = {},
         i = 1;
