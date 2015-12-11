@@ -13,10 +13,12 @@
     }
   }
   .square-blocks {
-    div {
+    .grid-block {
       text-align: center;
       position: relative;
       padding: 0;
+      z-index: -1;
+      @include opacity(0);
       &.body-highlight {
         .block-body {
           position: absolute;

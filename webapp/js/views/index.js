@@ -37,6 +37,22 @@ homepage.grid = {
     },
     makeSquare: function(){
         $(squareBlocks).css('height', $($(squareBlocks)[0]).css('width'));
+    },
+    showBlock: function(block, delay){
+        setTimeout(function(){
+            $(block).css({'z-index': 'auto'}).velocity('transition.fadeIn',{duration:1500});
+        }, delay);
+    },
+    revealBlocks: function(){
+        var blockOrder = [
+            Math.round(Math.random())?1:3,
+            Math.round(Math.random())?2:4
+        ];
+        blockOrder.push(blockOrder.indexOf(1) === -1?1:3);
+        blockOrder.push(blockOrder.indexOf(2) === -1?2:4);
+        for (var i = 0; i < blockOrder.length;i++){
+            homepage.grid.showBlock($('#homepage-block-'+blockOrder[i]), 250*(i+1));
+        }
     }
 };
 
@@ -81,6 +97,7 @@ homepage.init = function(){
         });
     $(window).load(function(){
             homepage.grid.makeSquare();
+            homepage.grid.revealBlocks();
         })
         .resize(function() {
             homepage.grid.makeSquare();
