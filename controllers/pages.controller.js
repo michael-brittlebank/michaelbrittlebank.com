@@ -1,4 +1,5 @@
 var /* packages */
+    _ = require('lodash'),
     promise = require('bluebird'),
 /* services */
     contentfulService = require('../services/contentful.service'),
@@ -30,6 +31,30 @@ pages.getIndex = function(req, res, next) {
         });
 };
 
+pages.getPortfolioPage = function(req, res, next){
+    var params = {
+        content_type: contentfulService.contentTypes.portfolio,
+        limit: 999
+    };
+    return promise
+        .all([contentfulService.getEntries(params)])
+        .then(function (response) {
+            var portfolioItems = [];
+            response[0].forEach(function(entry){
+               portfolioItems.push(contentService.portfolioDigest(entry));
+            });
+            res.locals.portfolio = _.groupBy(portfolioItems,function(entry){
+                return entry.portfolioGroup;
+            });//todo, sort array by key group
+            console.log('portfolios');
+            console.log(JSON.stringify(res.locals.portfolio));
+            res.render('page-portfolio');
+        })
+        .catch(function (err) {
+            return next(err);
+        });
+};
+
 pages.getDefaultPage = function(req, res, next) {
     var params = {
         content_type: contentfulService.contentTypes.pages,
@@ -44,7 +69,7 @@ pages.getDefaultPage = function(req, res, next) {
             if (webapp.simpleNullCheck(page, 'layout')) {
                 switch (page.layout) {
                     case 'Portfolio':
-                        res.render('page-portfolio');
+                        pages.getPortfolioPage(res,res,next);
                         break;
                     default:
                         res.render('page');
