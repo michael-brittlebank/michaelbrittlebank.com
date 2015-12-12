@@ -6,12 +6,19 @@
     <div class="small-12">
         {{#each portfolio}}
             {{name}}
-            <div class="small-12 columns">
+            <div class="slider">
                 {{#each items}}
-                    {{title}}
-                    {{url}}
+                    <div>
+                        {{title}}
+                        {{url}}
+                    </div>
                 {{/each}}
             </div>
         {{/each}}
     </div>
 </main>
+<script type="text/javascript">
+    $(function(){
+        portfolio.init();
+    });
+</script>
