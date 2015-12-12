@@ -101,6 +101,11 @@ module.exports = function(grunt) {
                     'webapp/public/js/app.header.min.js': [
                         "bower_components/jquery/dist/jquery.min.js"
                     ]
+                },
+                options: {
+                    sourceMap: true,
+                    preserveComments: 'all',
+                    compress: true
                 }
             },
             main: {
@@ -115,7 +120,6 @@ module.exports = function(grunt) {
                     preserveComments: false,
                     compress: true,
                     mangle: true,
-                    mangleProperties: true,
                     reserveDOMProperties: true
                 }
             },
@@ -128,6 +132,11 @@ module.exports = function(grunt) {
                         "bower_components/velocity/velocity.ui.min.js",
                         "bower_components/slick-carousel/slick/slick.min.js"
                     ]
+                },
+                options: {
+                    sourceMap: true,
+                    preserveComments: true,
+                    compress: true
                 }
             }
         },
