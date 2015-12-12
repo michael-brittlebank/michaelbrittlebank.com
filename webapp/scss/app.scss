@@ -6,6 +6,9 @@
 @import "framework/prefixer";
 @import "settings";
 @import "foundation";
+@import "font-awesome";
+@import "slick";
+@import "slick-theme";
 @include foundation-global-styles;
 //@include foundation-grid;
 @include foundation-flex-grid;

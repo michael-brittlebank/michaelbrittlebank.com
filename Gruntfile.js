@@ -89,9 +89,8 @@ module.exports = function(grunt) {
                     trace: true,
                     loadPath: [
                         "bower_components/foundation-sites/scss",
-                        "bower_components/components-font-awesome/css/font-awesome.min.css",
-                        "bower_components/slick-carousel/slick/slick.css",
-                        "bower_components/slick-carousel/slick/slick-theme.css"
+                        "bower_components/components-font-awesome/scss",
+                        "bower_components/slick-carousel/slick"
                     ]
                 }
             }
