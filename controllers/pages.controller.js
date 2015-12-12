@@ -39,13 +39,21 @@ pages.getPortfolioPage = function(req, res, next){
     return promise
         .all([contentfulService.getEntries(params)])
         .then(function (response) {
-            var portfolioItems = [];
+            var portfolioItems = [],
+                processedItems = [];
             response[0].forEach(function(entry){
-               portfolioItems.push(contentService.portfolioDigest(entry));
+                portfolioItems.push(contentService.portfolioDigest(entry));
             });
-            res.locals.portfolio = _.groupBy(portfolioItems,function(entry){
+            portfolioItems = _.groupBy(portfolioItems,function(entry){
                 return entry.portfolioGroup;
-            });//todo, sort array by key group
+            });
+            for(var key in portfolioItems){
+                processedItems.push({
+                    name: key,
+                    items: portfolioItems[key]
+                });
+            }
+            res.locals.portfolio = _.sortBy(processedItems, 'name');//todo, sort array by key group
             console.log('portfolios');
             console.log(JSON.stringify(res.locals.portfolio));
             res.render('page-portfolio');
