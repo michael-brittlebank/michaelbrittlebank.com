@@ -88,23 +88,24 @@ module.exports = function(grunt) {
                     style: 'compressed',
                     trace: true,
                     loadPath: [
-                        "bower_components/foundation-sites/scss"
+                        "bower_components/foundation-sites/scss",
+                        "bower_components/components-font-awesome/css/font-awesome.min.css",
+                        "bower_components/slick-carousel/slick/slick.css",
+                        "bower_components/slick-carousel/slick/slick-theme.css"
                     ]
                 }
             }
         },
         uglify: {
-            build: {
+            header: {
                 files: {
                     'webapp/public/js/app.header.min.js': [
                         "bower_components/jquery/dist/jquery.min.js"
-                    ],
-                    'webapp/public/js/app.footer.min.js': [
-                        "bower_components/modernizr/modernizr.js",
-                        "bower_components/foundation/js/foundation.min.js",
-                        "bower_components/velocity/velocity.min.js",
-                        "bower_components/velocity/velocity.ui.min.js"
-                    ],
+                    ]
+                }
+            },
+            main: {
+                files: {
                     'webapp/public/js/app.main.min.js': [
                         'webapp/js/webapp.js',
                         'webapp/js/**/*.js'
@@ -119,21 +120,15 @@ module.exports = function(grunt) {
                     reserveDOMProperties: true
                 }
             },
-            default: {
+            footer: {
                 files: {
-                    'webapp/public/js/app.main.min.js': [
-                        'webapp/js/index.js',
-                        'webapp/js/**/*.js'
+                    'webapp/public/js/app.footer.min.js': [
+                        "bower_components/modernizr/modernizr.js",
+                        "bower_components/foundation/js/foundation.min.js",
+                        "bower_components/velocity/velocity.min.js",
+                        "bower_components/velocity/velocity.ui.min.js",
+                        "bower_components/slick-carousel/slick/slick.min.js"
                     ]
-                },
-                options: {
-                    banner: '/*! <%= grunt.template.today("yyyy-mm-dd") %> */\n',
-                    sourceMap: true,
-                    preserveComments: false,
-                    compress: true,
-                    mangle: true,
-                    mangleProperties: true,
-                    reserveDOMProperties: true
                 }
             }
         },
@@ -153,7 +148,7 @@ module.exports = function(grunt) {
             },
             frontJS: {
                 files: watchFiles.frontJS,
-                tasks: ['jshint','uglify:default'],
+                tasks: ['jshint','uglify:main'],
                 options: {
                     livereload: true
                 }
@@ -180,8 +175,10 @@ module.exports = function(grunt) {
 
     // build task, for initializing environment after clone or UI dependencies update
     grunt.registerTask('build', [
-        'newer:uglify:build',
-        'newer:sass',
+        'uglify:header',
+        'uglify:main',
+        'uglify:footer',
+        'sass',
         'newer:copy:coreImages',
         'newer:copy:fonts',
         'newer:imagemin'
@@ -191,7 +188,9 @@ module.exports = function(grunt) {
     grunt.registerTask('dev', [
         'env:dev',
         'loadConfig',
-        'newer:uglify:build',
+        'newer:uglify:header',
+        'newer:uglify:main',
+        'newer:uglify:footer',
         'newer:sass',
         'newer:copy:coreImages',
         'newer:copy:fonts',
@@ -203,7 +202,9 @@ module.exports = function(grunt) {
     grunt.registerTask('local', [
         'env:local',
         'loadConfig',
-        'newer:uglify:build',
+        'newer:uglify:header',
+        'newer:uglify:main',
+        'newer:uglify:footer',
         'newer:sass',
         'newer:copy:coreImages',
         'newer:copy:fonts',
