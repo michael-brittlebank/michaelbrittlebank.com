@@ -19,20 +19,24 @@ module.exports = function(grunt) {
             }
         },
         copy :{
-            coreImages: {
+            images: {
                 expand: true,
-                cwd: 'webapp/assets/images/',
-                src: '*.ico',
+                src: [
+                    'webapp/assets/images/**',
+                    'bower_components/slick-carousel/slick/*.gif'
+                ],
                 dest: 'webapp/public/images/',
                 flatten: true,
                 filter: 'isFile'
             },
             fonts: {
                 expand: true,
-                cwd: 'webapp/fonts/',
-                src: '**',
+                src: [
+                    'webapp/fonts/**',
+                    'bower_components/slick-carousel/slick/fonts/**'
+                ],
                 dest: 'webapp/public/fonts/',
-                flatten: false,
+                flatten: true,
                 filter: 'isFile'
             }
         },
@@ -187,7 +191,7 @@ module.exports = function(grunt) {
         'uglify:main',
         'uglify:footer',
         'sass',
-        'newer:copy:coreImages',
+        'newer:copy:images',
         'newer:copy:fonts',
         'newer:imagemin'
     ]);
@@ -200,7 +204,7 @@ module.exports = function(grunt) {
         'newer:uglify:main',
         'newer:uglify:footer',
         'newer:sass',
-        'newer:copy:coreImages',
+        'newer:copy:images',
         'newer:copy:fonts',
         'newer:imagemin',
         'concurrent'
@@ -214,7 +218,7 @@ module.exports = function(grunt) {
         'newer:uglify:main',
         'newer:uglify:footer',
         'newer:sass',
-        'newer:copy:coreImages',
+        'newer:copy:images',
         'newer:copy:fonts',
         'newer:imagemin',
         'concurrent'

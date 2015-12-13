@@ -1,8 +1,8 @@
 @import url(https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,300italic);
-@include font-face(texgyreschola-regular, /fonts/texgyreschola-regular/texgyreschola-regular-webfont);
-@include font-face(texgyreschola-italic, /fonts/texgyreschola-italic/texgyreschola-italic-webfont);
-@include font-face(texgyreschola-bold, /fonts/texgyreschola-bold/texgyreschola-bold-webfont);
-@include font-face(texgyreschola-bolditalic, /fonts/texgyreschola-bolditalic/texgyreschola-bolditalic-webfont);
+@include font-face(texgyreschola-regular, /fonts/texgyreschola-regular-webfont);
+@include font-face(texgyreschola-italic, /fonts/texgyreschola-italic-webfont);
+@include font-face(texgyreschola-bold, /fonts/texgyreschola-bold-webfont);
+@include font-face(texgyreschola-bolditalic, /fonts/texgyreschola-bolditalic-webfont);
 
 $font-open-sans-condensed: 'Open Sans Condensed', "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
 $font-texgyre-regular: 'texgyreschola-regular', Georgia, Cambria, "Times New Roman", Times, serif;
