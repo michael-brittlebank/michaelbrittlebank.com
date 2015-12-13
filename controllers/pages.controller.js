@@ -53,9 +53,7 @@ pages.getPortfolioPage = function(req, res, next){
                     items: portfolioItems[key]
                 });
             }
-            res.locals.portfolio = _.sortBy(processedItems, 'name');//todo, sort array by key group
-            console.log('portfolios');
-            console.log(JSON.stringify(res.locals.portfolio));
+            res.locals.portfolio = _.sortBy(processedItems, 'name');
             res.render('page-portfolio');
         })
         .catch(function (err) {
