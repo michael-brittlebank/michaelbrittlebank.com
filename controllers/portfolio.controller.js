@@ -27,7 +27,6 @@ portfolio.getDefaultPortfolioPage = function(req, res, next) {
                         res.render('portfolio-bubbles');
                         break;
                     case 'Scales':
-                        //todo, add portfolio cpt and routes
                         res.render('portfolio-scales');
                         break;
                     default:
