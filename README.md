@@ -18,6 +18,7 @@
 * styling - color scheme dependent on time of day and temperature
 * content entry in contentful
 * set up analytics
+* set up seo
 * add quote of the day
 
 ### 3
