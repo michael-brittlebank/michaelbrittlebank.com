@@ -1,0 +1,22 @@
+.page.portfolio {
+  .portfolio-carousel {
+    height: 250px;
+    background-color: $color-jays-light-blue;
+    max-width:75%;
+    min-width:300px;
+    margin: auto;
+    .portfolio-item {
+      text-align: center;
+      div {
+        margin: 10px;
+        padding: 10px;
+        height: 230px;
+        background-color: white;
+      }
+      &:focus {
+        border: none;
+        outline: none;
+      }
+    }
+  }
+}

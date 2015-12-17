@@ -1,15 +1,20 @@
-<main class="row page homepage">
+<main class="row page portfolio">
     <div class="small-12 columns">
-        {{{page.body}}}
+        <div class="callout">
+            <h5>{{quote.body}}</h5>
+            <p>{{quote.author}}</p>
+        </div>
     </div>
     <div class="small-12">
         {{#each portfolio}}
             {{name}}
             <div class="portfolio-carousel">
                 {{#each items}}
-                    <div>
-                        {{title}}
-                        {{url}}
+                    <div class="portfolio-item">
+                        <div>
+                            {{title}}
+                            {{url}}
+                        </div>
                     </div>
                 {{/each}}
             </div>
