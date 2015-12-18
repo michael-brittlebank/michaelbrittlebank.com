@@ -8,15 +8,17 @@
     <div class="small-12 portfolio-sliders">
         {{#each portfolio}}
             <h2>{{name}}</h2>
-            <div class="portfolio-carousel">
-                {{#each items}}
-                    <div class="portfolio-item">
-                        <div>
-                            <h3>{{title}}</h3>
-                            {{url}}
+            <div class="slider-container">
+                <div class="portfolio-carousel">
+                    {{#each items}}
+                        <div class="portfolio-item">
+                            <div>
+                                <h3>{{title}}</h3>
+                                {{url}}
+                            </div>
                         </div>
-                    </div>
-                {{/each}}
+                    {{/each}}
+                </div>
             </div>
         {{/each}}
     </div>
