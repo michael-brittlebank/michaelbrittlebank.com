@@ -98,7 +98,8 @@ $slick-opacity-not-active: 0.25 !default;
 }
 
 .slick-prev {
-  left: -35px;
+  left: -45px;
+  left: -45px;
   [dir="rtl"] & {
     left: auto;
     right: -25px;
@@ -112,7 +113,7 @@ $slick-opacity-not-active: 0.25 !default;
 }
 
 .slick-next {
-  right: -35px;
+  right: -45px;
   [dir="rtl"] & {
     left: -25px;
     right: auto;
