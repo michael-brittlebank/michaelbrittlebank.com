@@ -1,18 +1,18 @@
 <main class="row page portfolio">
     <div class="small-12 columns">
         <div class="callout">
-            <h5>{{quote.body}}</h5>
-            <p>{{quote.author}}</p>
+            {{{quote.body}}}
+            <h5>{{quote.author}}</h5>
         </div>
     </div>
-    <div class="small-12">
+    <div class="small-12 portfolio-sliders">
         {{#each portfolio}}
-            {{name}}
+            <h2>{{name}}</h2>
             <div class="portfolio-carousel">
                 {{#each items}}
                     <div class="portfolio-item">
                         <div>
-                            {{title}}
+                            <h3>{{title}}</h3>
                             {{url}}
                         </div>
                     </div>

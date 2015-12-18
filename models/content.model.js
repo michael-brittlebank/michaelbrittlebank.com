@@ -97,6 +97,21 @@ contentModels.getMenuModel = function(data){
     }
 };
 
+contentModels.getQuoteModel = function(data){
+    if (webapp.simpleNullCheck(data,'fields')){
+        var fields = data.fields;
+        return {
+            id: data.sys.id,
+            author: webapp.getValueFromKey(fields,'author'),
+            source: webapp.getValueFromKey(fields,'source'),
+            body: webapp.getHTMLValueFromKey(fields,'body')
+        };
+    }
+    else {
+        return {};
+    }
+};
+
 contentModels.getMenuItemModel = function(data){
     if (webapp.simpleNullCheck(data,'fields')){
         var fields = data.fields;

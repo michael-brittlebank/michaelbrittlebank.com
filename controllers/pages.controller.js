@@ -54,7 +54,23 @@ pages.getPortfolioPage = function(req, res, next){
                 });
             }
             res.locals.portfolio = _.sortBy(processedItems, 'name');
-            res.render('page-portfolio');
+            var params = {
+                content_type: contentfulService.contentTypes.quote,
+                limit: 999
+            };
+            return promise
+                .all([contentfulService.getEntries(params)])
+                .then(function (response) {
+                    var quoteItems = [];
+                    response[0].forEach(function(entry){
+                        quoteItems.push(contentService.quoteDigest(entry));
+                    });
+                    res.locals.quote = _.sample(quoteItems);
+                    res.render('page-portfolio');
+                })
+                .catch(function (err) {
+                    return next(err);
+                });
         })
         .catch(function (err) {
             return next(err);

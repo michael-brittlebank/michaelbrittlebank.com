@@ -29,6 +29,18 @@ contentService.portfolioDigest = function(data){
     }
 };
 
+contentService.quoteDigest = function(data){
+    if (data.length){
+        data = webapp.getFirstResult(data);
+    }
+    if (data){
+        return contentModel.getQuoteModel(data);
+    }
+    else {
+        return {};
+    }
+};
+
 contentService.contentBlockDigest = function(data){
     var result = {},
         i = 1;
