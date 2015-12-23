@@ -8,40 +8,32 @@ var homepage = {},
 
 homepage.grid = {
     activateBodyBlock: function(){
-        $(activeBodyBlock).find('.hover-filter-front').first().velocity({height: '50%'},{duration:500,queue: false});
+        $(activeBodyBlock).find('.hover-filter-front').first().velocity({height: '50%'},{duration:500});
         $(activeBodyBlock).find('.hover-filter-overlay').first().css({height: '100%'});
-        setTimeout(function() {
-            $(activeBodyBlock).find('.hover-filter-back').first().velocity({height: '50%',bottom:'50%'},{duration:500,queue: false});
-            setTimeout(function() {
-                $(activeBodyBlock).find('.hover-filter-text').first().velocity({height: '65px',opacity:'1'},{duration:500,queue: false});
-            }, 300);
-        }, 350);
+        $(activeBodyBlock).find('.hover-filter-back').first().velocity({height: '50%',bottom:'50%'},{duration:500,delay:350});
+        $(activeBodyBlock).find('.hover-filter-text').first().velocity({height: '65px',opacity:'1'},{duration:500,delay:300});
     },
     deactivateBodyBlock: function(){
         $(activeBodyBlock).find('.hover-filter-overlay').first().css({height: '0'});
-        $(activeBodyBlock).find('.hover-filter-back').first().velocity('stop', true).velocity({height: '0',bottom:'0'});
-        $(activeBodyBlock).find('.hover-filter-text').first().velocity('stop', true).velocity({height: '0',opacity:'0'});
-        $(activeBodyBlock).find('.hover-filter-front').first().velocity('stop', true).velocity({height: '0'});
+        $(activeBodyBlock).find('.hover-filter-back').first().velocity('stop').velocity({height: '0',bottom:'0'});
+        $(activeBodyBlock).find('.hover-filter-text').first().velocity('stop').velocity({height: '0',opacity:'0'});
+        $(activeBodyBlock).find('.hover-filter-front').first().velocity('stop').velocity({height: '0'});
         activeBodyBlock = null;
     },
     activateImageBlock: function(){
-        $(activeImageBlock).find('.hover-filter-back').first().velocity({width: '100%'},{duration:500,queue: false});
-        setTimeout(function() {
-            $(activeImageBlock).find('.hover-filter-text').first().velocity({opacity:'1'},{duration:500,queue: false});
-        }, 300);
+        $(activeImageBlock).find('.hover-filter-back').first().velocity({width: '100%'},{duration:500});
+        $(activeImageBlock).find('.hover-filter-text').first().velocity({opacity:'1'},{duration:500,delay:300});
     },
     deactivateImageBlock: function(){
-        $(activeImageBlock).find('.hover-filter-back').first().velocity('stop', true).velocity({width: '0'});
-        $(activeImageBlock).find('.hover-filter-text').first().velocity('stop', true).velocity({opacity:'0'});
+        $(activeImageBlock).find('.hover-filter-back').first().velocity('stop').velocity({width: '0'});
+        $(activeImageBlock).find('.hover-filter-text').first().velocity('stop').velocity({opacity:'0'});
         activeImageBlock = null;
     },
     makeSquare: function(){
         $(squareBlocks).css('height', $($(squareBlocks)[0]).css('width'));
     },
     showBlock: function(block, delay){
-        setTimeout(function(){
-            $(block).css({'z-index': 'auto'}).velocity('transition.fadeIn',{duration:1500});
-        }, delay);
+        $(block).css({visibility: "visible"}).velocity('transition.fadeIn',{duration:1500,delay:delay});
     },
     revealBlocks: function(){
         var blockOrder = [

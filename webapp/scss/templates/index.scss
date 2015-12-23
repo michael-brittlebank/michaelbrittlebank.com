@@ -17,7 +17,7 @@
       text-align: center;
       position: relative;
       padding: 0;
-      z-index: -1;
+      visibility: hidden;
       overflow: hidden;
       @include opacity(0);
       &.body-highlight {
