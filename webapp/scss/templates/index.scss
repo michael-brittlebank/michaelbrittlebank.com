@@ -17,9 +17,8 @@
       text-align: center;
       position: relative;
       padding: 0;
-      visibility: hidden;
       overflow: hidden;
-      @include opacity(0);
+      @include fade-in-default;
       &.body-highlight {
         .block-body {
           position: absolute;

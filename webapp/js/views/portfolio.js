@@ -2,9 +2,9 @@ var portfolio = {};
 
 portfolio.init = function(){
     //loading animation
-    $('#container-quote').velocity('transition.fadeIn',{duration:1000, delay:500});
-    $('.slider-header').velocity('transition.fadeIn',{duration:1000, delay:750});
-    $('.slider-container').velocity('transition.fadeIn',{duration:1500, delay:1000});
+    site.animation.fadeIn('#container-quote',1000,500);
+    site.animation.fadeIn('.slider-header',1000,750);
+    site.animation.fadeIn('.slider-container',1500,1000);
     //carousel init
     $('.portfolio-carousel').slick({
         dots: true,

@@ -13,11 +13,11 @@
   #container-sliders {
     .slider-header {
       margin: 50px 0 20px 10%;
-      @include opacity(0);
+      @include fade-in-default;
     }
     .slider-container {
       background-color: rgba(54,34,32,0.3);
-      @include opacity(0);
+      @include fade-in-default;
       .portfolio-carousel {
         background-color: $color-dark-grey;
         height: 250px;
@@ -31,6 +31,19 @@
             padding: 10px;
             height: 230px;
             background-color: white;
+            position: relative;
+            cursor:pointer;
+            .fa {
+              position: absolute;
+              top: 0;
+              bottom: 0;
+              left: 0;
+              right: 0;
+              margin: auto;
+              line-height: rem-calc(64);
+              height: rem-calc(65);
+              font-size: rem-calc(64);
+            }
           }
           &:focus {
             border: none;

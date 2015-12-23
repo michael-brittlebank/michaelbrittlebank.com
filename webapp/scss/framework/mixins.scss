@@ -20,3 +20,8 @@
     src: $src;
   }
 }
+
+@mixin fade-in-default {
+  visibility: hidden;
+  @include opacity(0);
+}

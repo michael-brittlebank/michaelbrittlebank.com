@@ -1,6 +1,7 @@
 footer {
   text-align: center;
   margin-top: 200px;
+  @include fade-in-default;
   #footer-find-me {
     padding-top: 50px;
     h5 {

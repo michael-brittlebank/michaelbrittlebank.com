@@ -13,12 +13,18 @@ site.helpers = {
     }
 };
 
+site.animation = {
+    fadeIn: function(element,duration, delay){
+        $(element).css({visibility:'visible'}).velocity('transition.fadeIn',{duration:duration,delay:delay});
+    }
+};
+
 site.init = function(){
     //foundation init
     $(document).foundation();
     //loading animation
-    $('header').velocity('transition.fadeIn',{duration:1500});
-    $('footer').velocity('transition.fadeIn',{duration:1500, delay:1000});
+    site.animation.fadeIn('header',1500,0);
+    site.animation.fadeIn('footer',1500,1000);
     //polyfill
     /* requestAnimationFrame polyfill
      https://gist.github.com/paulirish/1579671

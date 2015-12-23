@@ -32,9 +32,6 @@ homepage.grid = {
     makeSquare: function(){
         $(squareBlocks).css('height', $($(squareBlocks)[0]).css('width'));
     },
-    showBlock: function(block, delay){
-        $(block).css({visibility: "visible"}).velocity('transition.fadeIn',{duration:1500,delay:delay});
-    },
     revealBlocks: function(){
         var blockOrder = [
             Math.round(Math.random())?1:3,
@@ -43,7 +40,7 @@ homepage.grid = {
         blockOrder.push(blockOrder.indexOf(1) === -1?1:3);
         blockOrder.push(blockOrder.indexOf(2) === -1?2:4);
         for (var i = 0; i < blockOrder.length;i++){
-            homepage.grid.showBlock($('#homepage-block-'+blockOrder[i]), 250*(i+1));
+            site.animation.fadeIn('#homepage-block-'+blockOrder[i],1500,250*(i+1));
         }
     }
 };
