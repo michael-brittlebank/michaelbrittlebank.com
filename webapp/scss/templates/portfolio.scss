@@ -38,7 +38,10 @@
   .modals {
     .reveal {
       &.small {
-       width: 50%!important;
+        width: 50%!important;
+        @include breakpoint(small only) {
+          width: 80%!important;
+        }
       }
     }
   }

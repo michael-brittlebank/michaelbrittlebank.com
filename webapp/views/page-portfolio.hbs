@@ -13,8 +13,8 @@
                     {{#each items}}
                         <div class="portfolio-item" data-open="modal-{{../name}}-{{@index}}">
                             <div>
+                                {{{featuredIcon}}}
                                 <h3>{{title}}</h3>
-                                {{url}}
                             </div>
                         </div>
                     {{/each}}
@@ -31,6 +31,7 @@
                     </button>
                     <h3>{{title}}</h3>
                     {{{body}}}
+                    <a href="{{url}}" class="button">View</a>
                 </div>
             {{/each}}
         {{/each}}
