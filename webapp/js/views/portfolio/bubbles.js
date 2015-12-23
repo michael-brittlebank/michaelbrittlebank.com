@@ -18,14 +18,14 @@ bubbles.resetPath = function(node){
     return node;
 };
 
-bubbles.createBubbles = function(num, classes){
+bubbles.createBubbles = function(element, numberOfBubbles, classes){
     var node,
-        bubbleContainer = document.getElementById('container-bubbles'),
+        bubbleContainer = document.getElementById(element),
         currentBubbleNum = 1,
         width,
         height,
         domNode;
-    for (var i = 0; i < num; i++){
+    for (var i = 0; i < numberOfBubbles; i++){
         node = {};
         switch(classes){
             case bubbles.types.smallBubble:
@@ -79,9 +79,9 @@ bubbles.animationQueue = function(){
     requestAnimationFrame(step);
 };
 
-bubbles.init = function(smallBubbles, mediumBubbles, largeBubbles) {
-    bubbles.createBubbles(smallBubbles, bubbles.types.smallBubble);
-    bubbles.createBubbles(mediumBubbles, bubbles.types.mediumBubble);
-    bubbles.createBubbles(largeBubbles, bubbles.types.largeBubble);
+bubbles.init = function(element, numberOfSmallBubbles, numberOfMediumBubbles, numberOfLargeBubbles) {
+    bubbles.createBubbles(element, numberOfSmallBubbles, bubbles.types.smallBubble);
+    bubbles.createBubbles(element, numberOfMediumBubbles, bubbles.types.mediumBubble);
+    bubbles.createBubbles(element, numberOfLargeBubbles, bubbles.types.largeBubble);
     bubbles.animationQueue();
 };
