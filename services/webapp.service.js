@@ -89,6 +89,13 @@ webapp.hbsHelpers = {
         else {
             return size+'-order-'+index;
         }
+    },
+    isNotEmpty: function(data, options){
+        if(data && data.length > 0) {
+            return options.fn(this);
+        } else {
+            return options.inverse(this);
+        }
     }
 };
 

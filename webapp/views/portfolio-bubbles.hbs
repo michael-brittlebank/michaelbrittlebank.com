@@ -1,7 +1,7 @@
 <main class="row page portfolio bubbles">
-    <div id="bubble-container">
-    </div>
-    <div class="small-12 columns">
+    <section id="container-bubbles">
+    </section>
+    <section id="bubble-controls" class="small-12 columns">
         these are all the bubbles
         {{{page.body}}}
         <label for="smallBubbles">Small Bubbles</label>
@@ -22,9 +22,9 @@
             <label class="switch-paddle" for="smallSwitch">
                 <span class="show-for-sr">Small Portions Only</span>
             </label>
-        </div>portfolio -
-    </div>
-    {{>portfolio-footer}}
+        </div>
+    </section>
+    {{>portfolio-footer page}}
 </main>
 <script type="text/javascript">
     $(function(){

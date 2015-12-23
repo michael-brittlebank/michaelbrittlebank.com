@@ -31,7 +31,11 @@
                     </button>
                     <h3>{{title}}</h3>
                     {{{body}}}
-                    <a href="{{url}}" class="button">View</a>
+                    {{#isNotEmpty url}}
+                        <a href="{{url}}" class="button">View</a>
+                    {{else}}
+                        {{>portfolio-footer this}}
+                    {{/isNotEmpty}}
                 </div>
             {{/each}}
         {{/each}}

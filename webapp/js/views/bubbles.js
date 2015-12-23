@@ -20,7 +20,7 @@ bubbles.resetPath = function(node){
 
 bubbles.createBubbles = function(num, classes){
     var node,
-        bubbleContainer = document.getElementById('bubble-container'),
+        bubbleContainer = document.getElementById('container-bubbles'),
         currentBubbleNum = 1,
         width,
         height,
