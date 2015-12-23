@@ -1,11 +1,11 @@
 <main class="row page portfolio">
-    <div class="small-12 columns">
-        <div class="callout quote">
+    <section id="container-quote" class="small-12 columns">
+        <div class="callout">
             {{{quote.body}}}
             <h5>{{quote.author}}{{#if quote.source}} - {{quote.source}}{{/if}}</h5>
         </div>
-    </div>
-    <div class="small-12 portfolio-sliders">
+    </section>
+    <section id="container-sliders" class="small-12">
         {{#each portfolio}}
             <h2>{{name}}</h2>
             <div class="slider-container">
@@ -21,8 +21,8 @@
                 </div>
             </div>
         {{/each}}
-    </div>
-    <div class="modals">
+    </section>
+    <section id="container-modals">
         {{#each portfolio}}
             {{#each items}}
                 <div class="reveal small" id="modal-{{../name}}-{{@index}}" data-reveal>
@@ -35,7 +35,7 @@
                 </div>
             {{/each}}
         {{/each}}
-    </div>
+    </section>
 </main>
 <script type="text/javascript">
     $(function(){

@@ -15,6 +15,7 @@ site.helpers = {
 
 site.init = function(){
     $(document).foundation();
+    $('header').velocity('transition.fadeIn',{duration:1500});
     /* requestAnimationFrame polyfill
      https://gist.github.com/paulirish/1579671
      */

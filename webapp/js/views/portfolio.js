@@ -1,6 +1,9 @@
 var portfolio = {};
 
 portfolio.init = function(){
+    //loading animation
+
+    //carousel init
     $('.portfolio-carousel').slick({
         dots: true,
         infinite: true,

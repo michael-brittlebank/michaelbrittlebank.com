@@ -1,13 +1,15 @@
 .page.portfolio {
-  .quote {
-    margin: 50px 0;
-    padding: 30px;
-    text-align: center;
-    @include breakpoint(small only) {
-      text-align: left;
+  #container-quote {
+    .callout {
+      margin: 50px 0;
+      padding: 30px;
+      text-align: center;
+      @include breakpoint(small only) {
+        text-align: left;
+      }
     }
   }
-  .portfolio-sliders {
+  #container-sliders {
     h2 {
       margin: 50px 0 20px 10%;
     }
@@ -35,7 +37,7 @@
       }
     }
   }
-  .modals {
+  #container-modals {
     .reveal {
       &.small {
         width: 50%!important;

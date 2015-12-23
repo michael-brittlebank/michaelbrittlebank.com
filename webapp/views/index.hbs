@@ -2,7 +2,7 @@
     <section class="row">
         <div class="small-12 banner top">&nbsp;</div>
     </section>
-    <section class="row square-blocks">
+    <section id="container-blocks" class="row">
         {{#each page.content}}
             {{#if body}}
                 <div id="homepage-block-{{addition @index 1}}" class="grid-block body-highlight small-12 medium-6 columns order-{{addition @index 1}} {{gridOrder @index "medium"}}"
