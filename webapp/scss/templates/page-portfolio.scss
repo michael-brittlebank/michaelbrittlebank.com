@@ -1,5 +1,6 @@
 .page.portfolio {
   #container-quote {
+    @include opacity(0);
     .callout {
       margin: 50px 0;
       padding: 30px;
@@ -10,11 +11,13 @@
     }
   }
   #container-sliders {
-    h2 {
+    .slider-header {
       margin: 50px 0 20px 10%;
+      @include opacity(0);
     }
     .slider-container {
       background-color: rgba(54,34,32,0.3);
+      @include opacity(0);
       .portfolio-carousel {
         background-color: $color-dark-grey;
         height: 250px;

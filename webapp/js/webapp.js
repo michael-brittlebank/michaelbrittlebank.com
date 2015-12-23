@@ -14,8 +14,12 @@ site.helpers = {
 };
 
 site.init = function(){
+    //foundation init
     $(document).foundation();
+    //loading animation
     $('header').velocity('transition.fadeIn',{duration:1500});
+    $('footer').velocity('transition.fadeIn',{duration:1500, delay:1000});
+    //polyfill
     /* requestAnimationFrame polyfill
      https://gist.github.com/paulirish/1579671
      */
