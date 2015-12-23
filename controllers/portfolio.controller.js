@@ -5,6 +5,8 @@ var /* packages */
     contentService = require('../services/content.service'),
     webapp = require('../services/webapp.service'),
     logger = require('../services/logger.service'),
+    error = require('../services/error.service'),
+    pages = require('./pages.controller'),
     portfolio = {};
 
 /**
@@ -30,10 +32,10 @@ portfolio.getDefaultPortfolioPage = function(req, res, next) {
                         res.render('portfolio-scales');
                         break;
                     default:
-                        res.render('page');
+                        res.render('portfolio');
                 }
             } else {
-                res.render('page');
+                res.render('portfolio');
             }
         })
         .catch(function (err) {

@@ -5,6 +5,7 @@ var /* packages */
 /* services */
     errorService = require('./error.service'),
     logger = require('./logger.service'),
+    webapp = require('./webapp.service'),
     contentfulService = {};
 
 contentfulService.contentTypes = {
@@ -46,10 +47,18 @@ contentfulService.getEntries = function(params){
     params.include = 10;
     return client.entries(params)
         .then(function(entries) {
-            return entries;
+            if (entries.length > 0){
+                return entries;
+            } else {
+                throw new errorService.NotFoundError();
+            }
         })
-        .catch(function(){
-            throw new errorService.NotFoundError('Entries not found with params: '+JSON.stringify(params));
+        .catch(function(err){
+            if (err.status === webapp.status.notFound){
+                throw new errorService.NotFoundError('Entries not found with params: '+JSON.stringify(params));
+            } else {
+                throw new errorService.InternalServerError('Contentful get entries error: '+JSON.stringify(err));
+            }
         });
 };
 

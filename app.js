@@ -14,6 +14,7 @@ var /* packages */
     logger = require('./services/logger.service'),
     contentfulService = require('./services/contentful.service'),
     contentService = require('./services/content.service'),
+    errorService = require('./services/error.service'),
 /* routes and controllers */
     pageRoutes = require('./routes/pages.routes'),
     portfolioRoutes = require('./routes/portfolio.routes'),
@@ -101,30 +102,17 @@ else {
  */
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
-    logger.log('error','not found error - '+req.method+' '+req.originalUrl);
-    var err = new Error('Not Found');
-    err.status = webapp.status.not_found;
-    next(err);
+    next(new errorService.NotFoundError('not found error - '+req.method+' '+req.originalUrl));
 });
 
 // error handlers
 app.use(function (err, req, res, next) {
-    logger.log('error','internal server error',JSON.stringify(err));
-    var code = err.status || webapp.status.internal_server_error;
-    if (!webapp.app.isLiveConfig()) {
-        return res.status(code).json({
-            error: true,
-            code: code,
-            data: {message: err.message}
-        });
+    logger.log('error','',JSON.stringify(err));
+    if (err.status === webapp.status.notFound){
+        pageController.get404Page(req, res, next);
     }
     else {
-        if (err.status === webapp.status.not_found){
-            pageController.get404Page(req, res, next);
-        }
-        else {
-            pageController.get500Page(req, res, next);
-        }
+        pageController.get500Page(req, res, next);
     }
 });
 

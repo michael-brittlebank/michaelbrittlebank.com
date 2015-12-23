@@ -1,30 +1,27 @@
 var /* services */
     webapp = require('./webapp.service'),
-    logger = require('./logger.service');
+    logger = require('./logger.service'),
+    errors = {};
 /**
  * Types of Errors
  */
 
 var NotFoundError = function(message) {
-    logger.log('error',message);
     this.name = 'NotFound';
     this.message = message || 'Not Found';
-    this.status = webapp.status.not_found;
+    this.status = webapp.status.notFound;
 };
-
 NotFoundError.prototype = Object.create(Error.prototype);
 NotFoundError.prototype.constructor = NotFoundError;
-module.exports.NotFoundError = NotFoundError;
+errors.NotFoundError = NotFoundError;
 
 var InternalServerError = function(message) {
-    logger.log('error',message);
     this.name = 'InternalServerError';
     this.message = message || 'Internal Server Error';
-    this.status = webapp.status.internal_server_error;
+    this.status = webapp.status.internalServerError;
 };
-
 InternalServerError.prototype = Object.create(Error.prototype);
 InternalServerError.prototype.constructor = InternalServerError;
-module.exports.InternalServerError = InternalServerError;
+errors.InternalServerError = InternalServerError;
 
-
+module.exports = errors;

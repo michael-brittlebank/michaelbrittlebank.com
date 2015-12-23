@@ -91,7 +91,7 @@ pages.getDefaultPage = function(req, res, next) {
             if (webapp.simpleNullCheck(page, 'layout')) {
                 switch (page.layout) {
                     case 'Portfolio':
-                        pages.getPortfolioPage(res,res,next);
+                        pages.getPortfolioPage(res, res, next);
                         break;
                     default:
                         res.render('page');

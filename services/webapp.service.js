@@ -23,15 +23,15 @@ webapp.status = {
     ok: 200,
     created: 201,
     accepted: 202,
-    no_content: 204,
-    moved_permanently: 301,
-    temporary_redirect: 307,
-    bad_request: 400,
+    noContent: 204,
+    movedPermanently: 301,
+    temporaryRedirect: 307,
+    badRequest: 400,
     unauthorized: 401,
     forbidden: 403,
-    not_found: 404,
-    internal_server_error: 500,
-    service_unavailable: 503
+    notFound: 404,
+    internalServerError: 500,
+    serviceUnavailable: 503
 };
 
 webapp.hbsHelpers = {
