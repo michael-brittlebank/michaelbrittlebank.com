@@ -26,7 +26,7 @@
         margin: auto;
         .portfolio-item {
           text-align: center;
-          div {
+          .portfolio-content {
             margin: 10px;
             padding: 10px;
             height: 230px;
@@ -35,9 +35,53 @@
             cursor:pointer;
             .fa {
               line-height: rem-calc(64);
-              height: rem-calc(65);
               font-size: rem-calc(64);
+              height: rem-calc(65);
               @include absolute-center;
+              @include transition-with-defaults(color);
+            }
+            .fa-stack {
+              width:100%;
+              height:100%;
+              @include absolute-center;
+              &.bubbles {
+                width: 175px;
+                @include breakpoint(small only) {
+                  width: 200px;
+                }
+                .fa-stack-1x {
+                  bottom: 62.5%;
+                  top: initial;
+                  left: 22.5%;
+                  right: initial;
+                  width: rem-calc(64);
+                  line-height: rem-calc(32);
+                  font-size: rem-calc(32);
+                }
+                .fa-stack-2x {
+                  bottom: 37.5%;
+                  top: initial;
+                  left: 7.5%;
+                  right: initial;
+                  width: rem-calc(64);
+                  line-height: rem-calc(64);
+                  font-size: rem-calc(64);
+                }
+                .fa-stack-3x {
+                  bottom: 5%;
+                  top: initial;
+                  line-height: rem-calc(96);
+                  font-size: rem-calc(96);
+                }
+              }
+              .fa {
+                height: auto;
+              }
+            }
+          }
+          &:hover {
+            .fa{
+              color: $color-light-purple;
             }
           }
           &:focus {
