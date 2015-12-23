@@ -57,6 +57,11 @@ app.use(compression({
 
 app.use(express.static(path.join(__dirname, 'webapp/public')));
 
+if (!webapp.app.isLiveConfig()){
+    //for debugging
+    app.use('/bower_components', express.static(path.join(__dirname, 'bower_components')));
+}
+
 app.use(function(req, res, next) {
     //todo, test for contentful connection
 // routes middleware

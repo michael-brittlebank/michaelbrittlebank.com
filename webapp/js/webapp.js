@@ -16,16 +16,39 @@ site.helpers = {
 site.animation = {
     fadeIn: function(element,duration, delay){
         $(element).css({visibility:'visible'}).velocity('transition.fadeIn',{duration:duration,delay:delay});
+    },
+    fadeOut: function(element,duration, delay){
+        $(element).velocity('transition.fadeOut',{
+            duration:duration,
+            delay:delay,
+            complete: function(elements) {
+                $(elements).css({visibility:'hidden'});
+            }
+        });
     }
 };
 
 site.init = function(){
+    var modalOverlay = $('#modal-overlay');
     //foundation init
     $(document).foundation();
     //loading animation
     site.animation.fadeIn('header',1500,0);
     site.animation.fadeIn('footer',1500,1000);
-    //polyfill
+    /**
+     * listeners
+     */
+    //modal listeners
+    $(document).on('closeme.zf.reveal', function(event){
+            site.animation.fadeIn(modalOverlay,500,0);
+            site.animation.fadeIn(event.target, 500, 0);
+        })
+        .on('closed.zf.reveal', function(){
+            site.animation.fadeOut(modalOverlay,750,0);
+        });
+    /**
+     * polyfills
+     */
     /* requestAnimationFrame polyfill
      https://gist.github.com/paulirish/1579671
      */

@@ -12,3 +12,14 @@ a {
 .column-width-2 {
   @include column-count(2);
 }
+#modal-overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1005;
+  background-color: rgba(10,10,10,0.45);
+  overflow-y: scroll;
+  @include fade-in-default;
+}
