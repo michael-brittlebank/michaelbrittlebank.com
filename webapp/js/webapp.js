@@ -29,7 +29,9 @@ site.animation = {
 };
 
 site.init = function(){
-    var modalOverlay = $('#modal-overlay');
+    var modalOverlay = $('#modal-overlay'),
+        closeButtons = $('.close-button'),
+        activeModal;
     //foundation init
     $(document).foundation();
     //loading animation
@@ -38,14 +40,27 @@ site.init = function(){
     /**
      * listeners
      */
-    //modal listeners
+        //modal listeners
     $(document).on('closeme.zf.reveal', function(event){
-            site.animation.fadeIn(modalOverlay,500,0);
-            site.animation.fadeIn(event.target, 500, 0);
+            if (!activeModal) {
+                activeModal = event.target;
+                $(modalOverlay).velocity('stop');
+                $(activeModal).velocity('stop');
+                site.animation.fadeIn(modalOverlay, 500, 0);
+                site.animation.fadeIn(activeModal, 500, 0);
+            }
         })
         .on('closed.zf.reveal', function(){
             site.animation.fadeOut(modalOverlay,750,0);
+            activeModal = null;
         });
+    $(closeButtons).on('click touch',function() {
+        //manually close foundation modal
+        site.animation.fadeOut(activeModal, 750, 0);
+    });
+    $(modalOverlay).on('click touch',function(){
+        $(closeButtons).click();
+    });
     /**
      * polyfills
      */

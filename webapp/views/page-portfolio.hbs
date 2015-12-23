@@ -25,7 +25,7 @@
     <section id="container-modals">
         {{#each portfolio}}
             {{#each items}}
-                <div class="reveal small" id="modal-{{../name}}-{{@index}}" data-reveal data-overlay="false">
+                <div class="reveal small" id="modal-{{../name}}-{{@index}}" data-reveal data-overlay="false" data-close-on-click="false">
                     <button class="close-button" data-close aria-label="Close reveal" type="button">
                         <span aria-hidden="true">&times;</span>
                     </button>

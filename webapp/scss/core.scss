@@ -21,5 +21,12 @@ a {
   z-index: 1005;
   background-color: rgba(10,10,10,0.45);
   overflow-y: scroll;
+  @include unselectable;
   @include fade-in-default;
+}
+.close-button, .reveal {
+  &:focus {
+    outline: none!important;
+    border: none!important;
+  }
 }
