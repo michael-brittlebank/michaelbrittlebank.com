@@ -34,15 +34,10 @@
             position: relative;
             cursor:pointer;
             .fa {
-              position: absolute;
-              top: 0;
-              bottom: 0;
-              left: 0;
-              right: 0;
-              margin: auto;
               line-height: rem-calc(64);
               height: rem-calc(65);
               font-size: rem-calc(64);
+              @include absolute-center;
             }
           }
           &:focus {

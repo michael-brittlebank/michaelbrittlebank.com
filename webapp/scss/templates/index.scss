@@ -21,13 +21,8 @@
       @include fade-in-default;
       &.body-highlight {
         .block-body {
-          position: absolute;
-          top: 0;
-          left: 0;
-          right: 0;
-          bottom: 0;
-          margin: auto;
           height: rem-calc(240);
+          @include absolute-center;
           .fa-stack {
             width: rem-calc(240);
             height: rem-calc(240);
