@@ -14,6 +14,7 @@ site.helpers = {
 };
 
 site.init = function(){
+    $(document).foundation();
     /* requestAnimationFrame polyfill
      https://gist.github.com/paulirish/1579671
      */

@@ -35,4 +35,11 @@
       }
     }
   }
+  .modals {
+    .reveal {
+      &.small {
+       width: 50%!important;
+      }
+    }
+  }
 }

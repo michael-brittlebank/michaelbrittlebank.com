@@ -11,7 +11,7 @@
             <div class="slider-container">
                 <div class="portfolio-carousel">
                     {{#each items}}
-                        <div class="portfolio-item">
+                        <div class="portfolio-item" data-open="modal-{{../name}}-{{@index}}">
                             <div>
                                 <h3>{{title}}</h3>
                                 {{url}}
@@ -20,6 +20,19 @@
                     {{/each}}
                 </div>
             </div>
+        {{/each}}
+    </div>
+    <div class="modals">
+        {{#each portfolio}}
+            {{#each items}}
+                <div class="reveal small" id="modal-{{../name}}-{{@index}}" data-reveal>
+                    <button class="close-button" data-close aria-label="Close reveal" type="button">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h3>{{title}}</h3>
+                    {{{body}}}
+                </div>
+            {{/each}}
         {{/each}}
     </div>
 </main>

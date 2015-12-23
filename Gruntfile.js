@@ -131,7 +131,7 @@ module.exports = function(grunt) {
                 files: {
                     'webapp/public/js/app.footer.min.js': [
                         "bower_components/modernizr/modernizr.js",
-                        "bower_components/foundation/js/foundation.min.js",
+                        "bower_components/foundation-sites/dist/foundation.min.js",
                         "bower_components/velocity/velocity.min.js",
                         "bower_components/velocity/velocity.ui.min.js",
                         "bower_components/slick-carousel/slick/slick.min.js"

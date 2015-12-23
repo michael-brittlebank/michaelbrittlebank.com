@@ -40,6 +40,7 @@ contentModels.getPortfolioModel = function(data){
             title: webapp.getValueFromKey(fields,'title'),
             linkTitle: webapp.getValueFromKey(fields, 'linkTitle'),
             url: webapp.getUrlValueFromKey(fields,'url'),
+            body: webapp.getHTMLValueFromKey(fields,'body'),
             layout: webapp.getValueFromKey(fields,'layout'),
             portfolioGroup: webapp.getValueFromKey(fields,'portfolioGroup'),
             publishedTime: createdAt.substring(0,createdAt.lastIndexOf('.'))+'-4:00',//GMT
