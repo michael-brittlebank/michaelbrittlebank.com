@@ -18,8 +18,8 @@
 * styling - color scheme dependent on time of day and temperature
 * content entry in contentful
 * set up analytics
-* set up seo
-* add quote of the day
+* ~~add quote of the day~~
+* add music section/blog
 
 ### 3
 * import scale finder & register as bower package
@@ -31,6 +31,8 @@
 
 ### 5
 * import WP and WP reading list
+* add htaccess rewrites from old site
+* set up seo (run through google site tester)
 
 ## Future
 * Dynamic art creator
