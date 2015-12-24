@@ -80,7 +80,7 @@ app.use(function(req, res, next) {
                 res.locals.site = {
                     linkedIn: 'https://www.linkedin.com/in/mikestumpf',
                     github: 'https://github.com/mike-stumpf',
-                    music: config.app.protocol + config.app.hostName + '/scales'
+                    stackOverflow: 'http://stackexchange.com/users/1282257/mike-stumpf?tab=accounts'
                 };
                 next();
             })
