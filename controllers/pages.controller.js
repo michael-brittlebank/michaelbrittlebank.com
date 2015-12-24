@@ -22,12 +22,12 @@ pages.getIndex = function(req, res, next) {
         .then(function (response) {
             var content = response[0];
             res.locals.page = contentService.pageDigest(content);
-            return res.render('index', {
+            res.render('index', {
                 layout: 'layout-index'
             });
         })
         .catch(function (err) {
-            return next(err);
+            next(err);
         });
 };
 
@@ -69,12 +69,16 @@ pages.getPortfolioPage = function(req, res, next){
                     res.render('page-portfolio');
                 })
                 .catch(function (err) {
-                    return next(err);
+                    next(err);
                 });
         })
         .catch(function (err) {
-            return next(err);
+            next(err);
         });
+};
+
+pages.getResumePage = function(req, res, next) {
+    res.render('page-resume');
 };
 
 pages.getDefaultPage = function(req, res, next) {
@@ -93,6 +97,9 @@ pages.getDefaultPage = function(req, res, next) {
                     case 'Portfolio':
                         pages.getPortfolioPage(res, res, next);
                         break;
+                    case 'Resume':
+                        pages.getResumePage(res, res, next);
+                        break;
                     default:
                         res.render('page');
                 }
@@ -101,7 +108,7 @@ pages.getDefaultPage = function(req, res, next) {
             }
         })
         .catch(function (err) {
-            return next(err);
+            next(err);
         });
 };
 
@@ -116,10 +123,10 @@ pages.get500Page = function(req, res, next) {
         .then(function (response) {
             var content = response[0];
             res.locals.page = contentService.pageDigest(content);
-            return res.render('500');
+            res.render('500');
         })
         .catch(function (err) {
-            return next(err);
+            next(err);
         });
 };
 
@@ -134,10 +141,10 @@ pages.get404Page = function(req, res, next) {
         .then(function (response) {
             var content = response[0];
             res.locals.page = contentService.pageDigest(content);
-            return res.render('404');
+            res.render('404');
         })
         .catch(function (err) {
-            return next(err);
+            next(err);
         });
 };
 

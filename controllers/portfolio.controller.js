@@ -39,7 +39,7 @@ portfolio.getDefaultPortfolioPage = function(req, res, next) {
             }
         })
         .catch(function (err) {
-            return next(err);
+            next(err);
         });
 };
 
