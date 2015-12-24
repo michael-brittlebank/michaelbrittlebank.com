@@ -1,14 +1,52 @@
 header {
   @include fade-in-default;
+  #menu-mobile {
+    padding:0;
+    display: none;
+    @include breakpoint(small only) {
+      display:block;
+    }
+    .accordion {
+      border:none;
+      .accordion-title {
+        background-color: $color-white;
+        font-size: rem-calc(40);
+        &:hover {
+          color: scale-color($primary-color, $lightness: -15%);
+        }
+        &:before {
+          content: none !important;
+        }
+      }
+      .accordion-content {
+        padding: 0;
+        border: none;
+      }
+    }
+  }
+  #menu-desktop {
+    @include breakpoint(small only) {
+      display: none;
+    }
+  }
+  #menu-desktop {
+    ul {
+      li {
+        a {
+
+        }
+      }
+    }
+  }
   a {
-    color: $black;
+    color: $color-black;
     font-size: rem-calc(20);
     font-family: $font-open-sans-condensed;
     text-transform: uppercase;
     @include raw-transition(color 300ms ease-out 0s, background-color 300ms ease-out 0s);
     &:hover {
       color: $white;
-      background-color: $black;
+      background-color: rgba($color-dark-grey, 0.25);
     }
   }
 }

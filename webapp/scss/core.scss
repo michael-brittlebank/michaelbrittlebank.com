@@ -19,7 +19,7 @@ a {
   left: 0;
   right: 0;
   z-index: 1005;
-  background-color: rgba(10,10,10,0.45);
+  background-color: rgba($color-dark-grey,0.75);
   overflow-y: scroll;
   @include unselectable;
   @include fade-in-default;

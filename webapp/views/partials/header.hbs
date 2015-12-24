@@ -1,7 +1,36 @@
 <header>
     <div class="row">
+        <div id="menu-mobile" class="small-12 columns">
+            <ul class="accordion" data-accordion role="tablist" data-allow-all-closed="true">
+                <li class="accordion-item">
+                    <a href="#menu-vertical" role="tab" class="accordion-title" id="menu-vertical-heading" aria-controls="menu-vertical"><i class="fa fa-bars"></i></a>
+                    <div id="menu-vertical" class="accordion-content" role="tabpanel" data-tab-content aria-labelledby="menu-vertical-heading">
+                        <ul class="menu vertical">
+                            {{#each menu.header.children}}
+                                {{#compare children.length 0 operator=">"}}
+                                    <li class="has-dropdown">
+                                        {{#if url}}
+                                            <a href="{{url}}">{{title}}</a>
+                                        {{else}}
+                                            <a>{{title}}</a>
+                                        {{/if}}
+                                        <ul class="dropdown">
+                                            {{#each children}}
+                                                <li><a href="{{url}}">{{title}}</a></li>
+                                            {{/each}}
+                                        </ul>
+                                    </li>
+                                {{else}}
+                                    <li><a href="{{url}}">{{title}}</a></li>
+                                {{/compare}}
+                            {{/each}}
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </div>
         <div class="small-12 columns">
-            <ul class="menu align-right">
+            <ul id="menu-desktop" class="menu align-right">
                 {{#eachReverse menu.header.children}}
                     {{#compare children.length 0 operator=">"}}
                         <li class="has-dropdown">

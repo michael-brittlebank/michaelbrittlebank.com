@@ -16,7 +16,7 @@
       @include fade-in-default;
     }
     .slider-container {
-      background-color: rgba(54,34,32,0.3);
+      background-color: rgba($color-dark-black,0.3);
       @include fade-in-default;
       .portfolio-carousel {
         background-color: $color-dark-grey;
