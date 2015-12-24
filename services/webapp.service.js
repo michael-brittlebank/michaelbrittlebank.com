@@ -98,7 +98,6 @@ webapp.hbsHelpers = {
         }
     },
     isEvenNumber: function(data, options){
-        console.log(data);
         if(parseInt(data)%2 === 0) {
             return options.fn(this);
         } else {
