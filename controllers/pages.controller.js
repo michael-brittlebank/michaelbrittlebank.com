@@ -78,7 +78,19 @@ pages.getPortfolioPage = function(req, res, next){
 };
 
 pages.getResumePage = function(req, res, next) {
-    res.render('page-resume');
+    res.render('page-resume');//todo
+};
+
+pages.getMusicPage = function(req, res, next) {
+    res.render('page-music');//todo
+};
+
+pages.getScalesPage = function(req, res, next) {
+    res.render('page-scales');//todo
+};
+
+pages.getTravelPage = function(req, res, next) {
+    res.render('page-travel');//todo
 };
 
 pages.getDefaultPage = function(req, res, next) {
@@ -99,6 +111,15 @@ pages.getDefaultPage = function(req, res, next) {
                         break;
                     case 'Resume':
                         pages.getResumePage(res, res, next);
+                        break;
+                    case 'Music':
+                        pages.getMusicPage(res, res, next);
+                        break;
+                    case 'Travel':
+                        pages.getTravelPage(res, res, next);
+                        break;
+                    case 'Scales':
+                        pages.getScalesPage(res, res, next);
                         break;
                     default:
                         res.render('page');
@@ -123,7 +144,7 @@ pages.get500Page = function(req, res, next) {
         .then(function (response) {
             var content = response[0];
             res.locals.page = contentService.pageDigest(content);
-            res.render('500');
+            res.render('500');//todo
         })
         .catch(function (err) {
             next(err);
@@ -141,7 +162,7 @@ pages.get404Page = function(req, res, next) {
         .then(function (response) {
             var content = response[0];
             res.locals.page = contentService.pageDigest(content);
-            res.render('404');
+            res.render('404');//todo
         })
         .catch(function (err) {
             next(err);
