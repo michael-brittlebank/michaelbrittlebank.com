@@ -3,6 +3,7 @@ var homepage = {},
     bodyHighlightBlocks,
     bodyHighlightBlocksText,
     imageHighlightBlocks,
+    imageHighlightBlocksText,
     activeBodyBlock = null,
     activeImageBlock = null;
 
@@ -23,10 +24,12 @@ homepage.grid = {
     activateImageBlock: function(){
         $(activeImageBlock).find('.hover-filter-back').first().velocity({width: '100%'},{duration:500});
         $(activeImageBlock).find('.hover-filter-text').first().velocity({opacity:'1'},{duration:500,delay:300});
+        $(activeImageBlock).find('.hover-filter-overlay').first().css({height: '100%'});
     },
     deactivateImageBlock: function(){
         $(activeImageBlock).find('.hover-filter-back').first().velocity('stop').velocity({width: '0'});
         $(activeImageBlock).find('.hover-filter-text').first().velocity('stop').velocity({opacity:'0'});
+        $(activeImageBlock).find('.hover-filter-overlay').first().css({height: '0'});
         activeImageBlock = null;
     },
     makeSquare: function(){
@@ -50,6 +53,7 @@ homepage.init = function(){
     bodyHighlightBlocks = $(squareBlocks).filter('.body-highlight');
     bodyHighlightBlocksText = $(bodyHighlightBlocks).find('.hover-filter-overlay');
     imageHighlightBlocks = $(squareBlocks).filter('.image-highlight');
+    imageHighlightBlocksText = $(imageHighlightBlocks).find('.hover-filter-overlay');
     $('.expand-in').velocity('transition.expandIn');
     $(bodyHighlightBlocks).on('mouseover touch click', function(){
             if (!activeBodyBlock || ($(this).attr('id') && $(activeBodyBlock).attr('id') !== $(this).attr('id'))){
@@ -84,6 +88,11 @@ homepage.init = function(){
                 homepage.grid.deactivateImageBlock();
             }
         });
+    $(imageHighlightBlocksText).on('touch click',function(){
+        if (activeImageBlock) {
+            window.location.href = $(activeImageBlock).data('url');
+        }
+    });
     $(window).load(function(){
             homepage.grid.makeSquare();
             homepage.grid.revealBlocks();

@@ -12,6 +12,10 @@
       background-color: black;
     }
   }
+  .filter-overlay {
+    cursor: pointer;
+    @include opacity(0);
+  }
   #container-blocks {
     .grid-block {
       text-align: center;
@@ -66,8 +70,7 @@
             }
           }
           &.hover-filter-overlay {
-            cursor: pointer;
-            @include opacity(0);
+            @extend .filter-overlay;
           }
         }
       }
@@ -92,6 +95,9 @@
               color: white;
               font-size: rem-calc(35);
             }
+          }
+          &.hover-filter-overlay {
+            @extend .filter-overlay;
           }
         }
       }
