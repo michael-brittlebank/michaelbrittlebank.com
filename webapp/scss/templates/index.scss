@@ -88,12 +88,12 @@
             @include opacity(0.65);
           }
           &.hover-filter-text {
-            top: 75%;
             height: 0;
+            @include center-absolute;
             @include opacity(0);
-            h3 {
+            h2 {
               color: white;
-              font-size: rem-calc(35);
+              font-size: rem-calc(40);
             }
           }
           &.hover-filter-overlay {
