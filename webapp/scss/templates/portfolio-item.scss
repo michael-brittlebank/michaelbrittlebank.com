@@ -1,0 +1,21 @@
+.portfolio {
+  &.portfolio-item {
+    .bubble {
+      position: absolute;
+      background-color:purple;
+      @include border-radius(50%);
+      @include opacity(0.4);
+    }
+  }
+  #container-portfolio-footer {
+    .portfolio-links {
+      a {
+        font-size: rem-calc(20);
+        .fa {
+          margin-right: 10px;
+          font-size: rem-calc(26);
+        }
+      }
+    }
+  }
+}

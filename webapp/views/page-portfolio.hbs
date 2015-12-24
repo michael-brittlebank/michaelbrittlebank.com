@@ -29,13 +29,19 @@
                     <button class="close-button" data-close aria-label="Close reveal" type="button">
                         <span aria-hidden="true">&times;</span>
                     </button>
-                    <h3>{{title}}</h3>
-                    {{{body}}}
-                    {{#isNotEmpty url}}
-                        <a href="{{url}}" class="button">View</a>
-                    {{else}}
-                        {{>portfolio-footer this}}
-                    {{/isNotEmpty}}
+                    <div class="row">
+                        <section class="small-12 columns">
+                            <h3>{{title}}</h3>
+                            {{{body}}}
+                        </section>
+                        {{#isNotEmpty url}}
+                            <section class="small-12 columns">
+                                <a href="{{url}}" class="button">View</a>
+                            </section>
+                        {{else}}
+                            {{>portfolio-footer this}}
+                        {{/isNotEmpty}}
+                    </div>
                 </div>
             {{/each}}
         {{/each}}
