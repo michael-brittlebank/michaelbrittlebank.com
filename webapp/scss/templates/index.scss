@@ -22,7 +22,7 @@
       &.body-highlight {
         .block-body {
           height: rem-calc(240);
-          @include absolute-center;
+          @include center-absolute;
           .fa-stack {
             width: rem-calc(240);
             height: rem-calc(240);

@@ -26,7 +26,7 @@
   @include opacity(0);
 }
 
-@mixin absolute-center {
+@mixin center-absolute {
   position: absolute;
   top: 0;
   bottom: 0;
