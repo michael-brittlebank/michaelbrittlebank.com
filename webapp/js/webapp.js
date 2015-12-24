@@ -56,7 +56,7 @@ site.init = function(){
         });
     $(closeButtons).on('click touch',function() {
         //manually close foundation modal
-        site.animation.fadeOut(activeModal, 750, 0);
+        site.animation.fadeOut(activeModal, 500, 0);
     });
     $(modalOverlay).on('click touch',function(){
         $(closeButtons).click();
