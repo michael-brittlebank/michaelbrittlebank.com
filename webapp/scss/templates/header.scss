@@ -1,4 +1,10 @@
 header {
+  .list-links {
+    color: $color-black;
+    font-size: rem-calc(20);
+    font-family: $font-open-sans-condensed;
+    text-transform: uppercase;
+  }
   @include fade-in-default;
   #menu-mobile {
     padding:0;
@@ -21,6 +27,14 @@ header {
       .accordion-content {
         padding: 0;
         border: none;
+        a {
+          border-left: 0 solid transparent;
+          @extend .list-links;
+          @include transition-with-defaults(border);
+          &:hover {
+            border-left: 15px solid rgba($color-badgers-red, 0.75);
+          }
+        }
       }
     }
   }
@@ -30,23 +44,15 @@ header {
     }
   }
   #menu-desktop {
-    ul {
-      li {
-        a {
-
+    li {
+      a {
+        border-bottom: 5px solid transparent;
+        @extend .list-links;
+        @include transition-with-defaults(border);
+        &:hover {
+          border-color: rgba($color-jays-light-blue, 0.5);
         }
       }
-    }
-  }
-  a {
-    color: $color-black;
-    font-size: rem-calc(20);
-    font-family: $font-open-sans-condensed;
-    text-transform: uppercase;
-    @include raw-transition(color 300ms ease-out 0s, background-color 300ms ease-out 0s);
-    &:hover {
-      color: $white;
-      background-color: rgba($color-dark-grey, 0.25);
     }
   }
 }
