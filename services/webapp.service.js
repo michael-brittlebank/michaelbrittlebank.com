@@ -127,7 +127,7 @@ webapp.getFirstResult = function(data){
 webapp.getImageUrl = function(data){
     data = webapp.getFirstResult(data);
     if (webapp.simpleNullCheck(data,'fields')){
-        return data.fields.file.url;
+        return data.fields.file.url+'?q=90&fl=progressive&w=1920';
     }
     else {
         return '';
