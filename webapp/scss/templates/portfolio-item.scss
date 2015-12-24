@@ -7,15 +7,13 @@
       @include opacity(0.4);
     }
   }
-  #container-portfolio-footer {
-    .portfolio-links {
-      a {
-        font-size: rem-calc(20);
-        margin-right: 25px;
-        .fa {
-          margin-right: 10px;
-          font-size: rem-calc(26);
-        }
+  .portfolio-links {
+    a {
+      font-size: rem-calc(20);
+      margin-right: 25px;
+      .fa {
+        margin-right: 10px;
+        font-size: rem-calc(26);
       }
     }
   }
