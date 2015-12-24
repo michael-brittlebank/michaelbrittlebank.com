@@ -100,6 +100,24 @@
           width: 80%!important;
         }
       }
+      h3 {
+        font-weight: bold;
+      }
+      .tech-stack {
+        font-family: $font-open-sans-condensed;
+        font-size: rem-calc(18);
+        @include breakpoint(small only) {
+          padding: 20px 0;
+        }
+        .title {
+          font-size: rem-calc(16);
+          text-transform: uppercase;
+          font-weight: bold;
+        }
+      }
+      a {
+        font-size: rem-calc(18);
+      }
     }
   }
 }

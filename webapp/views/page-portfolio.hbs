@@ -32,15 +32,22 @@
                     <div class="row">
                         <section class="small-12 columns">
                             <h3>{{title}}</h3>
-                            {{{body}}}
+                            {{{excerpt}}}
+                            <div id="modal-footer" class="row">
+                                {{#isNotEmpty techStack}}
+                                    <div class="small-12 medium-6 columns order-1 medium-order-2">
+                                        <p class="tech-stack"><span class="title">Tech Stack:</span> {{techStack}}</p>
+                                    </div>
+                                {{/isNotEmpty}}
+                                {{#isNotEmpty url}}
+                                    <section class="small-12 medium-6 columns order-2 medium-order-1">
+                                        <a href="{{url}}" class="button">View</a>
+                                    </section>
+                                {{else}}
+                                    {{>portfolio-footer this}}
+                                {{/isNotEmpty}}
+                            </div>
                         </section>
-                        {{#isNotEmpty url}}
-                            <section class="small-12 columns">
-                                <a href="{{url}}" class="button">View</a>
-                            </section>
-                        {{else}}
-                            {{>portfolio-footer this}}
-                        {{/isNotEmpty}}
                     </div>
                 </div>
             {{/each}}

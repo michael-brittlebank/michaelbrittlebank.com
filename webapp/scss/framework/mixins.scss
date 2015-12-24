@@ -34,3 +34,8 @@
   right: 0;
   margin: auto;
 }
+
+@mixin no-border {
+  outline: none!important;
+  border: none!important;
+}

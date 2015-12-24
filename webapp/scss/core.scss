@@ -24,9 +24,11 @@ a {
   @include unselectable;
   @include fade-in-default;
 }
-.close-button, .reveal {
+.close-button {
   &:focus {
-    outline: none!important;
-    border: none!important;
+    @include no-border;
   }
+}
+.reveal {
+  @include no-border;
 }

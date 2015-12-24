@@ -41,6 +41,8 @@ contentModels.getPortfolioModel = function(data){
             linkTitle: webapp.getValueFromKey(fields, 'linkTitle'),
             url: webapp.getUrlValueFromKey(fields,'url'),
             body: webapp.getHTMLValueFromKey(fields,'body'),
+            excerpt: webapp.getHTMLValueFromKey(fields,'excerpt'),
+            techStack: webapp.getValueFromKey(fields,'techStack'),
             featuredIcon: webapp.getValueFromKey(fields, 'featuredIcon'),
             repoUrl: webapp.getValueFromKey(fields, 'repoUrl'),
             demoUrl: webapp.getValueFromKey(fields, 'demoUrl'),
