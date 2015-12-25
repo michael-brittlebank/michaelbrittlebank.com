@@ -78,9 +78,13 @@ app.use(function(req, res, next) {
                     requestedUrl: config.app.protocol + config.app.hostName + req.originalUrl
                 };
                 res.locals.site = {
-                    linkedIn: 'https://www.linkedin.com/in/mikestumpf',
-                    github: 'https://github.com/mike-stumpf',
-                    stackOverflow: 'http://stackexchange.com/users/1282257/mike-stumpf?tab=accounts'
+                    linkedIn: 'https://www.linkedin.com/in/mikestumpf',//todo move to contenful
+                    github: 'https://github.com/mike-stumpf',//todo move to contenful
+                    stackOverflow: 'http://stackexchange.com/users/1282257/mike-stumpf?tab=accounts',//todo move to contenful
+                    url: config.app.protocol+config.app.serverUrl+':'+config.app.serverPort
+                };
+                res.locals.config = {
+                    googleMapsApiKey: config.google.mapsApi//todo move to contenful
                 };
                 next();
             })

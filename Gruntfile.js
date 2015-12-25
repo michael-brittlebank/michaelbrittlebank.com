@@ -4,7 +4,8 @@ module.exports = function(grunt) {
         backJS: ['Gruntfile.js', 'app.js', 'config/**/*.js', 'controllers/**/*.js', 'routes/**/*.js', 'services/**/*.js', 'models/**/*.js', 'lib/**/*.js'],
         frontCSS: ['webapp/scss/**/*.scss'],
         frontJS: ['webapp/js/**/*.js'],
-        frontViews: ['webapp/views/**/*.hbs']
+        frontViews: ['webapp/views/**/*.hbs'],
+        files: ['webapp/files/**/*']
     };
     grunt.initConfig({
         concurrent: {
@@ -26,6 +27,15 @@ module.exports = function(grunt) {
                     'bower_components/slick-carousel/slick/*.gif'
                 ],
                 dest: 'webapp/public/images/',
+                flatten: true,
+                filter: 'isFile'
+            },
+            files: {
+                expand: true,
+                src: [
+                    'webapp/files/**'
+                ],
+                dest: 'webapp/public/files/',
                 flatten: true,
                 filter: 'isFile'
             },
@@ -171,6 +181,13 @@ module.exports = function(grunt) {
                 options: {
                     livereload: true
                 }
+            },
+            files: {
+                files: watchFiles.files,
+                tasks: ['newer:copy:files'],
+                options: {
+                    livereload: true
+                }
             }
         }
     });
@@ -193,6 +210,7 @@ module.exports = function(grunt) {
         'sass',
         'newer:copy:images',
         'newer:copy:fonts',
+        'newer:copy:files',
         'newer:imagemin'
     ]);
 
@@ -206,6 +224,7 @@ module.exports = function(grunt) {
         'newer:sass',
         'newer:copy:images',
         'newer:copy:fonts',
+        'newer:copy:files',
         'newer:imagemin',
         'concurrent'
     ]);
@@ -220,6 +239,7 @@ module.exports = function(grunt) {
         'newer:sass',
         'newer:copy:images',
         'newer:copy:fonts',
+        'newer:copy:files',
         'newer:imagemin',
         'concurrent'
     ]);

@@ -1,4 +1,22 @@
 <main class="row page resume">
+    <script type="text/javascript">
+        var map;
+        function initMap() {
+            var map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 11,
+                center: {lat: 41.876, lng: -87.624}
+            });
+
+            var ctaLayer = new google.maps.KmlLayer({
+                url: '/files/travel.kml',//todo move to contenful
+                map: map
+            });
+        }
+    </script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key={{config.googleMapsApiKey}}&callback=initMap">
+    </script>
+    <div id="map" class="small-12 columns" style="height:500px;">
+    </div>
     <div class="small-12 columns">
         travel
         {{{page.body}}}
