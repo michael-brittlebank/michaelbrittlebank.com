@@ -3,6 +3,9 @@
     h1 {
       border-left: 20px solid $color-badgers-red;
       padding-left: 10px;
+      @include breakpoint(small only) {
+        border-left: 15px solid $color-badgers-red;
+      }
     }
   }
   #container-body {
