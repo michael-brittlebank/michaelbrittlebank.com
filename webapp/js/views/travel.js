@@ -13,18 +13,18 @@ travel.places = [
     //america
     {
         title:'Isle Royale National Park, Michigan, USA',
-        lat: 47.976258,
-        lng: -88.931261
+        lat: 48.1000,
+        lng: -88.5500
     },
     {
         title:'Orlando, Florida, USA',
-        lat:28.538336,
-        lng:-81.379236
+        lat:28.4158,
+        lng:-81.2989
     },
     {
         title:'Birchwood, Wisconsin, USA',
-        lat:45.658044,
-        lng:-91.5559
+        lat:45.7258,
+        lng:-91.6089
     },
     {
         title:'Madison, Wisconsin, USA',
@@ -104,8 +104,8 @@ travel.places = [
     //canada
     {
         title:'Toronto, Canada',
-        lat: 43.653226,
-        lng: -79.383184
+        lat: 43.7000,
+        lng: -79.4000
     },
     {
         title:'Niagara Falls, Canada',
@@ -157,51 +157,78 @@ travel.places = [
  */
     //austria
     {
-        title:'',
-        lat: 52.517,
-        lng: 13.394
+        title:'Innsbruck, Austria',
+        lat: 47.2667,
+        lng: 11.3833
+    },
+    {
+        title:'Bludenz, Austria',
+        lat: 47.1333,
+        lng: 9.8167
     },
     {
         title:'',
         lat: 52.517,
         lng: 13.394
     },
+    //czech republic
     {
-        title:'',
-        lat: 52.517,
-        lng: 13.394
+        title:'Prague, Czech Republic',
+        lat: 50.0833,
+        lng: 14.4167
+    },
+    //denmark
+    {
+        title:'Copenhagen, Denmark',
+        lat:55.6761,
+        lng:12.5683
     },
     //england
     {
         title:'London, England',
-        lat: 51.507351,
-        lng: -0.127758
+        lat: 51.5072,
+        lng: -0.1275
     },
     {
         title:'York, England',
-        lat: 53.959965,
-        lng: -1.087298
+        lat: 53.9583,
+        lng: -1.0803
     },
     {
         title:'Stratford-upon-Avon, England',
-        lat: 52.19173,
-        lng: -1.708298
+        lat: 52.1900,
+        lng: -1.7100
     },
     {
         title:'Thirsk, England',
-        lat: 54.233849,
-        lng: -1.341377
+        lat: 54.2327,
+        lng: -1.3420
     },
     //france
     {
         title:'Paris, France',
-        lat: 51.507351,
-        lng: -0.127758
+        lat: 48.8567,
+        lng: 2.3508
     },
     {
         title:'Colmar, France',
         lat: 48.0817,
         lng: 7.3556
+    },
+    {
+        title:'Menton, France',
+        lat: 43.7750,
+        lng: 7.5000
+    },
+    {
+        title:'Èze, France',
+        lat: 43.7286,
+        lng: 7.3617
+    },
+    {
+        title:'Nice, France',
+        lat: 43.7034,
+        lng: 7.2663
     },
     {
         title:'',
@@ -210,20 +237,20 @@ travel.places = [
     },
     //germany
     {
-        title:'',
-        lat: 52.517,
-        lng: 13.394
+        title:'Trier, Germany',
+        lat: 49.7500,
+        lng: 6.6333
     },
     {
-        title:'',
-        lat: 52.517,
-        lng: 13.394
+        title:'Cologne, Germany',
+        lat: 50.9364,
+        lng: 6.9528
     },
     //hungary
     {
-        title:'',
-        lat: 52.517,
-        lng: 13.394
+        title:'Budapest, Hungary',
+        lat: 47.4925,
+        lng: 19.0514
     },
     {
         title:'',
@@ -258,14 +285,34 @@ travel.places = [
     },
     //italy
     {
-        title:'',
-        lat: 52.517,
-        lng: 13.394
+        title:'Domodossola, Italy',
+        lat: 46.1167,
+        lng: 8.2833
     },
     {
-        title:'',
-        lat: 52.517,
-        lng: 13.394
+        title:'Milan, Italy',
+        lat: 45.4667,
+        lng: 9.1833
+    },
+    {
+        title:'Ventimiglia, Italy',
+        lat: 43.7903,
+        lng: 7.6083
+    },
+    {
+        title:'Apricale, Italy',
+        lat: 43.8833,
+        lng: 7.6667
+    },
+    {
+        title:'Isolabona, Italy',
+        lat: 43.8833,
+        lng: 7.6333
+    },
+    {
+        title:'Cervo, Italy',
+        lat: 43.9167,
+        lng: 8.1167
     },
     //ireland
     {
@@ -295,32 +342,32 @@ travel.places = [
     },
     //luxembourg
     {
-        title:'',
-        lat: 52.517,
-        lng: 13.394
+        title:'Luxembourg City, Luxembourg',
+        lat: 49.6000,
+        lng: 6.1167
     },
     //monaco
     {
-        title:'',
-        lat: 52.517,
-        lng: 13.394
+        title:'Monaco',
+        lat: 43.7328,
+        lng: 7.4197
     },
     //netherlands
     {
-        title:'',
-        lat: 52.517,
-        lng: 13.394
+        title:'Amsterdam, Netherlands',
+        lat: 52.3667,
+        lng: 4.9000
     },
     //norway
     {
         title:'Stavanger, Norway',
-        lat: 58.969976,
-        lng: 5.733107
+        lat: 58.9633,
+        lng: 5.7189
     },
     {
         title:'Lysebotn, Norway',
-        lat: 59.055407,
-        lng: 6.64853
+        lat: 59.0550,
+        lng: 6.6494
     },
     {
         title:'Preikestolen, Norway',
@@ -356,19 +403,34 @@ travel.places = [
     },
     //slovenia
     {
-        title:'',
-        lat: 52.517,
-        lng: 13.394
+        title:'Ljubljana, Slovenia',
+        lat: 46.0556,
+        lng: 14.5083
     },
     {
-        title:'',
-        lat: 52.517,
-        lng: 13.394
+        title:'Postojna, Slovenia',
+        lat: 45.7759,
+        lng: 14.2137
     },
     {
-        title:'',
-        lat: 52.517,
-        lng: 13.394
+        title:'Škocjan Caves, Slovenia',
+        lat: 45.6622,
+        lng: 13.9883
+    },
+    {
+        title:'Piran, Slovenia',
+        lat: 45.5284,
+        lng: 13.5684
+    },
+    {
+        title:'Triglav National Park, Slovenia',
+        lat: 46.3333,
+        lng: 13.7667
+    },
+    {
+        title:'Bled, Slovenia',
+        lat: 46.3688,
+        lng: 14.1140
     },
     //sweden
     {
@@ -378,14 +440,19 @@ travel.places = [
     },
     //switzerland
     {
-        title:'',
-        lat: 52.517,
-        lng: 13.394
+        title:'Chur, Switzerland',
+        lat: 46.8500,
+        lng: 9.5333
     },
     {
-        title:'',
-        lat: 52.517,
-        lng: 13.394
+        title:'Locarno, Switzerland',
+        lat: 46.1667,
+        lng: 8.8000
+    },
+    {
+        title:'Bellinzona, Switzerland',
+        lat: 46.2000,
+        lng: 9.0167
     },
 ];
 
@@ -396,7 +463,7 @@ travel.maps = {
         map = new google.maps.Map(document.getElementById('map'), {
             zoom: 4,
             center: {
-                lat: 43.653226,
+                lat: 43.653226,//todo, get random marker
                 lng: -79.383184//toronto
             },
             streetViewControl: false,
