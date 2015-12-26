@@ -19,5 +19,10 @@
   },
   "google": {
     "mapsApi": "AIzaSyDcq7rKnYBv21k9L_nmUp8hCddq5g6GLhw"
+  },
+  "social": {
+    "linkedIn": "https://www.linkedin.com/in/mikestumpf",
+    "github": "https://github.com/mike-stumpf",
+    "stackOverflow": "http://stackexchange.com/users/1282257/mike-stumpf?tab=accounts"
   }
 }
