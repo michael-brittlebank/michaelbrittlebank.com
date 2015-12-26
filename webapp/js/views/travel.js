@@ -59,8 +59,8 @@ travel.places = [
     },
     {
         title:'Niagara Falls, Canada',
-        lat: 69.922567,
-        lng: 22.092578
+        lat: 28.538336,
+        lng: -81.379236
     },
 /**
  * asia
@@ -129,14 +129,14 @@ travel.places = [
     },
     {
         title:'Preikestolen, Norway',
-        lat: 69.922567,
-        lng: 22.092578
+        lat: 58.9861,
+        lng: 6.1886
     },
     //sweden
     {
         title:'Stockholm, Sweden',
-        lat: 69.922567,
-        lng: 22.092578
+        lat: 59.3294,
+        lng: 18.0686
     }
 ];
 
@@ -170,10 +170,11 @@ travel.maps = {
             travel.maps.addMarkerWithTimeout(places[i], i * 100);
         }
     },
-    addMarkerWithTimeout: function(position, timeout) {
+    addMarkerWithTimeout: function(place, timeout) {
         window.setTimeout(function() {
             travel.markers.push(new google.maps.Marker({
-                position: position,
+                position: place,
+                title: place.title,
                 map: map,
                 animation: google.maps.Animation.DROP
             }));
