@@ -20,10 +20,6 @@ travel.maps = {
                 travel.maps.dropMarkers();
             },
             2500);
-//            var ctaLayer = new google.maps.KmlLayer({
-//                url: 'https://assets.contentful.com/qiqlnlpznam2/4j92IVxgMU2ESKwYS0Sym0/1e072a1de9cf6b03769d137b43617a21/travel.kml',//todo move to contenful
-//                map: map
-//            });
     },
     dropMarkers: function() {
         travel.maps.clearMarkers();
