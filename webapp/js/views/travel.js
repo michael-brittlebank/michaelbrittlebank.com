@@ -2,11 +2,6 @@ var travel = {},
     map;
 
 travel.places = [
-    {
-        title:'',
-        lat: 52.517,
-        lng: 13.394
-    },
 /**
  * americas
  */
@@ -84,12 +79,12 @@ travel.places = [
     {
         title:'Los Angeles, California, USA',
         lat: 34.0500,
-        lng: 118.2500
+        lng: -118.2500
     },
     {
         title:'Milwaukee, Wisconsin, USA',
         lat: 43.0500,
-        lng: 87.9500
+        lng: -87.9500
     },
     {
         title:'Rochester, Minnesota, USA',
@@ -147,14 +142,54 @@ travel.places = [
         lng: -91.2331
     },
     {
-        title:'',
-        lat: 52.517,
-        lng: 13.394
+        title:'Bella Vista, Arkansas, USA',
+        lat: 36.4689,
+        lng: -94.2686
     },
     {
-        title:'',
-        lat: 52.517,
-        lng: 13.394
+        title:'Kansas City, Missouri, USA',
+        lat: 39.0997,
+        lng: -94.5783
+    },
+    {
+        title:'Dubuque, Iowa, USA',
+        lat: 42.5043,
+        lng: -90.6869
+    },
+    {
+        title:'Minocqua, Wisconsin, USA',
+        lat: 45.8714,
+        lng: -89.7111
+    },
+    {
+        title:'Grand Canyon, Arizona, USA',
+        lat: 36.1000,
+        lng: -112.1000
+    },
+    {
+        title:'Sedona, Arizona, USA',
+        lat: 34.8600,
+        lng: -111.7892
+    },
+    {
+        title:'Erie, Pennsylvania, USA',
+        lat: 42.1296,
+        lng: -80.0852
+    },
+    {
+        title:'Minneapolis, Minnesota, USA',
+        lat: 44.9778,
+        lng: -93.2650
+    },
+    {
+        title:'Bentonville, Arkansas, USA',
+        lat: 36.3667,
+        lng: -94.2133
+    },
+    {
+        title:'Grinnell, Iowa, USA',
+        lat: 41.7436,
+        lng: -92.7247
     },
     //canada
     {
@@ -174,38 +209,33 @@ travel.places = [
         lng: -87.7090
     },
     {
-        title:'',
-        lat: 52.517,
-        lng: 13.394
-    },
-    {
-        title:'',
-        lat: 52.517,
-        lng: 13.394
+        title:'Cozumel, Mexico',
+        lat: 20.4167,
+        lng: -86.9167
     },
 /**
  * asia
  */
     //japan
     {
-        title:'',
-        lat: 52.517,
-        lng: 13.394
+        title:'Tokyo, Japan',
+        lat: 35.6833,
+        lng: 139.6833
     },
     {
-        title:'',
-        lat: 52.497,
-        lng: 13.396
+        title:'Kyoto, Japan',
+        lat: 35.0117,
+        lng: 135.7683
     },
     {
-        title:'',
-        lat:52.511,
-        lng:13.447
+        title:'Mount Fuji, Japan',
+        lat: 35.3580,
+        lng: 138.7310
     },
     {
-        title:'',
-        lat:52.511,
-        lng:13.447
+        title:'Hakone, Japan',
+        lat: 35.1833,
+        lng: 139.0333
     },
 /**
  * europe
@@ -220,11 +250,6 @@ travel.places = [
         title:'Bludenz, Austria',
         lat: 47.1333,
         lng: 9.8167
-    },
-    {
-        title:'',
-        lat: 52.517,
-        lng: 13.394
     },
     //czech republic
     {
@@ -312,16 +337,11 @@ travel.places = [
         lat: 47.4925,
         lng: 19.0514
     },
-    {
-        title:'',
-        lat: 52.517,
-        lng: 13.394
-    },
     //iceland
     {
         title:'Reykjavik, Iceland',
         lat: 64.1333,
-        lng: 21.9333
+        lng: -21.9333
     },
     {
         title:'Thingvellir, Iceland',
@@ -376,29 +396,39 @@ travel.places = [
     },
     //ireland
     {
-        title:'',
-        lat: 52.517,
-        lng: 13.394
+        title:'Glenveagh National Park, Ireland',
+        lat: 55.0167,
+        lng: -8.0500
     },
     {
-        title:'',
-        lat: 52.517,
-        lng: 13.394
+        title:'Cliffs of Moher, Ireland',
+        lat: 52.9361,
+        lng: -9.4708
     },
     {
-        title:'',
-        lat: 52.517,
-        lng: 13.394
+        title:'Connemara, Ireland',
+        lat: 53.5000,
+        lng: -9.7500
     },
     {
-        title:'',
-        lat: 52.517,
-        lng: 13.394
+        title:'Giant\'s Causeway, Ireland',
+        lat: 55.2408,
+        lng: -6.5117
     },
     {
-        title:'',
-        lat: 52.517,
-        lng: 13.394
+        title:'Carrick-a-Rede Rope Bridge, Ireland',
+        lat: 55.2400,
+        lng: -6.3310
+    },
+    {
+        title:'Galway, Ireland',
+        lat: 53.2719,
+        lng: -9.0489
+    },
+    {
+        title:'Dublin, Ireland',
+        lat: 53.3478,
+        lng: -6.2597
     },
     //luxembourg
     {
@@ -436,30 +466,20 @@ travel.places = [
     },
     //portugal
     {
-        title:'',
-        lat: 52.517,
-        lng: 13.394
+        title:'Lisbon, Portugal',
+        lat: 38.7139,
+        lng: -9.1394
     },
     {
-        title:'',
-        lat: 52.517,
-        lng: 13.394
-    },
-    {
-        title:'',
-        lat: 52.517,
-        lng: 13.394
+        title:'Sintra, Portugal',
+        lat: 38.7992,
+        lng: -9.3883
     },
     //slovakia
     {
         title:'Bratislava, Slovakia',
         lat: 48.1439,
         lng: 17.1097
-    },
-    {
-        title:'',
-        lat: 52.517,
-        lng: 13.394
     },
     //slovenia
     {
@@ -513,18 +533,19 @@ travel.places = [
         title:'Bellinzona, Switzerland',
         lat: 46.2000,
         lng: 9.0167
-    },
+    }
 ];
 
 travel.markers = [];
 
 travel.maps = {
     initMap: function() {
+        var place = site.helpers.getRandomElement(travel.places);
         map = new google.maps.Map(document.getElementById('map'), {
             zoom: 4,
             center: {
-                lat: 43.653226,//todo, get random marker
-                lng: -79.383184//toronto
+                lat: place.lat,
+                lng: place.lng
             },
             streetViewControl: false,
             mapTypeControl: false,
@@ -543,7 +564,7 @@ travel.maps = {
         travel.maps.clearMarkers();
         var places = site.helpers.shuffleArray(travel.places);
         for (var i = 0; i < places.length; i++) {
-            travel.maps.addMarkerWithTimeout(places[i], i * 100);
+            travel.maps.addMarkerWithTimeout(places[i], i * 50);
         }
     },
     addMarkerWithTimeout: function(place, timeout) {

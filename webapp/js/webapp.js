@@ -8,11 +8,15 @@ site.screen = {
 };
 
 site.helpers = {
+    //http://stackoverflow.com/questions/1527803/generating-random-numbers-in-javascript-in-a-specific-range
     getRandomInt: function (min, max) {
         return Math.floor(Math.random() * (max - min)) + min;
     },
+    getRandomElement: function(array){
+      return array[site.helpers.getRandomInt(0, array.length-1)];
+    },
+    //http://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
     shuffleArray: function(array) {
-        //http://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
         for (var i = array.length - 1; i > 0; i--) {
             var j = Math.floor(Math.random() * (i + 1));
             var temp = array[i];
