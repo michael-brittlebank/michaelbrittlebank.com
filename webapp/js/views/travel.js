@@ -92,6 +92,61 @@ travel.places = [
         lng: 87.9500
     },
     {
+        title:'Rochester, Minnesota, USA',
+        lat: 44.0234,
+        lng: -92.4630
+    },
+    {
+        title:'Kauai, Hawaii, USA',
+        lat: 22.0833,
+        lng: -159.5000
+    },
+    {
+        title:'Maui, Hawaii, USA',
+        lat: 20.8000,
+        lng: -156.3333
+    },
+    {
+        title:'Platteville, Wisconsin, USA',
+        lat: 42.7371,
+        lng: -90.4775
+    },
+    {
+        title:'Rockford, Illinois, USA',
+        lat: 42.2594,
+        lng: -89.0644
+    },
+    {
+        title:'Eau Claire, Wisconsin, USA',
+        lat: 44.8167,
+        lng: -91.5000
+    },
+    {
+        title:'Appleton, Wisconsin, USA',
+        lat: 44.2667,
+        lng: -88.4000
+    },
+    {
+        title:'Duluth, Minnesota, USA',
+        lat: 46.8000,
+        lng: -92.1000
+    },
+    {
+        title:'Superior, Wisconsin, USA',
+        lat: 46.7069,
+        lng: -92.0853
+    },
+    {
+        title:'Albert Lea, Minnesota, USA',
+        lat: 43.6479,
+        lng: -93.3688
+    },
+    {
+        title:'La Crosse, Wisconsin, USA',
+        lat: 43.8133,
+        lng: -91.2331
+    },
+    {
         title:'',
         lat: 52.517,
         lng: 13.394
@@ -231,9 +286,9 @@ travel.places = [
         lng: 7.2663
     },
     {
-        title:'',
-        lat: 52.517,
-        lng: 13.394
+        title:'Versailles, France',
+        lat: 48.8044,
+        lng: 2.1232
     },
     //germany
     {
@@ -245,6 +300,11 @@ travel.places = [
         title:'Cologne, Germany',
         lat: 50.9364,
         lng: 6.9528
+    },
+    {
+        title:'Berlin, Germany',
+        lat: 52.5167,
+        lng: 13.3833
     },
     //hungary
     {
@@ -392,9 +452,9 @@ travel.places = [
     },
     //slovakia
     {
-        title:'',
-        lat: 52.517,
-        lng: 13.394
+        title:'Bratislava, Slovakia',
+        lat: 48.1439,
+        lng: 17.1097
     },
     {
         title:'',
