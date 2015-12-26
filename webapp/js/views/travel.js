@@ -541,7 +541,7 @@ travel.markers = [];
 travel.maps = {
     initMap: function() {
         var place = site.helpers.getRandomElement(travel.places);
-        map = new google.maps.Map(document.getElementById('map'), {
+        map = new google.maps.Map(document.getElementById('container-google'), {
             zoom: 4,
             center: {
                 lat: place.lat,
