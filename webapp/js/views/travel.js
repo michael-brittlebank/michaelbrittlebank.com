@@ -7,6 +7,8 @@ travel.markers = [];
 
 travel.maps = {
     initMap: function() {
+        site.animation.fadeIn('#container-rule',1000,0);
+        site.animation.fadeIn('#container-google',1000,500);
         var place = site.helpers.getRandomElement(travel.places);
         map = new google.maps.Map(document.getElementById('container-google'), {
             zoom: 4,
@@ -53,7 +55,7 @@ travel.maps = {
 };
 
 travel.init = function(){
-    travel.maps.initMap();
+    site.animation.fadeIn('#container-images',1000,750);
     $('.travel-images').slick({
         infinite: true,
         slidesToShow: 1,
@@ -64,6 +66,7 @@ travel.init = function(){
         speed: 500,
         fade: true,
         cssEase: 'linear',
-        dots: true
+        dots: true,
+        pauseOnDotsHover: true
     });
 };

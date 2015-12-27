@@ -15,4 +15,9 @@
     </section>
     <section id="container-google"></section>
 </main>
-<script async defer src="https://maps.googleapis.com/maps/api/js?key={{config.googleMapsApiKey}}&callback=travel.init"></script>
+<script type="text/javascript">
+    $(function(){
+        travel.init();
+    });
+</script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key={{config.googleMapsApiKey}}&callback=travel.maps.initMap"></script>
