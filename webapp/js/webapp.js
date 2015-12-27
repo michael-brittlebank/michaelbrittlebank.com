@@ -39,6 +39,17 @@ site.animation = {
                 $(elements).css({visibility:'hidden'});
             }
         });
+    },
+    fadeOutAndRemove: function(element,duration, delay){
+        $(element).velocity('transition.fadeOut',{
+            duration:duration,
+            delay:delay,
+            complete: function(elements) {
+                console.log('complete');
+                console.log(elements);
+                $(elements).remove();
+            }
+        });
     }
 };
 

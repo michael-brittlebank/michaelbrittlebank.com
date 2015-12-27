@@ -1,5 +1,3 @@
-window.requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
-
 var bubblesAnimating = false,
     numberSmallBubbles = 0,
     numberMediumBubbles = 0,
@@ -7,6 +5,9 @@ var bubblesAnimating = false,
     smallBubbles,
     mediumBubbles,
     largeBubbles,
+    startBubbles,
+    stopBubbles,
+    bubbleContainer,
     bubbles = {};
 
 bubbles.nodeList = [];
@@ -17,53 +18,16 @@ bubbles.types = {
     largeBubble: 'large-bubble'
 };
 
-bubbles.resetPath = function(node){
-    node.duration = site.helpers.getRandomInt(10, 20);
-    node.sinWidth = site.helpers.getRandomInt(100, site.screen.windowWidth/4);
-    node.start = null;
-    node.progress = null;
-    return node;
-};
-
-bubbles.createBubbles = function(element, numberOfBubbles, classes){
-    var node,
-        bubbleContainer = document.getElementById(element),
-        currentBubbleNum = 1,
-        width,
-        height,
-        domNode;
-    for (var i = 0; i < numberOfBubbles; i++){
-        node = {};
-        switch(classes){
-            case bubbles.types.smallBubble:
-                width = height = site.helpers.getRandomInt(5,25);
-                numberSmallBubbles = numberOfBubbles;
-                break;
-            case bubbles.types.mediumBubble:
-                width = height = site.helpers.getRandomInt(25,50);
-                numberMediumBubbles = numberOfBubbles;
-                break;
-            case bubbles.types.largeBubble:
-                width = height = site.helpers.getRandomInt(50,75);
-                numberLargeBubbles = numberOfBubbles;
-                break;
-        }
-        domNode = document.createElement('div');
-        domNode.setAttribute('id', 'bubble'+currentBubbleNum);
-        domNode.setAttribute('class', classes+' bubble');
-        domNode.style.width = width+'px';
-        domNode.style.height = height+'px';
-        domNode.style.bottom = 0;
-        domNode.style.left = 0;
-        bubbleContainer.appendChild(domNode);
-        node.node = domNode;
-        bubbles.nodeList.push(bubbles.resetPath(node));
-        currentBubbleNum++;
+bubbles.helpers = {
+    updateBubbleCount: function(){
+        numberSmallBubbles = $(smallBubbles).val();
+        numberMediumBubbles = $(mediumBubbles).val();
+        numberLargeBubbles = $(largeBubbles).val();
     }
 };
 
-bubbles.animationQueue = function(){
-    function step(timestamp){
+bubbles.animation = {
+    moveBubble: function(timestamp){
         var offsetModifier = site.screen.windowHeight * 0.1,
             modifiedHeight = site.screen.windowHeight + offsetModifier,
             progress,
@@ -83,50 +47,105 @@ bubbles.animationQueue = function(){
             bubbles.nodeList[i].node.style.bottom = Math.min(site.screen.windowHeight, (bubbles.nodeList[i].sinWidth * x)- offsetModifier) + 'px';
             bubbles.nodeList[i].node.style.left = site.screen.windowWidth / 2 + (bubbles.nodeList[i].sinWidth * y) + 'px';
             if(progress >= 1){
-                bubbles.nodeList[i] = bubbles.resetPath(bubbles.nodeList[i]);
+                bubbles.nodeList[i] = bubbles.animation.resetBubble(bubbles.nodeList[i]);
             }
         }
-        requestAnimationFrame(step);
+    },
+    resetBubble: function(node){
+        node.duration = site.helpers.getRandomInt(10, 20);
+        node.sinWidth = site.helpers.getRandomInt(100, site.screen.windowWidth/4);
+        node.start = null;
+        node.progress = null;
+        return node;
+    },
+    destroyBubbles: function(start, end){
+        console.log("destroy bubbles");
+        var first = Math.min(start,end),
+            last = Math.max(start,end),
+            bubblesToRemove;
+        if (last > bubbles.nodeList.length){
+            last = bubbles.nodeList.length;
+        }
+        bubblesToRemove = bubbles.nodeList.splice(first, last);
+        console.log("bubbles list");
+        console.log(bubblesToRemove);
+        for (var i = 0; i < bubblesToRemove.length; i++){
+            site.animation.fadeOutAndRemove(bubblesToRemove[i].node,1000,250*i);
+        }
+    },
+    createBubbles: function(numberOfBubbles, classes){
+        var node,
+            currentBubbleNum = bubbles.nodeList.length,
+            width,
+            height,
+            domNode;
+        for (var i = 0; i < numberOfBubbles; i++){
+            node = {};
+            switch(classes){
+                case bubbles.types.smallBubble:
+                    width = height = site.helpers.getRandomInt(5,25);
+                    break;
+                case bubbles.types.mediumBubble:
+                    width = height = site.helpers.getRandomInt(25,50);
+                    break;
+                case bubbles.types.largeBubble:
+                    width = height = site.helpers.getRandomInt(50,75);
+                    break;
+            }
+            domNode = document.createElement('div');
+            domNode.setAttribute('id', 'bubble'+currentBubbleNum);
+            domNode.setAttribute('class', classes+' bubble');
+            domNode.style.width = width+'px';
+            domNode.style.height = height+'px';
+            domNode.style.bottom = 0;
+            domNode.style.left = 0;
+            $(bubbleContainer).append(domNode);
+            site.animation.fadeIn(domNode,1000,250*i);
+            node.node = domNode;
+            bubbles.nodeList.push(bubbles.animation.resetBubble(node));
+            currentBubbleNum++;
+        }
     }
-    requestAnimationFrame(step);
-};
-
-bubbles.spawnBubbles = function(element, numberOfSmallBubbles, numberOfMediumBubbles, numberOfLargeBubbles){
-    bubbles.createBubbles(element, numberOfSmallBubbles, bubbles.types.smallBubble);
-    bubbles.createBubbles(element, numberOfMediumBubbles, bubbles.types.mediumBubble);
-    bubbles.createBubbles(element, numberOfLargeBubbles, bubbles.types.largeBubble);
-    //bubbles.animationQueue();
-};
-
-bubbles.pop = function(){
-    //todo, animated destroy "pop"
 };
 
 bubbles.controls = {
     startBubbles: function(){
         if(!bubblesAnimating){
             bubblesAnimating = true;
+            $(stopBubbles).removeClass('disabled');
+            $(startBubbles).addClass('disabled');
+            bubbles.animation.createBubbles(numberSmallBubbles, bubbles.types.smallBubble);
+            bubbles.animation.createBubbles(numberMediumBubbles, bubbles.types.mediumBubble);
+            bubbles.animation.createBubbles(numberLargeBubbles, bubbles.types.largeBubble);
             console.log("started");
         }
     },
     stopBubbles: function(){
         if(bubblesAnimating){
             bubblesAnimating = false;
+            $(startBubbles).removeClass('disabled');
+            $(stopBubbles).addClass('disabled');
+            bubbles.animation.destroyBubbles(0, bubbles.nodeList.length);
             console.log("stopped");
         }
     }
 };
 
 bubbles.init = function() {
-    bubbles.spawnBubbles('content-bubbles',0,0,1);
     //elements
     smallBubbles = $('#smallBubbles');
     mediumBubbles = $('#mediumBubbles');
     largeBubbles = $('#largeBubbles');
+    startBubbles = $('#startBubbles');
+    stopBubbles = $('#stopBubbles');
+    bubbleContainer = $('#content-bubbles');
+    //values
+    bubbles.helpers.updateBubbleCount();
     //listeners
     $(smallBubbles).on('change', function(){
         if ($(smallBubbles).val() !== numberSmallBubbles){
             console.log("small bubble update");
+            bubbles.helpers.updateBubbleCount();
             if ($(smallBubbles).val() > numberSmallBubbles){
                 //todo, add bubbles and update total
             } else if ($(smallBubbles).val() < numberSmallBubbles){
@@ -140,10 +159,10 @@ bubbles.init = function() {
     $(largeBubbles).on('change', function(){
         console.log("large bubble update");
     });
-    $('#startBubbles').on('click touch', function(){
+    $(startBubbles).on('click touch', function(){
         bubbles.controls.startBubbles();
     });
-    $('#stopBubbles').on('click touch', function(){
+    $(stopBubbles).on('click touch', function(){
         bubbles.controls.stopBubbles();
     });
 };

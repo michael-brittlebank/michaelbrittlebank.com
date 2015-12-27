@@ -32,3 +32,8 @@ a {
 .reveal {
   @include no-border;
 }
+.button {
+  &:focus {
+    outline: none;
+  }
+}

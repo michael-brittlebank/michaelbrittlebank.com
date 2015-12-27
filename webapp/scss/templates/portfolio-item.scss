@@ -23,7 +23,7 @@
             position: absolute;
             background-color:purple;
             @include border-radius(50%);
-            @include opacity(0.4);
+            @include fade-in-default;
           }
         }
       }

@@ -8,14 +8,24 @@
         </div>
     </section>
     <section id="bubble-controls" class="small-12 columns">
-        <label for="smallBubbles">Small Bubbles</label>
-        <input id="smallBubbles" type="number" value="25"/>
-        <label for="mediumBubbles">Medium Bubbles</label>
-        <input id="mediumBubbles" type="number" value="15"/>
-        <label for="largeBubbles">Large Bubbles</label>
-        <input id="largeBubbles" type="number" value="15"/>
-        <button id="startBubbles">Start Bubbles</button>
-        <button id="stopBubbles">Stop Bubbles</button>
+        <div class="row">
+            <div class="small-4 medium-2 columns">
+                <label for="smallBubbles">Small Bubbles</label>
+                <input id="smallBubbles" type="number" value="3"/>
+            </div>
+            <div class="small-4 medium-2 columns">
+                <label for="mediumBubbles">Medium Bubbles</label>
+                <input id="mediumBubbles" type="number" value="0"/>
+            </div>
+            <div class="small-4 medium-2 columns">
+                <label for="largeBubbles">Large Bubbles</label>
+                <input id="largeBubbles" type="number" value="0"/>
+            </div>
+            <div class="small-12 medium-4 columns">
+                <button id="startBubbles" class="button">Start Bubbles</button>
+                <button id="stopBubbles" class="button disabled">Stop Bubbles</button>
+            </div>
+        </div>
     </section>
     {{>portfolio-footer page}}
 </main>
