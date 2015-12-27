@@ -1,6 +1,7 @@
 var /* packages */
     _ = require('lodash'),
     promise = require('bluebird'),
+    imgur = require('imgur'),
 /* services */
     contentfulService = require('../services/contentful.service'),
     contentService = require('../services/content.service'),
@@ -32,15 +33,24 @@ pages.getIndex = function(req, res, next) {
 };
 
 pages.getPortfolioPage = function(req, res, next){
-    var params = {
-        content_type: contentfulService.contentTypes.portfolio,
-        limit: 999
-    };
+    var portfolioParams = {
+            content_type: contentfulService.contentTypes.portfolio,
+            limit: 999
+        },
+        quoteParams = {
+            content_type: contentfulService.contentTypes.quote,
+            limit: 999
+        };
     return promise
-        .all([contentfulService.getEntries(params)])
+        .all([
+            contentfulService.getEntries(portfolioParams),
+            contentfulService.getEntries(quoteParams)
+        ])
         .then(function (response) {
             var portfolioItems = [],
-                processedItems = [];
+                processedItems = [],
+                quoteItems = [];
+            //portfolio
             response[0].forEach(function(entry){
                 portfolioItems.push(contentService.portfolioDigest(entry));
             });
@@ -54,23 +64,12 @@ pages.getPortfolioPage = function(req, res, next){
                 });
             }
             res.locals.portfolio = _.sortBy(processedItems, 'name');
-            var params = {
-                content_type: contentfulService.contentTypes.quote,
-                limit: 999
-            };
-            return promise
-                .all([contentfulService.getEntries(params)])
-                .then(function (response) {
-                    var quoteItems = [];
-                    response[0].forEach(function(entry){
-                        quoteItems.push(contentService.quoteDigest(entry));
-                    });
-                    res.locals.quote = _.sample(quoteItems);
-                    res.render('page-portfolio');
-                })
-                .catch(function (err) {
-                    next(err);
-                });
+            //quotes
+            response[1].forEach(function(entry){
+                quoteItems.push(contentService.quoteDigest(entry));
+            });
+            res.locals.quote = _.sample(quoteItems);
+            res.render('page-portfolio');
         })
         .catch(function (err) {
             next(err);
