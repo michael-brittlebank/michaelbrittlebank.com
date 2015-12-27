@@ -90,10 +90,12 @@ pages.getScalesPage = function(req, res, next) {
 
 pages.getTravelPage = function(req, res, next) {
     var params = {
-        albumId: 'travel'
+        content_type: contentfulService.contentTypes.pages,
+        'fields.url[in]': 'index',
+        limit: 1
     };
     return promise
-        .all([imageService.getAlbumImages(params)])
+        .all([contentfulService.getEntries(params)])
         .then(function (response) {
             console.log(response);
             var content = response[0];

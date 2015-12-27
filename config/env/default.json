@@ -24,11 +24,5 @@
     "linkedIn": "https://www.linkedin.com/in/mikestumpf",
     "github": "https://github.com/mike-stumpf",
     "stackOverflow": "http://stackexchange.com/users/1282257/mike-stumpf?tab=accounts"
-  },
-  "imgur": {
-    "clientId": "7470d86ca9ef828",
-    "clientSecret": "2947b9a990b1f2f800f692bc9062e664e8632e3b",
-    "userEmail": "wrigley242@gmail.com",
-    "userPassword": "wrigley242"
   }
 }
