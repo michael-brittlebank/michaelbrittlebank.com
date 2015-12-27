@@ -5,7 +5,6 @@ var /* packages */
     contentfulService = require('../services/contentful.service'),
     contentService = require('../services/content.service'),
     webapp = require('../services/webapp.service'),
-    imageService = require('../services/image.service'),
     logger = require('../services/logger.service'),
     pages = {};
 
@@ -14,7 +13,7 @@ var /* packages */
  */
 pages.getIndex = function(req, res, next) {
     var params = {
-        content_type: contentfulService.contentTypes.pages,
+        content_type: contentfulService.contentTypes.page,
         'fields.url[in]': 'index',
         limit: 1
     };
@@ -90,16 +89,15 @@ pages.getScalesPage = function(req, res, next) {
 
 pages.getTravelPage = function(req, res, next) {
     var params = {
-        content_type: contentfulService.contentTypes.pages,
-        'fields.url[in]': 'index',
+        content_type: contentfulService.contentTypes.album,
+        'fields.title[in]': 'Travel',
         limit: 1
     };
     return promise
         .all([contentfulService.getEntries(params)])
         .then(function (response) {
-            console.log(response);
             var content = response[0];
-            res.locals.images = contentService.imageDigest(content);
+            res.locals.album = contentService.albumDigest(content);
             res.render('page-travel');
         })
         .catch(function (err) {
@@ -109,7 +107,7 @@ pages.getTravelPage = function(req, res, next) {
 
 pages.getDefaultPage = function(req, res, next) {
     var params = {
-        content_type: contentfulService.contentTypes.pages,
+        content_type: contentfulService.contentTypes.page,
         'fields.url[in]': req.originalUrl.replace(/^\/|\/$/g, ''),
         limit: 1
     };
@@ -149,7 +147,7 @@ pages.getDefaultPage = function(req, res, next) {
 
 pages.get500Page = function(req, res, next) {
     var params = {
-        content_type: contentfulService.contentTypes.pages,
+        content_type: contentfulService.contentTypes.page,
         'fields.url[in]': '500',
         limit: 1
     };
@@ -167,7 +165,7 @@ pages.get500Page = function(req, res, next) {
 
 pages.get404Page = function(req, res, next) {
     var params = {
-        content_type: contentfulService.contentTypes.pages,
+        content_type: contentfulService.contentTypes.page,
         'fields.url[in]': '404',
         limit: 1
     };

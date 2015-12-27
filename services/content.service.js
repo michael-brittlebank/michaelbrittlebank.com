@@ -75,6 +75,18 @@ contentService.menuItemDigest = function(data){
     return result;
 };
 
+contentService.albumDigest = function(data){
+    if (data.length){
+        data = webapp.getFirstResult(data);
+    }
+    if (data){
+        return contentModel.getAlbumModel(data);
+    }
+    else {
+        return {};
+    }
+};
+
 contentService.imageDigest = function(data){
     var result = [];
     if(data) {

@@ -132,10 +132,28 @@ contentModels.getMenuItemModel = function(data){
     }
 };
 
+contentModels.getAlbumModel = function(data){
+    if (webapp.simpleNullCheck(data,'fields')){
+        var fields = data.fields,
+            contentService = require('../services/content.service');
+        return {
+            id: data.sys.id,
+            title: webapp.getValueFromKey(fields,'title'),
+            images: webapp.simpleNullCheck(fields,'images')?contentService.imageDigest(fields.images):{}
+        };
+    }
+    else {
+        return {};
+    }
+};
+
 contentModels.getImageModel = function(data){
     if (webapp.simpleNullCheck(data,'fields')){
         var fields = data.fields;
         return {
+            id: data.sys.id,
+            title: webapp.getValueFromKey(fields,'title'),
+            url: webapp.getImageUrl(data)
         };
     }
     else {

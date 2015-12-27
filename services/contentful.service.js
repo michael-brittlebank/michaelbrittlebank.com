@@ -9,11 +9,12 @@ var /* packages */
     contentfulService = {};
 
 contentfulService.contentTypes = {
-    pages: config.contentful.contentTypes.pages,
+    page: config.contentful.contentTypes.page,
     portfolio: config.contentful.contentTypes.portfolio,
     contentBlock: config.contentful.contentTypes.contentBlock,
     quote: config.contentful.contentTypes.quote,
-    menu: config.contentful.contentTypes.menu
+    menu: config.contentful.contentTypes.menu,
+    album: config.contentful.contentTypes.album
 };
 
 var client = contentful.createClient({
