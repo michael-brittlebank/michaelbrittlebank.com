@@ -6,6 +6,11 @@ header {
     text-transform: uppercase;
   }
   @include fade-in-default;
+  @include breakpoint(small only) {
+    //revert fade in on mobile devices
+    visibility: visible!important;
+    @include opacity(1);
+  }
   #menu-mobile {
     padding:0;
     display: none;
