@@ -1,10 +1,26 @@
 <main class="row page travel">
     <section id="container-images">
-
+        <div class="travel-images">
+            <div style="background-image:url('http://i1.wp.com/mikestumpf.com/wp-content/uploads/2014/10/DSCN0255.png?zoom=2&resize=1400%2C450');">
+                <div class="image-caption-holder">
+                    <h3>Lysebotn, Norway</h3>
+                </div>
+            </div>
+            <div style="background-image:url('http://i1.wp.com/mikestumpf.com/wp-content/uploads/2014/10/DSC-0306.png?zoom=2&resize=1400%2C450');">
+                <div class="image-caption-holder">
+                    <h3>York, England</h3>
+                </div>
+            </div>
+            <div style="background-image:url('http://i2.wp.com/mikestumpf.com/wp-content/uploads/2014/10/P1010126.png?zoom=2&resize=1400%2C450');">
+                <div class="image-caption-holder">
+                    <h3>Place des Vosges - Paris, France</h3>
+                </div>
+            </div>
+        </div>
     </section>
     <section id="container-rule" class="small-12 columns">
         <hr/>
     </section>
     <section id="container-google"></section>
 </main>
-<script async defer src="https://maps.googleapis.com/maps/api/js?key={{config.googleMapsApiKey}}&callback=travel.maps.initMap"></script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key={{config.googleMapsApiKey}}&callback=travel.init"></script>

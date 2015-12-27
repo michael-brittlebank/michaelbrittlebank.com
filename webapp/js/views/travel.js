@@ -54,4 +54,16 @@ travel.maps = {
 
 travel.init = function(){
     travel.maps.initMap();
+    $('.travel-images').slick({
+        infinite: true,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        centerMode: true,
+        autoplay: true,
+        autoplaySpeed: 5000,
+        speed: 500,
+        fade: true,
+        cssEase: 'linear',
+        dots: true
+    });
 };
