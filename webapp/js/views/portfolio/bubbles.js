@@ -59,16 +59,13 @@ bubbles.animation = {
         return node;
     },
     destroyBubbles: function(start, end){
-        console.log("destroy bubbles");
         var first = Math.min(start,end),
             last = Math.max(start,end),
             bubblesToRemove;
         if (last > bubbles.nodeList.length){
             last = bubbles.nodeList.length;
         }
-        bubblesToRemove = bubbles.nodeList.splice(first, last);
-        console.log("bubbles list");
-        console.log(bubblesToRemove);
+        bubblesToRemove = bubbles.nodeList.splice(first, last).reverse();
         for (var i = 0; i < bubblesToRemove.length; i++){
             site.animation.fadeOutAndRemove(bubblesToRemove[i].node,1000,250*i);
         }
@@ -98,7 +95,7 @@ bubbles.animation = {
             domNode.style.width = width+'px';
             domNode.style.height = height+'px';
             domNode.style.bottom = 0;
-            domNode.style.left = 0;
+            domNode.style.left = parseInt(Math.random()*100)+'%';
             $(bubbleContainer).append(domNode);
             site.animation.fadeIn(domNode,1000,250*i);
             node.node = domNode;

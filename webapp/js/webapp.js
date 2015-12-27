@@ -45,8 +45,6 @@ site.animation = {
             duration:duration,
             delay:delay,
             complete: function(elements) {
-                console.log('complete');
-                console.log(elements);
                 $(elements).remove();
             }
         });
