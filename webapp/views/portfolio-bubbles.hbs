@@ -1,33 +1,26 @@
-<main class="row portfolio-item portfolio bubbles">
-    <section id="container-bubbles">
+<main class="portfolio-item portfolio bubbles">
+    <section id="container-content" class="row">
+        <div id="content-code" class="small-12 medium-6 columns small-order-2 medium-order-1 content">
+            the code here
+        </div>
+        <div id="content-bubbles" class="small-12 medium-6 columns small-order-1 medium-order-2 content">
+            the bubbles here
+        </div>
     </section>
     <section id="bubble-controls" class="small-12 columns">
-        these are all the bubbles
-        {{{page.body}}}
         <label for="smallBubbles">Small Bubbles</label>
         <input id="smallBubbles" type="number" value="25"/>
         <label for="mediumBubbles">Medium Bubbles</label>
         <input id="mediumBubbles" type="number" value="15"/>
         <label for="largeBubbles">Large Bubbles</label>
         <input id="largeBubbles" type="number" value="15"/>
-        <button id="updateQuantity">Update Quantity</button>
         <button id="startBubbles">Start Bubbles</button>
         <button id="stopBubbles">Stop Bubbles</button>
-        <select id="bubbleEffect">
-            <option value="2D" selected="selected">2D</option>
-            <option value="3D">3D</option>
-        </select>
-        <div class="switch small">
-            <input class="switch-input" id="smallSwitch" type="checkbox" name="exampleSwitch">
-            <label class="switch-paddle" for="smallSwitch">
-                <span class="show-for-sr">Small Portions Only</span>
-            </label>
-        </div>
     </section>
     {{>portfolio-footer page}}
 </main>
 <script type="text/javascript">
     $(function(){
-        bubbles.init('container-bubbles',30,12,7);
+        bubbles.init();
     });
 </script>

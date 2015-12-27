@@ -1,12 +1,4 @@
 .portfolio {
-  &.portfolio-item {
-    .bubble {
-      position: absolute;
-      background-color:purple;
-      @include border-radius(50%);
-      @include opacity(0.4);
-    }
-  }
   .portfolio-links {
     a {
       font-size: rem-calc(20);
@@ -14,6 +6,26 @@
       .fa {
         margin-right: 10px;
         font-size: rem-calc(26);
+      }
+    }
+  }
+}
+
+.portfolio.portfolio-item {
+  &.bubbles {
+    #container-content {
+      .content {
+        height: 500px;
+        &#content-bubbles {
+          overflow:hidden;
+          position: relative;
+          .bubble {
+            position: absolute;
+            background-color:purple;
+            @include border-radius(50%);
+            @include opacity(0.4);
+          }
+        }
       }
     }
   }
