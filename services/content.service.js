@@ -75,4 +75,14 @@ contentService.menuItemDigest = function(data){
     return result;
 };
 
+contentService.imageDigest = function(data){
+    var result = [];
+    if(data) {
+        data.forEach(function (entry) {
+            result.push(contentModel.getImageModel(entry));
+        });
+    }
+    return result;
+};
+
 module.exports = contentService;

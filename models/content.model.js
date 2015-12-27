@@ -132,4 +132,15 @@ contentModels.getMenuItemModel = function(data){
     }
 };
 
+contentModels.getImageModel = function(data){
+    if (webapp.simpleNullCheck(data,'fields')){
+        var fields = data.fields;
+        return {
+        };
+    }
+    else {
+        return {};
+    }
+};
+
 module.exports = contentModels;

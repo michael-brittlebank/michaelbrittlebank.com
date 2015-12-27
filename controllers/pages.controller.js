@@ -1,11 +1,11 @@
 var /* packages */
     _ = require('lodash'),
     promise = require('bluebird'),
-    imgur = require('imgur'),
 /* services */
     contentfulService = require('../services/contentful.service'),
     contentService = require('../services/content.service'),
     webapp = require('../services/webapp.service'),
+    imageService = require('../services/image.service'),
     logger = require('../services/logger.service'),
     pages = {};
 
@@ -77,7 +77,7 @@ pages.getPortfolioPage = function(req, res, next){
 };
 
 pages.getResumePage = function(req, res, next) {
-    res.render('page-resume');//todo
+    res.render('page-resume');
 };
 
 pages.getMusicPage = function(req, res, next) {
@@ -89,7 +89,20 @@ pages.getScalesPage = function(req, res, next) {
 };
 
 pages.getTravelPage = function(req, res, next) {
-    res.render('page-travel');//todo
+    var params = {
+        albumId: 'travel'
+    };
+    return promise
+        .all([imageService.getAlbumImages(params)])
+        .then(function (response) {
+            console.log(response);
+            var content = response[0];
+            res.locals.images = contentService.imageDigest(content);
+            res.render('page-travel');
+        })
+        .catch(function (err) {
+            next(err);
+        });
 };
 
 pages.getDefaultPage = function(req, res, next) {

@@ -24,7 +24,7 @@ var client = contentful.createClient({
 });
 
 contentfulService.getContentTypes = function(){
-    client.contentTypes()
+   return client.contentTypes()
         .then(function(contentTypes){
             if(contentTypes){
                 contentTypes.forEach(function(entry){
