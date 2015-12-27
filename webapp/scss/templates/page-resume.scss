@@ -1,5 +1,6 @@
 .page.resume {
   #container-title {
+    @include fade-in-default;
     h1 {
       border-left: 20px solid $color-badgers-red;
       padding-left: 15px;
@@ -10,6 +11,7 @@
   }
   #container-body {
     padding: 0 40px;
+    @include fade-in-default;
     h2 {
       border-bottom: 1px solid $color-dark-grey;
       padding: 20px 0 5px 0;
