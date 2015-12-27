@@ -303,6 +303,11 @@ data.places = [
         lat: 54.2327,
         lng: -1.3420
     },
+    {
+        title:'Sheffield, England',
+        lat: 53.3836,
+        lng: -1.4669
+    },
     //france
     {
         title:'Paris, France',
