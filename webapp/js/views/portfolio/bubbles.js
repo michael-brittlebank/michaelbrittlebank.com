@@ -120,7 +120,7 @@ bubbles.animation = {
             domNode.style.bottom = 0;
             domNode.style.left = parseInt(Math.random()*100)+'%';
             $(bubbleContainer).append(domNode);
-            site.animation.fadeIn(domNode,1000,250*i);
+            $(domNode).css({visibility:'visible'}).velocity({opacity: 0.4},{duration:1000,delay:250*i});
             node.node = domNode;
             switch(typeOfBubble){
                 case bubbles.types.smallBubble:
@@ -145,16 +145,23 @@ bubbles.controls = {
             $(stopBubbles).removeClass('disabled');
             $(clearBubbles).removeClass('disabled');
             $(startBubbles).addClass('disabled');
-            if (numberSmallBubbles > smallBubbleList.length){
-                bubbles.animation.createBubbles(numberSmallBubbles-smallBubbleList.length, bubbles.types.smallBubble);
+            var smallDifference = numberSmallBubbles-smallBubbleList.length,
+                mediumDifference = numberMediumBubbles-mediumBubbleList.length,
+                largeDifference = numberLargeBubbles-largeBubbleList.length;
+            if (smallDifference > 1){
+                bubbles.animation.createBubbles(smallDifference, bubbles.types.smallBubble);
             } else {
-                bubbles.animation.destroyBubbles(smallBubbleList.length-numberSmallBubbles, bubbles.types.smallBubble);
+                bubbles.animation.destroyBubbles(Math.abs(smallDifference), bubbles.types.smallBubble);
             }
-            if (false){
-                bubbles.animation.createBubbles(numberMediumBubbles, bubbles.types.mediumBubble);
+            if (mediumDifference > 1){
+                bubbles.animation.createBubbles(mediumDifference, bubbles.types.mediumBubble);
+            } else {
+                bubbles.animation.destroyBubbles(Math.abs(mediumDifference), bubbles.types.mediumBubble);
             }
-            if (false){
-                bubbles.animation.createBubbles(numberLargeBubbles, bubbles.types.largeBubble);
+            if (largeDifference > 1){
+                bubbles.animation.createBubbles(largeDifference, bubbles.types.largeBubble);
+            } else {
+                bubbles.animation.destroyBubbles(Math.abs(largeDifference), bubbles.types.largeBubble);
             }
         }
     },
@@ -194,6 +201,7 @@ bubbles.init = function() {
             console.log("small bubble update");
             bubbles.helpers.updateBubbleCount();
             if (bubblesAnimating){
+                //otherwise caught by start function
                 if ($(smallBubbles).val() > numberSmallBubbles){
                     //todo, add bubbles and update total
                 } else if ($(smallBubbles).val() < numberSmallBubbles){

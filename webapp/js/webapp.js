@@ -41,7 +41,7 @@ site.animation = {
         });
     },
     fadeOutAndRemove: function(element,duration, delay){
-        $(element).velocity('transition.fadeOut',{
+        $(element).velocity({opacity: 0,visibility:'hidden'},{
             duration:duration,
             delay:delay,
             complete: function(elements) {
