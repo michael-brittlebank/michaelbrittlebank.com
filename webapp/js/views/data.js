@@ -195,16 +195,31 @@ data.places = [
         lat: 27.6500,
         lng: -80.3833
     },
+    {
+        title:'Lawrence, Kansas, USA',
+        lat: 38.9717,
+        lng: -95.2353
+    },
     //canada
     {
-        title:'Toronto, Canada',
+        title:'Toronto, Ontario, Canada',
         lat: 43.7000,
         lng: -79.4000
     },
     {
-        title:'Niagara Falls, Canada',
+        title:'Niagara Falls, Ontario, Canada',
         lat: 43.1167,
         lng: -79.0667
+    },
+    {
+        title:'Warblers Roost, Ontario, Canada',
+        lat: 45.815722,
+        lng: -79.562559
+    },
+    {
+        title:'Montreal, Quebec, Canada',
+        lat: 45.5017,
+        lng: -73.5673
     },
     //mexico
     {
