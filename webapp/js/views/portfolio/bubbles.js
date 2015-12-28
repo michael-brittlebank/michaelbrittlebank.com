@@ -12,6 +12,8 @@ var bubblesAnimating = false,
     smallBubbleList = [],
     mediumBubbleList = [],
     largeBubbleList = [],
+    containerHeight,
+    containerWidth,
     bubbles = {};
 
 bubbles.types = {
@@ -29,33 +31,38 @@ bubbles.helpers = {
 };
 
 bubbles.animation = {
-    //moveBubble: function(timestamp){
-    //    var offsetModifier = site.screen.windowHeight * 0.1,
-    //        modifiedHeight = site.screen.windowHeight + offsetModifier,
-    //        progress,
-    //        x,
-    //        y;
-    //    for (var i = 0; i < smallBubbleList.length; i++){
-    //        if(!smallBubbleList[i].start){
-    //            smallBubbleList[i].start = timestamp;
-    //        }
-    //        progress = (timestamp - smallBubbleList[i].start) / smallBubbleList[i].duration / 1000;
-    //        x = progress * modifiedHeight / smallBubbleList[i].sinWidth;
-    //        if (i % 2 === 0){
-    //            y = 2 * Math.sin(x);
-    //        } else {
-    //            y = 2 * Math.cos(x);
-    //        }
-    //        smallBubbleList[i].node.style.bottom = Math.min(site.screen.windowHeight, (smallBubbleList[i].sinWidth * x)- offsetModifier) + 'px';
-    //        smallBubbleList[i].node.style.left = site.screen.windowWidth / 2 + (smallBubbleList[i].sinWidth * y) + 'px';
-    //        if(progress >= 1){
-    //            smallBubbleList[i] = bubbles.animation.resetBubble(smallBubbleList[i]);
-    //        }
-    //    }
-    //},
+    moveBubble: function(element){
+        var timestamp = Date.now(),
+            progress,
+            x,
+            y;
+        for (var i = 0; i < smallBubbleList.length; i++){
+            if(!smallBubbleList[i].start){
+                smallBubbleList[i].start = timestamp;
+            }
+            progress = (timestamp - smallBubbleList[i].start) / smallBubbleList[i].duration / 1000;
+            x = progress * containerHeight / smallBubbleList[i].arcHeight;
+            if (i % 2 === 0){
+                y = 2 * Math.sin(x);
+            } else {
+                y = 2 * Math.cos(x);
+            }
+            $(element.node).velocity({
+                bottom: Math.min(containerHeight, smallBubbleList[i].arcHeight * x) + 'px',
+                left: containerWidth / 2 + (smallBubbleList[i].arcHeight * y) + 'px'
+            });
+            console.log('node');
+            console.log(element);
+            if(progress >= 1){
+                smallBubbleList[i] = bubbles.animation.resetBubble(smallBubbleList[i]);
+            } else {
+                bubbles.animation.moveBubble(element);
+            }
+        }
+    },
     resetBubble: function(node){
         node.duration = site.helpers.getRandomInt(10, 20);
-        node.sinWidth = site.helpers.getRandomInt(100, site.screen.windowWidth/4);
+        node.arcHeight = site.helpers.getRandomInt(100, containerWidth/4);
         node.start = null;
         node.progress = null;
         return node;
@@ -90,6 +97,15 @@ bubbles.animation = {
                 break;
         }
     },
+    createBubbleHelper: function(element, delayMultiple){
+        $(element.node).css({visibility:'visible'}).velocity({opacity: 0.4},{
+            duration:1000,
+            delay:250*delayMultiple,
+            complete: function(){
+                bubbles.animation.moveBubble(element.node);
+            }
+        });
+    },
     createBubbles: function(numberOfBubbles, typeOfBubble){
         var node,
             currentBubbleNum,
@@ -101,36 +117,40 @@ bubbles.animation = {
             switch(typeOfBubble){
                 case bubbles.types.smallBubble:
                     width = height = site.helpers.getRandomInt(5,25);
-                    currentBubbleNum = smallBubbleList.length;
+                    currentBubbleNum = smallBubbleList.length+1;
                     break;
                 case bubbles.types.mediumBubble:
                     width = height = site.helpers.getRandomInt(25,50);
-                    currentBubbleNum = mediumBubbleList.length;
+                    currentBubbleNum = mediumBubbleList.length+1;
                     break;
                 case bubbles.types.largeBubble:
                     width = height = site.helpers.getRandomInt(50,75);
-                    currentBubbleNum = largeBubbleList.length;
+                    currentBubbleNum = largeBubbleList.length+1;
                     break;
             }
             domNode = document.createElement('div');
-            domNode.setAttribute('id', 'bubble'+currentBubbleNum);
+            domNode.setAttribute('id', typeOfBubble+'-'+currentBubbleNum);
             domNode.setAttribute('class', typeOfBubble+' bubble');
             domNode.style.width = width+'px';
             domNode.style.height = height+'px';
             domNode.style.bottom = 0;
             domNode.style.left = parseInt(Math.random()*100)+'%';
             $(bubbleContainer).append(domNode);
-            $(domNode).css({visibility:'visible'}).velocity({opacity: 0.4},{duration:1000,delay:250*i});
             node.node = domNode;
+            if (currentBubbleNum%2 === 0){
+                node.type = 'sine';
+            } else {
+                node.type = 'cosine';
+            }
             switch(typeOfBubble){
                 case bubbles.types.smallBubble:
-                    smallBubbleList.push(bubbles.animation.resetBubble(node));
+                    smallBubbleList.push(bubbles.animation.createBubbleHelper(bubbles.animation.resetBubble(node), i));
                     break;
                 case bubbles.types.mediumBubble:
-                    mediumBubbleList.push(bubbles.animation.resetBubble(node));
+                    mediumBubbleList.push(bubbles.animation.createBubbleHelper(bubbles.animation.resetBubble(node), i));
                     break;
                 case bubbles.types.largeBubble:
-                    largeBubbleList.push(bubbles.animation.resetBubble(node));
+                    largeBubbleList.push(bubbles.animation.createBubbleHelper(bubbles.animation.resetBubble(node), i));
                     break;
             }
             currentBubbleNum++;
@@ -148,16 +168,16 @@ bubbles.controls = {
             var smallDifference = numberSmallBubbles-smallBubbleList.length,
                 mediumDifference = numberMediumBubbles-mediumBubbleList.length,
                 largeDifference = numberLargeBubbles-largeBubbleList.length;
-            if (smallDifference > 1){
-                bubbles.animation.createBubbles(smallDifference, bubbles.types.smallBubble);
-            } else {
-                bubbles.animation.destroyBubbles(Math.abs(smallDifference), bubbles.types.smallBubble);
-            }
-            if (mediumDifference > 1){
-                bubbles.animation.createBubbles(mediumDifference, bubbles.types.mediumBubble);
-            } else {
-                bubbles.animation.destroyBubbles(Math.abs(mediumDifference), bubbles.types.mediumBubble);
-            }
+            //if (smallDifference > 1){
+            //    bubbles.animation.createBubbles(smallDifference, bubbles.types.smallBubble);
+            //} else {
+            //    bubbles.animation.destroyBubbles(Math.abs(smallDifference), bubbles.types.smallBubble);
+            //}
+            //if (mediumDifference > 1){
+            //    bubbles.animation.createBubbles(mediumDifference, bubbles.types.mediumBubble);
+            //} else {
+            //    bubbles.animation.destroyBubbles(Math.abs(mediumDifference), bubbles.types.mediumBubble);
+            //}
             if (largeDifference > 1){
                 bubbles.animation.createBubbles(largeDifference, bubbles.types.largeBubble);
             } else {
@@ -193,6 +213,8 @@ bubbles.init = function() {
     stopBubbles = $('#stopBubbles');
     clearBubbles = $('#clearBubbles');
     bubbleContainer = $('#content-bubbles');
+    containerHeight = $(bubbleContainer).height();
+    containerWidth = $(bubbleContainer).width();
     //values
     bubbles.helpers.updateBubbleCount();
     //listeners
