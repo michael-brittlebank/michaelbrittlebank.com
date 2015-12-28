@@ -15,18 +15,18 @@
 * ~~add content blocks~~
 
 ### 2
-* styling - color scheme dependent on time of day and temperature
-* content entry in contentful
-* set up analytics
+* ~~styling~~
+* ~~content entry in contentful~~
 * ~~add quote of the day~~
 * add music section/blog
 
 ### 3
-* import scale finder & register as bower package
-* import bubbles
+* import scale finder
+* ~~import bubbles~~
 
 ### 4
 * create photo album system
+* set up analytics
 * add mocha tests
 
 ### 5
@@ -35,4 +35,5 @@
 * set up seo (run through google site tester)
 
 ## Future
-* Dynamic art creator
+* dynamic art creator
+* register scales as bower package
