@@ -29,6 +29,10 @@ bubbles.helpers = {
         numberSmallBubbles = $(smallBubbles).val();
         numberMediumBubbles = $(mediumBubbles).val();
         numberLargeBubbles = $(largeBubbles).val();
+    },
+    updateContainerSize: function(){
+        containerHeight = $(bubbleContainer).height();
+        containerWidth = $(bubbleContainer).width();
     }
 };
 
@@ -42,37 +46,37 @@ bubbles.animation = {
                 progress: function(elements, complete, remainingMs) {
                     var currentTimeInSeconds = remainingMs/msInOneSecond,
                         arcCycleTime = element.duration/msInOneSecond/element.arc.total;
-                    site.helpers.logger('arcCycleTime',arcCycleTime);
-                    site.helpers.logger('currentTimeInSeconds',currentTimeInSeconds);
-                    site.helpers.logger('elapsed time',(element.duration/msInOneSecond)-currentTimeInSeconds);
-                    site.helpers.logger('element.arc.current',element.arc.current);
                     if (((element.duration/msInOneSecond)-currentTimeInSeconds)/arcCycleTime >= element.arc.current){
                         //only animate every half cycle
-                        var x = element.centerPosition+element.arc.height;
+                        var additiveX = element.centerPosition+element.arc.height,
+                            subtractiveX = element.centerPosition-element.arc.height;
                         if (element.arc.current%2 === 0){
-                            x = element.wave === 'sine'?x:-x;
+                            x = element.wave === 'sine'?additiveX:subtractiveX;
                         } else {
-                            x = element.wave === 'sine'?-x:x;
+                            x = element.wave === 'sine'?subtractiveX:additiveX;
                         }
                         site.helpers.logger('x',x);
+                        site.helpers.logger('element.arc.height',element.arc.height);
                         site.helpers.logger('centerPosition',element.centerPosition);
-                        site.helpers.logger('numberOfArcs',element.arc.total);
-                        site.helpers.logger('element.arc.current',element.arc.current);
+                        site.helpers.logger(' element.wave', element.wave);
                         element.arc.current++;
                         $(element.node).velocity({left: x+'px'},{
                             duration: element.duration/element.arc.total,
                             queue: false
                         });
                     }
+                },
+                complete: function(){
+                    bubbles.animation.moveBubble(bubbles.animation.resetBubble(element));
                 }
             });
     },
     resetBubble: function(element){
         element.duration = site.helpers.getRandomInt(10, 20)*msInOneSecond;
         element.arc = {
-            height: site.helpers.getRandomInt(100, containerWidth / 2),
+            height: site.helpers.getRandomInt(100, containerWidth / 4),
             current: 0,
-            total: site.helpers.getRandomInt(2,12),
+            total: site.helpers.getRandomInt(2,10),
             lastAnimation: 0
         };
         element.node.style.bottom = 0;
@@ -199,16 +203,16 @@ bubbles.controls = {
             var smallDifference = numberSmallBubbles-smallBubbleList.length,
                 mediumDifference = numberMediumBubbles-mediumBubbleList.length,
                 largeDifference = numberLargeBubbles-largeBubbleList.length;
-            //if (smallDifference > 0){
-            //    bubbles.animation.createBubbles(smallDifference, bubbles.types.smallBubble);
-            //} else {
-            //    bubbles.animation.destroyBubbles(Math.abs(smallDifference), bubbles.types.smallBubble);
-            //}
-            //if (mediumDifference > 0){
-            //    bubbles.animation.createBubbles(mediumDifference, bubbles.types.mediumBubble);
-            //} else {
-            //    bubbles.animation.destroyBubbles(Math.abs(mediumDifference), bubbles.types.mediumBubble);
-            //}
+            if (smallDifference > 0){
+                bubbles.animation.createBubbles(smallDifference, bubbles.types.smallBubble);
+            } else {
+                bubbles.animation.destroyBubbles(Math.abs(smallDifference), bubbles.types.smallBubble);
+            }
+            if (mediumDifference > 0){
+                bubbles.animation.createBubbles(mediumDifference, bubbles.types.mediumBubble);
+            } else {
+                bubbles.animation.destroyBubbles(Math.abs(mediumDifference), bubbles.types.mediumBubble);
+            }
             if (largeDifference > 0){
                 bubbles.animation.createBubbles(largeDifference, bubbles.types.largeBubble);
             } else {
@@ -255,16 +259,15 @@ bubbles.init = function() {
     stopBubbles = $('#stopBubbles');
     clearBubbles = $('#clearBubbles');
     bubbleContainer = $('#content-bubbles');
-    containerHeight = $(bubbleContainer).height();
-    containerWidth = $(bubbleContainer).width();
     //values
+    bubbles.helpers.updateContainerSize();
     bubbles.helpers.updateBubbleCount();
     //listeners
     $(smallBubbles).on('change', function(){
         if ($(smallBubbles).val() !== numberSmallBubbles){
             console.log("small bubble update");
             bubbles.helpers.updateBubbleCount();
-            if (bubblesAnimating){
+            if (bubblesMoving){
                 //otherwise caught by start function
                 if ($(smallBubbles).val() > numberSmallBubbles){
                     //todo, add bubbles and update total
@@ -288,5 +291,8 @@ bubbles.init = function() {
     });
     $(clearBubbles).on('click touch', function(){
         bubbles.controls.clearBubbles();
+    });
+    $(window).resize(function() {
+        bubbles.helpers.updateContainerSize();
     });
 };
