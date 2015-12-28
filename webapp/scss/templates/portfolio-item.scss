@@ -68,5 +68,13 @@
         white-space: nowrap;
       }
     }
+    #container-modals {
+      .reveal {
+        .button {
+          display: block;
+          margin: 20px auto;
+        }
+      }
+    }
   }
 }
