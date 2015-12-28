@@ -25,7 +25,6 @@
 * ~~import bubbles~~
 
 ### 4
-* create photo album system
 * set up analytics
 * add mocha tests
 
@@ -37,3 +36,4 @@
 ## Future
 * dynamic art creator
 * register scales as bower package
+* image storage system
