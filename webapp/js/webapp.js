@@ -24,6 +24,10 @@ site.helpers = {
             array[j] = temp;
         }
         return array;
+    },
+    logger: function(name, variable){
+        console.log(name);
+        console.log(variable);
     }
 };
 
