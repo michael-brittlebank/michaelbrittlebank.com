@@ -87,7 +87,7 @@ bubbles.animation = {
         var bubblesToRemove,
             first,
             last;
-        if (numberToRemove > bubbleList.length){
+        if (numberToRemove >= bubbleList.length){
             last = bubbleList.length;
             first = 0;
         } else {
