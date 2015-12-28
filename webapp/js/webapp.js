@@ -28,6 +28,10 @@ site.helpers = {
     logger: function(name, variable){
         console.log(name);
         console.log(variable);
+    },
+    parseIntFromString: function(string){
+        //http://stackoverflow.com/questions/395163/get-css-top-value-as-number-not-as-string
+        return parseInt(string, 10);
     }
 };
 
