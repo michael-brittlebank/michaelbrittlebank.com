@@ -33,54 +33,42 @@ bubbles.helpers = {
 
 bubbles.animation = {
     moveBubble: function(element){
-        var timestamp = Date.now(),
-            progress,
-            duration = 100,
-            currentX = parseInt($(element.node).css('left'), 10),
-            currentY = parseInt($(element.node).css('bottom'), 10),
-            moveToX,
-            moveToY;
-        if(!element.start){
-            element.start = timestamp;
-        }
-        progress = (timestamp - element.start) / element.duration / 1000;
-        //x = progress * containerHeight / element.arcHeight;
-        //if (element.wave === 'sine'){
-        //    y = 2 * Math.sin(x);
-        //} else {
-        //    y = 2 * Math.cos(x);
-        //}
-
-
-        //http://stackoverflow.com/questions/395163/get-css-top-value-as-number-not-as-string
-        moveToX = currentX;
-        moveToY = currentY + ((containerHeight - currentY) * progress);
-        site.helpers.logger("progress",progress);
-        site.helpers.logger("x",moveToX);
-        site.helpers.logger("y",moveToY);
         $(element.node).velocity({
-                left: moveToX + 'px',
-                bottom: moveToY//containerWidth / 2 + (element.arcHeight * y) + 'px'
+                bottom: containerHeight
             },
             {
-                duration: duration
+                duration: element.duration,
+                progress: function(elements, complete, remainingMs, start, tweenValue) {
+                    var msInOneSecond = 1000,
+                        currentTimeInSeconds = remainingMs/msInOneSecond,
+                        waitTimeInSeconds = 1;
+                    //console.log((complete * 100) + "%");
+                    //console.log(currentTimeInSeconds + " sec remaining!");
+                    //site.helpers.logger('element.lastAnimation',element.lastAnimation);
+                    if (Math.abs(currentTimeInSeconds-element.lastAnimation) >= waitTimeInSeconds){
+                        //only animate every second
+                        element.lastAnimation = currentTimeInSeconds;
+                        var x = complete * 100 * containerWidth / element.arcHeight,
+                            y;
+                        if (element.wave === 'sine'){
+                            y = Math.sin(x)>0?element.arcHeight:-element.arcHeight;
+                        } else {
+                            y = Math.cos(x)>0?element.arcHeight:-element.arcHeight;
+                        }
+                        site.helpers.logger('x',x);
+                        site.helpers.logger('y',y);
+                        site.helpers.logger('element.arcHeight',element.arcHeight);
+                        $(element.node).velocity({left: y+'px'},{duration: waitTimeInSeconds*msInOneSecond, queue: false});
+                    }
+                }
             });
-        if(progress >= 1){
-            console.log('finished animation');
-            //element = bubbles.animation.resetBubble(element);//todo
-        } else {
-            element.timeout = setTimeout(function(){
-                bubbles.animation.moveBubble(element);
-            }, duration);
-        }
     },
-    resetBubble: function(node){
-        node.duration = site.helpers.getRandomInt(10, 20);
-        node.arcHeight = site.helpers.getRandomInt(100, containerWidth/4);
-        node.start = null;
-        node.progress = null;
-        clearTimeout(node.timeout);
-        return node;
+    resetBubble: function(element){
+        element.duration = site.helpers.getRandomInt(10, 20)*1000;
+        element.arcHeight = site.helpers.getRandomInt(100, containerWidth/4);
+        element.lastAnimation = 0;
+        $(element.node).velocity('stop');
+        return element;
     },
     destroyBubbleHelper: function(numberToRemove, bubbleList){
         var bubblesToRemove,
@@ -95,7 +83,7 @@ bubbles.animation = {
         }
         bubblesToRemove = bubbleList.splice(first, last).reverse();
         for (var i = 0; i < bubblesToRemove.length; i++){
-            clearTimeout(bubblesToRemove[i].timeout);
+            $(bubblesToRemove[i].node).velocity('stop');
             site.animation.fadeOutAndRemove(bubblesToRemove[i].node,1000,250*i);
         }
         return bubbleList;
@@ -153,7 +141,7 @@ bubbles.animation = {
             domNode.style.width = width+'px';
             domNode.style.height = height+'px';
             domNode.style.bottom = 0;
-            domNode.style.left = parseInt(Math.random()*100)+'%';
+            domNode.style.left = containerWidth*parseInt(Math.random())+'px';
             $(bubbleContainer).append(domNode);
             node.node = domNode;
             node.type = typeOfBubble;
@@ -178,7 +166,7 @@ bubbles.animation = {
     },
     stopBubbles: function(bubbleList){
         bubbleList.forEach(function(element){
-            clearTimeout(element.timeout);
+            $(element.node).velocity('stop');
         });
     },
     startBubbleHelper: function(element){
