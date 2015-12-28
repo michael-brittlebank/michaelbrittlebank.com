@@ -13,23 +13,59 @@
 
 .portfolio.portfolio-item {
   &.bubbles {
-    #content-code {
-      overflow: scroll;
-    }
     #container-content {
       .content {
         height: 500px;
+        margin-bottom: 50px;
         &#content-bubbles {
           overflow:hidden;
           position: relative;
-          margin-bottom: 50px;
-          .bubble {
-            position: absolute;
-            background-color:purple;
-            @include border-radius(50%);
-            @include fade-in-default;
+          #bubble-holder {
+            border: 5px double $color-desert-black;
+            height:100%;
+            width:100%;
+            .bubble {
+              position: absolute;
+              background-color:purple;
+              @include border-radius(50%);
+              @include fade-in-default;
+            }
           }
         }
+        &#content-code {
+          @include breakpoint(small only) {
+            height: auto;
+          }
+          #code-desktop {
+            overflow: scroll;
+            max-width: 100%;
+            max-height: 100%;
+            @include breakpoint(small only) {
+              display:none;
+            }
+            .prettyprint {
+              padding: 10px;
+            }
+          }
+          #code-mobile {
+            display:none;
+            text-align: center;
+            @include breakpoint(small only) {
+              display:block;
+            }
+          }
+        }
+      }
+    }
+    #container-controls {
+      label {
+        white-space: nowrap;
+      }
+      .button {
+        margin: 25px auto;
+        display: block;
+        height: 40px;
+        white-space: nowrap;
       }
     }
   }

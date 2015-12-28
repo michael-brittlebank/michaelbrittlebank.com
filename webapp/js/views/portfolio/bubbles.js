@@ -282,7 +282,7 @@ bubbles.init = function() {
     startBubbles = $('#startBubbles');
     stopBubbles = $('#stopBubbles');
     clearBubbles = $('#clearBubbles');
-    bubbleContainer = $('#content-bubbles');
+    bubbleContainer = $('#bubble-holder');
     //values
     bubbles.helpers.updateContainerSize();
     //listeners

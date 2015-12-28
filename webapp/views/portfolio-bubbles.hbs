@@ -1,7 +1,11 @@
 <main class="portfolio-item portfolio bubbles">
     <section id="container-content" class="row">
         <div id="content-code" class="small-12 medium-6 columns small-order-2 medium-order-1 content">
-            <pre class="prettyprint linenums lang-js">
+            <div id="code-mobile" class="portfolio-links">
+                <a ><i class="fa fa-code"></i>View Code</a>
+            </div>
+            <div id="code-desktop">
+                <pre class="prettyprint">
 var bubblesCreated = false,
     bubblesMoving = false,
     numberSmallBubbles = 0,
@@ -285,7 +289,7 @@ bubbles.init = function() {
     startBubbles = $('#startBubbles');
     stopBubbles = $('#stopBubbles');
     clearBubbles = $('#clearBubbles');
-    bubbleContainer = $('#content-bubbles');
+    bubbleContainer = $('#bubble-holder');
     //values
     bubbles.helpers.updateContainerSize();
     //listeners
@@ -311,12 +315,15 @@ bubbles.init = function() {
         bubbles.helpers.updateContainerSize();
     });
 };
-            </pre>
+                </pre>
+            </div>
         </div>
         <div id="content-bubbles" class="small-12 medium-6 columns small-order-1 medium-order-2 content">
+            <div id="bubble-holder">
+            </div>
         </div>
     </section>
-    <section id="bubble-controls" class="small-12 columns">
+    <section id="container-controls" class="small-12 columns">
         <div class="row">
             <div class="small-4 medium-2 columns">
                 <label for="smallBubbles">Small Bubbles</label>
@@ -330,16 +337,18 @@ bubbles.init = function() {
                 <label for="largeBubbles">Large Bubbles</label>
                 <input id="largeBubbles" type="number" value="5" min="0"/>
             </div>
-            <div class="small-12 medium-4 columns">
+            <div class="small-4 medium-2 columns">
                 <button id="startBubbles" class="button">Start Bubbles</button>
+            </div>
+            <div class="small-4 medium-2 columns">
                 <button id="stopBubbles" class="button disabled">Stop Bubbles</button>
+            </div>
+            <div class="small-4 medium-2 columns">
                 <button id="clearBubbles" class="button disabled">Clear Bubbles</button>
             </div>
         </div>
     </section>
-    {{>portfolio-footer page}}
 </main>
-<!--<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?lang=js&skin=desert"></script>-->
 <script type="text/javascript">
     $(function(){
         bubbles.init();
