@@ -85,16 +85,18 @@ bubbles.animation = {
         return bubbleList;
     },
     destroyBubbles: function(numberToRemove, typeOfBubble){
-        switch(typeOfBubble){
-            case bubbles.types.smallBubble:
-                smallBubbleList = bubbles.animation.destroyBubbleHelper(numberToRemove, smallBubbleList);
-                break;
-            case bubbles.types.mediumBubble:
-                mediumBubbleList = bubbles.animation.destroyBubbleHelper(numberToRemove, mediumBubbleList);
-                break;
-            case bubbles.types.largeBubble:
-                largeBubbleList = bubbles.animation.destroyBubbleHelper(numberToRemove, largeBubbleList);
-                break;
+        if (numberToRemove > 0) {
+            switch (typeOfBubble) {
+                case bubbles.types.smallBubble:
+                    smallBubbleList = bubbles.animation.destroyBubbleHelper(numberToRemove, smallBubbleList);
+                    break;
+                case bubbles.types.mediumBubble:
+                    mediumBubbleList = bubbles.animation.destroyBubbleHelper(numberToRemove, mediumBubbleList);
+                    break;
+                case bubbles.types.largeBubble:
+                    largeBubbleList = bubbles.animation.destroyBubbleHelper(numberToRemove, largeBubbleList);
+                    break;
+            }
         }
     },
     createBubbleHelper: function(element, delayMultiple){
@@ -105,6 +107,7 @@ bubbles.animation = {
                 bubbles.animation.moveBubble(element.node);
             }
         });
+        return element;
     },
     createBubbles: function(numberOfBubbles, typeOfBubble){
         var node,
