@@ -14,12 +14,14 @@
 .portfolio.portfolio-item {
   &.bubbles {
     #container-content {
+      margin-top: 50px;
       .content {
         height: 500px;
         margin-bottom: 50px;
         &#content-bubbles {
           overflow:hidden;
           position: relative;
+          @include fade-in-default;
           #bubble-holder {
             border: 5px double $color-desert-black;
             height:100%;
@@ -33,6 +35,7 @@
           }
         }
         &#content-code {
+          @include fade-in-default;
           @include breakpoint(small only) {
             height: auto;
           }
@@ -58,6 +61,7 @@
       }
     }
     #container-controls {
+      @include fade-in-default;
       label {
         white-space: nowrap;
       }
