@@ -52,6 +52,7 @@ site.animation = {
         $(element).velocity({opacity: 0,visibility:'hidden'},{
             duration:duration,
             delay:delay,
+            queue: false,
             complete: function(elements) {
                 $(elements).remove();
             }

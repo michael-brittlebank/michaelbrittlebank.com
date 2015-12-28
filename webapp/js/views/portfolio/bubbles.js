@@ -26,9 +26,9 @@ bubbles.types = {
 
 bubbles.helpers = {
     updateBubbleCount: function(){
-        numberSmallBubbles = $(smallBubbles).val();
-        numberMediumBubbles = $(mediumBubbles).val();
-        numberLargeBubbles = $(largeBubbles).val();
+        numberSmallBubbles = site.helpers.parseIntFromString($(smallBubbles).val());
+        numberMediumBubbles = site.helpers.parseIntFromString($(mediumBubbles).val());
+        numberLargeBubbles = site.helpers.parseIntFromString($(largeBubbles).val());
     },
     updateContainerSize: function(){
         containerHeight = $(bubbleContainer).height();
@@ -38,8 +38,9 @@ bubbles.helpers = {
 
 bubbles.animation = {
     moveBubble: function(element){
+        var adjustedHeight = containerHeight+(site.helpers.parseIntFromString($(element.node).height())*2);
         $(element.node).velocity({
-                bottom: containerHeight
+                bottom: adjustedHeight
             },
             {
                 duration: element.duration,
@@ -49,16 +50,13 @@ bubbles.animation = {
                     if (((element.duration/msInOneSecond)-currentTimeInSeconds)/arcCycleTime >= element.arc.current){
                         //only animate every half cycle
                         var additiveX = element.centerPosition+element.arc.height,
-                            subtractiveX = element.centerPosition-element.arc.height;
+                            subtractiveX = element.centerPosition-element.arc.height,
+                            x;
                         if (element.arc.current%2 === 0){
                             x = element.wave === 'sine'?additiveX:subtractiveX;
                         } else {
                             x = element.wave === 'sine'?subtractiveX:additiveX;
                         }
-                        site.helpers.logger('x',x);
-                        site.helpers.logger('element.arc.height',element.arc.height);
-                        site.helpers.logger('centerPosition',element.centerPosition);
-                        site.helpers.logger(' element.wave', element.wave);
                         element.arc.current++;
                         $(element.node).velocity({left: x+'px'},{
                             duration: element.duration/element.arc.total,
@@ -74,12 +72,12 @@ bubbles.animation = {
     resetBubble: function(element){
         element.duration = site.helpers.getRandomInt(10, 20)*msInOneSecond;
         element.arc = {
-            height: site.helpers.getRandomInt(100, containerWidth / 4),
+            height: site.helpers.getRandomInt(100, containerWidth/4),
             current: 0,
-            total: site.helpers.getRandomInt(2,10),
+            total: site.helpers.getRandomInt(4,8),
             lastAnimation: 0
         };
-        element.node.style.bottom = 0;
+        element.node.style.bottom = '-'+site.helpers.parseIntFromString($(element.node).height())+'px';
         element.node.style.left = (containerWidth/2)+(parseInt(Math.random())*containerWidth/2)+'px';
         element.centerPosition = site.helpers.parseIntFromString(element.node.style.left);
         $(element.node).velocity('stop');
@@ -98,8 +96,7 @@ bubbles.animation = {
         }
         bubblesToRemove = bubbleList.splice(first, last).reverse();
         for (var i = 0; i < bubblesToRemove.length; i++){
-            $(bubblesToRemove[i].node).velocity('stop');
-            site.animation.fadeOutAndRemove(bubblesToRemove[i].node,msInOneSecond,250*i);
+            site.animation.fadeOutAndRemove(bubblesToRemove[i].node,msInOneSecond,50*i);
         }
         return bubbleList;
     },
@@ -200,6 +197,7 @@ bubbles.controls = {
             $(startBubbles).addClass('disabled');
             $(stopBubbles).removeClass('disabled');
             $(clearBubbles).removeClass('disabled');
+            bubbles.helpers.updateBubbleCount();
             var smallDifference = numberSmallBubbles-smallBubbleList.length,
                 mediumDifference = numberMediumBubbles-mediumBubbleList.length,
                 largeDifference = numberLargeBubbles-largeBubbleList.length;
@@ -247,6 +245,31 @@ bubbles.controls = {
         bubbles.animation.destroyBubbles(smallBubbleList.length, bubbles.types.smallBubble);
         bubbles.animation.destroyBubbles(mediumBubbleList.length, bubbles.types.mediumBubble);
         bubbles.animation.destroyBubbles(largeBubbleList.length, bubbles.types.largeBubble);
+    },
+    changeBubbleCount: function(typeOfBubble){
+        var difference;
+        if (bubblesMoving){
+            //otherwise caught by start function
+            switch(typeOfBubble){
+                case bubbles.types.smallBubble:
+                    difference = $(smallBubbles).val()-numberSmallBubbles;
+                    break;
+                case bubbles.types.mediumBubble:
+                    difference = $(mediumBubbles).val()-numberMediumBubbles;
+                    break;
+                case bubbles.types.largeBubble:
+                    difference = $(largeBubbles).val()-numberLargeBubbles;
+                    break;
+            }
+            if (difference !== 0){
+                if (difference > 0){
+                    bubbles.animation.createBubbles(difference, typeOfBubble);
+                } else {
+                    bubbles.animation.destroyBubbles(Math.abs(difference), typeOfBubble);
+                }
+                bubbles.helpers.updateBubbleCount();
+            }
+        }
     }
 };
 
@@ -261,27 +284,15 @@ bubbles.init = function() {
     bubbleContainer = $('#content-bubbles');
     //values
     bubbles.helpers.updateContainerSize();
-    bubbles.helpers.updateBubbleCount();
     //listeners
     $(smallBubbles).on('change', function(){
-        if ($(smallBubbles).val() !== numberSmallBubbles){
-            console.log("small bubble update");
-            bubbles.helpers.updateBubbleCount();
-            if (bubblesMoving){
-                //otherwise caught by start function
-                if ($(smallBubbles).val() > numberSmallBubbles){
-                    //todo, add bubbles and update total
-                } else if ($(smallBubbles).val() < numberSmallBubbles){
-                    //todo, remove bubbles and update total
-                }
-            }
-        }
+        bubbles.controls.changeBubbleCount(bubbles.types.smallBubble);
     });
     $(mediumBubbles).on('change', function(){
-        console.log("medium bubble update");
+        bubbles.controls.changeBubbleCount(bubbles.types.mediumBubble);
     });
     $(largeBubbles).on('change', function(){
-        console.log("large bubble update");
+        bubbles.controls.changeBubbleCount(bubbles.types.largeBubble);
     });
     $(startBubbles).on('click touch', function(){
         bubbles.controls.startBubbles();
