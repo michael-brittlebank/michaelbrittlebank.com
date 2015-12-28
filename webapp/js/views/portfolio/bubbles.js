@@ -274,6 +274,7 @@ bubbles.controls = {
 };
 
 bubbles.init = function() {
+    prettyPrint();
     //elements
     smallBubbles = $('#smallBubbles');
     mediumBubbles = $('#mediumBubbles');

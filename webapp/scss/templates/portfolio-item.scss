@@ -13,12 +13,16 @@
 
 .portfolio.portfolio-item {
   &.bubbles {
+    #content-code {
+      overflow: scroll;
+    }
     #container-content {
       .content {
         height: 500px;
         &#content-bubbles {
           overflow:hidden;
           position: relative;
+          margin-bottom: 50px;
           .bubble {
             position: absolute;
             background-color:purple;
