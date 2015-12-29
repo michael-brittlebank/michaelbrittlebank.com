@@ -1,11 +1,32 @@
 .single.post {
+  .post-title {
+    @include fade-in-default;
+  }
   .post-date {
     font-size: rem-calc(16);
+    @include fade-in-default;
     i {
       margin-right: 5px;
     }
   }
   hr {
     margin: 25px 0;
+    @include fade-in-default;
+  }
+  .post-body {
+    @include fade-in-default;
+    p {
+      @include fade-in-default;
+    }
+    img {
+      max-width:100%;
+      max-height: 500px;
+      padding: 15px 15px 15px 0;
+      float:left;
+      &:nth-child(even){
+        float:right;
+        padding: 15px 0 15px 15px;
+      }
+    }
   }
 }

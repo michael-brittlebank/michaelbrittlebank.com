@@ -50,11 +50,12 @@
 /* Templates */
 @import "templates/header";
 @import "templates/footer";
-@import "templates/404";
-@import "templates/index";
+@import "templates/error";
+@import "templates/page-homepage";
 @import "templates/page-portfolio";
-@import "templates/single-portfolio";
-@import "templates/single-post";
 @import "templates/page-resume";
 @import "templates/page-travel";
 @import "templates/page-music";
+
+@import "templates/single-portfolio";
+@import "templates/single-post";

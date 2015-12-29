@@ -237,6 +237,7 @@ bubbles.controls = {
         }
     },
     clearBubbles: function(){
+        //todo, bug exists where not all bubbles are destroyed
         bubblesCreated = false;
         bubblesMoving = false;
         $(stopBubbles).addClass('disabled');
