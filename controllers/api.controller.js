@@ -15,7 +15,7 @@ api.loadMorePosts = function(req, res, next) {
             content_type: contentfulService.contentTypes.post,
             'fields.postDate[lt]': new Date().toISOString(),
             order: '-fields.postDate',
-            //skip: page*numberOfPosts,
+            skip: page*numberOfPosts,
             limit: numberOfPosts
         };
     return promise

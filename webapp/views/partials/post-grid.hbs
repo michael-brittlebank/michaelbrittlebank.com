@@ -1,9 +1,12 @@
 {{#each posts}}
     <div class="post" onclick="window.location.href='/post/{{url}}'" data-group="{{../group}}">
         <div class="content-post">
-            <h3>{{title}}</h3>
-            <h5>{{postDate}}</h5>
-            {{{excerpt}}}
+            <h3 class="post-title">{{title}}</h3>
+            <h5 class="post-date"><i class="fa fa-calendar"></i>{{postDate}}</h5>
+            <hr>
+            <div class="post-excerpt">
+                {{{excerpt}}}
+            </div>
         </div>
     </div>
 {{/each}}

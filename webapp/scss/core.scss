@@ -1,10 +1,16 @@
-h1,h2,h3,h4,h5,a,li,blockquote {
+.serif-default {
+  color: $color-black;
+  font-family: $font-texgyre-regular;
+}
+.san-serif-default {
   color: $color-black;
   font-family: $font-open-sans-condensed;
 }
+h1,h2,h3,h4,h5,a,li,blockquote {
+  @extend .san-serif-default;
+}
 p {
-  color: $color-black;
-  font-family: $font-texgyre-regular;
+  @extend .serif-default;
 }
 a {
   @include transition-with-defaults(color);
