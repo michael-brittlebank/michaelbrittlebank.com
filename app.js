@@ -19,6 +19,7 @@ var /* packages */
     pageRoutes = require('./routes/pages.routes'),
     portfolioRoutes = require('./routes/portfolio.routes'),
     localRoutes = require('./routes/local.routes'),
+    apiRoutes = require('./routes/api.routes'),
     pageController = require('./controllers/pages.controller');
 
 var app = express();
@@ -66,32 +67,38 @@ app.use(function(req, res, next) {
     //todo, test for contentful connection
 // routes middleware
     logger.log('info','calling route - '+req.method+' '+req.originalUrl);
-    if (!webapp.app.isLocalConfig()) {
-        var params = {
-            content_type: contentfulService.contentTypes.menu
-        };
-        return contentfulService.getEntries(params)
-            .then(function (response) {
-                res.locals.menu = contentService.menuDigest(response);
-                res.locals.meta = {
-                    siteName: config.app.hostName,
-                    requestedUrl: config.app.protocol + config.app.hostName + req.originalUrl
-                };
-                res.locals.site = {
-                    linkedIn: config.social.linkedIn,
-                    github: config.social.github,
-                    stackOverflow: config.social.stackOverflow,
-                    url: config.app.protocol+config.app.serverUrl+':'+config.app.serverPort
-                };
-                res.locals.config = {
-                    googleMapsApiKey: config.google.mapsApi
-                };
-                next();
-            })
-            .catch(function (err) {
-                logger.log('error', 'Contentful client error', JSON.stringify(err));
-                return next(err);
-            });
+    var includedRoutes = [
+    ];
+    var excludedRoutes = [
+    ];
+    if (includedRoutes.indexOf(req.url) !== -1 || (req.url.indexOf('/api') === -1 && excludedRoutes.indexOf(req.url) === -1)) {
+        if (!webapp.app.isLocalConfig()) {
+            var params = {
+                content_type: contentfulService.contentTypes.menu
+            };
+            return contentfulService.getEntries(params)
+                .then(function (response) {
+                    res.locals.menu = contentService.menuDigest(response);
+                    res.locals.meta = {
+                        siteName: config.app.hostName,
+                        requestedUrl: config.app.protocol + config.app.hostName + req.originalUrl
+                    };
+                    res.locals.site = {
+                        linkedIn: config.social.linkedIn,
+                        github: config.social.github,
+                        stackOverflow: config.social.stackOverflow,
+                        url: config.app.protocol + config.app.serverUrl + ':' + config.app.serverPort
+                    };
+                    res.locals.config = {
+                        googleMapsApiKey: config.google.mapsApi
+                    };
+                    next();
+                })
+                .catch(function (err) {
+                    logger.log('error', 'Contentful client error', JSON.stringify(err));
+                    return next(err);
+                });
+        }
     }
     next();
 });
@@ -103,6 +110,7 @@ if (webapp.app.isLocalConfig()){
 }
 else {
     app.use('/portfolio/*', portfolioRoutes);
+    app.use('/api', apiRoutes);
     app.use('/', pageRoutes);
 }
 

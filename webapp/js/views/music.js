@@ -1,38 +1,37 @@
 var grid,
+    loadMoreButton,
+    page = 2,//loads 20 from the start
     music = {};
 
 music.loadMoreArticles = function(e){
-    console.log("load more");
-    //var pageUrl = $(e.currentTarget).data('page-url');
-    //page++;
-    //$.ajax({
-    //    method: "POST",
-    //    url: "/api/loadMoreArticles",
-    //    data: {
-    //        page: page,
-    //        count: 20,
-    //        pageUrl: pageUrl
-    //    },
-    //    statusCode: {
-    //        200: function (data) {
-    //            $('#grid').append(data);
-    //            if ((data.match(/post-item/g) || []).length < 20){
-    //                $('#load-more').hide();
-    //            }
-    //        },
-    //        204: function () {
-    //            $('#load-more').hide();
-    //        }
-    //    },
-    //    error: function(){
-    //        $('#load-more').hide();
-    //    }
-    //});
+    page++;
+    $.ajax({
+        method: "POST",
+        url: "/api/loadMorePosts",
+        data: {
+            page: page
+        },
+        statusCode: {
+            200: function (data) {
+                $(grid).append(data);
+                if ((data.match(/post-item/g) || []).length < 20){
+                    $(loadMoreButton).hide();
+                }
+            },
+            204: function () {
+                $(loadMoreButton).hide();
+            }
+        },
+        error: function(){
+            $(loadMoreButton).hide();
+        }
+    });
 };
 
 music.init = function(){
     //variables
-    grid = $('.grid');
+    grid = $('#grid-post');
+    loadMoreButton = $('#load-more');
     //loading animation
     $('.post').css({visibility: 'visible'}).velocity('transition.fadeIn',{
         delay: 750,

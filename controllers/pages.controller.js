@@ -84,8 +84,7 @@ pages.getMusicPage = function(req, res, next) {
         content_type: contentfulService.contentTypes.post,
         'fields.postDate[lt]': new Date().toISOString(),
         order: '-fields.postDate',
-        skip: 0,//todo
-        limit: 10//todo
+        limit: 20
     };
     return promise
         .all([contentfulService.getEntries(params)])

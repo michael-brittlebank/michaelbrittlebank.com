@@ -1,6 +1,6 @@
 <main class="row page music">
     <section id="container-content" class="small-12 columns">
-        <div class="grid">
+        <div id="grid-post" class="grid">
             {{#each posts}}
                 <div class="post" onclick="window.location.href='/post/{{url}}'">
                     <div class="content-post">
@@ -12,9 +12,11 @@
             {{/each}}
         </div>
     </section>
-    <section id="container-button" class="small-12 columns">
-        <button class="button" onclick="music.loadMoreArticles();">Load More</button>
-    </section>
+    {{#compare posts.length 20 operator="==="}}
+        <section id="container-button" class="small-12 columns">
+            <button id="load-more" class="button" onclick="music.loadMoreArticles();">Load More</button>
+        </section>
+    {{/compare}}
 </main>
 <script type="text/javascript">
     $(function(){
