@@ -186,20 +186,24 @@ webapp.htmlParser = function(data){
         imageEndTag = '/img]',
         imageOccurrences = webapp.getIndicesOf(imageStartTag, data, false),
         imageObject,
+        className,
         replacementHtml;
     if (imageOccurrences.length > 0){
-        imageOccurrences.forEach(function(entry){
+        for (var i = 0; i <imageOccurrences.length; i++){
             try {
+                className = i%2===0?'left-float':'right-float';
                 //need to reevaluate tag locations once replacement has happened
                 imageObject = JSON.parse(data.substring(data.indexOf(imageStartTag)+imageStartTag.length,data.indexOf(imageEndTag)));
-                replacementHtml = webapp.htmlEntityConversion('<img src="'+imageObject.src+'" alt="'+imageObject.alt+'"/>',true);
+                replacementHtml = webapp.htmlEntityConversion('<img src="'+imageObject.src+
+                    '" alt="'+imageObject.alt+
+                    '" class="'+className+'"/>',true);
             }
             catch (e){
                 console.log(e);
                 replacementHtml = '';
             }
             data = data.replace(data.substring(data.indexOf(imageStartTag), data.indexOf(imageEndTag)+imageEndTag.length), replacementHtml);
-        });
+        }
     }
     return marked(webapp.htmlEntityConversion(data, false));
 };
