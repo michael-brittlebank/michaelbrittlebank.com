@@ -187,11 +187,12 @@ webapp.htmlParser = function(data){
         imageOccurrences = webapp.getIndicesOf(imageStartTag, data, false),
         imageObject,
         replacementHtml;
-    if (imageOccurrences > 0){
+    if (imageOccurrences.length > 0){
         imageOccurrences.forEach(function(entry){
             try {
-                imageObject = JSON.parse(data.substring(entry+imageStartTag.length,data.indexOf(imageEndTag)));
-                replacementHtml = '<img src="'+imageObject.src+'" alt="'+imageObject.alt+'"/>';
+                //need to reevaluate tag locations once replacement has happened
+                imageObject = JSON.parse(data.substring(data.indexOf(imageStartTag)+imageStartTag.length,data.indexOf(imageEndTag)));
+                replacementHtml = webapp.htmlEntityConversion('<img src="'+imageObject.src+'" alt="'+imageObject.alt+'"/>',true);
             }
             catch (e){
                 console.log(e);
@@ -200,7 +201,7 @@ webapp.htmlParser = function(data){
             data = data.replace(data.substring(data.indexOf(imageStartTag), data.indexOf(imageEndTag)+imageEndTag.length), replacementHtml);
         });
     }
-    return marked(data);
+    return marked(webapp.htmlEntityConversion(data, false));
 };
 
 webapp.getDefaultMetaTitle = function(title){
@@ -227,6 +228,26 @@ webapp.filterDate = function(data){
     if (data && data.indexOf('-') !== -1){
         var dateArray = data.split('-');
         data = webapp.months[parseInt(dateArray[1])-1]+' '+dateArray[2]+', '+dateArray[0];
+    }
+    return data;
+};
+
+webapp.htmlEntityConversion = function(data, convertToHtmlEntity){
+    var htmlEntity = [
+            '&#47;'
+        ],
+        plainText = [
+            '/'
+        ],
+        i;
+    if (convertToHtmlEntity){
+        for (i = 0; i < htmlEntity.length; i++){
+            data = data.replace(new RegExp(plainText[i], 'g'),htmlEntity[i]);
+        }
+    } else {
+        for (i = 0; i < htmlEntity.length; i++){
+            data = data.replace(new RegExp(htmlEntity[i], 'g'),plainText[i]);
+        }
     }
     return data;
 };
