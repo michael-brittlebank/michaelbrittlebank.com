@@ -1,34 +1,53 @@
 var grid,
     gridMasonry,
     loadMoreButton,
+    loadingInProgress = false,
     page = 2,//loads 20 from the start
     data,
     music = {};
 
+music.loading = function(isLoading){
+    if(isLoading) {
+        loadingInProgress = true;
+        $(loadMoreButton).addClass('disabled');
+        //todo, show spinner
+    } else {
+        loadingInProgress = false;
+        $(loadMoreButton).removeClass('disabled');
+        //todo, hide spinner
+    }
+};
+
 music.loadMoreArticles = function(e){
-    page++;
-    $.ajax({
-        method: "POST",
-        url: "/api/loadMorePosts",
-        data: {
-            page: page
-        },
-        statusCode: {
-            200: function (response) {
-                data = response;
-                var processedData = $.parseHTML(response),
-                    dataString = 'data-group="',
-                    group = data.substring(data.indexOf(dataString)+dataString.length,data.indexOf('"',data.indexOf(dataString)+dataString.length));
-                gridMasonry.append(processedData).masonry('appended', processedData);
+    if (!loadingInProgress) {
+        music.loading(true);
+        page++;
+        $.ajax({
+            method: "POST",
+            url: "/api/loadMorePosts",
+            data: {
+                page: page
             },
-            204: function () {
+            statusCode: {
+                200: function (response) {
+                    data = response;
+                    var processedData = $.parseHTML(response),
+                        dataString = 'data-group="',
+                        group = data.substring(data.indexOf(dataString) + dataString.length, data.indexOf('"', data.indexOf(dataString) + dataString.length));
+                    gridMasonry.append(processedData).masonry('appended', processedData);
+                },
+                204: function () {
+                    $(loadMoreButton).hide();
+                }
+            },
+            error: function () {
                 $(loadMoreButton).hide();
+            },
+            complete: function(){
+                music.loading(false);
             }
-        },
-        error: function(){
-            $(loadMoreButton).hide();
-        }
-    });
+        });
+    }
 };
 
 music.init = function(){
