@@ -10,7 +10,7 @@ pages.getLocalIndex = function(req, res, next) {
     res.locals.page = {
         body: 'hell worold'
     };
-    res.render('index');
+    res.render('page-homepage');
 };
 
 pages.getLocalDefaultPage = function(req, res, next) {
@@ -21,7 +21,7 @@ pages.getLocalDefaultPage = function(req, res, next) {
         res.render('page-scales');
     }
     else {
-        res.render('page');
+        res.render('single-page');
     }
 };
 

@@ -29,10 +29,10 @@ portfolio.getDefaultPortfolioPage = function(req, res, next) {
                         res.render('portfolio-bubbles');
                         break;
                     default:
-                        res.render('portfolio');
+                        res.render('single-portfolio');
                 }
             } else {
-                res.render('portfolio');
+                res.render('single-portfolio');
             }
         })
         .catch(function (err) {

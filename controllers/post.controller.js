@@ -18,7 +18,7 @@ api.getDefaultPostPage = function(req, res, next) {
         .all([contentfulService.getEntries(params)])
         .then(function (response) {
             res.locals.page = contentService.postDigest(response[0]);
-            res.render('post');
+            res.render('single-post');
         })
         .catch(function (err) {
             next(err);

@@ -22,7 +22,7 @@ contentModels.getPageModel = function(data){
             modifiedTime: modifiedAt.substring(0,modifiedAt.lastIndexOf('.'))+'-4:00',
             metaTitle: webapp.simpleNullCheck(fields,'metaTitle')?webapp.getValueFromKey(fields,'metaTitle'):webapp.getDefaultMetaTitle(webapp.getValueFromKey(fields,'title')),
             metaDescription: webapp.simpleNullCheck(fields,'metaDescription')?webapp.getValueFromKey(fields,'metaDescription'):webapp.getMetaExcerpt(webapp.getHTMLValueFromKey(fields,'body')),
-            metaImage: webapp.simpleNullCheck(fields,'metaImage')?webapp.getImageUrl(fields.metaImage):''//todo, default meta image
+            metaImage: webapp.simpleNullCheck(fields,'metaImage')?webapp.getImageUrl(fields.metaImage):webapp.getDefaultMetaImage()
         };
     }
     else {
@@ -52,7 +52,7 @@ contentModels.getPortfolioModel = function(data){
             modifiedTime: modifiedAt.substring(0,modifiedAt.lastIndexOf('.'))+'-4:00',
             metaTitle: webapp.simpleNullCheck(fields,'metaTitle')?webapp.getValueFromKey(fields,'metaTitle'):webapp.getDefaultMetaTitle(webapp.getValueFromKey(fields,'title')),
             metaDescription: webapp.simpleNullCheck(fields,'metaDescription')?webapp.getValueFromKey(fields,'metaDescription'):webapp.getMetaExcerpt(webapp.getHTMLValueFromKey(fields,'body')),
-            metaImage: webapp.simpleNullCheck(fields,'metaImage')?webapp.getImageUrl(fields.metaImage):''//todo, default meta image
+            metaImage: webapp.simpleNullCheck(fields,'metaImage')?webapp.getImageUrl(fields.metaImage):webapp.getDefaultMetaImage()
         };
     }
     else {
@@ -163,14 +163,21 @@ contentModels.getImageModel = function(data){
 
 contentModels.getPostModel = function(data){
    if (webapp.simpleNullCheck(data,'fields')){
-        var fields = data.fields;
+        var fields = data.fields,
+            createdAt = JSON.stringify(data.sys.createdAt),
+            modifiedAt = JSON.stringify(data.sys.updatedAt);
         return {
             id: data.sys.id,
             title: webapp.getValueFromKey(fields,'title'),
             url: '/music'+webapp.getUrlValueFromKey(fields, 'url'),
             body: webapp.getHTMLValueFromKey(fields,'body'),
             excerpt: webapp.simpleNullCheck(fields,'excerpt')?webapp.getHTMLValueFromKey(fields,'excerpt'):webapp.getPostExcerpt(webapp.getHTMLValueFromKey(fields,'body')),
-            postDate: webapp.getDateValueFromKey(fields,'postDate')
+            postDate: webapp.getDateValueFromKey(fields,'postDate'),
+            publishedTime: createdAt.substring(0,createdAt.lastIndexOf('.'))+'-4:00',//GMT
+            modifiedTime: modifiedAt.substring(0,modifiedAt.lastIndexOf('.'))+'-4:00',
+            metaTitle: webapp.simpleNullCheck(fields,'metaTitle')?webapp.getValueFromKey(fields,'metaTitle'):webapp.getDefaultMetaTitle(webapp.getValueFromKey(fields,'title')),
+            metaDescription: webapp.simpleNullCheck(fields,'metaDescription')?webapp.getValueFromKey(fields,'metaDescription'):webapp.getMetaExcerpt(webapp.getHTMLValueFromKey(fields,'body')),
+            metaImage: webapp.simpleNullCheck(fields,'metaImage')?webapp.getImageUrl(fields.metaImage):webapp.getDefaultMetaImage()
         };
     }
     else {

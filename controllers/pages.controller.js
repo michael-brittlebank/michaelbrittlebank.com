@@ -22,8 +22,8 @@ pages.getIndex = function(req, res, next) {
         .then(function (response) {
             var content = response[0];
             res.locals.page = contentService.pageDigest(content);
-            res.render('index', {
-                layout: 'layout-index'
+            res.render('page-homepage', {
+                layout: 'layout-homepage'
             });
         })
         .catch(function (err) {
@@ -150,10 +150,10 @@ pages.getDefaultPage = function(req, res, next) {
                         pages.getScalesPage(res, res, next);
                         break;
                     default:
-                        res.render('page');
+                        res.render('single-page');
                 }
             } else {
-                res.render('page');
+                res.render('single-page');
             }
         })
         .catch(function (err) {

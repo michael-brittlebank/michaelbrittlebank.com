@@ -231,6 +231,10 @@ webapp.filterDate = function(data){
     return data;
 };
 
+webapp.getDefaultMetaImage = function(){
+    return '/images/favicon-194x194.png';
+};
+
 webapp.simpleNullCheck = function(object,key){
     return object && object.hasOwnProperty(key) && object[key]?true:false;
 };
