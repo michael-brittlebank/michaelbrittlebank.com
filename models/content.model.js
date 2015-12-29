@@ -39,7 +39,7 @@ contentModels.getPortfolioModel = function(data){
             id: data.sys.id,
             title: webapp.getValueFromKey(fields,'title'),
             linkTitle: webapp.getValueFromKey(fields, 'linkTitle'),
-            url: '/portfolio'+webapp.getUrlValueFromKey(fields,'url'),
+            url: webapp.simpleNullCheck(fields,'url')?'/portfolio'+webapp.getUrlValueFromKey(fields,'url'):'',
             body: webapp.getHTMLValueFromKey(fields,'body'),
             excerpt: webapp.getHTMLValueFromKey(fields,'excerpt'),
             techStack: webapp.getValueFromKey(fields,'techStack'),
@@ -169,7 +169,7 @@ contentModels.getPostModel = function(data){
         return {
             id: data.sys.id,
             title: webapp.getValueFromKey(fields,'title'),
-            url: '/music'+webapp.getUrlValueFromKey(fields, 'url'),
+            url: webapp.simpleNullCheck(fields,'url')?'/music'+webapp.getUrlValueFromKey(fields, 'url'):'',
             body: webapp.getHTMLValueFromKey(fields,'body'),
             excerpt: webapp.simpleNullCheck(fields,'excerpt')?webapp.getHTMLValueFromKey(fields,'excerpt'):webapp.getPostExcerpt(webapp.getHTMLValueFromKey(fields,'body')),
             postDate: webapp.getDateValueFromKey(fields,'postDate'),
