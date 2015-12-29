@@ -90,7 +90,7 @@ pages.getMusicPage = function(req, res, next) {
         .all([contentfulService.getEntries(params)])
         .then(function (response) {
             var content = response[0];
-            res.locals.posts = _.values(contentService.postsDigest(content));
+            res.locals.posts = _.values(contentService.postArrayDigest(content));
             res.locals.group = 1;
             res.render('page-music');
         })

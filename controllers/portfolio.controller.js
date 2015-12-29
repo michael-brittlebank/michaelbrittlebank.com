@@ -15,7 +15,7 @@ var /* packages */
 portfolio.getDefaultPortfolioPage = function(req, res, next) {
     var params = {
         content_type: contentfulService.contentTypes.portfolio,
-        'fields.url[in]': req.originalUrl.replace(/^\/|\/$/g, ''),
+        'fields.url[in]': req.originalUrl.replace('/portfolio', '').replace(/^\/|\/$/g, ''),
         limit: 1
     };
     return promise
@@ -27,9 +27,6 @@ portfolio.getDefaultPortfolioPage = function(req, res, next) {
                 switch (page.layout) {
                     case 'Bubbles':
                         res.render('portfolio-bubbles');
-                        break;
-                    case 'Scales':
-                        res.render('portfolio-scales');
                         break;
                     default:
                         res.render('portfolio');

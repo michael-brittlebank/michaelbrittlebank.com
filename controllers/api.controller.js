@@ -22,7 +22,7 @@ api.loadMorePosts = function(req, res, next) {
         .all([contentfulService.getEntries(params)])
         .then(function (response) {
             var content = response[0];
-            res.locals.posts = _.values(contentService.postsDigest(content));
+            res.locals.posts = _.values(contentService.postArrayDigest(content));
             res.locals.group = page;
             res.status(webapp.status.ok).render('partials/post-grid', {
                 layout: false

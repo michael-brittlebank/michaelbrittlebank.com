@@ -21,6 +21,7 @@ var /* packages */
     portfolioRoutes = require('./routes/portfolio.routes'),
     localRoutes = require('./routes/local.routes'),
     apiRoutes = require('./routes/api.routes'),
+    postRoutes = require('./routes/post.routes'),
     pageController = require('./controllers/pages.controller');
 
 var app = express();
@@ -85,7 +86,7 @@ app.use(function(req, res, next) {
             };
             return contentfulService.getEntries(params)
                 .then(function (response) {
-                    res.locals.menu = contentService.menuDigest(response);
+                    res.locals.menu = contentService.menuArrayDigest(response);
                     res.locals.meta = {
                         siteName: config.app.hostName,
                         requestedUrl: config.app.protocol + config.app.hostName + req.originalUrl
@@ -117,6 +118,7 @@ if (webapp.app.isLocalConfig()){
 }
 else {
     app.use('/portfolio/*', portfolioRoutes);
+    app.use('/music/*', postRoutes);
     app.use('/api', apiRoutes);
     app.use('/', pageRoutes);
 }

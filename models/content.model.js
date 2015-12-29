@@ -14,7 +14,7 @@ contentModels.getPageModel = function(data){
             body: webapp.getHTMLValueFromKey(fields,'body'),
             linkTitle: webapp.getValueFromKey(fields, 'linkTitle'),
             url: webapp.getUrlValueFromKey(fields,'url'),
-            content: webapp.simpleNullCheck(fields,'children')?contentService.contentBlockDigest(fields.children):{},
+            content: webapp.simpleNullCheck(fields,'children')?contentService.contentBlockArrayDigest(fields.children):{},
             layout: webapp.getValueFromKey(fields,'layout'),
             categories: webapp.simpleNullCheck(fields,'categories')?fields.categories.join(', '):{},
             tags: webapp.simpleNullCheck(fields,'tags')?fields.tags.join(', '):{},
@@ -39,7 +39,7 @@ contentModels.getPortfolioModel = function(data){
             id: data.sys.id,
             title: webapp.getValueFromKey(fields,'title'),
             linkTitle: webapp.getValueFromKey(fields, 'linkTitle'),
-            url: webapp.getUrlValueFromKey(fields,'url'),
+            url: '/portfolio'+webapp.getUrlValueFromKey(fields,'url'),
             body: webapp.getHTMLValueFromKey(fields,'body'),
             excerpt: webapp.getHTMLValueFromKey(fields,'excerpt'),
             techStack: webapp.getValueFromKey(fields,'techStack'),
@@ -95,7 +95,7 @@ contentModels.getMenuModel = function(data){
         return {
             id: data.sys.id,
             menuLocation: webapp.getValueFromKey(fields,'menuLocation').toLowerCase(),
-            children: webapp.simpleNullCheck(fields,'children')?contentService.menuItemDigest(fields.children):[]
+            children: webapp.simpleNullCheck(fields,'children')?contentService.menuItemArrayDigest(fields.children):[]
         };
     }
     else {
@@ -139,7 +139,7 @@ contentModels.getAlbumModel = function(data){
         return {
             id: data.sys.id,
             title: webapp.getValueFromKey(fields,'title'),
-            images: webapp.simpleNullCheck(fields,'images')?contentService.imageDigest(fields.images):{}
+            images: webapp.simpleNullCheck(fields,'images')?contentService.imageArrayDigest(fields.images):{}
         };
     }
     else {
@@ -167,7 +167,7 @@ contentModels.getPostModel = function(data){
         return {
             id: data.sys.id,
             title: webapp.getValueFromKey(fields,'title'),
-            url: webapp.getValueFromKey(fields, 'url'),
+            url: '/music'+webapp.getUrlValueFromKey(fields, 'url'),
             body: webapp.getHTMLValueFromKey(fields,'body'),
             excerpt: webapp.simpleNullCheck(fields,'excerpt')?webapp.getHTMLValueFromKey(fields,'excerpt'):webapp.getPostExcerpt(webapp.getHTMLValueFromKey(fields,'body')),
             postDate: webapp.getDateValueFromKey(fields,'postDate')
