@@ -11,18 +11,20 @@
   }
   #container-body {
     padding: 0 40px;
-    @include fade-in-default;
     h2 {
       border-bottom: 1px solid $color-dark-grey;
       padding: 20px 0 5px 0;
       text-align: center;
       text-transform: uppercase;
+      @include fade-in-default;
     }
     h3 {
       margin: 30px 0 10px 0;
+      @include fade-in-default;
     }
     p {
       text-align: justify;
+      @include fade-in-default;
     }
     a {
       font-size: rem-calc(20);
