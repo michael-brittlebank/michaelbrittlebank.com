@@ -7,6 +7,7 @@ var /* packages */
     contentLength = require('express-content-length-validator'),
     methodOverride = require('method-override'),
     path = require('path'),
+    bodyParser = require('body-parser'),
 /* config */
     config = require('./config/config'),
 /* services */
@@ -31,6 +32,12 @@ var app = express();
 //security extensions
 app.use(helmet());
 app.use(contentLength.validateMax({max: 9999}));
+
+//parse form data
+app.use( bodyParser.json() );       // to support JSON-encoded bodies
+app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
+    extended: true
+}));
 
 //favicon
 app.use(favicon(__dirname + '/webapp/public/images/favicon.ico'));

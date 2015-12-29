@@ -148,7 +148,7 @@ module.exports = function(grunt) {
                     ]
                 },
                 options: {
-                    sourceMap: true,
+                    sourceMap: true,//todo, source map url
                     preserveComments: true,
                     compress: true
                 }

@@ -9,29 +9,26 @@ var /* packages */
     api = {};
 
 api.loadMorePosts = function(req, res, next) {
-    //.then(function (results) {
-    //    return res.status(feast.status.ok).end(results.html);
-    //})
-    //    .catch(function (err) {
-    res.status(webapp.status.ok).send('success');
-    //});
-    //var params = {
-    //    content_type: contentfulService.contentTypes.post,
-    //    'fields.postDate[lt]': new Date().toISOString(),
-    //    order: '-fields.postDate',
-    //    skip: 0,//todo
-    //    limit: 10//todo
-    //};
-    //return promise
-    //    .all([contentfulService.getEntries(params)])
-    //    .then(function (response) {
-    //        var content = response[0];
-    //        res.locals.posts = _.values(contentService.postsDigest(content));
-    //        res.render('page-music');
-    //    })
-    //    .catch(function (err) {
-    //        next(err);
-    //    });
+    var numberOfPosts = 10,
+        page = webapp.simpleNullCheck(req.body, 'page')?req.body.page:1,
+        params = {
+            content_type: contentfulService.contentTypes.post,
+            'fields.postDate[lt]': new Date().toISOString(),
+            order: '-fields.postDate',
+            //skip: page*numberOfPosts,
+            limit: numberOfPosts
+        };
+    return promise
+        .all([contentfulService.getEntries(params)])
+        .then(function (response) {
+            var content = response[0],
+                posts = _.values(contentService.postsDigest(content));
+            res.status(webapp.status.ok).json(JSON.stringify(posts));
+        })
+        .catch(function (err) {
+            logger.error('api - load more posts', JSON.stringify(err));
+            res.status(webapp.status.noContent).end();
+        });
 };
 
 module.exports = api;
