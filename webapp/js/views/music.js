@@ -1,4 +1,6 @@
-var music = {};
+var grid,
+    posts,
+    music = {};
 
 music.loadMoreArticles = function(e){
     console.log("load more");
@@ -30,7 +32,19 @@ music.loadMoreArticles = function(e){
 };
 
 music.init = function(){
-    $('.grid').masonry({
+    //variables
+    grid = $('.grid');
+    //loading animation
+    $('.post').css({visibility: 'visible'}).velocity('transition.fadeIn',{
+        delay: 750,
+        duration: 1000,
+        stagger: 200,
+        begin: function(){
+            $(grid).masonry('layout');
+        }
+    });
+    //grid layout
+    $(grid).masonry({
         // options
         itemSelector: '.post',
         columnWidth: '.post',

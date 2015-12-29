@@ -36,8 +36,8 @@ site.helpers = {
 };
 
 site.animation = {
-    fadeIn: function(element,duration, delay){
-        $(element).css({visibility:'visible'}).velocity('transition.fadeIn',{duration:duration,delay:delay});
+    fadeIn: function(element,duration,delay,stagger){
+        $(element).css({visibility:'visible'}).velocity('transition.fadeIn',{duration:duration,delay:delay,stagger:stagger});
     },
     fadeOut: function(element,duration, delay){
         $(element).velocity('transition.fadeOut',{
@@ -67,8 +67,8 @@ site.init = function(){
     //foundation init
     $(document).foundation();
     //loading animation
-    site.animation.fadeIn('header',1500,0);
-    site.animation.fadeIn('footer',1500,1000);
+    site.animation.fadeIn('header',1500,0,0);
+    site.animation.fadeIn('footer',1500,1000,0);
     /**
      * listeners
      */
@@ -78,8 +78,8 @@ site.init = function(){
                 activeModal = event.target;
                 $(modalOverlay).velocity('stop');
                 $(activeModal).velocity('stop');
-                site.animation.fadeIn(modalOverlay, 500, 0);
-                site.animation.fadeIn(activeModal, 500, 0);
+                site.animation.fadeIn(modalOverlay, 500, 0,0);
+                site.animation.fadeIn(activeModal, 500, 0,0);
             }
         })
         .on('closed.zf.reveal', function(){

@@ -5,6 +5,12 @@
       width: 31%;
       margin: 1%;
       background-color: $color-white;
+      &:hover {
+        .content-post {
+          border-color: $color-badgers-gold;
+        }
+      }
+      @include fade-in-default;
       @include breakpoint(small only) {
         width: 98%;
       }
@@ -17,6 +23,8 @@
         text-align: justify;
         height: 100%;
         width: 100%;
+        cursor:pointer;
+        @include transition-with-defaults(border);
       }
     }
   }

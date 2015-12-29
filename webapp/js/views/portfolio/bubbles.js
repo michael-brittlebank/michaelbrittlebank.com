@@ -276,9 +276,9 @@ bubbles.controls = {
 bubbles.init = function() {
     //loading
     prettyPrint();
-    site.animation.fadeIn('#content-bubbles',1500,500);
-    site.animation.fadeIn('#content-code',1500,750);
-    site.animation.fadeIn('#container-controls',1500,1000);
+    site.animation.fadeIn('#content-bubbles',1500,500,0);
+    site.animation.fadeIn('#content-code',1500,750,0);
+    site.animation.fadeIn('#container-controls',1500,1000,0);
     //elements
     smallBubbles = $('#smallBubbles');
     mediumBubbles = $('#mediumBubbles');

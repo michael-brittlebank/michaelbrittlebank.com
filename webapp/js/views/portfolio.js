@@ -2,9 +2,9 @@ var portfolio = {};
 
 portfolio.init = function(){
     //loading animation
-    site.animation.fadeIn('#container-quote',1000,500);
-    site.animation.fadeIn('.slider-header',1000,750);
-    site.animation.fadeIn('.slider-container',1500,1000);
+    site.animation.fadeIn('#container-quote',1000,500,0);
+    site.animation.fadeIn('.slider-header',1000,750,0);
+    site.animation.fadeIn('.slider-container',1500,1000,0);
     //carousel init
     $('.portfolio-carousel').slick({
         dots: true,

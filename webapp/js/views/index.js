@@ -43,7 +43,7 @@ homepage.grid = {
         blockOrder.push(blockOrder.indexOf(1) === -1?1:3);
         blockOrder.push(blockOrder.indexOf(2) === -1?2:4);
         for (var i = 0; i < blockOrder.length;i++){
-            site.animation.fadeIn('#homepage-block-'+blockOrder[i],1500,250*(i+1));
+            site.animation.fadeIn('#homepage-block-'+blockOrder[i],1500,250*(i+1),0);
         }
     }
 };

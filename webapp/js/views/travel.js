@@ -7,8 +7,8 @@ travel.markers = [];
 
 travel.maps = {
     initMap: function() {
-        site.animation.fadeIn('#container-rule',1000,0);
-        site.animation.fadeIn('#container-google',1000,500);
+        site.animation.fadeIn('#container-rule',1000,0,0);
+        site.animation.fadeIn('#container-google',1000,500,0);
         var place = site.helpers.getRandomElement(travel.places);
         map = new google.maps.Map(document.getElementById('container-google'), {
             zoom: 4,
@@ -55,7 +55,7 @@ travel.maps = {
 };
 
 travel.init = function(){
-    site.animation.fadeIn('#container-images',1000,750);
+    site.animation.fadeIn('#container-images',1000,750,0);
     $('.travel-images').slick({
         infinite: true,
         slidesToShow: 1,
