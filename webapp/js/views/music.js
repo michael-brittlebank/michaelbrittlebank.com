@@ -2,6 +2,7 @@ var grid,
     gridMasonry,
     loadMoreButton,
     loadingInProgress = false,
+    loadingSpinner,
     page = 2,//loads 20 from the start
     data,
     music = {};
@@ -10,11 +11,11 @@ music.loading = function(isLoading){
     if(isLoading) {
         loadingInProgress = true;
         $(loadMoreButton).addClass('disabled');
-        //todo, show spinner
+        site.animation.fadeIn(loadingSpinner,250,0,0);
     } else {
         loadingInProgress = false;
         $(loadMoreButton).removeClass('disabled');
-        //todo, hide spinner
+        site.animation.fadeOut(loadingSpinner,250,0,0);
     }
 };
 
@@ -54,6 +55,7 @@ music.init = function(){
     //variables
     grid = $('#grid-post');
     loadMoreButton = $('#load-more');
+    loadingSpinner = $('#loading-spinner');
     //grid layout
     gridMasonry = $(grid).masonry({
         itemSelector: '.post',

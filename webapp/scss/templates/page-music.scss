@@ -35,5 +35,12 @@
   #container-button {
     margin-top: 50px;
     text-align: center;
+    #loading-spinner {
+      margin: 10px;
+      font-size: rem-calc(60);
+      display: block!important;
+      color: $color-jays-light-blue;
+      @include fade-in-default;
+    }
   }
 }

@@ -6,6 +6,8 @@
     </section>
     {{#compare posts.length 20 operator="==="}}
         <section id="container-button" class="small-12 columns">
+            <i id="loading-spinner" class="fa fa-spin fa-circle-o-notch"></i>
+            <br/>
             <button id="load-more" class="button" onclick="music.loadMoreArticles();">Load More</button>
         </section>
     {{/compare}}
