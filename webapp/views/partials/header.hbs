@@ -1,4 +1,3 @@
-<!--todo, highlight on current page -->
 <header>
     <div class="row">
         <div id="menu-mobile" class="small-12 columns">
@@ -11,9 +10,9 @@
                                 {{#compare children.length 0 operator=">"}}
                                     <li class="has-dropdown">
                                         {{#if url}}
-                                            <a href="{{url}}">{{title}}</a>
+                                            <a href="{{url}}" class="{{#compare title ../../site.menuHighlight operator="===/i"}}active{{/compare}}">{{title}}</a>
                                         {{else}}
-                                            <a>{{title}}</a>
+                                            <a class="{{#compare title ../../site.menuHighlight operator="===/i"}}active{{/compare}}">{{title}}</a>
                                         {{/if}}
                                         <ul class="dropdown">
                                             {{#each children}}
@@ -22,7 +21,7 @@
                                         </ul>
                                     </li>
                                 {{else}}
-                                    <li><a href="{{url}}">{{title}}</a></li>
+                                    <li><a href="{{url}}" class="{{#compare title ../../site.menuHighlight operator="===/i"}}active{{/compare}}">{{title}}</a></li>
                                 {{/compare}}
                             {{/each}}
                         </ul>
@@ -36,9 +35,9 @@
                     {{#compare children.length 0 operator=">"}}
                         <li class="has-dropdown">
                             {{#if url}}
-                                <a href="{{url}}">{{title}}</a>
+                                <a href="{{url}}" class="{{#compare title ../../site.menuHighlight operator="===/i"}}active{{/compare}}">{{title}}</a>
                             {{else}}
-                                <a>{{title}}</a>
+                                <a class="{{#compare title ../../site.menuHighlight operator="===/i"}}active{{/compare}}">{{title}}</a>
                             {{/if}}
                             <ul class="dropdown">
                                 {{#each children}}
@@ -47,7 +46,7 @@
                             </ul>
                         </li>
                     {{else}}
-                        <li><a href="{{url}}">{{title}}</a></li>
+                        <li><a href="{{url}}" class="{{#compare title ../../site.menuHighlight operator="===/i"}}active{{/compare}}">{{title}}</a></li>
                     {{/compare}}
                 {{/eachReverse}}
             </ul>

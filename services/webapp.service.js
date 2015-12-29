@@ -59,6 +59,7 @@ webapp.hbsHelpers = {
         var operators = {
             '==':		function(l,r) { return l == r; },
             '===':	function(l,r) { return l === r; },
+            '===/i':	function(l,r) { return l.toLowerCase() === r.toLowerCase(); },
             '!==':	function(l,r) { return l !== r; },
             '!=':		function(l,r) { return l != r; },
             '<':		function(l,r) { return l < r; },
@@ -258,6 +259,21 @@ webapp.htmlEntityConversion = function(data, convertToHtmlEntity){
 
 webapp.getDefaultMetaImage = function(){
     return '/images/favicon-194x194.png';
+};
+
+webapp.getMenuHighlight = function(url){
+    url = url.toLowerCase();
+    if (url.indexOf('music') !== -1){
+        return 'music';
+    } else if (url.indexOf('travel') !== -1){
+        return 'travel';
+    } else if (url.indexOf('portfolio') !== -1) {
+        return 'portfolio';
+    } else if (url.indexOf('resume') !== -1) {
+        return 'resume';
+    } else {
+        return '';
+    }
 };
 
 webapp.simpleNullCheck = function(object,key){

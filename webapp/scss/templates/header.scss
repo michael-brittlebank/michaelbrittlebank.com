@@ -36,7 +36,7 @@ header {
           border-left: 0 solid transparent;
           @extend .list-links;
           @include transition-with-defaults(border);
-          &:hover {
+          &:hover, &.active {
             border-left: 15px solid rgba($color-badgers-red, 0.75);
           }
         }
@@ -54,7 +54,7 @@ header {
         border-bottom: 5px solid transparent;
         @extend .list-links;
         @include transition-with-defaults(border);
-        &:hover {
+        &:hover, &.active {
           border-color: rgba($color-jays-light-blue, 0.5);
         }
       }

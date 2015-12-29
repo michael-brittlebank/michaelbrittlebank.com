@@ -95,7 +95,8 @@ app.use(function(req, res, next) {
                         linkedIn: config.social.linkedIn,
                         github: config.social.github,
                         stackOverflow: config.social.stackOverflow,
-                        url: config.app.protocol + config.app.serverUrl + ':' + config.app.serverPort
+                        url: config.app.protocol + config.app.serverUrl + ':' + config.app.serverPort,
+                        menuHighlight: webapp.getMenuHighlight(req.originalUrl)
                     };
                     res.locals.config = {
                         googleMapsApiKey: config.google.mapsApi
