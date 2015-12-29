@@ -14,7 +14,8 @@ contentfulService.contentTypes = {
     contentBlock: config.contentful.contentTypes.contentBlock,
     quote: config.contentful.contentTypes.quote,
     menu: config.contentful.contentTypes.menu,
-    album: config.contentful.contentTypes.album
+    album: config.contentful.contentTypes.album,
+    post: config.contentful.contentTypes.post
 };
 
 var client = contentful.createClient({

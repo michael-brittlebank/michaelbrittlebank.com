@@ -97,4 +97,16 @@ contentService.imageDigest = function(data){
     return result;
 };
 
+contentService.postsDigest = function(data){
+    var result = {},
+        i = 1;
+    if(data) {
+        data.forEach(function (entry) {
+            result['post' + i] = contentModel.getPostModel(entry);
+            i++;
+        });
+    }
+    return result;
+};
+
 module.exports = contentService;

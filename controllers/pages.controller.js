@@ -80,7 +80,23 @@ pages.getResumePage = function(req, res, next) {
 };
 
 pages.getMusicPage = function(req, res, next) {
-    res.render('page-music');//todo
+    var params = {
+        content_type: contentfulService.contentTypes.post,
+        'fields.postDate[lt]': new Date().toISOString(),
+        order: '-fields.postDate',
+        skip: 0,//todo
+        limit: 10//todo
+    };
+    return promise
+        .all([contentfulService.getEntries(params)])
+        .then(function (response) {
+            var content = response[0];
+            res.locals.posts = _.values(contentService.postsDigest(content));
+            res.render('page-music');
+        })
+        .catch(function (err) {
+            next(err);
+        });
 };
 
 pages.getScalesPage = function(req, res, next) {

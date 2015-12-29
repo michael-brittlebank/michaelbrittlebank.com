@@ -161,4 +161,21 @@ contentModels.getImageModel = function(data){
     }
 };
 
+contentModels.getPostModel = function(data){
+   if (webapp.simpleNullCheck(data,'fields')){
+        var fields = data.fields;
+        return {
+            id: data.sys.id,
+            title: webapp.getValueFromKey(fields,'title'),
+            url: webapp.getImageUrl(data),
+            body: webapp.getHTMLValueFromKey(fields,'body'),
+            excerpt: webapp.getHTMLValueFromKey(fields,'excerpt'),
+            postDate: webapp.getValueFromKey(fields,'postDate')
+        };
+    }
+    else {
+        return {};
+    }
+};
+
 module.exports = contentModels;

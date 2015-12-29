@@ -126,7 +126,7 @@ webapp.getFirstResult = function(data){
 
 webapp.getImageUrl = function(data){
     data = webapp.getFirstResult(data);
-    if (webapp.simpleNullCheck(data,'fields')){
+    if (webapp.simpleNullCheck(data,'fields') && webapp.simpleNullCheck(data.fields,'file')){
         return data.fields.file.url+'?q=90&fl=progressive&w=1920';
     }
     else {
@@ -150,6 +150,43 @@ webapp.filterUrl = function(data){
     return data;
 };
 
+webapp.getIndicesOf = function(searchStr, str, caseSensitive) {
+    //http://stackoverflow.com/questions/3410464/how-to-find-all-occurrences-of-one-string-in-another-in-javascript
+    var startIndex = 0, searchStrLen = searchStr.length;
+    var index, indices = [];
+    if (!caseSensitive) {
+        str = str.toLowerCase();
+        searchStr = searchStr.toLowerCase();
+    }
+    while ((index = str.indexOf(searchStr, startIndex)) > -1) {
+        indices.push(index);
+        startIndex = index + searchStrLen;
+    }
+    return indices;
+};
+
+webapp.htmlParser = function(data){
+    var imageStartTag = '[img',
+        imageEndTag = '/img]',
+        imageOccurrences = webapp.getIndicesOf(imageStartTag, data, false),
+        imageObject,
+        replacementHtml;
+    if (imageOccurrences > 0){
+        imageOccurrences.forEach(function(entry){
+            try {
+                imageObject = JSON.parse(data.substring(entry+imageStartTag.length,data.indexOf(imageEndTag)));
+                replacementHtml = '<img src="'+imageObject.src+'" alt="'+imageObject.alt+'"/>';
+            }
+            catch (e){
+                console.log(e);
+                replacementHtml = '';
+            }
+            data = data.replace(data.substring(data.indexOf(imageStartTag), data.indexOf(imageEndTag)+imageEndTag.length), replacementHtml);
+        });
+    }
+    return marked(data);
+};
+
 webapp.getDefaultMetaTitle = function(title){
     return 'Mike Stumpf | '+title;
 };
@@ -163,7 +200,7 @@ webapp.getExcerpt = function(data){
 };
 
 webapp.simpleNullCheck = function(object,key){
-    return object && object.hasOwnProperty(key) && object[key];
+    return object && object.hasOwnProperty(key) && object[key]?true:false;
 };
 
 webapp.getValueFromKey = function(object,key){
@@ -171,7 +208,7 @@ webapp.getValueFromKey = function(object,key){
 };
 
 webapp.getHTMLValueFromKey = function(object,key){
-    return webapp.simpleNullCheck(object,key)?marked(object[key]):'';
+    return webapp.simpleNullCheck(object,key)?webapp.htmlParser(object[key]):'';
 };
 
 webapp.getImageValueFromKey = function(object,key){
