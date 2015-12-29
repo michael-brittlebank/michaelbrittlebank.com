@@ -30,5 +30,10 @@ music.loadMoreArticles = function(e){
 };
 
 music.init = function(){
-
+    $('.grid').masonry({
+        // options
+        itemSelector: '.post',
+        columnWidth: '.post',
+        percentPosition: true
+    });
 };

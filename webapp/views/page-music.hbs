@@ -1,13 +1,16 @@
 <main class="row page music">
     <section id="container-content" class="small-12 columns">
-        {{#each posts}}
-            <div class="post">
-                <div class="content-post">
-                    <h3>{{title}}</h3>
-                    {{{excerpt}}}
+        <div class="grid">
+            {{#each posts}}
+                <div class="post">
+                    <div class="content-post">
+                        <h3>{{title}}</h3>
+                        <h5>{{postDate}}</h5>
+                        {{{excerpt}}}
+                    </div>
                 </div>
-            </div>
-        {{/each}}
+            {{/each}}
+        </div>
     </section>
     <section id="container-button" class="small-12 columns">
         <button class="button" onclick="music.loadMoreArticles();">Load More</button>
