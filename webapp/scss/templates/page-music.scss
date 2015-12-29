@@ -2,8 +2,28 @@
   #container-content {
     margin-top: 50px;
     .post {
+      display:block;
+      float:left;
+      box-sizing: border-box;
+      width: 31%;
+      margin: 1%;
+      &:nth-child(3n + 0) {
+        float: right;
+      }
+      @include breakpoint(small only) {
+        width: 98%;
+        float: left!important;
+      }
+      @include breakpoint(medium only) {
+        width: 48%;
+        &:nth-child(3n + 0) {
+          float: left;
+        }
+        &:nth-child(2n + 0) {
+          float: right;
+        }
+      }
       .content-post {
-        margin: 10px 0;
         padding: 10px;
         border: 5px double $color-desert-black;
         text-align: justify;
