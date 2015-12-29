@@ -1,0 +1,19 @@
+.page.music {
+  #container-content {
+    margin-top: 50px;
+    .post {
+      .content-post {
+        margin: 10px 0;
+        padding: 10px;
+        border: 5px double $color-desert-black;
+        text-align: justify;
+        height: 100%;
+        width: 100%;
+      }
+    }
+  }
+  #container-button {
+    margin-top: 50px;
+    text-align: center;
+  }
+}

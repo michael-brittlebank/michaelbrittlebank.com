@@ -191,10 +191,18 @@ webapp.getDefaultMetaTitle = function(title){
     return 'Mike Stumpf | '+title;
 };
 
-webapp.getExcerpt = function(data){
+webapp.getMetaExcerpt = function(data){
     data = striptags(data);
     if (data.length > 160){
         data = data.substring(0, data.lastIndexOf(' ',160));
+    }
+    return data;
+};
+
+webapp.getPostExcerpt = function(data){
+    data = striptags(data);
+    if (data.length > 300){
+        data = data.substring(0, data.lastIndexOf(' ',250));
     }
     return data;
 };

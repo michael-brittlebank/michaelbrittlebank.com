@@ -21,7 +21,7 @@ contentModels.getPageModel = function(data){
             publishedTime: createdAt.substring(0,createdAt.lastIndexOf('.'))+'-4:00',//GMT
             modifiedTime: modifiedAt.substring(0,modifiedAt.lastIndexOf('.'))+'-4:00',
             metaTitle: webapp.simpleNullCheck(fields,'metaTitle')?webapp.getValueFromKey(fields,'metaTitle'):webapp.getDefaultMetaTitle(webapp.getValueFromKey(fields,'title')),
-            metaDescription: webapp.simpleNullCheck(fields,'metaDescription')?webapp.getValueFromKey(fields,'metaDescription'):webapp.getExcerpt(webapp.getHTMLValueFromKey(fields,'body')),
+            metaDescription: webapp.simpleNullCheck(fields,'metaDescription')?webapp.getValueFromKey(fields,'metaDescription'):webapp.getMetaExcerpt(webapp.getHTMLValueFromKey(fields,'body')),
             metaImage: webapp.simpleNullCheck(fields,'metaImage')?webapp.getImageUrl(fields.metaImage):''//todo, default meta image
         };
     }
@@ -51,7 +51,7 @@ contentModels.getPortfolioModel = function(data){
             publishedTime: createdAt.substring(0,createdAt.lastIndexOf('.'))+'-4:00',//GMT
             modifiedTime: modifiedAt.substring(0,modifiedAt.lastIndexOf('.'))+'-4:00',
             metaTitle: webapp.simpleNullCheck(fields,'metaTitle')?webapp.getValueFromKey(fields,'metaTitle'):webapp.getDefaultMetaTitle(webapp.getValueFromKey(fields,'title')),
-            metaDescription: webapp.simpleNullCheck(fields,'metaDescription')?webapp.getValueFromKey(fields,'metaDescription'):webapp.getExcerpt(webapp.getHTMLValueFromKey(fields,'body')),
+            metaDescription: webapp.simpleNullCheck(fields,'metaDescription')?webapp.getValueFromKey(fields,'metaDescription'):webapp.getMetaExcerpt(webapp.getHTMLValueFromKey(fields,'body')),
             metaImage: webapp.simpleNullCheck(fields,'metaImage')?webapp.getImageUrl(fields.metaImage):''//todo, default meta image
         };
     }
@@ -169,7 +169,7 @@ contentModels.getPostModel = function(data){
             title: webapp.getValueFromKey(fields,'title'),
             url: webapp.getImageUrl(data),
             body: webapp.getHTMLValueFromKey(fields,'body'),
-            excerpt: webapp.getHTMLValueFromKey(fields,'excerpt'),
+            excerpt: webapp.simpleNullCheck(fields,'excerpt')?webapp.getHTMLValueFromKey(fields,'excerpt'):webapp.getPostExcerpt(webapp.getHTMLValueFromKey(fields,'body')),
             postDate: webapp.getValueFromKey(fields,'postDate')
         };
     }
