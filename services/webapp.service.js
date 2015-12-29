@@ -34,6 +34,21 @@ webapp.status = {
     serviceUnavailable: 503
 };
 
+webapp.months = [
+    'January',
+    'February',
+    'March',
+    'April',
+    'May',
+    'June',
+    'July',
+    'August',
+    'September',
+    'October',
+    'November',
+    'December'
+];
+
 webapp.hbsHelpers = {
     compare: function(lvalue, rvalue, options) {
         //https://gist.github.com/doginthehat/1890659
@@ -207,6 +222,14 @@ webapp.getPostExcerpt = function(data){
     return data;
 };
 
+webapp.filterDate = function(data){
+    if (data && data.indexOf('-') !== -1){
+        var dateArray = data.split('-');
+        data = webapp.months[parseInt(dateArray[1])-1]+' '+dateArray[2]+', '+dateArray[0];
+    }
+    return data;
+};
+
 webapp.simpleNullCheck = function(object,key){
     return object && object.hasOwnProperty(key) && object[key]?true:false;
 };
@@ -225,6 +248,10 @@ webapp.getImageValueFromKey = function(object,key){
 
 webapp.getUrlValueFromKey = function(object,key){
     return webapp.simpleNullCheck(object,key)?webapp.filterUrl(object[key]):'';
+};
+
+webapp.getDateValueFromKey = function(object,key){
+    return webapp.simpleNullCheck(object,key)?webapp.filterDate(object[key]):'';
 };
 
 module.exports = webapp;

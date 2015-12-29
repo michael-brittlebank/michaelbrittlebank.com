@@ -1,5 +1,4 @@
 var grid,
-    posts,
     music = {};
 
 music.loadMoreArticles = function(e){
@@ -45,7 +44,6 @@ music.init = function(){
     });
     //grid layout
     $(grid).masonry({
-        // options
         itemSelector: '.post',
         columnWidth: '.post',
         percentPosition: true

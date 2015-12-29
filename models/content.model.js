@@ -170,7 +170,7 @@ contentModels.getPostModel = function(data){
             url: webapp.getValueFromKey(fields, 'url'),
             body: webapp.getHTMLValueFromKey(fields,'body'),
             excerpt: webapp.simpleNullCheck(fields,'excerpt')?webapp.getHTMLValueFromKey(fields,'excerpt'):webapp.getPostExcerpt(webapp.getHTMLValueFromKey(fields,'body')),
-            postDate: webapp.getValueFromKey(fields,'postDate')
+            postDate: webapp.getDateValueFromKey(fields,'postDate')
         };
     }
     else {

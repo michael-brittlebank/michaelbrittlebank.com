@@ -2,8 +2,8 @@
   #container-content {
     margin-top: 50px;
     .post {
-      width: 31%;
-      margin: 1%;
+      width: 32%;
+      margin: 0.5%;
       background-color: $color-white;
       &:hover {
         .content-post {
@@ -12,10 +12,12 @@
       }
       @include fade-in-default;
       @include breakpoint(small only) {
-        width: 98%;
+        width: 96%;
+        margin: 2%;
       }
       @include breakpoint(medium only) {
         width: 48%;
+        margin: 1%;
       }
       .content-post {
         padding: 10px;
