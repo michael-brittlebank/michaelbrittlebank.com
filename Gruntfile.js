@@ -52,13 +52,16 @@ module.exports = function(grunt) {
         },
         env: {
             default: {
-                NODE_ENV: 'default'
+                NODE_ENV: 'production'
             },
             dev: {
                 NODE_ENV: 'development'
             },
             local: {
                 NODE_ENV: 'local'
+            },
+            production: {
+                NODE_ENV: 'production'
             }
         },
         imagemin: {

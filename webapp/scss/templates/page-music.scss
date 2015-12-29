@@ -10,7 +10,9 @@
           border-color: $color-badgers-gold;
         }
       }
-      @include fade-in-default;
+      &[data-group="1"]{
+        @include fade-in-default;
+      }
       @include breakpoint(small only) {
         width: 96%;
         margin: 2%;

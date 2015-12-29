@@ -21,9 +21,12 @@ api.loadMorePosts = function(req, res, next) {
     return promise
         .all([contentfulService.getEntries(params)])
         .then(function (response) {
-            var content = response[0],
-                posts = _.values(contentService.postsDigest(content));
-            res.status(webapp.status.ok).json(JSON.stringify(posts));
+            var content = response[0];
+            res.locals.posts = _.values(contentService.postsDigest(content));
+            res.locals.group = page;
+            res.status(webapp.status.ok).render('partials/post-grid', {
+                layout: false
+            });
         })
         .catch(function (err) {
             logger.error('api - load more posts', JSON.stringify(err));

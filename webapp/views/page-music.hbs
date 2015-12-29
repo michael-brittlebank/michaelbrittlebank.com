@@ -1,15 +1,7 @@
 <main class="row page music">
     <section id="container-content" class="small-12 columns">
         <div id="grid-post" class="grid">
-            {{#each posts}}
-                <div class="post" onclick="window.location.href='/post/{{url}}'">
-                    <div class="content-post">
-                        <h3>{{title}}</h3>
-                        <h5>{{postDate}}</h5>
-                        {{{excerpt}}}
-                    </div>
-                </div>
-            {{/each}}
+            {{> post-grid}}
         </div>
     </section>
     {{#compare posts.length 20 operator="==="}}
