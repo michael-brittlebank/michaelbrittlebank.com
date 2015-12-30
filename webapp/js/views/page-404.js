@@ -39,6 +39,5 @@ page404.animateTranslation = function(element){
 page404.init = function(){
     taglineContainer = $('#container-translations');
     translations = $('.translations');
-    console.log(translations.length);
     page404.animateTranslation(translations[0]);
 };
