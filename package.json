@@ -22,6 +22,7 @@
     "express": "4.13.3",
     "express-content-length-validator": "1.0.0",
     "express-handlebars": "2.0",
+    "express-redirect": "^1.2.2",
     "grunt-cli": "0.1.13",
     "handlebars": "3.0.3",
     "helmet": "0.15.0",

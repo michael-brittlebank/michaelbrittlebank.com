@@ -8,6 +8,7 @@ var /* packages */
     methodOverride = require('method-override'),
     path = require('path'),
     bodyParser = require('body-parser'),
+    redirect = require("express-redirect"),
 /* config */
     config = require('./config/config'),
 /* services */
@@ -25,6 +26,40 @@ var /* packages */
     pageController = require('./controllers/pages.controller');
 
 var app = express();
+redirect(app);
+
+/**
+ * SEO Redirects
+ */
+
+//resume
+app.redirect('/portfolio/university-of-wisconsin-madison', '/resume');
+app.redirect('/portfolio/portfolio/university-of-york', '/resume');
+app.redirect('/about', '/resume');
+app.redirect('/contact', '/resume');
+app.redirect('/search', '/resume');
+app.redirect('/professional', '/resume');
+app.redirect('/education', '/resume');
+
+//portfolio
+app.redirect('/portfolio/wp-reading-list', '/portfolio');
+app.redirect('/portfolio/strange-bedfellows', '/portfolio');
+app.redirect('/portfolio/docuscope-project', '/portfolio');
+app.redirect('/portfolio/portfolio/open-oasis', '/portfolio');
+app.redirect('/portfolio/portfolio/the-humanities-research-center-blog-the-treehouse', '/portfolio');
+app.redirect('/portfolio/early-modern-sandbox', '/portfolio');
+app.redirect('/portfolio/all-is-true', '/portfolio');
+app.redirect('/portfolio/artls-database', '/portfolio');
+app.redirect('/portfolio/the-spaces-of-arts-conference-website', '/portfolio');
+app.redirect('/portfolio/student-wisconsin-education-association/', '/portfolio');
+app.redirect('/personal', '/portfolio');
+app.redirect('/reading-list', '/portfolio');//todo, import
+
+//home
+app.redirect('/thank-you', '/');
+
+//travel
+app.redirect('/places', '/travel');
 
 /**
  * Settings
