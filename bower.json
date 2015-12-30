@@ -15,6 +15,7 @@
   "dependencies": {
     "velocity": "1.2.3",
     "foundation-sites": "6.0.6",
-    "slick-carousel": "1.5.9"
+    "slick-carousel": "1.5.9",
+    "blast-text": "~2.0.0"
   }
 }

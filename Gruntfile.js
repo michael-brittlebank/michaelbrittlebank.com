@@ -147,7 +147,8 @@ module.exports = function(grunt) {
                         "bower_components/foundation-sites/dist/foundation.min.js",
                         "bower_components/velocity/velocity.min.js",
                         "bower_components/velocity/velocity.ui.min.js",
-                        "bower_components/slick-carousel/slick/slick.min.js"
+                        "bower_components/slick-carousel/slick/slick.min.js",
+                        "bower_components/blast-text/jquery.blast.min.js"
                     ]
                 },
                 options: {

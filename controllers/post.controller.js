@@ -18,6 +18,7 @@ api.getDefaultPostPage = function(req, res, next) {
         .all([contentfulService.getEntries(params)])
         .then(function (response) {
             res.locals.page = contentService.postDigest(response[0]);
+            //todo, add links for next post and previous post
             res.render('single-post');
         })
         .catch(function (err) {
