@@ -6,12 +6,17 @@ var /* packages */
     localCtrl = require('../controllers/local.controller');
 
 /* GET home page. */
-router.get('/',localCtrl.getLocalIndex);
+router.route('/')
+    .get(localCtrl.getLocalIndex);
 
-router.get('/500',localCtrl.getLocal500Page);
-router.get('/404',localCtrl.getLocal404Page);
+router.route('/500')
+    .get(localCtrl.getLocal500Page);
 
-router.get('/*',localCtrl.getLocalDefaultPage);
+router.route('/404')
+    .get(localCtrl.getLocal404Page);
+
+router.route('/*')
+    .get(localCtrl.getLocalDefaultPage);
 
 module.exports = router;
 

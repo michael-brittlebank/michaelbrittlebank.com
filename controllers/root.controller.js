@@ -2,6 +2,7 @@ var /* packages */
     _ = require('lodash'),
     promise = require('bluebird'),
     sitemap = require('sitemap'),
+    path = require('path'),
 /* services */
     contentfulService = require('../services/contentful.service'),
     contentService = require('../services/content.service'),
@@ -108,6 +109,10 @@ root.getSitemap = function(req, res, next) {
                 sendSiteMap(req, res, next);
             });
     }
+};
+
+root.getRobotsTxt = function(req, res, next) {
+    res.sendFile('robots.txt', { root: path.join(__dirname, '../') });
 };
 
 module.exports = root;

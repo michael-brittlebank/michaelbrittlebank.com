@@ -5,6 +5,7 @@ var /* packages */
     webapp = require('../services/webapp.service'),
     apiCtrl = require('../controllers/api.controller');
 
-router.post('/loadMorePosts',apiCtrl.loadMorePosts);
+router.route('/loadMorePosts')
+    .post(apiCtrl.loadMorePosts);
 
 module.exports = router;

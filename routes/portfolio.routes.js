@@ -5,6 +5,7 @@ var /* packages */
     portfolioCtrl = require('../controllers/portfolio.controller');
 
 /* GET portfolio pages. */
-router.get('/*',portfolioCtrl.getDefaultPortfolioPage);
+router.route('/*')
+    .get(portfolioCtrl.getDefaultPortfolioPage);
 
 module.exports = router;

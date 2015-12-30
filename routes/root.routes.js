@@ -2,9 +2,12 @@ var /* packages */
     express = require('express'),
     router = express.Router(),
 /* services */
-    webapp = require('../services/webapp.service'),
     rootCtrl = require('../controllers/root.controller');
 
-router.get('/sitemap.xml',rootCtrl.getSitemap);
+router.route('/sitemap.xml')
+    .get(rootCtrl.getSitemap);
+
+router.route('/robots.txt')
+    .get(rootCtrl.getRobotsTxt);
 
 module.exports = router;

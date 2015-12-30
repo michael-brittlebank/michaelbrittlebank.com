@@ -6,13 +6,18 @@ var /* packages */
     pagesCtrl = require('../controllers/pages.controller');
 
 /* GET home page. */
-router.get('/',pagesCtrl.getIndex);
+router.route('/')
+    .get(pagesCtrl.getIndex);
 
 if(!webapp.app.isLiveConfig()){
-    router.get('/500',pagesCtrl.get500Page);
-    router.get('/404',pagesCtrl.get404Page);
+    router.route('/500')
+        .get(pagesCtrl.get500Page);
+
+    router.route('/404')
+        .get(pagesCtrl.get404Page);
 }
 
-router.get('/*',pagesCtrl.getDefaultPage);
+router.route('/*')
+    .get(pagesCtrl.getDefaultPage);
 
 module.exports = router;

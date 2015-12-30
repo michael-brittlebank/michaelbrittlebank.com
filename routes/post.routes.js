@@ -5,6 +5,7 @@ var /* packages */
     webapp = require('../services/webapp.service'),
     postCtrl = require('../controllers/post.controller');
 
-router.get('/*',postCtrl.getDefaultPostPage);
+router.route('/*')
+    .get(postCtrl.getDefaultPostPage);
 
 module.exports = router;
