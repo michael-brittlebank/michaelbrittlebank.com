@@ -13,7 +13,7 @@ site.helpers = {
         return Math.floor(Math.random() * (max - min)) + min;
     },
     getRandomElement: function(array){
-      return array[site.helpers.getRandomInt(0, array.length-1)];
+        return array[site.helpers.getRandomInt(0, array.length-1)];
     },
     //http://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
     shuffleArray: function(array) {
@@ -48,13 +48,13 @@ site.animation = {
             }
         });
     },
-    fadeOutAndRemove: function(element,duration, delay){
-        $(element).velocity({opacity: 0,visibility:'hidden'},{
-            duration:duration,
-            delay:delay,
+    fadeOutAndRemove: function(element,duration,delay){
+        $(element).velocity({opacity: 0, visibility: 'hidden'}, {
+            duration: duration,
+            delay: delay,
             queue: false,
-            complete: function(elements) {
-                $(elements).remove();
+            complete: function (elements) {
+                $(elements).velocity('stop',true).remove();
             }
         });
     }

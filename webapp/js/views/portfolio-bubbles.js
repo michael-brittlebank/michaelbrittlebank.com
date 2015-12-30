@@ -80,7 +80,7 @@ bubbles.animation = {
         element.node.style.bottom = '-'+site.helpers.parseIntFromString($(element.node).height())+'px';
         element.node.style.left = (containerWidth/2)+(parseInt(Math.random())*containerWidth/2)+'px';
         element.centerPosition = site.helpers.parseIntFromString(element.node.style.left);
-        $(element.node).velocity('stop');
+        $(element.node).velocity('stop',true);
         return element;
     },
     destroyBubbleHelper: function(numberToRemove, bubbleList){
@@ -176,7 +176,7 @@ bubbles.animation = {
     },
     stopBubbles: function(bubbleList){
         bubbleList.forEach(function(element){
-            $(element.node).velocity('stop');
+            $(element.node).velocity('stop',true);
         });
     },
     startBubbleHelper: function(element){
@@ -237,15 +237,22 @@ bubbles.controls = {
         }
     },
     clearBubbles: function(){
-        //todo, bug exists where not all bubbles are destroyed
         bubblesCreated = false;
         bubblesMoving = false;
         $(stopBubbles).addClass('disabled');
         $(clearBubbles).addClass('disabled');
         $(startBubbles).removeClass('disabled');
+        var totalLength = smallBubbleList.length+mediumBubbleList.length+largeBubbleList.length;
         bubbles.animation.destroyBubbles(smallBubbleList.length, bubbles.types.smallBubble);
         bubbles.animation.destroyBubbles(mediumBubbleList.length, bubbles.types.mediumBubble);
         bubbles.animation.destroyBubbles(largeBubbleList.length, bubbles.types.largeBubble);
+        setTimeout(function(){
+            if (smallBubbleList.length === 0 && mediumBubbleList.length === 0 && largeBubbleList.length === 0 && $(bubbleContainer).children().length > 0){
+                $($(bubbleContainer).children()).each(function(index, entry){
+                    site.animation.fadeOutAndRemove($(entry),msInOneSecond,50*index);
+                });
+            }
+        }, (totalLength)*55);
     },
     changeBubbleCount: function(typeOfBubble){
         var difference;
