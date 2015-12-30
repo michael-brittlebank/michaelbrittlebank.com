@@ -96,7 +96,7 @@
     .reveal {
       &.small {
         width: 50%!important;
-        @include breakpoint(small only) {
+        @include breakpoint(medium down) {
           width: 80%!important;
         }
       }
