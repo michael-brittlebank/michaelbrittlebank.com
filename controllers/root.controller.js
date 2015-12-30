@@ -8,50 +8,105 @@ var /* packages */
     webapp = require('../services/webapp.service'),
     logger = require('../services/logger.service'),
     config = require('../config/config'),
+    msInSeconds = 1000,
+    secondsInHour = 60,
+    hoursInDay = 24,
     sm = sitemap.createSitemap({
         hostname : config.app.protocol+config.app.hostName,
-        cacheTime : 1000 * 60 * 24  //keep the sitemap cached for 24 hours
+        cacheTime : msInSeconds * secondsInHour * hoursInDay * 2//keep the sitemap cached for 2 days
     }),
     root = {};
 
-function addPostsToSitemap(posts){
-    for (var post in posts){
-        sm.add({
-            url : config.app.protocol + '/' +  posts[post].created.getFullYear()  + '/' + (posts[post].created.getMonth() + 1) + '/'+ posts[post].slug,
-            changefreq :'daily'
-        });
+function sendSiteMap(req, res, next){
+    sm.toXML(function(err, xml){
+        if (err){
+            logger.error('sitemap to xml',JSON.stringify(err));
+        }
+        res.header('Content-Type', 'application/xml');
+        res.send(xml);
+    });
+}
+
+function addUrlToSitemap(items, type){
+    var excludedUrls = [
+            '404',
+            '500'
+        ],
+        priority,
+        changeFrequency;
+    switch(type){
+        case contentfulService.contentTypes.page:
+            priority = 0.7;
+            changeFrequency = 'weekly';
+            break;
+        default:
+            priority = 0.5;
+            changeFrequency = 'monthly';
+            break;
     }
+    items.forEach(function(entry){
+        if (entry.url.length > 0 && excludedUrls.indexOf(entry.url.replace(/\//g,'')) === -1){
+            sm.add({
+                url : entry.url,
+                changefreq :changeFrequency,
+                priority: priority
+            });
+        }
+    });
 }
 
 root.getSitemap = function(req, res, next) {
     //only update the sitemap if the cache is expired
     if (sm.isCacheValid()){
-        console.log('sm cached');
-        sm.toXML(function(xml){
-            res.header('Content-Type', 'application/xml');
-            res.send(xml);
-        });
+        sendSiteMap(req, res, next);
     }
     else{
-        console.log('sm not cached');
         //remove every page from the expired sitemap
         sm.urls = [];
-
-        //get every post from the database
-        //addPostsToSitemap(function(err, posts){
-        //    //if some error occurs, generate an empty sitemap instead of aborting
-        //    if (err){
-        //        console.log(err);
-        //    }
-        //    else{
-        //        addPostsToSitemap(posts);
-        //    }
-
-            sm.toXML(function(xml){
-                res.header('Content-Type', 'application/xml');
-                res.send(xml);
+        var pageParams = {
+                content_type: contentfulService.contentTypes.page,
+                limit: 999
+            },
+            portfolioParams = {
+                content_type: contentfulService.contentTypes.portfolio,
+                limit: 999
+            },
+            postParams = {
+                content_type: contentfulService.contentTypes.post,
+                limit: 999
+            };
+        return promise
+            .all([
+                contentfulService.getEntries(pageParams),
+                contentfulService.getEntries(portfolioParams),
+                contentfulService.getEntries(postParams)
+            ])
+            .then(function (response) {
+                var pageItems = [],
+                    portfolioItems = [],
+                    postItems = [];
+                //page
+                response[0].forEach(function(entry){
+                    pageItems.push(contentService.pageDigest(entry));
+                });
+                addUrlToSitemap(pageItems,contentfulService.contentTypes.page);
+                //portfolio
+                response[1].forEach(function(entry){
+                    portfolioItems.push(contentService.portfolioDigest(entry));
+                });
+                addUrlToSitemap(portfolioItems,contentfulService.contentTypes.portfolio);
+                //post
+                response[1].forEach(function(entry){
+                    postItems.push(contentService.postDigest(entry));
+                });
+                addUrlToSitemap(postItems,contentfulService.contentTypes.post);
+                sendSiteMap(req, res, next);
+            })
+            .catch(function (err) {
+                //send empty site map on error
+                logger.error('sitemap generator',JSON.stringify(err));
+                sendSiteMap(req, res, next);
             });
-        //});
     }
 };
 

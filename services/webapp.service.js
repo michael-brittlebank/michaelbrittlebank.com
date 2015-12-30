@@ -199,8 +199,8 @@ webapp.htmlParser = function(data){
                     '" alt="'+imageObject.alt+
                     '" class="'+className+'"/>',true);
             }
-            catch (e){
-                console.log(e);
+            catch (err){
+                logger.error('html parser',JSON.stringify(err));
                 replacementHtml = '';
             }
             data = data.replace(data.substring(data.indexOf(imageStartTag), data.indexOf(imageEndTag)+imageEndTag.length), replacementHtml);
