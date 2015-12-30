@@ -30,9 +30,9 @@ page500.animateWarningButton = function(){
 page500.init = function(){
     //variables
     warningIcon = $('.fa-stack-1x');
-    warningContainer = $('#container-content').find('p')[0];
+    warningContainer = $('#container-warning').find('p')[0];
     //loading animation
-    site.animation.fadeIn('.content',1000,750,0);
+    site.animation.fadeIn('#container-content',1000,750,0);
     //animation
     setTimeout(function(){
         page500.animateWarningButton();

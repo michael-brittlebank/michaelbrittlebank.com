@@ -37,7 +37,13 @@ page404.animateTranslation = function(element){
 };
 
 page404.init = function(){
+    //variables
     taglineContainer = $('#container-translations');
     translations = $('.translations');
-    page404.animateTranslation(translations[0]);
+    //loading animation
+    site.animation.fadeIn('#container-content',1000,750,0);
+    //animation
+    setTimeout(function(){
+        page404.animateTranslation(translations[0]);
+    }, 750);
 };
