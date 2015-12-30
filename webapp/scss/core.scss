@@ -42,6 +42,7 @@ a {
   overflow: scroll;
 }
 .button {
+  @include unselectable;
   &:focus {
     outline: none;
   }
