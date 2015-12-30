@@ -55,7 +55,7 @@ travel.maps = {
 };
 
 travel.init = function(){
-    site.animation.fadeIn('#container-images',1000,750,0);
+    site.animation.fadeIn('#container-images',1000,1000,0);
     $('.travel-images').slick({
         infinite: true,
         slidesToShow: 1,
