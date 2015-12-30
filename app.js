@@ -28,6 +28,16 @@ var /* packages */
 
 var app = express();
 
+//Remove trailing slashes
+app.use(function(req, res, next) {
+    //http://stackoverflow.com/questions/13442377/redirect-all-trailing-slashes-gloablly-in-express
+    if(req.url.slice(0, -1) == '/' && req.url.length > 1)
+        res.redirect(301, req.url.slice(0, -1));
+    else
+        next();
+});
+
+
 /**
  * SEO Redirects
  */
@@ -94,6 +104,7 @@ app.set('views', path.join(__dirname, 'webapp/views'));
 app.engine('.hbs', hbs.engine);
 app.set('view engine', '.hbs');
 
+//gzip
 app.use(compression({
     // only compress files for the following content types
     filter: function(req, res) {
@@ -103,10 +114,11 @@ app.use(compression({
     level: 3
 }));
 
+//static files directory
 app.use(express.static(path.join(__dirname, 'webapp/public')));
 
 if (!webapp.app.isLiveConfig()){
-    //for debugging
+    //for debugging included libs
     app.use('/bower_components', express.static(path.join(__dirname, 'bower_components')));
 }
 
