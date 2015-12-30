@@ -26,11 +26,11 @@ pages.getLocalDefaultPage = function(req, res, next) {
 };
 
 pages.getLocal500Page = function(req, res, next) {
-    res.render('500');
+    res.render('page-500');
 };
 
 pages.getLocal404Page = function(req, res, next) {
-    res.render('404');
+    res.render('page-404');
 };
 
 module.exports = pages;

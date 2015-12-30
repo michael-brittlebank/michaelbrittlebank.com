@@ -2,24 +2,26 @@
   #container-content {
     text-align: center;
     margin-top:75px;
-  }
-  &.not-found {
     #container-title {
       border-right:2px solid $color-desert-black;
+      text-align: right;
       @include breakpoint(small only) {
+        text-align: center;
         border: none;
+      }
+      @include breakpoint(medium only) {
+        text-align: left;
       }
       .page-title {
         font-size: rem-calc(120);
-        text-align: right;
-        @include breakpoint(small only) {
-          text-align: center;
-        }
-        @include breakpoint(medium only) {
-          text-align: left;
-        }
       }
     }
+  }
+  #container-button {
+    text-align: center;
+    margin-top: 50px;
+  }
+  &.not-found {
     #container-translations {
       position: relative;
       height: 75px;
@@ -35,11 +37,40 @@
     .page-body {
       margin-bottom: 25px;
     }
-    #container-button {
-      margin-top: 50px;
-    }
   }
   &.server-error {
-
+    .content {
+      $iconHeight: 300;
+      @include opacity(0);
+      &#container-warning {
+        p {
+          display:inline-block;
+          .fa-stack {
+            width: rem-calc($iconHeight);
+            height: rem-calc($iconHeight);
+            line-height: rem-calc($iconHeight);
+            display: block;
+            margin: 0 auto 25px 0;
+            overflow: hidden;
+            border: 5px solid $color-orange;
+            @include border-radius(50%);
+            @include transition-with-defaults(border);
+            &:hover {
+              border-color: $color-red;
+            }
+            i {
+              &.fa-stack-1x {
+                font-size: rem-calc($iconHeight/2);
+                color: $color-orange;
+              }
+              &.fa-stack-2x {
+                font-size: rem-calc($iconHeight);
+                color: $color-black;
+              }
+            }
+          }
+        }
+      }
+    }
   }
 }

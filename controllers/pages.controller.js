@@ -172,7 +172,7 @@ pages.get500Page = function(req, res, next) {
         .then(function (response) {
             var content = response[0];
             res.locals.page = contentService.pageDigest(content);
-            res.render('500');//todo
+            res.render('page-500');
         })
         .catch(function (err) {
             next(err);
@@ -200,7 +200,7 @@ pages.get404Page = function(req, res, next) {
                 ];
             res.locals.translations = _.shuffle(translations);
             res.locals.page = contentService.pageDigest(content);
-            res.render('404');
+            res.render('page-404');
         })
         .catch(function (err) {
             next(err);
