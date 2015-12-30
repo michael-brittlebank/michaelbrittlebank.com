@@ -23,14 +23,15 @@ var /* packages */
     localRoutes = require('./routes/local.routes'),
     apiRoutes = require('./routes/api.routes'),
     postRoutes = require('./routes/post.routes'),
+    rootRoutes = require('./routes/root.routes'),
     pageController = require('./controllers/pages.controller');
 
 var app = express();
-redirect(app);
 
 /**
  * SEO Redirects
  */
+redirect(app);
 
 //resume
 app.redirect('/portfolio/university-of-wisconsin-madison', '/resume');
@@ -60,6 +61,9 @@ app.redirect('/thank-you', '/');
 
 //travel
 app.redirect('/places', '/travel');
+
+//sitemap
+app.redirect('/sitemap', '/sitemap.xml');
 
 /**
  * Settings
@@ -156,7 +160,7 @@ else {
     app.use('/portfolio/*', portfolioRoutes);
     app.use('/music/*', postRoutes);
     app.use('/api', apiRoutes);
-    app.use('/', pageRoutes);
+    app.use('/', rootRoutes, pageRoutes);
 }
 
 /**

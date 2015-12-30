@@ -20,9 +20,9 @@
 * ~~add music section/blog~~
 * set up analytics
 * add mocha tests
-* add htaccess rewrites from old site
+* ~~add 301 rewrites from old site~~
 * set up seo (run through google site tester)
-* add sitemap
+* ~~add sitemap~~
 
 ### 1.1
 * import scale finder
