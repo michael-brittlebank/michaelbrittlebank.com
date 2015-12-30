@@ -8,30 +8,26 @@
 
 ## Iterations
 
-### 1
+### MVP
 * ~~get basic nodejs app up~~
 * ~~connect with contentful~~
 * ~~get basic pages up~~
 * ~~add content blocks~~
-
-### 2
 * ~~styling~~
 * ~~content entry in contentful~~
 * ~~add quote of the day~~
-* add music section/blog
-
-### 3
-* import scale finder
 * ~~import bubbles~~
-
-### 4
+* ~~add music section/blog~~
 * set up analytics
 * add mocha tests
-
-### 5
-* import WP and WP reading list
 * add htaccess rewrites from old site
 * set up seo (run through google site tester)
+
+### 1.1
+* import scale finder
+
+### 1.2
+* import WP and WP reading list
 
 ## Future
 * dynamic art creator
