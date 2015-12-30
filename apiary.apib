@@ -5,10 +5,7 @@ HOST: http://mikestumpf.com/
 
 API to support main site
 
-## Posts Collection [/api/loadMorePosts/{page}]
-
-+ Parameters
-    + page: page of results desired
+## Posts Collection [/api/loadMorePosts]
 
 ### Load More Posts [POST]
 
@@ -17,10 +14,10 @@ Gets additional post objects based on pagination parameter
 + Request (application/json)
 
         {
-            "page": "1"
+            "page": 1
         }
 
-+ Response 201 (application/html)
++ Response 200 (text/html; charset=utf-8)
 
     + Body
 

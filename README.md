@@ -19,7 +19,7 @@
 * ~~import bubbles~~
 * ~~add music section/blog~~
 * ~~set up analytics~~
-* add mocha tests
+* ~~add api endpoint tests and documentation~~
 * ~~add 301 rewrites from old site~~
 * ~~add sitemap~~
 
