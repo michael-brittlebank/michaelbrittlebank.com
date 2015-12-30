@@ -10,12 +10,12 @@ var /* packages */
 
 api.loadMorePosts = function(req, res, next) {
     var numberOfPosts = 10,
-        page = webapp.simpleNullCheck(req.body, 'page')?req.body.page:1,
+        page = webapp.simpleNullCheck(req.body, 'page')&&parseInt(req.body.page)>0?req.body.page:1,
         params = {
             content_type: contentfulService.contentTypes.post,
             'fields.postDate[lt]': new Date().toISOString(),
             order: '-fields.postDate',
-            skip: page*numberOfPosts,
+            skip: (page-1)*numberOfPosts,
             limit: numberOfPosts
         };
     return promise
