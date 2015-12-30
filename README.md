@@ -22,6 +22,7 @@
 * add mocha tests
 * add htaccess rewrites from old site
 * set up seo (run through google site tester)
+* add sitemap
 
 ### 1.1
 * import scale finder
