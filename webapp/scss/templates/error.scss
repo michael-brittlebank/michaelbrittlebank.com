@@ -1,9 +1,43 @@
 .error {
   #container-content {
     text-align: center;
+    margin-top:75px;
   }
   &.not-found {
-
+    #container-title {
+      border-right:2px solid $color-desert-black;
+      @include breakpoint(small only) {
+        border: none;
+      }
+      .page-title {
+        font-size: rem-calc(120);
+        text-align: right;
+        @include breakpoint(small only) {
+          text-align: center;
+        }
+        @include breakpoint(medium only) {
+          text-align: left;
+        }
+      }
+    }
+    #container-translations {
+      position: relative;
+      height: 75px;
+      margin:50px 0;
+      .translations {
+        display: block !important;
+        font-size: rem-calc(60);
+        line-height: rem-calc(60);
+        @include center-absolute;
+        @include opacity(0);
+      }
+    }
+    .page-body {
+      margin-bottom: 25px;
+    }
+    #container-button {
+      margin-top: 50px;
+    }
   }
   &.server-error {
 

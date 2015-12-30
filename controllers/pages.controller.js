@@ -188,9 +188,19 @@ pages.get404Page = function(req, res, next) {
     return promise
         .all([contentfulService.getEntries(params)])
         .then(function (response) {
-            var content = response[0];
+            var content = response[0],
+                translations = [
+                    'Me paenitet',
+                    'I\'m sorry',
+                    'Przepraszam',
+                    'Lo siento',
+                    'Je m\'excuse',
+                    'Mi dispiace',
+                    'Es tut mir Leid'
+                ];
+            res.locals.translations = _.shuffle(translations);
             res.locals.page = contentService.pageDigest(content);
-            res.render('404');//todo
+            res.render('404');
         })
         .catch(function (err) {
             next(err);
