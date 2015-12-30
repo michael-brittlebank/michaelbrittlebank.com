@@ -1,6 +1,12 @@
 footer {
   text-align: center;
   margin-top: 150px;
+  @include breakpoint(small only) {
+    margin-top: 100px;
+  }
+  @include breakpoint(medium only) {
+    margin-top: 125px;
+  }
   @include fade-in-default;
   #footer-find-me {
     padding-top: 50px;
