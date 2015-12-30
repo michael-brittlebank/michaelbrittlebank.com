@@ -4,14 +4,17 @@ var homepage = {},
     bodyHighlightBlocksText,
     imageHighlightBlocks,
     imageHighlightBlocksText,
+    bodyBlockTopHeight,
+    bodyBlockBottomHeight,
+    bodyBlockTotalHeight,
     activeBodyBlock = null,
     activeImageBlock = null;
 
 homepage.grid = {
     activateBodyBlock: function(){
-        $(activeBodyBlock).find('.hover-filter-front').first().velocity({height: '50%'},{duration:500});
+        $(activeBodyBlock).find('.hover-filter-front').first().velocity({height: bodyBlockBottomHeight+'px'},{duration:500});
         $(activeBodyBlock).find('.hover-filter-overlay').first().css({height: '100%'});
-        $(activeBodyBlock).find('.hover-filter-back').first().velocity({height: '50%',bottom:'50%'},{duration:500,delay:350});
+        $(activeBodyBlock).find('.hover-filter-back').first().velocity({height: bodyBlockTopHeight+'px',bottom:bodyBlockTopHeight+'px'},{duration:500,delay:350});
         $(activeBodyBlock).find('.hover-filter-text').first().velocity({height: '65px',opacity:'1'},{duration:500,delay:300});
     },
     deactivateBodyBlock: function(){
@@ -33,7 +36,14 @@ homepage.grid = {
         activeImageBlock = null;
     },
     makeSquare: function(){
-        $(squareBlocks).css('height', $($(squareBlocks)[0]).css('width'));
+        bodyBlockTotalHeight = site.helpers.parseIntFromString($($(squareBlocks)[0]).css('width'));
+        $(squareBlocks).css('height', bodyBlockTotalHeight+'px');
+        if (bodyBlockTotalHeight%2===0){
+            bodyBlockBottomHeight = bodyBlockTopHeight = bodyBlockTotalHeight/2;
+        } else {
+            bodyBlockBottomHeight = Math.floor(bodyBlockTopHeight);
+            bodyBlockTopHeight = Math.ceil(bodyBlockTopHeight);
+        }
     },
     revealBlocks: function(){
         var blockOrder = [
@@ -49,12 +59,15 @@ homepage.grid = {
 };
 
 homepage.init = function(){
+    //variables
     squareBlocks = $('.grid-block');
     bodyHighlightBlocks = $(squareBlocks).filter('.body-highlight');
     bodyHighlightBlocksText = $(bodyHighlightBlocks).find('.hover-filter-overlay');
     imageHighlightBlocks = $(squareBlocks).filter('.image-highlight');
     imageHighlightBlocksText = $(imageHighlightBlocks).find('.hover-filter-overlay');
+    //animation
     $('.expand-in').velocity('transition.expandIn');
+    //event handlers
     $(bodyHighlightBlocks).on('mouseover touch click', function(){
             if (!activeBodyBlock || ($(this).attr('id') && $(activeBodyBlock).attr('id') !== $(this).attr('id'))){
                 if (activeImageBlock){
@@ -93,12 +106,12 @@ homepage.init = function(){
             window.location.href = $(activeImageBlock).data('url');
         }
     });
-    $(window).load(function(){
+    $(window).on('load', function(){
             homepage.grid.makeSquare();
             homepage.grid.revealBlocks();
             $('.banner').velocity({opacity:0.5},{duration:1500});
         })
-        .resize(function() {
+        .on('resize', function() {
             homepage.grid.makeSquare();
         });
 };
