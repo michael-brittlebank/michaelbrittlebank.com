@@ -277,7 +277,7 @@ webapp.getMenuHighlight = function(url){
 };
 
 webapp.simpleNullCheck = function(object,key){
-    return object && object.hasOwnProperty(key) && object[key]?true:false;
+    return object && object.hasOwnProperty(key) && (object[key] || object[key] === 0)?true:false;
 };
 
 webapp.getValueFromKey = function(object,key){
