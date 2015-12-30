@@ -18,13 +18,14 @@
 * ~~add quote of the day~~
 * ~~import bubbles~~
 * ~~add music section/blog~~
-* set up analytics
+* ~~set up analytics~~
 * add mocha tests
 * ~~add 301 rewrites from old site~~
-* set up seo (run through google site tester)
 * ~~add sitemap~~
 
 ### 1.1
+* verify domain on google/bing webmaster
+* set up seo (run through google site tester)
 * import scale finder
 
 ### 1.2
