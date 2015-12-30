@@ -5,50 +5,34 @@ HOST: http://mikestumpf.com/
 
 API to support main site
 
-## API Collection [/api]
+## Posts Collection [/api/loadMorePosts/{page}]
 
-### Create a New Question [POST]
++ Parameters
+    + page: page of results desired
 
-You may create your own question using this action. It takes a JSON
-object containing a question and a collection of answers in the
-form of choices.
+### Load More Posts [POST]
+
+Gets additional post objects based on pagination parameter
 
 + Request (application/json)
 
         {
-            "question": "Favourite programming language?",
-            "choices": [
-                "Swift",
-                "Python",
-                "Objective-C",
-                "Ruby"
-            ]
+            "page": "1"
         }
 
-+ Response 201 (application/json)
-
-    + Headers
-
-            Location: /questions/2
++ Response 201 (application/html)
 
     + Body
 
-            {
-                "question": "Favourite programming language?",
-                "published_at": "2015-08-05T08:40:51.620Z",
-                "choices": [
-                    {
-                        "choice": "Swift",
-                        "votes": 0
-                    }, {
-                        "choice": "Python",
-                        "votes": 0
-                    }, {
-                        "choice": "Objective-C",
-                        "votes": 0
-                    }, {
-                        "choice": "Ruby",
-                        "votes": 0
-                    }
-                ]
-            }
+            <div class="post" onclick="window.location.href='/music/new-project'" data-group="1">
+                <div class="content-post">
+                    <h3 class="post-title">New Project</h3>
+                    <h5 class="post-date">
+                        <i class="fa fa-calendar"></i>December 28, 2015
+                    </h5>
+                    <hr>
+                    <div class="post-excerpt">
+                        <p>A new guitar, a new philosophy, and a new endeavor.</p>
+                    </div>
+                </div>
+            </div>
