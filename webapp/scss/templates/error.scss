@@ -5,9 +5,13 @@
     #container-title {
       border-right:2px solid $color-desert-black;
       text-align: right;
+      padding-right:50px;
       @include breakpoint(small only) {
-        text-align: center;
+        text-align: left;
         border: none;
+        .small-4 {
+          text-align: right;
+        }
       }
       @include breakpoint(medium only) {
         text-align: left;
@@ -44,13 +48,14 @@
       @include opacity(0);
       &#container-warning {
         p {
-          display:inline-block;
+          display:block;
+          margin:auto;
           .fa-stack {
             width: rem-calc($iconHeight);
             height: rem-calc($iconHeight);
             line-height: rem-calc($iconHeight);
             display: block;
-            margin: 0 auto 25px 0;
+            margin: 0 auto 25px auto;
             overflow: hidden;
             border: 5px solid $color-orange;
             @include border-radius(50%);
