@@ -11,6 +11,9 @@
 }
 
 .portfolio.single {
+  .prettyprint {
+    padding: 10px;
+  }
   &.bubbles {
     #container-content {
       margin-top: 50px;
@@ -44,9 +47,6 @@
             max-height: 100%;
             @include breakpoint(small only) {
               display:none;
-            }
-            .prettyprint {
-              padding: 10px;
             }
           }
           #code-mobile {
