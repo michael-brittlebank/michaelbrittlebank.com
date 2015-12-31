@@ -136,14 +136,14 @@ app.use(function(req, res, next) {
     ];
     if (includedRoutes.indexOf(req.url) !== -1 || (req.url.indexOf('/api') === -1 && excludedRoutes.indexOf(req.url) === -1)) {
         if (!webapp.app.isLocalConfig()) {
-            global.webapp = {
-                md: new mobileDetect(req.headers['user-agent'])
-            };
             var params = {
                 content_type: contentfulService.contentTypes.menu
             };
             return contentfulService.getEntries(params)
                 .then(function (response) {
+                    global.webapp = {
+                        md: new mobileDetect(req.headers['user-agent'])
+                    };
                     res.locals.menu = contentService.menuArrayDigest(response);
                     res.locals.meta = {
                         siteName: config.app.hostName,
@@ -193,7 +193,7 @@ app.use(function(req, res, next) {
 // error handlers
 app.use(function (err, req, res, next) {
     logger.error('',JSON.stringify(err));
-    if (err.status === webapp.status.notFound){
+    if (webapp.simpleNullCheck(err,'status') && err.status === webapp.status.notFound){
         pageController.get404Page(req, res, next);
     }
     else {

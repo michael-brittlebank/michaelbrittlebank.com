@@ -56,7 +56,7 @@ contentfulService.getEntries = function(params){
             }
         })
         .catch(function(err){
-            if (err.status === webapp.status.notFound){
+            if (webapp.simpleNullCheck(err,'status') && err.status === webapp.status.notFound){
                 throw new errorService.NotFoundError('Entries not found with params: '+JSON.stringify(params));
             } else {
                 throw new errorService.InternalServerError('Contentful get entries error: '+JSON.stringify(err));
