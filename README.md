@@ -24,8 +24,8 @@
 * ~~add sitemap~~
 
 ### 1.1
-* verify domain on google/bing webmaster
-* set up seo (run through google site tester)
+* ~~verify domain on google/bing webmaster~~
+* ~~run through google site tester~~
 * import scale finder
 
 ### 1.2
