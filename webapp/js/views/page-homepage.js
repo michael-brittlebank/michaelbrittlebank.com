@@ -41,8 +41,8 @@ homepage.grid = {
         if (bodyBlockTotalHeight%2===0){
             bodyBlockBottomHeight = bodyBlockTopHeight = bodyBlockTotalHeight/2;
         } else {
-            bodyBlockBottomHeight = Math.floor(bodyBlockTopHeight);
-            bodyBlockTopHeight = Math.ceil(bodyBlockTopHeight);
+            bodyBlockBottomHeight = Math.floor(bodyBlockTotalHeight/2);
+            bodyBlockTopHeight = Math.ceil(bodyBlockTotalHeight/2);
         }
     },
     revealBlocks: function(){
