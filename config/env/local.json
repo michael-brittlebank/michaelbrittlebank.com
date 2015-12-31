@@ -3,7 +3,7 @@
     "serverPort": 3000,
     "serverUrl": "localhost",
     "protocol": "http://",
-    "hostName": "mikestumpf.com"
+    "hostName": "www.mikestumpf.com"
   },
   "contentful": {
     "spaceId": "qiqlnlpznam2",
