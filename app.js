@@ -115,7 +115,10 @@ app.use(compression({
 }));
 
 //static files directory
-app.use(express.static(path.join(__dirname, 'webapp/public')));
+app.use(express.static(path.join(__dirname, 'webapp/public'),{
+    index: false,
+    maxAge: '7 days'
+}));
 
 if (!webapp.app.isLiveConfig()){
     //for debugging included libs
