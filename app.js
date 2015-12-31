@@ -9,6 +9,7 @@ var /* packages */
     path = require('path'),
     bodyParser = require('body-parser'),
     redirect = require("express-redirect"),
+    mobileDetect = require('mobile-detect'),
 /* config */
     config = require('./config/config'),
 /* services */
@@ -64,7 +65,7 @@ app.redirect('/portfolio/artls-database', '/portfolio');
 app.redirect('/portfolio/the-spaces-of-arts-conference-website', '/portfolio');
 app.redirect('/portfolio/student-wisconsin-education-association/', '/portfolio');
 app.redirect('/personal', '/portfolio');
-app.redirect('/reading-list', '/portfolio');//todo, import
+app.redirect('/reading-list', '/portfolio');
 
 //home
 app.redirect('/thank-you', '/');
@@ -117,7 +118,7 @@ app.use(compression({
 //static files directory
 app.use(express.static(path.join(__dirname, 'webapp/public'),{
     index: false,
-    maxAge: '7 days'
+    maxAge: webapp.app.isLiveConfig()?'7 days':0
 }));
 
 if (!webapp.app.isLiveConfig()){
@@ -135,6 +136,9 @@ app.use(function(req, res, next) {
     ];
     if (includedRoutes.indexOf(req.url) !== -1 || (req.url.indexOf('/api') === -1 && excludedRoutes.indexOf(req.url) === -1)) {
         if (!webapp.app.isLocalConfig()) {
+            global.webapp = {
+                md: new mobileDetect(req.headers['user-agent'])
+            };
             var params = {
                 content_type: contentfulService.contentTypes.menu
             };

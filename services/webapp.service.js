@@ -141,10 +141,28 @@ webapp.getFirstResult = function(data){
     }
 };
 
+webapp.getImageSizeByUserDevice = function(){
+    var screenSize;
+    if (webapp.simpleNullCheck(global, 'webapp') && webapp.simpleNullCheck(global.webapp, 'md')) {
+        if (global.webapp.md.mobile()) {
+            if (global.webapp.md.phone()) {
+                screenSize = '480';
+            } else {
+                screenSize = '768';
+            }
+        } else {
+            screenSize = '1280';
+        }
+    } else {
+        screenSize = '1280';
+    }
+    return screenSize;
+};
+
 webapp.getImageUrl = function(data){
     data = webapp.getFirstResult(data);
     if (webapp.simpleNullCheck(data,'fields') && webapp.simpleNullCheck(data.fields,'file')){
-        return data.fields.file.url+'?q=90&fl=progressive&w=1920';
+        return data.fields.file.url+'?q=90&fl=progressive&w='+webapp.getImageSizeByUserDevice();
     }
     else {
         return '';
