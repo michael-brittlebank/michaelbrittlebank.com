@@ -30,7 +30,7 @@ contentfulService.getContentTypes = function(){
         .then(function(contentTypes){
             if(contentTypes){
                 contentTypes.forEach(function(entry){
-                    logger.log('info','content type: '+entry.name+' id: '+entry.sys.id);
+                    logger.info('content type: '+entry.name+' id: '+entry.sys.id);
                 });
             }
         })

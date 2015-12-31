@@ -129,7 +129,7 @@ if (!webapp.app.isLiveConfig()){
 app.use(function(req, res, next) {
     //todo, test for contentful connection
 // routes middleware
-    logger.log('info','calling route - '+req.method+' '+req.originalUrl);
+    logger.info('calling route - '+req.method+' '+req.originalUrl);
     var includedRoutes = [
     ];
     var excludedRoutes = [
@@ -162,7 +162,7 @@ app.use(function(req, res, next) {
                     next();
                 })
                 .catch(function (err) {
-                    logger.log('error', 'Contentful client error', JSON.stringify(err));
+                    logger.error('Contentful client error', JSON.stringify(err));
                     return next(err);
                 });
         }
@@ -192,7 +192,7 @@ app.use(function(req, res, next) {
 
 // error handlers
 app.use(function (err, req, res, next) {
-    logger.log('error','',JSON.stringify(err));
+    logger.error('',JSON.stringify(err));
     if (err.status === webapp.status.notFound){
         pageController.get404Page(req, res, next);
     }
@@ -207,5 +207,5 @@ app.use(function (err, req, res, next) {
  */
 app.set('port', config.app.serverPort || 3000);
 var server = app.listen(app.get('port'), function() {
-    logger.log('info','Server listening at http://' + config.app.serverUrl + ':' + server.address().port);
+    logger.info('Server listening at http://' + config.app.serverUrl + ':' + server.address().port);
 });
