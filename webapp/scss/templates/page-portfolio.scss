@@ -74,6 +74,30 @@
                   font-size: rem-calc(96);
                 }
               }
+              &.chorus {
+                width: 175px;
+                @include breakpoint(small only) {
+                  width: 200px;
+                }
+                .fa-stack-1x {
+                  bottom: 50%;
+                  top: initial;
+                  left: 55.5%;
+                  right: initial;
+                  width: rem-calc(48);
+                  line-height: rem-calc(48);
+                  font-size: rem-calc(48);
+                }
+                .fa-stack-2x {
+                  bottom: 20%;
+                  top: initial;
+                  left: 10%;
+                  right: initial;
+                  width: rem-calc(80);
+                  line-height: rem-calc(80);
+                  font-size: rem-calc(80);
+                }
+              }
               .fa {
                 height: auto;
               }
