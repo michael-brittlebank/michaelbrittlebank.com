@@ -5,6 +5,7 @@
 * cd localFolder
 * npm install
 * bower install
+* grunt build
 
 ## Iterations
 
@@ -26,12 +27,15 @@
 ### 1.1
 * ~~verify domain on google/bing webmaster~~
 * ~~run through google site tester~~
-* import scale finder
 
 ### 1.2
-* import WP and WP reading list
+* register scales as bower package
+* import scale finder
+
+### 1.3
+* add wp installation
+* import WP reading list
 
 ## Future
 * dynamic art creator
-* register scales as bower package
 * image storage system
