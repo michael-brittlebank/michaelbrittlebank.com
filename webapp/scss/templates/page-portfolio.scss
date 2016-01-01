@@ -98,6 +98,51 @@
                   font-size: rem-calc(80);
                 }
               }
+              &.reading {
+                $iconsSize: 64;
+                $firstRowHeight: 10%;
+                $secondRowHeight: 40%;
+                width: 175px;
+                @include breakpoint(small only) {
+                  width: 200px;
+                }
+                .fa-stack-1x {
+                  bottom: $firstRowHeight;
+                  top: initial;
+                  left: 5%;
+                  right: initial;
+                  width: rem-calc($iconsSize);
+                  line-height: rem-calc($iconsSize);
+                  font-size: rem-calc($iconsSize);
+                }
+                .fa-stack-2x {
+                  bottom: $firstRowHeight;
+                  top: initial;
+                  left: 40%;
+                  right: initial;
+                  width: rem-calc($iconsSize);
+                  line-height: rem-calc($iconsSize);
+                  font-size: rem-calc($iconsSize);
+                }
+                .fa-stack-3x {
+                  bottom: $secondRowHeight;
+                  top: initial;
+                  left: 25%;
+                  right: initial;
+                  width: rem-calc($iconsSize);
+                  line-height: rem-calc($iconsSize);
+                  font-size: rem-calc($iconsSize);
+                }
+                .fa-stack-4x {
+                  bottom: $secondRowHeight;
+                  top: initial;
+                  left: 60%;
+                  right: initial;
+                  width: rem-calc($iconsSize);
+                  line-height: rem-calc($iconsSize);
+                  font-size: rem-calc($iconsSize);
+                }
+              }
               .fa {
                 height: auto;
               }
