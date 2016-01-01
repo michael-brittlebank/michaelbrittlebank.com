@@ -17,8 +17,8 @@ pages.getLocalDefaultPage = function(req, res, next) {
     if (req.originalUrl.indexOf('bubbles') !== 1) {
         res.render('page-bubbles');
     }
-    else if (req.originalUrl.indexOf('scale') !== 1){
-        res.render('page-scales');
+    else if (req.originalUrl.indexOf('chorus') !== 1){
+        res.render('page-chorus');
     }
     else {
         res.render('single-page');

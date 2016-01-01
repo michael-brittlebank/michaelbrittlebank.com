@@ -285,7 +285,7 @@ webapp.getMenuHighlight = function(url){
         return 'music';
     } else if (url.indexOf('travel') !== -1){
         return 'travel';
-    } else if (url.indexOf('portfolio') !== -1 || url.indexOf('scales') !== -1) {
+    } else if (url.indexOf('portfolio') !== -1 || url.indexOf('chorus') !== -1) {
         return 'portfolio';
     } else if (url.indexOf('resume') !== -1) {
         return 'resume';

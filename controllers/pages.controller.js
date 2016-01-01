@@ -99,8 +99,8 @@ pages.getMusicPage = function(req, res, next) {
         });
 };
 
-pages.getScalesPage = function(req, res, next) {
-    res.render('page-scales');//todo
+pages.getChorusPage = function(req, res, next) {
+    res.render('page-chorus');//todo
 };
 
 pages.getTravelPage = function(req, res, next) {
@@ -146,8 +146,8 @@ pages.getDefaultPage = function(req, res, next) {
                     case 'Travel':
                         pages.getTravelPage(res, res, next);
                         break;
-                    case 'Scales':
-                        pages.getScalesPage(res, res, next);
+                    case 'Chorus':
+                        pages.getChorusPage(res, res, next);
                         break;
                     default:
                         res.render('single-page');

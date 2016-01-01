@@ -29,8 +29,8 @@
 * ~~run through google site tester~~
 
 ### 1.2
-* register scales as bower package
-* import scale finder
+* ~~register chorus as bower package~~
+* import chorus
 
 ### 1.3
 * add wp installation
