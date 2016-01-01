@@ -8,7 +8,8 @@ var homepage = {},
     bodyBlockBottomHeight,
     bodyBlockTotalHeight,
     activeBodyBlock = null,
-    activeImageBlock = null;
+    activeImageBlock = null,
+    touchDrag = false;
 
 homepage.grid = {
     activateBodyBlock: function(){
@@ -58,6 +59,38 @@ homepage.grid = {
     }
 };
 
+homepage.events = {
+    imageBlockHandler: function(element){
+        if (!activeImageBlock || ($(element).attr('id') && $(activeImageBlock).attr('id') !== $(element).attr('id'))) {
+            homepage.events.resetBlocks();
+            activeImageBlock = $(element);
+            homepage.grid.activateImageBlock();
+        }
+    },
+    bodyBlockHandler: function(element){
+        if (!activeBodyBlock || ($(element).attr('id') && $(activeBodyBlock).attr('id') !== $(element).attr('id'))){
+            homepage.events.resetBlocks();
+            activeBodyBlock = $(element);
+            homepage.grid.activateBodyBlock();
+        }
+    },
+    blockClick: function(){
+        if (activeImageBlock) {
+            window.location.href = $(activeImageBlock).data('url');
+        } else if (activeBodyBlock) {
+            window.location.href = $(activeBodyBlock).data('url');
+        }
+    },
+    resetBlocks: function(){
+        if (activeBodyBlock){
+            homepage.grid.deactivateBodyBlock();
+        }
+        if (activeImageBlock){
+            homepage.grid.deactivateImageBlock();
+        }
+    }
+};
+
 homepage.init = function(){
     //variables
     squareBlocks = $('.grid-block');
@@ -68,61 +101,83 @@ homepage.init = function(){
     //animation
     $('.expand-in').velocity('transition.expandIn');
     //event handlers
-    $(bodyHighlightBlocks).on('mouseover touchstart', function(event){
+    $(bodyHighlightBlocks).on('mouseover', function(event){
             event.preventDefault();
-            if (!activeBodyBlock || ($(this).attr('id') && $(activeBodyBlock).attr('id') !== $(this).attr('id'))){
-                if (activeBodyBlock){
-                    homepage.grid.deactivateBodyBlock();
-                }
-                if (activeImageBlock){
-                    homepage.grid.deactivateImageBlock();
-                }
-                activeBodyBlock = $(this);
-                homepage.grid.activateBodyBlock();
-            }
+            homepage.events.bodyBlockHandler($(this));
         })
         .on('mouseleave',function(){
-            if (activeBodyBlock){
-                homepage.grid.deactivateBodyBlock();
+            homepage.events.resetBlocks();
+        })
+        .on("touchstart", function(){
+            touchDrag = false;
+        })
+        .on("touchmove", function(){
+            touchDrag = true;
+        })
+        .on('touchend', function(event){
+            if (!touchDrag){
+                event.preventDefault();
+                homepage.events.bodyBlockHandler($(this));
             }
         });
-    $(bodyHighlightBlocksText).on('touchstart click',function(event){
-        event.preventDefault();
-        if(activeBodyBlock){
-            window.location.href = $(activeBodyBlock).data('url');
-        }
-    });
-    $(imageHighlightBlocks).on('mouseover touchstart', function(event){
+    $(bodyHighlightBlocksText).on('click',function(event){
             event.preventDefault();
-            if (!activeImageBlock || ($(this).attr('id') && $(activeImageBlock).attr('id') !== $(this).attr('id'))){
-                if (activeBodyBlock){
-                    homepage.grid.deactivateBodyBlock();
-                }
-                if (activeImageBlock){
-                    homepage.grid.deactivateImageBlock();
-                }
-                activeImageBlock = $(this);
-                homepage.grid.activateImageBlock();
+            homepage.events.blockClick();
+        })
+        .on("touchstart", function(){
+            touchDrag = false;
+        })
+        .on("touchmove", function(){
+            touchDrag = true;
+        })
+        .on('touchend', function(event){
+            if (!touchDrag){
+                event.preventDefault();
+                homepage.events.blockClick();
             }
+        });
+    $(imageHighlightBlocks).on('mouseover', function(event){
+            event.preventDefault();
+            homepage.events.imageBlockHandler($(this));
         })
         .on('mouseleave',function(){
-            if (activeImageBlock){
-                homepage.grid.deactivateImageBlock();
+            homepage.events.resetBlocks();
+        })
+        .on("touchstart", function(){
+            touchDrag = false;
+        })
+        .on("touchmove", function(){
+            touchDrag = true;
+        })
+        .on('touchend', function(event){
+            if (!touchDrag){
+                event.preventDefault();
+                homepage.events.imageBlockHandler($(this));
             }
         });
-    $(imageHighlightBlocksText).on('touchstart click',function(event){
-        event.preventDefault();
-        if (activeImageBlock) {
-            window.location.href = $(activeImageBlock).data('url');
-        }
-    });
+    $(imageHighlightBlocksText).on('click',function(event){
+            event.preventDefault();
+            homepage.events.blockClick();
+        })
+        .on("touchstart", function(){
+            touchDrag = false;
+        })
+        .on("touchmove", function(){
+            touchDrag = true;
+        })
+        .on('touchend', function(event){
+            if (!touchDrag){
+                event.preventDefault();
+                homepage.events.blockClick();
+            }
+        });
     $(function(){
         homepage.grid.makeSquare();
         homepage.grid.revealBlocks();
         $('.banner').velocity({opacity:0.5},{duration:1500});
     });
     $(window).on('resize', function() {
-            homepage.grid.makeSquare();
-        });
+        homepage.grid.makeSquare();
+    });
 };
 
