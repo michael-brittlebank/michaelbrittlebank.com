@@ -107,7 +107,8 @@ module.exports = function(grunt) {
                     loadPath: [
                         "bower_components/foundation-sites/scss",
                         "bower_components/components-font-awesome/scss",
-                        "bower_components/slick-carousel/slick"
+                        "bower_components/slick-carousel/slick",
+                        "bower_components/chorus-js/src/scss"
                     ]
                 }
             }
@@ -148,7 +149,8 @@ module.exports = function(grunt) {
                         "bower_components/velocity/velocity.min.js",
                         "bower_components/velocity/velocity.ui.min.js",
                         "bower_components/slick-carousel/slick/slick.min.js",
-                        "bower_components/blast-text/jquery.blast.min.js"
+                        "bower_components/blast-text/jquery.blast.min.js",
+                        "bower_components/chorus-js/dist/chorus.min.js"
                     ]
                 },
                 options: {
