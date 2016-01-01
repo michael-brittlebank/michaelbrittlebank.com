@@ -68,10 +68,14 @@ homepage.init = function(){
     //animation
     $('.expand-in').velocity('transition.expandIn');
     //event handlers
-    $(bodyHighlightBlocks).on('mouseover touch click', function(){
+    $(bodyHighlightBlocks).on('mouseover touchstart', function(event){
+            event.preventDefault();
             if (!activeBodyBlock || ($(this).attr('id') && $(activeBodyBlock).attr('id') !== $(this).attr('id'))){
-                if (activeImageBlock){
+                if (activeBodyBlock){
                     homepage.grid.deactivateBodyBlock();
+                }
+                if (activeImageBlock){
+                    homepage.grid.deactivateImageBlock();
                 }
                 activeBodyBlock = $(this);
                 homepage.grid.activateBodyBlock();
@@ -82,13 +86,18 @@ homepage.init = function(){
                 homepage.grid.deactivateBodyBlock();
             }
         });
-    $(bodyHighlightBlocksText).on('touch click',function(){
+    $(bodyHighlightBlocksText).on('touchstart click',function(event){
+        event.preventDefault();
         if(activeBodyBlock){
             window.location.href = $(activeBodyBlock).data('url');
         }
     });
-    $(imageHighlightBlocks).on('mouseover touch click', function(){
+    $(imageHighlightBlocks).on('mouseover touchstart', function(event){
+            event.preventDefault();
             if (!activeImageBlock || ($(this).attr('id') && $(activeImageBlock).attr('id') !== $(this).attr('id'))){
+                if (activeBodyBlock){
+                    homepage.grid.deactivateBodyBlock();
+                }
                 if (activeImageBlock){
                     homepage.grid.deactivateImageBlock();
                 }
@@ -101,7 +110,8 @@ homepage.init = function(){
                 homepage.grid.deactivateImageBlock();
             }
         });
-    $(imageHighlightBlocksText).on('touch click',function(){
+    $(imageHighlightBlocksText).on('touchstart click',function(event){
+        event.preventDefault();
         if (activeImageBlock) {
             window.location.href = $(activeImageBlock).data('url');
         }
