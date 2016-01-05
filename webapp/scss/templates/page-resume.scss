@@ -31,6 +31,7 @@
     ul {
       list-style: none;
       padding: 0 10px;
+      @include fade-in-default;
       li {
         font-family: $font-texgyre-regular;
       }
