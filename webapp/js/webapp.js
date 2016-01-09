@@ -37,7 +37,11 @@ site.helpers = {
 
 site.animation = {
     fadeIn: function(element,duration,delay,stagger){
-        $(element).css({visibility:'visible'}).velocity('transition.fadeIn',{duration:duration,delay:delay,stagger:stagger});
+        $(element).css({visibility:'visible'}).velocity('transition.fadeIn',{
+            duration:duration,
+            delay:delay,
+            stagger:stagger
+        });
     },
     fadeOut: function(element,duration, delay){
         $(element).velocity('transition.fadeOut',{
@@ -78,7 +82,11 @@ site.init = function(){
                 activeModal = event.target;
                 $(modalOverlay).velocity('stop');
                 $(activeModal).velocity('stop');
-                site.animation.fadeIn(modalOverlay, 500, 0,0);
+                $(modalOverlay).css({visibility:'visible','z-index':100}).velocity('transition.fadeIn',{
+                    duration:500,
+                    delay:0,
+                    stagger:0
+                });
                 site.animation.fadeIn(activeModal, 500, 0,0);
             }
         })
