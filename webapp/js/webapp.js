@@ -82,7 +82,7 @@ site.init = function(){
                 activeModal = event.target;
                 $(modalOverlay).velocity('stop');
                 $(activeModal).velocity('stop');
-                $(modalOverlay).css({visibility:'visible','z-index':100}).velocity('transition.fadeIn',{
+                $(modalOverlay).css({visibility:'visible','z-index':1005}).velocity({height: '100%',opacity:1},{
                     duration:500,
                     delay:0,
                     stagger:0
@@ -91,7 +91,13 @@ site.init = function(){
             }
         })
         .on('closed.zf.reveal', function(){
-            site.animation.fadeOut(modalOverlay,750,0);
+            $(modalOverlay).velocity({height:0,opacity:0},{
+                duration:750,
+                delay:0,
+                complete: function(elements) {
+                    $(elements).css({visibility:'hidden','z-index':-1});
+                }
+            });
             activeModal = null;
         });
     $(closeButtons).on('click touch',function() {

@@ -24,7 +24,9 @@ a {
   bottom: 0;
   left: 0;
   right: 0;
-  z-index: 1005;
+  margin:auto;
+  height:0;
+  z-index: -1;
   background-color: rgba($color-dark-grey,0.75);
   overflow-y: scroll;
   @include unselectable;

@@ -7,7 +7,7 @@ var chorus = {};
     //functions
     this.init = function(){
         tabPanels = $('.tab-pane');
-        site.animation.fadeIn('.page.chorus',750,750,250);
+        site.animation.fadeIn('.page.chorus',750,750,0);
         //chorus init
         var guitarConfig = {
                 layoutInstrument: ['guitar'],
