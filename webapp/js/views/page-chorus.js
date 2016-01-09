@@ -6,6 +6,7 @@ var chorus = {};
 
     //functions
     this.init = function(){
+        prettyPrint();
         tabPanels = $('.tab-pane');
         site.animation.fadeIn('.page.chorus',750,750,0);
         //chorus init

@@ -36,4 +36,15 @@
     color: $color-dark-black;
     font-size: rem-calc(24);
   }
+  .reveal {
+    .chorus-note {
+      margin: 15px auto;
+    }
+    .callout {
+      padding: 0 5px;
+    }
+    .fa {
+      margin-right: 5px;
+    }
+  }
 }
