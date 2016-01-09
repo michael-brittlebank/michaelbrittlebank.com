@@ -209,3 +209,5 @@ app.set('port', config.app.serverPort || 3000);
 var server = app.listen(app.get('port'), function() {
     logger.info('Server listening at http://' + config.app.serverUrl + ':' + server.address().port);
 });
+
+//todo, move bower_components directory to webapp
