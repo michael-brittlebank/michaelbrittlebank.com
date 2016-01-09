@@ -13,6 +13,11 @@
         }
       }
     }
+    .float-right {
+      @include breakpoint(small only) {
+        float: left!important;
+      }
+    }
   }
   .tabs-content {
     border:none;
