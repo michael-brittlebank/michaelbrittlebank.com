@@ -7,6 +7,7 @@
 @import "settings";
 @import "foundation";
 @import "slick";
+@import "chorus";
 @import "lib/slick-theme";
 @import "lib/google-code-prettify";
 @include foundation-global-styles;
@@ -56,6 +57,7 @@
 @import "templates/page-resume";
 @import "templates/page-travel";
 @import "templates/page-music";
+@import "templates/page-chorus";
 
 @import "templates/single-portfolio";
 @import "templates/single-post";

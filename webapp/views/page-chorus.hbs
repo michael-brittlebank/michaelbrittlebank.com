@@ -1,5 +1,68 @@
 <main class="row page chorus">
     <div class="small-12 columns">
-        <h1>Coming Soon</h1>
+        <ul class="tabs" id="chorus-tabs" data-tabs>
+            <li class="tabs-title is-active">
+                <a href="#chorus-guitar" aria-selected="true">Guitar</a>
+            </li>
+            <li class="tabs-title">
+                <a href="#chorus-piano">Piano</a>
+            </li>
+            <li class="tabs-title">
+                <a href="#chorus-bass">Bass</a>
+            </li>
+            <li class="tabs-title float-right">
+                <a data-open="modal-help">Help</a>
+            </li>
+        </ul>
+        <div class="tabs-content" data-tabs-content="chorus-tabs">
+            <div id="chorus-guitar" class="tabs-panel is-active">
+            </div>
+            <div id="chorus-piano" class="tabs-panel">
+            </div>
+            <div id="chorus-bass" class="tabs-panel">
+            </div>
+        </div>
+        <div class="row">
+            <div class="small-12 medium-6 columns">
+                <ul class="accordion" data-accordion role="tablist" data-allow-all-closed="true">
+                    <li class="accordion-item">
+                        <a href="#results-scales" role="tab" class="accordion-title chorus-results" id="results-scales-heading" aria-controls="results-scales">Scales</a>
+                        <div id="results-scales" class="accordion-content results-container" role="tabpanel" data-tab-content aria-labelledby="results-scales-heading">
+                            No results yet
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="small-12 medium-6 columns">
+                <ul class="accordion" data-accordion role="tablist" data-allow-all-closed="true">
+                    <li class="accordion-item">
+                        <a href="#results-chords" role="tab" class="accordion-title chorus-results" id="results-chords-heading" aria-controls="results-chords">Chords</a>
+                        <div id="results-chords" class="accordion-content results-container" role="tabpanel" data-tab-content aria-labelledby="results-chords-heading">
+                            No results yet
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
     </div>
 </main>
+<div class="reveal small" id="modal-help" data-reveal data-overlay="false" data-close-on-click="false">
+    <button class="close-button" data-close aria-label="Close reveal" type="button">
+        <span aria-hidden="true">&times;</span>
+    </button>
+    <div class="row">
+        <section class="small-12 columns">
+            <div>
+                Help read me
+            </div>
+            <button class="button" data-close aria-label="Close reveal" type="button">
+                <span aria-hidden="true">Close</span>
+            </button>
+        </section>
+    </div>
+</div>
+<script type="text/javascript">
+    $(function(){
+        chorus.init();
+    });
+</script>
