@@ -5,6 +5,14 @@
     border-top:none;
     border-left:none;
     border-right:none;
+    li {
+      &:not(.tabs-title){
+        @extend .tabs-title;
+        a:focus {
+          outline: none;
+        }
+      }
+    }
   }
   .tabs-content {
     border:none;
