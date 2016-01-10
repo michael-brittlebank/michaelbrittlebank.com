@@ -30,7 +30,7 @@
 
 ### 1.2
 * ~~register chorus as bower package~~
-* import chorus
+* ~~import chorus~~
 * seo data entry
 * run through facebook and twitter meta checkers
 
