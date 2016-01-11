@@ -18,6 +18,7 @@ contentModels.getPageModel = function(data){
             layout: webapp.getValueFromKey(fields,'layout'),
             categories: webapp.simpleNullCheck(fields,'categories')?fields.categories.join(', '):{},
             tags: webapp.simpleNullCheck(fields,'tags')?fields.tags.join(', '):{},
+            //todo, fix these timestamps
             publishedTime: createdAt.substring(0,createdAt.lastIndexOf('.'))+'-4:00',//GMT
             modifiedTime: modifiedAt.substring(0,modifiedAt.lastIndexOf('.'))+'-4:00',
             metaTitle: webapp.simpleNullCheck(fields,'metaTitle')?webapp.getValueFromKey(fields,'metaTitle'):webapp.getDefaultMetaTitle(webapp.getValueFromKey(fields,'title')),
