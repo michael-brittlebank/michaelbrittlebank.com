@@ -31,8 +31,8 @@
 ### 1.2
 * ~~register chorus as bower package~~
 * ~~import chorus~~
-* seo data entry
-* run through facebook and twitter meta checkers
+* ~~seo data entry~~
+* ~~run through facebook and twitter meta checkers~~
 
 ### 1.3
 * add wp installation
