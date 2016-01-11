@@ -286,7 +286,7 @@ webapp.htmlEntityConversion = function(data, convertToHtmlEntity){
 };
 
 webapp.getDefaultMetaImage = function(){
-    return '/images/favicon-194x194.png';
+    return config.app.protocol+config.app.hostName+'/images/favicon-194x194.png';
 };
 
 webapp.getMenuHighlight = function(url){
