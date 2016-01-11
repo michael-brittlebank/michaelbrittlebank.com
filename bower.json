@@ -17,6 +17,6 @@
     "foundation-sites": "6.0.6",
     "slick-carousel": "1.5.9",
     "blast-text": "2.0.0",
-    "chorus-js": "~2.0.0"
+    "chorus-js": "2.1.1"
   }
 }
