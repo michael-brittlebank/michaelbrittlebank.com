@@ -123,7 +123,7 @@ app.use(express.static(path.join(__dirname, 'webapp/public'),{
 
 if (!webapp.app.isLiveConfig()){
     //for debugging included libs
-    app.use('/bower_components', express.static(path.join(__dirname, 'bower_components')));
+    app.use('/bower_components', express.static(path.join(__dirname, 'webapp/bower_components')));
 }
 
 app.use(function(req, res, next) {
@@ -209,5 +209,3 @@ app.set('port', config.app.serverPort || 3000);
 var server = app.listen(app.get('port'), function() {
     logger.info('Server listening at http://' + config.app.serverUrl + ':' + server.address().port);
 });
-
-//todo, move bower_components directory to webapp

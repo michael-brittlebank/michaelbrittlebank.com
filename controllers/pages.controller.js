@@ -100,7 +100,7 @@ pages.getMusicPage = function(req, res, next) {
 };
 
 pages.getChorusPage = function(req, res, next) {
-    res.render('page-chorus');//todo
+    res.render('page-chorus');
 };
 
 pages.getTravelPage = function(req, res, next) {

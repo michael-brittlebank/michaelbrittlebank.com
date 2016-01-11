@@ -24,7 +24,7 @@ module.exports = function(grunt) {
                 expand: true,
                 src: [
                     'webapp/assets/images/**',
-                    'bower_components/slick-carousel/slick/*.gif'
+                    'webapp/bower_components/slick-carousel/slick/*.gif'
                 ],
                 dest: 'webapp/public/images/',
                 flatten: true,
@@ -43,7 +43,7 @@ module.exports = function(grunt) {
                 expand: true,
                 src: [
                     'webapp/fonts/**',
-                    'bower_components/slick-carousel/slick/fonts/**'
+                    'webapp/bower_components/slick-carousel/slick/fonts/**'
                 ],
                 dest: 'webapp/public/fonts/',
                 flatten: true,
@@ -105,10 +105,10 @@ module.exports = function(grunt) {
                     style: 'compressed',
                     trace: true,
                     loadPath: [
-                        "bower_components/foundation-sites/scss",
-                        "bower_components/components-font-awesome/scss",
-                        "bower_components/slick-carousel/slick",
-                        "bower_components/chorus-js/src/scss"
+                        "webapp/bower_components/foundation-sites/scss",
+                        "webapp/bower_components/components-font-awesome/scss",
+                        "webapp/bower_components/slick-carousel/slick",
+                        "webapp/bower_components/chorus-js/src/scss"
                     ]
                 }
             }
@@ -117,7 +117,7 @@ module.exports = function(grunt) {
             header: {
                 files: {
                     'webapp/public/js/app.header.min.js': [
-                        "bower_components/jquery/dist/jquery.min.js"
+                        "webapp/bower_components/jquery/dist/jquery.min.js"
                     ]
                 },
                 options: {
@@ -144,17 +144,17 @@ module.exports = function(grunt) {
             footer: {
                 files: {
                     'webapp/public/js/app.footer.min.js': [
-                        "bower_components/modernizr/modernizr.js",
-                        "bower_components/foundation-sites/dist/foundation.min.js",
-                        "bower_components/velocity/velocity.min.js",
-                        "bower_components/velocity/velocity.ui.min.js",
-                        "bower_components/slick-carousel/slick/slick.min.js",
-                        "bower_components/blast-text/jquery.blast.min.js",
-                        "bower_components/chorus-js/dist/chorus.min.js"
+                        "webapp/bower_components/modernizr/modernizr.js",
+                        "webapp/bower_components/foundation-sites/dist/foundation.min.js",
+                        "webapp/bower_components/velocity/velocity.min.js",
+                        "webapp/bower_components/velocity/velocity.ui.min.js",
+                        "webapp/bower_components/slick-carousel/slick/slick.min.js",
+                        "webapp/bower_components/blast-text/jquery.blast.min.js",
+                        "webapp/bower_components/chorus-js/dist/chorus.min.js"
                     ]
                 },
                 options: {
-                    sourceMap: true,//todo, source map url
+                    sourceMap: true,
                     preserveComments: true,
                     compress: true
                 }
