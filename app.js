@@ -38,6 +38,7 @@ app.use(function(req, res, next) {
         next();
 });
 
+//todo https://chrisjean.com/git-submodules-adding-using-removing-and-updating/
 
 /**
  * SEO Redirects
