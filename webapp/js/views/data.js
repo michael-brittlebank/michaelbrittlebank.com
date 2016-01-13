@@ -200,6 +200,11 @@ data.places = [
         lat: 38.9717,
         lng: -95.2353
     },
+    {
+        title: 'Bowling Green, Kentucky, USA',
+        lat: 36.9817,
+        lng: -86.4444
+    },
     //canada
     {
         title:'Toronto, Ontario, Canada',
