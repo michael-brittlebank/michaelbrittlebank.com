@@ -65,6 +65,7 @@ app.redirect('/portfolio/the-spaces-of-arts-conference-website', '/portfolio');
 app.redirect('/portfolio/student-wisconsin-education-association/', '/portfolio');
 app.redirect('/personal', '/portfolio');
 app.redirect('/reading-list', '/portfolio');
+app.redirect('/scales', '/chorus');
 
 //home
 app.redirect('/thank-you', '/');
