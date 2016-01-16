@@ -35,8 +35,8 @@
 * ~~run through facebook and twitter meta checkers~~
 
 ### 1.3
-* add wp installation
-* import WP reading list
+* ~~add wp installation~~
+* ~~import WP reading list~~
 
 ## Future
 * dynamic art creator
