@@ -1,4 +1,5 @@
 var modal,
+    initAlreadyFired = false,
     modalDisplayedAlready = false,
     readingList = {};
 
@@ -12,7 +13,10 @@ readingList.init = function(){
             //disable dev url
         ],
         initCallback: function(){
-            site.animation.fadeIn('#content-reading-list',1000,500,0);
+            if (!initAlreadyFired) {
+                site.animation.fadeIn('#content-reading-list', 1000, 500, 0);
+                initAlreadyFired = true;
+            }
         }
     });
     if (!Foundation.MediaQuery.atLeast('medium')) {
