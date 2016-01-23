@@ -8,7 +8,10 @@ readingList.init = function(){
         checkOrigin: [
             'http://wordpress.mikestumpf.com',
             'http://mikestumpf.dev'
-        ]
+        ],
+        initCallback: function(){
+            site.animation.fadeIn('#content-reading-list',1000,500,0);
+        }
     });
     if (!Foundation.MediaQuery.atLeast('medium')) {
         setTimeout(function(){

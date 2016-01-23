@@ -78,9 +78,12 @@
     }
   }
   &.reading-list {
-    iframe {
-      width:100%;
-      max-width:100%;
+    #content-reading-list {
+      @include fade-in-default;
+      iframe {
+        width:100%;
+        max-width:100%;
+      }
     }
   }
 }
