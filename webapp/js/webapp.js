@@ -66,7 +66,6 @@ site.animation = {
 
 site.init = function(){
     var modalOverlay = $('#modal-overlay'),
-        closeButtons = $('.close-button'),
         activeModal;
     //foundation init
     $(document).foundation();
@@ -88,6 +87,8 @@ site.init = function(){
                     stagger:0
                 });
                 site.animation.fadeIn(activeModal, 500, 0,0);
+            } else {
+                site.animation.fadeOut(activeModal, 250, 0);
             }
         })
         .on('closed.zf.reveal', function(){
@@ -100,42 +101,13 @@ site.init = function(){
             });
             activeModal = null;
         });
-    $(closeButtons).on('click touch',function() {
+    $('.close-button').on('click touch',function() {
         //manually close foundation modal
-        site.animation.fadeOut(activeModal, 250, 0);
+        $('.reveal').foundation('close');
     });
     $(modalOverlay).on('click touch',function(){
-        $(closeButtons).click();
+        $('.reveal').foundation('close');
     });
-    /**
-     * polyfills
-     */
-    /* requestAnimationFrame polyfill
-     https://gist.github.com/paulirish/1579671
-     */
-    var lastTime = 0,
-        vendors = ['ms', 'moz', 'webkit', 'o'];
-    for(var i = 0; i < vendors.length && !window.requestAnimationFrame; ++i) {
-        window.requestAnimationFrame = window[vendors[i]+'RequestAnimationFrame'];
-        window.cancelAnimationFrame = window[vendors[i]+'CancelAnimationFrame'] || window[vendors[i]+'CancelRequestAnimationFrame'];
-    }
-    if (!window.requestAnimationFrame) {
-        window.requestAnimationFrame = function (callback, element) {
-            var currTime = new Date().getTime();
-            var timeToCall = Math.max(0, 16 - (currTime - lastTime));
-            var id = window.setTimeout(function () {
-                    callback(currTime + timeToCall);
-                },
-                timeToCall);
-            lastTime = currTime + timeToCall;
-            return id;
-        };
-    }
-    if (!window.cancelAnimationFrame) {
-        window.cancelAnimationFrame = function (id) {
-            clearTimeout(id);
-        };
-    }
 };
 
 site.init();
