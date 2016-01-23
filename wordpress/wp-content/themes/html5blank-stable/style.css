@@ -307,10 +307,10 @@ a img.aligncenter {
 }
 
 /* custom */
-h1,h2,h3,h4,h5,a,li,blockquote,p {
+h1,h2,h3,h4,h5,a,li,blockquote,p,a {
     font-family: 'Open Sans Condensed', "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
     color: #403736;
 }
-p {
+p,a {
     font-size: 16px;
 }
