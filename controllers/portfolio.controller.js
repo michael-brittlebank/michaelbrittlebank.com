@@ -28,6 +28,9 @@ portfolio.getDefaultPortfolioPage = function(req, res, next) {
                     case 'Bubbles':
                         res.render('portfolio-bubbles');
                         break;
+                    case 'Reading List':
+                        res.render('portfolio-reading-list');
+                        break;
                     default:
                         res.render('single-portfolio');
                 }
