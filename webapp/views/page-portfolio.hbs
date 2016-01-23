@@ -39,13 +39,7 @@
                                         <p class="tech-stack"><span class="title">Tech Stack:</span> {{techStack}}</p>
                                     </div>
                                 {{/isNotEmpty}}
-                                {{#isNotEmpty url}}
-                                    <section class="small-12 medium-6 columns order-2 medium-order-1 portfolio-links">
-                                        <a href="{{url}}"><i class="fa fa-folder-open-o"></i>View Project</a>
-                                    </section>
-                                {{else}}
-                                    {{>portfolio-footer this}}
-                                {{/isNotEmpty}}
+                                {{>portfolio-footer this}}
                             </div>
                         </section>
                     </div>

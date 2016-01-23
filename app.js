@@ -53,6 +53,7 @@ app.redirect('/professional', '/resume');
 app.redirect('/education', '/resume');
 
 //portfolio
+app.redirect('/portfolio/chorus', '/chorus');
 app.redirect('/portfolio/wp-reading-list', '/portfolio');
 app.redirect('/portfolio/strange-bedfellows', '/portfolio');
 app.redirect('/portfolio/docuscope-project', '/portfolio');
