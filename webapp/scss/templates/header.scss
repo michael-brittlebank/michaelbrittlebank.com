@@ -55,7 +55,7 @@ header {
         @extend .list-links;
         @include transition-with-defaults(border);
         &:hover, &.active {
-          border-color: rgba($color-jays-light-blue, 0.5);
+          border-color: rgba($color-york-blue, 0.5);
         }
       }
     }
