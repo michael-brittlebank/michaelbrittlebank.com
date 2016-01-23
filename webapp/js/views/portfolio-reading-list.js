@@ -5,6 +5,7 @@ var modal,
 readingList.init = function(){
     modal = $('#modal-reading-list');
     $('iframe').iFrameResize({
+        bodyMargin: 25,
         checkOrigin: [
             'http://wordpress.mikestumpf.com'//,
             //'http://mikestumpf.dev'
