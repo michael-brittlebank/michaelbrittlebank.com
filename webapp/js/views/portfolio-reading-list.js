@@ -6,8 +6,9 @@ readingList.init = function(){
     modal = $('#modal-reading-list');
     $('iframe').iFrameResize({
         checkOrigin: [
-            'http://wordpress.mikestumpf.com',
-            'http://mikestumpf.dev'
+            'http://wordpress.mikestumpf.com'//,
+            //'http://mikestumpf.dev'
+            //disable dev url
         ],
         initCallback: function(){
             site.animation.fadeIn('#content-reading-list',1000,500,0);
