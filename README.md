@@ -38,6 +38,9 @@
 * ~~add wp installation~~
 * ~~import WP reading list~~
 
+### 1.4
+* add image gallery in posts instead of individual images
+
 ## Future
 * dynamic art creator
-* image storage system
+* switch from contentful to self hosted db
