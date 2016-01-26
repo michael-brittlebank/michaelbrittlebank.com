@@ -27,7 +27,7 @@ portfolio.init = function(){
                 breakpoint: 1200,
                 settings: {
                     centerMode: true,
-                    slidesToShow: 3,
+                    slidesToShow: 2,
                     slidesToScroll: 1
                 }
             },
