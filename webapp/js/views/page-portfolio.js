@@ -19,7 +19,7 @@ portfolio.init = function(){
                 breakpoint: 1500,
                 settings: {
                     centerMode: true,
-                    slidesToShow: 4,
+                    slidesToShow: 2,//todo, make 4
                     slidesToScroll: 1
                 }
             },
@@ -27,7 +27,7 @@ portfolio.init = function(){
                 breakpoint: 1200,
                 settings: {
                     centerMode: true,
-                    slidesToShow: 2,
+                    slidesToShow: 2,//todo, change to 3
                     slidesToScroll: 1
                 }
             },
