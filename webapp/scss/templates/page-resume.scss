@@ -29,11 +29,16 @@
       font-size: rem-calc(20);
     }
     ul {
-      list-style: none;
+      list-style: circle;
       padding: 0 10px;
       @include fade-in-default;
       li {
         font-family: $font-texgyre-regular;
+      }
+    }
+    #resume-expertise {
+      ul {
+        list-style: none;
       }
     }
   }
