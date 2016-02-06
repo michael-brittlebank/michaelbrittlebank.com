@@ -39,6 +39,8 @@
 * ~~import WP reading list~~
 
 ### 1.4
+* add gtm
+* make css non-blocking resource
 * add image gallery in posts instead of individual images
 
 ## Future
