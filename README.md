@@ -42,7 +42,10 @@
 * add gtm
 * make css non-blocking resource
 * add image gallery in posts instead of individual images
+* compile handlebars and minify
+
+### 1.5
+* switch from contentful to self hosted db
 
 ## Future
 * dynamic art creator
-* switch from contentful to self hosted db
