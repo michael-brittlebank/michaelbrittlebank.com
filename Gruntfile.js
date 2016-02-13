@@ -150,7 +150,9 @@ module.exports = function(grunt) {
                         "webapp/bower_components/velocity/velocity.ui.min.js",
                         "webapp/bower_components/slick-carousel/slick/slick.min.js",
                         "webapp/bower_components/blast-text/jquery.blast.min.js",
-                        "webapp/bower_components/chorus-js/dist/chorus.min.js"
+                        "webapp/bower_components/chorus-js/dist/chorus.min.js",
+                        "webapp/bower_components/justifiedGallery/dist/js/jquery.justifiedGallery.min.js",
+                        "webapp/bower_components/jquery-colorbox/jquery.colorbox-min.js"
                     ]
                 },
                 options: {

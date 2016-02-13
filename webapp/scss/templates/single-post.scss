@@ -18,6 +18,9 @@
     p {
       @include fade-in-default;
     }
+    .gallery-image {
+      outline: none!important;
+    }
     img {
       max-width:100%;
       max-height: 500px;

@@ -213,29 +213,68 @@ webapp.getIndicesOf = function(searchStr, str, caseSensitive) {
 webapp.htmlParser = function(data){
     var imageStartTag = '[img',
         imageEndTag = '/img]',
+        galleryStartTag = '[gallery',
+        galleryEndTag = '/gallery]',
         imageOccurrences = webapp.getIndicesOf(imageStartTag, data, false),
         imageObject,
+        galleryOccurrences = webapp.getIndicesOf(galleryStartTag, data, false),
+        galleryObject,
         className,
         replacementHtml;
+    //single images
     if (imageOccurrences.length > 0){
         for (var i = 0; i <imageOccurrences.length; i++){
             try {
                 className = i%2===0?'left-float':'right-float';
+                imageObject = JSON.parse(htmlParserHelper(data,imageStartTag,imageEndTag));
+                replacementHtml = imageHtml(imageObject,className);
+            }
+            catch (err){
+                logger.error('html parser',err);
+                replacementHtml = '';
+            }
+            data = data.replace(htmlReplaceHelper(data,imageStartTag,imageEndTag), replacementHtml);
+        }
+    }
+    //image galleries
+    if (galleryOccurrences.length > 0){
+        for (var j = 0; j <galleryOccurrences.length; j++){
+            try {
                 //need to reevaluate tag locations once replacement has happened
-                imageObject = JSON.parse(data.substring(data.indexOf(imageStartTag)+imageStartTag.length,data.indexOf(imageEndTag)));
-                replacementHtml = webapp.htmlEntityConversion('<img src="'+imageObject.src+
-                    '" alt="'+imageObject.alt+
-                    '" class="'+className+'"/>',true);
+                galleryObject = JSON.parse(htmlParserHelper(data,galleryStartTag,galleryEndTag));
+                replacementHtml = imageGalleryHtml(galleryObject);
             }
             catch (err){
                 logger.error('html parser',JSON.stringify(err));
                 replacementHtml = '';
             }
-            data = data.replace(data.substring(data.indexOf(imageStartTag), data.indexOf(imageEndTag)+imageEndTag.length), replacementHtml);
+            data = data.replace(htmlReplaceHelper(data,galleryStartTag,galleryEndTag), replacementHtml);
         }
     }
     return marked(webapp.htmlEntityConversion(data, false));
 };
+
+function imageHtml(imageObject,className){
+    return '<img src="'+imageObject.src+'" alt="'+imageObject.alt+'" class="'+className+'"/>';
+}
+
+function imageGalleryHtml(galleryObject){
+    var result = '<div class="gallery">';
+    galleryObject.images.forEach(function(entry){
+        result += '<a href="'+entry.src+'" class="gallery-image"><img alt="'+entry.alt+'" src="'+entry.src+'"/></a>';
+    });
+    result += '</div>';
+    return result;
+}
+
+function htmlParserHelper(data,startTag,endTag){
+    console.log(startTag,endTag,data.indexOf(startTag),data.indexOf(endTag));
+    return data.substring(data.indexOf(startTag)+startTag.length,data.indexOf(endTag));
+}
+
+function htmlReplaceHelper(data,startTag,endTag){
+    return data.substring(data.indexOf(startTag), data.indexOf(endTag)+endTag.length);
+}
 
 webapp.getDefaultMetaTitle = function(title){
     return 'Mike Stumpf | '+title;

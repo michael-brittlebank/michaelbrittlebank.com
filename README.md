@@ -39,7 +39,7 @@
 * ~~import WP reading list~~
 
 ### 1.4
-* add image gallery in posts instead of individual images
+* ~~add image gallery in posts instead of individual images~~
 * compile handlebars and minify
 
 ### 1.5
