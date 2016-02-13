@@ -268,7 +268,6 @@ function imageGalleryHtml(galleryObject){
 }
 
 function htmlParserHelper(data,startTag,endTag){
-    console.log(startTag,endTag,data.indexOf(startTag),data.indexOf(endTag));
     return data.substring(data.indexOf(startTag)+startTag.length,data.indexOf(endTag));
 }
 
