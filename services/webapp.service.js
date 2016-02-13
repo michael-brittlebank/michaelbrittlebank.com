@@ -335,8 +335,8 @@ webapp.getMenuHighlight = function(url){
         return 'travel';
     } else if (url.indexOf('portfolio') !== -1 || url.indexOf('chorus') !== -1) {
         return 'portfolio';
-    } else if (url.indexOf('resume') !== -1) {
-        return 'resume';
+    } else if (url.indexOf('cv') !== -1) {
+        return 'cv';
     } else {
         return '';
     }

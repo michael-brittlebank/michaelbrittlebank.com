@@ -52,6 +52,7 @@ app.redirect('/search', '/cv');
 app.redirect('/professional', '/cv');
 app.redirect('/education', '/cv');
 app.redirect('/resume', '/cv');
+app.redirect('/files/Mike%20Stumpf%20Resume.pdf','/files/Mike%20Stumpf%20CV.pdf');
 
 //portfolio
 app.redirect('/portfolio/chorus', '/chorus');
