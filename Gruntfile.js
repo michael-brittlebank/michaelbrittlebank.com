@@ -210,13 +210,9 @@ module.exports = function(grunt) {
 
     // build task, for initializing environment after clone or UI dependencies update
     grunt.registerTask('build', [
-        'uglify:header',
-        'uglify:main',
-        'uglify:footer',
+        'uglify',
         'sass',
-        'newer:copy:images',
-        'newer:copy:fonts',
-        'newer:copy:files',
+        'newer:copy',
         'newer:imagemin'
     ]);
 
@@ -224,13 +220,9 @@ module.exports = function(grunt) {
     grunt.registerTask('dev', [
         'env:dev',
         'loadConfig',
-        'newer:uglify:header',
-        'newer:uglify:main',
-        'newer:uglify:footer',
+        'newer:uglify',
         'newer:sass',
-        'newer:copy:images',
-        'newer:copy:fonts',
-        'newer:copy:files',
+        'newer:copy',
         'newer:imagemin',
         'concurrent'
     ]);
@@ -239,13 +231,9 @@ module.exports = function(grunt) {
     grunt.registerTask('local', [
         'env:local',
         'loadConfig',
-        'newer:uglify:header',
-        'newer:uglify:main',
-        'newer:uglify:footer',
+        'newer:uglify',
         'newer:sass',
-        'newer:copy:images',
-        'newer:copy:fonts',
-        'newer:copy:files',
+        'newer:copy',
         'newer:imagemin',
         'concurrent'
     ]);
