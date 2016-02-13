@@ -22,6 +22,9 @@
       margin: 30px 0 10px 0;
       @include fade-in-default;
     }
+    h4, h5 {
+      @include fade-in-default;
+    }
     p {
       @include fade-in-default;
     }
@@ -34,11 +37,6 @@
       @include fade-in-default;
       li {
         font-family: $font-texgyre-regular;
-      }
-    }
-    #resume-expertise {
-      ul {
-        list-style: none;
       }
     }
   }
