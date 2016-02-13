@@ -44,13 +44,14 @@ app.use(function(req, res, next) {
 redirect(app);
 
 //resume
-app.redirect('/portfolio/university-of-wisconsin-madison', '/resume');
-app.redirect('/portfolio/portfolio/university-of-york', '/resume');
-app.redirect('/about', '/resume');
-app.redirect('/contact', '/resume');
-app.redirect('/search', '/resume');
-app.redirect('/professional', '/resume');
-app.redirect('/education', '/resume');
+app.redirect('/portfolio/university-of-wisconsin-madison', '/cv');
+app.redirect('/portfolio/portfolio/university-of-york', '/cv');
+app.redirect('/about', '/cv');
+app.redirect('/contact', '/cv');
+app.redirect('/search', '/cv');
+app.redirect('/professional', '/cv');
+app.redirect('/education', '/cv');
+app.redirect('/resume', '/cv');
 
 //portfolio
 app.redirect('/portfolio/chorus', '/chorus');
