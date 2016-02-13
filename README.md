@@ -41,6 +41,8 @@
 ### 1.4
 * ~~add image gallery in posts instead of individual images~~
 * compile handlebars and minify
+* add mocha and karma tests
+* add group or individual icons to portfolio pieces
 
 ### 1.5
 * switch from contentful to self hosted db
