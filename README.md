@@ -39,8 +39,6 @@
 * ~~import WP reading list~~
 
 ### 1.4
-* add gtm
-* make css non-blocking resource
 * add image gallery in posts instead of individual images
 * compile handlebars and minify
 
@@ -48,4 +46,6 @@
 * switch from contentful to self hosted db
 
 ## Future
+* add gtm
+* make css non-blocking resource
 * dynamic art creator
