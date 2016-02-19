@@ -18,7 +18,7 @@ server {
 server {
     listen 80;
     root /var/www/mikestumpf.com/wordpress;
-    index index.php index.hmtl index.htm;
+    index index.php index.html index.htm;
     server_name wordpress.mikestumpf.com;
     location / {
         try_files $uri $uri/ /index.php?q=$uri&$args;
