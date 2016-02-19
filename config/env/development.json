@@ -26,5 +26,8 @@
     "linkedIn": "https://www.linkedin.com/in/mikestumpf",
     "github": "https://github.com/mike-stumpf",
     "stackOverflow": "http://stackexchange.com/users/1282257/mike-stumpf?tab=accounts"
+  },
+  "mongodb": {
+    "endpoint": "mongodb://104.131.230.174:27818/production"
   }
 }

@@ -18,6 +18,7 @@ var /* packages */
     contentfulService = require('./services/contentful.service'),
     contentService = require('./services/content.service'),
     errorService = require('./services/error.service'),
+    mongoDb = require('./services/mongodb.service'),
 /* routes and controllers */
     pageRoutes = require('./routes/pages.routes'),
     portfolioRoutes = require('./routes/portfolio.routes'),
