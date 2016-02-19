@@ -38,8 +38,10 @@
 * ~~add wp installation~~
 * ~~import WP reading list~~
 
-### 1.4
+### 1.3.1
 * ~~add image gallery in posts instead of individual images~~
+
+### 1.4
 * add jenkins deploy scripts
 * add auth to mongo
 * move env config out of git
@@ -49,6 +51,8 @@
 ### 1.5
 * compile handlebars and minify
 * add mocha and karma tests
+
+### 1.5.1
 * add group or individual icons to portfolio pieces
 
 ## Future
