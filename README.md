@@ -40,6 +40,9 @@
 
 ### 1.4
 * ~~add image gallery in posts instead of individual images~~
+* add jenkins deploy scripts
+* add auth to mongo
+* move env config out of git
 * switch from contentful to self hosted db
 * add auth on certain routes based on db users
 
