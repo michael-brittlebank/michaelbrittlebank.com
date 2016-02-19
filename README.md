@@ -40,12 +40,13 @@
 
 ### 1.4
 * ~~add image gallery in posts instead of individual images~~
+* switch from contentful to self hosted db
+* add auth on certain routes based on db users
+
+### 1.5
 * compile handlebars and minify
 * add mocha and karma tests
 * add group or individual icons to portfolio pieces
-
-### 1.5
-* switch from contentful to self hosted db
 
 ## Future
 * add gtm
