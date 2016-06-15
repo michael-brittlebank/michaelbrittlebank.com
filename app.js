@@ -5,10 +5,9 @@ var /* packages */
     favicon = require('serve-favicon'),
     helmet = require('helmet'),
     contentLength = require('express-content-length-validator'),
-    methodOverride = require('method-override'),
     path = require('path'),
     bodyParser = require('body-parser'),
-    redirect = require("express-redirect"),
+    redirect = require('express-redirect'),
     mobileDetect = require('mobile-detect'),
 /* config */
     config = require('./config/config'),
@@ -18,7 +17,7 @@ var /* packages */
     contentfulService = require('./services/contentful.service'),
     contentService = require('./services/content.service'),
     errorService = require('./services/error.service'),
-    mongoDb = require('./services/mongodb.service'),
+    // mongoDb = require('./services/mongodb.service'),
 /* routes and controllers */
     pageRoutes = require('./routes/pages.routes'),
     portfolioRoutes = require('./routes/portfolio.routes'),
