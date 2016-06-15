@@ -1,3 +1,4 @@
+#main site (nodejs)
 server {
     listen 80 default_server;
     server_name _ www.mikestumpf.com;
@@ -15,11 +16,34 @@ server {
 
 }
 
+#reading list (wp)
 server {
     listen 80;
     root /var/www/mikestumpf.com/wordpress;
     index index.php index.html index.htm;
     server_name wordpress.mikestumpf.com;
+    location / {
+        try_files $uri $uri/ /index.php?q=$uri&$args;
+    }
+    error_page 404 /404.html;
+    error_page 500 502 503 504 /50x.html;
+    location = /50x.html {
+        root /usr/share/nginx/www;
+    }
+    location ~ \.php$ {
+        try_files $uri =404;
+        fastcgi_pass unix:/var/run/php5-fpm.sock;
+        fastcgi_index index.php;
+        include fastcgi_params;
+    }
+}
+
+#arthistory (wp)
+server {
+    listen 80;
+    root /var/www/arthistory;
+    index index.php index.html index.htm;
+    server_name arthistory.mikestumpf.com;
     location / {
         try_files $uri $uri/ /index.php?q=$uri&$args;
     }

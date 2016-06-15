@@ -42,7 +42,7 @@
 * ~~add image gallery in posts instead of individual images~~
 
 ### 1.4
-* add jenkins deploy scripts
+* ~~add jenkins deploy scripts
 * add auth to mongo
 * move env config out of git
 * switch from contentful to self hosted db
