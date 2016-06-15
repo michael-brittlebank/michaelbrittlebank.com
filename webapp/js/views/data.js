@@ -237,6 +237,36 @@ data.places = [
         lat: 20.4167,
         lng: -86.9167
     },
+    {
+        title:'New York, New York, USA',
+        lat: 40.7128,
+        lng: -74.0059
+    },
+    {
+        title:'Boston, Massachusetts, USA',
+        lat: 42.3601,
+        lng: -71.0589
+    },
+    {
+        title:'Winona, Minnesota, USA',
+        lat: 44.0554,
+        lng: -91.6664
+    },
+    {
+        title:'Clover, South Carolina, USA',
+        lat: 35.1112,
+        lng: -81.2265
+    },
+    {
+        title:'Newton, North Carolina, USA',
+        lat: 35.6699,
+        lng: -81.2215
+    },
+    {
+        title:'Louisville, Kentucky, USA',
+        lat: 38.2527,
+        lng: -85.7585
+    },
 /**
  * asia
  */
