@@ -28,3 +28,8 @@ webapp/public
 #log files
 logs/*
 !logs/README.md
+
+#wordpress
+wordpress/wp-content/aiowps_backups/
+wordpress/wp-content/uploads/
+wordpress/wp-content/upgrade/
