@@ -1,8 +1,8 @@
 /*
 Theme Name: mstumpf
-Theme URI: http://underscores.me/
-Author: Underscores.me
-Author URI: http://underscores.me/
+Theme URI: http://www.mikestumpf.com/
+Author: mstumpf
+Author URI: http://www.mikestumpf.com/
 Description: Description
 Version: 1.0.0
 License: GNU General Public License v2 or later
@@ -891,4 +891,14 @@ object {
 
 .gallery-caption {
 	display: block;
+}
+
+
+/* custom */
+h1,h2,h3,h4,h5,a,li,blockquote,p,a {
+    font-family: 'Open Sans Condensed', "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+    color: #403736;
+}
+p,a {
+    font-size: 16px;
 }
