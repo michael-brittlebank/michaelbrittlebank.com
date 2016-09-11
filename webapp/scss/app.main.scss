@@ -48,12 +48,14 @@
 @include foundation-title-bar;
 @include foundation-tooltip;
 @include foundation-top-bar;
-@import "core";
+
+/* Theme */
+@import "theme/core";
+@import "theme/header";
+@import "theme/footer";
+@import "theme/error";
 
 /* Templates */
-@import "templates/header";
-@import "templates/footer";
-@import "templates/error";
 @import "templates/page-homepage";
 @import "templates/page-portfolio";
 @import "templates/page-resume";

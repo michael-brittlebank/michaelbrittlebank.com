@@ -14,3 +14,11 @@ $font-weight-light: 300;
 $font-weight-medium: 400;
 $font-weight-heavy: 700;
 
+.serif-default {
+  color: $color-black;
+  font-family: $font-texgyre-regular;
+}
+.san-serif-default {
+  color: $color-black;
+  font-family: $font-open-sans-condensed;
+}

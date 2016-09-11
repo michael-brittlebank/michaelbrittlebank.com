@@ -17,55 +17,6 @@
       .content {
         height: 500px;
         margin-bottom: 50px;
-        &#content-bubbles {
-          overflow:hidden;
-          position: relative;
-          @include fade-in-default;
-          #bubble-holder {
-            border: 5px double $color-desert-black;
-            height:100%;
-            width:100%;
-            .bubble {
-              position: absolute;
-              background-color:purple;
-              @include border-radius(50%);
-              @include fade-in-default;
-            }
-          }
-        }
-        &#content-code {
-          @include fade-in-default;
-          @include breakpoint(small only) {
-            height: auto;
-          }
-          #code-desktop {
-            overflow: scroll;
-            max-width: 100%;
-            max-height: 100%;
-            @include breakpoint(small only) {
-              display:none;
-            }
-          }
-          #code-mobile {
-            display:none;
-            text-align: center;
-            @include breakpoint(small only) {
-              display:block;
-            }
-          }
-        }
-      }
-    }
-    #container-controls {
-      @include fade-in-default;
-      label {
-        white-space: nowrap;
-      }
-      .button {
-        margin: 25px auto;
-        display: block;
-        height: 40px;
-        white-space: nowrap;
       }
     }
     #container-modals {
@@ -77,13 +28,71 @@
       }
     }
   }
-  &.reading-list {
-    #content-reading-list {
+}
+
+//bubbles
+//----------------------
+#content-bubbles {
+  overflow:hidden;
+  position: relative;
+  @include fade-in-default;
+  #bubble-holder {
+    border: 5px double $color-desert-black;
+    height:100%;
+    width:100%;
+    .bubble {
+      position: absolute;
+      background-color:purple;
+      @include border-radius(50%);
       @include fade-in-default;
-      iframe {
-        width:100%;
-        max-width:100%;
-      }
     }
+  }
+}
+
+#content-code {
+  @include fade-in-default;
+  @include breakpoint(small only) {
+    height: auto;
+  }
+}
+
+#code-desktop {
+  overflow: scroll;
+  max-width: 100%;
+  max-height: 100%;
+  @include breakpoint(small only) {
+    display:none;
+  }
+}
+
+#code-mobile {
+  display:none;
+  text-align: center;
+  @include breakpoint(small only) {
+    display:block;
+  }
+}
+
+#container-controls {
+  @include fade-in-default;
+  label {
+    white-space: nowrap;
+  }
+  .button {
+    margin: 25px auto;
+    display: block;
+    height: 40px;
+    white-space: nowrap;
+  }
+}
+
+
+//reading list
+//----------------------
+#content-reading-list {
+  @include fade-in-default;
+  iframe {
+    width:100%;
+    max-width:100%;
   }
 }

@@ -99,7 +99,7 @@ module.exports = function(grunt) {
         sass: {
             all: {
                 files: {
-                    'webapp/public/css/app.min.css': 'webapp/scss/app.scss'
+                    'webapp/public/css/app.min.css': 'webapp/scss/app.main.scss'
                 },
                 options: {
                     style: 'compressed',

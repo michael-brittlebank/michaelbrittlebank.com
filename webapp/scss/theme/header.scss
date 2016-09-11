@@ -1,0 +1,68 @@
+//core
+//----------------------
+header {
+  .list-links {
+    color: $color-black;
+    font-size: rem-calc(20);
+    font-family: $font-open-sans-condensed;
+    text-transform: uppercase;
+  }
+  @include fade-in-default;
+  @include breakpoint(small only) {
+    //revert fade in on mobile devices
+    visibility: visible!important;
+    @include opacity(1);
+  }
+}
+
+
+//menu
+//----------------------
+#menu-mobile {
+  padding:0;
+  display: none;
+  @include breakpoint(small only) {
+    display:block;
+  }
+  .accordion {
+    border:none;
+    .accordion-title {
+      background-color: $color-white;
+      font-size: rem-calc(40);
+      &:hover {
+        color: scale-color($primary-color, $lightness: -15%);
+      }
+      &:before {
+        content: none !important;
+      }
+    }
+    .accordion-content {
+      padding: 0;
+      border: none;
+      a {
+        border-left: 0 solid transparent;
+        @extend .list-links;
+        @include transition-with-defaults(border);
+        &:hover, &.active {
+          border-left: 15px solid rgba($color-badgers-red, 0.75);
+        }
+      }
+    }
+  }
+}
+
+#menu-desktop {
+  @include breakpoint(small only) {
+    display: none;
+  }
+  li {
+    a {
+      border-bottom: 5px solid transparent;
+      @extend .list-links;
+      @include transition-with-defaults(border);
+      &:hover, &.active {
+        border-color: rgba($color-york-blue, 0.5);
+      }
+    }
+  }
+}
