@@ -205,6 +205,16 @@ data.places = [
         lat: 36.9817,
         lng: -86.4444
     },
+    {
+        title: 'Detroit, Michigan, USA',
+        lat: 42.3314,
+        lng: -83.0458
+    },
+    {
+        title: 'Inwood, Iowa, USA',
+        lat: 43.3072,
+        lng: -96.4320
+    },
     //canada
     {
         title:'Toronto, Ontario, Canada',
@@ -217,9 +227,9 @@ data.places = [
         lng: -79.0667
     },
     {
-        title:'Warblers Roost, Ontario, Canada',
-        lat: 45.815722,
-        lng: -79.562559
+        title:'Algonquin Provincial Park, Ontario, Canada',
+        lat: 45.8372,
+        lng: -78.3791
     },
     {
         title:'Montreal, Quebec, Canada',
@@ -390,6 +400,12 @@ data.places = [
         lat: 52.5167,
         lng: 13.3833
     },
+    //gibraltar
+    {
+        title:'Gibraltar',
+        lat: 36.1408,
+        lng: -5.3536
+    },
     //hungary
     {
         title:'Budapest, Hungary',
@@ -489,6 +505,16 @@ data.places = [
         lat: 53.3478,
         lng: -6.2597
     },
+    {
+        title:'Glendalough, Ireland',
+        lat: 53.0120,
+        lng: -6.3298
+    },
+    {
+        title:'Ness Country Park, United Kingdom',
+        lat: 54.9381,
+        lng: -7.1882
+    },
     //luxembourg
     {
         title:'Luxembourg City, Luxembourg',
@@ -500,6 +526,22 @@ data.places = [
         title:'Monaco',
         lat: 43.7328,
         lng: 7.4197
+    },
+    //morocco
+    {
+        title:'Tangier, Morocco',
+        lat: 35.7595,
+        lng: -5.8340
+    },
+    {
+        title:'Marrakech, Morocco',
+        lat: 31.6295,
+        lng: -7.9811
+    },
+    {
+        title:'Casablanca, Morocco',
+        lat: 33.5731,
+        lng: -7.5898
     },
     //netherlands
     {
@@ -533,6 +575,17 @@ data.places = [
         title:'Sintra, Portugal',
         lat: 38.7992,
         lng: -9.3883
+    },
+    //spain
+    {
+        title:'Barcelona, Spain',
+        lat: 41.3851,
+        lng: 2.1734
+    },
+    {
+        title:'Madrid, Spain',
+        lat: 40.4168,
+        lng: -3.7038
     },
     //slovakia
     {
