@@ -97,7 +97,7 @@ root.getSitemap = function(req, res, next) {
                 });
                 addUrlToSitemap(portfolioItems,contentfulService.contentTypes.portfolio);
                 //post
-                response[1].forEach(function(entry){
+                response[2].forEach(function(entry){
                     postItems.push(contentService.postDigest(entry));
                 });
                 addUrlToSitemap(postItems,contentfulService.contentTypes.post);
