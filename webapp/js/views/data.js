@@ -1,6 +1,26 @@
 var data = {};
 
 data.places = [
+
+/**
+ * asia
+ */
+    //morocco
+    {
+        title:'Tangier, Morocco',
+        lat: 35.7595,
+        lng: -5.8340
+    },
+    {
+        title:'Marrakech, Morocco',
+        lat: 31.6295,
+        lng: -7.9811
+    },
+    {
+        title:'Casablanca, Morocco',
+        lat: 33.5731,
+        lng: -7.5898
+    },
 /**
  * americas
  */
@@ -526,22 +546,6 @@ data.places = [
         title:'Monaco',
         lat: 43.7328,
         lng: 7.4197
-    },
-    //morocco
-    {
-        title:'Tangier, Morocco',
-        lat: 35.7595,
-        lng: -5.8340
-    },
-    {
-        title:'Marrakech, Morocco',
-        lat: 31.6295,
-        lng: -7.9811
-    },
-    {
-        title:'Casablanca, Morocco',
-        lat: 33.5731,
-        lng: -7.5898
     },
     //netherlands
     {
