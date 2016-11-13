@@ -21,6 +21,11 @@ data.places = [
         lat: 33.5731,
         lng: -7.5898
     },
+    {
+        title:'Imlil, Morocco',
+        lat: 31.1377,
+        lng: -7.9198
+    },
 /**
  * americas
  */
