@@ -270,6 +270,11 @@ data.places = [
         lat: 38.2527,
         lng: -85.7585
     },
+    {
+        title:'Tampa, Florida, USA',
+        lat: 27.9506,
+        lng: -82.4572
+    },
     //canada
     {
         title:'Toronto, Ontario, Canada',
