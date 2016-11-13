@@ -114,6 +114,7 @@ pages.getTravelPage = function(req, res, next) {
         .then(function (response) {
             var content = response[0];
             res.locals.album = contentService.albumDigest(content);
+            res.locals.googleMaps = true;
             res.render('page-travel');
         })
         .catch(function (err) {
