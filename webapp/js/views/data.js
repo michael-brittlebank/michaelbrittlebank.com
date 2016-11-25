@@ -3,7 +3,7 @@ var data = {};
 data.places = [
 
 /**
- * asia
+ * africa
  */
     //morocco
     {
@@ -29,7 +29,7 @@ data.places = [
 /**
  * americas
  */
-    //america
+    //usa
     {
         title:'Isle Royale National Park, Michigan, USA',
         lat: 48.1000,
@@ -345,6 +345,34 @@ data.places = [
         lat: 47.1333,
         lng: 9.8167
     },
+    {
+        title:'Vienna, Austria',
+        lat: 48.2082,
+        lng: 16.3738
+    },
+    {
+        title:'Salzburg, Austria',
+        lat: 47.8095,
+        lng: 13.0550
+    },
+    //belgium
+    {
+        title:'Brussels, Belgium',
+        lat: 50.8503,
+        lng: 4.3517
+    },
+    //bulgaria
+    {
+        title:'Sofia, Bulgaria',
+        lat: 42.6977,
+        lng: 23.3219
+    },
+    //croatia
+    {
+        title:'Zagreb, Croatia',
+        lat: 45.8150,
+        lng: 15.9819
+    },
     //czech republic
     {
         title:'Prague, Czech Republic',
@@ -382,6 +410,12 @@ data.places = [
         title:'Sheffield, England',
         lat: 53.3836,
         lng: -1.4669
+    },
+    //finland
+    {
+        title:'Helsinki, Finland',
+        lat: 60.1699,
+        lng: 24.9384
     },
     //france
     {
@@ -430,11 +464,27 @@ data.places = [
         lat: 52.5167,
         lng: 13.3833
     },
+    {
+        title:'Munich, Germany',
+        lat: 48.1351,
+        lng: 11.5820
+    },
+    {
+        title:'Füssen, Germany',
+        lat: 47.5696,
+        lng: 10.7004
+    },
     //gibraltar
     {
         title:'Gibraltar',
         lat: 36.1408,
         lng: -5.3536
+    },
+    //greece
+    {
+        title:'Athens, Greece',
+        lat: 37.9838,
+        lng: 23.7275
     },
     //hungary
     {
@@ -575,6 +625,18 @@ data.places = [
         lat: 54.9381,
         lng: -7.1882
     },
+    //latvia
+    {
+        title:'Riga, Latvia',
+        lat: 56.9496,
+        lng: 24.1052
+    },
+    //liechtenstein
+    {
+        title:'Liechtenstein',
+        lat: 47.1660,
+        lng: 9.5554
+    },
     //luxembourg
     {
         title:'Luxembourg City, Luxembourg',
@@ -609,6 +671,12 @@ data.places = [
         lat: 58.9861,
         lng: 6.1886
     },
+    //poland
+    {
+        title:'Warsaw, Poland',
+        lat: 52.2297,
+        lng: 21.0122
+    },
     //portugal
     {
         title:'Lisbon, Portugal',
@@ -620,11 +688,23 @@ data.places = [
         lat: 38.7992,
         lng: -9.3883
     },
+    //romania
+    {
+        title:'Bucharest, Romania',
+        lat: 44.4268,
+        lng: 26.1025
+    },
     //san marino
     {
         title:'San Marino',
         lat: 43.9424,
         lng: 12.4578
+    },
+    //serbia
+    {
+        title:'Belgrade, Serbia',
+        lat: 44.7866,
+        lng: 20.4489
     },
     //spain
     {
@@ -695,5 +775,21 @@ data.places = [
         title:'Bellinzona, Switzerland',
         lat: 46.2000,
         lng: 9.0167
+    },
+    {
+        title:'Zurich, Switzerland',
+        lat: 47.3769,
+        lng: 8.5417
+    },
+    {
+        title:'Bern, Switzerland',
+        lat: 46.9480,
+        lng: 7.4474
+    },
+    //ukraine
+    {
+        title:'Kiev, Ukraine',
+        lat: 50.4501,
+        lng: 30.5234
     }
 ];
