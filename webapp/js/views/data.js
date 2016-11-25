@@ -791,5 +791,11 @@ data.places = [
         title:'Kiev, Ukraine',
         lat: 50.4501,
         lng: 30.5234
+    },
+    //vatican city
+    {
+        title:'Vatican City',
+        lat: 41.9029,
+        lng: 12.4534
     }
 ];
