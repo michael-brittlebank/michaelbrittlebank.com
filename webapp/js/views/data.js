@@ -499,6 +499,36 @@ data.places = [
         lat: 43.9167,
         lng: 8.1167
     },
+    {
+        title:'Venice, Italy',
+        lat: 45.4408,
+        lng: 12.3155
+    },
+    {
+        title:'Florence, Italy',
+        lat: 43.7696,
+        lng: 11.2558
+    },
+    {
+        title:'Pisa, Italy',
+        lat: 43.7228,
+        lng: 10.4017
+    },
+    {
+        title:'Rome, Italy',
+        lat: 41.9028,
+        lng: 12.4964
+    },
+    {
+        title:'Naples, Italy',
+        lat: 40.8518,
+        lng: 14.2681
+    },
+    {
+        title:'Pompeii, Italy',
+        lat: 40.7462,
+        lng: 14.4989
+    },
     //ireland
     {
         title:'Glenveagh National Park, Ireland',
@@ -589,6 +619,12 @@ data.places = [
         title:'Sintra, Portugal',
         lat: 38.7992,
         lng: -9.3883
+    },
+    //san marino
+    {
+        title:'San Marino',
+        lat: 43.9424,
+        lng: 12.4578
     },
     //spain
     {
