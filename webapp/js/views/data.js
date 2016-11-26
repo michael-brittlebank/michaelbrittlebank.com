@@ -951,9 +951,48 @@ data.places = [
         title:'Cozumel, Mexico',
         lat: 20.4167,
         lng: -86.9167
-    }
+    },
     /**
      * south america
      */
-
+    //argentina
+    {
+        title:'Buenos Aires, Argentina',
+        lat: -34.6037,
+        lng: -58.3816
+    },
+    //brazil
+    {
+        title:'Rio De Janeiro, Brazil',
+        lat: -22.9068,
+        lng: -43.1729
+    },
+    //chile
+    {
+        title:'Santiago, Chile',
+        lat: -33.4489,
+        lng: -70.6693
+    },
+    //peru
+    {
+        title:'Lima, Peru',
+        lat: -12.0464,
+        lng: -77.0428
+    },
+    {
+        title:'Machu Picchu, Peru',
+        lat: -13.1631,
+        lng: -72.5450
+    },
+    {
+        title:'Cusco, Peru',
+        lat: -13.5320,
+        lng: -71.9675
+    },
+    //uruguay
+    {
+        title:'Montevideo, Uruguay',
+        lat: -34.9011,
+        lng: -56.1645
+    }
 ];
