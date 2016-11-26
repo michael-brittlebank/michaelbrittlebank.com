@@ -2,9 +2,9 @@ var data = {};
 
 data.places = [
 
-/**
- * africa
- */
+    /**
+     * africa
+     */
     //morocco
     {
         title:'Tangier, Morocco',
@@ -26,290 +26,82 @@ data.places = [
         lat: 31.1377,
         lng: -7.9198
     },
-/**
- * americas
- */
-    //usa
+    /**
+     * asia
+     */
+    //australia
     {
-        title:'Isle Royale National Park, Michigan, USA',
-        lat: 48.1000,
-        lng: -88.5500
+        title:'Sydney, Australia',
+        lat: -33.8688,
+        lng: 151.2093
     },
     {
-        title:'Orlando, Florida, USA',
-        lat:28.4158,
-        lng:-81.2989
+        title:'Melbourne, Australia',
+        lat: -37.8136,
+        lng: 144.9631
+    },
+    //china
+    {
+        title:'Beijing, China',
+        lat: 39.9042,
+        lng: 116.4074
     },
     {
-        title:'Birchwood, Wisconsin, USA',
-        lat:45.7258,
-        lng:-91.6089
+        title:'Badaling, China',
+        lat: 40.3598,
+        lng: 116.0200
     },
     {
-        title:'Madison, Wisconsin, USA',
-        lat:43.0667,
-        lng:-89.4000
+        title:'Shanghai, China',
+        lat: 31.2304,
+        lng: 121.4737
     },
     {
-        title:'Chicago, Illinois, USA',
-        lat:41.8369,
-        lng:-87.6847
+        title:'Shanghai, China',
+        lat: 31.2304,
+        lng: 121.4737
     },
     {
-        title:'Charlotte, North Carolina, USA',
-        lat:35.2269,
-        lng:-80.8433
+        title:'Hong Kong',
+        lat: 22.3964,
+        lng: 114.1095
+    },
+    //india
+    {
+        title:'Mumbai, India',
+        lat: 19.0760,
+        lng: 72.8777
     },
     {
-        title:'Indianapolis, Indiana, USA',
-        lat:39.7910,
-        lng:-86.1480
+        title:'New Delhi, India',
+        lat: 28.6139,
+        lng: 77.2090
     },
     {
-        title:'Baltimore, Maryland, USA',
-        lat:39.2833,
-        lng:-76.6167
+        title:'Jaipur, India',
+        lat: 26.9124,
+        lng: 75.7873
     },
     {
-        title:'Washington D.C., USA',
-        lat: 38.9047,
-        lng:-77.0164
+        title:'Agra, India',
+        lat: 27.1767,
+        lng: 78.0081
     },
     {
-        title:'St. Louis, Missouri, USA',
-        lat: 38.6272,
-        lng: -90.1978
+        title:'Jaisalmer, India',
+        lat: 26.9157,
+        lng: 70.9083
     },
     {
-        title:'San Francisco, California, USA',
-        lat: 37.7833,
-        lng: -122.4167
+        title:'Kolkata, India',
+        lat: 22.5726,
+        lng: 88.3639
     },
     {
-        title:'San Louis Obispo, California, USA',
-        lat: 35.2742,
-        lng: -120.6631
+        title:'Bengaluru, India',
+        lat: 12.9716,
+        lng: 77.5946
     },
-    {
-        title:'Muir Woods National Monument, California, USA',
-        lat: 37.8919,
-        lng: -122.5708
-    },
-    {
-        title:'Portland, Oregon, USA',
-        lat: 45.5200,
-        lng: -122.6819
-    },
-    {
-        title:'Los Angeles, California, USA',
-        lat: 34.0500,
-        lng: -118.2500
-    },
-    {
-        title:'Milwaukee, Wisconsin, USA',
-        lat: 43.0500,
-        lng: -87.9500
-    },
-    {
-        title:'Rochester, Minnesota, USA',
-        lat: 44.0234,
-        lng: -92.4630
-    },
-    {
-        title:'Kauai, Hawaii, USA',
-        lat: 22.0833,
-        lng: -159.5000
-    },
-    {
-        title:'Maui, Hawaii, USA',
-        lat: 20.8000,
-        lng: -156.3333
-    },
-    {
-        title:'Platteville, Wisconsin, USA',
-        lat: 42.7371,
-        lng: -90.4775
-    },
-    {
-        title:'Rockford, Illinois, USA',
-        lat: 42.2594,
-        lng: -89.0644
-    },
-    {
-        title:'Eau Claire, Wisconsin, USA',
-        lat: 44.8167,
-        lng: -91.5000
-    },
-    {
-        title:'Appleton, Wisconsin, USA',
-        lat: 44.2667,
-        lng: -88.4000
-    },
-    {
-        title:'Duluth, Minnesota, USA',
-        lat: 46.8000,
-        lng: -92.1000
-    },
-    {
-        title:'Superior, Wisconsin, USA',
-        lat: 46.7069,
-        lng: -92.0853
-    },
-    {
-        title:'Albert Lea, Minnesota, USA',
-        lat: 43.6479,
-        lng: -93.3688
-    },
-    {
-        title:'La Crosse, Wisconsin, USA',
-        lat: 43.8133,
-        lng: -91.2331
-    },
-    {
-        title:'Bella Vista, Arkansas, USA',
-        lat: 36.4689,
-        lng: -94.2686
-    },
-    {
-        title:'Kansas City, Missouri, USA',
-        lat: 39.0997,
-        lng: -94.5783
-    },
-    {
-        title:'Dubuque, Iowa, USA',
-        lat: 42.5043,
-        lng: -90.6869
-    },
-    {
-        title:'Minocqua, Wisconsin, USA',
-        lat: 45.8714,
-        lng: -89.7111
-    },
-    {
-        title:'Grand Canyon, Arizona, USA',
-        lat: 36.1000,
-        lng: -112.1000
-    },
-    {
-        title:'Sedona, Arizona, USA',
-        lat: 34.8600,
-        lng: -111.7892
-    },
-    {
-        title:'Erie, Pennsylvania, USA',
-        lat: 42.1296,
-        lng: -80.0852
-    },
-    {
-        title:'Minneapolis, Minnesota, USA',
-        lat: 44.9778,
-        lng: -93.2650
-    },
-    {
-        title:'Bentonville, Arkansas, USA',
-        lat: 36.3667,
-        lng: -94.2133
-    },
-    {
-        title:'Grinnell, Iowa, USA',
-        lat: 41.7436,
-        lng: -92.7247
-    },
-    {
-        title:'Vero Beach, Florida, USA',
-        lat: 27.6500,
-        lng: -80.3833
-    },
-    {
-        title:'Lawrence, Kansas, USA',
-        lat: 38.9717,
-        lng: -95.2353
-    },
-    {
-        title: 'Bowling Green, Kentucky, USA',
-        lat: 36.9817,
-        lng: -86.4444
-    },
-    {
-        title: 'Detroit, Michigan, USA',
-        lat: 42.3314,
-        lng: -83.0458
-    },
-    {
-        title: 'Inwood, Iowa, USA',
-        lat: 43.3072,
-        lng: -96.4320
-    },
-    {
-        title:'New York, New York, USA',
-        lat: 40.7128,
-        lng: -74.0059
-    },
-    {
-        title:'Boston, Massachusetts, USA',
-        lat: 42.3601,
-        lng: -71.0589
-    },
-    {
-        title:'Winona, Minnesota, USA',
-        lat: 44.0554,
-        lng: -91.6664
-    },
-    {
-        title:'Clover, South Carolina, USA',
-        lat: 35.1112,
-        lng: -81.2265
-    },
-    {
-        title:'Newton, North Carolina, USA',
-        lat: 35.6699,
-        lng: -81.2215
-    },
-    {
-        title:'Louisville, Kentucky, USA',
-        lat: 38.2527,
-        lng: -85.7585
-    },
-    {
-        title:'Tampa, Florida, USA',
-        lat: 27.9506,
-        lng: -82.4572
-    },
-    //canada
-    {
-        title:'Toronto, Ontario, Canada',
-        lat: 43.7000,
-        lng: -79.4000
-    },
-    {
-        title:'Niagara Falls, Ontario, Canada',
-        lat: 43.1167,
-        lng: -79.0667
-    },
-    {
-        title:'Algonquin Provincial Park, Ontario, Canada',
-        lat: 45.8372,
-        lng: -78.3791
-    },
-    {
-        title:'Montreal, Quebec, Canada',
-        lat: 45.5017,
-        lng: -73.5673
-    },
-    //mexico
-    {
-        title:'Costa Maya, Mexico',
-        lat: 18.7140,
-        lng: -87.7090
-    },
-    {
-        title:'Cozumel, Mexico',
-        lat: 20.4167,
-        lng: -86.9167
-    },
-/**
- * asia
- */
     //japan
     {
         title:'Tokyo, Japan',
@@ -331,9 +123,50 @@ data.places = [
         lat: 35.1833,
         lng: 139.0333
     },
-/**
- * europe
- */
+    //malaysia
+    {
+        title:'Kuala Lumpur, Malaysia',
+        lat: 3.1390,
+        lng: 101.6869
+    },
+    //new zealand
+    {
+        title:'Auckland, New Zealand',
+        lat: -36.8485,
+        lng: 174.7633
+    },
+    {
+        title:'Wellington, New Zealand',
+        lat: -41.2865,
+        lng: 174.7762
+    },
+    //singapore
+    {
+        title:'Singapore',
+        lat: 1.3521,
+        lng: 103.8198
+    },
+    //south korea
+    {
+        title:'Seoul, South Korea',
+        lat: 37.5665,
+        lng: 126.9780
+    },
+    //sri lanka
+    {
+        title:'Colombo, Sri Lanka',
+        lat: 6.9271,
+        lng: 79.8612
+    },
+    //thailand
+    {
+        title:'Bangkok, Thailand',
+        lat: 13.7563,
+        lng: 100.5018
+    },
+    /**
+     * europe
+     */
     //austria
     {
         title:'Innsbruck, Austria',
@@ -410,6 +243,11 @@ data.places = [
         title:'Sheffield, England',
         lat: 53.3836,
         lng: -1.4669
+    },
+    {
+        title:'The Cotswolds, England',
+        lat: 51.7910,
+        lng: -2.0077
     },
     //finland
     {
@@ -812,5 +650,310 @@ data.places = [
         title:'Vatican City',
         lat: 41.9029,
         lng: 12.4534
+    },
+    /**
+     * middle east
+     */
+    //israel
+    {
+        title:'Tel Aviv, Israel',
+        lat: 32.0853,
+        lng: 34.7818
+    },
+    {
+        title:'Jerusalem, Israel',
+        lat: 31.7683,
+        lng: 35.2137
+    },
+    //kuwait
+    {
+        title:'Kuwait City, Kuwait',
+        lat: 29.3117,
+        lng: 47.4818
+    },
+    /**
+     * north america
+     */
+    //usa
+    {
+        title:'Isle Royale National Park, Michigan, USA',
+        lat: 48.1000,
+        lng: -88.5500
+    },
+    {
+        title:'Orlando, Florida, USA',
+        lat:28.4158,
+        lng:-81.2989
+    },
+    {
+        title:'Birchwood, Wisconsin, USA',
+        lat:45.7258,
+        lng:-91.6089
+    },
+    {
+        title:'Madison, Wisconsin, USA',
+        lat:43.0667,
+        lng:-89.4000
+    },
+    {
+        title:'Chicago, Illinois, USA',
+        lat:41.8369,
+        lng:-87.6847
+    },
+    {
+        title:'Charlotte, North Carolina, USA',
+        lat:35.2269,
+        lng:-80.8433
+    },
+    {
+        title:'Indianapolis, Indiana, USA',
+        lat:39.7910,
+        lng:-86.1480
+    },
+    {
+        title:'Baltimore, Maryland, USA',
+        lat:39.2833,
+        lng:-76.6167
+    },
+    {
+        title:'Washington D.C., USA',
+        lat: 38.9047,
+        lng:-77.0164
+    },
+    {
+        title:'St. Louis, Missouri, USA',
+        lat: 38.6272,
+        lng: -90.1978
+    },
+    {
+        title:'San Francisco, California, USA',
+        lat: 37.7833,
+        lng: -122.4167
+    },
+    {
+        title:'San Louis Obispo, California, USA',
+        lat: 35.2742,
+        lng: -120.6631
+    },
+    {
+        title:'Muir Woods National Monument, California, USA',
+        lat: 37.8919,
+        lng: -122.5708
+    },
+    {
+        title:'Portland, Oregon, USA',
+        lat: 45.5200,
+        lng: -122.6819
+    },
+    {
+        title:'Los Angeles, California, USA',
+        lat: 34.0500,
+        lng: -118.2500
+    },
+    {
+        title:'Milwaukee, Wisconsin, USA',
+        lat: 43.0500,
+        lng: -87.9500
+    },
+    {
+        title:'Rochester, Minnesota, USA',
+        lat: 44.0234,
+        lng: -92.4630
+    },
+    {
+        title:'Kauai, Hawaii, USA',
+        lat: 22.0833,
+        lng: -159.5000
+    },
+    {
+        title:'Maui, Hawaii, USA',
+        lat: 20.8000,
+        lng: -156.3333
+    },
+    {
+        title:'Platteville, Wisconsin, USA',
+        lat: 42.7371,
+        lng: -90.4775
+    },
+    {
+        title:'Rockford, Illinois, USA',
+        lat: 42.2594,
+        lng: -89.0644
+    },
+    {
+        title:'Eau Claire, Wisconsin, USA',
+        lat: 44.8167,
+        lng: -91.5000
+    },
+    {
+        title:'Appleton, Wisconsin, USA',
+        lat: 44.2667,
+        lng: -88.4000
+    },
+    {
+        title:'Duluth, Minnesota, USA',
+        lat: 46.8000,
+        lng: -92.1000
+    },
+    {
+        title:'Superior, Wisconsin, USA',
+        lat: 46.7069,
+        lng: -92.0853
+    },
+    {
+        title:'Albert Lea, Minnesota, USA',
+        lat: 43.6479,
+        lng: -93.3688
+    },
+    {
+        title:'La Crosse, Wisconsin, USA',
+        lat: 43.8133,
+        lng: -91.2331
+    },
+    {
+        title:'Bella Vista, Arkansas, USA',
+        lat: 36.4689,
+        lng: -94.2686
+    },
+    {
+        title:'Kansas City, Missouri, USA',
+        lat: 39.0997,
+        lng: -94.5783
+    },
+    {
+        title:'Dubuque, Iowa, USA',
+        lat: 42.5043,
+        lng: -90.6869
+    },
+    {
+        title:'Minocqua, Wisconsin, USA',
+        lat: 45.8714,
+        lng: -89.7111
+    },
+    {
+        title:'Grand Canyon, Arizona, USA',
+        lat: 36.1000,
+        lng: -112.1000
+    },
+    {
+        title:'Sedona, Arizona, USA',
+        lat: 34.8600,
+        lng: -111.7892
+    },
+    {
+        title:'Erie, Pennsylvania, USA',
+        lat: 42.1296,
+        lng: -80.0852
+    },
+    {
+        title:'Minneapolis, Minnesota, USA',
+        lat: 44.9778,
+        lng: -93.2650
+    },
+    {
+        title:'Bentonville, Arkansas, USA',
+        lat: 36.3667,
+        lng: -94.2133
+    },
+    {
+        title:'Grinnell, Iowa, USA',
+        lat: 41.7436,
+        lng: -92.7247
+    },
+    {
+        title:'Vero Beach, Florida, USA',
+        lat: 27.6500,
+        lng: -80.3833
+    },
+    {
+        title:'Lawrence, Kansas, USA',
+        lat: 38.9717,
+        lng: -95.2353
+    },
+    {
+        title: 'Bowling Green, Kentucky, USA',
+        lat: 36.9817,
+        lng: -86.4444
+    },
+    {
+        title: 'Detroit, Michigan, USA',
+        lat: 42.3314,
+        lng: -83.0458
+    },
+    {
+        title: 'Inwood, Iowa, USA',
+        lat: 43.3072,
+        lng: -96.4320
+    },
+    {
+        title:'New York, New York, USA',
+        lat: 40.7128,
+        lng: -74.0059
+    },
+    {
+        title:'Boston, Massachusetts, USA',
+        lat: 42.3601,
+        lng: -71.0589
+    },
+    {
+        title:'Winona, Minnesota, USA',
+        lat: 44.0554,
+        lng: -91.6664
+    },
+    {
+        title:'Clover, South Carolina, USA',
+        lat: 35.1112,
+        lng: -81.2265
+    },
+    {
+        title:'Newton, North Carolina, USA',
+        lat: 35.6699,
+        lng: -81.2215
+    },
+    {
+        title:'Louisville, Kentucky, USA',
+        lat: 38.2527,
+        lng: -85.7585
+    },
+    {
+        title:'Tampa, Florida, USA',
+        lat: 27.9506,
+        lng: -82.4572
+    },
+    //canada
+    {
+        title:'Toronto, Ontario, Canada',
+        lat: 43.7000,
+        lng: -79.4000
+    },
+    {
+        title:'Niagara Falls, Ontario, Canada',
+        lat: 43.1167,
+        lng: -79.0667
+    },
+    {
+        title:'Algonquin Provincial Park, Ontario, Canada',
+        lat: 45.8372,
+        lng: -78.3791
+    },
+    {
+        title:'Montreal, Quebec, Canada',
+        lat: 45.5017,
+        lng: -73.5673
+    },
+    //mexico
+    {
+        title:'Costa Maya, Mexico',
+        lat: 18.7140,
+        lng: -87.7090
+    },
+    {
+        title:'Cozumel, Mexico',
+        lat: 20.4167,
+        lng: -86.9167
     }
+    /**
+     * south america
+     */
+
 ];
