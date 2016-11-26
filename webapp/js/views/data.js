@@ -550,6 +550,11 @@ data.places = [
         lng: 8.1167
     },
     {
+        title:'Turin, Italy',
+        lat: 45.0703,
+        lng: 7.6869
+    },
+    {
         title:'Venice, Italy',
         lat: 45.4408,
         lng: 12.3155
