@@ -470,9 +470,9 @@ data.places = [
         lng: 11.5820
     },
     {
-        title:'Füssen, Germany',
-        lat: 47.5696,
-        lng: 10.7004
+        title:'Neuschwanstein Castle, Germany',
+        lat: 47.5576,
+        lng: 10.7498
     },
     //gibraltar
     {
