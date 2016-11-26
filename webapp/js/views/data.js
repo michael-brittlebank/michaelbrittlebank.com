@@ -584,6 +584,16 @@ data.places = [
         lat: 40.7462,
         lng: 14.4989
     },
+    {
+        title:'Bologna, Italy',
+        lat: 44.4949,
+        lng: 11.3426
+    },
+    {
+        title:'Verona, Italy',
+        lat: 45.4384,
+        lng: 10.9916
+    },
     //ireland
     {
         title:'Glenveagh National Park, Ireland',
