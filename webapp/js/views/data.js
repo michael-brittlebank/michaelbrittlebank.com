@@ -129,6 +129,11 @@ data.places = [
         lat: 3.1390,
         lng: 101.6869
     },
+    {
+        title:'Padang Besar, Malaysia',
+        lat: 6.6626,
+        lng: 100.3217
+    },
     //new zealand
     {
         title:'Auckland, New Zealand',
@@ -163,6 +168,21 @@ data.places = [
         title:'Bangkok, Thailand',
         lat: 13.7563,
         lng: 100.5018
+    },
+    {
+        title:'Chang Mai, Thailand',
+        lat: 18.7061,
+        lng: 98.9817
+    },
+    {
+        title:'Pattaya, Thailand',
+        lat: 12.9276,
+        lng: 100.8771
+    },
+    {
+        title:'Ayutthaya, Thailand',
+        lat: 14.3692,
+        lng: 100.5877
     },
     /**
      * europe
@@ -670,6 +690,12 @@ data.places = [
         title:'Kuwait City, Kuwait',
         lat: 29.3117,
         lng: 47.4818
+    },
+    //turkey
+    {
+        title:'Istanbul, Turkey',
+        lat: 41.0082,
+        lng: 28.9784
     },
     /**
      * north america
