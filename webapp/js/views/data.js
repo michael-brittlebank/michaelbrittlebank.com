@@ -376,6 +376,77 @@ data.places = [
         lat: 64.7500,
         lng: -19.9831
     },
+    //ireland
+    {
+        title:'Glenveagh National Park, Ireland',
+        lat: 55.0167,
+        lng: -8.0500
+    },
+    {
+        title:'Cliffs of Moher, Ireland',
+        lat: 52.9361,
+        lng: -9.4708
+    },
+    {
+        title:'Connemara, Ireland',
+        lat: 53.5000,
+        lng: -9.7500
+    },
+    {
+        title:'Giant\'s Causeway, Ireland',
+        lat: 55.2408,
+        lng: -6.5117
+    },
+    {
+        title:'Carrick-a-Rede Rope Bridge, Ireland',
+        lat: 55.2400,
+        lng: -6.3310
+    },
+    {
+        title:'Galway, Ireland',
+        lat: 53.2719,
+        lng: -9.0489
+    },
+    {
+        title:'Dublin, Ireland',
+        lat: 53.3478,
+        lng: -6.2597
+    },
+    {
+        title:'Glendalough, Ireland',
+        lat: 53.0120,
+        lng: -6.3298
+    },
+    {
+        title:'Waterford, Ireland',
+        lat: 52.2593,
+        lng: -7.1101
+    },
+    {
+        title:'Cork, Ireland',
+        lat: 51.8969,
+        lng: -8.4863
+    },
+    {
+        title:'Killarney National Park, Ireland',
+        lat: 52.0599,
+        lng: -9.504
+    },
+    {
+        title:'Dingle, Ireland',
+        lat: 52.1409,
+        lng: -10.2640
+    },
+    {
+        title:'Limerick, Ireland',
+        lat: 52.6680,
+        lng: -8.6305
+    },
+    {
+        title:'Trim, Ireland',
+        lat: 53.5524,
+        lng: -6.7866
+    },
     //italy
     {
         title:'Domodossola, Italy',
@@ -452,52 +523,6 @@ data.places = [
         lat: 45.4384,
         lng: 10.9916
     },
-    //ireland
-    {
-        title:'Glenveagh National Park, Ireland',
-        lat: 55.0167,
-        lng: -8.0500
-    },
-    {
-        title:'Cliffs of Moher, Ireland',
-        lat: 52.9361,
-        lng: -9.4708
-    },
-    {
-        title:'Connemara, Ireland',
-        lat: 53.5000,
-        lng: -9.7500
-    },
-    {
-        title:'Giant\'s Causeway, Ireland',
-        lat: 55.2408,
-        lng: -6.5117
-    },
-    {
-        title:'Carrick-a-Rede Rope Bridge, Ireland',
-        lat: 55.2400,
-        lng: -6.3310
-    },
-    {
-        title:'Galway, Ireland',
-        lat: 53.2719,
-        lng: -9.0489
-    },
-    {
-        title:'Dublin, Ireland',
-        lat: 53.3478,
-        lng: -6.2597
-    },
-    {
-        title:'Glendalough, Ireland',
-        lat: 53.0120,
-        lng: -6.3298
-    },
-    {
-        title:'Ness Country Park, United Kingdom',
-        lat: 54.9381,
-        lng: -7.1882
-    },
     //latvia
     {
         title:'Riga, Latvia',
@@ -527,6 +552,12 @@ data.places = [
         title:'Amsterdam, Netherlands',
         lat: 52.3667,
         lng: 4.9000
+    },
+    //northern ireland
+    {
+        title:'Ness Country Park, United Kingdom',
+        lat: 54.9381,
+        lng: -7.1882
     },
     //norway
     {
@@ -572,6 +603,27 @@ data.places = [
         title:'San Marino',
         lat: 43.9424,
         lng: 12.4578
+    },
+    //scotland
+    {
+        title:'Glasgow, Scotland',
+        lat: 55.8642,
+        lng: -4.2518
+    },
+    {
+        title:'Loch Ness, Scotland',
+        lat: 57.3229,
+        lng: -4.4244
+    },
+    {
+        title:'Glen Brittle, Scotland',
+        lat: 57.2500,
+        lng: -6.2833
+    },
+    {
+        title:'Edinburgh, Scotland',
+        lat: 55.9533,
+        lng: -3.1883
     },
     //serbia
     {
