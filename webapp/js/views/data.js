@@ -389,8 +389,8 @@ data.places = [
     },
     {
         title:'Connemara, Ireland',
-        lat: 53.5000,
-        lng: -9.7500
+        lat: 53.5384,
+        lng: -9.8875
     },
     {
         title:'Giant\'s Causeway, Ireland',
