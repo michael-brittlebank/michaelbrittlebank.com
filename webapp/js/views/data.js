@@ -40,6 +40,12 @@ data.places = [
         lat: -37.8136,
         lng: 144.9631
     },
+    //brunei
+    {
+        title:'Bandar Seri Begawan, Brunei',
+        lat: 4.5353,
+        lng: 114.7277
+    },
     //china
     {
         title:'Beijing, China',
@@ -102,6 +108,17 @@ data.places = [
         lat: 12.9716,
         lng: 77.5946
     },
+    {
+        title:'Chennai, India',
+        lat: 13.0827,
+        lng: 80.2707
+    },
+    //indonesia
+    {
+        title:'Jakarta, Indonesia',
+        lat: -6.1745,
+        lng: 106.8227
+    },
     //japan
     {
         title:'Tokyo, Japan',
@@ -144,6 +161,12 @@ data.places = [
         title:'Wellington, New Zealand',
         lat: -41.2865,
         lng: 174.7762
+    },
+    //phillipines
+    {
+        title:'Manila, Phillipines',
+        lat: 14.5995,
+        lng: 120.9842
     },
     //singapore
     {
@@ -220,6 +243,11 @@ data.places = [
         lat: 42.6977,
         lng: 23.3219
     },
+    {
+        title:'Veliko Tarnovo, Bulgaria',
+        lat: 43.0757,
+        lng: 25.6172
+    },
     //croatia
     {
         title:'Zagreb, Croatia',
@@ -268,6 +296,12 @@ data.places = [
         title:'The Cotswolds, England',
         lat: 51.7910,
         lng: -2.0077
+    },
+    //estonia
+    {
+        title:'Tallinn, Estonia',
+        lat: 59.4370,
+        lng: 24.7536
     },
     //finland
     {
@@ -343,6 +377,11 @@ data.places = [
         title:'Athens, Greece',
         lat: 37.9838,
         lng: 23.7275
+    },
+    {
+        title:'Thessaloniki, Greece',
+        lat: 40.6401,
+        lng: 22.9444
     },
     //hungary
     {
@@ -598,6 +637,17 @@ data.places = [
         lat: 44.4268,
         lng: 26.1025
     },
+    //russia
+    {
+        title:'St. Petersburg, Russia',
+        lat: 59.9343,
+        lng: 30.3351
+    },
+    {
+        title:'Moscow, Russia',
+        lat: 55.7558,
+        lng: 37.6173
+    },
     //san marino
     {
         title:'San Marino',
@@ -748,6 +798,12 @@ data.places = [
         title:'Istanbul, Turkey',
         lat: 41.0082,
         lng: 28.9784
+    },
+    //united arab emirates
+    {
+        title:'Dubai, United Arab Emirates',
+        lat: 25.2048,
+        lng: 55.2708
     },
     /**
      * north america
