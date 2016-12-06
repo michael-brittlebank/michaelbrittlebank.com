@@ -146,11 +146,6 @@ data.places = [
         lat: 3.1390,
         lng: 101.6869
     },
-    {
-        title:'Padang Besar, Malaysia',
-        lat: 6.6626,
-        lng: 100.3217
-    },
     //new zealand
     {
         title:'Auckland, New Zealand',
@@ -161,6 +156,16 @@ data.places = [
         title:'Wellington, New Zealand',
         lat: -41.2865,
         lng: 174.7762
+    },
+    {
+        title:'Dunedin, New Zealand',
+        lat: -45.8788,
+        lng: 170.5028
+    },
+    {
+        title:'Christchurch, New Zealand',
+        lat: -43.5321,
+        lng: 172.6362
     },
     //phillipines
     {
@@ -193,14 +198,14 @@ data.places = [
         lng: 100.5018
     },
     {
-        title:'Chang Mai, Thailand',
+        title:'Chiang Mai, Thailand',
         lat: 18.7061,
         lng: 98.9817
     },
     {
-        title:'Pattaya, Thailand',
-        lat: 12.9276,
-        lng: 100.8771
+        title:'Chiang Rai, Thailand',
+        lat: 19.9071,
+        lng: 99.8310
     },
     {
         title:'Ayutthaya, Thailand',
@@ -365,6 +370,11 @@ data.places = [
         title:'Neuschwanstein Castle, Germany',
         lat: 47.5576,
         lng: 10.7498
+    },
+    {
+        title:'Frankfurt, Germany',
+        lat: 50.1109,
+        lng: 8.6821
     },
     //gibraltar
     {
