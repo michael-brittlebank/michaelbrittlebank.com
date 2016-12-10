@@ -173,6 +173,11 @@ data.places = [
         lat: 14.5995,
         lng: 120.9842
     },
+    {
+        title:'Banaue, Phillipines',
+        lat: 16.9496,
+        lng: 121.1023
+    },
     //singapore
     {
         title:'Singapore',
@@ -185,11 +190,26 @@ data.places = [
         lat: 37.5665,
         lng: 126.9780
     },
+    {
+        title:'Busan, South Korea',
+        lat: 35.1796,
+        lng: 129.0756
+    },
     //sri lanka
     {
         title:'Colombo, Sri Lanka',
         lat: 6.9271,
         lng: 79.8612
+    },
+    {
+        title:'Kandy, Sri Lanka',
+        lat: 7.2906,
+        lng: 80.6337
+    },
+    {
+        title:'Galle, Sri Lanka',
+        lat: 6.0535,
+        lng: 80.2210
     },
     //thailand
     {
@@ -241,6 +261,11 @@ data.places = [
         title:'Brussels, Belgium',
         lat: 50.8503,
         lng: 4.3517
+    },
+    {
+        title:'Bruges, Belgium',
+        lat: 51.2093,
+        lng: 3.2247
     },
     //bulgaria
     {
@@ -685,6 +710,21 @@ data.places = [
         lat: 55.9533,
         lng: -3.1883
     },
+    {
+        title:'Stirling, Scotland',
+        lat: 56.1165,
+        lng: -3.9369
+    },
+    {
+        title:'Kyleakin, Scotland',
+        lat: 57.2725,
+        lng: -5.7288
+    },
+    {
+        title:'Fort William, Scotland',
+        lat: 56.8198,
+        lng: -5.1052
+    },
     //serbia
     {
         title:'Belgrade, Serbia',
@@ -786,6 +826,27 @@ data.places = [
     /**
      * middle east
      */
+    //cyprus
+    {
+        title:'Nicosia, Cyprus',
+        lat: 35.1856,
+        lng: 33.3823
+    },
+    {
+        title:'Paphos, Cyprus',
+        lat: 34.7720,
+        lng: 32.4297
+    },
+    {
+        title:'Limassol, Cyprus',
+        lat: 34.707,
+        lng: 33.0226
+    },
+    {
+        title:'Larnaca, Cyprus',
+        lat: 34.9003,
+        lng: 33.6232
+    },
     //israel
     {
         title:'Tel Aviv, Israel',
@@ -796,6 +857,16 @@ data.places = [
         title:'Jerusalem, Israel',
         lat: 31.7683,
         lng: 35.2137
+    },
+    {
+        title:'Jaffa, Israel',
+        lat: 32.0494,
+        lng: 34.7584
+    },
+    {
+        title:'Ein Bokek, Israel',
+        lat: 31.2002,
+        lng: 35.3625
     },
     //kuwait
     {
@@ -814,6 +885,11 @@ data.places = [
         title:'Dubai, United Arab Emirates',
         lat: 25.2048,
         lng: 55.2708
+    },
+    {
+        title:'Abu Dhabi, United Arab Emirates',
+        lat: 24.4539,
+        lng: 54.3773
     },
     /**
      * north america

@@ -16,6 +16,8 @@ travel.maps = {
                 lat: place.lat,
                 lng: place.lng
             },
+            minZoom: 3,
+            maxZoom: 7,
             streetViewControl: false,
             mapTypeControl: false,
             mapTypeControlOptions: {
