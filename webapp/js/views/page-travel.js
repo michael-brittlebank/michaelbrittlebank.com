@@ -16,6 +16,8 @@ travel.maps = {
                 lat: place.lat,
                 lng: place.lng
             },
+            minZoom: 3,
+            maxZoom: 7,
             streetViewControl: false,
             mapTypeControl: false,
             mapTypeControlOptions: {
@@ -33,7 +35,8 @@ travel.maps = {
         travel.maps.clearMarkers();
         var places = site.helpers.shuffleArray(travel.places);
         for (var i = 0; i < places.length; i++) {
-            travel.maps.addMarkerWithTimeout(places[i], i * 50);
+            // travel.maps.addMarkerWithTimeout(places[i], i * 50);
+            travel.maps.addMarkerWithTimeout(places[i], 0);
         }
     },
     addMarkerWithTimeout: function(place, timeout) {
