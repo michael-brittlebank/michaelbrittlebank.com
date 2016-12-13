@@ -655,6 +655,11 @@ data.places = [
         lat: 52.2297,
         lng: 21.0122
     },
+    {
+        title:'Krakow, Poland',
+        lat: 50.0647,
+        lng: 19.9450
+    },
     //portugal
     {
         title:'Lisbon, Portugal',
@@ -817,6 +822,11 @@ data.places = [
         lat: 50.4501,
         lng: 30.5234
     },
+    {
+        title:'Lviv, Ukraine',
+        lat: 49.8397,
+        lng: 24.0297
+    },
     //vatican city
     {
         title:'Vatican City',
@@ -871,8 +881,8 @@ data.places = [
     //kuwait
     {
         title:'Kuwait City, Kuwait',
-        lat: 29.3117,
-        lng: 47.4818
+        lat: 29.3759,
+        lng: 47.9774
     },
     //turkey
     {
