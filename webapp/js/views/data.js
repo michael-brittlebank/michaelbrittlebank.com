@@ -43,8 +43,8 @@ data.places = [
     //brunei
     {
         title:'Bandar Seri Begawan, Brunei',
-        lat: 4.5353,
-        lng: 114.7277
+        lat: 4.9031,
+        lng: 114.9398
     },
     //china
     {
@@ -118,6 +118,11 @@ data.places = [
         title:'Jakarta, Indonesia',
         lat: -6.1745,
         lng: 106.8227
+    },
+    {
+        title:'Bandung, Indonesia',
+        lat: -6.9175,
+        lng: 107.6191
     },
     //japan
     {
