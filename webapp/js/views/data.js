@@ -242,6 +242,16 @@ data.places = [
         lat: 14.3692,
         lng: 100.5877
     },
+    {
+        title:'Surat Thani, Thailand',
+        lat: 9.1339,
+        lng: 99.3267
+    },
+    {
+        title:'Ko Samui, Thailand',
+        lat: 9.5120,
+        lng: 100.0136
+    },
     /**
      * europe
      */
