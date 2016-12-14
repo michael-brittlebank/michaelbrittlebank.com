@@ -145,6 +145,11 @@ data.places = [
         lat: 35.1833,
         lng: 139.0333
     },
+    {
+        title:'Nikko, Japan',
+        lat: 36.7199,
+        lng: 139.6982
+    },
     //malaysia
     {
         title:'Kuala Lumpur, Malaysia',
