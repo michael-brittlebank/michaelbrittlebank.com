@@ -72,6 +72,11 @@ data.places = [
         lat: 22.3964,
         lng: 114.1095
     },
+    {
+        title:'Hangzhou, China',
+        lat: 30.2741,
+        lng: 120.1551
+    },
     //india
     {
         title:'Mumbai, India',
