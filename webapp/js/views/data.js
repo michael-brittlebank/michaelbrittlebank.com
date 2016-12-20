@@ -546,6 +546,11 @@ data.places = [
         lat: 53.5524,
         lng: -6.7866
     },
+    {
+        title:'Blanchardstown, Ireland',
+        lat: 53.3842,
+        lng: -6.3760
+    },
     //italy
     {
         title:'Domodossola, Italy',
