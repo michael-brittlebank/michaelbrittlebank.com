@@ -24,11 +24,15 @@ var app = {
     //functions
     init: function(){
         var carousel = app.carousel,
-            views = app.views;
+            views = app.views,
+            animations = app.animations;
 
         //services
         app.handlebars.applyHelpers();
 
+        //loading animation
+        animations.fadeIn($('header'),1500,0,0);
+        animations.fadeIn($('footer'),1500,1000,0);
 
         //modules
         if (carousel.hasCarousels()){
@@ -37,7 +41,7 @@ var app = {
 
         //errors
         views.error404.init();
-        // views.error500.init();
+        views.error500.init();
 
         //views
         views.homepage.init();

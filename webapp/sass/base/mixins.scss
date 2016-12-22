@@ -76,8 +76,8 @@ these are helper functions for common tasks that are difficult to implement acro
 
 //helpers
 //-----------------------------
-@mixin fade-in-default {
-  visibility: hidden;
+@mixin faded-out {
+  display: none;
   opacity: 0;
 }
 

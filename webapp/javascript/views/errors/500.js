@@ -1,40 +1,45 @@
-var warningIcon,
-    warningContainer,
-    page500 = {};
+(function(){
 
-page500.colors = {
-    red: '#FF0000',
-    orange: '#FFA500',
-    yellow: '#FFFF00'
-};
+    var that = app.views.error500,
+        $ = jQuery,
+        animations = app.animations,
+        warningIcon,
+        warningContainer,
+        colors = {
+            red: '#FF0000',
+            orange: '#FFA500',
+            yellow: '#FFFF00'
+        };
 
-page500.animateWarningContainer = function(multiplier){
-    $(warningContainer).velocity('callout.shake',{
-        duration: 1000,
-        delay:750*multiplier,
-        complete: function(){
-            page500.animateWarningContainer(6);
-        }
-    });
-};
+    function animateWarningContainer(multiplier){
+        $(warningContainer).velocity('callout.shake',{
+            duration: 1000,
+            delay:750*multiplier,
+            complete: function(){
+                animateWarningContainer(6);
+            }
+        });
+    }
 
-page500.animateWarningButton = function(){
-    page500.animateWarningContainer(1);
-    $(warningIcon).velocity({'color':page500.colors.red},{
-        duration: 1000,
-        delay:1500,
-        loop: true
-    });
-};
+    function animateWarningButton(){
+        animateWarningContainer(1);
+        $(warningIcon).velocity({'color':colors.red},{
+            duration: 1000,
+            delay:1500,
+            loop: true
+        });
+    }
 
-page500.init = function(){
-    //variables
-    warningIcon = $('.fa-stack-1x');
-    warningContainer = $('#container-warning').find('p')[0];
-    //loading animation
-    site.animation.fadeIn('#container-content',1000,750,0);
-    //animation
-    setTimeout(function(){
-        page500.animateWarningButton();
-    }, 750);
-};
+    this.init = function(){
+        //variables
+        warningIcon = $('.fa-stack-1x');
+        warningContainer = $('#container-warning').find('p')[0];
+        //loading animation
+        animations.fadeIn('#container-content',1000,750,0);
+        //animation
+        setTimeout(function(){
+            animateWarningButton();
+        }, 750);
+    };
+
+}).apply(app.views.error500);

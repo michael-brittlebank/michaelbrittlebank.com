@@ -7,7 +7,7 @@ header {
     font-family: $font-open-sans-condensed;
     text-transform: uppercase;
   }
-  @include fade-in-default;
+  @include faded-out;
   @include mobile {
     //revert fade in on mobile devices
     visibility: visible!important;

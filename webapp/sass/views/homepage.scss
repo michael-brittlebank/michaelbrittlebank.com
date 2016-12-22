@@ -22,7 +22,7 @@
       position: relative;
       padding: 0;
       overflow: hidden;
-      @include fade-in-default;
+      @include faded-out;
       &.body-highlight {
         $iconHeight: 240;
         .block-body {

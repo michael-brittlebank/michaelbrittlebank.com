@@ -11,7 +11,7 @@
         }
       }
       &[data-group="1"]{
-        @include fade-in-default;
+        @include faded-out;
       }
       @include mobile {
         width: 96%;
@@ -52,7 +52,7 @@
       font-size: rem-calc(60);
       display: block!important;
       color: $color-jays-light-blue;
-      @include fade-in-default;
+      @include faded-out;
     }
   }
 }

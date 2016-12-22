@@ -1,22 +1,22 @@
 .single.post {
   .post-title {
-    @include fade-in-default;
+    @include faded-out;
   }
   .post-date {
     font-size: rem-calc(16);
-    @include fade-in-default;
+    @include faded-out;
     i {
       margin-right: 5px;
     }
   }
   hr {
     margin: 25px 0;
-    @include fade-in-default;
+    @include faded-out;
   }
   .post-body {
-    @include fade-in-default;
+    @include faded-out;
     p {
-      @include fade-in-default;
+      @include faded-out;
     }
     .gallery-image {
       outline: none!important;
