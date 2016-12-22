@@ -3,8 +3,8 @@ Contributors: Tips and Tricks HQ, wpsolutions, Peter Petreski, Ruhul Amin, mbrso
 Donate link: https://www.tipsandtricks-hq.com
 Tags: security, secure, Anti Virus, antivirus, ban, ban hacker, virus, firewall, firewall security, login, lockdown, htaccess, hack, malware, vulnerability, protect, protection, phishing, database, backup, plugin, sql injection, ssl, restrict, login captcha, bot, hotlink, 404 detection, admin, rename, all in one, scan, scanner, iframe,
 Requires at least: 3.5
-Tested up to: 4.6
-Stable tag: 4.1.5
+Tested up to: 4.7
+Stable tag: 4.2.4
 License: GPLv3
 
 A comprehensive, user-friendly, all in one WordPress security and firewall plugin for your site.
@@ -182,6 +182,56 @@ https://www.tipsandtricks-hq.com/wordpress-security-and-firewall-plugin
 None
 
 == Changelog ==
+
+= 4.2.4 =
+- Fix error on block_ip_if_locked(), doesn't exit with a wp_user. This is needed for other plugins that create the $user (aka ldap auth plugins).
+- Fix login error message for users with pending account approval.
+- Wordpress 4.7 compatibility.
+
+= 4.2.3 =
+- Fixed bug when math captcha was displayed on Woocommerce registration page.
+- Fixed login page bug for cases where email address and captcha are used to submit login form (thanks to @chesio for fix).
+- Logs directory now contains a .htaccess file with proper deny directives.
+- Small UX improvement: add for attribute to captcha label.
+- Added check for IIS server in get_server_type function.
+
+= 4.2.2 =
+- Debug logger class improvements.
+- Added a message in the debug settings area to state that the log files are reset on every plugin update.
+- Always return an array from scan_dir_sort_date() to prevent PHP notices.
+- Improvements for Automated DB backups filling up space - old backup file will be deleted first.
+- Thanks to RIPS Analyzer for sending us the vulnerability report. 
+
+= 4.2.1 = 
+- Improve output of .htaccess to include <IfModule mod_rewrite.c> checks and RewriteEngine On directives.
+- Fall back to default DB backup interval in case of invalid value.
+- The aiowps_delete_backup_files() function will produce a debug log message on every call (to help with troubleshooting when needed).
+
+= 4.2.0 =
+- WPML plugin compatibility fix for the renamed admin login page feature.
+- Fixed a few potential XSS vulnerabilities.
+
+= 4.1.9 =
+- Small improvement to the new "immediate blocking of specific usernames" feature.
+
+= 4.1.8 =
+- New feature to allow immediate blocking of specific usernames.
+- Only activate copy (right-click) protection for non-admin users.
+- Fixed bug where logout link in admin bar does not get updated on after the $_POST submit to reflect the new rename login setting.
+- Fixed small bug in return_regularized_url function.
+- Improvement/bug fix: When currently logged in user attempts to access renamed login page, redirect them to dashboard.
+- Removed Spanish language files so they can be automatically pulled from WordPress.org.
+- Drop unnecessary WHERE clause in some backend listings.
+- Improvement: do not schedule a cronjob, if it is already scheduled.
+
+= 4.1.7 =
+- Added sanitisation for log file data in textarea.
+- Disabled autocomplete for Captcha field.
+
+= 4.1.6 =
+- Added cleanup code for captcha string info transients.
+- Minor change to the username label in the renamed login page to keep it inline with the standard WordPress login page.
+- Fixed a potential vulnerability when viewing AIOWPS log files in the Dashboard menu. Thanks to Manuel LLOP for pointing this out.
 
 = 4.1.5 =
 - Fixed bug where username is an email and captcha was being ignored.
