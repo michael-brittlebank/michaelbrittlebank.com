@@ -6,12 +6,12 @@
         </div>
     </section>
     <section id="container-sliders" class="small-12">
-        {{#each portfolio}}
-            <h2 class="slider-header">{{name}}</h2>
+        {{#each posts}}
+            <h2 class="slider-header">{{title}}</h2>
             <div class="slider-container">
                 <div class="portfolio-carousel">
                     {{#each items}}
-                        <div class="portfolio-item" data-open="modal-{{../name}}-{{@index}}">
+                        <div class="portfolio-item" data-open="modal-{{../title}}-{{@index}}">
                             <div class="portfolio-content">
                                 {{{featuredIcon}}}
                                 <h3>{{title}}</h3>
@@ -23,9 +23,9 @@
         {{/each}}
     </section>
     <section id="container-modals">
-        {{#each portfolio}}
+        {{#each posts}}
             {{#each items}}
-                <div class="reveal small" id="modal-{{../name}}-{{@index}}" data-reveal data-overlay="false" data-close-on-click="false">
+                <div class="reveal small" id="modal-{{../title}}-{{@index}}" data-reveal data-overlay="false" data-close-on-click="false">
                     <button class="close-button" data-close aria-label="Close reveal" type="button">
                         <span aria-hidden="true">&times;</span>
                     </button>

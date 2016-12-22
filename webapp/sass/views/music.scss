@@ -1,58 +1,58 @@
-.page.music {
-  #container-content {
-    margin-top: 50px;
-    .post {
-      width: 32%;
-      margin: 0.5%;
-      background-color: $color-white;
-      &:hover {
-        .content-post {
-          border-color: $color-badgers-gold;
-        }
-      }
-      &[data-group="1"]{
-        @include faded-out;
-      }
-      @include mobile {
-        width: 96%;
-        margin: 2%;
-      }
-      @include tablet {
-        width: 48%;
-        margin: 1%;
-      }
-      .content-post {
-        padding: 20px;
-        border: 5px double $color-desert-black;
-        text-align: justify;
-        height: 100%;
-        width: 100%;
-        cursor:pointer;
-        @include transition-with-defaults(border);
-        .post-date {
-          font-size: rem-calc(16);
-          i {
-            margin-right: 5px;
-          }
-        }
-        .post-excerpt {
-          @extend .serif-default;
-        }
-        hr {
-          margin: 10px 0;
-        }
-      }
-    }
-  }
-  #container-button {
-    margin-top: 50px;
-    text-align: center;
-    #loading-spinner {
-      margin: 10px;
-      font-size: rem-calc(60);
-      display: block!important;
-      color: $color-jays-light-blue;
-      @include faded-out;
-    }
-  }
-}
+//.page.music {
+//  #container-content {
+//    margin-top: 50px;
+//    .post {
+//      width: 32%;
+//      margin: 0.5%;
+//      background-color: $color-white;
+//      &:hover {
+//        .content-post {
+//          border-color: $color-badgers-gold;
+//        }
+//      }
+//      &[data-group="1"]{
+//        @include faded-out;
+//      }
+//      @include mobile {
+//        width: 96%;
+//        margin: 2%;
+//      }
+//      @include tablet {
+//        width: 48%;
+//        margin: 1%;
+//      }
+//      .content-post {
+//        padding: 20px;
+//        border: 5px double $color-desert-black;
+//        text-align: justify;
+//        height: 100%;
+//        width: 100%;
+//        cursor:pointer;
+//        @include transition-with-defaults(border);
+//        .post-date {
+//          font-size: rem-calc(16);
+//          i {
+//            margin-right: 5px;
+//          }
+//        }
+//        .post-excerpt {
+//          @extend .serif-default;
+//        }
+//        hr {
+//          margin: 10px 0;
+//        }
+//      }
+//    }
+//  }
+//  #container-button {
+//    margin-top: 50px;
+//    text-align: center;
+//    #loading-spinner {
+//      margin: 10px;
+//      font-size: rem-calc(60);
+//      display: block!important;
+//      color: $color-jays-light-blue;
+//      @include faded-out;
+//    }
+//  }
+//}
