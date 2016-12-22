@@ -49,7 +49,7 @@ if ( defined( 'DOING_AJAX' ) ) {
 	        // that post and user fields can use the same handler (which is originally meant for post fields only).
 
 	        // We don't have functions.php at this point, can't use wpcf_getpost().
-	        $current_page = isset( $_REQUEST['page'] ) ? $_REQUEST['page'] : Types_Admin_Edit_Custom_Fields_Group::PAGE_NAME;
+	        $current_page = isset( $_REQUEST['page'] ) ? sanitize_text_field( $_REQUEST['page'] ) : Types_Admin_Edit_Custom_Fields_Group::PAGE_NAME;
 	        if( in_array( $current_page, array( Types_Admin_Edit_Custom_Fields_Group::PAGE_NAME, 'wpcf-edit-usermeta' ) ) ) {
 		        new Types_Admin_Edit_Custom_Fields_Group();
 	        }
@@ -175,7 +175,7 @@ function wpcf_admin_toolset_register_menu_pages( $pages ) {
 	
 	$current_page = '';
 	if ( isset( $_GET['page'] ) ) {
-	    $current_page = $_GET['page'];
+	    $current_page = sanitize_text_field( $_GET['page'] );
 	}
 	
 	$pages['wpcf-cpt'] = array(
@@ -541,7 +541,7 @@ function wpcf_admin_menu_edit_fields()
     $post_type = current_filter();
     $title = __('View Post Field Group', 'wpcf');
     if ( isset( $_GET['group_id'] ) ) {
-        if ( WPCF_Roles::user_can_edit('custom-field', array('id' => $_GET['group_id']))) {
+        if ( WPCF_Roles::user_can_edit('custom-field', array('id' => (int) $_GET['group_id']))) {
             $title = __( 'Edit Post Field Group', 'wpcf' );
             $add_new = array(
                 'page' => 'wpcf-edit',

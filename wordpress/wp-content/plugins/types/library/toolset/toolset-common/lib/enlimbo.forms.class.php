@@ -927,7 +927,7 @@ if ( ! class_exists('Toolset_Enlimbo_Forms' ) ) {
                 if ($element['#type'] == 'file') {
                     return $_FILES[$name]['tmp_name'];
                 }
-                return isset($_REQUEST[$name]) ? $_REQUEST[$name] : in_array($element['#type'],
+                return isset($_REQUEST[$name]) ? sanitize_text_field( $_REQUEST[$name] ) : in_array($element['#type'],
                                 array('textfield', 'textarea')) ? '' : 0;
             }
 

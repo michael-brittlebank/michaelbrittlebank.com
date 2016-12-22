@@ -12,7 +12,7 @@ class Toolset_User_Editors_Medium_Screen_Content_Template_Backend
 			return false;
 		}
 
-		return $_REQUEST['ct_id'];
+		return (int) $_REQUEST['ct_id'];
 	}
 
 	public function equivalentEditorScreenIsActive() {

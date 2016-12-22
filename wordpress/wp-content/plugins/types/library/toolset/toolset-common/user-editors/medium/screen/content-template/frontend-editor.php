@@ -54,7 +54,7 @@ class Toolset_User_Editors_Medium_Screen_Content_Template_Frontend_Editor
 		// ./backend.css
 		wp_enqueue_style(
 			'toolset-user-editors-ct-frontend-editor-style',
-			TOOLSET_COMMON_URL . 'user-editors/medium/screen/content-template/frontend-editor.css',
+			TOOLSET_COMMON_URL . '/user-editors/medium/screen/content-template/frontend-editor.css',
 			array(),
 			TOOLSET_COMMON_VERSION
 		);
@@ -62,7 +62,7 @@ class Toolset_User_Editors_Medium_Screen_Content_Template_Frontend_Editor
 		// ./backend.js
 		wp_enqueue_script(
 			'toolset-user-editors-ct-frontend-editor-script',
-			TOOLSET_COMMON_URL . 'user-editors/medium/screen/content-template/frontend-editor.js',
+			TOOLSET_COMMON_URL . '/user-editors/medium/screen/content-template/frontend-editor.js',
 			array( 'jquery' ),
 			TOOLSET_COMMON_VERSION,
 			true
@@ -175,7 +175,7 @@ class Toolset_User_Editors_Medium_Screen_Content_Template_Frontend_Editor
 		}
 
 		if( isset( $_REQUEST['ct_id'] ) && isset( $_REQUEST['preview_post_id'] ) ) {
-			$this->store_preview_post_id( $_REQUEST['ct_id'], $_REQUEST['preview_post_id'] );
+			$this->store_preview_post_id( (int) $_REQUEST['ct_id'], (int) $_REQUEST['preview_post_id'] );
 		}
 
 		die( 1 );

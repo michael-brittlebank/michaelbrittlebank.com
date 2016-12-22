@@ -55,7 +55,8 @@ class WPToolset_Cake_Validation {
      * @access private
      */
     var $__pattern = array(
-        'hostname' => '(?:[_\p{L}0-9][-_\p{L}0-9]*\.)*(?:[\p{L}0-9][-\p{L}0-9]{0,62})\.(?:(?:[a-z]{2}\.)?[a-z]{2,})'
+        'hostname' => '(?:[_\p{L}0-9][-_\p{L}0-9]*\.)*(?:[\p{L}0-9][-\p{L}0-9]{0,62})\.(?:(?:[a-z]{2}\.)?[a-z]{2,})',
+	    'hostname_without_tld' => '(?:[_\p{L}0-9][-_\p{L}0-9]*\.)*(?:[\p{L}0-9][-\p{L}0-9]{0,62})(?:\.(?:(?:[a-z]{2}\.)?[a-z]{2,}))?'
     );
 
     /**
@@ -928,36 +929,58 @@ class WPToolset_Cake_Validation {
         return $_this->_check();
     }
 
-    /**
-     * Checks that a value is a valid URL according to http://www.w3.org/Addressing/URL/url-spec.txt
-     *
-     * The regex checks for the following component parts:
-     *
-     * - a valid, optional, scheme
-     * - a valid ip address OR
-     *   a valid domain name as defined by section 2.3.1 of http://www.ietf.org/rfc/rfc1035.txt
-     *   with an optional port number
-     * - an optional valid path
-     * - an optional query string (get parameters)
-     * - an optional fragment (anchor tag)
-     *
-     * @param string $check Value to check
-     * @param boolean $strict Require URL to be prefixed by a valid scheme (one of http(s)/ftp(s)/file/news/gopher)
-     * @return boolean Success
-     * @access public
-     */
-    function url($check, $strict = false) {
+	/**
+	 * Checks that a value is a valid URL according to http://www.w3.org/Addressing/URL/url-spec.txt
+	 *
+	 * The regex checks for the following component parts:
+	 *
+	 * - a valid, optional, scheme
+	 * - a valid ip address OR
+	 *   a valid domain name as defined by section 2.3.1 of http://www.ietf.org/rfc/rfc1035.txt
+	 *   with an optional port number
+	 * - an optional valid path
+	 * - an optional query string (get parameters)
+	 * - an optional fragment (anchor tag)
+	 *
+	 * @param string $check Value to check
+	 * @param boolean $strict Require URL to be prefixed by a valid scheme (one of http(s)/ftp(s)/file/news/gopher)
+	 * @param bool $require_tld Require the hostname to contain TLD. True by default.
+	 *
+	 * @return bool Success
+	 */
+    function url( $check, $strict = false, $require_tld = true ) {
         $_this = &WPToolset_Cake_Validation::getInstance();
         $_this->__populateIp();
         $_this->check = $check;
         $validChars = '([' . preg_quote('!"$&\'()*+,-.@_:;=~[]') . '\/0-9\p{L}\p{N}]|(%[0-9a-f]{2}))';
+
+        $hostname_pattern = $_this->__pattern[ ( $require_tld ? 'hostname' : 'hostname_without_tld' ) ];
+
         $_this->regex = '/^(?:(?:https?|ftps?|sftp|file|news|gopher):\/\/)' . (!empty($strict) ? '' : '?') .
-            '(?:' . $_this->__pattern['IPv4'] . '|\[' . $_this->__pattern['IPv6'] . '\]|' . $_this->__pattern['hostname'] . ')(?::[1-9][0-9]{0,4})?' .
+            '(?:' . $_this->__pattern['IPv4'] . '|\[' . $_this->__pattern['IPv6'] . '\]|' . $hostname_pattern . ')(?::[1-9][0-9]{0,4})?' .
             '(?:\/?|\/' . $validChars . '*)?' .
             '(?:\?' . $validChars . '*)?' .
             '(?:#' . $validChars . '*)?$/iu';
         return $_this->_check();
     }
+
+
+	/**
+	 * Alternative URL validation that (more or less) corresponds to the url2 validation method in jQuery UI.
+	 *
+	 * It is less strict than the standard 'url' because it doesn't require the TLD to be present in the hostname.
+	 * Parameters are directly passed to self::url().
+	 *
+	 * @param string $check Value to check.
+	 * @param bool $strict
+	 *
+	 * @return bool Validation result.
+	 * @since 2.2.6
+	 */
+	function url2( $check, $strict = false ) {
+    	return $this->url( $check, $strict, false );
+	}
+
 
     /**
      * Checks if a value is in a given list.

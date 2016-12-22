@@ -34,18 +34,18 @@ final class Types_Utils {
 		// todo add simple caching
 		$taxonomies = array();
 
-		// Read custom taxonomies first.
-		$custom_taxonomies = get_option( WPCF_OPTION_NAME_CUSTOM_TAXONOMIES, array() );
-		if ( is_array( $custom_taxonomies ) ) {
-			foreach ( $custom_taxonomies as $slug => $data ) {
+		// Read Types taxonomies first.
+		$types_taxonomies = get_option( WPCF_OPTION_NAME_CUSTOM_TAXONOMIES, array() );
+		if ( is_array( $types_taxonomies ) ) {
+			foreach ( $types_taxonomies as $slug => $data ) {
 				$taxonomies[ $slug ] = $data;
 			}
 		}
 
-		// Get built-in taxonomies and add them to the set, but avoid overwriting custom taxonomies
-		$builtin_taxonomies = self::object_to_array_deep( self::get_builtin_taxonomies() );
-		foreach ( $builtin_taxonomies as $slug => $data ) {
-			// check if built-in taxonomies are already saved as custom taxonomies
+		// Get all taxonomies and add them to the set, but avoid overwriting Types taxonomies
+		$all_taxonomies = self::object_to_array_deep( get_taxonomies( array( 'public' => true ) , 'objects' ) );
+		foreach ( $all_taxonomies as $slug => $data ) {
+			// check if taxonomies are already saved as custom taxonomies
 			if ( isset( $taxonomies[ $slug ] ) ) {
 				continue;
 			}

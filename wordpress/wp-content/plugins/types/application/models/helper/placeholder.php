@@ -159,12 +159,15 @@ class Types_Helper_Placeholder {
 			return $permalink;
 		}
 
-		if( isset( $_GET['post'] ) && $id != $_GET['post'] )
-			return self::get_permalink( $_GET['post'] );
+		if( isset( $_GET['post'] ) && $id != $_GET['post'] ) {
+			$get_permalink_id = (int) $_GET['post'];
+			return self::get_permalink( $get_permalink_id );
+		}
 
 		// cpt edit page
 		if( isset( $_GET['wpcf-post-type'] ) && $id == 0 ) {
-			$query = new WP_Query( 'post_type=' . $_GET['wpcf-post-type'] . '&posts_per_page=1' );
+			$get_permalink_post_type = sanitize_text_field( $_GET['wpcf-post-type'] );
+			$query = new WP_Query( 'post_type=' . $get_permalink_post_type . '&posts_per_page=1' );
 			if( $query->have_posts() )
 				return self::get_permalink( $query->posts[0]->ID );
 		}
@@ -181,7 +184,7 @@ class Types_Helper_Placeholder {
 
 	public static function get_archive_permalink() {
 		if( array_key_exists( 'wpcf-post-type', $_GET ) ) {
-			$post_type = $_GET['wpcf-post-type'];
+			$post_type = sanitize_text_field( $_GET['wpcf-post-type'] );
 		} else {
 			if( ! is_object( self::$post_type ) )
 				self::set_post_type();

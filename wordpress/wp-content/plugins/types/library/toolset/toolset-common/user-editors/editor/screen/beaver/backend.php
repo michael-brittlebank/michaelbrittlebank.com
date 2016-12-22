@@ -46,10 +46,10 @@ class Toolset_User_Editors_Editor_Screen_Beaver_Backend
 		    && isset( $_REQUEST['preview_slug'] )
 		) {
 			$this->storeTemplateSettings(
-				$_REQUEST['post_id'],
+				(int) $_REQUEST['post_id'],
 				$_REQUEST['template_path'],
-				$_REQUEST['preview_domain'],
-				$_REQUEST['preview_slug']
+				sanitize_text_field( $_REQUEST['preview_domain'] ),
+				sanitize_text_field( $_REQUEST['preview_slug'] )
 			);
 		}
 
@@ -77,7 +77,7 @@ class Toolset_User_Editors_Editor_Screen_Beaver_Backend
 		// ./backend.css
 		wp_enqueue_style(
 			'toolset-user-editors-beaver-style',
-			TOOLSET_COMMON_URL . 'user-editors/editor/screen/beaver/backend.css',
+			TOOLSET_COMMON_URL . '/user-editors/editor/screen/beaver/backend.css',
 			array(),
 			TOOLSET_COMMON_VERSION
 		);
@@ -85,7 +85,7 @@ class Toolset_User_Editors_Editor_Screen_Beaver_Backend
 		// ./backend.js
 		wp_enqueue_script(
 			'toolset-user-editors-beaver-script',
-			TOOLSET_COMMON_URL . 'user-editors/editor/screen/beaver/backend.js',
+			TOOLSET_COMMON_URL . '/user-editors/editor/screen/beaver/backend.js',
 			array( 'jquery' ),
 			TOOLSET_COMMON_VERSION,
 			true
@@ -147,7 +147,7 @@ class Toolset_User_Editors_Editor_Screen_Beaver_Backend
 	public function layoutTemplateRegisterAssets() {
 		wp_register_script(
 			'toolset-user-editors-beaver-layout-template-script',
-			TOOLSET_COMMON_URL . 'user-editors/editor/screen/beaver/backend_layout_template.js',
+			TOOLSET_COMMON_URL . '/user-editors/editor/screen/beaver/backend_layout_template.js',
 			array( 'jquery', 'views-layout-template-js', 'underscore' ),
 			TOOLSET_COMMON_VERSION,
 			true

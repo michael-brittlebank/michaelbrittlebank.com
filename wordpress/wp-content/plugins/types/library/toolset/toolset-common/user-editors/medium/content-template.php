@@ -12,7 +12,7 @@ class Toolset_User_Editors_Medium_Content_Template
 
 	public function __construct() {
 		if( array_key_exists( 'ct_id', $_REQUEST ) )
-			$this->id  = $_REQUEST['ct_id'];
+			$this->id  = (int) $_REQUEST['ct_id'];
 
 		if( $this->id && array_key_exists( 'ct_editor_choice', $_REQUEST ) )
 			update_post_meta( $this->id, $this->option_name_editor_choice, sanitize_text_field( $_REQUEST['ct_editor_choice'] ) );
@@ -143,7 +143,7 @@ class Toolset_User_Editors_Medium_Content_Template
 		
 		// Make sure that the stored template path is in the allowed ones, or force it otherwise
 		$allowed_paths = wp_list_pluck( $this->allowed_templates, 'path' );
-		$current_template = get_post_meta( $_GET['ct_id'], $this->manager->getActiveEditor()->getOptionName(), true );
+		$current_template = get_post_meta( (int) $_GET['ct_id'], $this->manager->getActiveEditor()->getOptionName(), true );
 		
 		if ( 
 			isset( $_GET['ct_id'] ) 
@@ -161,8 +161,8 @@ class Toolset_User_Editors_Medium_Content_Template
 				'preview_slug' => $first_allowed_template['slug']
 			);
 
-			update_post_meta( $_GET['ct_id'], $this->manager->getActiveEditor()->getOptionName(), $settings_to_store );
-			$stored = get_post_meta( $_GET['ct_id'], $this->manager->getActiveEditor()->getOptionName(), true );
+			update_post_meta( (int) $_GET['ct_id'], $this->manager->getActiveEditor()->getOptionName(), $settings_to_store );
+			$stored = get_post_meta( (int) $_GET['ct_id'], $this->manager->getActiveEditor()->getOptionName(), true );
 		}
 
 		return $this->allowed_templates;
@@ -235,7 +235,7 @@ class Toolset_User_Editors_Medium_Content_Template
 		$editors = $this->manager->getEditors();
 
 		if( count( $editors ) > 1 ) {
-			$admin_url = admin_url( 'admin.php?page=ct-editor&ct_id='.$_GET['ct_id'] );
+			$admin_url = admin_url( 'admin.php?page=ct-editor&ct_id='. (int) $_GET['ct_id'] );
 
 			$editor_current = '';
 			$editor_switch_buttons = array();

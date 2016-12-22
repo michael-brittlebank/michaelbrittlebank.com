@@ -1115,7 +1115,7 @@ class Types_Admin_Edit_Post_Type extends Types_Admin_Page
             || $_GET['wpcf-post-type'] == 'page'
             || $_GET['wpcf-post-type'] == 'attachment'
         ) {
-            $data['slug'] = $_GET['wpcf-post-type'];
+            $data['slug'] = sanitize_text_field( $_GET['wpcf-post-type'] );
         } else {
             $data['slug'] = null;
         }
@@ -2024,7 +2024,8 @@ class Types_Admin_Edit_Post_Type extends Types_Admin_Page
         // get current post type
         require_once WPCF_INC_ABSPATH.'/classes/class.types.admin.post-type.php';
         $wpcf_post_type = new Types_Admin_Post_Type();
-        $custom_post_type = $wpcf_post_type->get_post_type($_GET['wpcf-post-type']);
+		$get_post_type_slug_from_request = sanitize_text_field( $_GET['wpcf-post-type'] );
+        $custom_post_type = $wpcf_post_type->get_post_type($get_post_type_slug_from_request);
         if ( isset($custom_post_type['slug']) ) {
             return $custom_post_type['slug'];
         }

@@ -101,6 +101,20 @@ if (!class_exists('Toolset_Utils')) {
             return $sizes;
         }
 
+	    /**
+	     * Check for a custom field value's "emptiness".
+	     *
+	     * "0" is also a valid value that we need to take into account.
+	     *
+	     * @param $field_value
+	     * @return bool
+	     * @since 2.2.3
+	     */
+        public static function is_field_value_truly_empty( $field_value ) {
+			$is_truly_empty = ( empty( $field_value ) && ! is_numeric( $field_value ) );
+	        return $is_truly_empty;
+        }
+
     }
 
 }
