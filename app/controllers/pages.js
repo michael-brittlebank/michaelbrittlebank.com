@@ -5,7 +5,9 @@ const /* packages */
 //services
     utilService = require('../services/util'),
     errorService = require('../services/errors'),
-    responseService = require('../services/response');
+    responseService = require('../services/response'),
+//models
+    contentModel = require('../models/content');
 
 var pages = {};
 
@@ -28,20 +30,18 @@ pages.getPortfolioPage = function(req, res, next){
     };
     requestPromise(options)
         .then(function (response) {
-            try {
-                const data = JSON.parse(response);
-                res.render('pages/portfolio', {
-                    meta: {
-                        title: utilService.metaTitlePrefix + 'Portfolio'
-                    },
-                    posts: utilService.simpleNullCheck(data,'posts')?data.posts:[]
-                });
-            } catch (error){
-                return promise.reject(error);
-            }
+            return contentModel.getPortfolioItemObjects(response);
         })
-        .catch(function (response) {
-            responseService.defaultCatch(response, next,'portfolio - could not call api');
+        .then(function(data) {
+            res.render('pages/portfolio', {
+                meta: {
+                    title: utilService.metaTitlePrefix + 'Portfolio'
+                },
+                posts: data
+            });
+        })
+        .catch(function (error) {
+            responseService.defaultCatch(error, next,'portfolio');
         });
 };
 
