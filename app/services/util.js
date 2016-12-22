@@ -1,8 +1,8 @@
-var webapp = {};
+var util = {};
 
-webapp.metaTitlePrefix = 'Mike Stumpf | ';
+util.metaTitlePrefix = 'Mike Stumpf | ';
 
-webapp.status = {
+util.status = {
     ok: 200,
     created: 201,
     accepted: 202,
@@ -17,7 +17,7 @@ webapp.status = {
     serviceUnavailable: 503
 };
 
-webapp.hbsHelpers = {
+util.hbsHelpers = {
     compare: function(lvalue, rvalue, options) {
         //https://gist.github.com/doginthehat/1890659
         if (arguments.length !== 3) {
@@ -62,16 +62,16 @@ webapp.hbsHelpers = {
  * Helper Functions ----------------------------------------------------------
  */
 
-webapp.simpleNullCheck = function(object,key){
+util.simpleNullCheck = function(object,key){
     return object && object.hasOwnProperty(key) && (object[key] || object[key] === 0)?true:false;
 };
 
-webapp.getValueFromKey = function(object,key){
-    return webapp.simpleNullCheck(object,key)?object[key]:'';
+util.getValueFromKey = function(object,key){
+    return util.simpleNullCheck(object,key)?object[key]:'';
 };
 
-webapp.isLocalConfig = function(){
+util.isLocalConfig = function(){
     return process.env.NODE_ENV === 'local';
 };
 
-module.exports = webapp;
+module.exports = util;

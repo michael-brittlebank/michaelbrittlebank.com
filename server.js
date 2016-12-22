@@ -110,7 +110,6 @@ app.use(function(req, res, next) {
 
 // error handlers
 app.use(function (error, req, res, next) {
-    logService.error('',JSON.stringify(error));
     //page request errors
     if (error && utilService.simpleNullCheck(error, 'statusCode')) {
         switch (error.statusCode) {
@@ -133,7 +132,7 @@ app.use(function (error, req, res, next) {
  *  Start server
  */
 app.listen(port, function() {
-    logService.info('Node server started on port '+port+' at '+moment().format());
+    logService.info('Node server started on port '+port+' at '+moment().format()+'\n'+
+        'Using API server: '+process.env.API_URL);
     //todo, connected to mysql db?
-    // logService.info('Using API server: '+process.env.API_URL);
 });

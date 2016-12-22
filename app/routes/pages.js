@@ -10,6 +10,18 @@ const // packages
 router.route('/')
     .get(pagesController.getIndex);
 
+router.route('/travel')
+    .get(pagesController.getTravelPage);
+
+router.route('/music')
+    .get(pagesController.getMusicPage);
+
+router.route('/portfolio')
+    .get(pagesController.getPortfolioPage);
+
+router.route('/resume')
+    .get(pagesController.getResumePage);
+
 if(utilService.isLocalConfig()){
     router.route('/500')
         .get(pagesController.get500Page);
@@ -17,11 +29,5 @@ if(utilService.isLocalConfig()){
     router.route('/404')
         .get(pagesController.get404Page);
 }
-
-router.route('/travel')
-    .get(pagesController.getTravelPage);
-
-// router.route('/*')
-//     .get(pagesController.getDefaultPage);
 
 module.exports = router;
