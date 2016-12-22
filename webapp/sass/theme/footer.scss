@@ -1,0 +1,29 @@
+//core
+//----------------------
+footer {
+  text-align: center;
+  margin-top: 100px;
+  @include fade-in-default;
+  @include mobile {
+    margin-top: 50px;
+  }
+  @include tablet {
+    margin-top: 75px;
+  }
+}
+
+//social media
+//----------------------
+#footer-find-me {
+  padding-top: 50px;
+  h5 {
+    padding: 0.7rem 1rem;
+    margin: 0;
+    white-space: nowrap;
+  }
+  i {
+    &.fa {
+      font-size: rem-calc(25);
+    }
+  }
+}

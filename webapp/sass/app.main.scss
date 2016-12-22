@@ -1,0 +1,24 @@
+/*
+Imports and settings that might change with theme development
+*/
+
+
+//source
+//-----------------------------
+@import "base/media-queries";
+@import "base/mixins";
+@import "base/colors";
+@import "base/fonts";
+@import "base/grid";
+
+
+//theme
+//-----------------------------
+@import "theme/shared";
+@import "theme/header";
+@import "theme/footer";
+
+
+//views
+//-----------------------------
+@import "views/errors";

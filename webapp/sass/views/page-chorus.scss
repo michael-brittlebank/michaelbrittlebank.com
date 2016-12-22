@@ -1,0 +1,55 @@
+.page.chorus {
+  @include fade-in-default;
+  .tabs {
+    margin-top: 50px;
+    border-top:none;
+    border-left:none;
+    border-right:none;
+    li {
+      &:not(.tabs-title){
+        @extend .tabs-title;
+        a:focus {
+          outline: none;
+        }
+      }
+    }
+    .float-right {
+      @include mobile {
+        float: left!important;
+      }
+    }
+  }
+  .tabs-content {
+    border:none;
+    margin-bottom:50px;
+    .tabs-panel {
+      &.is-active {
+        @include animation-name(fadeIn);
+        @include animation-duration(1s);
+      }
+    }
+  }
+  .accordion-title{
+    color:$color-dark-black;
+    font-size: rem-calc(20);
+    &:focus {
+      background-color: transparent;
+      outline: none;
+    }
+  }
+  .tabs-title>a {
+    color: $color-dark-black;
+    font-size: rem-calc(24);
+  }
+  .reveal {
+    .chorus-note {
+      margin: 15px auto;
+    }
+    .callout {
+      padding: 0 5px;
+    }
+    .fa {
+      margin-right: 5px;
+    }
+  }
+}

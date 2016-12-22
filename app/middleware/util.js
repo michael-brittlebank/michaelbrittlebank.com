@@ -1,3 +1,7 @@
+const //services
+    logService = require('../services/logs'),
+    utilService = require('../services/util');
+
 var utilMiddleware = {};
 
 utilMiddleware.redirectHistoricalLinks = function(req, res, next){
@@ -47,6 +51,17 @@ utilMiddleware.removeTrailingSlashes = function(req, res, next) {
     } else {
         next();
     }
+};
+
+utilMiddleware.debugRequests = function(req,res,next){
+    if(utilService.isLocalConfig()){
+        //debugging included libs
+        app.use('/webapp/bower_components', express.static(path.join(__dirname, 'webapp/bower_components')));
+        
+        //debugging routes
+        logService.info('Calling '+req.method+' '+req.originalUrl);
+    }
+    next();
 };
 
 module.exports = utilMiddleware;

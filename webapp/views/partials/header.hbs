@@ -31,7 +31,7 @@
         </div>
         <div class="small-12 columns">
             <ul id="menu-desktop" class="menu align-right">
-                {{#eachReverse menu.header.children}}
+                {{#each menu.header.children}}
                     {{#compare children.length 0 operator=">"}}
                         <li class="has-dropdown">
                             {{#if url}}
@@ -48,7 +48,7 @@
                     {{else}}
                         <li><a href="{{url}}" class="{{#compare title ../../site.menuHighlight operator="===/i"}}active{{/compare}}">{{title}}</a></li>
                     {{/compare}}
-                {{/eachReverse}}
+                {{/each}}
             </ul>
         </div>
     </div>

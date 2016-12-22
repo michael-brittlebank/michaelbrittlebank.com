@@ -1,0 +1,89 @@
+//core
+//----------------------
+#page-not-found-error, #page-server-error {
+  #container-content {
+    text-align: center;
+    margin-top:75px;
+    opacity: 0;
+  }
+
+  #container-title {
+    border-right:2px solid $color-desert-black;
+    text-align: right;
+    padding-right:50px;
+    @include mobile {
+      text-align: left;
+      border: none;
+      .small-4 {
+        text-align: right;
+      }
+    }
+    @include tablet {
+      text-align: left;
+    }
+    .page-title {
+      font-size: rem-calc(120);
+    }
+  }
+
+  #container-button {
+    text-align: center;
+    margin-top: 50px;
+  }
+}
+
+//not found error
+//----------------------
+#page-not-found-error {
+  .page-body {
+    margin-bottom: 25px;
+  }
+}
+
+#container-translations {
+  position: relative;
+  height: 75px;
+  margin:50px 0;
+  .translations {
+    display: block !important;
+    font-size: rem-calc(60);
+    line-height: rem-calc(60);
+    @include center-absolute;
+    opacity: 0;
+  }
+}
+
+
+//server error
+//----------------------
+#container-warning {
+  $iconHeight: 300;
+  p {
+    display:block;
+    margin:auto;
+    .fa-stack {
+      width: rem-calc($iconHeight);
+      height: rem-calc($iconHeight);
+      line-height: rem-calc($iconHeight);
+      display: block;
+      margin: 0 auto 25px auto;
+      overflow: hidden;
+      border: 5px solid $color-orange;
+      border-radius: 50%;
+      @include transition-with-defaults(border);
+      &:hover {
+        border-color: $color-red;
+      }
+      i {
+        &.fa-stack-1x {
+          font-size: rem-calc($iconHeight/2);
+          color: $color-orange;
+        }
+        &.fa-stack-2x {
+          font-size: rem-calc($iconHeight);
+          color: $color-black;
+        }
+      }
+    }
+  }
+}
