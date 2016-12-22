@@ -1,6 +1,8 @@
 const /* packages */
     _ = require('lodash'),
-    promise = require('bluebird');
+    promise = require('bluebird'),
+//services
+    utilService = require('../services/util');
 
 var pages = {};
 
@@ -19,13 +21,16 @@ pages.getIndex = function(req, res, next) {
     //     .then(function (response) {
     //         var content = response[0];
     //         res.locals.page = contentService.pageDigest(content);
-            res.render('pages/homepage', {
-                layout: 'homepage'
-            });
-        // })
-        // .catch(function (err) {
-        //     next(err);
-        // });
+    res.render('pages/homepage', {
+        meta: {
+            title: 'Mike Stumpf'
+        },
+        layout: 'homepage'
+    });
+    // })
+    // .catch(function (err) {
+    //     next(err);
+    // });
 };
 
 pages.getPortfolioPage = function(req, res, next){
@@ -65,15 +70,23 @@ pages.getPortfolioPage = function(req, res, next){
     //             quoteItems.push(contentService.quoteDigest(entry));
     //         });
     //         res.locals.quote = _.sample(quoteItems);
-            res.render('pages/portfolio');
-        // })
-        // .catch(function (err) {
-        //     next(err);
-        // });
+    res.render('pages/portfolio',{
+        meta: {
+            title: utilService.metaTitlePrefix+'Portfolio'
+        }
+    });
+    // })
+    // .catch(function (err) {
+    //     next(err);
+    // });
 };
 
 pages.getResumePage = function(req, res, next) {
-    res.render('pages/resume');
+    res.render('pages/resume',{
+        meta: {
+            title: utilService.metaTitlePrefix+'Resume'
+        }
+    });
 };
 
 pages.getMusicPage = function(req, res, next) {
@@ -88,16 +101,20 @@ pages.getMusicPage = function(req, res, next) {
     //     .then(function (response) {
     //         var content = response[0];
     //         res.locals.posts = _.values(contentService.postArrayDigest(content));
-            res.locals.group = 1;
-        //     res.render('page-music');
-        // })
-        // .catch(function (err) {
-        //     next(err);
-        // });
+    res.locals.group = 1;
+    //     res.render('page-music');
+    // })
+    // .catch(function (err) {
+    //     next(err);
+    // });
 };
 
 pages.getChorusPage = function(req, res, next) {
-    res.render('pages/chorus');
+    res.render('pages/chorus',{
+        meta: {
+            title: utilService.metaTitlePrefix+'Chorus'
+        }
+    });
 };
 
 pages.getTravelPage = function(req, res, next) {
@@ -111,12 +128,16 @@ pages.getTravelPage = function(req, res, next) {
     //     .then(function (response) {
     //         var content = response[0];
     //         res.locals.album = contentService.albumDigest(content);
-            res.locals.googleMaps = true;
-            res.render('pages/travel');
-        // })
-        // .catch(function (err) {
-        //     next(err);
-        // });
+    res.locals.googleMaps = true;
+    res.render('pages/travel',{
+        meta: {
+            title: utilService.metaTitlePrefix+'Travel'
+        }
+    });
+    // })
+    // .catch(function (err) {
+    //     next(err);
+    // });
 };
 
 pages.getDefaultPage = function(req, res, next) {
@@ -151,58 +172,38 @@ pages.getDefaultPage = function(req, res, next) {
     //                     res.render('single-page');
     //             }
     //         } else {
-                res.render('pages/default');
+    res.render('pages/default');
     //         }
     //     })
     //     .catch(function (err) {
     //         next(err);
-        // });
+    // });
 };
 
 pages.get500Page = function(req, res, next) {
-    // var params = {
-    //     content_type: contentfulService.contentTypes.page,
-    //     'fields.url[in]': '500',
-    //     limit: 1
-    // };
-    // return promise
-    //     .all([contentfulService.getEntries(params)])
-    //     .then(function (response) {
-    //         var content = response[0];
-    //         res.locals.page = contentService.pageDigest(content);
-            res.render('errors/500');
-        // })
-        // .catch(function (err) {
-        //     next(err);
-        // });
+    res.render('errors/500',{
+        meta: {
+            title: utilService.metaTitlePrefix+'500'
+        }
+    });
 };
 
 pages.get404Page = function(req, res, next) {
-    // var params = {
-    //     content_type: contentfulService.contentTypes.page,
-    //     'fields.url[in]': '404',
-    //     limit: 1
-    // };
-    // return promise
-    //     .all([contentfulService.getEntries(params)])
-    //     .then(function (response) {
-    //         var content = response[0],
-    //             translations = [
-    //                 'Me paenitet',
-    //                 'I\'m sorry',
-    //                 'Przepraszam',
-    //                 'Lo siento',
-    //                 'Je m\'excuse',
-    //                 'Mi dispiace',
-    //                 'Es tut mir Leid'
-    //             ];
-    //         res.locals.translations = _.shuffle(translations);
-    //         res.locals.page = contentService.pageDigest(content);
-            res.render('errors/404');
-        // })
-        // .catch(function (err) {
-        //     next(err);
-        // });
+    const translations = [
+        'Me paenitet',//latin
+        'I\'m sorry',//english
+        'Przepraszam',//polish
+        'Lo siento',//spanish
+        'Je m\'excuse',//french
+        'Mi dispiace',//italian
+        'Es tut mir Leid'//german
+    ];
+    res.render('errors/404', {
+        meta: {
+            title: utilService.metaTitlePrefix+'404'
+        },
+        translations: _.shuffle(translations)
+    });
 };
 
 module.exports = pages;

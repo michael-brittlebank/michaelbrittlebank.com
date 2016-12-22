@@ -1,31 +1,19 @@
-<div id="page-not-found-error" class="row align-center">
-    <section id="container-content" class="small-12 medium-10 large-8 columns">
-        <div class="row align-stretch">
-            <section id="container-title" class="small-12 medium-4 columns">
-                <div class="row">
-                    <div class="small-4 medium-12">
-                        <h3>Error:</h3>
-                    </div>
-                    <div class="small-8 medium-12">
-                        <h1 class="page-title">{{page.title}}</h1>
-                    </div>
-                </div>
-            </section>
-            <section class="small-12 medium-8 columns">
-                <div id="container-translations">
-                    {{#each translations}}
-                        <h3 id="translations-{{@index}}" class="translations">{{this}}</h3>
-                    {{/each}}
-                </div>
-                <div class="page-body">
-                    {{{page.body}}}
-                </div>
-            </section>
-            <section class="small-0 medium-4 columns">
-            </section>
-            <section  id="container-button" class="small-12 medium-8 columns">
-                <a class="button" href="/">Go To Homepage</a>
-            </section>
+<main id="page-error-404" class="text-center grid-container row">
+    <section id="container-title" class="col-sm-12 col-md-4 columns">
+        <h3>Error:</h3>
+        <h1 class="page-title">Not Found</h1>
+    </section>
+    <section class="col-sm-12 col-md-8 columns">
+        <div id="container-translations">
+            {{#each translations}}
+                <h3 id="translations-{{@index}}" class="translations">{{this}}</h3>
+            {{/each}}
+        </div>
+        <div class="page-body">
+            {{{page.body}}}
         </div>
     </section>
-</div>
+    <section  id="container-button" class="col-sm-12 col-md-8 columns">
+        <a class="button" href="/">Go To Homepage</a>
+    </section>
+</main>

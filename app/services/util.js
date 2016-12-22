@@ -1,5 +1,7 @@
 var webapp = {};
 
+webapp.metaTitlePrefix = 'Mike Stumpf | ';
+
 webapp.status = {
     ok: 200,
     created: 201,

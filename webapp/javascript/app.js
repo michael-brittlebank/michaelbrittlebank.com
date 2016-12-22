@@ -1,113 +1,50 @@
-var site = {};
+/*
+ this follows the namespacing pattern listed here https://addyosmani.com/blog/essential-js-namespacing/
+ */
 
-site.screen = {
-    documentElement: document.documentElement,
-    body: document.getElementsByTagName('body')[0],
-    windowWidth: window.innerWidth || site.screen.documentElement.clientWidth || site.screen.body.clientWidth,
-    windowHeight: window.innerHeight|| site.screen.documentElement.clientHeight|| site.screen.body.clientHeight
-};
+var app = {
 
-site.helpers = {
-    //http://stackoverflow.com/questions/1527803/generating-random-numbers-in-javascript-in-a-specific-range
-    getRandomInt: function (min, max) {
-        return Math.floor(Math.random() * (max - min)) + min;
+    //libraries
+    ajax: {},
+    animations: {},
+    handlebars: {},
+    helpers: {},
+    mediaQueries: {},
+
+    //modules
+    carousel: {},
+
+    //templates
+    views: {
+        homepage:{},
+        error404:{},
+        error500:{}
     },
-    getRandomElement: function(array){
-        return array[site.helpers.getRandomInt(0, array.length-1)];
-    },
-    //http://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
-    shuffleArray: function(array) {
-        for (var i = array.length - 1; i > 0; i--) {
-            var j = Math.floor(Math.random() * (i + 1));
-            var temp = array[i];
-            array[i] = array[j];
-            array[j] = temp;
+
+    //functions
+    init: function(){
+        var carousel = app.carousel,
+            views = app.views;
+
+        //services
+        app.handlebars.applyHelpers();
+
+
+        //modules
+        if (carousel.hasCarousels()){
+            carousel.init();
         }
-        return array;
-    },
-    logger: function(name, variable){
-        console.log(name);
-        console.log(variable);
-    },
-    parseIntFromString: function(string){
-        //http://stackoverflow.com/questions/395163/get-css-top-value-as-number-not-as-string
-        return parseInt(string, 10);
+
+        //errors
+        views.error404.init();
+        // views.error500.init();
+
+        //views
+        views.homepage.init();
     }
 };
 
-site.animation = {
-    fadeIn: function(element,duration,delay,stagger){
-        $(element).css({visibility:'visible'}).velocity('transition.fadeIn',{
-            duration:duration,
-            delay:delay,
-            stagger:stagger
-        });
-    },
-    fadeOut: function(element,duration, delay){
-        $(element).velocity('transition.fadeOut',{
-            duration:duration,
-            delay:delay,
-            complete: function(elements) {
-                $(elements).css({visibility:'hidden'});
-            }
-        });
-    },
-    fadeOutAndRemove: function(element,duration,delay){
-        $(element).velocity({opacity: 0, visibility: 'hidden'}, {
-            duration: duration,
-            delay: delay,
-            queue: false,
-            complete: function (elements) {
-                $(elements).velocity('stop',true).remove();
-            }
-        });
-    }
-};
-
-site.init = function(){
-    var modalOverlay = $('#modal-overlay'),
-        activeModal;
-    //foundation init
-    $(document).foundation();
-    //loading animation
-    site.animation.fadeIn('header',1500,0,0);
-    site.animation.fadeIn('footer',1500,1000,0);
-    /**
-     * listeners
-     */
-        //modal listeners
-    $(document).on('closeme.zf.reveal', function(event){
-            if (!activeModal) {
-                activeModal = event.target;
-                $(modalOverlay).velocity('stop');
-                $(activeModal).velocity('stop');
-                $(modalOverlay).css({visibility:'visible','z-index':1005}).velocity({height: '100%',opacity:1},{
-                    duration:500,
-                    delay:0,
-                    stagger:0
-                });
-                site.animation.fadeIn(activeModal, 500, 0,0);
-            } else {
-                site.animation.fadeOut(activeModal, 250, 0);
-            }
-        })
-        .on('closed.zf.reveal', function(){
-            $(modalOverlay).velocity({height:0,opacity:0},{
-                duration:750,
-                delay:0,
-                complete: function(elements) {
-                    $(elements).css({visibility:'hidden','z-index':-1});
-                }
-            });
-            activeModal = null;
-        });
-    $('.close-button').on('click touch',function() {
-        //manually close foundation modal
-        $('.reveal').foundation('close');
-    });
-    $(modalOverlay).on('click touch',function(){
-        $('.reveal').foundation('close');
-    });
-};
-
-// site.init();
+//wait for the dom to load
+$(function(){
+    app.init();
+});

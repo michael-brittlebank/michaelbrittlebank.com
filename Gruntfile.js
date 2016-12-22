@@ -189,8 +189,10 @@ module.exports = function(grunt){
                         'webapp/bower_components/moment/min/moment.min.js',
                         'webapp/bower_components/velocity/velocity.min.js',
                         'webapp/bower_components/velocity/velocity.ui.min.js',
+                        'webapp/bower_components/blast-text/jquery.blast.min.js',
                         'webapp/bower_components/slick-carousel/slick/slick.min.js',
-                        'webapp/bower_components/css-modal/modal.js'
+                        'webapp/bower_components/css-modal/modal.js',
+                        'webapp/javascript/vendor/**/*.js'
                     ]
                 },
                 options: {
@@ -208,7 +210,8 @@ module.exports = function(grunt){
                         'webapp/javascript/lib/**/*.js',
                         'webapp/javascript/services/**/*.js',
                         'webapp/javascript/modules/**/.js',
-                        'webapp/javascript/**/*.js'
+                        'webapp/javascript/**/*.js',
+                        '!webapp/javascript/vendor/**/*.js'
                     ]
                 },
                 options: {
