@@ -5,13 +5,13 @@ var logService = {};
 
 logService.error = function(error){
     if(utilService.isLocalConfig()){
-        console.log('----------- ERROR -----------',error);
+        console.log('----------- ERROR -----------\n',error,'\n\n');
     }
 };
 
 logService.info = function(info){
     if(utilService.isLocalConfig()){
-        console.log('----------- INFO -----------',info);
+        console.log('----------- INFO -----------\n',info,'\n\n');
     }
 };
 

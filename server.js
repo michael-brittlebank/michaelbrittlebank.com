@@ -63,7 +63,9 @@ app.use(express.static(path.join(__dirname, 'webapp/public'),{
 
 //helper middleware
 redirect(app);
-app.use(utilMiddleware.removeTrailingSlashes,utilMiddleware.redirectHistoricalLinks,utilMiddleware.debugRequests);
+app.use(utilMiddleware.removeTrailingSlashes);
+app = utilMiddleware.debugLibraries(utilMiddleware.redirectHistoricalLinks(app), express);
+app.use(utilMiddleware.debugRequests);
 
 //parse form data
 app.use(bodyParser.json());// to support JSON-encoded bodies

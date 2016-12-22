@@ -19,3 +19,10 @@
     </div>
     <div id="modal-overlay">&nbsp;</div>
 </footer>
+<!-- JS -->
+<script type="text/javascript" src="/app.base.min.js"></script>
+<script type="text/javascript" src="/app.handlebars.min.js"></script>
+<script type="text/javascript" src="/app.main.min.js"></script>
+{{#if googleMaps}}
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key={{config.googleMapsApiKey}}&callback=travel.maps.initMap"></script>
+{{/if}}

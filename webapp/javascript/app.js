@@ -110,4 +110,4 @@ site.init = function(){
     });
 };
 
-site.init();
+// site.init();

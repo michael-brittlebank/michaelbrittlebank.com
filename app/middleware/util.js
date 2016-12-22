@@ -1,10 +1,12 @@
-const //services
+const //packages
+    path = require('path'),
+//services
     logService = require('../services/logs'),
     utilService = require('../services/util');
 
 var utilMiddleware = {};
 
-utilMiddleware.redirectHistoricalLinks = function(req, res, next){
+utilMiddleware.redirectHistoricalLinks = function(app){
 //resume
     app.redirect('/portfolio/university-of-wisconsin-madison', '/cv');
     app.redirect('/portfolio/portfolio/university-of-york', '/cv');
@@ -41,7 +43,7 @@ utilMiddleware.redirectHistoricalLinks = function(req, res, next){
 //sitemap
     app.redirect('/sitemap', '/sitemap.xml');
 
-    next();
+    return app;
 };
 
 utilMiddleware.removeTrailingSlashes = function(req, res, next) {
@@ -53,12 +55,15 @@ utilMiddleware.removeTrailingSlashes = function(req, res, next) {
     }
 };
 
+utilMiddleware.debugLibraries = function(app, express){
+    if(utilService.isLocalConfig()) {
+        app.use('/webapp/bower_components', express.static(path.join(__dirname, 'webapp/bower_components')));
+    }
+    return app;
+};
+
 utilMiddleware.debugRequests = function(req,res,next){
     if(utilService.isLocalConfig()){
-        //debugging included libs
-        app.use('/webapp/bower_components', express.static(path.join(__dirname, 'webapp/bower_components')));
-        
-        //debugging routes
         logService.info('Calling '+req.method+' '+req.originalUrl);
     }
     next();

@@ -8,6 +8,7 @@ var pages = {};
  * Main Routes
  */
 pages.getIndex = function(req, res, next) {
+    console.log('got here');
     // var params = {
     //     content_type: contentfulService.contentTypes.page,
     //     'fields.url[in]': 'index',
@@ -18,8 +19,8 @@ pages.getIndex = function(req, res, next) {
     //     .then(function (response) {
     //         var content = response[0];
     //         res.locals.page = contentService.pageDigest(content);
-            res.render('page-homepage', {
-                layout: 'layout-homepage'
+            res.render('pages/homepage', {
+                layout: 'homepage'
             });
         // })
         // .catch(function (err) {
@@ -64,7 +65,7 @@ pages.getPortfolioPage = function(req, res, next){
     //             quoteItems.push(contentService.quoteDigest(entry));
     //         });
     //         res.locals.quote = _.sample(quoteItems);
-            res.render('page-portfolio');
+            res.render('pages/portfolio');
         // })
         // .catch(function (err) {
         //     next(err);
@@ -72,7 +73,7 @@ pages.getPortfolioPage = function(req, res, next){
 };
 
 pages.getResumePage = function(req, res, next) {
-    res.render('page-resume');
+    res.render('pages/resume');
 };
 
 pages.getMusicPage = function(req, res, next) {
@@ -96,7 +97,7 @@ pages.getMusicPage = function(req, res, next) {
 };
 
 pages.getChorusPage = function(req, res, next) {
-    res.render('page-chorus');
+    res.render('pages/chorus');
 };
 
 pages.getTravelPage = function(req, res, next) {
@@ -111,7 +112,7 @@ pages.getTravelPage = function(req, res, next) {
     //         var content = response[0];
     //         res.locals.album = contentService.albumDigest(content);
             res.locals.googleMaps = true;
-            res.render('page-travel');
+            res.render('pages/travel');
         // })
         // .catch(function (err) {
         //     next(err);
@@ -150,11 +151,11 @@ pages.getDefaultPage = function(req, res, next) {
     //                     res.render('single-page');
     //             }
     //         } else {
-    //             res.render('single-page');
+                res.render('pages/default');
     //         }
     //     })
     //     .catch(function (err) {
-            next(err);
+    //         next(err);
         // });
 };
 
@@ -169,7 +170,7 @@ pages.get500Page = function(req, res, next) {
     //     .then(function (response) {
     //         var content = response[0];
     //         res.locals.page = contentService.pageDigest(content);
-            res.render('page-500');
+            res.render('errors/500');
         // })
         // .catch(function (err) {
         //     next(err);
@@ -197,7 +198,7 @@ pages.get404Page = function(req, res, next) {
     //             ];
     //         res.locals.translations = _.shuffle(translations);
     //         res.locals.page = contentService.pageDigest(content);
-            res.render('page-404');
+            res.render('errors/404');
         // })
         // .catch(function (err) {
         //     next(err);
