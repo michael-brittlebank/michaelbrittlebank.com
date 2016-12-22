@@ -118,26 +118,12 @@ pages.getChorusPage = function(req, res, next) {
 };
 
 pages.getTravelPage = function(req, res, next) {
-    // var params = {
-    //     content_type: contentfulService.contentTypes.album,
-    //     'fields.title[in]': 'Travel',
-    //     limit: 1
-    // };
-    // return promise
-    //     .all([contentfulService.getEntries(params)])
-    //     .then(function (response) {
-    //         var content = response[0];
-    //         res.locals.album = contentService.albumDigest(content);
-    res.locals.googleMaps = true;
     res.render('pages/travel',{
         meta: {
             title: utilService.metaTitlePrefix+'Travel'
-        }
+        },
+        googleMapsApi: process.env.GOOGLE_MAPS_API
     });
-    // })
-    // .catch(function (err) {
-    //     next(err);
-    // });
 };
 
 pages.getDefaultPage = function(req, res, next) {

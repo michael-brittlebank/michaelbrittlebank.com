@@ -18,7 +18,11 @@ var app = {
     views: {
         homepage:{},
         error404:{},
-        error500:{}
+        error500:{},
+        travel: {},
+        portfolio: {},
+        music: {},
+        resume: {}
     },
 
     //functions
@@ -45,6 +49,7 @@ var app = {
 
         //views
         views.homepage.init();
+        views.travel.init();
     }
 };
 

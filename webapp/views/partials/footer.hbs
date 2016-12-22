@@ -23,6 +23,6 @@
 <script type="text/javascript" src="/app.base.min.js"></script>
 <script type="text/javascript" src="/app.handlebars.min.js"></script>
 <script type="text/javascript" src="/app.main.min.js"></script>
-{{#if googleMaps}}
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key={{config.googleMapsApiKey}}&callback=travel.maps.initMap"></script>
+{{#if googleMapsApi}}
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key={{googleMapsApi}}&callback=app.views.travel.initMap"></script>
 {{/if}}

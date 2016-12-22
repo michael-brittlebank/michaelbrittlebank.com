@@ -1,12 +1,15 @@
 (function(){
 
+    var that = app.helpers,
+        $ = jQuery;
+
    this.getRandomInt = function (min, max) {
        //http://stackoverflow.com/questions/1527803/generating-random-numbers-in-javascript-in-a-specific-range
        return Math.floor(Math.random() * (max - min)) + min;
     };
 
     this.getRandomElement = function(array){
-        return array[site.helpers.getRandomInt(0, array.length-1)];
+        return array[that.getRandomInt(0, array.length-1)];
     };
     
     this.shuffleArray = function(array) {

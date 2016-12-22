@@ -35,9 +35,9 @@
       list-style: circle;
       padding: 0 10px;
       @include faded-out;
-      li {
-        font-family: $font-texgyre-regular;
-      }
+      //li {
+      //  font-family: $font-texgyre-regular;
+      //}
     }
   }
 }

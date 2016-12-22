@@ -18,6 +18,9 @@ if(utilService.isLocalConfig()){
         .get(pagesController.get404Page);
 }
 
+router.route('/travel')
+    .get(pagesController.getTravelPage);
+
 // router.route('/*')
 //     .get(pagesController.getDefaultPage);
 

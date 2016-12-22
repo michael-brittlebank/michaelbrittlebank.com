@@ -24,8 +24,8 @@
     margin-bottom:50px;
     .tabs-panel {
       &.is-active {
-        @include animation-name(fadeIn);
-        @include animation-duration(1s);
+        //@include animation-name(fadeIn);
+        //@include animation-duration(1s);
       }
     }
   }

@@ -31,15 +31,17 @@
     }
 
     this.init = function(){
-        //variables
-        warningIcon = $('.fa-stack-1x');
-        warningContainer = $('#container-warning').find('p')[0];
-        //loading animation
-        animations.fadeIn('#container-content',1000,750,0);
-        //animation
-        setTimeout(function(){
-            animateWarningButton();
-        }, 750);
+        if($('#page-error-500').length > 0) {
+            //variables
+            warningIcon = $('.fa-stack-1x');
+            warningContainer = $('#container-warning').find('p')[0];
+            //loading animation
+            animations.fadeIn($('#container-content'), 1000, 750, 0);
+            //animation
+            setTimeout(function () {
+                animateWarningButton();
+            }, 750);
+        }
     };
 
 }).apply(app.views.error500);

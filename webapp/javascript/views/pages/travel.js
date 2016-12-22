@@ -1,15 +1,18 @@
-var travel = {},
-    map;
+(function(){
 
-travel.places = data.places;
+    var that = app.views.travel,
+        $ = jQuery,
+        helpers = app.helpers,
+        animations = app.animations,
+        map,
+        places = data.places,
+        markers = [];
 
-travel.markers = [];
-
-travel.maps = {
-    initMap: function() {
-        site.animation.fadeIn('#container-rule',1000,0,0);
-        site.animation.fadeIn('#container-google',1000,500,0);
-        var place = site.helpers.getRandomElement(travel.places);
+    this.initMap =  function() {
+        console.log('init');
+        animations.fadeIn($('#container-rule'),1000,0,0);
+        animations.fadeIn($('#container-google'),1000,500,0);
+        var place = helpers.getRandomElement(places);
         map = new google.maps.Map(document.getElementById('container-google'), {
             zoom: 4,
             center: {
@@ -26,46 +29,33 @@ travel.maps = {
                 ]
             }
         });
-        travel.maps.dropMarkers();
-    },
-    dropMarkers: function() {
-        travel.maps.clearMarkers();
-        var places = site.helpers.shuffleArray(travel.places);
         for (var i = 0; i < places.length; i++) {
-            travel.maps.addMarkerWithTimeout(places[i], 0);
-        }
-    },
-    addMarkerWithTimeout: function(place, timeout) {
-        window.setTimeout(function() {
-            travel.markers.push(new google.maps.Marker({
-                position: place,
-                title: place.title,
+            markers.push(new google.maps.Marker({
+                position: places[i],
+                title: places[i].title,
                 map: map,
                 animation: google.maps.Animation.DROP
             }));
-        }, timeout);
-    },
-    clearMarkers: function() {
-        for (var i = 0; i < travel.markers.length; i++) {
-            travel.markers[i].setMap(null);
         }
-        travel.markers = [];
-    }
-};
+    };
 
-travel.init = function(){
-    site.animation.fadeIn('#container-images',1000,1000,0);
-    $('.travel-images').slick({
-        infinite: true,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        centerMode: true,
-        autoplay: true,
-        autoplaySpeed: 5000,
-        speed: 500,
-        fade: true,
-        cssEase: 'linear',
-        dots: true,
-        pauseOnDotsHover: true
-    });
-};
+    this.init = function(){
+        if ($('#page-travel').length > 0) {
+            animations.fadeIn($('#container-images'), 1000, 1000, 0);
+            $('.travel-images').slick({
+                infinite: true,
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                centerMode: true,
+                autoplay: true,
+                autoplaySpeed: 5000,
+                speed: 500,
+                fade: true,
+                cssEase: 'linear',
+                dots: true,
+                pauseOnDotsHover: true
+            });
+        }
+    };
+
+}).apply(app.views.travel);
