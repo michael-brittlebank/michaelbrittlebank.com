@@ -695,3 +695,4 @@ input[type="button"].ont-btn-block {
     padding-left: 0!important;
 }
 label.ont-btn{width:auto!important;min-width:60px!important;}
+.ont-btn-xxs{padding:0!important;border:none!important;}

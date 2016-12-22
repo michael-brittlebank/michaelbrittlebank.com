@@ -88,7 +88,7 @@ class Toolset_User_Editors_Resource_Views_Dialog
 
 		wp_enqueue_style(
 			'toolset-user-editors-ressource-views-dialog',
-			TOOLSET_COMMON_URL . 'user-editors/resource/views/dialog/dialog.css',
+			TOOLSET_COMMON_URL . '/user-editors/resource/views/dialog/dialog.css',
 			array(),
 			TOOLSET_COMMON_VERSION
 		);

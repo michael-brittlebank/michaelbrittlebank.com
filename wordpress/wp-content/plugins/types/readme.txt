@@ -6,21 +6,30 @@ Text Domain: wpcf
 Domain Path: /embedded/locale
 License: GPLv2
 Requires at least: 3.7
-Tested up to: 4.6
-Stable tag: 2.2.1
+Tested up to: 4.7
+Stable tag: 2.2.5
 
 The complete and reliable plugin for managing custom post types, custom taxonomies and custom fields.
 
 == Description ==
 
-Types let's you customize the WordPress admin by adding content types, custom fields and taxonomies. You will be able to craft the WordPress admin and turn it into your very own content management system.
+**Types let's you customize the WordPress admin by adding content types, custom fields and taxonomies. You will be able to craft the WordPress admin and turn it into your very own content management system.**
 
 [vimeo https://vimeo.com/176428571]
 
-= POWERFUL PHP API, SIMPLE GUI FOR NON-CODERS =
-If you're an experienced PHP developer, you'll appreciate Types comprehensive [PHP API](http://wp-types.com/documentation/functions/) and [documentation](http://wp-types.com/documentation/user-guides/).
+= COMPLETE DOCUMENTATION, POWERFUL API, SIMPLE GUI FOR NON-CODERS =
+If you're an experienced PHP developer, you'll appreciate Types comprehensive [fields API](https://wp-types.com/documentation/customizing-sites-using-php/functions/).
 
-The full [Toolset](http://wp-types.com) package lets you build complete WordPress sites from within the admin dashboard.
+You will find detailed guides on [adding custom post types, fields and taxonomy to the front-end](https://wp-types.com/documentation/customizing-sites-using-php/), including:
+
+* [Creating templates for single custom posts](https://wp-types.com/documentation/customizing-sites-using-php/creating-templates-single-custom-posts)
+* [Creating templates for custom post type archives](https://wp-types.com/documentation/customizing-sites-using-php/creating-templates-custom-post-type-archives)
+* [Creating custom user profiles](https://wp-types.com/documentation/customizing-sites-using-php/creating-custom-user-profiles)
+* [Create taxonomy term archives](https://wp-types.com/documentation/customizing-sites-using-php/creating-taxonomy-term-archives)
+
+and [more](https://wp-types.com/documentation/customizing-sites-using-php/).
+
+**Too much technical stuff to learn?** The full [Toolset](http://wp-types.com) package lets you build complete WordPress sites from within the admin dashboard.
 
 = CUSTOM FIELDS FOR CONTENT AND USERS =
 Types lets you add custom fields for both posts (meaning, WordPress posts, pages and custom content types), as well as users. You can add any field types to different user profiles.
@@ -98,7 +107,7 @@ By default, WordPress will either display your blog posts or a specific page on 
 To display custom post types on the home-page, you have two options:
 
 1. If you're comfortable with PHP and WordPress API, edit the site's template files (probably index.php) and load the custom post types there. Different themes do this differently, so we can't really say what single approach works best. You should look at [get_posts](http://codex.wordpress.org/Template_Tags/get_posts), which is part of the WordPress Template Tags system.
-2. If you want to build sites right away, without becoming an expert in WordPress API and try our [Views Toolset](http://wp-types.com/). You'll be able to load whatever content you need from the database and display it anywhere and in whatever way you choose.
+2. If you want to build sites right away, without becoming an expert in WordPress API and try our [Toolset Views](http://wp-types.com/). You'll be able to load whatever content you need from the database and display it anywhere and in whatever way you choose.
 
 We're sorry, but we don't know of any third option which is both free and requires no coding.
 
@@ -150,6 +159,40 @@ Additionally, Types is the only plugin that lets you define parent/child relatio
 9. Bulk editing child content using Field Tables
 
 == Changelog ==
+
+= 2.2.5 =
+
+* Use a different validation rule for file fields that also allows domains without TLD.
+* Fix a CRED issue with added validation rules.
+* Handle several issues related to using "0" as a default field value and saving it to the database.
+* Fix an edge-case bug when loading field groups on the Edit Post page.
+
+= 2.2.4 =
+
+* Fix an issue with registering custom taxonomies in WordPress 4.7.
+* Implement an alternative escaping mechanism for custom format setting of the date field.
+* types_render_shortcode() function and [types] shortcode now allows to use "id" attribute for $parent-post selection
+* Exclude Media from post relationships since the current GUI isn't able to support it properly
+* Fix exporting taxonomies with legacy "object_type" setting that was causing syntax errors in the output XML.
+* Support all CPTs in Toolset Dashboard.
+* Change the way we store the context of a Types field for string translation (use field group name instead of ID)
+* Fix a WordPress 4.7 compatibility issue with direct access to $wp_filter.
+* Make the manipulation with repetitive user field values more similar to post fields. Fix a front-end notice when there is only one value in a repeating user Skype field.
+* Add missing mandatory URL validation to file fields.
+* Add PHP template example files.
+* Fix an issue with Types export and non-latin characters in a field group slug.
+
+= 2.2.3 =
+
+* Fixed several security issues.
+
+= 2.2.2 =
+
+* Toolset Dashboard now supports custom post types created by theme or other plugins
+* Updated select2 to version 4
+* Fixed issue using [types] shortcode in CRED notification
+* Fixed minor incompatibility with the latest version of Toolset Access.
+* Fixed issue with custom values for checkboxes fields not being respected.
 
 = 2.2.1 =
 

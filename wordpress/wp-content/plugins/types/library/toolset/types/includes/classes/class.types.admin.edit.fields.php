@@ -154,9 +154,7 @@ abstract class Types_Admin_Edit_Fields extends Types_Admin_Page
         $required = (isset($form_data['data']['validate']['required']['active']) && $form_data['data']['validate']['required']['active'] === "1") ? __('- required','wpcf') : '';
         $form_data['id'] = $id;
 
-        /**
-         *  Set title
-         */
+        // Set title
         $title = !empty( $form_data['name'] ) ? $form_data['name'] : __( 'Untitled', 'wpcf' );
         $title = sprintf(
             '<span class="wpcf-legend-update">%s</span> <span class="description">(%s)</span> <span class="wpcf_required_data">%s</span>',
@@ -176,10 +174,7 @@ abstract class Types_Admin_Edit_Fields extends Types_Admin_Page
 
         $form_field = array();
 
-        /**
-         * Font Awesome Icon
-         */
-        $icon = '';
+        // Font Awesome Icon
         $icon = $this->render_field_icon( $field_init_data );
 
         /**
@@ -203,9 +198,7 @@ abstract class Types_Admin_Edit_Fields extends Types_Admin_Page
 	    }
 	    */
 
-        /**
-         * box title
-         */
+        // box title
         $form_field['box-open'] = array(
             '#type' => 'markup',
             '#markup' => sprintf(
@@ -395,22 +388,37 @@ abstract class Types_Admin_Edit_Fields extends Types_Admin_Page
             );
             break;
         }
-        switch($type)
-        {
-        case 'audio':
-        case 'file':
-        case 'image':
-        case 'embed':
-        case 'url':
-        case 'video':
-            $form_field['user_default_value']['#validate'] = array('url'=>array());
-            break;
-        case 'email':
-            $form_field['user_default_value']['#validate'] = array('email'=>array());
-            break;
-        case 'numeric':
-            $form_field['user_default_value']['#validate'] = array('number'=>array());
-            break;
+
+        switch( $type ) {
+            case 'audio':
+            case 'file':
+            case 'image':
+            case 'video':
+                $form_field['user_default_value']['#validate'] = array(
+                    'url2' => array(
+                        'active' => 1,
+                        'message' => __( 'Please enter a valid URL address.', 'wpcf' )
+                    )
+                );
+                break;
+
+            case 'embed':
+            case 'url':
+                $form_field['user_default_value']['#validate'] = array(
+                    'url' => array(
+                        'active' => 1,
+                        'message' => __( 'Please enter a valid URL address.', 'wpcf' )
+                    )
+                );
+                break;
+
+            case 'email':
+                $form_field['user_default_value']['#validate'] = array( 'email' => array() );
+                break;
+
+            case 'numeric':
+                $form_field['user_default_value']['#validate'] = array( 'number' => array() );
+                break;
         }
 
         if ( wpcf_admin_can_be_repetitive( $type ) ) {
@@ -599,7 +607,7 @@ abstract class Types_Admin_Edit_Fields extends Types_Admin_Page
                     'data-wpcf-nonce' => wp_create_nonce('wpcf-edit-'.$this->ct['id']),
 	                // This can be wpcf-postmeta, wpcf-usermeta or wpcf-termmeta.
                     'data-wpcf-type' => $this->type,
-	                'data-wpcf-page' => wpcf_getget( 'page' )
+	                'data-wpcf-page' => esc_attr( wpcf_getget( 'page' ) )
                 ),
                 '_builtin' => true,
                 '#name' => 'fields-button-add',

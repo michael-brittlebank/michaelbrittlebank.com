@@ -143,12 +143,12 @@ function ajax_wpcf_is_reserved_name() {
 
     // slug
     $name = isset( $_POST['slug'] )
-        ? $_POST['slug']
+        ? sanitize_text_field( $_POST['slug'] )
         : '';
 
     // context
     $context = isset( $_POST['context'] )
-        ? $_POST['context']
+        ? sanitize_text_field( $_POST['context'] )
         : false;
 
     // check also page slugs
@@ -162,11 +162,11 @@ function ajax_wpcf_is_reserved_name() {
 
         // for taxonomy
         if( $context == 'taxonomy' )
-            $_POST['ct']['wpcf-tax'] = $_POST['slugPreSave'];
+            $_POST['ct']['wpcf-tax'] = sanitize_text_field( $_POST['slugPreSave'] );
 
         // for post_type
         if( $context == 'post_type' )
-            $_POST['ct']['wpcf-post-type'] = $_POST['slugPreSave'];
+            $_POST['ct']['wpcf-post-type'] = sanitize_text_field( $_POST['slugPreSave'] );
     }
 
     if( $context == 'post_type' || $context == 'taxonomy' ) {
@@ -590,7 +590,7 @@ function types_ajax_notice_dismiss_permanent() {
         ? get_user_meta( get_current_user_id(), '_types_notice_dismiss_permanent', true )
         : array();
 
-    $user_dismissed_notices[] = $_POST['types_notice_dismiss_permanent'];
+    $user_dismissed_notices[] = sanitize_text_field( $_POST['types_notice_dismiss_permanent'] );
     update_user_meta( get_current_user_id(), '_types_notice_dismiss_permanent', $user_dismissed_notices );
 }
 

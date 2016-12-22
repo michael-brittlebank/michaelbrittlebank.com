@@ -1,0 +1,50 @@
+<main class="row page portfolio">
+    <section id="container-quote" class="small-12 columns">
+        <div class="callout">
+            {{{quote.body}}}
+            <h5>{{quote.author}}{{#if quote.source}} - {{quote.source}}{{/if}}</h5>
+        </div>
+    </section>
+    <section id="container-sliders" class="small-12">
+        {{#each portfolio}}
+            <h2 class="slider-header">{{name}}</h2>
+            <div class="slider-container">
+                <div class="portfolio-carousel">
+                    {{#each items}}
+                        <div class="portfolio-item" data-open="modal-{{../name}}-{{@index}}">
+                            <div class="portfolio-content">
+                                {{{featuredIcon}}}
+                                <h3>{{title}}</h3>
+                            </div>
+                        </div>
+                    {{/each}}
+                </div>
+            </div>
+        {{/each}}
+    </section>
+    <section id="container-modals">
+        {{#each portfolio}}
+            {{#each items}}
+                <div class="reveal small" id="modal-{{../name}}-{{@index}}" data-reveal data-overlay="false" data-close-on-click="false">
+                    <button class="close-button" data-close aria-label="Close reveal" type="button">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <div class="row">
+                        <section class="small-12 columns">
+                            <h3>{{title}}</h3>
+                            {{{excerpt}}}
+                            <div id="modal-footer" class="row">
+                                {{#isNotEmpty techStack}}
+                                    <div class="small-12 medium-6 columns order-1 medium-order-2">
+                                        <p class="tech-stack"><span class="title">Tech Stack:</span> {{techStack}}</p>
+                                    </div>
+                                {{/isNotEmpty}}
+                                {{>portfolio-footer this}}
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            {{/each}}
+        {{/each}}
+    </section>
+</main>

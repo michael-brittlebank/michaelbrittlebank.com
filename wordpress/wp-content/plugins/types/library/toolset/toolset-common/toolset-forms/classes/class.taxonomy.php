@@ -13,10 +13,18 @@ class WPToolset_Field_Taxonomy extends WPToolset_Field_Textfield {
     public function init() {
         $this->objValues = array();
 
-        $terms = apply_filters('toolset_filter_taxonomy_terms', wp_get_post_terms(CredForm::$current_postid, $this->getName(), array("fields" => "all")));
+        // Compatibility with CRED 1.8.4 and above
+        if( class_exists( 'CRED_Form_Rendering' ) ) {
+            $current_post_id = CRED_Form_Rendering::$current_postid;
+        } else {
+            // CRED <= 1.8.3
+            $current_post_id = CredForm::$current_postid;
+        }
+
+        $terms = apply_filters('toolset_filter_taxonomy_terms', wp_get_post_terms( $current_post_id, $this->getName(), array("fields" => "all")));
         $i = 0;
         foreach ($terms as $n => $term) {
-            $this->values .= ($i == 0) ? $term->slug : "," . $term->slug;
+            $this->values .= ($i == 0) ? $term->name : "," . $term->name;
             $this->objValues[$term->slug] = $term;
             $i++;
         }

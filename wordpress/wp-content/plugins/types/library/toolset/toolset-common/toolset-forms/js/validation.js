@@ -59,8 +59,8 @@ var wptValidation = (function ($) {
                     if (jQuery(element).hasClass("wpt-form-radio")) {
                         var val = jQuery('input[name="' + _name + '"]:checked').val();
                         if (wptValidationDebug)
-                            console.log("radio " + (_value && $.trim(_value).length > 0));
-                        return _value && $.trim(_value).length > 0;
+                            console.log("radio " + (typeof val != 'undefined' && val && $.trim(val).length > 0));
+                        return typeof val != 'undefined' && val && $.trim(val).length > 0;
                     }
 
                     //Fixing YT cred-104

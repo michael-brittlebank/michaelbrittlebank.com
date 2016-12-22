@@ -43,14 +43,14 @@ class Toolset_User_Editors_Resource_Views_Dialog_For_Any_Input
 	public function _actionScriptsAndStyles() {
 		wp_enqueue_style(
 			'toolset-user-editors-ressource-views-dialog-for-any-input',
-			TOOLSET_COMMON_URL . 'user-editors/resource/views/dialog/for-any-input.css',
+			TOOLSET_COMMON_URL . '/user-editors/resource/views/dialog/for-any-input.css',
 			array(),
 			TOOLSET_COMMON_VERSION
 		);
 
 		wp_enqueue_script(
 			'toolset-user-editors-ressource-views-dialog-for-any-input',
-			TOOLSET_COMMON_URL . 'user-editors/resource/views/dialog/for-any-input.js',
+			TOOLSET_COMMON_URL . '/user-editors/resource/views/dialog/for-any-input.js',
 			array( 'jquery' ),
 			TOOLSET_COMMON_VERSION,
 			true

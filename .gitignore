@@ -3,31 +3,23 @@ pids
 *.pid
 *.seed
 
-# Grunt intermediate storage (http://gruntjs.com/creating-plugins#storing-task-files)
-.grunt
+#build caches
+.sass-cache/
+.grunt/
 
-# node-waf configuration
-.lock-wscript
+#dependencies
+node_modules/
+webapp/bower_components/
 
-# Compiled binary addons (http://nodejs.org/api/addons.html)
-build/Release
-
-# Dependency directory
-# https://www.npmjs.org/doc/misc/npm-faq.html#should-i-check-my-node_modules-folder-into-git
-node_modules
-webapp/bower_components
-.sass-cache
-
-#IDE
-.idea
+#ide
+.idea/
 *.DS_Store
 
-#Compiled Files
-webapp/public
+#compiled Files
+webapp/public/
 
-#log files
-logs/*
-!logs/README.md
+#config
+.env
 
 #wordpress
 wordpress/wp-content/aiowps_backups/

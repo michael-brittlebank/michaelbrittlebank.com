@@ -29,7 +29,7 @@ class WPToolset_Field_Date_Scripts
 
 	    $is_frontend = ( !is_admin() );
 
-	    $current_admin_page = isset( $_GET['page'] ) ? $_GET['page'] : null;
+	    $current_admin_page = isset( $_GET['page'] ) ? sanitize_text_field( $_GET['page'] ) : null;
 	    $field_group_edit_pages = array( 'wpcf-edit-usermeta', 'wpcf-edit', 'wpcf-termmeta-edit' );
 	    $is_types_edit_page = in_array( $current_admin_page, $field_group_edit_pages );
 

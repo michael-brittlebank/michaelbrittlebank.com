@@ -1,0 +1,19 @@
+<main id="page-error-404" class="text-center grid-container row">
+    <section id="container-title" class="col-sm-12 col-md-4 columns">
+        <h3>Error:</h3>
+        <h1 class="page-title">Not Found</h1>
+    </section>
+    <section class="col-sm-12 col-md-8 columns">
+        <div id="container-translations">
+            {{#each translations}}
+                <h3 id="translations-{{@index}}" class="translations">{{this}}</h3>
+            {{/each}}
+        </div>
+        <div class="page-body">
+            {{{page.body}}}
+        </div>
+    </section>
+    <section  id="container-button" class="col-sm-12 col-md-8 columns">
+        <a class="button" href="/">Go To Homepage</a>
+    </section>
+</main>

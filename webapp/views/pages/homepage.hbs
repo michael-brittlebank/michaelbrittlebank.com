@@ -1,0 +1,36 @@
+<main class="page homepage">
+    <section class="row">
+        <div class="small-12 banner top">&nbsp;</div>
+    </section>
+    <section id="container-blocks" class="row">
+        {{#each page.content}}
+            {{#isEvenNumber @index}}
+                <div id="homepage-block-{{addition @index 1}}" class="grid-block body-highlight small-12 medium-6 columns order-{{addition @index 1}} {{gridOrder @index "medium"}}" data-url="{{linkUrl}}">
+                    <div class="block-body">
+                        {{{body}}}
+                    </div>
+                    <div class="hover-filter hover-filter-back">&nbsp;</div>
+                    <div class="hover-filter hover-filter-front">&nbsp;</div>
+                    <div class="hover-filter hover-filter-text">
+                        <h2>{{title}}</h2>
+                    </div>
+                    <div class="hover-filter hover-filter-overlay">&nbsp;</div>
+                </div>
+            {{else}}
+                <div id="homepage-block-{{addition @index 1}}" class="grid-block image-highlight small-12 medium-6 columns order-{{addition @index 1}} {{gridOrder @index "medium"}}" data-url="{{linkUrl}}">
+                    <div class="block-body">
+                        <img src="{{image}}" alt="{{title}}"/>
+                    </div>
+                    <div class="hover-filter hover-filter-back">&nbsp;</div>
+                    <div class="hover-filter hover-filter-text">
+                        <h2>{{title}}</h2>
+                    </div>
+                    <div class="hover-filter hover-filter-overlay">&nbsp;</div>
+                </div>
+            {{/isEvenNumber}}
+        {{/each}}
+    </section>
+    <section class="row">
+        <div class="small-12 banner bottom">&nbsp;</div>
+    </section>
+</main>

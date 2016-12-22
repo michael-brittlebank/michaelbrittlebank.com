@@ -1,0 +1,17 @@
+<main class="row page travel">
+    <section id="container-images">
+        <div class="travel-images">
+            {{#each album.images}}
+                <div style="background-image:url('{{url}}');">
+                    <div class="image-caption-holder">
+                        <h3>{{title}}</h3>
+                    </div>
+                </div>
+            {{/each}}
+        </div>
+    </section>
+    <section id="container-rule" class="small-12 columns">
+        <hr/>
+    </section>
+    <section id="container-google"></section>
+</main>

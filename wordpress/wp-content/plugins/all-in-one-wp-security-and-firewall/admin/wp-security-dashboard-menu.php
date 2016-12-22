@@ -756,7 +756,7 @@ class AIOWPSecurity_Dashboard_Menu extends AIOWPSecurity_Admin_Menu
                     <input type="hidden" name="page" value="<?php echo esc_attr($_REQUEST['page']); ?>"/>
                     <?php
                     if (isset($_REQUEST["tab"])) {
-                        echo '<input type="hidden" name="tab" value="' . $_REQUEST["tab"] . '" />';
+                        echo '<input type="hidden" name="tab" value="' . esc_attr($_REQUEST["tab"]) . '" />';
                     }
                     ?>
                     <!-- Now we can render the completed list table -->
@@ -805,7 +805,7 @@ class AIOWPSecurity_Dashboard_Menu extends AIOWPSecurity_Admin_Menu
                     <?php
                     $blocked_ip_list->search_box('Search', 'search_permanent_block');
                     if (isset($_REQUEST["tab"])) {
-                        echo '<input type="hidden" name="tab" value="' . $_REQUEST["tab"] . '" />';
+                        echo '<input type="hidden" name="tab" value="' . esc_attr($_REQUEST["tab"]) . '" />';
                     }
                     ?>
                     <!-- Now we can render the completed list table -->
@@ -819,8 +819,9 @@ class AIOWPSecurity_Dashboard_Menu extends AIOWPSecurity_Admin_Menu
 
     function render_tab5()
     {
-        global $wpdb;
-        $file_selected = isset($_POST["aiowps_log_file"]) ? $_POST["aiowps_log_file"] : '';
+        global $aio_wp_security;
+        $file_selected = filter_input(INPUT_POST, 'aiowps_log_file'); // Get the selected file
+
         ?>
         <div class="postbox">
             <h3 class="hndle"><label
@@ -859,15 +860,23 @@ class AIOWPSecurity_Dashboard_Menu extends AIOWPSecurity_Admin_Menu
             </div>
         </div>
         <?php
-        if (isset($_POST['aiowps_view_logs']))//Do form submission tasks
+        if (isset($_POST['aiowps_view_logs']) && $file_selected)//Do form submission tasks
         {
-            $error = '';
+            //Check nonce before doing anything
             $nonce = $_REQUEST['_wpnonce'];
             if (!wp_verify_nonce($nonce, 'aiowpsec-dashboard-logs-nonce')) {
                 $aio_wp_security->debug_logger->log_debug("Nonce check failed on dashboard view logs!", 4);
-                die("Nonce check failed on dashboard view logs!");
+                wp_die("Error! Nonce check failed on dashboard view logs!");
             }
 
+            //Let's make sure that the file selected can only ever be the correct log file of this plugin.
+            $valid_aiowps_log_files = array('wp-security-log.txt', 'wp-security-log-cron-job.txt');
+            if(!in_array($file_selected, $valid_aiowps_log_files)){
+                $file_selected = '';
+                unset($_POST['aiowps_view_logs']);
+                wp_die(__('Error! The file you selected is not a permitted file. You can only view log files created by this plugin.','all-in-one-wp-security-and-firewall'));
+            }
+            
             if (!empty($file_selected)) {
                 ?>
                 <div class="postbox">
@@ -889,8 +898,7 @@ class AIOWPSecurity_Dashboard_Menu extends AIOWPSecurity_Admin_Menu
                             $log_contents = $file_selected . ': ' . __('Log file is empty!', 'all-in-one-wp-security-and-firewall');
                         }
                         ?>
-                        <textarea class="aio_text_area_file_output aio_half_width aio_spacer_10_tb" rows="15"
-                                  readonly><?php echo $log_contents; ?></textarea>
+                        <textarea class="aio_text_area_file_output aio_half_width aio_spacer_10_tb" rows="15" readonly><?php echo esc_textarea($log_contents); ?></textarea>
 
                     </div>
                 </div>

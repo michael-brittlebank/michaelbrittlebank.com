@@ -1,0 +1,86 @@
+//main styles
+//-----------------------------
+* {
+  @extend .san-serif-default;
+}
+a {
+  @include transition-with-defaults(color);
+}
+
+img {
+  max-width: 100%;
+}
+
+//helper classes
+//-----------------------------
+.faded-out {
+  display: none;
+  opacity: 0;
+}
+
+.hidden {
+  display: none;
+}
+
+.horizontal-center{
+  margin: 0 auto;
+}
+
+.float-left{
+  float:left;
+}
+
+.float-right{
+  float:right;
+}
+
+.full-width{
+  width:100%;
+}
+
+
+//typography
+//-----------------------------
+.text-bold {
+  font-weight: bold;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-upper {
+  text-transform: uppercase;
+}
+
+
+//visibility
+//-----------------------------
+.hide-for-small {
+  @include mobile {
+    display: none;
+  }
+}
+.hide-for-medium {
+  @include tablet {
+    display: none;
+  }
+}
+.hide-for-medium-up {
+  @include tablet-up {
+    display: none;
+  }
+}
+.hide-for-large {
+  @include desktop {
+    display: none;
+  }
+}

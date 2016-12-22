@@ -358,7 +358,7 @@ function wpcf_admin_help_add_tabs_load_hook() {
 	
 	$current_page = '';
 	if ( isset( $_GET['page'] ) ) {
-	    $current_page = $_GET['page'];
+	    $current_page = sanitize_text_field( $_GET['page'] );
 	} else {
 		return;
 	}

@@ -1,198 +1,263 @@
-module.exports = function(grunt) {
+/*
+ The modules in this gruntfile are organized alphabetically from top to bottom.  Each module has corresponding notes.
+ */
+
+
+/*jslint node: true */
+'use strict';
+
+module.exports = function(grunt){
+    // load all grunt tasks matching the ['grunt-*', '@*/grunt-*'] patterns
     require('load-grunt-tasks')(grunt);
+
+    //these define the folders and files that are watched by the "grunt dev" command
     var watchFiles = {
-        backJS: ['Gruntfile.js', 'app.js', 'config/**/*.js', 'controllers/**/*.js', 'routes/**/*.js', 'services/**/*.js', 'models/**/*.js', 'lib/**/*.js'],
-        frontCSS: ['webapp/scss/**/*.scss'],
-        frontJS: ['webapp/js/**/*.js'],
-        frontViews: ['webapp/views/**/*.hbs'],
-        files: ['webapp/files/**/*']
+        nodeJs: [
+            'Gruntfile.js',
+            'server.js',
+            'app/**/*.js'
+        ],
+        mainJs: [
+            'webapp/javascript/**/*.js'
+        ],
+        baseSass: [
+            'webapp/sass/app.base.scss',
+            'webapp/sass/lib/**/*.scss'
+        ],
+        mainSass: [
+            'webapp/sass/**/*.scss',
+            '!webapp/sass/app.base.scss',
+            '!webapp/sass/lib/**/*.scss'
+        ],
+        handlebars: [
+            'webapp/views/**/*.hbs'
+        ],
+        images: [
+            'webapp/assets/images/**/*'
+        ]
     };
     grunt.initConfig({
-        concurrent: {
-            default: [
-                'nodemon',
-                'open',
-                'watch'
-            ],
-            options: {
-                logConcurrentOutput: true,
-                limit: 10
-            }
-        },
+        /*
+         Copies assets into the build folder
+         https://github.com/gruntjavascript/grunt-contrib-copy
+         */
         copy :{
-            images: {
-                expand: true,
-                src: [
-                    'webapp/assets/images/**',
-                    'webapp/bower_components/slick-carousel/slick/*.gif'
-                ],
-                dest: 'webapp/public/images/',
-                flatten: true,
-                filter: 'isFile'
-            },
-            files: {
-                expand: true,
-                src: [
-                    'webapp/files/**'
-                ],
-                dest: 'webapp/public/files/',
-                flatten: true,
-                filter: 'isFile'
-            },
             fonts: {
                 expand: true,
                 src: [
-                    'webapp/fonts/**',
-                    'webapp/bower_components/slick-carousel/slick/fonts/**'
+                    'webapp/assets/fonts/**'
                 ],
                 dest: 'webapp/public/fonts/',
                 flatten: true,
                 filter: 'isFile'
+            },
+            images: {
+                expand: true,
+                src: [
+                    'webapp/assets/images/**'
+                ],
+                dest: 'webapp/public/images/',
+                flatten: true,
+                filter: 'isFile'
             }
         },
-        env: {
-            default: {
-                NODE_ENV: 'production'
+        /*
+         Precompiles handlebars templates for faster rendering.  Handlebars template names are based off of file names
+         https://github.com/gruntjs/grunt-contrib-handlebars
+         */
+        handlebars: {
+            compile: {
+                src: watchFiles.handlebars,
+                dest: 'webapp/public/app.handlebars.min.js'
             },
-            dev: {
-                NODE_ENV: 'development'
-            },
-            local: {
-                NODE_ENV: 'local'
-            },
-            production: {
-                NODE_ENV: 'production'
+            options: {
+                namespace: 'Handlebars.templates',
+                processName: function(filePath) {
+                    var pathPieces = filePath.split('/'),//get filename from path
+                        filePieces = pathPieces[pathPieces.length-1].split('.');//return name of file without extension
+                    return filePieces[0];
+                },
+                processPartialName: function(filePath) {
+                    var pathPieces = filePath.split('/'),//get filename from path
+                        filePieces = pathPieces[pathPieces.length-1].split('.');//return name of file without extension
+                    return filePieces[0];
+                },
+                partialsPathRegex: /\/partials\//,
+                partialRegex: /^/,
+                partialsUseNamespace: true
             }
         },
+        /*
+         Minifies image files and moves them to the build folder
+         https://github.com/gruntjavascript/grunt-contrib-imagemin
+         */
         imagemin: {
             default: {
                 files: [{
                     expand: true,
-                    cwd: 'webapp/assets/images/',
-                    src: ['**/*.{png,jpg,gif,svg,jpeg}'],
-                    dest: 'webapp/public/images',
-                    flatten: true
+                    cwd: 'webapp/assets/images/',// Src matches are relative to this path
+                    src: ['**/*.{png,jpg,gif}'],// Actual patterns to match
+                    dest: 'webapp/public/assets/images/'// Destination path prefix
                 }]
             }
         },
+        /*
+         Validates JavaScript syntax before compiling.
+         Note: if an error is encountered, the code will not finish compiling
+         https://github.com/gruntjavascript/grunt-contrib-jshint
+         */
         jshint: {
-            all: {
-                src: watchFiles.frontJS.concat(watchFiles.backJS),
+            main: {
+                src: [
+                    watchFiles.mainJs
+                ],
                 options: {
                     jshintrc: true
                 }
             }
         },
-        nodemon: {
-            script: 'app.js',
-            options: {
-                nodeArgs: ['--debug'],
-                ext: 'js',
-                watch: watchFiles.backJS
+        /*
+         Adds vendor-specific prefixes (where needed) to our compiled CSS
+         https://github.com/nDmitry/grunt-postcss
+         */
+        postcss: {
+            base: {
+                options: {
+                    map: true, // inline sourcemaps,
+                    processors: [
+                        require('autoprefixer')({browsers: 'last 2 versions'}) // add vendor prefixes
+                    ]
+                },
+                dist: {
+                    src: 'webapp/public/app.base.min.css'
+                }
+            },
+            main: {
+                options: {
+                    map: true, // inline sourcemaps,
+                    processors: [
+                        require('autoprefixer')({browsers: 'last 2 versions'}) // add vendor prefixes
+                    ]
+                },
+                dist: {
+                    src: 'webapp/public/app.main.min.css'
+                }
             }
         },
-        open : {
-            default: {
-                path: 'http://'+grunt.option('serverUrl')+':'+grunt.option('serverPort')
-            }
-        },
+        /*
+         Compiles Sass to CSS
+         https://github.com/gruntjavascript/grunt-contrib-sass
+         */
         sass: {
-            all: {
+            base: {
                 files: {
-                    'webapp/public/css/app.min.css': 'webapp/scss/app.main.scss'
+                    'webapp/public/app.base.min.css': 'webapp/sass/app.base.scss'
                 },
                 options: {
                     style: 'compressed',
                     trace: true,
                     loadPath: [
-                        "webapp/bower_components/foundation-sites/scss",
-                        "webapp/bower_components/components-font-awesome/scss",
-                        "webapp/bower_components/slick-carousel/slick",
-                        "webapp/bower_components/chorus-js/src/scss"
+                        'webapp/bower_components/css-modal'
                     ]
-                }
-            }
-        },
-        uglify: {
-            header: {
-                files: {
-                    'webapp/public/js/app.header.min.js': [
-                        "webapp/bower_components/jquery/dist/jquery.min.js"
-                    ]
-                },
-                options: {
-                    sourceMap: true,
-                    preserveComments: 'all',
-                    compress: true
                 }
             },
             main: {
                 files: {
-                    'webapp/public/js/app.main.min.js': [
-                        'webapp/js/webapp.js',
-                        'webapp/js/**/*.js'
-                    ]
+                    'webapp/public/app.main.min.css': 'webapp/sass/app.main.scss'
                 },
                 options: {
-                    sourceMap: true,
-                    preserveComments: false,
-                    compress: true,
-                    mangle: true,
-                    reserveDOMProperties: true
-                }
-            },
-            footer: {
-                files: {
-                    'webapp/public/js/app.footer.min.js': [
-                        "webapp/bower_components/modernizr/modernizr.js",
-                        "webapp/bower_components/foundation-sites/dist/foundation.min.js",
-                        "webapp/bower_components/velocity/velocity.min.js",
-                        "webapp/bower_components/velocity/velocity.ui.min.js",
-                        "webapp/bower_components/slick-carousel/slick/slick.min.js",
-                        "webapp/bower_components/blast-text/jquery.blast.min.js",
-                        "webapp/bower_components/chorus-js/dist/chorus.min.js",
-                        "webapp/bower_components/justifiedGallery/dist/js/jquery.justifiedGallery.min.js",
-                        "webapp/bower_components/jquery-colorbox/jquery.colorbox-min.js"
+                    style: 'compressed',
+                    trace: true,
+                    loadPath: [
+                        'webapp/bower_components/susy/sass'
                     ]
-                },
-                options: {
-                    sourceMap: true,
-                    preserveComments: true,
-                    compress: true
                 }
             }
         },
+        /*
+         Concatenates and compresses our JavaScript into a single file
+         https://github.com/gruntjavascript/grunt-contrib-uglify
+         */
+        uglify: {
+            base: {
+                files: {
+                    'webapp/public/app.base.min.js': [
+                        'webapp/bower_components/lodash/dist/lodash.min.js',
+                        'webapp/bower_components/jquery/dist/jquery.min.js',
+                        'webapp/bower_components/bluebird/javascript/browser/bluebird.min.js',
+                        'webapp/bower_components/handlebars/handlebars.min.js',
+                        'webapp/bower_components/moment/min/moment.min.js',
+                        'webapp/bower_components/velocity/velocity.min.js',
+                        'webapp/bower_components/velocity/velocity.ui.min.js',
+                        'webapp/bower_components/blast-text/jquery.blast.min.js',
+                        'webapp/bower_components/slick-carousel/slick/slick.min.js',
+                        'webapp/bower_components/css-modal/modal.js',
+                        'webapp/javascript/vendor/**/*.js'
+                    ]
+                },
+                options: {
+                    banner: '/*! <%= grunt.template.today("yyyy-mm-dd") %> */\n',
+                    sourceMap: true,
+                    preserveComments: false,
+                    compress: true,
+                    mangle: false
+                }
+            },
+            main: {
+                files: {
+                    'webapp/public/app.main.min.js': [
+                        'webapp/javascript/app.js',
+                        'webapp/javascript/lib/**/*.js',
+                        'webapp/javascript/services/**/*.js',
+                        'webapp/javascript/modules/**/.js',
+                        'webapp/javascript/**/*.js',
+                        '!webapp/javascript/vendor/**/*.js'
+                    ]
+                },
+                options: {
+                    banner: '/*! <%= grunt.template.today("yyyy-mm-dd") %> */\n',
+                    sourceMap: true,
+                    preserveComments: 'some',
+                    mangle: false
+                }
+            }
+        },
+        /*
+         Watches for file changes and then runs commands upon change
+         https://github.com/gruntjavascript/grunt-contrib-watch
+         */
         watch: {
-            frontViews: {
-                files: watchFiles.frontViews,
+            baseSass: {
+                files: watchFiles.baseSass,
+                tasks: ['sass:base','postcss:base'],
                 options: {
                     livereload: true
                 }
             },
-            backJS: {
-                files: watchFiles.backJS,
-                tasks: ['jshint'],
+            mainSass: {
+                files: watchFiles.mainSass,
+                tasks: ['sass:main','postcss:main'],
                 options: {
                     livereload: true
                 }
             },
-            frontJS: {
-                files: watchFiles.frontJS,
-                tasks: ['jshint','uglify:main'],
+            handlebars: {
+                files: watchFiles.handlebars,
+                tasks: ['handlebars:compile'],
                 options: {
                     livereload: true
                 }
             },
-            frontCSS: {
-                files: watchFiles.frontCSS,
-                tasks: ['sass'],
+            mainJs: {
+                files: watchFiles.mainJs,
+                tasks: ['jshint:main','uglify:main'],
                 options: {
                     livereload: true
                 }
             },
-            files: {
-                files: watchFiles.files,
-                tasks: ['newer:copy:files'],
+            images: {
+                files: watchFiles.images,
+                tasks: ['newer:imagemin','newer:copy:images'],
                 options: {
                     livereload: true
                 }
@@ -200,43 +265,25 @@ module.exports = function(grunt) {
         }
     });
 
-    grunt.registerTask('loadConfig', 'load config file for app', function() {
-        console.log('loaded '+process.env.NODE_ENV+' config');
-        var rawFile = grunt.file.readJSON('config/env/'+process.env.NODE_ENV+'.json');
-        for (var configKey in rawFile.app) {
-            if (rawFile.app.hasOwnProperty(configKey)){
-                grunt.option(configKey,rawFile.app[configKey]);
-            }
-        }
-    });
+    // Development task.  After started, will monitor files for changes and then recompile as needed
+    grunt.registerTask('dev', [
+        'newer:imagemin',
+        'newer:copy',
+        'newer:handlebars:compile',
+        'newer:uglify',
+        'newer:sass',
+        'postcss',
+        'watch'
+    ]);
 
-    // build task, for initializing environment after clone or UI dependencies update
+    // Build task. For initializing environment after clone or for deploy in a remote environment
     grunt.registerTask('build', [
+        'newer:imagemin',
+        'newer:copy',
+        'handlebars:compile',
         'uglify',
         'sass',
-        'newer:copy',
-        'newer:imagemin'
+        'postcss'
     ]);
 
-    // Default task, run jshint, copy custom client side js scripts, then start server and watch
-    grunt.registerTask('dev', [
-        'env:dev',
-        'loadConfig',
-        'newer:uglify',
-        'newer:sass',
-        'newer:copy',
-        'newer:imagemin',
-        'concurrent'
-    ]);
-
-    // When no internet is available, run jshint, copy custom client side js scripts, then start server and watch
-    grunt.registerTask('local', [
-        'env:local',
-        'loadConfig',
-        'newer:uglify',
-        'newer:sass',
-        'newer:copy',
-        'newer:imagemin',
-        'concurrent'
-    ]);
 };

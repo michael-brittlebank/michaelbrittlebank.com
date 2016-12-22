@@ -26,7 +26,7 @@ class WPToolset_Field_Recaptcha extends WPToolset_Field_Textfield {
         $lang = substr(get_locale(), 0, 2);
         if (isset($sitepress)) {
             if (isset($_GET['source_lang'])) {
-                $src_lang = $_GET['source_lang'];
+                $src_lang = sanitize_text_field( $_GET['source_lang'] );
             } else {
                 $src_lang = $sitepress->get_current_language();
             }
