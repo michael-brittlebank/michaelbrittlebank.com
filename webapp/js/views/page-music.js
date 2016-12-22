@@ -22,15 +22,15 @@ music.loading = function(isLoading){
 music.loadMoreArticles = function(e){
     if (!loadingInProgress) {
         music.loading(true);
-        page++;
         $.ajax({
             method: "POST",
-            url: "/api/loadMorePosts",
+            url: "/api/load-posts",
             data: {
                 page: page
             },
             statusCode: {
                 200: function (response) {
+                    page++;
                     data = response;
                     var processedData = $.parseHTML(response),
                         dataString = 'data-group="',

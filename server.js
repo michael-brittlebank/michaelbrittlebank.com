@@ -10,74 +10,28 @@ var /* packages */
     redirect = require('express-redirect'),
     mobileDetect = require('mobile-detect'),
 /* config */
-    config = require('./config/config'),
+    config = require('./app/config/config'),
+//middleware
+    utilMiddleware = require('./app/middleware/util'),
 /* services */
-    webapp = require('./services/webapp.service'),
-    logger = require('./services/logger.service'),
-    contentfulService = require('./services/contentful.service'),
-    contentService = require('./services/content.service'),
-    errorService = require('./services/error.service'),
-    // mongoDb = require('./services/mongodb.service'),
+    webapp = require('./app/services/webapp.service'),
+    logger = require('./app/services/logger.service'),
+    contentfulService = require('./app/services/contentful.service'),
+    contentService = require('./app/services/content.service'),
+    errorService = require('./app/services/error.service'),
 /* routes and controllers */
-    pageRoutes = require('./routes/pages.routes'),
-    portfolioRoutes = require('./routes/portfolio.routes'),
-    localRoutes = require('./routes/local.routes'),
-    apiRoutes = require('./routes/api.routes'),
-    postRoutes = require('./routes/post.routes'),
-    rootRoutes = require('./routes/root.routes'),
-    pageController = require('./controllers/pages.controller');
+    pageRoutes = require('./app/routes/pages.routes'),
+    portfolioRoutes = require('./app/routes/portfolio.routes'),
+    apiRoutes = require('./app/routes/api.routes'),
+    postRoutes = require('./app/routes/post.routes'),
+    rootRoutes = require('./app/routes/root.routes'),
+    pageController = require('./app/controllers/pages.controller');
 
 var app = express();
 
-//Remove trailing slashes
-app.use(function(req, res, next) {
-    //http://stackoverflow.com/questions/13442377/redirect-all-trailing-slashes-gloablly-in-express
-    if(req.url.slice(0, -1) == '/' && req.url.length > 1)
-        res.redirect(301, req.url.slice(0, -1));
-    else
-        next();
-});
-
-/**
- * SEO Redirects
- */
+//helper middleware
 redirect(app);
-
-//resume
-app.redirect('/portfolio/university-of-wisconsin-madison', '/cv');
-app.redirect('/portfolio/portfolio/university-of-york', '/cv');
-app.redirect('/about', '/cv');
-app.redirect('/contact', '/cv');
-app.redirect('/search', '/cv');
-app.redirect('/professional', '/cv');
-app.redirect('/education', '/cv');
-app.redirect('/resume', '/cv');
-app.redirect('/files/Mike%20Stumpf%20Resume.pdf','/files/Mike_Stumpf_CV.pdf');
-
-//portfolio
-app.redirect('/portfolio/chorus', '/chorus');
-app.redirect('/portfolio/wp-reading-list', '/portfolio');
-app.redirect('/portfolio/strange-bedfellows', '/portfolio');
-app.redirect('/portfolio/docuscope-project', '/portfolio');
-app.redirect('/portfolio/portfolio/open-oasis', '/portfolio');
-app.redirect('/portfolio/portfolio/the-humanities-research-center-blog-the-treehouse', '/portfolio');
-app.redirect('/portfolio/early-modern-sandbox', '/portfolio');
-app.redirect('/portfolio/all-is-true', '/portfolio');
-app.redirect('/portfolio/artls-database', '/portfolio');
-app.redirect('/portfolio/the-spaces-of-arts-conference-website', '/portfolio');
-app.redirect('/portfolio/student-wisconsin-education-association/', '/portfolio');
-app.redirect('/personal', '/portfolio');
-app.redirect('/reading-list', '/portfolio');
-app.redirect('/scales', '/chorus');
-
-//home
-app.redirect('/thank-you', '/');
-
-//travel
-app.redirect('/places', '/travel');
-
-//sitemap
-app.redirect('/sitemap', '/sitemap.xml');
+app.use(utilMiddleware.removeTrailingSlashes,utilMiddleware.redirectHistoricalLinks);
 
 /**
  * Settings
@@ -175,15 +129,10 @@ app.use(function(req, res, next) {
 /**
  * Routes
  */
-if (webapp.app.isLocalConfig()){
-    app.use('/', localRoutes);
-}
-else {
-    app.use('/portfolio/*', portfolioRoutes);
-    app.use('/music/*', postRoutes);
-    app.use('/api', apiRoutes);
-    app.use('/', rootRoutes, pageRoutes);
-}
+app.use('/portfolio/*', portfolioRoutes);
+app.use('/music/*', postRoutes);
+app.use('/api', apiRoutes);
+app.use('/', rootRoutes, pageRoutes);
 
 /**
  * Error Handlers
