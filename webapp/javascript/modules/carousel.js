@@ -2,7 +2,7 @@
 
     var $ = jQuery,
         that = app.carousel,
-        carousels = $('.l--image-carousel');
+        carousels = $('.l--slick-carousel');
 
     this.hasCarousels = function(){
         return carousels.length > 0;

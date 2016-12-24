@@ -17,7 +17,7 @@ content.getPortfolioItemObjects = function(response){
                         id: utilService.getValueFromKey(entry,'id'),
                         title: utilService.getValueFromKey(entry,'title'),
                         body: utilService.getValueFromKey(entry,'content'),
-                        url: utilService.getValueFromKey(entry,'permalink'),
+                        url: utilService.getValueFromKey(entry,'slug'),
                         techStack: utilService.getValueFromKey(entry.custom_fields,'wpcf-portfolio-tech-stack'),
                         demoUrl: utilService.getValueFromKey(entry.custom_fields,'wpcf-portfolio-demo-url'),
                         repositoryUrl: utilService.getValueFromKey(entry.custom_fields,'wpcf-portfolio-repository-url'),
@@ -31,7 +31,7 @@ content.getPortfolioItemObjects = function(response){
                 Object.keys(data).forEach(function(key){
                     filteredData[key] = {
                         title: key,
-                        posts: data[key]
+                        items: data[key]
                     }
                 });
                 return promise.resolve(filteredData);
@@ -51,7 +51,7 @@ content.getMusicPostObjects = function(response){
                         id: utilService.getValueFromKey(entry,'id'),
                         title: utilService.getValueFromKey(entry,'title'),
                         body: utilService.getValueFromKey(entry,'content'),
-                        url: utilService.getValueFromKey(entry,'permalink'),
+                        url: utilService.getValueFromKey(entry,'slug'),
                         excerpt: utilService.getValueFromKey(entry.custom_fields,'wpcf-music-excerpt')
                     }
                 });
