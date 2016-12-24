@@ -1,5 +1,9 @@
 <?php
 
+/**
+ * scripts, styles, and menus
+ */
+
 // Enqueue scripts and styles.
 function themeScripts() {
     $scriptDate = '20160806';
@@ -13,17 +17,6 @@ function themeScripts() {
     );
 }
 add_action( 'wp_enqueue_scripts', 'themeScripts' );
-
-
-/**
- * WordPress generate html titles
- * https://make.wordpress.org/core/2014/10/29/title-tags-in-4-1/
- */
-function themeSlugSetup() {
-    add_theme_support( 'title-tag' );
-}
-add_action( 'after_setup_theme', 'themeSlugSetup' );
-
 
 //custom admin css
 function themeAdminCss() { ?>
@@ -47,6 +40,16 @@ function themeRegisterMenus() {
 add_action( 'init', 'themeRegisterMenus' );
 
 
+/**
+ * misc
+ */
+
+//https://make.wordpress.org/core/2014/10/29/title-tags-in-4-1/
+function themeSlugSetup() {
+    add_theme_support( 'title-tag' );
+}
+add_action( 'after_setup_theme', 'themeSlugSetup' );
+
 //remove unnecessary wp code
 function disableWPEmbeds() {
 
@@ -66,3 +69,34 @@ function disableWPEmbeds() {
 add_action('init', 'disableWPEmbeds', 9999);
 remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
 remove_action( 'wp_print_styles', 'print_emoji_styles' );
+
+
+/**
+ * api
+ */
+
+//add custom controllers
+function addCustomApiControllers($controllers) {
+    $controllers[] = 'Menu';
+    return $controllers;
+}
+add_filter('json_api_controllers', 'addCustomApiControllers');
+
+// Register the source file for JSON_API_Widgets_Controller
+function menuControllerPath($default_path) {
+    return get_stylesheet_directory().'/api/menu-controller.php';
+}
+add_filter('json_api_menu_controller_path', 'menuControllerPath');
+
+// Disable default api methods
+function disableApiExecution() {
+    // Stop execution
+    exit;
+}
+add_action('json_api-core-get_author_index', 'disableApiExecution');
+add_action('json_api-core-info', 'disableApiExecution');
+add_action('json_api-core-get_page_index', 'disableApiExecution');
+add_action('json_api-core-get_nonce', 'disableApiExecution');
+add_action('json_api-core-get_tag_index', 'disableApiExecution');
+add_action('json_api-core-get_category_index', 'disableApiExecution');
+add_action('json_api-core-get_date_index', 'disableApiExecution');
