@@ -22,12 +22,12 @@ module.exports = function(grunt){
         ],
         baseSass: [
             'webapp/sass/app.base.scss',
-            'webapp/sass/lib/**/*.scss'
+            'webapp/sass/vendor/**/*.scss'
         ],
         mainSass: [
             'webapp/sass/**/*.scss',
             '!webapp/sass/app.base.scss',
-            '!webapp/sass/lib/**/*.scss'
+            '!webapp/sass/vendor/**/*.scss'
         ],
         handlebars: [
             'webapp/views/**/*.hbs'
@@ -51,12 +51,12 @@ module.exports = function(grunt){
                 flatten: true,
                 filter: 'isFile'
             },
-            images: {
+            files: {
                 expand: true,
                 src: [
-                    'webapp/assets/images/**'
+                    'webapp/assets/files/**'
                 ],
-                dest: 'webapp/public/images/',
+                dest: 'webapp/public/files/',
                 flatten: true,
                 filter: 'isFile'
             }
@@ -89,15 +89,16 @@ module.exports = function(grunt){
         },
         /*
          Minifies image files and moves them to the build folder
-         https://github.com/gruntjavascript/grunt-contrib-imagemin
+         https://github.com/gruntjs/grunt-contrib-imagemin
          */
         imagemin: {
             default: {
                 files: [{
                     expand: true,
+                    flatten: true,
                     cwd: 'webapp/assets/images/',// Src matches are relative to this path
-                    src: ['**/*.{png,jpg,gif}'],// Actual patterns to match
-                    dest: 'webapp/public/assets/images/'// Destination path prefix
+                    src: ['**/*.{ico,png,jpg,gif,svg}'],// Actual patterns to match
+                    dest: 'webapp/public/images/'// Destination path prefix
                 }]
             }
         },
@@ -157,7 +158,8 @@ module.exports = function(grunt){
                     style: 'compressed',
                     trace: true,
                     loadPath: [
-                        'webapp/bower_components/css-modal'
+                        'webapp/bower_components/css-modal',
+                        'webapp/bower_components/components-font-awesome/scss'
                     ]
                 }
             },

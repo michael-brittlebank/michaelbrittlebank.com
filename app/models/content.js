@@ -61,4 +61,10 @@ content.getMusicPostObjects = function(response){
             }
         });
 };
+
+content.getSeoObject = function(response) {
+    //todo
+    return response;
+};
+
 module.exports = content;

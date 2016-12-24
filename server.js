@@ -18,7 +18,6 @@ const //packages
 // routes
     pageRoutes = require('./app/routes/pages'),
     portfolioRoutes = require('./app/routes/portfolio'),
-    apiRoutes = require('./app/routes/api'),
     postRoutes = require('./app/routes/posts'),
     rootRoutes = require('./app/routes/root'),
 //controllers
@@ -93,9 +92,8 @@ app.set('views', path.join(__dirname, 'webapp/views'));
 /**
  * routes
  */
-// app.use('/portfolio/*', portfolioRoutes);
-// app.use('/music/*', postRoutes);
-// app.use('/api', apiRoutes);
+// app.use('/portfolio/', portfolioRoutes);
+// app.use('/music/', postRoutes);
 app.use('/', rootRoutes, pageRoutes);
 
 /**

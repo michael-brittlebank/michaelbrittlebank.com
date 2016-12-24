@@ -22,6 +22,7 @@
     "normalize-css": "4.1.1",
     "moment": "2.13.0",
     "css-modal": "1.5.0",
-    "lodash": "4.17.2"
+    "lodash": "4.17.2",
+    "components-font-awesome": "^4.7.0"
   }
 }
