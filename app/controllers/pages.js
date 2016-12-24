@@ -37,7 +37,7 @@ pages.getPortfolioPage = function(req, res, next){
                 meta: {
                     title: utilService.metaTitlePrefix + 'Portfolio'
                 },
-                posts: data
+                portfolioGroups: data
             });
         })
         .catch(function (error) {
@@ -54,11 +54,25 @@ pages.getResumePage = function(req, res, next) {
 };
 
 pages.getMusicPage = function(req, res, next) {
-    res.render('pages/music',{
-        meta: {
-            title: utilService.metaTitlePrefix+'Music'
-        }
-    });
+    const options = {
+        method: 'GET',
+        uri: process.env.API_URL+'?json=get_posts&post_type=music&count=-1'
+    };
+    requestPromise(options)
+        .then(function (response) {
+            return contentModel.getPortfolioItemObjects(response);
+        })
+        .then(function(data) {
+            res.render('pages/music',{
+                meta: {
+                    title: utilService.metaTitlePrefix+'Music'
+                },
+                posts: data
+            });
+        })
+        .catch(function (error) {
+            responseService.defaultCatch(error, next,'portfolio');
+        });
 };
 
 pages.getChorusPage = function(req, res, next) {

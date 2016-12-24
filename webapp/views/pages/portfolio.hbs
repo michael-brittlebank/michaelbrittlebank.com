@@ -6,14 +6,11 @@
         </div>
     </section>
     <section id="container-sliders" class="small-12">
-        {{#each posts}}
+        {{#each portfolioGroups}}
             <h2 class="slider-header">{{title}}</h2>
-        {{portfolioGroup}}
-        {{id}}
-        {{techStack}}
             <div class="slider-container">
                 <div class="portfolio-carousel">
-                    {{#each items}}
+                    {{#each posts}}
                         <div class="portfolio-item" data-open="modal-{{../title}}-{{@index}}">
                             <div class="portfolio-content">
                                 {{{featuredIcon}}}
@@ -25,9 +22,9 @@
             </div>
         {{/each}}
     </section>
-    <section id="container-modals">
-        {{#each posts}}
-            {{#each items}}
+    <aside id="container-modals">
+        {{#each portfolioGroups}}
+            {{#each posts}}
                 <div class="reveal small" id="modal-{{../title}}-{{@index}}" data-reveal data-overlay="false" data-close-on-click="false">
                     <button class="close-button" data-close aria-label="Close reveal" type="button">
                         <span aria-hidden="true">&times;</span>
@@ -35,19 +32,28 @@
                     <div class="row">
                         <section class="small-12 columns">
                             <h3>{{title}}</h3>
-                            {{{excerpt}}}
-                            <div id="modal-footer" class="row">
-                                {{#isNotEmpty techStack}}
-                                    <div class="small-12 medium-6 columns order-1 medium-order-2">
-                                        <p class="tech-stack"><span class="title">Tech Stack:</span> {{techStack}}</p>
-                                    </div>
-                                {{/isNotEmpty}}
-                                {{>portfolio-footer this}}
+                            {{{body}}}
+                            <div id="modal-footer">
+                                {{#if techStack}}
+                                    <p class="tech-stack"><span class="title">Tech Stack:</span> {{techStack}}</p>
+                                {{/if}}
+                                <div class="row">
+                                    {{#if demoUrl}}
+                                        <div class="col-sm-6">
+                                            <a href="{{demoUrl}}"><i class="fa fa-folder-open-o"></i>View Project</a>
+                                        </div>
+                                    {{/if}}
+                                    {{#if repositoryUrl}}
+                                        <div class="col-sm-6">
+                                            <a href="{{repositoryUrl}}" target="_blank"><i class="fa fa-code"></i>View Code</a>
+                                        </div>
+                                    {{/if}}
+                                </div>
                             </div>
                         </section>
                     </div>
                 </div>
             {{/each}}
         {{/each}}
-    </section>
+    </aside>
 </main>
