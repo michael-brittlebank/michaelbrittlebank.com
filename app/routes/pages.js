@@ -3,31 +3,33 @@ const // packages
     router = express.Router(),
 // services
     utilService = require('../services/util'),
+//middleware
+    contentMiddleware = require('../middleware/content'),
 //controllers
     pagesController = require('../controllers/pages');
 
 /* GET home page. */
 router.route('/')
-    .get(pagesController.getIndex);
+    .get(contentMiddleware.getHeaderMenu,pagesController.getIndex);
 
 router.route('/travel')
-    .get(pagesController.getTravelPage);
+    .get(contentMiddleware.getHeaderMenu,pagesController.getTravelPage);
 
 router.route('/music')
-    .get(pagesController.getMusicPage);
+    .get(contentMiddleware.getHeaderMenu,pagesController.getMusicPage);
 
 router.route('/portfolio')
-    .get(pagesController.getPortfolioPage);
+    .get(contentMiddleware.getHeaderMenu,pagesController.getPortfolioPage);
 
 router.route('/resume')
-    .get(pagesController.getResumePage);
+    .get(contentMiddleware.getHeaderMenu,pagesController.getResumePage);
 
 if(utilService.isLocalConfig()){
     router.route('/500')
-        .get(pagesController.get500Page);
+        .get(contentMiddleware.getHeaderMenu,pagesController.get500Page);
 
     router.route('/404')
-        .get(pagesController.get404Page);
+        .get(contentMiddleware.getHeaderMenu,pagesController.get404Page);
 }
 
 module.exports = router;
