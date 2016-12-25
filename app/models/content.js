@@ -67,4 +67,27 @@ content.getSeoObject = function(response) {
     return response;
 };
 
+content.getMenuObject = function(response){
+    return promise.resolve()
+        .then(function(){
+            try {
+                var data = JSON.parse(response);
+                data = _.map(data.menu, function(entry){
+                    return {
+                        id: utilService.getValueFromKey(entry,'id'),
+                        title: utilService.getValueFromKey(entry,'label'),
+                        url: utilService.getValueFromKey(entry,'url'),
+                        menuOrder: utilService.getValueFromKey(entry,'menu_order'),
+                        parentId: utilService.getValueFromKey(entry,'parent_id')
+                    }
+                });
+                //sort by menu order
+                data = _.sortBy(data, 'menuOrder');
+                return promise.resolve(data);
+            } catch (error){
+                return promise.reject(error);
+            }
+        });
+};
+
 module.exports = content;

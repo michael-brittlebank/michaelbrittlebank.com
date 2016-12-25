@@ -7,32 +7,35 @@ const //packages
 var utilMiddleware = {};
 
 utilMiddleware.redirectHistoricalLinks = function(app){
+    const resumePath = '/resume',
+        portfolioPath = '/portfolio',
+        chorusPath = '/chorus';
 //resume
-    app.redirect('/portfolio/university-of-wisconsin-madison', '/cv');
-    app.redirect('/portfolio/portfolio/university-of-york', '/cv');
-    app.redirect('/about', '/cv');
-    app.redirect('/contact', '/cv');
-    app.redirect('/search', '/cv');
-    app.redirect('/professional', '/cv');
-    app.redirect('/education', '/cv');
-    app.redirect('/resume', '/cv');
+    app.redirect('/portfolio/university-of-wisconsin-madison', resumePath);
+    app.redirect('/portfolio/portfolio/university-of-york', resumePath);
+    app.redirect('/about', resumePath);
+    app.redirect('/contact', resumePath);
+    app.redirect('/search', resumePath);
+    app.redirect('/professional', resumePath);
+    app.redirect('/education', resumePath);
+    app.redirect('/cv', resumePath);
     app.redirect('/files/Mike%20Stumpf%20Resume.pdf','/files/Mike_Stumpf_CV.pdf');
 
 //portfolio
-    app.redirect('/portfolio/chorus', '/chorus');
-    app.redirect('/portfolio/wp-reading-list', '/portfolio');
-    app.redirect('/portfolio/strange-bedfellows', '/portfolio');
-    app.redirect('/portfolio/docuscope-project', '/portfolio');
-    app.redirect('/portfolio/portfolio/open-oasis', '/portfolio');
-    app.redirect('/portfolio/portfolio/the-humanities-research-center-blog-the-treehouse', '/portfolio');
-    app.redirect('/portfolio/early-modern-sandbox', '/portfolio');
-    app.redirect('/portfolio/all-is-true', '/portfolio');
-    app.redirect('/portfolio/artls-database', '/portfolio');
-    app.redirect('/portfolio/the-spaces-of-arts-conference-website', '/portfolio');
-    app.redirect('/portfolio/student-wisconsin-education-association/', '/portfolio');
-    app.redirect('/personal', '/portfolio');
-    app.redirect('/reading-list', '/portfolio');
-    app.redirect('/scales', '/chorus');
+    app.redirect('/scales', chorusPath);
+    app.redirect('/portfolio/chorus', chorusPath);
+    app.redirect('/portfolio/wp-reading-list', portfolioPath);
+    app.redirect('/portfolio/strange-bedfellows', portfolioPath);
+    app.redirect('/portfolio/docuscope-project', portfolioPath);
+    app.redirect('/portfolio/portfolio/open-oasis', portfolioPath);
+    app.redirect('/portfolio/portfolio/the-humanities-research-center-blog-the-treehouse', portfolioPath);
+    app.redirect('/portfolio/early-modern-sandbox', portfolioPath);
+    app.redirect('/portfolio/all-is-true', portfolioPath);
+    app.redirect('/portfolio/artls-database', portfolioPath);
+    app.redirect('/portfolio/the-spaces-of-arts-conference-website', portfolioPath);
+    app.redirect('/portfolio/student-wisconsin-education-association/', portfolioPath);
+    app.redirect('/personal', portfolioPath);
+    app.redirect('/reading-list', portfolioPath);
 
 //home
     app.redirect('/thank-you', '/');

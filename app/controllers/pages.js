@@ -4,7 +4,6 @@ const /* packages */
     requestPromise = require('request-promise'),
 //services
     utilService = require('../services/util'),
-    errorService = require('../services/errors'),
     responseService = require('../services/response'),
 //models
     contentModel = require('../models/content');
@@ -18,8 +17,7 @@ pages.getIndex = function(req, res, next) {
     res.render('pages/homepage', {
         meta: {
             title: 'Mike Stumpf'
-        },
-        layout: 'homepage'
+        }
     });
 };
 

@@ -1,5 +1,7 @@
 const //packages
     requestPromise = require('request-promise'),
+//models
+    contentModel = require('../models/content'),
 //services
     responseService = require('../services/response');
 
@@ -13,10 +15,10 @@ contentMiddleware.getHeaderMenu = function(req,res,next){
     };
     requestPromise(options)
         .then(function (response) {
-            console.log('menu',response);
-            // return contentModel.getPortfolioItemObjects(response);
+            return contentModel.getMenuObject(response);
         })
         .then(function(data) {
+            res.locals.menuItems = data;
             next();
         })
         .catch(function (error) {

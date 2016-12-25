@@ -24,6 +24,7 @@ const //packages
     pageController = require('./app/controllers/pages'),
 //middleware
     utilMiddleware = require('./app/middleware/util'),
+    contentMiddleware = require('./app/middleware/content'),
 //variables
     port = process.env.NODE_PORT || 3000;
 
@@ -64,7 +65,7 @@ app.use(express.static(path.join(__dirname, 'webapp/public'),{
 redirect(app);
 app.use(utilMiddleware.removeTrailingSlashes);
 app = utilMiddleware.debugLibraries(utilMiddleware.redirectHistoricalLinks(app), express);
-app.use(utilMiddleware.debugRequests);
+app.use(utilMiddleware.debugRequests, contentMiddleware.getHeaderMenu);
 
 //parse form data
 app.use(bodyParser.json());// to support JSON-encoded bodies
@@ -109,8 +110,8 @@ app.use(function(req, res, next) {
 // error handlers
 app.use(function (error, req, res, next) {
     //page request errors
-    if (error && utilService.simpleNullCheck(error, 'statusCode')) {
-        switch (error.statusCode) {
+    if (error && utilService.simpleNullCheck(error, 'status')) {
+        switch (error.status) {
             case utilService.status.notFound:
                 pageController.get404Page(req, res, next);
                 break;
