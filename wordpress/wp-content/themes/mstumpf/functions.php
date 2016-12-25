@@ -51,7 +51,7 @@ function themeSlugSetup() {
 add_action( 'after_setup_theme', 'themeSlugSetup' );
 
 //remove unnecessary wp code
-function disableWPEmbeds() {
+function themeDisableWPEmbeds() {
 
     // Remove the REST API endpoint.
     remove_action('rest_api_init', 'wp_oembed_register_route');
@@ -66,7 +66,7 @@ function disableWPEmbeds() {
     // Remove oEmbed-specific JavaScript from the front-end and back-end.
     remove_action('wp_head', 'wp_oembed_add_host_js');
 }
-add_action('init', 'disableWPEmbeds', 9999);
+add_action('init', 'themeDisableWPEmbeds', 9999);
 remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
 remove_action( 'wp_print_styles', 'print_emoji_styles' );
 
@@ -76,27 +76,27 @@ remove_action( 'wp_print_styles', 'print_emoji_styles' );
  */
 
 //add custom controllers
-function addCustomApiControllers($controllers) {
+function apiAddCustomControllers($controllers) {
     $controllers[] = 'Menu';
     return $controllers;
 }
-add_filter('json_api_controllers', 'addCustomApiControllers');
+add_filter('json_api_controllers', 'apiAddCustomControllers');
 
 // Register the source file for JSON_API_Widgets_Controller
-function menuControllerPath($default_path) {
+function apiMenuControllerPath($default_path) {
     return get_stylesheet_directory().'/api/menu-controller.php';
 }
-add_filter('json_api_menu_controller_path', 'menuControllerPath');
+add_filter('json_api_menu_controller_path', 'apiMenuControllerPath');
 
 // Disable default api methods
-function disableApiExecution() {
+function apiDisableControllerExecution() {
     // Stop execution
     exit;
 }
-add_action('json_api-core-get_author_index', 'disableApiExecution');
-add_action('json_api-core-info', 'disableApiExecution');
-add_action('json_api-core-get_page_index', 'disableApiExecution');
-add_action('json_api-core-get_nonce', 'disableApiExecution');
-add_action('json_api-core-get_tag_index', 'disableApiExecution');
-add_action('json_api-core-get_category_index', 'disableApiExecution');
-add_action('json_api-core-get_date_index', 'disableApiExecution');
+add_action('json_api-core-get_author_index', 'apiDisableControllerExecution');
+add_action('json_api-core-info', 'apiDisableControllerExecution');
+add_action('json_api-core-get_page_index', 'apiDisableControllerExecution');
+add_action('json_api-core-get_nonce', 'apiDisableControllerExecution');
+add_action('json_api-core-get_tag_index', 'apiDisableControllerExecution');
+add_action('json_api-core-get_category_index', 'apiDisableControllerExecution');
+add_action('json_api-core-get_date_index', 'apiDisableControllerExecution');
