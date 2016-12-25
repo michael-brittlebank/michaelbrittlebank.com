@@ -10,7 +10,7 @@ const /* packages */
 
 var pages = {};
 
-/*
+/**
  main pages
  */
 pages.getIndex = function(req, res, next) {
@@ -90,7 +90,7 @@ pages.getTravelPage = function(req, res, next) {
     });
 };
 
-/*
+/**
  error pages
  */
 pages.get500Page = function(req, res, next) {
