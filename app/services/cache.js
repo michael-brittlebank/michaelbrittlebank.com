@@ -1,4 +1,5 @@
 const //packages
+    _ = require('lodash'),
     requestPromise = require('request-promise'),
     moment = require('moment'),
     promise = require('bluebird'),
@@ -29,7 +30,10 @@ redisClient.on('connect', function() {
                     .then(function () {
                         logService.info('ENV key change detected. Flushed Redis database');
                         redisClient.set(cacheKey, envValue);
-                        //todo, cache primer api calls
+                        //prime cache after flushing
+                        _.forOwn(cache, function(entry){
+                            entry();
+                        });
                         return promise.resolve();
                     })
                     .catch(function(error){
