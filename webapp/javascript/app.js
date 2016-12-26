@@ -48,7 +48,7 @@ var app = {
         views.error500.init();
 
         //views
-        views.homepage.init();
+        // views.homepage.init();
         views.travel.init();
     }
 };

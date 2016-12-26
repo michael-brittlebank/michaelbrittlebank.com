@@ -14,17 +14,31 @@ var pages = {};
  main pages
  */
 pages.getIndex = function(req, res, next) {
-    res.render('pages/homepage', {
-        meta: {
-            title: 'Mike Stumpf'
-        }
-    });
+    const options = {
+        method: 'GET',
+        uri: process.env.API_URL+'?json=get_posts&post_type=homepage-block&count=-1'
+    };
+    requestPromise(options)
+        .then(function (response) {
+            return contentModel.getHomepageBlockObjects(response);
+        })
+        .then(function(data) {
+            res.render('pages/homepage', {
+                meta: {
+                    title: 'Mike Stumpf'
+                },
+                homepageBlocks: data
+            });
+        })
+        .catch(function (error) {
+            responseService.defaultCatch(error, next,'portfolio');
+        });
 };
 
 pages.getPortfolioPage = function(req, res, next){
     const options = {
         method: 'GET',
-        uri: process.env.API_URL+'?json=get_posts&post_type=portfolio&count=-1'
+        uri: process.env.API_URL+'?json=get_posts&post_type=portfolio-item&count=-1'
     };
     requestPromise(options)
         .then(function (response) {
@@ -54,7 +68,7 @@ pages.getResumePage = function(req, res, next) {
 pages.getMusicPage = function(req, res, next) {
     const options = {
         method: 'GET',
-        uri: process.env.API_URL+'?json=get_posts&post_type=music&count=-1'
+        uri: process.env.API_URL+'?json=get_posts&post_type=music-post&count=-1'
     };
     requestPromise(options)
         .then(function (response) {

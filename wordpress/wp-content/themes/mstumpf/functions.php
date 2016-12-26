@@ -28,6 +28,10 @@ function themeAdminCss() { ?>
         {
             display: none!important;
         }
+        .column-featured_image img {
+            max-height: 150px;
+            max-width: 150px;
+        }
     </style>
 <?php }
 add_action('admin_head', 'themeAdminCss');
