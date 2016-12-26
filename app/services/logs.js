@@ -11,7 +11,7 @@ logService.error = function(error){
 
 logService.info = function(info){
     if(utilService.isLocalConfig()){
-        console.log('----------- INFO -----------\n',info,'\n\n');
+        console.log('----------- INFO -----------\n',info,'\n');
     }
 };
 

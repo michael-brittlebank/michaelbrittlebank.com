@@ -5,6 +5,7 @@ const /* packages */
 //services
     utilService = require('../services/util'),
     responseService = require('../services/response'),
+    cacheService = require('../services/cache'),
 //models
     contentModel = require('../models/content');
 
@@ -14,15 +15,9 @@ var pages = {};
  main pages
  */
 pages.getIndex = function(req, res, next) {
-    const options = {
-        method: 'GET',
-        uri: process.env.API_URL+'?json=get_posts&post_type=homepage-block&count=-1'
-    };
-    requestPromise(options)
-        .then(function (response) {
-            return contentModel.getHomepageBlockObjects(response);
-        })
-        .then(function(data) {
+    cacheService.getCachedHomepageBlocks(req)
+        .then(function(reqResponse, data) {
+            req = reqResponse;
             res.render('pages/homepage', {
                 meta: {
                     title: 'Mike Stumpf'
@@ -31,7 +26,7 @@ pages.getIndex = function(req, res, next) {
             });
         })
         .catch(function (error) {
-            responseService.defaultCatch(error, next,'portfolio');
+            responseService.defaultCatch(error, next,'homepage');
         });
 };
 

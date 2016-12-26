@@ -11,7 +11,6 @@ const //packages
     contentLength = require('express-content-length-validator'),
     redirect = require('express-redirect'),
     moment = require('moment'),
-    cookieSession = require('cookie-session'),
 //services
     utilService = require('./app/services/util'),
     logService = require('./app/services/logs'),
@@ -60,16 +59,6 @@ app.use(compression({
 app.use(express.static(path.join(__dirname, 'webapp/public'),{
     index: false,
     maxAge: utilService.isLocalConfig()?0:'7 days'
-}));
-
-//cookie session
-app.set('trust proxy', 1); //trust first proxy
-app.use(cookieSession({
-    name: 'session',
-    keys: [
-        process.env.NODE_COOKIE_KEY1,
-        process.env.NODE_COOKIE_KEY2
-    ]
 }));
 
 //helper middleware
