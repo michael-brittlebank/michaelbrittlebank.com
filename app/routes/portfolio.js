@@ -1,7 +1,7 @@
-const /* packages */
+const // packages
     express = require('express'),
     router = express.Router(),
-    /* services */
+    // services
     portfolioController = require('../controllers/portfolio');
 
 router.route('/:pageTitle')

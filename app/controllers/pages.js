@@ -1,4 +1,4 @@
-const /* packages */
+const //packages
     _ = require('lodash'),
     promise = require('bluebird'),
 //services
@@ -36,21 +36,6 @@ pages.getResumePage = function(req, res, next) {
     });
 };
 
-pages.getMusicPage = function(req, res, next) {
-    cacheService.getCachedMusicPosts()
-        .then(function(data) {
-            res.render('pages/music',{
-                meta: {
-                    title: utilService.metaTitlePrefix+'Music'
-                },
-                posts: data
-            });
-        })
-        .catch(function (error) {
-            responseService.defaultCatch(error, next,'portfolio');
-        });
-};
-
 pages.getChorusPage = function(req, res, next) {
     res.render('pages/chorus',{
         meta: {
@@ -60,18 +45,19 @@ pages.getChorusPage = function(req, res, next) {
 };
 
 pages.getTravelPage = function(req, res, next) {
-    cacheService.getCachedTravelImages()
+    promise.all([
+        contentService.getCachedPageByUrl('/travel'),
+        cacheService.getCachedTravelImages()
+    ])
         .then(function(data) {
             res.render('pages/travel',{
-                meta: {
-                    title: utilService.metaTitlePrefix+'Travel'
-                },
-                googleMapsApi: process.env.GOOGLE_MAPS_API,
-                images: data
+                page: data[0],
+                images: data[1],
+                googleMapsApi: process.env.GOOGLE_MAPS_API
             });
         })
         .catch(function (error) {
-            responseService.defaultCatch(error, next,'portfolio');
+            responseService.defaultCatch(error, next,'travel');
         });
 };
 

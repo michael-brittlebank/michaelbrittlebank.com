@@ -13,9 +13,6 @@ router.route('/')
 router.route('/travel')
     .get(pagesController.getTravelPage);
 
-router.route('/music')
-    .get(pagesController.getMusicPage);
-
 router.route('/resume')
     .get(pagesController.getResumePage);
 
