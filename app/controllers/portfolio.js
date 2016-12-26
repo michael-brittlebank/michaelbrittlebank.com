@@ -36,34 +36,15 @@ portfolio.getPortfolioPage = function(req, res, next){
 };
 
 portfolio.getPortfolioItem = function(req, res, next) {
-    // var params = {
-    //     content_type: contentfulService.contentTypes.portfolio,
-    //     'fields.url[in]': req.originalUrl.replace('/portfolio', '').replace(/^\/|\/$/g, ''),
-    //     limit: 1
-    // };
-    // return promise
-    //     .all([contentfulService.getEntries(params)])
-    //     .then(function (response) {
-    //         var page = contentService.portfolioDigest(response[0]);
-    //         res.locals.page = page;
-    //         if (webapp.simpleNullCheck(page, 'layout')) {
-    //             switch (page.layout) {
-    //                 case 'Bubbles':
-    //                     res.render('portfolio-bubbles');
-    //                     break;
-    //                 case 'Reading List':
-    //                     res.render('portfolio-reading-list');
-    //                     break;
-    //                 default:
-    //                     res.render('single-portfolio');
-    //             }
-    //         } else {
-                res.render('portfolio/default');
-        //     }
-        // })
-        // .catch(function (err) {
-        //     next(err);
-        // });
+    contentService.getCachedPortfolioItemByUrl(req.originalUrl)
+        .then(function(data) {
+            res.render('portfolio/default',{
+                page: data
+            });
+        })
+        .catch(function (error) {
+            responseService.defaultCatch(error, next,'portfolio item');
+        });
 };
 
 module.exports = portfolio;

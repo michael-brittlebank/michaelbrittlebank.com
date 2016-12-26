@@ -16,6 +16,9 @@ router.route('/travel')
 router.route('/resume')
     .get(pagesController.getResumePage);
 
+router.route('/chorus')
+    .get(pagesController.getChorusPage);
+
 if(utilService.isLocalConfig()){
     router.route('/500')
         .get(pagesController.get500Page);
