@@ -10,7 +10,7 @@ var portfolio = {};
 
 portfolio.getPortfolioPage = function(req, res, next){
     promise.all([
-        contentService.getCachedPageByUrl('/portfolio'),
+        contentService.getCachedPageByUrl(req.originalUrl),
         cacheService.getCachedPortfolioItems()
     ])
         .then(function(data) {

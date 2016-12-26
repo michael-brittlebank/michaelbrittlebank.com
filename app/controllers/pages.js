@@ -14,7 +14,7 @@ var pages = {};
  */
 pages.getIndex = function(req, res, next) {
     promise.all([
-        contentService.getCachedPageByUrl('/'),
+        contentService.getCachedPageByUrl(req.originalUrl),
         cacheService.getCachedHomepageBlocks()
     ])
         .then(function(data) {
@@ -46,7 +46,7 @@ pages.getChorusPage = function(req, res, next) {
 
 pages.getTravelPage = function(req, res, next) {
     promise.all([
-        contentService.getCachedPageByUrl('/travel'),
+        contentService.getCachedPageByUrl(req.originalUrl),
         cacheService.getCachedTravelImages()
     ])
         .then(function(data) {

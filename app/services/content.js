@@ -22,4 +22,19 @@ content.getCachedPageByUrl = function(pageUrl){
         });
 };
 
+content.getCachedMusicPostByUrl = function(postUrl){
+    return cacheService.getCachedMusicPosts()
+        .then(function(data){
+            const postObject = _.find(data,{'url': postUrl});
+            if(_.isEmpty(postObject)){
+                return promise.reject(new errorService.NotFoundError('post not found'));
+            } else {
+                return promise.resolve(postObject);
+            }
+        })
+        .catch(function(error){
+            return promise.reject(error);
+        });
+};
+
 module.exports = content;

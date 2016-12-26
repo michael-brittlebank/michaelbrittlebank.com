@@ -43,6 +43,7 @@ content.getMusicPostObjects = function(response){
                         title: utilService.getValueByKey(entry,'title'),
                         body: utilService.getValueByKey(entry,'content'),
                         url: urlPrefix+'/'+utilService.getValueByKey(entry,'slug'),
+                        publishedDate: utilService.getValueByKey(data,'date'),
                         excerpt: utilService.getFirstValueByKey(entry.custom_fields,'wpcf-music-excerpt'),
                         metaTitle: utilService.getFirstValueByKey(entry.custom_fields,'wpcf-meta-title'),
                         metaDescription: utilService.getFirstValueByKey(entry.custom_fields,'wpcf-meta-description')

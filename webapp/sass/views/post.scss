@@ -1,37 +1,37 @@
-.single.post {
-  .post-title {
-    @include faded-out;
-  }
-  .post-date {
-    font-size: rem-calc(16);
-    @include faded-out;
-    i {
-      margin-right: 5px;
-    }
-  }
-  hr {
-    margin: 25px 0;
-    @include faded-out;
-  }
-  .post-body {
-    @include faded-out;
-    p {
-      @include faded-out;
-    }
-    .gallery-image {
-      outline: none!important;
-    }
-    img {
-      max-width:100%;
-      max-height: 500px;
-      &.left-float {
-        float:left;
-        padding: 15px 15px 15px 0;
-      }
-      &.right-float{
-        float:right;
-        padding: 15px 0 15px 15px;
-      }
-    }
-  }
-}
+//.single.post {
+//  .post-title {
+//    @include faded-out;
+//  }
+//  .post-date {
+//    font-size: rem-calc(16);
+//    @include faded-out;
+//    i {
+//      margin-right: 5px;
+//    }
+//  }
+//  hr {
+//    margin: 25px 0;
+//    @include faded-out;
+//  }
+//  .post-body {
+//    @include faded-out;
+//    p {
+//      @include faded-out;
+//    }
+//    .gallery-image {
+//      outline: none!important;
+//    }
+//    img {
+//      max-width:100%;
+//      max-height: 500px;
+//      &.left-float {
+//        float:left;
+//        padding: 15px 15px 15px 0;
+//      }
+//      &.right-float{
+//        float:right;
+//        padding: 15px 0 15px 15px;
+//      }
+//    }
+//  }
+//}

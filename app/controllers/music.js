@@ -11,7 +11,7 @@ var music = {};
 
 music.getMusicPage = function(req, res, next) {
     promise.all([
-        contentService.getCachedPageByUrl('/music'),
+        contentService.getCachedPageByUrl(req.originalUrl),
         cacheService.getCachedMusicPosts()
     ])
         .then(function(data) {
@@ -26,21 +26,15 @@ music.getMusicPage = function(req, res, next) {
 };
 
 music.getMusicPost = function(req, res, next) {
-    // var params = {
-    //     content_type: contentfulService.contentTypes.post,
-    //     'fields.url[in]': req.originalUrl.replace('/music', '').replace(/^\/|\/$/g, ''),
-    //     limit: 1
-    // };
-    // return promise
-    //     .all([contentfulService.getEntries(params)])
-    //     .then(function (response) {
-    //         res.locals.page = contentService.postDigest(response[0]);
-    //         //todo, add links for next post and previous post
-            res.render('music/default');
-        // })
-        // .catch(function (err) {
-        //     next(err);
-        // });
+    contentService.getCachedMusicPostByUrl(req.originalUrl)
+        .then(function(data) {
+            res.render('music/post',{
+                page: data
+            });
+        })
+        .catch(function (error) {
+            responseService.defaultCatch(error, next,'music post');
+        });
 };
 
 module.exports = music;
