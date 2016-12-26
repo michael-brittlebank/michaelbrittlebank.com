@@ -1,13 +1,9 @@
 const /* packages */
     _ = require('lodash'),
-    promise = require('bluebird'),
-    requestPromise = require('request-promise'),
 //services
     utilService = require('../services/util'),
     responseService = require('../services/response'),
-    cacheService = require('../services/cache'),
-//models
-    contentModel = require('../models/content');
+    cacheService = require('../services/cache');
 
 var pages = {};
 
@@ -16,8 +12,7 @@ var pages = {};
  */
 pages.getIndex = function(req, res, next) {
     cacheService.getCachedHomepageBlocks(req)
-        .then(function(reqResponse, data) {
-            req = reqResponse;
+        .then(function(data) {
             res.render('pages/homepage', {
                 meta: {
                     title: 'Mike Stumpf'
@@ -31,14 +26,7 @@ pages.getIndex = function(req, res, next) {
 };
 
 pages.getPortfolioPage = function(req, res, next){
-    const options = {
-        method: 'GET',
-        uri: process.env.API_URL+'?json=get_posts&post_type=portfolio-item&count=-1'
-    };
-    requestPromise(options)
-        .then(function (response) {
-            return contentModel.getPortfolioItemObjects(response);
-        })
+    cacheService.getCachedHomepageBlocks(req)
         .then(function(data) {
             res.render('pages/portfolio', {
                 meta: {
@@ -61,14 +49,7 @@ pages.getResumePage = function(req, res, next) {
 };
 
 pages.getMusicPage = function(req, res, next) {
-    const options = {
-        method: 'GET',
-        uri: process.env.API_URL+'?json=get_posts&post_type=music-post&count=-1'
-    };
-    requestPromise(options)
-        .then(function (response) {
-            return contentModel.getPortfolioItemObjects(response);
-        })
+    cacheService.getCachedMusicPosts()
         .then(function(data) {
             res.render('pages/music',{
                 meta: {
