@@ -72,12 +72,19 @@ pages.getChorusPage = function(req, res, next) {
 };
 
 pages.getTravelPage = function(req, res, next) {
-    res.render('pages/travel',{
-        meta: {
-            title: utilService.metaTitlePrefix+'Travel'
-        },
-        googleMapsApi: process.env.GOOGLE_MAPS_API
-    });
+    cacheService.getCachedTravelImages()
+        .then(function(data) {
+            res.render('pages/travel',{
+                meta: {
+                    title: utilService.metaTitlePrefix+'Travel'
+                },
+                googleMapsApi: process.env.GOOGLE_MAPS_API,
+                images: data
+            });
+        })
+        .catch(function (error) {
+            responseService.defaultCatch(error, next,'portfolio');
+        });
 };
 
 /**

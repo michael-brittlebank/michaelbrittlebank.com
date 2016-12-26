@@ -112,4 +112,24 @@ content.getHomepageBlockObjects = function(response){
         });
 };
 
+content.getTravelImageObjects = function(response){
+    return promise.resolve()
+        .then(function(){
+            try {
+                var data = JSON.parse(response);
+                data = _.map(data.posts, function(entry){
+                    return {
+                        //assume api sorting by menu order
+                        id: utilService.getValueFromKey(entry,'id'),
+                        title: utilService.getValueFromKey(entry,'title'),
+                        url: utilService.simpleNullCheck(entry,'thumbnail_images')?utilService.getValueFromKey(entry.thumbnail_images.full,'url'):''
+                    }
+                });
+                return promise.resolve(data);
+            } catch (error){
+                return promise.reject(error);
+            }
+        });
+};
+
 module.exports = content;

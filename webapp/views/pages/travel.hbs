@@ -1,10 +1,10 @@
 <main id="page-travel" class="row page travel">
     <section id="container-images">
         <div class="travel-images">
-            {{#each album.images}}
+            {{#each images}}
                 <div style="background-image:url('{{url}}');">
                     <div class="image-caption-holder">
-                        <h3>{{title}}</h3>
+                        <h3>{{{title}}}</h3>
                     </div>
                 </div>
             {{/each}}
