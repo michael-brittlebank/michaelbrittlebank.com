@@ -26,7 +26,7 @@ pages.getIndex = function(req, res, next) {
 };
 
 pages.getPortfolioPage = function(req, res, next){
-    cacheService.getCachedHomepageBlocks(req)
+    cacheService.getCachedPortfolioItems(req)
         .then(function(data) {
             res.render('pages/portfolio', {
                 meta: {
