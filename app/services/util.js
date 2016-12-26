@@ -66,8 +66,16 @@ util.simpleNullCheck = function(object,key){
     return object && object.hasOwnProperty(key) && (object[key] || object[key] === 0)?true:false;
 };
 
-util.getValueFromKey = function(object,key){
+util.getValueByKey = function(object, key){
     return util.simpleNullCheck(object,key)?object[key]:'';
+};
+
+util.getFirstValueByKey = function(object, key){
+    return util.simpleNullCheck(object,key)?object[key][0]:'';
+};
+
+util.getImageUrl = function(object){
+   return util.simpleNullCheck(object,'thumbnail_images')?util.getValueByKey(object.thumbnail_images.full,'url'):''
 };
 
 util.isLocalConfig = function(){

@@ -13,14 +13,14 @@ content.getPortfolioItemObjects = function(response){
                 var data = JSON.parse(response);
                 data = _.map(data.posts, function(entry){
                     return {
-                        id: utilService.getValueFromKey(entry,'id'),
-                        title: utilService.getValueFromKey(entry,'title'),
-                        body: utilService.getValueFromKey(entry,'content'),
-                        url: utilService.getValueFromKey(entry,'slug'),
-                        techStack: utilService.getValueFromKey(entry.custom_fields,'wpcf-portfolio-tech-stack'),
-                        demoUrl: utilService.getValueFromKey(entry.custom_fields,'wpcf-portfolio-demo-url'),
-                        repositoryUrl: utilService.getValueFromKey(entry.custom_fields,'wpcf-portfolio-repository-url'),
-                        featuredIcon: utilService.getValueFromKey(entry.custom_fields,'wpcf-portfolio-featured-icon'),
+                        id: utilService.getValueByKey(entry,'id'),
+                        title: utilService.getValueByKey(entry,'title'),
+                        body: utilService.getValueByKey(entry,'content'),
+                        slug: utilService.getValueByKey(entry,'slug'),
+                        url: utilService.getFirstValueByKey(entry.custom_fields,'wpcf-portfolio-demo-url'),
+                        techStack: utilService.getFirstValueByKey(entry.custom_fields,'wpcf-portfolio-tech-stack'),
+                        repositoryUrl: utilService.getFirstValueByKey(entry.custom_fields,'wpcf-portfolio-repository-url'),
+                        featuredIcon: utilService.getFirstValueByKey(entry.custom_fields,'wpcf-portfolio-featured-icon'),
                         portfolioGroup: utilService.simpleNullCheck(entry, 'taxonomy_portfolio-group')? entry['taxonomy_portfolio-group'][0].title:''
                     }
                 });
@@ -35,14 +35,15 @@ content.getMusicPostObjects = function(response){
     return promise.resolve()
         .then(function(){
             try {
+                const urlPrefix = '/music';
                 var data = JSON.parse(response);
                 data = _.map(data.posts, function(entry){
                     return {
-                        id: utilService.getValueFromKey(entry,'id'),
-                        title: utilService.getValueFromKey(entry,'title'),
-                        body: utilService.getValueFromKey(entry,'content'),
-                        url: utilService.getValueFromKey(entry,'slug'),
-                        excerpt: utilService.getValueFromKey(entry.custom_fields,'wpcf-music-excerpt')
+                        id: utilService.getValueByKey(entry,'id'),
+                        title: utilService.getValueByKey(entry,'title'),
+                        body: utilService.getValueByKey(entry,'content'),
+                        url: urlPrefix+'/'+utilService.getValueByKey(entry,'slug'),
+                        excerpt: utilService.getFirstValueByKey(entry.custom_fields,'wpcf-music-excerpt')
                     }
                 });
                 return promise.resolve(data);
@@ -64,11 +65,11 @@ content.getMenuObject = function(response){
                 var data = JSON.parse(response);
                 data = _.map(data.menu, function(entry){
                     return {
-                        id: utilService.getValueFromKey(entry,'id'),
-                        title: utilService.getValueFromKey(entry,'label'),
-                        url: utilService.getValueFromKey(entry,'url'),
-                        menuOrder: utilService.getValueFromKey(entry,'menu_order'),
-                        parentId: utilService.getValueFromKey(entry,'parent_id')
+                        id: utilService.getValueByKey(entry,'id'),
+                        title: utilService.getValueByKey(entry,'label'),
+                        url: utilService.getValueByKey(entry,'url'),
+                        menuOrder: utilService.getValueByKey(entry,'menu_order'),
+                        parentId: utilService.getValueByKey(entry,'parent_id')
                     }
                 });
                 //sort by menu order
@@ -88,11 +89,11 @@ content.getHomepageBlockObjects = function(response){
                 data = _.map(data.posts, function(entry){
                     return {
                         //assume api sorting by menu order
-                        id: utilService.getValueFromKey(entry,'id'),
-                        title: utilService.getValueFromKey(entry,'title'),
-                        url: '/'+utilService.getValueFromKey(entry,'slug'),
-                        image: utilService.simpleNullCheck(entry,'thumbnail_images')?utilService.getValueFromKey(entry.thumbnail_images.full,'url'):'',
-                        icon: utilService.getValueFromKey(entry.custom_fields,'wpcf-homepage-block-icon')
+                        id: utilService.getValueByKey(entry,'id'),
+                        title: utilService.getValueByKey(entry,'title'),
+                        url: '/'+utilService.getValueByKey(entry,'slug'),
+                        image: utilService.getImageUrl(entry),
+                        icon: utilService.getFirstValueByKey(entry.custom_fields,'wpcf-homepage-block-icon')
                     }
                 });
                 return promise.resolve(data);
@@ -110,9 +111,9 @@ content.getTravelImageObjects = function(response){
                 data = _.map(data.posts, function(entry){
                     return {
                         //assume api sorting by menu order
-                        id: utilService.getValueFromKey(entry,'id'),
-                        title: utilService.getValueFromKey(entry,'title'),
-                        url: utilService.simpleNullCheck(entry,'thumbnail_images')?utilService.getValueFromKey(entry.thumbnail_images.full,'url'):''
+                        id: utilService.getValueByKey(entry,'id'),
+                        title: utilService.getValueByKey(entry,'title'),
+                        url: utilService.getImageUrl(entry)
                     }
                 });
                 return promise.resolve(data);
@@ -124,10 +125,10 @@ content.getTravelImageObjects = function(response){
 
 function getPageModel(data){
     //private method because it's not wrapped in try catch or promisified
-    const pageUrl =  utilService.simpleNullCheck(data,'slug') && utilService.getValueFromKey(data,'slug').toLowerCase().indexOf('home')!==-1?'':utilService.getValueFromKey(data,'slug');//use blank url for homepage
+    const pageUrl =  utilService.simpleNullCheck(data,'slug') && utilService.getValueByKey(data,'slug').toLowerCase().indexOf('home')!==-1?'':utilService.getValueByKey(data,'slug');//use blank url for homepage
     return {
-        id: utilService.getValueFromKey(data,'id'),
-        title: utilService.getValueFromKey(data,'title'),
+        id: utilService.getValueByKey(data,'id'),
+        title: utilService.getValueByKey(data,'title'),
         url: '/'+pageUrl
     }
 }

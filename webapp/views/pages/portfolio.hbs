@@ -12,7 +12,7 @@
                 <div class="l--slick-carousel">
                     {{#each items}}
                         <div class="portfolio-item">
-                            <a href="#modal-{{url}}">
+                            <a href="#modal-{{slug}}">
                                 <div class="portfolio-content">
                                     {{{featuredIcon}}}
                                     <h3>{{title}}</h3>
@@ -27,7 +27,7 @@
     <aside id="container-modals">
         {{#each portfolioGroups}}
             {{#each items}}
-                <section class="modal--fade" id="modal-{{url}}" data-stackable="false" tabindex="-1" role="dialog" aria-labelledby="label-fade" aria-hidden="true">
+                <section class="modal--fade" id="modal-{{slug}}" data-stackable="false" tabindex="-1" role="dialog" aria-labelledby="label-fade" aria-hidden="true">
                     <div class="modal-inner">
                         <h3>{{title}}</h3>
                         {{{body}}}
