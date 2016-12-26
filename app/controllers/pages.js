@@ -37,7 +37,7 @@ pages.getResumePage = function(req, res, next) {
 };
 
 pages.getChorusPage = function(req, res, next) {
-    res.render('pages/chorus',{
+    res.render('portfolio/chorus',{
         meta: {
             title: utilService.metaTitlePrefix+'Chorus'
         }

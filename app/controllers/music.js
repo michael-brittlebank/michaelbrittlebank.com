@@ -15,7 +15,7 @@ music.getMusicPage = function(req, res, next) {
         cacheService.getCachedMusicPosts()
     ])
         .then(function(data) {
-            res.render('pages/music',{
+            res.render('music/page',{
                 page: data[0],
                 posts: data[1]
             });

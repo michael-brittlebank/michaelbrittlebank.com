@@ -4,7 +4,8 @@ const /* packages */
 //services
     responseService = require('../services/response'),
     cacheService = require('../services/cache'),
-    contentService = require('../services/content');
+    contentService = require('../services/content'),
+    errorService = require('../services/errors');
 
 var portfolio = {};
 
@@ -25,7 +26,7 @@ portfolio.getPortfolioPage = function(req, res, next){
                     items: unsortedData[key]
                 }
             });
-            res.render('pages/portfolio', {
+            res.render('portfolio/page', {
                 page: data[0],
                 portfolioGroups: sortedData
             });
@@ -38,9 +39,21 @@ portfolio.getPortfolioPage = function(req, res, next){
 portfolio.getPortfolioItem = function(req, res, next) {
     contentService.getCachedPortfolioItemByUrl(req.originalUrl)
         .then(function(data) {
-            res.render('portfolio/default',{
-                page: data
-            });
+            switch(data.url){
+                case '/portfolio/reading-list':
+                    res.render('portfolio/reading-list',{
+                        page: data
+                    });
+                    break;
+                case '/portfolio/bubbles':
+                    //todo, move bubbles partial to frontend handlebars
+                    res.render('portfolio/bubbles',{
+                        page: data
+                    });
+                    break;
+                default:
+                    next(new errorService.NotFoundError('portfolio item template not found'));
+            }
         })
         .catch(function (error) {
             responseService.defaultCatch(error, next,'portfolio item');
