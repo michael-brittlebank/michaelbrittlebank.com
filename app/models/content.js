@@ -122,4 +122,43 @@ content.getTravelImageObjects = function(response){
         });
 };
 
+function getPageModel(data){
+    //private method because it's not wrapped in try catch or promisified
+    const pageUrl =  utilService.simpleNullCheck(data,'slug') && utilService.getValueFromKey(data,'slug').toLowerCase().indexOf('home')!==-1?'':utilService.getValueFromKey(data,'slug');//use blank url for homepage
+    return {
+        id: utilService.getValueFromKey(data,'id'),
+        title: utilService.getValueFromKey(data,'title'),
+        url: '/'+pageUrl
+    }
+}
+
+content.getPageObject = function(response){
+    //single page
+    return promise.resolve()
+        .then(function(){
+            try {
+                var data = JSON.parse(response);
+                data = getPageModel(data);
+                return promise.resolve(data);
+            } catch (error){
+                return promise.reject(error);
+            }
+        });
+};
+
+content.getPageObjects = function(response){
+    //multiple pages
+    return promise.resolve()
+        .then(function(){
+            try {
+                var data = JSON.parse(response);
+                data = _.map(data.posts, function(entry){
+                    return getPageModel(entry);
+                });
+                return promise.resolve(data);
+            } catch (error){
+                return promise.reject(error);
+            }
+        });
+};
 module.exports = content;

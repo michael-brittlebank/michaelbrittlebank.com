@@ -38,10 +38,10 @@ function addUrlsToSitemap(items, type){
         changeFrequency = 'monthly';
     switch(type){
         case 'page':
-            priority = 0.7;
+            priority = 1;
             break;
         default:
-            priority = 0.5;
+            priority = 0.7;
             break;
     }
     _.each(items, function(entry){
@@ -62,16 +62,17 @@ root.getSitemap = function(req, res, next) {
     } else {
         return promise
             .all([
+                cacheService.getCachedPages(),
                 cacheService.getCachedPortfolioItems(),
                 cacheService.getCachedMusicPosts()
             ])
             .then(function(data){
                 //page
-
+                addUrlsToSitemap(data[0],'page');
                 //portfolio items
-                addUrlsToSitemap(data[0]);
-                //music posts
                 addUrlsToSitemap(data[1]);
+                //music posts
+                addUrlsToSitemap(data[2]);
                 sendSiteMap(req, res, next);
             })
             .catch(function (error) {

@@ -30,19 +30,19 @@ redisClient.on('connect', function() {
                     .then(function () {
                         logService.info('ENV key change detected. Flushed Redis database');
                         redisClient.set(cacheKey, envValue);
-                        //prime cache after flushing
+                        //prime cache after flushing; don't wait for completion
                         _.forOwn(cache, function(entry){
                             entry();
                         });
                         return promise.resolve();
                     })
                     .catch(function(error){
-                        logService.error(error);
                         return promise.reject(error);
                     });
             }
         });
 }).on('error', function (error) {
+    //default error handler
     logService.error(error);
 });
 
@@ -189,6 +189,36 @@ cache.getCachedTravelImages = function(){
                         return requestPromise(options)
                             .then(function (response) {
                                 return contentModel.getTravelImageObjects(response);
+                            })
+                            .then(function (data) {
+                                redisClient.set(urlKey,JSON.stringify(data));
+                                redisClient.expire(urlKey, moment.duration(1, 'year').asSeconds());
+                                return promise.resolve(data);
+                            });
+                    } else {
+                        return promise.resolve(JSON.parse(response));
+                    }
+                })
+                .catch(function(error){
+                    return promise.reject(error);
+                });
+        });
+};
+
+cache.getCachedPages = function(){
+    return promise.resolve()
+        .then(function(){
+            const urlKey = process.env.API_URL+'?json=get_posts&post_type=page&count=-1',
+                options = {
+                    method: 'GET',
+                    uri: urlKey
+                };
+            return redisClient.getAsync(urlKey)
+                .then(function(response) {
+                    if(!response){
+                        return requestPromise(options)
+                            .then(function (response) {
+                                return contentModel.getPageObjects(response);
                             })
                             .then(function (data) {
                                 redisClient.set(urlKey,JSON.stringify(data));
