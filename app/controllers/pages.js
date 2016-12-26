@@ -1,9 +1,11 @@
 const /* packages */
     _ = require('lodash'),
+    promise = require('bluebird'),
 //services
     utilService = require('../services/util'),
     responseService = require('../services/response'),
-    cacheService = require('../services/cache');
+    cacheService = require('../services/cache'),
+    contentService = require('../services/content');
 
 var pages = {};
 
@@ -11,42 +13,18 @@ var pages = {};
  main pages
  */
 pages.getIndex = function(req, res, next) {
-    cacheService.getCachedHomepageBlocks(req)
+    promise.all([
+        contentService.getCachedPageByUrl('/'),
+        cacheService.getCachedHomepageBlocks()
+    ])
         .then(function(data) {
             res.render('pages/homepage', {
-                meta: {
-                    title: 'Mike Stumpf'
-                },
-                homepageBlocks: data
+                page: data[0],
+                homepageBlocks: data[1]
             });
         })
         .catch(function (error) {
             responseService.defaultCatch(error, next,'homepage');
-        });
-};
-
-pages.getPortfolioPage = function(req, res, next){
-    cacheService.getCachedPortfolioItems(req)
-        .then(function(data) {
-            var filteredData = {};
-            //sort data items by portfolio group
-            data = _.groupBy(data, 'portfolioGroup');
-            //create portfolio group data object
-            Object.keys(data).forEach(function(key){
-                filteredData[key] = {
-                    title: key,
-                    items: data[key]
-                }
-            });
-            res.render('pages/portfolio', {
-                meta: {
-                    title: utilService.metaTitlePrefix + 'Portfolio'
-                },
-                portfolioGroups: filteredData
-            });
-        })
-        .catch(function (error) {
-            responseService.defaultCatch(error, next,'portfolio');
         });
 };
 

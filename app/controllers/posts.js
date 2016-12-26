@@ -14,7 +14,7 @@ api.getDefaultPostPage = function(req, res, next) {
     //     .then(function (response) {
     //         res.locals.page = contentService.postDigest(response[0]);
     //         //todo, add links for next post and previous post
-            res.render('single-post');
+            res.render('music/default');
         // })
         // .catch(function (err) {
         //     next(err);

@@ -43,7 +43,9 @@ content.getMusicPostObjects = function(response){
                         title: utilService.getValueByKey(entry,'title'),
                         body: utilService.getValueByKey(entry,'content'),
                         url: urlPrefix+'/'+utilService.getValueByKey(entry,'slug'),
-                        excerpt: utilService.getFirstValueByKey(entry.custom_fields,'wpcf-music-excerpt')
+                        excerpt: utilService.getFirstValueByKey(entry.custom_fields,'wpcf-music-excerpt'),
+                        metaTitle: utilService.getFirstValueByKey(entry.custom_fields,'wpcf-meta-title'),
+                        metaDescription: utilService.getFirstValueByKey(entry.custom_fields,'wpcf-meta-description')
                     }
                 });
                 return promise.resolve(data);
@@ -51,11 +53,6 @@ content.getMusicPostObjects = function(response){
                 return promise.reject(error);
             }
         });
-};
-
-content.getSeoObject = function(response) {
-    //todo
-    return response;
 };
 
 content.getMenuObject = function(response){
@@ -124,12 +121,22 @@ content.getTravelImageObjects = function(response){
 };
 
 function getPageModel(data){
+    //todo, missing seo fields
     //private method because it's not wrapped in try catch or promisified
-    const pageUrl =  utilService.simpleNullCheck(data,'slug') && utilService.getValueByKey(data,'slug').toLowerCase().indexOf('home')!==-1?'':utilService.getValueByKey(data,'slug');//use blank url for homepage
+    const pageTitle = utilService.getValueByKey(data,'title'),
+    //use blank url for homepage
+        pageUrl =  utilService.simpleNullCheck(data,'slug') && utilService.getValueByKey(data,'slug').toLowerCase().indexOf('home')!==-1?'':utilService.getValueByKey(data,'slug'),
+        metaTitle = utilService.simpleNullCheck(data.custom_fields,'wpcf-meta-title')?utilService.getFirstValueByKey(data.custom_fields,'wpcf-meta-title'):utilService.metaTitlePrefix+pageTitle;
     return {
         id: utilService.getValueByKey(data,'id'),
-        title: utilService.getValueByKey(data,'title'),
-        url: '/'+pageUrl
+        title: pageTitle,
+        url: '/'+pageUrl,
+        publishedDate: utilService.getValueByKey(data,'date'),
+        metaTitle: metaTitle,
+        metaDescription: utilService.getFirstValueByKey(data.custom_fields,'wpcf-meta-description'),
+        metaImage: '',
+        metaCategories: '',
+        metaTags: ''
     }
 }
 

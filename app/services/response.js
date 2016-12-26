@@ -12,8 +12,8 @@ response.defaultCatch = function(error, next, message){
         error = error.error;
     }
     logService.error(error);
-    if (error && utilService.simpleNullCheck(error, 'statusCode')) {
-        switch (error.statusCode) {
+    if (error && utilService.simpleNullCheck(error, 'status')) {
+        switch (error.status) {
             case utilService.status.notFound:
                 next(new errorService.NotFoundError(error));
                 break;

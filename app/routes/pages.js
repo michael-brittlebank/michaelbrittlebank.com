@@ -16,9 +16,6 @@ router.route('/travel')
 router.route('/music')
     .get(pagesController.getMusicPage);
 
-router.route('/portfolio')
-    .get(pagesController.getPortfolioPage);
-
 router.route('/resume')
     .get(pagesController.getResumePage);
 

@@ -4,8 +4,10 @@ const /* packages */
     /* services */
     portfolioController = require('../controllers/portfolio');
 
-/* GET portfolio pages. */
-router.route('/*')
-    .get(portfolioController.getDefaultPortfolioPage);
+router.route('/:pageTitle')
+    .get(portfolioController.getPortfolioItem);
+
+router.route('/')
+    .get(portfolioController.getPortfolioPage);
 
 module.exports = router;

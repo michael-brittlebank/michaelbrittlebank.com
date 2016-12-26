@@ -25,6 +25,7 @@ const //packages
 //middleware
     utilMiddleware = require('./app/middleware/util'),
     contentMiddleware = require('./app/middleware/content'),
+    seoMiddleware = require('./app/middleware/seo'),
 //variables
     port = process.env.NODE_PORT || 3000;
 
@@ -64,8 +65,8 @@ app.use(express.static(path.join(__dirname, 'webapp/public'),{
 //helper middleware
 redirect(app);
 app.use(utilMiddleware.removeTrailingSlashes);
-app = utilMiddleware.debugLibraries(utilMiddleware.redirectHistoricalLinks(app), express);
-app.use(utilMiddleware.debugRequests, contentMiddleware.getHeaderMenu);
+app = utilMiddleware.debugLibraries(seoMiddleware.redirectHistoricalLinks(app), express);
+app.use(utilMiddleware.debugRequests, seoMiddleware.getGlobalVariables, contentMiddleware.getHeaderMenu);
 
 //parse form data
 app.use(bodyParser.json());// to support JSON-encoded bodies
@@ -93,8 +94,8 @@ app.set('views', path.join(__dirname, 'webapp/views'));
 /**
  * routes
  */
-app.use('/portfolio/', portfolioRoutes);
-app.use('/music/', postRoutes);
+app.use('/portfolio', portfolioRoutes);
+app.use('/music', postRoutes);
 app.use('/', seoRoutes, pageRoutes);
 
 /**
