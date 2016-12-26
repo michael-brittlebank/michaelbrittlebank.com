@@ -6,7 +6,6 @@ const //packages
 //models
     contentModel = require('../models/content'),
 //services
-    utilService = require('./util'),
     logService = require('./logs');
 
 //redis configuration
@@ -16,6 +15,29 @@ const redisClient = redis.createClient();
 
 redisClient.on('connect', function() {
     logService.info('Connected to Redis');
+    //check env cache key
+    const cacheKey = 'NODE_CACHE_KEY',
+        envValue = process.env.NODE_CACHE_KEY;
+    return redisClient.getAsync(cacheKey)
+        .then(function(response) {
+            if(!response) {
+                redisClient.set(cacheKey,envValue);
+                logService.info('Redis ENV key set');
+                return promise.resolve();
+            } else if (response !== envValue){
+                return redisClient.flushdbAsync()
+                    .then(function () {
+                        logService.info('ENV key change detected. Flushed Redis database');
+                        redisClient.set(cacheKey, envValue);
+                        //todo, cache primer api calls
+                        return promise.resolve();
+                    })
+                    .catch(function(error){
+                        logService.error(error);
+                        return promise.reject(error);
+                    });
+            }
+        });
 }).on('error', function (error) {
     logService.error(error);
 });

@@ -10,8 +10,7 @@ content.getPortfolioItemObjects = function(response){
     return promise.resolve()
         .then(function(){
             try {
-                var data = JSON.parse(response),
-                    filteredData = {};
+                var data = JSON.parse(response);
                 data = _.map(data.posts, function(entry){
                     return {
                         id: utilService.getValueFromKey(entry,'id'),
@@ -25,16 +24,7 @@ content.getPortfolioItemObjects = function(response){
                         portfolioGroup: utilService.simpleNullCheck(entry, 'taxonomy_portfolio-group')? entry['taxonomy_portfolio-group'][0].title:''
                     }
                 });
-                //sort data items by portfolio group
-                data = _.groupBy(data, 'portfolioGroup');
-                //create portfolio group data object
-                Object.keys(data).forEach(function(key){
-                    filteredData[key] = {
-                        title: key,
-                        items: data[key]
-                    }
-                });
-                return promise.resolve(filteredData);
+                return promise.resolve(data);
             } catch (error){
                 return promise.reject(error);
             }

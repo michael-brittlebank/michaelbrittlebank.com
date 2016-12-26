@@ -28,11 +28,21 @@ pages.getIndex = function(req, res, next) {
 pages.getPortfolioPage = function(req, res, next){
     cacheService.getCachedPortfolioItems(req)
         .then(function(data) {
+            var filteredData = {};
+            //sort data items by portfolio group
+            data = _.groupBy(data, 'portfolioGroup');
+            //create portfolio group data object
+            Object.keys(data).forEach(function(key){
+                filteredData[key] = {
+                    title: key,
+                    items: data[key]
+                }
+            });
             res.render('pages/portfolio', {
                 meta: {
                     title: utilService.metaTitlePrefix + 'Portfolio'
                 },
-                portfolioGroups: data
+                portfolioGroups: filteredData
             });
         })
         .catch(function (error) {
