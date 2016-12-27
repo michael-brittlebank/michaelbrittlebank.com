@@ -1,29 +1,29 @@
-//core
-//----------------------
 footer {
-  text-align: center;
-  margin-top: 100px;
-  @include faded-out;
-  @include mobile {
-    margin-top: 50px;
-  }
-  @include tablet {
-    margin-top: 75px;
+  margin-top: 50px;
+  padding: 20px 0;
+  .fa {
+    font-size: 2em;
+    margin: 0 1px;
   }
 }
 
-//social media
-//----------------------
-#footer-find-me {
-  padding-top: 50px;
-  h5 {
-    padding: 0.7rem 1rem;
-    margin: 0;
-    white-space: nowrap;
-  }
-  i {
-    &.fa {
-      font-size: rem-calc(25);
-    }
+#footer-social-title {
+  vertical-align: text-bottom;
+  display: inline-block;
+  margin: 8px 5px 8px 0;
+}
+
+#footer-copyright {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+#footer-social-container {
+  text-align: center;
+  margin-bottom: 10px;
+  @include tablet-up {
+    text-align: right;
+    margin-bottom: 0;
   }
 }
