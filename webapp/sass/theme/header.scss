@@ -1,7 +1,16 @@
 header {
-  margin-bottom: 50px;
   background-color: #f8f8f8;
   box-shadow: 0 0 10px #888888;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 99999;
+}
+
+#header-placeholder {
+  margin-bottom: 50px;
+  height: 67px;
 }
 
 $activeLinkBackgroundColor: #f8f8f8;
