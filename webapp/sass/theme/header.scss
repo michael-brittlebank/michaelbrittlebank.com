@@ -1,68 +1,72 @@
-//core
-//----------------------
 header {
-  .list-links {
-    color: $color-black;
-    font-size: rem-calc(20);
-    font-family: $font-open-sans-condensed;
-    text-transform: uppercase;
-  }
-  @include faded-out;
-  @include mobile {
-    //revert fade in on mobile devices
-    visibility: visible!important;
-    opacity: 1;
-  }
+  margin-bottom: 50px;
+  background-color: #f8f8f8;
+  box-shadow: 0 0 10px #888888;
 }
 
+$activeLinkBackgroundColor: #f8f8f8;
 
-//menu
-//----------------------
-#menu-mobile {
-  padding:0;
-  display: none;
-  @include mobile {
-    display:block;
-  }
-  .accordion {
-    border:none;
-    .accordion-title {
-      background-color: $color-white;
-      font-size: rem-calc(40);
-      &:hover {
-        color: scale-color($color-black, $lightness: -15%);
-      }
-      &:before {
-        content: none !important;
-      }
+/* dropdown menu */
+.standard-menu {
+  list-style: none;
+  margin: 0;
+  & > li {
+    display: inline-block;
+    border-bottom: 5px solid transparent;
+    transition: border-color 300ms ease-out 0s;
+    & > a {
+      padding: 20px 15px;
     }
-    .accordion-content {
-      padding: 0;
-      border: none;
-      a {
-        border-left: 0 solid transparent;
-        @extend .list-links;
-        @include transition-with-defaults(border);
-        &:hover, &.active {
-          border-left: 15px solid rgba($color-badgers-red, 0.75);
-        }
+    &.active, &:hover {
+      border-bottom-color: #e3ebee;
+    }
+    &:hover {
+      .sub-menu {
+        opacity: 1;
+        z-index: 1001;
       }
     }
   }
+  a {
+    padding: 5px 15px;
+    display: block;
+  }
 }
 
-#menu-desktop {
-  @include mobile {
-    display: none;
+.sub-menu {
+  position: absolute;
+  opacity: 0;
+  padding: 0;
+  list-style: none;
+  background-color: white;
+  border: 1px solid #c6c7c8;
+  border-top-color: #e3ebee;
+  text-align: left;
+  z-index: -1;
+  min-width: 150px;
+  margin-top: 5px;
+  transition: opacity 300ms ease-out 0s, z-index 300ms ease-out 0s;
+  a {
+    color: #393939;
+    font-size: 14px;
+    transition: background-color 300ms ease-out 0s;
+    &:hover {
+      background-color: $activeLinkBackgroundColor;
+    }
   }
-  li {
+  .active {
     a {
-      border-bottom: 5px solid transparent;
-      @extend .list-links;
-      @include transition-with-defaults(border);
-      &:hover, &.active {
-        border-color: rgba($color-york-blue, 0.5);
-      }
+      background-color: $activeLinkBackgroundColor;
     }
   }
+}
+
+#header-mobile-menu {
+  font-size: 2.5rem;
+  margin: auto;
+  position: absolute;
+  top: 0;
+  right: 12px;
+  bottom: 0;
+  height: 2.5rem;
 }

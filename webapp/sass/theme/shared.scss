@@ -4,6 +4,7 @@
   @extend .san-serif-default;
 }
 a {
+  text-decoration: none;
   @include transition-with-defaults(color);
 }
 
@@ -38,6 +39,10 @@ img {
   width:100%;
 }
 
+.position-relative {
+  position: relative;
+}
+
 
 //typography
 //-----------------------------
@@ -64,23 +69,26 @@ img {
 
 //visibility
 //-----------------------------
-.hide-for-small {
-  @include mobile {
+@include mobile {
+  .hide-for-small {
     display: none;
   }
 }
-.hide-for-medium {
-  @include tablet {
+@include tablet {
+  .hide-for-medium {
     display: none;
   }
 }
-.hide-for-medium-up {
-  @include tablet-up {
+@include tablet-up {
+  .hide-for-medium-up {
+    display: none;
+  }
+  .show-for-small {
     display: none;
   }
 }
-.hide-for-large {
-  @include desktop {
+@include desktop {
+  .hide-for-large {
     display: none;
   }
 }
