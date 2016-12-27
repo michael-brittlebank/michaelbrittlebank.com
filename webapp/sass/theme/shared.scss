@@ -1,6 +1,11 @@
 //main styles
 //-----------------------------
-html,body,p,a,blockquote {
+body {
+  //header placeholder
+  padding-top: 120px;
+}
+
+p,a,blockquote {
   font-family: $global-font-proza-libre;
   color: #393939;
 }

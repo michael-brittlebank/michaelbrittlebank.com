@@ -51,6 +51,7 @@ var app = {
         // views.homepage.init();
         views.travel.init();
         views.resume.init();
+        views.music.init();
     }
 };
 

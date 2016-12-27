@@ -1,11 +1,11 @@
 const //services
     errorService = require('./errors'),
-    utilService = require('./util');
+    utilService = require('./util'),
+    logService = require('./logs');
 
 var response = {};
 
 response.defaultCatch = function(error, next, message){
-    const logService = require('./logs');
     if(!error || error.length < 1){
         error = message;
     } else if (error && error.hasOwnProperty('error')){

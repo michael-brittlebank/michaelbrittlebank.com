@@ -2,7 +2,6 @@ const //packages
     _ = require('lodash'),
     promise = require('bluebird'),
 //services
-    utilService = require('../services/util'),
     responseService = require('../services/response'),
     cacheService = require('../services/cache'),
     contentService = require('../services/content');
@@ -28,9 +27,7 @@ music.getMusicPage = function(req, res, next) {
 music.getMusicPost = function(req, res, next) {
     contentService.getCachedMusicPostByUrl(req.originalUrl)
         .then(function(data) {
-            res.render('music/post',{
-                page: data
-            });
+            res.render('music/post',data);
         })
         .catch(function (error) {
             responseService.defaultCatch(error, next,'music post');

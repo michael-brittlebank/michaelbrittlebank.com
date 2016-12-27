@@ -75,11 +75,17 @@ util.getFirstValueByKey = function(object, key){
 };
 
 util.getImageUrl = function(object){
-   return util.simpleNullCheck(object,'thumbnail_images')?util.getValueByKey(object.thumbnail_images.full,'url'):''
+    return util.simpleNullCheck(object,'thumbnail_images')?util.getValueByKey(object.thumbnail_images.full,'url'):''
 };
 
 util.isLocalConfig = function(){
     return process.env.NODE_ENV === 'local';
+};
+
+util.replaceUnixCharactersWithHTML = function(data){
+    return data
+        .replace(/\n/g, '<br/>')
+        .replace(/&/gi, '&amp;');
 };
 
 module.exports = util;

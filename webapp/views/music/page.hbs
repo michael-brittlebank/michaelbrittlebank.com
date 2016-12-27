@@ -1,26 +1,19 @@
-<main class="row page music">
-    <section id="container-content" class="small-12 columns">
-        <h1>Music</h1>
-        <div id="grid-post" class="grid">
-            {{#each posts}}
-                <div class="post" onclick="window.location.href='{{url}}'" data-group="{{../group}}">
-                    <div class="content-post">
-                        <h3 class="post-title">{{title}}</h3>
-                        <h5 class="post-date"><i class="fa fa-calendar"></i>{{postDate}}</h5>
-                        <hr>
-                        <div class="post-excerpt">
-                            {{{excerpt}}}
-                        </div>
-                    </div>
-                </div>
-            {{/each}}
-        </div>
+<main id="page-music" class="grid-container">
+    <h1>Music</h1>
+    <section id="music-grid" class="row">
+       {{#each posts}}
+           <div class="post-container col-sm-12 col-md-6 col-lg-4" data-url="{{url}}">
+               <div class="post-content">
+                   <h3 class="post-title">{{title}}</h3>
+                   <h5 class="post-date">
+                       <i class="fa fa-calendar"></i>{{datePublished}}
+                   </h5>
+                   <hr>
+                   <div class="post-excerpt">
+                       {{{excerpt}}}
+                   </div>
+               </div>
+           </div>
+       {{/each}}
     </section>
-    {{#compare posts.length 20 operator="==="}}
-        <section id="container-button" class="small-12 columns">
-            <i id="loading-spinner" class="fa fa-spin fa-circle-o-notch"></i>
-            <br/>
-            <button id="load-more" class="button" onclick="music.loadMoreArticles();">Load More</button>
-        </section>
-    {{/compare}}
 </main>
