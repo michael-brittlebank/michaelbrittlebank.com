@@ -170,4 +170,25 @@ content.getPageObjects = function(response){
             }
         });
 };
+
+content.getQuoteObjects = function(response){
+    return promise.resolve()
+        .then(function(){
+            try {
+                var data = JSON.parse(response);
+                data = _.map(data.posts, function(entry){
+                    return {
+                        //assume api sorting by menu order
+                        id: utilService.getValueByKey(entry,'id'),
+                        body: utilService.getValueByKey(entry,'content'),
+                        author: utilService.getFirstValueByKey(entry.custom_fields,'wpcf-quote-author')
+                    }
+                });
+                return promise.resolve(data);
+            } catch (error){
+                return promise.reject(error);
+            }
+        });
+};
+
 module.exports = content;

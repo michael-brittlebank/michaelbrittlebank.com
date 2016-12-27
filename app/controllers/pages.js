@@ -52,7 +52,7 @@ pages.getTravelPage = function(req, res, next) {
         .then(function(data) {
             res.render('pages/travel',{
                 page: data[0],
-                images: data[1],
+                images: _.shuffle(data[1]),
                 googleMapsApi: process.env.GOOGLE_MAPS_API
             });
         })

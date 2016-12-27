@@ -12,7 +12,8 @@ var portfolio = {};
 portfolio.getPortfolioPage = function(req, res, next){
     promise.all([
         contentService.getCachedPageByUrl(req.originalUrl),
-        cacheService.getCachedPortfolioItems()
+        cacheService.getCachedPortfolioItems(),
+        cacheService.getCachedQuotes()
     ])
         .then(function(data) {
             var unsortedData,
@@ -28,7 +29,8 @@ portfolio.getPortfolioPage = function(req, res, next){
             });
             res.render('portfolio/page', {
                 page: data[0],
-                portfolioGroups: sortedData
+                portfolioGroups: sortedData,
+                quote: _.sample(data[2])
             });
         })
         .catch(function (error) {

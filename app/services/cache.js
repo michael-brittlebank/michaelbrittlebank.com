@@ -235,4 +235,34 @@ cache.getCachedPages = function(){
         });
 };
 
+cache.getCachedQuotes = function(){
+    return promise.resolve()
+        .then(function(){
+            const urlKey = process.env.API_URL+'?json=get_posts&post_type=quote&count=-1',
+                options = {
+                    method: 'GET',
+                    uri: urlKey
+                };
+            return redisClient.getAsync(urlKey)
+                .then(function(response) {
+                    if(!response){
+                        return requestPromise(options)
+                            .then(function (response) {
+                                return contentModel.getQuoteObjects(response);
+                            })
+                            .then(function (data) {
+                                redisClient.set(urlKey,JSON.stringify(data));
+                                redisClient.expire(urlKey, moment.duration(1, 'year').asSeconds());
+                                return promise.resolve(data);
+                            });
+                    } else {
+                        return promise.resolve(JSON.parse(response));
+                    }
+                })
+                .catch(function(error){
+                    return promise.reject(error);
+                });
+        });
+};
+
 module.exports = cache;
