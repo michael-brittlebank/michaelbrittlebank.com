@@ -1,15 +1,29 @@
 //main styles
 //-----------------------------
-* {
-  @extend .san-serif-default;
+html,body,p,a,blockquote {
+  font-family: "Proza Libre", "HelveticaNeue", Helvetica Neue, Helvetica, Tahoma, Geneva, Arial, sans-serif;
+  color: #393939;
 }
-a {
-  text-decoration: none;
-  @include transition-with-defaults(color);
+
+h1,h2,h3,h4,h5 {
+  font-family: "Raleway","HelveticaNeue", Helvetica Neue, Helvetica, Tahoma, Geneva, Arial, sans-serif;
+  color: #393939;
 }
 
 img {
   max-width: 100%;
+}
+
+p {
+  margin: 0 0 10px 0;
+}
+
+a {
+  text-decoration: none;
+  @include transition-with-defaults(color);
+  &:hover {
+    color: #d3d3d3;
+  }
 }
 
 //helper classes
@@ -23,19 +37,19 @@ img {
   display: none;
 }
 
-.horizontal-center{
+.horizontal-center {
   margin: 0 auto;
 }
 
-.float-left{
+.float-left {
   float:left;
 }
 
-.float-right{
+.float-right {
   float:right;
 }
 
-.full-width{
+.full-width {
   width:100%;
 }
 

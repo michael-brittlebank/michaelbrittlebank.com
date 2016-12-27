@@ -13,7 +13,7 @@ $activeLinkBackgroundColor: #f8f8f8;
   & > li {
     display: inline-block;
     border-bottom: 5px solid transparent;
-    transition: border-color 300ms ease-out 0s;
+    @include transition-with-defaults(border-color);
     & > a {
       padding: 20px 15px;
     }
@@ -45,28 +45,13 @@ $activeLinkBackgroundColor: #f8f8f8;
   z-index: -1;
   min-width: 150px;
   margin-top: 5px;
-  transition: opacity 300ms ease-out 0s, z-index 300ms ease-out 0s;
+  @include transition-raw("opacity 300ms ease-out 0s,z-index 300ms ease-out 0s");
   a {
     color: #393939;
     font-size: 14px;
-    transition: background-color 300ms ease-out 0s;
-    &:hover {
-      background-color: $activeLinkBackgroundColor;
-    }
+    @include transition-with-defaults(background-color);
   }
-  .active {
-    a {
-      background-color: $activeLinkBackgroundColor;
-    }
+  .active a, a:hover {
+    background-color: $activeLinkBackgroundColor;
   }
-}
-
-#header-mobile-menu {
-  font-size: 2.5rem;
-  margin: auto;
-  position: absolute;
-  top: 0;
-  right: 12px;
-  bottom: 0;
-  height: 2.5rem;
 }
