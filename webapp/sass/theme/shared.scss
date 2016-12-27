@@ -1,12 +1,12 @@
 //main styles
 //-----------------------------
 html,body,p,a,blockquote {
-  font-family: "Proza Libre", "HelveticaNeue", Helvetica Neue, Helvetica, Tahoma, Geneva, Arial, sans-serif;
+  font-family: $global-font-proza-libre;
   color: #393939;
 }
 
 h1,h2,h3,h4,h5 {
-  font-family: "Raleway","HelveticaNeue", Helvetica Neue, Helvetica, Tahoma, Geneva, Arial, sans-serif;
+  font-family: $global-font-raleway;
   color: #393939;
 }
 
