@@ -50,6 +50,7 @@ var app = {
         //views
         // views.homepage.init();
         views.travel.init();
+        views.resume.init();
     }
 };
 

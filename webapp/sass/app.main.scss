@@ -17,15 +17,14 @@ Imports and settings that might change with theme development
 @import "theme/shared";
 @import "theme/header";
 @import "theme/footer";
-
+@import "theme/errors";
 
 //views
 //-----------------------------
-@import "views/errors";
-@import "views/homepage";
-@import "views/travel";
-@import "views/chorus";
-@import "views/music";
-@import "views/portfolio";
-@import "views/post";
-@import "views/resume";
+@import "views/pages/homepage";
+@import "views/pages/travel";
+@import "views/pages/resume";
+@import "views/portfolio/chorus";
+@import "views/portfolio/page";
+@import "views/music/post";
+@import "views/music/page";

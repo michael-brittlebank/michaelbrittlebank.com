@@ -1,0 +1,28 @@
+#resume-title {
+  border-left: 20px solid $color-badgers-red;
+  padding-left: 15px;
+  @include mobile {
+    border-left: 15px solid $color-badgers-red;
+  }
+}
+
+#resume-body {
+  opacity: 0;
+  padding: 0 40px;
+  h2 {
+    border-bottom: 1px solid $color-dark-grey;
+    padding: 20px 0 5px 0;
+    text-align: center;
+    text-transform: uppercase;
+  }
+  h3 {
+    margin: 30px 0 10px 0;
+  }
+  a {
+    font-size: rem-calc(20);
+  }
+  ul {
+    list-style: circle;
+    padding: 0 10px;
+  }
+}

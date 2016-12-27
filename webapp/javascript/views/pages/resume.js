@@ -1,7 +1,30 @@
-var resume = {};
+(function(){
+    
+    var that = app.views.resume,
+        $ = jQuery,
+        resumeBody;
 
-resume.init = function(){
-    site.animation.fadeIn('#container-title',1000,500,0);
-    site.animation.fadeIn('#container-body h2',1000,1000,200);
-    site.animation.fadeIn('#container-body p,#container-body ul,#container-body h3,#container-body h4,#container-body h5',1000,1250,100);
-};
+    function fadeInText(){
+        resumeBody
+            .blast({delimiter: 'element'})
+            .velocity('transition.fadeIn',{
+                duration: 1000,
+                stagger: 30,
+                delay: 0,
+                begin: function(){
+                    resumeBody.css({opacity: 1});
+                }
+            });
+    }
+    
+    this.init = function(){
+        if($('#page-resume').length > 0){
+            //variables
+            resumeBody = $('#resume-body');
+
+            //functions
+            fadeInText();
+        }
+    };
+    
+}).apply(app.views.resume);
