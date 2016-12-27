@@ -29,11 +29,12 @@ pages.getIndex = function(req, res, next) {
 };
 
 pages.getResumePage = function(req, res, next) {
-    res.render('pages/resume',{
-        meta: {
-            title: utilService.metaTitlePrefix+'Resume'
-        }
-    });
+    contentService.getCachedPageByUrl(req.originalUrl)
+        .then(function(data) {
+            res.render('pages/resume', {
+                page: data
+            });
+        });
 };
 
 pages.getChorusPage = function(req, res, next) {

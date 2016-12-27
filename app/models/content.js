@@ -131,6 +131,7 @@ function getPageModel(data){
     return {
         id: utilService.getValueByKey(data,'id'),
         title: pageTitle,
+        body: utilService.getValueByKey(data,'content'),
         url: '/'+pageUrl,
         publishedDate: utilService.getValueByKey(data,'date'),
         metaTitle: metaTitle,
