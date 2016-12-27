@@ -8,7 +8,7 @@ var chorus = {};
     this.init = function(){
         prettyPrint();
         tabPanels = $('.tab-pane');
-        site.animation.fadeIn('.page.chorus',750,750,0);
+        app.animation.fadeIn('.page.chorus',750,750,0);
         //chorus init
         var guitarConfig = {
                 layoutInstrument: ['guitar'],
