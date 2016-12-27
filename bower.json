@@ -13,7 +13,7 @@
   "dependencies": {
     "blast-text": "2.0.0",
     "chorus-js": "2.2.0",
-    "velocity": "1.2.3",
+    "velocity": "1.4.1",
     "bluebird": "3.4.6",
     "handlebars": "4.0.5",
     "slick-carousel": "1.6.0",

@@ -7,12 +7,12 @@ body {
 
 p,a,blockquote {
   font-family: $global-font-proza-libre;
-  color: #393939;
+  color: $color-font-black;
 }
 
 h1,h2,h3,h4,h5 {
   font-family: $global-font-raleway;
-  color: #393939;
+  color: $color-font-black;
 }
 
 img {
@@ -40,6 +40,10 @@ a {
 
 .hidden {
   display: none;
+}
+
+.opaque {
+  opacity: 0;
 }
 
 .horizontal-center {

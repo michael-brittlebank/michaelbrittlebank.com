@@ -1,33 +1,28 @@
-#container-content {
-  margin-top: 50px;
-}
-
-.post-container {
+.music-post-container {
   display: flex;
-  background-color: $color-white;
   margin-bottom: 10px;
+  cursor: pointer;
   &:hover {
-    .post-content {
+    .music-post-content {
       border-color: $color-badgers-gold;
     }
   }
 }
 
-.post-content {
+.music-post-content {
   width: 100%;
   padding: 20px;
   border: 5px double $color-desert-black;
-  text-align: justify;
-  cursor: pointer;
+  color: $color-font-black;
   @include transition-with-defaults(border-color);
 }
 
-.post-date {
+.music-post-excerpt {
+  text-align: justify;
+}
+
+.music-post-date {
   .fa {
     margin-right: 5px;
   }
-}
-
-.post-divider {
-  margin: 10px 0;
 }

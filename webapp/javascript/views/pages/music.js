@@ -1,20 +1,35 @@
 (function(){
-    
+
     var that = app.views.music,
         $ = jQuery,
+        animations = app.animations,
         posts;
-    
+
+    function fadeInTiles(){
+        var animationIndex = 0,
+            animationInterval = setInterval(function(){
+                if (animationIndex === posts.length){
+                    clearInterval(animationInterval);
+                } else {
+                    animations.animateElement(posts[animationIndex],{
+                        properties: {
+                            opacity: 1
+                        },
+                        duration: 350
+                    });
+                    animationIndex++;
+                }
+            }, 100);
+    }
+
     this.init = function(){
         if($('#page-music').length > 0){
             //variables
-            posts = $('.post-container');
+            posts = $('.music-post-container');
 
             //functions
-            posts.on('click touchend', function(event){
-                event.preventDefault();
-                window.location.href = $(this).attr('data-url');
-            });
+            fadeInTiles();
         }
     };
-    
+
 }).apply(app.views.music);

@@ -1,19 +1,19 @@
 <main id="page-music" class="grid-container">
     <h1>Music</h1>
     <section id="music-grid" class="row">
-       {{#each posts}}
-           <div class="post-container col-sm-12 col-md-6 col-lg-4" data-url="{{url}}">
-               <div class="post-content">
-                   <h3 class="post-title">{{title}}</h3>
-                   <h5 class="post-date">
-                       <i class="fa fa-calendar"></i>{{datePublished}}
-                   </h5>
-                   <hr>
-                   <div class="post-excerpt">
-                       {{{excerpt}}}
-                   </div>
-               </div>
-           </div>
-       {{/each}}
+        {{#each posts}}
+            <a class="music-post-container col-sm-12 col-md-6 col-lg-4 opaque" href="{{url}}">
+                <div class="music-post-content">
+                    <h3 class="music-post-title">{{title}}</h3>
+                    <h5 class="music-post-date">
+                        <i class="fa fa-calendar"></i>{{datePublished}}
+                    </h5>
+                    <hr>
+                    <div class="music-post-excerpt">
+                        {{{excerpt}}}
+                    </div>
+                </div>
+            </a>
+        {{/each}}
     </section>
 </main>
