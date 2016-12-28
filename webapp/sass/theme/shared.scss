@@ -5,7 +5,7 @@ body {
   padding-top: 120px;
 }
 
-p,a,blockquote {
+p,a,blockquote,span,div,input,textarea {
   font-family: $global-font-proza-libre;
   color: $color-font-black;
 }
@@ -24,6 +24,7 @@ p {
 }
 
 a {
+  cursor: pointer;
   text-decoration: none;
   @include transition-with-defaults(color);
   &:hover {

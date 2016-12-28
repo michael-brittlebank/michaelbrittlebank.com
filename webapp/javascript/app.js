@@ -20,7 +20,11 @@ var app = {
         error404:{},
         error500:{},
         travel: {},
-        portfolio: {},
+        portfolio: {
+            readingList: {},
+            bubbles: {},
+            page: {}
+        },
         music: {},
         resume: {}
     },
@@ -52,6 +56,11 @@ var app = {
         views.travel.init();
         views.resume.init();
         views.music.init();
+        views.portfolio.page.init();
+        
+        //portfolio
+        views.portfolio.readingList.init();
+
     }
 };
 

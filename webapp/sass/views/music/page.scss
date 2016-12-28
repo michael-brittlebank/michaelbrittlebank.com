@@ -1,7 +1,6 @@
 .music-post-container {
   display: flex;
   margin-bottom: 10px;
-  cursor: pointer;
   &:hover {
     .music-post-content {
       border-color: $color-badgers-gold;
