@@ -1,11 +1,22 @@
 //font declarations
 //-----------------------------
+$sanserifDefault: ', \'HelveticaNeue\', Helvetica Neue, Helvetica, Tahoma, Geneva, Arial, sans-serif';
+
 @font-face {
   font-family: 'Raleway';
   src: url('/fonts/raleway-regular-webfont.woff2') format('woff2'), url('/fonts/raleway-regular-webfont.woff') format('woff');
   font-weight: normal;
   font-style: normal
 }
+$global-font-raleway: unquote('Raleway'+$sanserifDefault);
+
+@font-face {
+  font-family: 'RalewayThin';
+  src: url('/fonts/raleway-thin-webfont.woff2') format('woff2'), url('/fonts/raleway-thin-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+$global-font-raleway-thin: unquote('RalewayThin'+$sanserifDefault);
 
 @font-face {
   font-family: 'Proza Libre';
@@ -13,14 +24,17 @@
   font-weight: normal;
   font-style: normal
 }
+$global-font-proza-libre: unquote('Proza Libre'+$sanserifDefault);
 
-$global-font-raleway: 'Raleway','HelveticaNeue', Helvetica Neue, Helvetica, Tahoma, Geneva, Arial, sans-serif;
-$global-font-proza-libre: 'Proza Libre', 'HelveticaNeue', Helvetica Neue, Helvetica, Tahoma, Geneva, Arial, sans-serif;
 
 //extensible classes
 //-----------------------------
 .f--raleway {
   font-family: $global-font-raleway;
+}
+
+.f--raleway-thin {
+  font-family: $global-font-raleway-thin;
 }
 
 .f--proza-libre {

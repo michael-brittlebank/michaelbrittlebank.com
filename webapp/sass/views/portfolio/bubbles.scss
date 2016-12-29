@@ -1,0 +1,52 @@
+//main
+//----------------------
+#content-bubbles {
+  overflow:hidden;
+  position: relative;
+  #bubble-holder {
+    border: 5px double $color-desert-black;
+    height:100%;
+    width:100%;
+    .bubble {
+      position: absolute;
+      background-color:purple;
+      border-radius: 50%;
+      @include faded-out;
+    }
+  }
+}
+
+#content-code {
+  @include mobile {
+    height: auto;
+  }
+}
+
+#code-desktop {
+  overflow: scroll;
+  max-width: 100%;
+  max-height: 100%;
+  @include mobile {
+    display:none;
+  }
+}
+
+#code-mobile {
+  display:none;
+  text-align: center;
+  @include mobile {
+    display:block;
+  }
+}
+
+#container-controls {
+  label {
+    white-space: nowrap;
+  }
+  .button {
+    margin: 25px auto;
+    display: block;
+    height: 40px;
+    white-space: nowrap;
+  }
+}

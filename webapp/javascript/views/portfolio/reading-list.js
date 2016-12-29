@@ -6,12 +6,12 @@
 
     this.init = function(){
         $('iframe').iFrameResize({
-            bodyMargin: 25,
+            bodyMargin: 0,
             checkOrigin: [
                 'http://wordpress.mikestumpf.com'
             ],
             initCallback: function(){
-                animations.animateElement($('#content-reading-list'),{
+                animations.animateElement($('#reading-list-container'),{
                     properties: {
                         opacity: 1
                     },

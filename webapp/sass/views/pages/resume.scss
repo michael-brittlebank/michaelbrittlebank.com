@@ -31,3 +31,9 @@
     padding: 0 10px;
   }
 }
+
+#resume-download-button {
+  span:after {
+    content: '\f019';
+  }
+}

@@ -24,7 +24,12 @@ Imports and settings that might change with theme development
 @import "views/pages/homepage";
 @import "views/pages/travel";
 @import "views/pages/resume";
-@import "views/portfolio/chorus";
+
+//portfolio
 @import "views/portfolio/page";
-@import "views/music/post";
+@import "views/portfolio/chorus";
+@import "views/portfolio/bubbles";
+
+//music
 @import "views/music/page";
+@import "views/music/post";
