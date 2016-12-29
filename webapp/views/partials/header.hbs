@@ -6,12 +6,12 @@
         <nav class="col-sm-12 text-right hide-for-small">
             <ul class="standard-menu">
                 {{#each menuItems}}
-                    <li>
+                    <li class="{{class}}">
                         <a href="{{url}}" class="{{#if isActive}}active{{/if}}">{{title}}</a>
                         {{#if children}}
                             <ul class="sub-menu">
                                 {{#each children}}
-                                    <li>
+                                    <li class="{{class}}">
                                         <a href="{{url}}">{{title}}</a>
                                     </li>
                                 {{/each}}
