@@ -14,6 +14,14 @@ utilMiddleware.removeTrailingSlashes = function(req, res, next) {
     }
 };
 
+utilMiddleware.forceLowercaseRoutes = function(req, res, next){
+    if(req.url.toLowerCase() !== req.url){
+        res.redirect(301, req.url.toLowerCase());
+    } else {
+        next();
+    }
+};
+
 utilMiddleware.debugLibraries = function(app, express){
     if(utilService.isLocalConfig()) {
         app.use('/webapp/bower_components', express.static(path.join(__dirname, 'webapp/bower_components')));

@@ -37,10 +37,10 @@ content.getCachedMusicPostByUrl = function(postUrl){
         });
 };
 
-content.getCachedPortfolioItemByUrl = function(postUrl){
+content.getCachedPortfolioItemByUrl = function(itemUrl){
     return cacheService.getCachedPortfolioItems()
         .then(function(data){
-            const postObject = _.find(data,{'url': postUrl});
+            const postObject = _.find(data,{'url': itemUrl});
             if(_.isEmpty(postObject)){
                 return promise.reject(new errorService.NotFoundError('post not found'));
             } else {

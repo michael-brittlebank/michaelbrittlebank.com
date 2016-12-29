@@ -64,7 +64,7 @@ app.use(express.static(path.join(__dirname, 'webapp/public'),{
 
 //helper middleware
 redirect(app);
-app.use(utilMiddleware.removeTrailingSlashes);
+app.use(utilMiddleware.removeTrailingSlashes,utilMiddleware.forceLowercaseRoutes);
 app = utilMiddleware.debugLibraries(seoMiddleware.redirectHistoricalLinks(app), express);
 app.use(utilMiddleware.debugRequests, seoMiddleware.getGlobalVariables, contentMiddleware.getHeaderMenu);
 
