@@ -112,6 +112,51 @@ $large-grid-padding: 0 5px;
   padding: $small-grid-padding;
 }
 
+.col-sm-offset-1 {
+  margin-left: unquote((1/12*100)+'%');
+}
+
+.col-sm-offset-2 {
+  margin-left: unquote((2/12*100)+'%');
+}
+
+.col-sm-offset-3 {
+  margin-left: 25%;
+}
+
+.col-sm-offset-4 {
+  margin-left: unquote((4/12*100)+'%');
+}
+
+.col-sm-offset-5 {
+  margin-left: unquote((5/12*100)+'%');
+}
+
+.col-sm-offset-6 {
+  margin-left: 50%;
+}
+
+.col-sm-offset-7 {
+  margin-left: unquote((7/12*100)+'%');
+}
+
+.col-sm-offset-8 {
+  margin-left: unquote((8/12*100)+'%');
+}
+
+.col-sm-offset-9 {
+  margin-left: 75%;
+}
+
+.col-sm-offset-10 {
+  margin-left: unquote((10/12*100)+'%');
+}
+
+.col-sm-offset-11 {
+  margin-left: unquote((11/12*100)+'%');
+}
+
+
 /* tablet */
 @include tablet-up {
   .col-md-1 {
@@ -184,6 +229,50 @@ $large-grid-padding: 0 5px;
     flex-basis: 100%;
     max-width: 100%;
     padding: $medium-grid-padding;
+  }
+
+  .col-md-offset-1 {
+    margin-left: unquote((1/12*100)+'%');
+  }
+
+  .col-md-offset-2 {
+    margin-left: unquote((2/12*100)+'%');
+  }
+
+  .col-md-offset-3 {
+    margin-left: 25%;
+  }
+
+  .col-md-offset-4 {
+    margin-left: unquote((4/12*100)+'%');
+  }
+
+  .col-md-offset-5 {
+    margin-left: unquote((5/12*100)+'%');
+  }
+
+  .col-md-offset-6 {
+    margin-left: 50%;
+  }
+
+  .col-md-offset-7 {
+    margin-left: unquote((7/12*100)+'%');
+  }
+
+  .col-md-offset-8 {
+    margin-left: unquote((8/12*100)+'%');
+  }
+
+  .col-md-offset-9 {
+    margin-left: 75%;
+  }
+
+  .col-md-offset-10 {
+    margin-left: unquote((10/12*100)+'%');
+  }
+
+  .col-md-offset-11 {
+    margin-left: unquote((11/12*100)+'%');
   }
 }
 
@@ -259,5 +348,49 @@ $large-grid-padding: 0 5px;
     flex-basis: 100%;
     max-width: 100%;
     padding: $large-grid-padding;
+  }
+
+  .col-lg-offset-1 {
+    margin-left: unquote((1/12*100)+'%');
+  }
+
+  .col-lg-offset-2 {
+    margin-left: unquote((2/12*100)+'%');
+  }
+
+  .col-lg-offset-3 {
+    margin-left: 25%;
+  }
+
+  .col-lg-offset-4 {
+    margin-left: unquote((4/12*100)+'%');
+  }
+
+  .col-lg-offset-5 {
+    margin-left: unquote((5/12*100)+'%');
+  }
+
+  .col-lg-offset-6 {
+    margin-left: 50%;
+  }
+
+  .col-lg-offset-7 {
+    margin-left: unquote((7/12*100)+'%');
+  }
+
+  .col-lg-offset-8 {
+    margin-left: unquote((8/12*100)+'%');
+  }
+
+  .col-lg-offset-9 {
+    margin-left: 75%;
+  }
+
+  .col-lg-offset-10 {
+    margin-left: unquote((10/12*100)+'%');
+  }
+
+  .col-lg-offset-11 {
+    margin-left: unquote((11/12*100)+'%');
   }
 }
