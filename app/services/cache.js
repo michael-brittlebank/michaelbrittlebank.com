@@ -25,7 +25,7 @@ redisClient.on('connect', function() {
                 redisClient.set(cacheKey,envValue);
                 logService.info('Redis ENV key set');
                 return promise.resolve();
-            } else if (true){
+            } else if (response !== envValue){
                 return redisClient.flushdbAsync()
                     .then(function () {
                         logService.info('ENV key change detected. Flushed Redis database');
