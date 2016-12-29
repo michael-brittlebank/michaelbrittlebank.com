@@ -7,8 +7,7 @@ const //packages
 var utilMiddleware = {};
 
 utilMiddleware.removeTrailingSlashes = function(req, res, next) {
-    //http://stackoverflow.com/questions/13442377/redirect-all-trailing-slashes-gloablly-in-express
-    if(req.url.slice(0, -1) == '/' && req.url.length > 1) {
+    if(req.url.slice(req.url.length-1, req.url.length) === '/' && req.url.length > 1) {
         res.redirect(301, req.url.slice(0, -1));
     } else {
         next();
