@@ -4,7 +4,7 @@
 
 var app = {
 
-    //libraries
+    //libraries (highest level for ease of use)
     ajax: {},
     animations: {},
     handlebars: {},
@@ -12,8 +12,15 @@ var app = {
     mediaQueries: {},
 
     //modules
-    carousel: {},
-
+    modules: {
+        carousel: {}
+    },
+    
+    //services
+    services: {
+        data: {}
+    },
+    
     //templates
     views: {
         homepage:{},
@@ -34,7 +41,7 @@ var app = {
 
     //functions
     init: function(){
-        var carousel = app.carousel,
+        var carousel = app.modules.carousel,
             views = app.views;
 
         //services

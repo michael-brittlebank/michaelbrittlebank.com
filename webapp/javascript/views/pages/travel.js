@@ -2,20 +2,19 @@
 
     var that = app.views.travel,
         $ = jQuery,
-        helpers = app.helpers,
         animations = app.animations,
-        map,
-        places = data.places;
+        map;
 
     this.initializeMap =  function() {
         //initialize map
-        var place = _.sample(places),
+        var travelMarkers = app.services.data.getTravelMarkers(),
+            centerMarker = _.sample(travelMarkers),
             mapMarker,
             mapOptions = {
                 zoom: 4,
                 center: {
-                    lat: place.lat,
-                    lng: place.lng
+                    lat: centerMarker.lat,
+                    lng: centerMarker.lng
                 },
                 minZoom: 3,
                 maxZoom: 7,
@@ -28,7 +27,7 @@
                 }
             };
         map = new google.maps.Map(document.getElementById('travel-map-container'), mapOptions);
-        _.each(places, function(entry){
+        _.each(travelMarkers, function(entry){
             mapMarker = new google.maps.Marker({
                 position: entry,
                 title: entry.title,
@@ -51,6 +50,7 @@
 
     this.init = function(){
         if ($('#page-travel').length > 0) {
+
             //slider init
             $('#travel-images').slick({
                 infinite: true,

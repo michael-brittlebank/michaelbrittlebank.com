@@ -1,7 +1,7 @@
 (function(){
 
     var $ = jQuery,
-        that = app.carousel,
+        that = app.modules.carousel,
         carousels = $('.l--slick-carousel');
 
     this.hasCarousels = function(){
@@ -18,4 +18,4 @@
         });
     };
 
-}).apply(app.carousel);
+}).apply(app.modules.carousel);
