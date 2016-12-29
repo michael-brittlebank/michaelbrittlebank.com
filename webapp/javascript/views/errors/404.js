@@ -2,8 +2,7 @@
 
     var that = app.views.error404,
         $ = jQuery,
-        animations = app.animations,
-        translations = $('.translations'),
+        translations,
         currentTranslation = 0;
 
     function animateTranslation(element){
@@ -12,8 +11,8 @@
             currentTranslation = 0;
         }
         $(element)
-            .blast({delimiter: "character"})
-            .velocity("transition.fadeIn", {
+            .blast({delimiter: 'character'})
+            .velocity('transition.fadeIn', {
                 duration: 1000,
                 stagger: 100,
                 delay: 0,
@@ -22,13 +21,13 @@
                 },
                 complete: function(){
                     $(element)
-                        .blast({delimiter: "character"})
-                        .velocity("transition.fadeOut", {
+                        .blast({delimiter: 'character'})
+                        .velocity('transition.fadeOut', {
                             duration: 1000,
                             stagger: 100,
                             delay: 1000,
                             complete: function(){
-                                $(element).velocity("transition.fadeOut", {
+                                $(element).velocity('transition.fadeOut', {
                                     complete: function(){
                                         animateTranslation(translations[currentTranslation]);
                                     }
@@ -41,9 +40,8 @@
 
     this.init = function(){
         if ($('#page-error-404').length > 0) {
-
-            //loading animation
-            animations.fadeIn($('#container-content'), 1000, 750, 0);
+            //variables
+            translations = $('.error-translations');
 
             //animation
             setTimeout(function () {

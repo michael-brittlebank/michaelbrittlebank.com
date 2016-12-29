@@ -1,59 +1,50 @@
-////core
-////----------------------
-//#page-not-found-error, #page-server-error {
-//  #container-content {
-//    text-align: center;
-//    margin-top:75px;
-//    opacity: 0;
-//  }
-//
-//  #container-title {
-//    border-right:2px solid $color-desert-black;
-//    text-align: right;
-//    padding-right:50px;
-//    @include mobile {
-//      text-align: left;
-//      border: none;
-//      .small-4 {
-//        text-align: right;
-//      }
-//    }
-//    @include tablet {
-//      text-align: left;
-//    }
-//    .page-title {
-//      font-size: rem-calc(120);
-//    }
-//  }
-//
-//  #container-button {
-//    text-align: center;
-//    margin-top: 50px;
-//  }
-//}
-//
-////not found error
-////----------------------
-//#page-not-found-error {
-//  .page-body {
-//    margin-bottom: 25px;
-//  }
-//}
-//
-//#container-translations {
-//  position: relative;
-//  height: 75px;
-//  margin:50px 0;
-//  .translations {
-//    display: block !important;
-//    font-size: rem-calc(60);
-//    line-height: rem-calc(60);
-//    @include center-absolute;
-//    opacity: 0;
-//  }
-//}
-//
-//
+//core
+//----------------------
+.error-page {
+  h1, h3, span {
+    font-family: $global-font-raleway-thin;
+  }
+}
+
+#error-title-container {
+  @include tablet-up {
+    border-right: 2px solid $color-desert-black;
+    text-align: right;
+    padding-right: 50px;
+  }
+}
+
+.error-title {
+  font-size: 6rem;
+  margin: 0;
+}
+
+.error-button {
+  text-align: center;
+  margin-top: 50px;
+  span:after {
+    content: '\f101';
+  }
+}
+
+
+//404
+//----------------------
+#error-translations-container {
+  position: relative;
+  height: 75px;
+  margin: 50px 0;
+}
+
+.error-translations {
+  opacity: 0;
+  display: block!important;
+  font-size: 3rem;
+  line-height: 3rem;
+  @include center-absolute;
+}
+
+
 ////server error
 ////----------------------
 //#container-warning {
