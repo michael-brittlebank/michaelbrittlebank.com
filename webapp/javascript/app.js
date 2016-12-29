@@ -25,22 +25,20 @@ var app = {
             bubbles: {},
             page: {}
         },
-        music: {},
+        music: {
+            page: {},
+            post: {}
+        },
         resume: {}
     },
 
     //functions
     init: function(){
         var carousel = app.carousel,
-            views = app.views,
-            animations = app.animations;
+            views = app.views;
 
         //services
         app.handlebars.applyHelpers();
-
-        //loading animation
-        animations.fadeIn($('header'),1500,0,0);
-        animations.fadeIn($('footer'),1500,1000,0);
 
         //modules
         if (carousel.hasCarousels()){
@@ -55,7 +53,7 @@ var app = {
         // views.homepage.init();
         views.travel.init();
         views.resume.init();
-        views.music.init();
+        views.music.page.init();
         views.portfolio.page.init();
         
         //portfolio

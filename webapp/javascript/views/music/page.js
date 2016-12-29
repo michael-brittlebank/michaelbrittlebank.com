@@ -11,10 +11,7 @@
                 if (animationIndex === posts.length){
                     clearInterval(animationInterval);
                 } else {
-                    animations.animateElement(posts[animationIndex],{
-                        properties: {
-                            opacity: 1
-                        },
+                    animations.fadeIn(posts[animationIndex],{
                         duration: 350
                     });
                     animationIndex++;
@@ -32,4 +29,4 @@
         }
     };
 
-}).apply(app.views.music);
+}).apply(app.views.music.page);

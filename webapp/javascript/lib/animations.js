@@ -6,31 +6,39 @@
     this.scrollingToTop = false;
 
     //default animation function
-    this.animateElement = function(element, params){
-        var duration = params.hasOwnProperty('duration') ? params.duration : 250,
-            begin = params.hasOwnProperty('begin') ? params.begin : function () {},
-            queue = params.hasOwnProperty('queue') ? params.queue : false,
-            delay = params.hasOwnProperty('delay') ? params.delay : 0,
-            complete = params.hasOwnProperty('complete') ? params.complete: function(){},
-            easing = params.hasOwnProperty('easing') ? params.easing : 'swing';
+    this.animateElement = function(element, parameters){
+        if (!parameters){
+            parameters = {};
+        }
+        var queue = parameters.hasOwnProperty('queue')?parameters.queue:false,
+            complete = parameters.hasOwnProperty('complete') ? parameters.complete:function(){},
+            parametersObject = {
+                duration: parameters.hasOwnProperty('duration')?parameters.duration:250,
+                delay: parameters.hasOwnProperty('delay')?parameters.delay:0,
+                easing: parameters.hasOwnProperty('easing')?parameters.easing:'swing',
+                complete: function(){
+                    try {
+                        complete();
+                    } catch (error){
+                        console.log(error);
+                    }
+                    return Promise.resolve();
+                }
+            };
+        if (parameters.hasOwnProperty('begin')){
+            parametersObject.begin = function () {
+                try {
+                    parameters.begin();
+                } catch (error){
+                    console.log(error);
+                }
+            };
+        }
         return new Promise(function(resolve,reject) {
             if (!queue){
                 $(element).velocity('stop', true);
             }
-            $(element).velocity(params.properties, {
-                duration: duration,
-                begin: begin,
-                delay: delay,
-                easing: easing,
-                complete: function(elements){
-                    try {
-                        complete();
-                    } catch (e){
-                        console.log(e);
-                    }
-                    return resolve(elements);
-                }
-            });
+            $(element).velocity(parameters.properties, parametersObject);
         });
     };
 
@@ -53,45 +61,22 @@
     };
 
     //element fade out helper
-    this.fadeOut = function(element, params){
-        if (!params){
-            params = {};
+    this.fadeOut = function(element, parameters){
+        if (!parameters){
+            parameters = {};
         }
-        var duration =  params.hasOwnProperty('duration') ? params.duration : 250,
-            begin =  params.hasOwnProperty('begin') ? params.begin : function () {};
-        return that.animateElement(element, {
-                properties: {'opacity': 0},
-                duration: duration,
-                begin: begin
-            })
-            .then(function(){
-                element.css({display: 'none'});
-            });
+        parameters.properties = {'opacity': 0};
+        return that.animateElement(element, parameters);
     };
 
     //element fade in helper
-    this.fadeIn = function(element, params){
-        if (!params){
-            params = {};
+    this.fadeIn = function(element, parameters){
+        if (!parameters){
+            parameters = {};
         }
-        var duration = params.hasOwnProperty('duration') ? params.duration : 250,
-            begin =  params.hasOwnProperty('begin') ? params.begin : function () {},
-            display =  params.hasOwnProperty('display') ? params.display :'block',
-            delay = params.hasOwnProperty('delay') ? params.delay : 0,
-            opacity = params.hasOwnProperty('opacity') ? params.opacity: 1;
-        return that.animateElement(element, {
-            properties: {'opacity': opacity},
-            duration: duration,
-            delay: delay,
-            begin: function () {
-                element.css({display: display});
-                try {
-                    begin();
-                } catch (e){
-                    console.log(e);
-                }
-            }
-        });
+        var opacity = parameters.hasOwnProperty('opacity')?parameters.opacity:1;
+        parameters.properties = {'opacity': opacity};
+        return that.animateElement(element, parameters);
     };
 
 }).apply(app.animations);
