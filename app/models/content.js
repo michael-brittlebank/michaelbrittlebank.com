@@ -7,23 +7,35 @@ const //packages
 
 var content = {};
 
+//todo, missing seo fields
+
 content.getPortfolioItemObjects = function(response){
     return promise.resolve()
         .then(function(){
             try {
                 var data = JSON.parse(response);
                 data = _.map(data.posts, function(entry){
+                    const pageTitle = utilService.getValueByKey(entry,'title'),
+                        metaTitle = utilService.simpleNullCheck(entry.custom_fields,'wpcf-meta-title')?utilService.getFirstValueByKey(entry.custom_fields,'wpcf-meta-title'):utilService.metaTitlePrefix+pageTitle;
                     return {
                         id: utilService.getValueByKey(entry,'id'),
-                        title: utilService.getValueByKey(entry,'title'),
+                        title: pageTitle,
                         body: utilService.getValueByKey(entry,'content'),
                         slug: utilService.getValueByKey(entry,'slug'),
                         url: utilService.getFirstValueByKey(entry.custom_fields,'wpcf-portfolio-demo-url'),
                         techStack: utilService.getFirstValueByKey(entry.custom_fields,'wpcf-portfolio-tech-stack'),
                         repositoryUrl: utilService.getFirstValueByKey(entry.custom_fields,'wpcf-portfolio-repository-url'),
                         featuredIcon: utilService.getFirstValueByKey(entry.custom_fields,'wpcf-portfolio-featured-icon'),
-                        portfolioGroup: utilService.simpleNullCheck(entry, 'taxonomy_portfolio-group')? entry['taxonomy_portfolio-group'][0].title:''
-                    }
+                        portfolioGroup: utilService.simpleNullCheck(entry, 'taxonomy_portfolio-group')? entry['taxonomy_portfolio-group'][0].title:'',
+                        // meta
+                        metaDatePublished: utilService.getValueByKey(entry,'date'),//don't format
+                        metaDateModified: utilService.getValueByKey(entry,'modified'),
+                        metaTitle: metaTitle,
+                        metaDescription: utilService.getFirstValueByKey(entry.custom_fields,'wpcf-meta-description'),
+                        metaImage: '',
+                        metaCategories: '',
+                        metaTags: ''
+                    };
                 });
                 return promise.resolve(data);
             } catch (error){
@@ -47,8 +59,13 @@ content.getMusicPostObjects = function(response){
                         datePublished: moment(utilService.getValueByKey(entry,'date')).format('MMMM Do YYYY'),
                         excerpt: utilService.getFirstValueByKey(entry.custom_fields,'wpcf-music-excerpt'),
                         metaTitle: utilService.getFirstValueByKey(entry.custom_fields,'wpcf-meta-title'),
-                        metaDescription: utilService.getFirstValueByKey(entry.custom_fields,'wpcf-meta-description')
-                    }
+                        metaDescription: utilService.getFirstValueByKey(entry.custom_fields,'wpcf-meta-description'),
+                        metaDatePublished: utilService.getValueByKey(entry,'date'),//don't format
+                        metaDateModified: utilService.getValueByKey(entry,'modified'),
+                        metaImage: '',
+                        metaCategories: '',
+                        metaTags: ''
+                    };
                 });
                 return promise.resolve(data);
             } catch (error){
@@ -73,7 +90,7 @@ content.getMenuObject = function(response){
                         menuOrder: utilService.getValueByKey(entry,'menu_order'),
                         parentId: utilService.getValueByKey(entry,'parent_id'),
                         children: []
-                    }
+                    };
                 });
                 //sort by menu order
                 menuItems = _.sortBy(menuItems, 'menuOrder');
@@ -104,7 +121,7 @@ content.getHomepageBlockObjects = function(response){
                         url: '/'+utilService.getValueByKey(entry,'slug'),
                         image: utilService.getImageUrl(entry),
                         icon: utilService.getFirstValueByKey(entry.custom_fields,'wpcf-homepage-block-icon')
-                    }
+                    };
                 });
                 return promise.resolve(data);
             } catch (error){
@@ -124,7 +141,7 @@ content.getTravelImageObjects = function(response){
                         id: utilService.getValueByKey(entry,'id'),
                         title: utilService.getValueByKey(entry,'title'),
                         url: utilService.getImageUrl(entry)
-                    }
+                    };
                 });
                 return promise.resolve(data);
             } catch (error){
@@ -134,7 +151,6 @@ content.getTravelImageObjects = function(response){
 };
 
 function getPageModel(data){
-    //todo, missing seo fields
     //private method because it's not wrapped in try catch or promisified
     const pageTitle = utilService.getValueByKey(data,'title'),
     //use blank url for homepage
@@ -145,14 +161,15 @@ function getPageModel(data){
         title: pageTitle,
         body: utilService.getValueByKey(data,'content'),
         url: '/'+pageUrl,
-        datePublished: utilService.getValueByKey(data,'date'),//don't format
-        dateModified: utilService.getValueByKey(data,'modified'),
+        // meta
         metaTitle: metaTitle,
         metaDescription: utilService.getFirstValueByKey(data.custom_fields,'wpcf-meta-description'),
+        metaDatePublished: utilService.getValueByKey(data,'date'),//don't format
+        metaDateModified: utilService.getValueByKey(data,'modified'),
         metaImage: '',
         metaCategories: '',
         metaTags: ''
-    }
+    };
 }
 
 content.getPageObject = function(response){
@@ -196,7 +213,7 @@ content.getQuoteObjects = function(response){
                         id: utilService.getValueByKey(entry,'id'),
                         body: utilService.getValueByKey(entry,'content'),
                         author: utilService.getFirstValueByKey(entry.custom_fields,'wpcf-quote-author')
-                    }
+                    };
                 });
                 return promise.resolve(data);
             } catch (error){
