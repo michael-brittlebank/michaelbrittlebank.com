@@ -61,19 +61,30 @@ content.getMenuObject = function(response){
     return promise.resolve()
         .then(function(){
             try {
-                var data = JSON.parse(response);
-                data = _.map(data.menu, function(entry){
+                var data = JSON.parse(response),
+                    menuItems,
+                    parentObjects,
+                    topLevelMenuObject;
+                menuItems = _.map(data.menu, function(entry){
                     return {
                         id: utilService.getValueByKey(entry,'id'),
                         title: utilService.getValueByKey(entry,'label'),
                         url: utilService.getValueByKey(entry,'url'),
                         menuOrder: utilService.getValueByKey(entry,'menu_order'),
-                        parentId: utilService.getValueByKey(entry,'parent_id')
+                        parentId: utilService.getValueByKey(entry,'parent_id'),
+                        children: []
                     }
                 });
                 //sort by menu order
-                data = _.sortBy(data, 'menuOrder');
-                return promise.resolve(data);
+                menuItems = _.sortBy(menuItems, 'menuOrder');
+                //get parents
+                parentObjects = _.remove(menuItems,{parentId: '0'});//mutates original array to leave children
+                //assign children to parents
+                _.each(menuItems, function(entry){
+                    topLevelMenuObject = _.filter(parentObjects,{id:parseInt(entry.parentId)});
+                    topLevelMenuObject[0].children.push(entry);
+                });
+                return promise.resolve(parentObjects);
             } catch (error){
                 return promise.reject(error);
             }

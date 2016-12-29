@@ -8,6 +8,15 @@
                 {{#each menuItems}}
                     <li>
                         <a href="{{url}}" class="{{#if isActive}}active{{/if}}">{{title}}</a>
+                        {{#if children}}
+                            <ul class="sub-menu">
+                                {{#each children}}
+                                    <li>
+                                        <a href="{{url}}">{{title}}</a>
+                                    </li>
+                                {{/each}}
+                            </ul>
+                        {{/if}}
                     </li>
                 {{/each}}
             </ul>
