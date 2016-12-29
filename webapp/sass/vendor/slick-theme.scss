@@ -3,15 +3,15 @@
 // Default Variables
 
 $slick-font-path: "/fonts/" !default;
-$slick-font-family: "sans-serif" !default;
+$slick-font-family: "FontAwesome" !default;
 $slick-loader-path: "./" !default;
 $slick-arrow-color: white !default;
 $slick-dot-color: black !default;
 $slick-dot-color-active: $slick-dot-color !default;
-$slick-prev-character: "←" !default;
-$slick-next-character: "→" !default;
+$slick-prev-character: "\f0a8" !default;
+$slick-next-character: "\f0a9" !default;
 $slick-dot-character: "•" !default;
-$slick-dot-size: 6px !default;
+$slick-dot-size: 1.5rem!default;
 $slick-opacity-default: 0.75 !default;
 $slick-opacity-on-hover: 1 !default;
 $slick-opacity-not-active: 0.25 !default;
@@ -98,11 +98,11 @@ $slick-opacity-not-active: 0.25 !default;
 }
 
 .slick-prev {
-  left: -45px;
-  left: -45px;
+  left: 10px;
+  z-index: 100;
   [dir="rtl"] & {
     left: auto;
-    right: -25px;
+    right: 10px;
   }
   &:before {
     content: $slick-prev-character;
@@ -113,9 +113,9 @@ $slick-opacity-not-active: 0.25 !default;
 }
 
 .slick-next {
-  right: -45px;
+  right: 10px;
   [dir="rtl"] & {
-    left: -25px;
+    left: 10px;
     right: auto;
   }
   &:before {

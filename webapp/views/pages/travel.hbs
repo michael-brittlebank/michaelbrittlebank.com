@@ -1,18 +1,20 @@
-<main id="page-travel" class="grid-container row">
-    <h1 class="page-title">Travel</h1>
-    <section id="container-images">
-        <div class="travel-images">
+<main id="page-travel" class="full-screen-grid-container row">
+    <div class="col-sm-12">
+        <h1 id="travel-title" class="page-title">Travel</h1>
+    </div>
+    <section id="travel-images-container">
+        <div id="travel-images">
             {{#each images}}
                 <div style="background-image:url('{{url}}');">
-                    <div class="image-caption-holder">
+                    <div class="travel-image-caption-container">
                         <h3>{{{title}}}</h3>
                     </div>
                 </div>
             {{/each}}
         </div>
     </section>
-    <section id="container-rule" class="col-sm-12">
+    <div id="travel-rule">
         <hr/>
-    </section>
-    <section id="container-google"></section>
+    </div>
+    <section id="travel-map-container"></section>
 </main>

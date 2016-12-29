@@ -9,11 +9,14 @@
         markers = [];
 
     this.initMap =  function() {
-        console.log('init');
-        animations.fadeIn($('#container-rule'),1000,0,0);
-        animations.fadeIn($('#container-google'),1000,500,0);
+        animations.animateElement($('#travel-map-container'),{
+            properties: {
+                opacity: 1
+            },
+            duration: 1000
+        });
         var place = helpers.getRandomElement(places);
-        map = new google.maps.Map(document.getElementById('container-google'), {
+        map = new google.maps.Map(document.getElementById('travel-map-container'), {
             zoom: 4,
             center: {
                 lat: place.lat,
@@ -41,8 +44,8 @@
 
     this.init = function(){
         if ($('#page-travel').length > 0) {
-            animations.fadeIn($('#container-images'), 1000, 1000, 0);
-            $('.travel-images').slick({
+            //slider init
+            $('#travel-images').slick({
                 infinite: true,
                 slidesToShow: 1,
                 slidesToScroll: 1,
@@ -54,6 +57,12 @@
                 cssEase: 'linear',
                 dots: true,
                 pauseOnDotsHover: true
+            });
+            animations.animateElement($('#travel-images-container'),{
+                properties: {
+                    opacity: 1
+                },
+                duration: 1000
             });
         }
     };

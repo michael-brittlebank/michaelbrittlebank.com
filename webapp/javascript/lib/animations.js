@@ -77,10 +77,12 @@
         var duration = params.hasOwnProperty('duration') ? params.duration : 250,
             begin =  params.hasOwnProperty('begin') ? params.begin : function () {},
             display =  params.hasOwnProperty('display') ? params.display :'block',
+            delay = params.hasOwnProperty('delay') ? params.delay : 0,
             opacity = params.hasOwnProperty('opacity') ? params.opacity: 1;
         return that.animateElement(element, {
             properties: {'opacity': opacity},
             duration: duration,
+            delay: delay,
             begin: function () {
                 element.css({display: display});
                 try {
