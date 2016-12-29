@@ -11,12 +11,7 @@
                 'http://wordpress.mikestumpf.com'
             ],
             initCallback: function(){
-                animations.animateElement($('#reading-list-container'),{
-                    properties: {
-                        opacity: 1
-                    },
-                    duration: 350
-                });
+                animations.fadeIn($('#reading-list-container'),{duration: 350});
             }
         });
     };

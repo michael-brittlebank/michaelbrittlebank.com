@@ -2,7 +2,6 @@
 
     var that = app.views.error500,
         $ = jQuery,
-        animations = app.animations,
         warningIcon,
         warningContainer,
         colors = {
@@ -34,7 +33,8 @@
         if($('#page-error-500').length > 0) {
             //variables
             warningIcon = $('.fa-stack-1x');
-            warningContainer = $('#container-warning').find('p')[0];
+            warningContainer = $('#error-warning-container');
+
             //animation
             setTimeout(function () {
                 animateWarningButton();

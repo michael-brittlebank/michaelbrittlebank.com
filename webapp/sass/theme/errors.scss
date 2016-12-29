@@ -45,36 +45,32 @@
 }
 
 
-////server error
-////----------------------
-//#container-warning {
-//  $iconHeight: 300;
-//  p {
-//    display:block;
-//    margin:auto;
-//    .fa-stack {
-//      width: rem-calc($iconHeight);
-//      height: rem-calc($iconHeight);
-//      line-height: rem-calc($iconHeight);
-//      display: block;
-//      margin: 0 auto 25px auto;
-//      overflow: hidden;
-//      border: 5px solid $color-orange;
-//      border-radius: 50%;
-//      @include transition-with-defaults(border);
-//      &:hover {
-//        border-color: $color-red;
-//      }
-//      i {
-//        &.fa-stack-1x {
-//          font-size: rem-calc($iconHeight/2);
-//          color: $color-orange;
-//        }
-//        &.fa-stack-2x {
-//          font-size: rem-calc($iconHeight);
-//          color: $color-font-black;
-//        }
-//      }
-//    }
-//  }
-//}
+//500
+//----------------------
+#error-warning-container {
+  $iconHeight: 8.75;
+  display:block;
+  margin:auto;
+  .fa-stack {
+    width: $iconHeight+rem;
+    height: $iconHeight+rem;
+    line-height: $iconHeight+rem;
+    display: block;
+    margin: 0 auto 25px auto;
+    overflow: hidden;
+    border: 5px solid $color-orange;
+    border-radius: 50%;
+    @include transition-with-defaults(border-color);
+    &:hover {
+      border-color: $color-red;
+    }
+  }
+  .fa-stack-1x {
+    font-size: $iconHeight/2+rem;
+    color: $color-orange;
+  }
+  .fa-stack-2x {
+    font-size: $iconHeight+rem;
+    color: $color-font-black;
+  }
+}
