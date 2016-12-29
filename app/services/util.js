@@ -82,10 +82,4 @@ util.isLocalConfig = function(){
     return process.env.NODE_ENV === 'local';
 };
 
-util.replaceUnixCharactersWithHTML = function(data){
-    return data
-        .replace(/\n/g, '<br/>')
-        .replace(/&/gi, '&amp;');
-};
-
 module.exports = util;

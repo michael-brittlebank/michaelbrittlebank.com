@@ -16,7 +16,7 @@ content.getPortfolioItemObjects = function(response){
                     return {
                         id: utilService.getValueByKey(entry,'id'),
                         title: utilService.getValueByKey(entry,'title'),
-                        body: utilService.replaceUnixCharactersWithHTML(utilService.getValueByKey(entry,'content')),
+                        body: utilService.getValueByKey(entry,'content'),
                         slug: utilService.getValueByKey(entry,'slug'),
                         url: utilService.getFirstValueByKey(entry.custom_fields,'wpcf-portfolio-demo-url'),
                         techStack: utilService.getFirstValueByKey(entry.custom_fields,'wpcf-portfolio-tech-stack'),
@@ -42,7 +42,7 @@ content.getMusicPostObjects = function(response){
                     return {
                         id: utilService.getValueByKey(entry,'id'),
                         title: utilService.getValueByKey(entry,'title'),
-                        body: utilService.replaceUnixCharactersWithHTML(utilService.getValueByKey(entry,'content')),
+                        body: utilService.getValueByKey(entry,'content'),
                         url: urlPrefix+'/'+utilService.getValueByKey(entry,'slug'),
                         datePublished: moment(utilService.getValueByKey(entry,'date')).format('MMMM Do YYYY'),
                         excerpt: utilService.getFirstValueByKey(entry.custom_fields,'wpcf-music-excerpt'),
@@ -143,7 +143,7 @@ function getPageModel(data){
     return {
         id: utilService.getValueByKey(data,'id'),
         title: pageTitle,
-        body: utilService.replaceUnixCharactersWithHTML(utilService.getValueByKey(data,'content')),
+        body: utilService.getValueByKey(data,'content'),
         url: '/'+pageUrl,
         datePublished: utilService.getValueByKey(data,'date'),//don't format
         dateModified: utilService.getValueByKey(data,'modified'),
@@ -194,7 +194,7 @@ content.getQuoteObjects = function(response){
                     return {
                         //assume api sorting by menu order
                         id: utilService.getValueByKey(entry,'id'),
-                        body: utilService.replaceUnixCharactersWithHTML(utilService.getValueByKey(entry,'content')),
+                        body: utilService.getValueByKey(entry,'content'),
                         author: utilService.getFirstValueByKey(entry.custom_fields,'wpcf-quote-author')
                     }
                 });

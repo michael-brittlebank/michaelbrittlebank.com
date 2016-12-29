@@ -1,14 +1,11 @@
 #resume-title {
   border-left: 20px solid $color-badgers-red;
   padding-left: 15px;
-  @include mobile {
-    border-left: 15px solid $color-badgers-red;
-  }
+  margin-left: -10px;
 }
 
 #resume-body {
   opacity: 0;
-  padding: 0 40px;
   h2 {
     border-bottom: 1px solid $color-dark-grey;
     padding: 20px 0 5px 0;
@@ -18,8 +15,16 @@
   h3 {
     margin: 30px 0 10px 0;
   }
+  span {
+    display: inline!important;
+    @include transition-with-defaults(color);
+  }
   a {
-    font-size: 1.5rem;
+    &:hover {
+      span {
+        color: $color-anchor-hover;
+      }
+    }
   }
   ul {
     list-style: circle;
