@@ -34,15 +34,22 @@ pages.getResumePage = function(req, res, next) {
             res.render('pages/resume', {
                 page: data
             });
+        })
+        .catch(function (error) {
+            responseService.defaultCatch(error, next,'resume');
         });
 };
 
 pages.getChorusPage = function(req, res, next) {
-    res.render('portfolio/chorus',{
-        meta: {
-            title: utilService.metaTitlePrefix+'Chorus'
-        }
-    });
+    contentService.getCachedPortfolioItemByUrl(req.originalUrl)
+        .then(function(data){
+            res.render('portfolio/chorus',{
+                page: data
+            });
+        })
+        .catch(function (error) {
+            responseService.defaultCatch(error, next,'chorus');
+        });
 };
 
 pages.getTravelPage = function(req, res, next) {
