@@ -1,6 +1,6 @@
 <main id="page-homepage" class="grid-container row">
     {{#each homepageBlocks}}
-        <section id="homepage-block-{{@index}}" class="homepage-block col-sm-12 col-md-6 {{#if image}}homepage-image-block{{else}}homepage-icon-block{{/if}}" data-url="{{url}}">
+        <section id="homepage-block-{{@index}}" class="homepage-block col-sm-6 opaque {{#if image}}homepage-image-block{{else}}homepage-icon-block{{/if}}" data-url="{{url}}">
             <div class="homepage-block-body">
                 {{#if image}}
                     <img src="{{image}}"/>

@@ -2,6 +2,8 @@
 
     var that = app.helpers,
         $ = jQuery;
+    
+    this.activeClass = 'active';
 
    this.getRandomInt = function (min, max) {
        return _.random(min,max,false);

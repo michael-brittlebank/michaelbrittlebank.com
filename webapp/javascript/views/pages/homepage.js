@@ -4,6 +4,7 @@
         $ = jQuery,
         helpers = app.helpers,
         animations = app.animations,
+        mediaQueries = app.mediaQueries,
         homepageBlocks,
         iconBlocks,
         iconBlocksOverlay,
@@ -46,39 +47,39 @@
 
     function resetBlocks(){
         if (activeImageBlock){
-            deactivateImageBlock();
+            deactivateImageBlock(activeImageBlock);
         }
         if (activeIconBlock){
-            deactivateIconBlock();
+            deactivateIconBlock(activeIconBlock);
         }
     }
 
     //animation functions
-    function activateIconBlock(){
-        activeIconBlock.find('.'+filterFrontClass).velocity({height: iconBlockBottomHeight+'px'},{duration:500});
-        activeIconBlock.find('.'+filterOverlayClass).css({height: '100%'});
-        activeIconBlock.find('.'+filterBackClass).velocity({height: iconBlockTopHeight+'px',bottom:iconBlockBottomHeight+'px'},{duration:500,delay:350});
-        activeIconBlock.find('.'+filterTextClass).velocity({top: '0px',opacity:'1'},{duration:500,delay:300});
+    function activateIconBlock(element){
+        element.find('.'+filterFrontClass).velocity('stop').velocity({height: iconBlockBottomHeight+'px'},{duration:500});
+        element.find('.'+filterOverlayClass).addClass(helpers.activeClass);
+        element.find('.'+filterBackClass).velocity('stop').velocity({height: iconBlockTopHeight+'px',bottom:iconBlockBottomHeight+'px'},{duration:500,delay:350});
+        element.find('.'+filterTextClass).velocity('stop').velocity({top: '0px',opacity:'1'},{duration:500,delay:300});
     }
 
-    function deactivateIconBlock(){
-        activeIconBlock.find('.'+filterOverlayClass).css({height: '0px'});
-        activeIconBlock.find('.'+filterBackClass).velocity('stop').velocity({height: '0px',bottom:'0px'});
-        activeIconBlock.find('.'+filterTextClass).velocity('stop').velocity({top: '75px',opacity:'0'});
-        activeIconBlock.find('.'+filterFrontClass).velocity('stop').velocity({height: '0px'});
+    function deactivateIconBlock(element){
+        element.find('.'+filterOverlayClass).removeClass(helpers.activeClass);
+        element.find('.'+filterBackClass).velocity('stop').velocity({height: '0px',bottom:'0px'});
+        element.find('.'+filterTextClass).velocity('stop').velocity({top: '75px',opacity:'0'});
+        element.find('.'+filterFrontClass).velocity('stop').velocity({height: '0px'});
         activeIconBlock = null;
     }
 
-    function activateImageBlock(){
-        activeImageBlock.find('.'+filterBackClass).velocity({width: '100%'},{duration:500});
-        activeImageBlock.find('.'+filterTextClass).velocity({opacity:'1'},{duration:500,delay:150});
-        activeImageBlock.find('.'+filterOverlayClass).css({height: '100%'});
+    function activateImageBlock(element){
+        element.find('.'+filterBackClass).velocity('stop').velocity({width: '100%'},{duration:500});
+        element.find('.'+filterTextClass).velocity('stop').velocity({opacity:'1'},{duration:500,delay:150});
+        element.find('.'+filterOverlayClass).addClass(helpers.activeClass);
     }
 
-    function deactivateImageBlock(){
-        activeImageBlock.find('.'+filterBackClass).velocity('stop').velocity({width: '0px'});
-        activeImageBlock.find('.'+filterTextClass).velocity('stop').velocity({opacity:'0'});
-        activeImageBlock.find('.'+filterOverlayClass).css({height: '0px'});
+    function deactivateImageBlock(element){
+        element.find('.'+filterBackClass).velocity('stop').velocity({width: '0px'});
+        element.find('.'+filterTextClass).velocity('stop').velocity({opacity:'0'});
+        element.find('.'+filterOverlayClass).removeClass(helpers.activeClass);
         activeImageBlock = null;
     }
 
@@ -87,13 +88,13 @@
             if (!activeIconBlock || activeIconBlock.attr('id') !== element.attr('id')) {
                 resetBlocks();
                 activeIconBlock = element;
-                activateIconBlock();
+                activateIconBlock(activeIconBlock);
             }
         } else {
             if (!activeImageBlock || activeImageBlock.attr('id') !== element.attr('id')) {
                 resetBlocks();
                 activeImageBlock = element;
-                activateImageBlock();
+                activateImageBlock(activeImageBlock);
             }
         }
     }
@@ -103,6 +104,30 @@
             window.location.href = element.attr('data-url');
         } else {
             window.location.href = activeImageBlock?activeImageBlock.attr('data-url'):activeIconBlock.attr('data-url');
+        }
+    }
+
+    function checkForMobileScreenSize(resizeEvent){
+        if(mediaQueries.isMobile()){
+            _.each(homepageBlocks, function(entry,index){
+                setTimeout(function(){
+                    if ($(entry).hasClass(iconBlockClass)){
+                        activateIconBlock($(entry));
+                    } else {
+                        activateImageBlock($(entry));
+                    }
+                }, 400*index);
+            });
+        } else {
+            if (resizeEvent){
+                _.each(homepageBlocks, function(entry){
+                    if ($(entry).hasClass(iconBlockClass)){
+                        deactivateIconBlock($(entry));
+                    } else {
+                        deactivateImageBlock($(entry));
+                    }
+                });
+            }
         }
     }
 
@@ -116,8 +141,10 @@
             imageBlocksOverlay = $(imageBlocks).find('.'+filterOverlayClass);
 
             //functions
+            animations.fadeIn(homepageBlocks);
             squareHomepageBlocks();
             revealHomepageBlocks();
+            checkForMobileScreenSize();
 
             //listeners
             $(iconBlocks)
@@ -179,6 +206,7 @@
             $(window)
                 .on('resize', function () {
                     squareHomepageBlocks();
+                    checkForMobileScreenSize(true);
                 });
         }
     };

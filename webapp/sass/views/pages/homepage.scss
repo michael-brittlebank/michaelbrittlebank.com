@@ -6,22 +6,32 @@
 }
 
 .homepage-block-body {
-  $iconHeight: 15;
   .fa-stack {
+    color: $color-font-black;
+    @include center-absolute;
+    &.fa-inverse {
+      color: $color-white;
+    }
+    $iconHeight: 7;
     width: unquote($iconHeight+'rem');
     height: unquote($iconHeight+'rem');
     line-height: unquote($iconHeight+'rem');
-    @include center-absolute;
-    .fa {
-      color: $color-font-black;
-      &.fa-stack-2x {
+    .fa-stack-2x {
+      font-size: unquote($iconHeight+'rem');
+    }
+    .fa-stack-1x {
+      font-size: unquote($iconHeight/2+'rem');
+    }
+    @include tablet-up {
+      $iconHeight: 15;
+      width: unquote($iconHeight+'rem');
+      height: unquote($iconHeight+'rem');
+      line-height: unquote($iconHeight+'rem');
+      .fa-stack-2x {
         font-size: unquote($iconHeight+'rem');
       }
-      &.fa-stack-1x {
+      .fa-stack-1x {
         font-size: unquote($iconHeight/2+'rem');
-      }
-      &.fa-inverse {
-        color: $color-white;
       }
     }
   }
@@ -34,6 +44,10 @@
 .hover-filter-overlay {
   cursor: pointer;
   opacity: 0;
+  height: 0;
+  &.active {
+    height: 100%;
+  }
 }
 
 .hover-filter-text {
@@ -51,12 +65,12 @@
     top: initial;
   }
   .hover-filter-back {
-    background-color: $color-jays-dark-blue;
-    opacity: 0.8;
-  }
-  .hover-filter-front {
     background-color: $color-jays-light-blue;
     opacity: 0.9;
+  }
+  .hover-filter-front {
+    background-color: $color-jays-dark-blue;
+    opacity: 0.8;
   }
   .hover-filter-text {
     top: 75px;
