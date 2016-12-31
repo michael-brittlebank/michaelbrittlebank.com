@@ -2,7 +2,10 @@
 //-----------------------------
 body {
   //header placeholder
-  padding-top: 120px;
+  padding-top: 90px;
+  @include tablet-up {
+    padding-top: 120px;
+  }
 }
 
 p,a,blockquote,span,div,input,textarea {
@@ -54,7 +57,7 @@ iframe {
   margin: 25px auto 0 auto;
   width: 355px;
   vertical-align: middle;
-  box-shadow: 0 5px 15px 0 #888888;
+  box-shadow: 0 5px 15px 0 $color-box-shadow;
   span {
     cursor: pointer;
     display: inline-block;
@@ -63,7 +66,7 @@ iframe {
     transition: 0.5s;
     font-family: $global-font-raleway-thin;
     &:after {
-      font-family: 'FontAwesome';
+      font-family: $global-font-font-awesome;
       position: absolute;
       opacity: 0;
       top: 0;

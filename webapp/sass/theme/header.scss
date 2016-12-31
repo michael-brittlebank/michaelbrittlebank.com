@@ -1,19 +1,12 @@
 header {
-  background-color: #f8f8f8;
-  box-shadow: 0 0 10px #888888;
+  background-color: $color-menu-active-state;
+  box-shadow: 0 0 10px $color-box-shadow;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   z-index: 99999;
 }
-
-#header-placeholder {
-  margin-bottom: 50px;
-  height: 67px;
-}
-
-$activeLinkBackgroundColor: #f8f8f8;
 
 /* dropdown menu */
 .standard-menu {
@@ -27,7 +20,7 @@ $activeLinkBackgroundColor: #f8f8f8;
       padding: 20px 15px;
     }
     &.active, &:hover {
-      border-bottom-color: #e3ebee;
+      border-bottom-color: $color-menu-border-active-state;
     }
     &:hover {
       .sub-menu {
@@ -51,18 +44,18 @@ $activeLinkBackgroundColor: #f8f8f8;
   overflow: hidden;
   list-style: none;
   background-color: white;
-  border: 1px solid #c6c7c8;
-  border-top-color: #e3ebee;
+  border: 1px solid $color-sub-menu-border;
+  border-top-color: $color-menu-border-active-state;
   text-align: left;
   min-width: 150px;
   margin-top: 5px;
   @include transition-with-defaults(opacity);
   a {
-    color: #393939;
+    color: $color-font-black;
     font-size: 14px;
     @include transition-with-defaults(background-color);
   }
   .active a, a:hover {
-    background-color: $activeLinkBackgroundColor;
+    background-color: $color-menu-active-state;
   }
 }

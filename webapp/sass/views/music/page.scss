@@ -11,7 +11,7 @@
 .music-post-content {
   width: 100%;
   padding: 20px;
-  border: 5px double $color-desert-black;
+  border: 5px double $color-font-black;
   color: $color-font-black;
   @include transition-with-defaults(border-color);
 }
