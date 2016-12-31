@@ -75,6 +75,16 @@
                 lng: 114.1095
             },
             {
+                title: 'Nanning, China',
+                lat: 22.8170,
+                lng: 108.3665
+            },
+            {
+                title: 'Guangzhou, China',
+                lat: 23.1291,
+                lng: 113.2644
+            },
+            {
                 title: 'Hangzhou, China',
                 lat: 30.2741,
                 lng: 120.1551
@@ -258,6 +268,27 @@
                 title: 'Ko Samui, Thailand',
                 lat: 9.5120,
                 lng: 100.0136
+            },
+            //vietnam
+            {
+                title: 'Hanoi, Vietnam',
+                lat: 21.0278,
+                lng: 105.8342
+            },
+            {
+                title: 'Saigon, Vietnam',
+                lat: 10.8231,
+                lng: 106.6297
+            },
+            {
+                title: 'Hue, Vietnam',
+                lat: 16.4498,
+                lng: 107.5624
+            },
+            {
+                title: 'Da Nang, Vietnam',
+                lat: 16.0544,
+                lng: 108.2022
             },
             /**
              * europe
@@ -889,6 +920,22 @@
                 lat: 34.9003,
                 lng: 33.6232
             },
+            //egypt
+            {
+                title: 'Cairo, Egypt',
+                lat: 30.0444,
+                lng: 31.2357
+            },
+            {
+                title: 'Giza, Egypt',
+                lat: 30.0131,
+                lng: 31.2089
+            },
+            {
+                title: 'Alexandria, Egypt',
+                lat: 31.2001,
+                lng: 29.9187
+            },
             //israel
             {
                 title: 'Tel Aviv, Israel',
@@ -909,12 +956,6 @@
                 title: 'Ein Bokek, Israel',
                 lat: 31.2002,
                 lng: 35.3625
-            },
-            //kuwait
-            {
-                title: 'Kuwait City, Kuwait',
-                lat: 29.3759,
-                lng: 47.9774
             },
             //turkey
             {

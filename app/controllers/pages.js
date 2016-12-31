@@ -87,7 +87,7 @@ pages.get500Page = function(req, res, next) {
 };
 
 pages.get404Page = function(req, res, next) {
-    contentModel.getPageObject(JSON.stringify({title:'Not Found',}))
+    contentModel.getPageObject(JSON.stringify({title:'Not Found'}))
         .then(function(response){
             const translations = [
                 'Me paenitet',//latin
