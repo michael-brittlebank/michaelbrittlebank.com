@@ -1,5 +1,10 @@
 <?php
 
+/*
+Controller name: Menu
+Controller description: Menu API
+*/
+
 class JSON_API_Menu_Controller {
 
     //https://github.com/mcnasby/wp-json-api-menu-controller/blob/master/api-controllers/menus.php

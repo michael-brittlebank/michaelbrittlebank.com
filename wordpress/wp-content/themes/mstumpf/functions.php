@@ -81,7 +81,8 @@ remove_action( 'wp_print_styles', 'print_emoji_styles' );
 
 //add custom controllers
 function apiAddCustomControllers($controllers) {
-    $controllers[] = 'Menu';
+    $controllers[] = 'menu';
+    $controllers[] = 'custom_posts';
     return $controllers;
 }
 add_filter('json_api_controllers', 'apiAddCustomControllers');
@@ -91,6 +92,11 @@ function apiMenuControllerPath($default_path) {
     return get_stylesheet_directory().'/api/menu-controller.php';
 }
 add_filter('json_api_menu_controller_path', 'apiMenuControllerPath');
+
+function apiCustomPostsControllerPath($default_path) {
+    return get_stylesheet_directory().'/api/custom-posts-controller.php';
+}
+add_filter('json_api_custom_posts_controller_path', 'apiCustomPostsControllerPath');
 
 // Disable default api methods
 function apiDisableControllerExecution() {
