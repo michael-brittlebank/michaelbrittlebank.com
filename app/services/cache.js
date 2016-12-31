@@ -88,7 +88,7 @@ cache.getCachedHeaderMenu = function(){
 cache.getCachedHomepageBlocks = function(){
     return promise.resolve()
         .then(function(){
-            const urlKey = process.env.API_URL+'?json=get_posts&post_type=homepage-block&count=-1',
+            const urlKey = process.env.API_URL+'?json=custom_posts.get_posts&post_type=homepage-block&count=-1',
                 options = {
                     method: 'GET',
                     uri: urlKey
@@ -118,7 +118,7 @@ cache.getCachedHomepageBlocks = function(){
 cache.getCachedPortfolioItems = function(){
     return promise.resolve()
         .then(function(){
-            const urlKey = process.env.API_URL+'?json=get_posts&post_type=portfolio-item&count=-1',
+            const urlKey = process.env.API_URL+'?json=custom_posts.get_posts&post_type=portfolio-item&count=-1',
                 options = {
                     method: 'GET',
                     uri: urlKey
@@ -148,7 +148,7 @@ cache.getCachedPortfolioItems = function(){
 cache.getCachedMusicPosts = function(){
     return promise.resolve()
         .then(function(){
-            const urlKey = process.env.API_URL+'?json=get_posts&post_type=music-post&count=-1',
+            const urlKey = process.env.API_URL+'?json=custom_posts.get_posts&post_type=music-post&count=-1',
                 options = {
                     method: 'GET',
                     uri: urlKey
@@ -178,7 +178,7 @@ cache.getCachedMusicPosts = function(){
 cache.getCachedTravelImages = function(){
     return promise.resolve()
         .then(function(){
-            const urlKey = process.env.API_URL+'?json=get_posts&post_type=travel-image&count=-1',
+            const urlKey = process.env.API_URL+'?json=custom_posts.get_posts&post_type=travel-image&count=-1',
                 options = {
                     method: 'GET',
                     uri: urlKey
@@ -208,7 +208,7 @@ cache.getCachedTravelImages = function(){
 cache.getCachedPages = function(){
     return promise.resolve()
         .then(function(){
-            const urlKey = process.env.API_URL+'?json=get_posts&post_type=page&count=-1',
+            const urlKey = process.env.API_URL+'?json=custom_posts.get_posts&post_type=page&count=-1',
                 options = {
                     method: 'GET',
                     uri: urlKey
@@ -238,7 +238,7 @@ cache.getCachedPages = function(){
 cache.getCachedQuotes = function(){
     return promise.resolve()
         .then(function(){
-            const urlKey = process.env.API_URL+'?json=get_posts&post_type=quote&count=-1',
+            const urlKey = process.env.API_URL+'?json=custom_posts.get_posts&post_type=quote&count=-1',
                 options = {
                     method: 'GET',
                     uri: urlKey

@@ -115,14 +115,16 @@ content.getHomepageBlockObjects = function(response){
                 var data = JSON.parse(response);
                 data = _.map(data.posts, function(entry){
                     return {
-                        //assume api sorting by menu order
                         id: utilService.getValueByKey(entry,'id'),
                         title: utilService.getValueByKey(entry,'title'),
                         url: '/'+utilService.getValueByKey(entry,'slug'),
+                        menuOrder: utilService.getValueByKey(entry,'menu_order'),
                         image: utilService.getImageUrl(entry),
                         icon: utilService.getFirstValueByKey(entry.custom_fields,'wpcf-homepage-block-icon')
                     };
                 });
+                //sort by menu order
+                data = _.sortBy(data, 'menuOrder');
                 return promise.resolve(data);
             } catch (error){
                 return promise.reject(error);

@@ -1,21 +1,17 @@
 <main id="page-homepage" class="grid-container row">
-    <section id="container-blocks" class="row">
-        {{#each homepageBlocks}}
-            <div id="homepage-block-{{@index}}" class="grid-block body-highlight" data-url="{{url}}">
-                <div class="block-body">
-                    {{#if image}}
-                        <img src="{{image}}"/>
-                    {{else}}
-                        {{{icon}}}
-                    {{/if}}
-                </div>
-                <div class="hover-filter hover-filter-back">&nbsp;</div>
-                <div class="hover-filter hover-filter-front">&nbsp;</div>
-                <div class="hover-filter hover-filter-text">
-                    <h2>{{title}}</h2>
-                </div>
-                <div class="hover-filter hover-filter-overlay">&nbsp;</div>
+    {{#each homepageBlocks}}
+        <section id="homepage-block-{{@index}}" class="homepage-block col-sm-12 col-md-6 {{#if image}}homepage-image-block{{else}}homepage-icon-block{{/if}}" data-url="{{url}}">
+            <div class="homepage-block-body">
+                {{#if image}}
+                    <img src="{{image}}"/>
+                {{else}}
+                    {{{icon}}}
+                {{/if}}
             </div>
-        {{/each}}
-    </section>
+            <div class="hover-filter hover-filter-back">&nbsp;</div>
+            <div class="hover-filter hover-filter-front">&nbsp;</div>
+            <h2 class="hover-filter hover-filter-text">{{title}}</h2>
+            <div class="hover-filter hover-filter-overlay">&nbsp;</div>
+        </section>
+    {{/each}}
 </main>
