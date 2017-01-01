@@ -1,3 +1,5 @@
+//quotes
+//----------------------
 #portfolio-quote-container {
   margin-bottom: 10px;
   text-align: center;
@@ -23,6 +25,8 @@
   margin: 0;
 }
 
+//carousels
+//----------------------
 .portfolio-carousel-header {
   font-family: $global-font-raleway-thin;
 }
@@ -66,7 +70,6 @@
     }
   }
   &:active, &:focus {
-    border: none;
     outline: none;
   }
   .fa-stack {
@@ -171,7 +174,7 @@
       font-size: unquote($icon-size+'rem');
     }
   }
-  &.illesteva {
+  &.alcone {
     $icon-size: 4;
     .fa {
       height: unquote($icon-size+'rem');
@@ -179,5 +182,14 @@
       line-height: unquote($icon-size+'rem');
       font-size: unquote($icon-size+'rem');
     }
+  }
+}
+
+//modals
+//----------------------
+.portfolio-tech-stack {
+  margin: 20px 0;
+  .title {
+    font-weight: bold;
   }
 }

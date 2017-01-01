@@ -32,11 +32,13 @@
             {{#each items}}
                 <section class="modal--fade" id="modal-{{slug}}" data-stackable="false" tabindex="-1" role="dialog" aria-labelledby="label-fade" aria-hidden="true">
                     <div class="modal-inner">
-                        <h3>{{title}}</h3>
-                        {{{body}}}
-                        <div id="modal-footer">
+                        <div class="modal-content">
+                            <h3 class="modal-title">{{title}}</h3>
+                            {{{body}}}
                             {{#if techStack}}
-                                <p class="tech-stack"><span class="title">Tech Stack:</span> {{techStack}}</p>
+                                <p class="portfolio-tech-stack">
+                                    <span class="title">Tech Stack:</span> {{techStack}}
+                                </p>
                             {{/if}}
                             <div class="row">
                                 {{#if url}}

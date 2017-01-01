@@ -29,7 +29,7 @@ seoMiddleware.redirectHistoricalLinks = function(app){
     app.redirect('/portfolio/the-spaces-of-arts-conference-website', portfolioPath);
     app.redirect('/portfolio/student-wisconsin-education-association/', portfolioPath);
     app.redirect('/personal', portfolioPath);
-    app.redirect('/reading-list', portfolioPath);
+    app.redirect('/reading-list', portfolioPath+'/reading-list');
 
 //home
     app.redirect('/thank-you', '/');

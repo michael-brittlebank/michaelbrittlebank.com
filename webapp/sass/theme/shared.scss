@@ -89,6 +89,14 @@ iframe {
   }
 }
 
+.modal-content {
+  padding: 10px;
+}
+
+.modal-title {
+  border-bottom: 1px solid $color-dark-grey;
+}
+
 //helper classes
 //-----------------------------
 .faded-out {
