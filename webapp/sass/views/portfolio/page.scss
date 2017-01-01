@@ -72,6 +72,7 @@
   .fa-stack {
     height: 190px;
     width: 100%;
+    max-width: 200px;
     @include tablet-up {
       max-width: 175px;
     }
