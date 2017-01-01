@@ -34,30 +34,32 @@
                 }
             };
         }
-        return new Promise(function(resolve,reject) {
-            if (!queue){
-                $(element).velocity('stop', true);
-            }
-            $(element).velocity(parameters.properties, parametersObject);
-        });
+        return Promise.resolve()
+            .then(function() {
+                if (!queue){
+                    $(element).velocity('stop', true);
+                }
+                return $(element).velocity(parameters.properties, parametersObject);
+            });
     };
 
     //scroll page to top of viewport
     this.scrollToTop = function(){
-        return new Promise(function(resolve,reject) {
-            $('html').velocity('stop', true).velocity('scroll', {
-                duration: 750,
-                offset: 0,
-                mobileHA: false,
-                begin: function () {
-                    that.scrollingToTop = true;
-                },
-                complete: function (elements) {
-                    that.scrollingToTop = false;
-                    resolve(elements);
-                }
+        return Promise.resolve()
+            .then(function() {
+                $('html').velocity('stop', true).velocity('scroll', {
+                    duration: 750,
+                    offset: 0,
+                    mobileHA: false,
+                    begin: function () {
+                        that.scrollingToTop = true;
+                    },
+                    complete: function () {
+                        that.scrollingToTop = false;
+                        return Promise.resolve();
+                    }
+                });
             });
-        });
     };
 
     //element fade out helper
