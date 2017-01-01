@@ -1,12 +1,14 @@
 <main id="page-portfolio" class="grid-container row">
     <h1 class="page-title">Portfolio</h1>
-    <section id="container-quote" class="small-12 columns">
-        <div class="callout">
-            {{{quote.body}}}
-            <h5>{{quote.author}}</h5>
-        </div>
+    <section id="portfolio-quote-container" class="col-sm-12">
+        {{#each quotes}}
+            <div class="portfolio-quote">
+                {{{body}}}
+                <h5>{{author}} {{#if source}}- {{source}}{{/if}}</h5>
+            </div>
+        {{/each}}
     </section>
-    <section id="container-sliders" class="small-12">
+    <section id="container-sliders" class="col-sm-12">
         {{#each portfolioGroups}}
             <h2 class="slider-header">{{title}}</h2>
             <div class="slider-container">

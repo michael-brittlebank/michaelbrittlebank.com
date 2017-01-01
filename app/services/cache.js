@@ -14,6 +14,12 @@ promise.promisifyAll(redis.RedisClient.prototype);
 promise.promisifyAll(redis.Multi.prototype);
 const redisClient = redis.createClient();
 
+function primeRedisCache(){
+    _.forOwn(cache, function(entry){
+        entry();
+    });
+}
+
 redisClient.on('connect', function() {
     logService.info('Connected to Redis');
     //check env cache key
@@ -24,16 +30,16 @@ redisClient.on('connect', function() {
             if(!response) {
                 redisClient.set(cacheKey,envValue);
                 logService.info('Redis ENV key set');
+                //prime cache on startup
+                primeRedisCache();
                 return promise.resolve();
             } else if (response !== envValue){
                 return redisClient.flushdbAsync()
                     .then(function () {
                         logService.info('ENV key change detected. Flushed Redis database');
                         redisClient.set(cacheKey, envValue);
-                        //prime cache after flushing; don't wait for completion
-                        _.forOwn(cache, function(entry){
-                            entry();
-                        });
+                        //prime cache after flushing
+                        primeRedisCache();
                         return promise.resolve();
                     })
                     .catch(function(error){

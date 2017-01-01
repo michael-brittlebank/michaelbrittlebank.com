@@ -30,7 +30,7 @@ portfolio.getPortfolioPage = function(req, res, next){
             res.render('portfolio/page', {
                 page: data[0],
                 portfolioGroups: sortedData,
-                quote: _.sample(data[2])
+                quotes: _.shuffle(data[2])
             });
         })
         .catch(function (error) {
