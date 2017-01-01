@@ -27,7 +27,7 @@ content.getCachedMusicPostByUrl = function(postUrl){
         .then(function(data){
             const postObject = _.find(data,{'url': postUrl});
             if(_.isEmpty(postObject)){
-                return promise.reject(new errorService.NotFoundError('post not found'));
+                return promise.reject(new errorService.NotFoundError('music post not found'));
             } else {
                 return promise.resolve(postObject);
             }
@@ -42,7 +42,7 @@ content.getCachedPortfolioItemByUrl = function(itemUrl){
         .then(function(data){
             const postObject = _.find(data,{'url': itemUrl});
             if(_.isEmpty(postObject)){
-                return promise.reject(new errorService.NotFoundError('post not found'));
+                return promise.reject(new errorService.NotFoundError('portfolio item not found'));
             } else {
                 return promise.resolve(postObject);
             }
