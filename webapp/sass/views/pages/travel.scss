@@ -1,14 +1,13 @@
-#travel-map-container {
-  height:500px;
-  width: 100%;
-  opacity: 0;
-}
-
+//core
+//----------------------
 #travel-rule {
   margin: 85px 0 95px 0;
   width: 100%;
 }
 
+
+//images
+//----------------------
 #travel-title {
   max-width: 1120px;
   padding: 0 10px;
@@ -47,4 +46,13 @@
     font-family: $global-font-raleway-thin;
     background-color: rgba($color-font-black, 0.5);
   }
+}
+
+
+//map
+//----------------------
+#travel-map-container {
+  height:500px;
+  width: 100%;
+  opacity: 0;
 }
