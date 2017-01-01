@@ -1,29 +1,29 @@
-<main id="page-portfolio" class="grid-container row">
-    <h1 class="page-title">Portfolio</h1>
-    <section id="portfolio-quote-container" class="col-sm-12">
-        {{#each quotes}}
-            <div class="portfolio-quote">
-                {{{body}}}
-                <h5>{{author}} {{#if source}}- {{source}}{{/if}}</h5>
-            </div>
-        {{/each}}
-    </section>
-    <section id="container-sliders" class="col-sm-12">
-        {{#each portfolioGroups}}
-            <h2 class="slider-header">{{title}}</h2>
-            <div class="slider-container">
-                <div class="l--slick-carousel">
-                    {{#each items}}
-                        <div class="portfolio-item">
-                            <a href="#modal-{{slug}}">
-                                <div class="portfolio-content">
-                                    {{{featuredIcon}}}
-                                    <h3>{{title}}</h3>
-                                </div>
-                            </a>
-                        </div>
-                    {{/each}}
+<main id="page-portfolio">
+    <section class="grid-container row">
+        <h1 class="page-title">Portfolio</h1>
+        <div id="portfolio-quote-container" class="col-sm-12">
+            {{#each quotes}}
+                <div class="portfolio-quote">
+                    {{{body}}}
+                    <h5 class="portfolio-quote-author">{{author}} {{#if source}}- {{source}}{{/if}}</h5>
                 </div>
+            {{/each}}
+        </div>
+    </section>
+    <section>
+        {{#each portfolioGroups}}
+            <div class="grid-container row">
+                <h2 class="portfolio-carousel-header">{{title}}</h2>
+            </div>
+            <div class="portfolio-carousel">
+                {{#each items}}
+                    <a href="#modal-{{slug}}">
+                        <div class="portfolio-carousel-content {{slug}}">
+                            <h3 class="portfolio-carousel-item-title">{{title}}</h3>
+                            {{{icon}}}
+                        </div>
+                    </a>
+                {{/each}}
             </div>
         {{/each}}
     </section>

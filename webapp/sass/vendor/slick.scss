@@ -94,8 +94,9 @@ this is the import of the slick slider css.  we've done this to remove the custo
     height: auto;
     border: 1px solid transparent;
   }
-  &:focus{
+  &:focus &:active {
     outline: none;
+    border: none;
   }
 }
 .slick-arrow.slick-hidden {

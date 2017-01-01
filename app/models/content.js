@@ -25,7 +25,7 @@ content.getPortfolioItemObjects = function(response){
                         url: utilService.getFirstValueByKey(entry.custom_fields,'wpcf-portfolio-demo-url'),
                         techStack: utilService.getFirstValueByKey(entry.custom_fields,'wpcf-portfolio-tech-stack'),
                         repositoryUrl: utilService.getFirstValueByKey(entry.custom_fields,'wpcf-portfolio-repository-url'),
-                        featuredIcon: utilService.getFirstValueByKey(entry.custom_fields,'wpcf-portfolio-featured-icon'),
+                        icon: utilService.getFirstValueByKey(entry.custom_fields,'wpcf-portfolio-icon'),
                         portfolioGroup: utilService.simpleNullCheck(entry, 'taxonomy_portfolio-group')? entry['taxonomy_portfolio-group'][0].title:'',
                         // meta
                         metaDatePublished: utilService.getValueByKey(entry,'date'),//don't format
@@ -37,6 +37,8 @@ content.getPortfolioItemObjects = function(response){
                         metaTags: ''
                     };
                 });
+                //sort alphabetically
+                data = _.sortBy(data,'title');
                 return promise.resolve(data);
             } catch (error){
                 return promise.reject(error);

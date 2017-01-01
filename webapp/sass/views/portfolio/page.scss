@@ -7,14 +7,176 @@
 }
 
 .portfolio-quote {
-  max-width: 75%;
+  max-width: 95%;
   opacity: 0;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
   margin: auto;
-  h5 {
-    margin: 0;
+  @include tablet-up {
+    max-width: 75%;
+  }
+}
+
+.portfolio-quote-author {
+  margin: 0;
+}
+
+.portfolio-carousel-header {
+  font-family: $global-font-raleway-thin;
+}
+
+.portfolio-carousel {
+  background-color: rgba($color-font-black, 0.3);
+  .slick-prev, .slick-next {
+    background-color: $color-dark-grey;
+    height: 100%;
+  }
+  .slick-next {
+    right: 0;
+  }
+  .slick-prev {
+    left: 0;
+  }
+}
+
+.portfolio-carousel-item-title {
+  padding-top: 10px;
+  height: 30px;
+  margin: 0
+}
+
+.portfolio-carousel-content {
+  max-width: 75%;
+  margin: auto;
+  height: 230px;
+  background-color: white;
+  position: relative;
+  cursor:pointer;
+  text-align: center;
+  border: 10px solid $color-dark-grey;
+  @include tablet-up {
+    margin: 10px;
+    max-width: 100%;
+  }
+  &:hover {
+    .fa {
+      color: rgba($color-york-green,0.5);
+    }
+  }
+  &:active, &:focus {
+    border: none;
+    outline: none;
+  }
+  .fa-stack {
+    height: 190px;
+    width: 100%;
+    @include tablet-up {
+      max-width: 175px;
+    }
+  }
+  .fa {
+    @include center-absolute;
+    @include transition-with-defaults(color);
+  }
+  &.bubbles {
+    $icon-size: 2;
+    .fa-stack-1x {
+      bottom: 82.5%;
+      left: 32.5%;
+      right: initial;
+      top: initial;
+      width: unquote($icon-size+'rem');
+      line-height: unquote($icon-size+'rem');
+      font-size: unquote($icon-size+'rem');
+    }
+    .fa-stack-2x {
+      bottom: 47.5%;
+      left: 7.5%;
+      right: initial;
+      top: initial;
+      width: unquote($icon-size*2+'rem');
+      line-height: unquote($icon-size*2+'rem');
+      font-size: unquote($icon-size*2+'rem');
+    }
+    .fa-stack-3x {
+      bottom: 5%;
+      top: initial;
+      width: unquote($icon-size*3+'rem');
+      line-height: unquote($icon-size*3+'rem');
+      font-size: unquote($icon-size*3+'rem');
+    }
+  }
+  &.chorus {
+    $icon-size: 2.5;
+    .fa-stack-1x {
+      bottom: 60%;
+      top: initial;
+      left: 60%;
+      right: initial;
+      width: unquote($icon-size+'rem');
+      line-height: unquote($icon-size+'rem');
+      font-size: unquote($icon-size+'rem');
+    }
+    .fa-stack-2x {
+      bottom: 30%;
+      top: initial;
+      left: 10%;
+      right: initial;
+      width: unquote($icon-size*2+'rem');
+      line-height: unquote($icon-size*2+'rem');
+      font-size: unquote($icon-size*2+'rem');
+    }
+  }
+  &.reading-list {
+    $icon-size: 3;
+    $first-row-height: 30%;
+    $second-row-height: 60%;
+    .fa-stack-1x {
+      bottom: $first-row-height;
+      top: initial;
+      left: 5%;
+      right: initial;
+      width: unquote($icon-size+'rem');
+      line-height: unquote($icon-size+'rem');
+      font-size: unquote($icon-size+'rem');
+    }
+    .fa-stack-2x {
+      bottom: $first-row-height;
+      top: initial;
+      left: 40%;
+      right: initial;
+      width: unquote($icon-size+'rem');
+      line-height: unquote($icon-size+'rem');
+      font-size: unquote($icon-size+'rem');
+    }
+    .fa-stack-3x {
+      bottom: $second-row-height;
+      top: initial;
+      left: 25%;
+      right: initial;
+      width: unquote($icon-size+'rem');
+      line-height: unquote($icon-size+'rem');
+      font-size: unquote($icon-size+'rem');
+    }
+    .fa-stack-4x {
+      bottom: $second-row-height;
+      top: initial;
+      left: 60%;
+      right: initial;
+      width: unquote($icon-size+'rem');
+      line-height: unquote($icon-size+'rem');
+      font-size: unquote($icon-size+'rem');
+    }
+  }
+  &.illesteva {
+    $icon-size: 4;
+    .fa {
+      height: unquote($icon-size+'rem');
+      width: unquote($icon-size+'rem');
+      line-height: unquote($icon-size+'rem');
+      font-size: unquote($icon-size+'rem');
+    }
   }
 }

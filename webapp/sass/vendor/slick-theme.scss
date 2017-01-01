@@ -74,6 +74,9 @@ $slick-opacity-not-active: 0.25 !default;
   padding: 0;
   border: none;
   outline: none;
+  &:before {
+    @include transition-with-defaults(opacity);
+  }
   &:hover, &:focus {
     outline: none;
     background: transparent;

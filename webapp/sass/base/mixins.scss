@@ -55,13 +55,6 @@ these are helper functions for common tasks that are difficult to implement acro
 }
 
 
-//typography
-//-----------------------------
-@mixin tracking-to-em($value){
-  letter-spacing: #{$value/1000}em;
-}
-
-
 //make text unselectable
 //-----------------------------
 @mixin unselectable {
@@ -87,9 +80,4 @@ these are helper functions for common tasks that are difficult to implement acro
   left: 0;
   right: 0;
   margin: auto;
-}
-
-@mixin no-border {
-  outline: none!important;
-  border: none!important;
 }

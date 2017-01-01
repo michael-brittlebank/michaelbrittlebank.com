@@ -27,6 +27,8 @@ portfolio.getPortfolioPage = function(req, res, next){
                     items: unsortedData[key]
                 }
             });
+            //sort data groups alphabetically
+            sortedData = _.sortBy(sortedData,'title');
             res.render('portfolio/page', {
                 page: data[0],
                 portfolioGroups: sortedData,
