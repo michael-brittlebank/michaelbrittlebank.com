@@ -56,7 +56,10 @@
                     }
                 },
                 complete: function(){
-                    moveBubble(resetBubble(element));
+                    if (bubblesCreated) {
+                        //only reset if bubbles have not been cleared
+                        moveBubble(resetBubble(element));
+                    }
                 }
             });
     }
