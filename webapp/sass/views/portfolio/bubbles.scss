@@ -24,15 +24,22 @@ $content-height: 500px;
 }
 
 #bubble-controls-container {
-  margin-top: 50px;
-  label {
-    white-space: nowrap;
+  margin-top: 15px;
+  @include tablet-up {
+    margin-top: 30px;
   }
   input {
     width: 50px;
+    border: 1px solid $color-grey;
   }
   button {
-    margin-top: 0;
+    margin-top: 10px;
+  }
+  label {
+    margin-top: 10px;
+    @include tablet-up {
+      display: block;
+    }
   }
 }
 
@@ -51,5 +58,11 @@ $content-height: 500px;
 #bubbles-control-clear {
   span:after {
     content: '\f05e';
+  }
+}
+
+#bubbles-code-button {
+  span:after {
+    content: '\f121';
   }
 }
