@@ -9,13 +9,15 @@
     };
 
     this.init = function() {
-        carousels.slick({
-            slidesToShow: 2,
-            slidesToScroll: 1,
-            dots: true,
-            arrows: false,
-            infinite: true
-        });
+        if (that.hasCarousels) {
+            carousels.slick({
+                slidesToShow: 2,
+                slidesToScroll: 1,
+                dots: true,
+                arrows: false,
+                infinite: true
+            });
+        }
     };
 
 }).apply(app.modules.carousel);

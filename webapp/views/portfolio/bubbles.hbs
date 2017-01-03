@@ -1,55 +1,47 @@
-<main id="portfolio-bubbles" class="grid-container row">
-    <h1 class="page-title">Portfolio - Bubbles</h1>
-    <section id="container-content" class="row">
-        <div id="content-code" class="small-12 medium-6 columns small-order-2 medium-order-1 content">
-            <div id="code-mobile" class="portfolio-links">
-                <a data-open="modal-code"><i class="fa fa-code"></i>View Code</a>
-            </div>
-            <div id="code-desktop">{{>bubbles-code}}</div>
-        </div>
-        <div id="content-bubbles" class="small-12 medium-6 columns small-order-1 medium-order-2 content">
-            <div id="bubble-holder">
-            </div>
-        </div>
+<main id="portfolio-bubbles" class="grid-container row page-container">
+    <h1 class="page-title col-sm-12">Portfolio - Bubbles</h1>
+    <section id="bubbles-code-desktop" class="col-sm-6 hide-for-small">
+        {{>bubbles-code}}
     </section>
-    <section id="container-controls" class="small-12 columns">
+    <section id="bubbles-container" class="col-sm-12 col-md-6">
+        <!--populated dynamically-->
+    </section>
+    <section id="bubble-controls-container" class="col-sm-12">
         <div class="row">
-            <div class="small-4 medium-2 columns">
-                <label for="smallBubbles">Small Bubbles</label>
-                <input id="smallBubbles" type="number" value="30" min="0"/>
+            <div class="col-sm-4 col-md-2">
+                <label for="bubbles-input-small">Small Bubbles</label>
+                <input id="bubbles-input-small" type="number" value="30" min="0" max="100" maxlength="3"/>
             </div>
-            <div class="small-4 medium-2 columns">
-                <label for="mediumBubbles">Medium Bubbles</label>
-                <input id="mediumBubbles" type="number" value="20" min="0"/>
+            <div class="col-sm-4 col-md-2">
+                <label for="bubbles-input-medium">Medium Bubbles</label>
+                <input id="bubbles-input-medium" type="number" value="20" min="0" max="100" maxlength="3"/>
             </div>
-            <div class="small-4 medium-2 columns">
-                <label for="largeBubbles">Large Bubbles</label>
-                <input id="largeBubbles" type="number" value="10" min="0"/>
+            <div class="col-sm-4 col-md-2">
+                <label for="bubbles-input-large">Large Bubbles</label>
+                <input id="bubbles-input-large" type="number" value="10" min="0" max="100" maxlength="3"/>
             </div>
-            <div class="small-4 medium-2 columns">
-                <button id="startBubbles" class="button">Start Bubbles</button>
+            <div class="col-sm-4 col-md-2">
+                <button id="bubbles-control-start" type="button">
+                    <span>Start</span>
+                </button>
             </div>
-            <div class="small-4 medium-2 columns">
-                <button id="stopBubbles" class="button disabled">Stop Bubbles</button>
+            <div class="col-sm-4 col-md-2">
+                <button id="bubbles-control-stop" class="disabled" type="button">
+                    <span>Stop</span>
+                </button>
             </div>
-            <div class="small-4 medium-2 columns">
-                <button id="clearBubbles" class="button disabled">Clear Bubbles</button>
-            </div>
-        </div>
-    </section>
-    <section id="container-modals">
-        <div class="reveal small" id="modal-code" data-reveal data-overlay="false" data-close-on-click="false">
-            <button class="close-button" data-close aria-label="Close reveal" type="button">
-                <span aria-hidden="true">&times;</span>
-            </button>
-            <div class="row">
-                <section class="small-12 columns">
-                    {{>bubbles-code}}
-                    <button class="button" data-close aria-label="Close reveal" type="button">
-                        <span aria-hidden="true">Close</span>
-                    </button>
-                </section>
+            <div class="col-sm-4 col-md-2">
+                <button id="bubbles-control-clear" class="disabled" type="button">
+                    <span>Clear</span>
+                </button>
             </div>
         </div>
     </section>
+    <aside class="modal--fade" id="modal-bubbles-code" data-stackable="false" tabindex="-1" role="dialog" aria-labelledby="label-fade" aria-hidden="true">
+        <div class="modal-inner">
+            {{>bubbles-code}}
+        </div>
+        <a href="#!" class="modal-close" title="Close this modal"
+           data-dismiss="modal" data-close="Close">&times;</a>
+    </aside>
 </main>

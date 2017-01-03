@@ -4,6 +4,7 @@
         $ = jQuery;
     
     this.activeClass = 'active';
+    this.disabledClass = 'disabled';
 
    this.getRandomInt = function (min, max) {
        return _.random(min,max,false);

@@ -15,12 +15,12 @@ var app = {
     modules: {
         carousel: {}
     },
-    
+
     //services
     services: {
         data: {}
     },
-    
+
     //templates
     views: {
         homepage:{},
@@ -30,6 +30,7 @@ var app = {
         portfolio: {
             readingList: {},
             bubbles: {},
+            chorus: {},
             page: {}
         },
         music: {
@@ -41,16 +42,13 @@ var app = {
 
     //functions
     init: function(){
-        var carousel = app.modules.carousel,
-            views = app.views;
+        var views = app.views;
 
         //services
         app.handlebars.applyHelpers();
 
         //modules
-        if (carousel.hasCarousels()){
-            carousel.init();
-        }
+        app.modules.carousel.init();
 
         //errors
         views.error404.init();
@@ -62,9 +60,10 @@ var app = {
         views.resume.init();
         views.music.page.init();
         views.portfolio.page.init();
-        
+
         //portfolio
         views.portfolio.readingList.init();
+        views.portfolio.bubbles.init();
 
     }
 };

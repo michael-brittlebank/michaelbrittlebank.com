@@ -1,52 +1,55 @@
-//main
+//core
 //----------------------
-#content-bubbles {
-  overflow:hidden;
+$content-height: 500px;
+
+#bubbles-container {
+  border: 5px double $color-font-black;
+  width:100%;
+  height: $content-height;
+  overflow: hidden;
   position: relative;
-  #bubble-holder {
-    border: 5px double $color-font-black;
-    height:100%;
-    width:100%;
-    .bubble {
-      position: absolute;
-      background-color:purple;
-      border-radius: 50%;
-      @include faded-out;
-    }
-  }
 }
 
-#content-code {
-  @include mobile {
-    height: auto;
-  }
+.bubble {
+  position: absolute;
+  background-color:purple;
+  border-radius: 50%;
+  opacity: 0;
 }
 
-#code-desktop {
+#bubbles-code-desktop {
   overflow: scroll;
   max-width: 100%;
-  max-height: 100%;
-  @include mobile {
-    display:none;
-  }
+  height: $content-height;
 }
 
-#code-mobile {
-  display:none;
-  text-align: center;
-  @include mobile {
-    display:block;
-  }
-}
-
-#container-controls {
+#bubble-controls-container {
+  margin-top: 50px;
   label {
     white-space: nowrap;
   }
-  .button {
-    margin: 25px auto;
-    display: block;
-    height: 40px;
-    white-space: nowrap;
+  input {
+    width: 50px;
+  }
+  button {
+    margin-top: 0;
+  }
+}
+
+#bubbles-control-start {
+  span:after {
+    content: '\f144';
+  }
+}
+
+#bubbles-control-stop {
+  span:after {
+    content: '\f28d';
+  }
+}
+
+#bubbles-control-clear {
+  span:after {
+    content: '\f05e';
   }
 }

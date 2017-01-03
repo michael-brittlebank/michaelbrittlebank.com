@@ -2,10 +2,7 @@
 //-----------------------------
 body {
   //header placeholder
-  padding-top: 90px;
-  @include tablet-up {
-    padding-top: 120px;
-  }
+  padding-top: 65px;
 }
 
 p,a,blockquote,span,div,input,textarea {
@@ -18,7 +15,7 @@ h1,h2,h3,h4,h5 {
   color: $color-font-black;
 }
 
-img {
+img, input {
   max-width: 100%;
 }
 
@@ -48,7 +45,14 @@ iframe {
   font-family: $global-font-raleway-thin;
 }
 
-.button {
+.page-container, .post-container {
+  padding-top: 25px;
+  @include tablet-up {
+    padding-top: 55px;
+  }
+}
+
+button, .button {
   display: block;
   border-radius: 5px;
   background-color: $color-york-blue;
@@ -60,6 +64,7 @@ iframe {
   cursor: pointer;
   margin: 25px auto 0 auto;
   width: 355px;
+  max-width: 100%;
   vertical-align: middle;
   box-shadow: 0 5px 15px 0 $color-box-shadow;
   span {
@@ -80,12 +85,19 @@ iframe {
       margin-right: -15px;
     }
   }
-  &:hover span {
+  &:hover:not(.disabled) span {
     padding-right: 25px;
     &:after {
       opacity: 1;
       right: 0;
     }
+  }
+  &:focus, &:active {
+    outline: none;
+  }
+  &.disabled, &.disabled span {
+    opacity: 0.6;
+    cursor: not-allowed;
   }
 }
 
@@ -95,6 +107,13 @@ iframe {
 
 .modal-title {
   border-bottom: 1px solid $color-dark-grey;
+}
+
+.prettyprint {
+  margin: 0;
+  padding: 10px;
+  width: auto;
+  overflow: auto;
 }
 
 //helper classes

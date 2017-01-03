@@ -1,4 +1,4 @@
-<main id="page-portfolio">
+<main id="page-portfolio" class="page-container">
     <section class="grid-container row">
         <h1 class="page-title">Portfolio</h1>
         <div id="portfolio-quote-container" class="col-sm-12">
@@ -27,37 +27,35 @@
             </div>
         {{/each}}
     </section>
-    <aside id="container-modals">
-        {{#each portfolioGroups}}
-            {{#each items}}
-                <section class="modal--fade" id="modal-{{slug}}" data-stackable="false" tabindex="-1" role="dialog" aria-labelledby="label-fade" aria-hidden="true">
-                    <div class="modal-inner">
-                        <div class="modal-content">
-                            <h3 class="modal-title">{{title}}</h3>
-                            {{{body}}}
-                            {{#if techStack}}
-                                <p class="portfolio-tech-stack">
-                                    <span class="title">Tech Stack:</span> {{techStack}}
-                                </p>
+    {{#each portfolioGroups}}
+        {{#each items}}
+            <aside class="modal--fade" id="modal-{{slug}}" data-stackable="false" tabindex="-1" role="dialog" aria-labelledby="label-fade" aria-hidden="true">
+                <div class="modal-inner">
+                    <div class="modal-content">
+                        <h3 class="modal-title">{{title}}</h3>
+                        {{{body}}}
+                        {{#if techStack}}
+                            <p class="portfolio-tech-stack">
+                                <span class="title">Tech Stack:</span> {{techStack}}
+                            </p>
+                        {{/if}}
+                        <div class="row">
+                            {{#if url}}
+                                <div class="col-sm-6">
+                                    <a href="{{url}}"><i class="fa fa-folder-open-o"></i>View Project</a>
+                                </div>
                             {{/if}}
-                            <div class="row">
-                                {{#if url}}
-                                    <div class="col-sm-6">
-                                        <a href="{{url}}"><i class="fa fa-folder-open-o"></i>View Project</a>
-                                    </div>
-                                {{/if}}
-                                {{#if repositoryUrl}}
-                                    <div class="col-sm-6">
-                                        <a href="{{repositoryUrl}}" target="_blank"><i class="fa fa-code"></i>View Code</a>
-                                    </div>
-                                {{/if}}
-                            </div>
+                            {{#if repositoryUrl}}
+                                <div class="col-sm-6">
+                                    <a href="{{repositoryUrl}}" target="_blank"><i class="fa fa-code"></i>View Code</a>
+                                </div>
+                            {{/if}}
                         </div>
                     </div>
-                    <a href="#!" class="modal-close" title="Close this modal"
-                       data-dismiss="modal" data-close="Close">&times;</a>
-                </section>
-            {{/each}}
+                </div>
+                <a href="#!" class="modal-close" title="Close this modal"
+                   data-dismiss="modal" data-close="Close">&times;</a>
+            </aside>
         {{/each}}
-    </aside>
+    {{/each}}
 </main>
