@@ -64,7 +64,7 @@ var app = {
         //portfolio
         views.portfolio.readingList.init();
         views.portfolio.bubbles.init();
-
+        views.portfolio.chorus.init();
     }
 };
 

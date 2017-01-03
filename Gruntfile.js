@@ -159,7 +159,8 @@ module.exports = function(grunt){
                     trace: true,
                     loadPath: [
                         'webapp/bower_components/css-modal',
-                        'webapp/bower_components/components-font-awesome/scss'
+                        'webapp/bower_components/components-font-awesome/scss',
+                        'webapp/bower_components/chorus-js/src/scss'
                     ]
                 }
             },
@@ -194,6 +195,7 @@ module.exports = function(grunt){
                         'webapp/bower_components/blast-text/jquery.blast.min.js',
                         'webapp/bower_components/slick-carousel/slick/slick.min.js',
                         'webapp/bower_components/css-modal/modal.js',
+                        'webapp/bower_components/chorus-js/dist/chorus.min.js',
                         'webapp/javascript/vendor/**/*.js'
                     ]
                 },

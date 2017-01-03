@@ -1,14 +1,14 @@
-var chorus = {};
-
 (function(){
 
-    var tabPanels;
+    var that = app.views.portfolio.chorus,
+        $ = jQuery;
 
     //functions
     this.init = function(){
+
+        //functions
         prettyPrint();
-        tabPanels = $('.tab-pane');
-        app.animation.fadeIn('.page.chorus',750,750,0);
+
         //chorus init
         var guitarConfig = {
                 layoutInstrument: ['guitar'],
@@ -22,14 +22,14 @@ var chorus = {};
                 layoutInstrument: ['bass'],
                 chorusDebug:'console'
             };
-        _chorus.init('chorus-guitar', guitarConfig);
-        _chorus.init('chorus-piano', pianoConfig);
-        _chorus.init('chorus-bass', bassConfig);
+        chorus.init('chorus-guitar', guitarConfig);
+        chorus.init('chorus-piano', pianoConfig);
+        chorus.init('chorus-bass', bassConfig);
 
         //listeners
         $(document).on('chorusSearchComplete', function(e) {
             setTimeout(function(){
-                _chorus.populateLists('results-scales','results-chords');
+                chorus.populateLists('results-scales','results-chords');
                 //open modal
                 $('.results-container').each(function(){
                     if(!$(this).is(":visible")){
@@ -40,4 +40,4 @@ var chorus = {};
         });
     };
 
-}).apply(chorus);
+}).apply(app.views.portfolio.chorus);
