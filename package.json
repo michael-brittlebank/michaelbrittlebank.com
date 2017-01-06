@@ -4,7 +4,10 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "start": "nf start"
+    "start": "sudo start foreman",
+    "stop": "sudo stop foreman",
+    "dev": "foreman start -f Procfile_dev",
+    "export": "sudo nf export -o /etc/init"
   },
   "repository": {
     "type": "git",
