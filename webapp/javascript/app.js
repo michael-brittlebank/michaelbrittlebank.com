@@ -11,11 +11,6 @@ var app = {
     helpers: {},
     mediaQueries: {},
 
-    //modules
-    modules: {
-        carousel: {}
-    },
-
     //services
     services: {
         data: {}
@@ -47,9 +42,6 @@ var app = {
         //services
         app.handlebars.applyHelpers();
 
-        //modules
-        app.modules.carousel.init();
-
         //errors
         views.error404.init();
         views.error500.init();
@@ -58,13 +50,16 @@ var app = {
         views.homepage.init();
         views.travel.init();
         views.resume.init();
-        views.music.page.init();
-        views.portfolio.page.init();
 
         //portfolio
+        views.portfolio.page.init();
         views.portfolio.readingList.init();
         views.portfolio.bubbles.init();
         views.portfolio.chorus.init();
+
+        //music
+        views.music.page.init();
+        views.music.post.init();
     }
 };
 

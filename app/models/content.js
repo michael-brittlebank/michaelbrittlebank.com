@@ -64,6 +64,7 @@ content.getMusicPostObjects = function(response){
                         url: urlPrefix+'/'+utilService.getValueByKey(entry,'slug'),
                         datePublished: moment(utilService.getValueByKey(entry,'date')).format('MMMM Do YYYY'),
                         excerpt: excerpt,
+                        images: utilService.getValueByKey(entry.custom_fields,'wpcf-music-images'),
                         metaTitle: metaTitle,
                         metaDescription: metaDescription,
                         metaDatePublished: utilService.getValueByKey(entry,'date'),//don't format

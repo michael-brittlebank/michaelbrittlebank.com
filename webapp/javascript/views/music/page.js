@@ -1,6 +1,6 @@
 (function(){
 
-    var that = app.views.music,
+    var that = app.views.music.page,
         $ = jQuery,
         animations = app.animations,
         posts;

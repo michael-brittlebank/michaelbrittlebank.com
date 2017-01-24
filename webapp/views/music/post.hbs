@@ -1,10 +1,19 @@
-<main id="post-music" class="grid-container row align-center post-container">
-    <section id="container-body" class="small-12 medium-10 large-8">
+<main id="post-music" class="grid-container row post-container">
+    <section class="col-sm-12 col-md-offset-1 col-md-10 col-lg-offset-2 col-lg-8">
         <h1 class="post-title">{{page.title}}</h1>
         <h5 class="post-date"><i class="fa fa-calendar"></i>{{page.datePublished}}</h5>
         <hr class="post-divider">
         <div class="post-body">
             {{{page.body}}}
+        </div>
+        <div id="music-post-images-container">
+            <div id="music-post-images">
+                {{#each page.images}}
+                    <div>
+                        <img src="{{this}}" class="music-post-image"/>
+                    </div>
+                {{/each}}
+            </div>
         </div>
     </section>
 </main>
