@@ -1,7 +1,7 @@
 //core
 //----------------------
 #chorus-main-container {
-  height: 575px;
+  height: 400px;
   position: relative;
 }
 
@@ -21,7 +21,7 @@
   text-transform: uppercase;
   @include transition-raw("background 300ms ease-out 0s,color 300ms ease-out 0s");
   &.active {
-    background: $color-tab-background;
+    background: $color-anchor-hover;
     color: $color-font-black;
   }
 }

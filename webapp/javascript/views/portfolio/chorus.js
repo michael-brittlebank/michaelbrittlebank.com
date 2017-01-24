@@ -6,10 +6,12 @@
         helpers = app.helpers,
         activeClass = helpers.activeClass,
         chorusTabs,
-        currentActiveTab;
+        currentActiveTab,
+        chorusMainContainer;
 
     function changeChorusTab(element){
-        var containerId = element.attr('data-id');
+        var containerId = element.attr('data-id'),
+            containerHeight = element.attr('data-height');
         if(containerId && containerId.length > 0 && currentActiveTab !== containerId){
             chorusTabs.removeClass(activeClass);
             element.addClass(activeClass);
@@ -19,6 +21,9 @@
                     currentActiveTab = containerId;
                     var newActiveTab = $('#'+currentActiveTab);
                     newActiveTab.css({display: 'block'});
+                    animations.animateElement(chorusMainContainer, {properties: {
+                        height: containerHeight+'px'
+                    }});
                     animations.fadeIn(newActiveTab);
                 });
         }
@@ -31,6 +36,7 @@
             //variables
             chorusTabs = $('.chorus-tab');
             currentActiveTab = $('.chorus-tab.active').attr('data-id');
+            chorusMainContainer = $('#chorus-main-container');
 
             //functions
             prettyPrint();
