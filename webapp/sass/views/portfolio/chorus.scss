@@ -16,10 +16,13 @@
 }
 
 .chorus-tab {
-  padding: 1.25rem 1.5rem;
+  padding: 0.75rem 0.2rem;
   display: inline-block;
   text-transform: uppercase;
   @include transition-raw("background 300ms ease-out 0s,color 300ms ease-out 0s");
+  @include tablet-up {
+    padding: 1.25rem 1.5rem;
+  }
   &.active {
     background: $color-anchor-hover;
     color: $color-font-black;
