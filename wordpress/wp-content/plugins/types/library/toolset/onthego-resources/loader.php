@@ -16,7 +16,7 @@
 // is made to the onthego-resources code.
 // The version number will then be used to work out which plugin has the latest
 // version of the code.
-$onthegosystems_branding_version = 20;
+$onthegosystems_branding_version = 21;
 
 
 // ----------------------------------------------------------------------//

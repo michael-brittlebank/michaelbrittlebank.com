@@ -1,5 +1,17 @@
 <?php
 
+define("CRED_WP_REF_FILE", "wp-blog-header.php");
+
+function cred_find_abspath($dir, $file2search) {
+    if (file_exists($dir . "/" . $file2search)) {
+        return $dir . "/";
+    }
+    $search_in_dir = cred_find_wp_config_path($dir, CRED_WP_REF_FILE);
+    if (!empty($search_in_dir))
+        return $search_in_dir;
+    return cred_find_abspath(dirname($dir), $file2search);
+}
+
 function cred_find_wp_config_path($dir, $file2search) {
     if (file_exists($dir . "/" . $file2search)) {
         return $dir . "/";
@@ -17,7 +29,7 @@ function cred_find_wp_config_path($dir, $file2search) {
 }
 
 function cred_get_root_path() {
-    return cred_find_wp_config_path($_SERVER['DOCUMENT_ROOT'], "wp-load.php");
+    return cred_find_abspath(dirname(__FILE__), CRED_WP_REF_FILE);
 }
 
 function cred_get_local($url) {
@@ -30,21 +42,13 @@ function cred_clean($string) {
     return preg_replace('/[^A-Za-z0-9\-]/', '', $string); // Removes special chars.
 }
 
-/**
- * Executing AJAX process.
- *
- * @since 2.1.0
- */
 define('WP_USE_THEMES', false);
 define('DOING_AJAX', true);
-//if (!defined('WP_ADMIN')) {
-//    define('WP_ADMIN', true);
-//}
 
 require_once( cred_get_root_path() . 'wp-load.php' );
-require_once( cred_get_root_path() . 'wp-admin/includes/file.php' );
-require_once( cred_get_root_path() . 'wp-admin/includes/media.php' );
-require_once( cred_get_root_path() . 'wp-admin/includes/image.php' );
+require_once( ABSPATH . 'wp-admin/includes/file.php' );
+require_once( ABSPATH . 'wp-admin/includes/media.php' );
+require_once( ABSPATH . 'wp-admin/includes/image.php' );
 
 /** Allow for cross-domain requests (from the frontend). */
 send_origin_headers();
@@ -54,44 +58,28 @@ $data = array();
 if (isset($_REQUEST['nonce']) && check_ajax_referer('ajax_nonce', 'nonce', false)) {
 
     if (isset($_POST['action']) && $_POST['action'] == 'delete' && isset($_POST['file'])) {
-        $file = esc_url_raw( $_POST['file'] );
+        $file = esc_url_raw($_POST['file']);
         $id = isset($_POST['id']) ? (int) $_POST['id'] : 0;
-
         $data = array('result' => true);
-
         $local_file = cred_get_local($file);
-
-//get all image attachments
         $attachments = get_children(
                 array(
                     'post_parent' => $id,
-                    //'post_mime_type' => 'image',
                     'post_type' => 'attachment'
                 )
         );
-
-//loop through the array
         if (!empty($attachments)) {
             foreach ($attachments as $attachment) {
                 $attach_file = strtolower(basename($attachment->guid));
                 $my_local_file = strtolower(basename($local_file));
                 if ($attach_file == $my_local_file)
                     wp_delete_attachment($attachment->ID);
-
-                // Update the post into the database
-//          wp_update_post( array(
-//                    'ID' => $attachment->ID,
-//                    'post_parent' => 0
-//                )
-//            );
             }
         }
-
-
 //        if (file_exists($local_file)) {
 //            $res = unlink($local_file);
 //        }
-        //$data = ($res) ? array('result' => $res) : array('result' => $res, 'error' => 'Error Deleting ' . $file);
+//        $data = ($res) ? array('result' => $res) : array('result' => $res, 'error' => 'Error Deleting ' . $file);
     } else {
         if (isset($_GET['id'])) {
             $post_id = intval($_GET['id']);
@@ -121,7 +109,7 @@ if (isset($_REQUEST['nonce']) && check_ajax_referer('ajax_nonce', 'nonce', false
                         break;
                     }
                 }
-                
+
                 //If no size errors
                 if (empty($data)) {
 

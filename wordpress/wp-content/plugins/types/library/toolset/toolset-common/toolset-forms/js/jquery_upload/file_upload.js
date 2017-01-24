@@ -101,8 +101,9 @@ jQuery(function () {
                             var new_num = number - 1;
                             //console.log("new_num: " + new_num);
                             var hidden_id = "wpt-form-el" + new_num;
-                        } else
+                        } else {
                             var hidden_id = wpt_id + '_hidden';
+                        }
 
                         //console.log("hidden_id: " + hidden_id);
 
@@ -144,12 +145,13 @@ jQuery(function () {
                                     //append new image and delete button to the span
                                     jQuery("<img id='loaded_" + myid + "' src='" + preview + "'>").prependTo(preview_span);
                                 }
-                                
-                                if (myid == '_featured_image') {
-                                    if (jQuery("#attachid_" + myid).lenght > 0) {
-                                        jQuery("#attachid_" + myid).attr("value", attachid);
+
+                                if (jQuery('#' + hidden_id).attr('name') == '_featured_image') {
+                                    var _featured_image_name = jQuery('#' + hidden_id).attr('name');
+                                    if (jQuery("#attachid_" + _featured_image_name).lenght > 0) {
+                                        jQuery("#attachid_" + _featured_image_name).attr("value", attachid);
                                     } else {
-                                        jQuery("<input id='attachid_" + myid + "' name='attachid_" + myid + "' type='hidden' value='" + attachid + "'>").appendTo(preview_span.parent());
+                                        jQuery("<input id='attachid_" + _featured_image_name + "' name='attachid_" + _featured_image_name + "' type='hidden' value='" + attachid + "'>").appendTo(preview_span.parent());
                                     }
                                 }
                             }
@@ -158,8 +160,9 @@ jQuery(function () {
                             //<input id='butt_" + myid + "' style='width:100%;margin-top:2px;margin-bottom:2px;' type='button' value='" + settings.delete_text + "' rel='" + file + "' class='delete_ajax_file'>
                             jQuery("<a id='loaded_" + myid + "' href='" + file + "' target='_blank'>" + file + "</a></label>").insertAfter('#' + jQuery(curr_file).attr('id'));
                         }
-                        if (typeof preview_span !== undefined)
+                        if (typeof preview_span !== undefined) {
                             jQuery(preview_span).show();
+                        }
 
                         wptCredfile.init('body');
                     });

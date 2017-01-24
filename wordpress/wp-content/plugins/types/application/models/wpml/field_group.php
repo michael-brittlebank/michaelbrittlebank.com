@@ -32,7 +32,8 @@ class Types_Wpml_Field_Group implements Types_Wpml_Interface {
 	 *
 	 * @param Types_Field_Group $group
 	 */
-	public function __construct( Types_Field_Group $group ) {
+	public function __construct( $group ) {
+
 		$this->group = $group;
 
 		// todo get rid of these hard dependencies

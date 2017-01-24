@@ -165,15 +165,18 @@ final class WP_Installer{
         // Extra information about the source of Installer
         $package_source_file = $this->plugin_path() . '/installer-source.json';
         if( file_exists( $package_source_file ) ){
-            $this->package_source = json_decode( file_get_contents( $package_source_file ) );
+            WP_Filesystem();
+            global $wp_filesystem;
+            $this->package_source = json_decode( $wp_filesystem->get_contents( $package_source_file ) );
         }
     }
 
     protected function log($message){
+	    require_once ABSPATH . 'wp-admin/includes/file.php';
+        WP_Filesystem();
+        global $wp_filesystem;
         if( defined('WPML_INSTALLER_LOGGING') && WPML_INSTALLER_LOGGING ){
-            if($fh = @fopen( $this->plugin_path() . '/installer.log', 'a' )){
-                fwrite($fh, current_time( 'mysql' ) . "\t" . $message . "\n");
-            }
+            $wp_filesystem->put_contents( $this->plugin_path() . '/installer.log', current_time( 'mysql' ) . "\t" . $message . "\n" );
         }
     }
 
@@ -925,6 +928,11 @@ final class WP_Installer{
                     continue;
                 }
 
+                //consider equivalent subscriptions
+                if( empty($product['subscription_type_equivalent'])){
+	                $product['subscription_type_equivalent'] = '';
+                }
+
                 // buy base
                 if(empty($subscription_type) || $expired) {
 
@@ -937,7 +945,7 @@ final class WP_Installer{
                     $row['products'][] = $p;
 
                     // renew
-                } elseif(isset($subscription_type) && $product['subscription_type'] == $subscription_type){
+                } elseif(isset($subscription_type) && ($product['subscription_type'] == $subscription_type || $product['subscription_type_equivalent'] == $subscription_type)){
 
                     if($product['renewals']) {
                         foreach ($product['renewals'] as $renewal) {
@@ -969,7 +977,7 @@ final class WP_Installer{
                 }
 
                 // downloads
-                if(isset($subscription_type) && !$expired && $product['subscription_type'] == $subscription_type){
+                if(isset($subscription_type) && !$expired && ($product['subscription_type'] == $subscription_type || $product['subscription_type_equivalent'] == $subscription_type)){
                     foreach($product['plugins'] as $plugin_slug){
 
                         $row['downloads'][] = $this->settings['repositories'][$repository_id]['data']['downloads']['plugins'][$plugin_slug];
@@ -2651,8 +2659,8 @@ final class WP_Installer{
 
 
                             echo '<div class="wrap">';
-                            echo '<h2>' . __('Update Plugin') . '</h2>';
-                            echo '<a href="' . admin_url('plugins.php') . '">' . __('Return to the plugins page') . '</a>';
+                            echo '<h2>' . __( 'Update Plugin', 'installer' ) . '</h2>';
+                            echo '<a href="' . admin_url('plugins.php') . '">' . __( 'Return to the plugins page', 'installer' ) . '</a>';
                             echo '</div>';
                             require_once(ABSPATH . 'wp-admin/admin-footer.php');
                             exit;

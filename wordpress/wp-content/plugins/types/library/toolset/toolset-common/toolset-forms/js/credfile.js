@@ -27,12 +27,13 @@ var wptCredfile = (function ($) {
                     thiz_undo_button.hide();
                 }
                 if (myid == '_featured_image') {
-                    $('#attachid_' + myid).val('');                    
+                    $('#attachid_' + myid).prop('disabled', true);
                 } else {
                     if (thiz.closest('.js-wpt-repetitive').length > 0) {
-                    } else
+                    } else {
                         $('#' + myid).prop('disabled', false);
-                        //$("<input type='hidden' id='" + myid + "' name='" + myid + "' value=''>").insertAfter('#' + thiz_hidden_input.attr('id'));
+                    }
+                    //$("<input type='hidden' id='" + myid + "' name='" + myid + "' value=''>").insertAfter('#' + thiz_hidden_input.attr('id'));
                 }
                 thiz_file_input.trigger('change');
             } else if (credfile_action == 'undo') {
@@ -42,12 +43,13 @@ var wptCredfile = (function ($) {
                 thiz_preview.show();
                 //thiz_delete_button.show();
                 thiz_undo_button.hide();
-                if (myid == '_featured_image')
-                    $('#attachid_' + myid).val($("input[name='_cred_cred_prefix_post_id']").val());
-                else {
+                if (myid == '_featured_image') {
+                    $('#attachid_' + myid).prop('disabled', false);
+                } else {
                     if (thiz.closest('.js-wpt-repetitive').length > 0) {
-                    } else
+                    } else {
                         $('#' + myid).prop('disabled', false);
+                    }
                 }
             }
         });

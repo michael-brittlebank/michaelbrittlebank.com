@@ -1,15 +1,9 @@
 <?php
 
-/**
- *
- *
- */
 require_once 'class.textfield.php';
 
 /**
- * Description of class
- *
- * @author Francesco / Srdjan
+ * WPToolset_Field_Credfile
  */
 class WPToolset_Field_Credfile extends WPToolset_Field_Textfield {
 
@@ -53,9 +47,18 @@ class WPToolset_Field_Credfile extends WPToolset_Field_Textfield {
         return $sizes;
     }
 
+    public static function get_correct_submit_url() {
+        $correct_submit_url = http_build_url(
+                plugins_url('submit.php', __FILE__), array(
+            'host' => $_SERVER['HTTP_HOST'],
+            'scheme' => ( is_ssl() ? 'https' : 'http' ))
+        );
+        return $correct_submit_url;
+    }
+
     public function init() {
         wp_register_script('wpt-field-credfile', WPTOOLSET_FORMS_RELPATH . '/js/credfile.js', array('wptoolset-forms'), WPTOOLSET_FORMS_VERSION, true);
-        wp_enqueue_script('wpt-field-credfile');        
+        wp_enqueue_script('wpt-field-credfile');
         $this->disable_progress_bar = version_compare(CRED_FE_VERSION, '1.3.6.2', '<=');
         $this->disable_progress_bar = apply_filters('cred_file_upload_disable_progress_bar', $this->disable_progress_bar);
         if ($this->disable_progress_bar) {
@@ -89,7 +92,7 @@ class WPToolset_Field_Credfile extends WPToolset_Field_Textfield {
         //require_once WPTOOLSET_COMMON_PATH . "/utility/utils.php";
         //wp_localize_script('my_ajax_file_uploader_thing', 'settings', array('ajaxurl' => admin_url('admin-ajax.php'), 'nonce' => wp_create_nonce('uploader_nonce')));
         wp_localize_script('my_ajax_file_uploader', 'settings', array('media_settings' => self::get_image_sizes('thumbnail'),
-            'ajaxurl' => plugins_url("submit.php", __FILE__),
+            'ajaxurl' => apply_filters('cred_file_upload_submit_url', self::get_correct_submit_url()),
             'delete_confirm_text' => __('Are you sure to delete this file ?', 'wpv-views'),
             'delete_alert_text' => __('Generic Error in deleting file', 'wpv-views'),
             'delete_text' => __('delete', 'wpv-views'),
@@ -122,7 +125,7 @@ class WPToolset_Field_Credfile extends WPToolset_Field_Textfield {
             $title = $name;
         }
 
-        $id = str_replace(array("[", "]"), "", $name);
+        $id = $this->_data['id']; //str_replace(array("[", "]"), "", $name);
         $preview_span_input_showhide = '';
         $button_extra_classnames = '';
 
@@ -138,7 +141,7 @@ class WPToolset_Field_Credfile extends WPToolset_Field_Textfield {
         if (!$is_empty) {
             $pathinfo = pathinfo($value);
             // TODO we should check against the allowed mime types, not file extensions
-            if (($this->_data['type'] == 'credimage' || $this->_data['type'] == 'credfile') && 
+            if (($this->_data['type'] == 'credimage' || $this->_data['type'] == 'credfile') &&
                     isset($pathinfo['extension']) && in_array(strtolower($pathinfo['extension']), array('png', 'gif', 'jpg', 'jpeg', 'bmp', 'tif'))) {
                 $has_image = true;
             }
@@ -179,16 +182,16 @@ class WPToolset_Field_Credfile extends WPToolset_Field_Textfield {
         //Attachment id for _featured_image if exists
         //if it does not exists file_upload.js will handle it after file is uploaded
         if ($name == '_featured_image') {
-            global $post;            
-            $post_id = $post->ID; 
-            $post_thumbnail_id = get_post_thumbnail_id( $post_id );
+            global $post;
+            $post_id = $post->ID;
+            $post_thumbnail_id = get_post_thumbnail_id($post_id);
             if (!empty($post_thumbnail_id))
                 $form[] = array(
                     '#type' => 'markup',
-                    '#markup' => "<input id='attachid_" .$id. "' name='attachid_" .$id. "' type='hidden' value='" .$post_thumbnail_id. "'>"
-                ); 
+                    '#markup' => "<input id='attachid_" . $id . "' name='attachid_" . $id . "' type='hidden' value='" . $post_thumbnail_id . "'>"
+                );
         }
-        
+
         $form[] = array(
             '#type' => 'hidden',
             '#name' => $name,
@@ -214,24 +217,119 @@ class WPToolset_Field_Credfile extends WPToolset_Field_Textfield {
                 '#markup' => '<div id="progress_' . $id . '" class="meter" style="display:none;"><span class = "progress-bar" style="width:0;"></span></div>',
             );
         }
-        
+
         $delete_butt = '<input type="button" data-action="delete" class="js-wpt-credfile-delete wpt-credfile-delete' . $button_extra_classnames . '" value="' . __('delete', 'wpv-views') . '" style="width:100%;margin-top:2px;margin-bottom:2px;" />';
         if ($has_image) {
             //$delete_butt = "<input id='butt_{$id}' style='width:100%;margin-top:2px;margin-bottom:2px;' type='button' value='" . __('delete', 'wpv-views') . "' rel='{$preview_file}' class='delete_ajax_file'>";
 
             $form[] = array(
                 '#type' => 'markup',
-                '#markup' => '<span class="js-wpt-credfile-preview wpt-credfile-preview" '.$preview_span_input_showhide.'><img id="' . $id . '_image" src="' . $preview_file . '" title="' . $preview_file . '" alt="' . $preview_file . '" class="js-wpt-credfile-preview-item wpt-credfile-preview-item" style="max-width:150px"/>' . $delete_butt . '</span>',
+                '#markup' => '<span class="js-wpt-credfile-preview wpt-credfile-preview" ' . $preview_span_input_showhide . '><img id="' . $id . '_image" src="' . $preview_file . '" title="' . $preview_file . '" alt="' . $preview_file . '" class="js-wpt-credfile-preview-item wpt-credfile-preview-item" style="max-width:150px"/>' . $delete_butt . '</span>',
             );
         } else {
 
             //if ( !$is_empty )
             $form[] = array(
                 '#type' => 'markup',
-                '#markup' => '<span class="js-wpt-credfile-preview wpt-credfile-preview" '.$preview_span_input_showhide.'>' . $preview_file . $delete_butt . '</span>',
+                '#markup' => '<span class="js-wpt-credfile-preview wpt-credfile-preview" ' . $preview_span_input_showhide . '>' . $preview_file . $delete_butt . '</span>',
             );
         }
         return $form;
+    }
+
+}
+
+if (!function_exists('http_build_url')) {
+
+    /**
+     * compatible http_build_url
+     * @param mixed $url     
+     * @param mixed $parts   
+     * @return string
+     */
+    function http_build_url($url, $parts = array()) {
+        is_array($url) || $url = parse_url($url);
+        is_array($parts) || $parts = parse_url($parts);
+
+        isset($url['query']) && is_string($url['query']) || $url['query'] = null;
+        isset($parts['query']) && is_string($parts['query']) || $parts['query'] = null;
+
+        $keys = array('user', 'pass', 'port', 'path', 'query', 'fragment');
+
+        // Schema and host are alwasy replaced
+        foreach (array('scheme', 'host') as $part) {
+            if (isset($parts[$part])) {
+                $url[$part] = $parts[$part];
+            }
+        }
+
+        if (isset($parts['path'])) {
+            if (isset($url['path']) && substr($parts['path'], 0, 1) !== '/') {
+                // Workaround for trailing slashes
+                $url['path'] .= 'a';
+                $url['path'] = rtrim(
+                                str_replace(basename($url['path']), '', $url['path']), '/'
+                        ) . '/' . ltrim($parts['path'], '/');
+            } else {
+                $url['path'] = $parts['path'];
+            }
+        }
+
+        if (isset($parts['query'])) {
+            if (isset($url['query'])) {
+                parse_str($url['query'], $url_query);
+                parse_str($parts['query'], $parts_query);
+
+                $url['query'] = http_build_query(
+                        array_replace_recursive(
+                                $url_query, $parts_query
+                        )
+                );
+            } else {
+                $url['query'] = $parts['query'];
+            }
+        }
+
+        if (isset($url['path']) && $url['path'] !== '' && substr($url['path'], 0, 1) !== '/') {
+            $url['path'] = '/' . $url['path'];
+        }
+
+        $parsed_string = '';
+
+        if (!empty($url['scheme'])) {
+            $parsed_string .= $url['scheme'] . '://';
+        }
+
+        if (!empty($url['user'])) {
+            $parsed_string .= $url['user'];
+
+            if (isset($url['pass'])) {
+                $parsed_string .= ':' . $url['pass'];
+            }
+
+            $parsed_string .= '@';
+        }
+
+        if (!empty($url['host'])) {
+            $parsed_string .= $url['host'];
+        }
+
+        if (!empty($url['port'])) {
+            $parsed_string .= ':' . $url['port'];
+        }
+
+        if (!empty($url['path'])) {
+            $parsed_string .= $url['path'];
+        }
+
+        if (!empty($url['query'])) {
+            $parsed_string .= '?' . $url['query'];
+        }
+
+        if (!empty($url['fragment'])) {
+            $parsed_string .= '#' . $url['fragment'];
+        }
+        return $parsed_string;
     }
 
 }
