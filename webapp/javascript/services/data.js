@@ -650,6 +650,11 @@
                 lat: 45.4384,
                 lng: 10.9916
             },
+            {
+                title: 'Rimini, Italy',
+                lat: 44.0678,
+                lng: 12.5695
+            },
             //latvia
             {
                 title: 'Riga, Latvia',
