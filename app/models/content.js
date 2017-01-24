@@ -53,15 +53,19 @@ content.getMusicPostObjects = function(response){
                 const urlPrefix = '/music';
                 var data = JSON.parse(response);
                 data = _.map(data.posts, function(entry){
+                    const pageTitle = utilService.getValueByKey(entry,'title'),
+                        metaTitle = utilService.simpleNullCheck(entry.custom_fields,'wpcf-meta-title')?utilService.getFirstValueByKey(entry.custom_fields,'wpcf-meta-title'):utilService.metaTitlePrefix+pageTitle,
+                        excerpt = utilService.getFirstValueByKey(entry.custom_fields,'wpcf-music-excerpt'),
+                        metaDescription = utilService.simpleNullCheck(entry.custom_fields,'wpcf-meta-description')?utilService.getFirstValueByKey(entry.custom_fields,'wpcf-meta-description'):excerpt;
                     return {
                         id: utilService.getValueByKey(entry,'id'),
-                        title: utilService.getValueByKey(entry,'title'),
+                        title: pageTitle,
                         body: utilService.getValueByKey(entry,'content'),
                         url: urlPrefix+'/'+utilService.getValueByKey(entry,'slug'),
                         datePublished: moment(utilService.getValueByKey(entry,'date')).format('MMMM Do YYYY'),
-                        excerpt: utilService.getFirstValueByKey(entry.custom_fields,'wpcf-music-excerpt'),
-                        metaTitle: utilService.getFirstValueByKey(entry.custom_fields,'wpcf-meta-title'),
-                        metaDescription: utilService.getFirstValueByKey(entry.custom_fields,'wpcf-meta-description'),
+                        excerpt: excerpt,
+                        metaTitle: metaTitle,
+                        metaDescription: metaDescription,
                         metaDatePublished: utilService.getValueByKey(entry,'date'),//don't format
                         metaDateModified: utilService.getValueByKey(entry,'modified'),
                         metaImage: '',

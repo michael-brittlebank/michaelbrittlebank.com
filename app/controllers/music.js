@@ -27,7 +27,9 @@ music.getMusicPage = function(req, res, next) {
 music.getMusicPost = function(req, res, next) {
     contentService.getCachedMusicPostByUrl(req.originalUrl)
         .then(function(data) {
-            res.render('music/post',data);
+            res.render('music/post',{
+                page: data
+            });
         })
         .catch(function (error) {
             responseService.defaultCatch(error, next,'music post');

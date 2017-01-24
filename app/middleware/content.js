@@ -23,6 +23,11 @@ contentMiddleware.getHeaderMenu = function(req,res,next){
                     });
                 }
                 if(entry.url === req.originalUrl || childIsActive){
+                    //for submenu options which do not share a base url with the parent
+                    entry.class = 'active';
+                }
+                if(req.originalUrl.indexOf(entry.url) !== -1 && entry.url !== '/'){
+                    //for music posts which have a base url which matches the header element
                     entry.class = 'active';
                 }
             });
