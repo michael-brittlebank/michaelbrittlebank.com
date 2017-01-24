@@ -1,9 +1,13 @@
-<?php 
+<?php
+
+if ( !defined('ABSPATH') ) {
+    exit; // Exit if accessed directly
+}
 
 if (!class_exists('AIO_WP_Security')){
 
 class AIO_WP_Security{
-    var $version = '4.2.4';
+    var $version = '4.2.5';
     var $db_version = '1.8';
     var $plugin_url;
     var $plugin_path;
