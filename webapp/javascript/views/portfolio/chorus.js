@@ -1,11 +1,36 @@
 (function(){
 
     var that = app.views.portfolio.chorus,
-        $ = jQuery;
+        $ = jQuery,
+        animations = app.animations,
+        helpers = app.helpers,
+        activeClass = helpers.activeClass,
+        chorusTabs,
+        currentActiveTab;
+
+    function changeChorusTab(element){
+        var containerId = element.attr('data-id');
+        if(containerId && containerId.length > 0 && currentActiveTab !== containerId){
+            chorusTabs.removeClass(activeClass);
+            element.addClass(activeClass);
+            animations.fadeOut($('#'+currentActiveTab))
+                .then(function(element){
+                    $(element).css({display: 'none'});
+                    currentActiveTab = containerId;
+                    var newActiveTab = $('#'+currentActiveTab);
+                    newActiveTab.css({display: 'block'});
+                    animations.fadeIn(newActiveTab);
+                });
+        }
+    }
 
     //functions
     this.init = function(){
         if($('#portfolio-chorus').length > 0){
+
+            //variables
+            chorusTabs = $('.chorus-tab');
+            currentActiveTab = $('.chorus-tab.active').attr('data-id');
 
             //functions
             prettyPrint();
@@ -38,6 +63,10 @@
                         }
                     });
                 },100);
+            });
+
+            chorusTabs.on('click',function(){
+                changeChorusTab($(this));
             });
         }
     };

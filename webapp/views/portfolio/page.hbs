@@ -27,39 +27,39 @@
             </div>
         {{/each}}
     </section>
-    {{#each portfolioGroups}}
-        {{#each items}}
-            <aside class="modal--fade" id="modal-{{slug}}" data-stackable="false" tabindex="-1" role="dialog" aria-labelledby="label-fade" aria-hidden="true">
-                <div class="modal-inner">
-                    <div class="modal-content">
-                        <h3 class="modal-title">{{title}}</h3>
-                        {{{body}}}
-                        {{#if techStack}}
-                            <p class="portfolio-tech-stack">
-                                <span class="title">Tech Stack:</span> {{techStack}}
-                            </p>
+</main>
+{{#each portfolioGroups}}
+    {{#each items}}
+        <aside class="modal--fade" id="modal-{{slug}}" data-stackable="false" tabindex="-1" role="dialog" aria-labelledby="label-fade" aria-hidden="true">
+            <div class="modal-inner">
+                <div class="modal-content">
+                    <h3 class="modal-title">{{title}}</h3>
+                    {{{body}}}
+                    {{#if techStack}}
+                        <p class="portfolio-tech-stack">
+                            <span class="title">Tech Stack:</span> {{techStack}}
+                        </p>
+                    {{/if}}
+                    <div class="row">
+                        {{#if url}}
+                            <div class="col-sm-6">
+                                <a href="{{url}}" class="button portfolio-button-project">
+                                    <span>View Project</span>
+                                </a>
+                            </div>
                         {{/if}}
-                        <div class="row">
-                            {{#if url}}
-                                <div class="col-sm-6">
-                                    <a href="{{url}}" class="button portfolio-button-project">
-                                        <span>View Project</span>
-                                    </a>
-                                </div>
-                            {{/if}}
-                            {{#if repositoryUrl}}
-                                <div class="col-sm-6">
-                                    <a href="{{repositoryUrl}}" target="_blank" class="button portfolio-button-code">
-                                        <span>View Code</span>
-                                    </a>
-                                </div>
-                            {{/if}}
-                        </div>
+                        {{#if repositoryUrl}}
+                            <div class="col-sm-6">
+                                <a href="{{repositoryUrl}}" target="_blank" class="button portfolio-button-code">
+                                    <span>View Code</span>
+                                </a>
+                            </div>
+                        {{/if}}
                     </div>
                 </div>
-                <a href="#!" class="modal-close" title="Close this modal"
-                   data-dismiss="modal" data-close="Close">&times;</a>
-            </aside>
-        {{/each}}
+            </div>
+            <a href="#!" class="modal-close" title="Close this modal"
+               data-dismiss="modal" data-close="Close">&times;</a>
+        </aside>
     {{/each}}
-</main>
+{{/each}}

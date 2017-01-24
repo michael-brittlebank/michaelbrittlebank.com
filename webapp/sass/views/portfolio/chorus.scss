@@ -1,57 +1,38 @@
 //core
 //----------------------
-//.page.chorus {
-//  @include faded-out;
-//  .tabs {
-//    margin-top: 50px;
-//    border-top:none;
-//    border-left:none;
-//    border-right:none;
-//    li {
-//      &:not(.tabs-title){
-//        @extend .tabs-title;
-//        a:focus {
-//          outline: none;
-//        }
-//      }
-//    }
-//    .float-right {
-//      @include mobile {
-//        float: left!important;
-//      }
-//    }
-//  }
-//  .tabs-content {
-//    border:none;
-//    margin-bottom:50px;
-//    .tabs-panel {
-//      &.is-active {
-//        //@include animation-name(fadeIn);
-//        //@include animation-duration(1s);
-//      }
-//    }
-//  }
-//  .accordion-title{
-//    color:$color-font-black;
-//    font-size: rem-calc(20);
-//    &:focus {
-//      background-color: transparent;
-//      outline: none;
-//    }
-//  }
-//  .tabs-title>a {
-//    color: $color-font-black;
-//    font-size: rem-calc(24);
-//  }
-//  .reveal {
-//    .chorus-note {
-//      margin: 15px auto;
-//    }
-//    .callout {
-//      padding: 0 5px;
-//    }
-//    .fa {
-//      margin-right: 5px;
-//    }
-//  }
-//}
+#chorus-main-container {
+  height: 575px;
+  position: relative;
+}
+
+.chorus-instrument-container {
+  opacity: 0;
+  display: none;
+  @include center-absolute;
+  &:first-child {
+    opacity: 1;
+    display: block;
+  }
+}
+
+.chorus-tab {
+  padding: 1.25rem 1.5rem;
+  display: inline-block;
+  text-transform: uppercase;
+  @include transition-raw("background 300ms ease-out 0s,color 300ms ease-out 0s");
+  &.active {
+    background: $color-tab-background;
+    color: $color-font-black;
+  }
+}
+
+//bug fixes
+.chorus-result-item-selected, .chorus-result-item:hover {
+  span {
+    color: white;
+  }
+}
+
+.chorus-string-container {
+  margin: 0 0 10px 0;
+}
