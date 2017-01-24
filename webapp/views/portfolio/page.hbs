@@ -42,12 +42,16 @@
                         <div class="row">
                             {{#if url}}
                                 <div class="col-sm-6">
-                                    <a href="{{url}}"><i class="fa fa-folder-open-o"></i>View Project</a>
+                                    <a href="{{url}}" class="button portfolio-button-project">
+                                        <span>View Project</span>
+                                    </a>
                                 </div>
                             {{/if}}
                             {{#if repositoryUrl}}
                                 <div class="col-sm-6">
-                                    <a href="{{repositoryUrl}}" target="_blank"><i class="fa fa-code"></i>View Code</a>
+                                    <a href="{{repositoryUrl}}" target="_blank" class="button portfolio-button-code">
+                                        <span>View Code</span>
+                                    </a>
                                 </div>
                             {{/if}}
                         </div>

@@ -194,3 +194,15 @@
     font-weight: bold;
   }
 }
+
+.portfolio-button-code {
+  span:after {
+    content: '\f121';
+  }
+}
+
+.portfolio-button-project {
+  span:after {
+    content: '\f115';
+  }
+}
