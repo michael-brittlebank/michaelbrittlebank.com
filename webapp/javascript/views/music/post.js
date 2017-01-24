@@ -14,6 +14,7 @@
                 slidesToScroll: 1,
                 centerMode: true,
                 fade: true,
+                adaptiveHeight: true,
                 cssEase: 'linear',
                 speed: 500,
                 dots: true
