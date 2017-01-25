@@ -22,6 +22,7 @@ webapp/public/
 .env
 
 #wordpress
+wordpress/wp-config.php
 wordpress/wp-content/aiowps_backups/
 wordpress/wp-content/uploads/
 wordpress/wp-content/upgrade/
