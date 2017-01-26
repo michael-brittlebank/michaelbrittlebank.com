@@ -7,8 +7,6 @@ const //packages
 
 var content = {};
 
-//todo, missing seo fields
-
 content.getPortfolioItemObjects = function(response){
     return promise.resolve()
         .then(function(){

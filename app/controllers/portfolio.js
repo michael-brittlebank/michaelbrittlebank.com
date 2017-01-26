@@ -50,7 +50,6 @@ portfolio.getPortfolioItem = function(req, res, next) {
                     });
                     break;
                 case '/portfolio/bubbles':
-                    //todo, move bubbles partial to frontend handlebars
                     res.render('portfolio/bubbles',{
                         page: data
                     });

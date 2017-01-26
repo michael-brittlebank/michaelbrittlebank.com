@@ -134,5 +134,4 @@ app.use(function (error, req, res, next) {
 app.listen(port, function() {
     logService.info('Node server started on port '+port+' at '+moment().format()+'\n'+
         'Using API server: '+process.env.API_URL);
-    //todo, connected to mysql db?
 });
