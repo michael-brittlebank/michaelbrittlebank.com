@@ -1,5 +1,5 @@
-<main id="page-portfolio" class="page-container">
-    <section class="grid-container row">
+<main id="page-portfolio" class="page-container grid-container row">
+    <section class="col-sm-12">
         <h1 class="page-title">Portfolio</h1>
         <div id="portfolio-quote-container" class="col-sm-12">
             {{#each quotes}}
@@ -10,11 +10,9 @@
             {{/each}}
         </div>
     </section>
-    <section>
+    <section class="col-sm-12">
         {{#each portfolioGroups}}
-            <div class="grid-container row">
-                <h2 class="portfolio-carousel-header">{{title}}</h2>
-            </div>
+            <h2 class="portfolio-carousel-header">{{title}}</h2>
             <div class="portfolio-carousel">
                 {{#each items}}
                     <a href="#modal-{{slug}}">
