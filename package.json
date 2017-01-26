@@ -4,8 +4,8 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "start": "sudo start foreman",
-    "stop": "sudo stop foreman",
+    "start": "foreman start -f Procfile",
+    "stop": "foreman stop -f Procfile",
     "dev": "foreman start -f Procfile_dev",
     "export": "sudo nf export -o /etc/init"
   },
