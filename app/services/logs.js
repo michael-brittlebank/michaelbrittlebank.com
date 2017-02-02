@@ -1,18 +1,35 @@
 const //packages
-    utilService = require('./util');
+    winston = require('winston'),
+    moment = require('moment');
 
-var logService = {};
+winston.emitErrs = true;
 
-logService.error = function(error){
-    if(utilService.isLocalConfig()){
-        console.log('----------- ERROR -----------\n',error,'\n\n');
-    }
-};
-
-logService.info = function(info){
-    if(utilService.isLocalConfig()){
-        console.log('----------- INFO -----------\n',info,'\n');
-    }
-};
+const logService = new winston.Logger({
+    transports: [
+        new winston.transports.Console({
+            timestamp: function() {
+                return (moment().format('DD MMM HH:mm:ss'));
+            },
+            name: 'console-error',
+            level: 'error',
+            handleExceptions: true,
+            humanReadableUnhandledException: true,
+            json: false,
+            colorize: true
+        }),
+        new winston.transports.Console({
+            timestamp: function() {
+                return (moment().format('DD MMM HH:mm:ss'));
+            },
+            name: 'console-info',
+            level: 'info',
+            handleExceptions: true,
+            humanReadableUnhandledException: true,
+            json: false,
+            colorize: true
+        })
+    ],
+    exitOnError: true
+});
 
 module.exports = logService;
