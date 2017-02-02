@@ -43,7 +43,7 @@ grunt build
 
 Nodemon is used in Procfile_dev so that any changes to the Node.js code are automatically applied and the app is restarted
 ```
-foreman start -f Procfile_dev
+npm run dev
 ```
 The site is served at [http://localhost:3000](http://localhost:3000)
 
