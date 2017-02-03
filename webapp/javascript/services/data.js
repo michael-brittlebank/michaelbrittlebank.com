@@ -667,6 +667,12 @@
                 lat: 47.1660,
                 lng: 9.5554
             },
+            //lithuania
+            {
+                title: 'Vilnius, Lithuania',
+                lat: 54.6872,
+                lng: 25.2797
+            },
             //luxembourg
             {
                 title: 'Luxembourg City, Luxembourg',
@@ -716,6 +722,11 @@
                 title: 'Preikestolen, Norway',
                 lat: 58.9861,
                 lng: 6.1886
+            },
+            {
+                title: 'Oslo, Norway',
+                lat: 59.9139,
+                lng: 10.7522
             },
             //poland
             {
