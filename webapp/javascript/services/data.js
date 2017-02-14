@@ -574,6 +574,11 @@
                 lat: 53.3842,
                 lng: -6.3760
             },
+            {
+                title: 'Howth, Ireland',
+                lat: 53.3786,
+                lng: -6.0570
+            },
             //italy
             {
                 title: 'Domodossola, Italy',
@@ -805,9 +810,49 @@
                 lng: -5.7288
             },
             {
-                title: 'Fort William, Scotland',
-                lat: 56.8198,
-                lng: -5.1052
+                title: 'Glencoe, Scotland',
+                lat: 56.6826,
+                lng: -5.1023
+            },
+            {
+                title: 'Duntulm, Scotland',
+                lat: 57.6824,
+                lng: -6.3396
+            },
+            {
+                title: 'Quiraing, Scotland',
+                lat: 57.6436,
+                lng: -6.2653
+            },
+            {
+                title: 'Old Man of Storr, Scotland',
+                lat: 57.5071,
+                lng: -6.1831
+            },
+            {
+                title: 'Elgol, Scotland',
+                lat: 57.1493,
+                lng: -6.0989
+            },
+            {
+                title: 'Neist Point Lighthouse, Scotland',
+                lat: 57.4235,
+                lng: -6.7883
+            },
+            {
+                title: 'Claigan, Scotland',
+                lat: 57.4914,
+                lng: -6.6201
+            },
+            {
+                title: 'Ben A\'an, Scotland',
+                lat: 56.2431,
+                lng: -4.4202
+            },
+            {
+                title: 'Ben Nevis, Scotland',
+                lat: 56.7969,
+                lng: -5.0036
             },
             //serbia
             {
@@ -993,6 +1038,38 @@
             /**
              * north america
              */
+            //canada
+            {
+                title: 'Toronto, Ontario, Canada',
+                lat: 43.7000,
+                lng: -79.4000
+            },
+            {
+                title: 'Niagara Falls, Ontario, Canada',
+                lat: 43.1167,
+                lng: -79.0667
+            },
+            {
+                title: 'Algonquin Provincial Park, Ontario, Canada',
+                lat: 45.8372,
+                lng: -78.3791
+            },
+            {
+                title: 'Montreal, Quebec, Canada',
+                lat: 45.5017,
+                lng: -73.5673
+            },
+            //mexico
+            {
+                title: 'Costa Maya, Mexico',
+                lat: 18.7140,
+                lng: -87.7090
+            },
+            {
+                title: 'Cozumel, Mexico',
+                lat: 20.4167,
+                lng: -86.9167
+            },
             //usa
             {
                 title: 'Isle Royale National Park, Michigan, USA',
@@ -1239,81 +1316,64 @@
                 lat: 27.9506,
                 lng: -82.4572
             },
-            //canada
             {
-                title: 'Toronto, Ontario, Canada',
-                lat: 43.7000,
-                lng: -79.4000
+                title: 'Milton, Wisconsin, USA',
+                lat: 43.6275,
+                lng: -89.7710
             },
             {
-                title: 'Niagara Falls, Ontario, Canada',
-                lat: 43.1167,
-                lng: -79.0667
+                title: 'Wisconsin Dells, Wisconsin, USA',
+                lat: 42.7756,
+                lng: -88.9440
             },
             {
-                title: 'Algonquin Provincial Park, Ontario, Canada',
-                lat: 45.8372,
-                lng: -78.3791
-            },
-            {
-                title: 'Montreal, Quebec, Canada',
-                lat: 45.5017,
-                lng: -73.5673
-            },
-            //mexico
-            {
-                title: 'Costa Maya, Mexico',
-                lat: 18.7140,
-                lng: -87.7090
-            },
-            {
-                title: 'Cozumel, Mexico',
-                lat: 20.4167,
-                lng: -86.9167
-            },
+                title: 'Iola, Wisconsin, USA',
+                lat: 44.5080,
+                lng: -89.1307
+            }//,
             /**
              * south america
              */
             //argentina
-            {
-                title: 'Buenos Aires, Argentina',
-                lat: -34.6037,
-                lng: -58.3816
-            },
-            //brazil
-            {
-                title: 'Rio De Janeiro, Brazil',
-                lat: -22.9068,
-                lng: -43.1729
-            },
-            //chile
-            {
-                title: 'Santiago, Chile',
-                lat: -33.4489,
-                lng: -70.6693
-            },
-            //peru
-            {
-                title: 'Lima, Peru',
-                lat: -12.0464,
-                lng: -77.0428
-            },
-            {
-                title: 'Machu Picchu, Peru',
-                lat: -13.1631,
-                lng: -72.5450
-            },
-            {
-                title: 'Cusco, Peru',
-                lat: -13.5320,
-                lng: -71.9675
-            },
-            //uruguay
-            {
-                title: 'Montevideo, Uruguay',
-                lat: -34.9011,
-                lng: -56.1645
-            }
+            // {
+            //     title: 'Buenos Aires, Argentina',
+            //     lat: -34.6037,
+            //     lng: -58.3816
+            // },
+            // //brazil
+            // {
+            //     title: 'Rio De Janeiro, Brazil',
+            //     lat: -22.9068,
+            //     lng: -43.1729
+            // },
+            // //chile
+            // {
+            //     title: 'Santiago, Chile',
+            //     lat: -33.4489,
+            //     lng: -70.6693
+            // },
+            // //peru
+            // {
+            //     title: 'Lima, Peru',
+            //     lat: -12.0464,
+            //     lng: -77.0428
+            // },
+            // {
+            //     title: 'Machu Picchu, Peru',
+            //     lat: -13.1631,
+            //     lng: -72.5450
+            // },
+            // {
+            //     title: 'Cusco, Peru',
+            //     lat: -13.5320,
+            //     lng: -71.9675
+            // },
+            // //uruguay
+            // {
+            //     title: 'Montevideo, Uruguay',
+            //     lat: -34.9011,
+            //     lng: -56.1645
+            // }
         ];
     };
 
