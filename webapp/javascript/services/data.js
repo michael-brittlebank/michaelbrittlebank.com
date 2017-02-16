@@ -1317,12 +1317,12 @@
                 lng: -82.4572
             },
             {
-                title: 'Milton, Wisconsin, USA',
+                title: 'Wisconsin Dells, Wisconsin, USA',
                 lat: 43.6275,
                 lng: -89.7710
             },
             {
-                title: 'Wisconsin Dells, Wisconsin, USA',
+                title: 'Milton, Wisconsin, USA',
                 lat: 42.7756,
                 lng: -88.9440
             },
@@ -1330,6 +1330,36 @@
                 title: 'Iola, Wisconsin, USA',
                 lat: 44.5080,
                 lng: -89.1307
+            },
+            {
+                title: 'Asheville, North Carolina, USA',
+                lat: 35.5951,
+                lng: -82.5515
+            },
+            {
+                title: 'Racine, Wisconsin, USA',
+                lat: 42.7261,
+                lng: -87.7829
+            },
+            {
+                title: 'Oconomowoc, Wisconsin, USA',
+                lat: 43.1117,
+                lng: -88.4993
+            },
+            {
+                title: 'Pewaukee, Wisconsin, USA',
+                lat: 43.0542,
+                lng: -88.2169
+            },
+            {
+                title: 'Mazomanie, Wisconsin, USA',
+                lat: 43.1767,
+                lng: -89.7948
+            },
+            {
+                title: 'Oregon, Wisconsin, USA',
+                lat: 42.9261,
+                lng: -89.3846
             }//,
             /**
              * south america
