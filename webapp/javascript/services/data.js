@@ -579,6 +579,11 @@
                 lat: 53.3786,
                 lng: -6.0570
             },
+            {
+                title: 'Malahide, Ireland',
+                lat: 53.4509,
+                lng: -6.1501
+            },
             //italy
             {
                 title: 'Domodossola, Italy',
@@ -703,12 +708,12 @@
                 lng: -7.1882
             },
             {
-                title: 'Giant\'s Causeway, Ireland',
+                title: 'Giant\'s Causeway, Northern Ireland',
                 lat: 55.2408,
                 lng: -6.5117
             },
             {
-                title: 'Carrick-a-Rede Rope Bridge, Ireland',
+                title: 'Carrick-a-Rede Rope Bridge, Northern Ireland',
                 lat: 55.2400,
                 lng: -6.3310
             },
