@@ -584,6 +584,26 @@
                 lat: 53.4509,
                 lng: -6.1501
             },
+            {
+                title: 'Glencar Lough, Ireland',
+                lat: 54.3388,
+                lng: -8.3858
+            },
+            {
+                title: 'Mullaghmore, Ireland',
+                lat: 54.4655,
+                lng: -8.4495
+            },
+            {
+                title: 'Rosses Point, Ireland',
+                lat: 54.3048,
+                lng: -8.5640
+            },
+            {
+                title: 'Blarney, Ireland',
+                lat: 51.9338,
+                lng: -8.5612
+            },
             //italy
             {
                 title: 'Domodossola, Italy',
