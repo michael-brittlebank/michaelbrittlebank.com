@@ -1390,6 +1390,21 @@
                 title: 'Oregon, Wisconsin, USA',
                 lat: 42.9261,
                 lng: -89.3846
+            },
+            {
+                title: 'Kansasville, Wisconsin, USA',
+                lat: 42.6825,
+                lng: -88.1104
+            },
+            {
+                title: 'Pardeeville, Wisconsin, USA',
+                lat: 43.5378,
+                lng: -89.3001
+            },
+            {
+                title: 'Wonewoc, Wisconsin, USA',
+                lat: 43.6528,
+                lng: -90.2235
             }//,
             /**
              * south america
