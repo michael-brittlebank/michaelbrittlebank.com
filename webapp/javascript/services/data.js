@@ -604,6 +604,11 @@
                 lat: 51.9338,
                 lng: -8.5612
             },
+            {
+                title: 'Powerscourt Demesne, Ireland',
+                lat: 53.1867,
+                lng: -6.1962
+            },
             //italy
             {
                 title: 'Domodossola, Italy',
