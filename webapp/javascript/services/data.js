@@ -1405,6 +1405,11 @@
                 title: 'Wonewoc, Wisconsin, USA',
                 lat: 43.6528,
                 lng: -90.2235
+            },
+            {
+                title: 'Wausau, Wisconsin, USA',
+                lat: 44.9591,
+                lng: -89.6301
             }//,
             /**
              * south america
