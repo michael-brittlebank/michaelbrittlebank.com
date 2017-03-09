@@ -171,9 +171,7 @@ module.exports = function(grunt){
                 options: {
                     style: 'compressed',
                     trace: true,
-                    loadPath: [
-                        'webapp/bower_components/susy/sass'
-                    ]
+                    loadPath: []
                 }
             }
         },

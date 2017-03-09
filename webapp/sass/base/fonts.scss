@@ -1,6 +1,6 @@
 //font declarations
 //-----------------------------
-$sanserifDefault: ', \'HelveticaNeue\', Helvetica Neue, Helvetica, Tahoma, Geneva, Arial, sans-serif';
+$sansSerifDefault: ', \'HelveticaNeue\', Helvetica Neue, Helvetica, Tahoma, Geneva, Arial, sans-serif';
 
 @font-face {
   font-family: 'Raleway';
@@ -8,7 +8,7 @@ $sanserifDefault: ', \'HelveticaNeue\', Helvetica Neue, Helvetica, Tahoma, Genev
   font-weight: normal;
   font-style: normal
 }
-$global-font-raleway: unquote('Raleway'+$sanserifDefault);
+$global-font-raleway: unquote('Raleway'+$sansSerifDefault);
 
 @font-face {
   font-family: 'RalewayThin';
@@ -16,7 +16,7 @@ $global-font-raleway: unquote('Raleway'+$sanserifDefault);
   font-weight: normal;
   font-style: normal;
 }
-$global-font-raleway-thin: unquote('RalewayThin'+$sanserifDefault);
+$global-font-raleway-thin: unquote('RalewayThin'+$sansSerifDefault);
 
 @font-face {
   font-family: 'Proza Libre';
@@ -24,7 +24,7 @@ $global-font-raleway-thin: unquote('RalewayThin'+$sanserifDefault);
   font-weight: normal;
   font-style: normal
 }
-$global-font-proza-libre: unquote('Proza Libre'+$sanserifDefault);
+$global-font-proza-libre: unquote('Proza Libre'+$sansSerifDefault);
 
 $global-font-font-awesome: 'FontAwesome';
 
