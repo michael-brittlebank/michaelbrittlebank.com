@@ -3,16 +3,12 @@
 body {
   //header placeholder
   padding-top: 65px;
-}
-
-p,a,blockquote,span,div,input,textarea {
   font-family: $global-font-proza-libre;
   color: $color-font-black;
 }
 
 h1,h2,h3,h4,h5 {
   font-family: $global-font-raleway;
-  color: $color-font-black;
 }
 
 img, input {
@@ -28,6 +24,7 @@ hr {
 }
 
 a {
+  color: $color-font-black;
   cursor: pointer;
   text-decoration: none;
   @include transition-with-defaults(color);
