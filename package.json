@@ -6,7 +6,10 @@
   "scripts": {
     "start": "foreman start -f Procfile",
     "stop": "foreman stop -f Procfile",
-    "dev": "foreman start -f Procfile_dev",
+    "start_dev": "foreman start -f Procfile_dev",
+    "dev": "npm-run-all -p start_dev assets_dev",
+    "assets":"grunt build",
+    "assets_dev":"grunt dev",
     "export": "sudo nf export -o /etc/init"
   },
   "repository": {
@@ -54,6 +57,7 @@
     "lodash": "4.17.2",
     "moment": "2.17.0",
     "nodemon": "1.11.0",
+    "npm-run-all": "4.0.2",
     "redis": "2.6.3",
     "request": "2.78.0",
     "request-promise": "4.1.1",
