@@ -555,9 +555,9 @@
                 lng: -9.504
             },
             {
-                title: 'Dingle, Ireland',
-                lat: 52.1409,
-                lng: -10.2640
+                title: 'Ring of Kerry, Ireland',
+                lat: 51.8295,
+                lng: -10.1745
             },
             {
                 title: 'Limerick, Ireland',
@@ -845,11 +845,6 @@
                 lng: -5.1023
             },
             {
-                title: 'Duntulm, Scotland',
-                lat: 57.6824,
-                lng: -6.3396
-            },
-            {
                 title: 'Quiraing, Scotland',
                 lat: 57.6436,
                 lng: -6.2653
@@ -860,19 +855,14 @@
                 lng: -6.1831
             },
             {
-                title: 'Elgol, Scotland',
-                lat: 57.1493,
-                lng: -6.0989
+                title: 'Kylerhea, Scotland',
+                lat: 57.2239,
+                lng: -5.6715
             },
             {
-                title: 'Neist Point Lighthouse, Scotland',
-                lat: 57.4235,
-                lng: -6.7883
-            },
-            {
-                title: 'Claigan, Scotland',
-                lat: 57.4914,
-                lng: -6.6201
+                title: 'Dunvegan, Scotland',
+                lat: 57.4366,
+                lng: -6.5814
             },
             {
                 title: 'Ben A\'an, Scotland',
