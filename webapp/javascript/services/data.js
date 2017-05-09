@@ -560,7 +560,7 @@
                 lng: -8.4863
             },
             {
-                title: 'Killarney National Park, Ireland',
+                title: 'Killarney, Ireland',
                 lat: 52.0599,
                 lng: -9.504
             },
