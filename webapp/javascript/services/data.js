@@ -137,9 +137,19 @@
                 lng: 106.8227
             },
             {
-                title: 'Bandung, Indonesia',
-                lat: -6.9175,
-                lng: 107.6191
+                title: 'Yogyakarta, Indonesia',
+                lat: -7.7956,
+                lng: 110.3695
+            },
+            {
+                title: 'Prambanan, Indonesia',
+                lat: -7.7520,
+                lng: 110.4915
+            },
+            {
+                title: 'Borobudur, Indonesia',
+                lat: -7.6079,
+                lng: 110.2038
             },
             //japan
             {
