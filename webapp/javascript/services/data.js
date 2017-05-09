@@ -204,6 +204,11 @@
                 lat: -43.5321,
                 lng: 172.6362
             },
+            {
+                title: 'Picton, New Zealand',
+                lat: -41.2906,
+                lng: 174.0010
+            },
             //phillipines
             {
                 title: 'Manila, Phillipines',
