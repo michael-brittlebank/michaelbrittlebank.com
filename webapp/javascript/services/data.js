@@ -130,6 +130,11 @@
                 lat: 13.0827,
                 lng: 80.2707
             },
+            {
+                title: 'Thai Desert, India',
+                lat: 27.4695,
+                lng: 70.6217
+            },
             //indonesia
             {
                 title: 'Jakarta, Indonesia',
@@ -194,31 +199,41 @@
                 lat: -41.2865,
                 lng: 174.7762
             },
-            {
-                title: 'Dunedin, New Zealand',
-                lat: -45.8788,
-                lng: 170.5028
-            },
-            {
-                title: 'Christchurch, New Zealand',
-                lat: -43.5321,
-                lng: 172.6362
-            },
+            // {
+            //     title: 'Dunedin, New Zealand',
+            //     lat: -45.8788,
+            //     lng: 170.5028
+            // },
+            // {
+            //     title: 'Christchurch, New Zealand',
+            //     lat: -43.5321,
+            //     lng: 172.6362
+            // },
             {
                 title: 'Picton, New Zealand',
                 lat: -41.2906,
                 lng: 174.0010
             },
-            //phillipines
+            //philippines
             {
-                title: 'Manila, Phillipines',
+                title: 'Manila, Philippines',
                 lat: 14.5995,
                 lng: 120.9842
             },
             {
-                title: 'Banaue, Phillipines',
+                title: 'Banaue, Philippines',
                 lat: 16.9496,
                 lng: 121.1023
+            },
+            {
+                title: 'Batad Rice Terraces, Philippines',
+                lat: 16.9348,
+                lng: 121.1352
+            },
+            {
+                title: 'Hapao Rice Terraces, Philippines',
+                lat: 16.8614,
+                lng: 120.9704
             },
             //singapore
             {
@@ -283,6 +298,16 @@
                 title: 'Ko Samui, Thailand',
                 lat: 9.5120,
                 lng: 100.0136
+            },
+            {
+                title: 'Mae Sai, Thailand',
+                lat: 20.4314,
+                lng: 99.8850
+            },
+            {
+                title: 'Krabi, Thailand',
+                lat: 8.0863,
+                lng: 98.9063
             },
             //vietnam
             {
@@ -350,6 +375,16 @@
                 title: 'Veliko Tarnovo, Bulgaria',
                 lat: 43.0757,
                 lng: 25.6172
+            },
+            {
+                title: 'Buzludzha, Bulgaria',
+                lat: 42.7333,
+                lng: 25.4000
+            },
+            {
+                title: 'Etar, Bulgaria',
+                lat: 42.8035,
+                lng: 25.3492
             },
             //croatia
             {
@@ -623,6 +658,11 @@
                 title: 'Powerscourt Demesne, Ireland',
                 lat: 53.1867,
                 lng: -6.1962
+            },
+            {
+                title: 'Tonelagee, Ireland',
+                lat: 53.0531,
+                lng: -6.3817
             },
             //italy
             {
@@ -975,6 +1015,16 @@
                 lat: 46.9480,
                 lng: 7.4474
             },
+            {
+                title: 'Neuchatel, Switzerland',
+                lat: 46.9900,
+                lng: 6.9293
+            },
+            {
+                title: 'Basel, Switzerland',
+                lat: 47.5596,
+                lng: 7.5886
+            },
             //ukraine
             {
                 title: 'Kiev, Ukraine',
@@ -1016,6 +1066,16 @@
                 lat: 34.9003,
                 lng: 33.6232
             },
+            {
+                title: 'Koilani, Cyprus',
+                lat: 34.8438,
+                lng: 32.8606
+            },
+            {
+                title: 'Omodos, Cyprus',
+                lat: 34.8493,
+                lng: 32.8099
+            },
             //egypt
             {
                 title: 'Cairo, Egypt',
@@ -1031,6 +1091,11 @@
                 title: 'Alexandria, Egypt',
                 lat: 31.2001,
                 lng: 29.9187
+            },
+            {
+                title: 'Dahshur, Egypt',
+                lat: 29.7932,
+                lng: 31.2463
             },
             //israel
             {
@@ -1052,6 +1117,22 @@
                 title: 'Ein Bokek, Israel',
                 lat: 31.2002,
                 lng: 35.3625
+            },
+            {
+                title: 'Ein Gedi, Israel',
+                lat: 31.4664,
+                lng: 35.3880
+            },
+            //palestine
+            {
+                title: 'Bethlehem, Palestine',
+                lat: 31.7057,
+                lng: 35.2006
+            },
+            {
+                title: 'Jericho, Palestine',
+                lat: 31.8711,
+                lng: 35.4441
             },
             //turkey
             {
