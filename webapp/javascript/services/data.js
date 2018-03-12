@@ -664,6 +664,16 @@
                 lat: 53.0531,
                 lng: -6.3817
             },
+            {
+                title: 'Bray, Ireland',
+                lat: 53.2009,
+                lng: -6.1111
+            },
+            {
+                title: 'Greystones, Ireland',
+                lat: 53.1491,
+                lng: -6.0793
+            },
             //italy
             {
                 title: 'Domodossola, Italy',
