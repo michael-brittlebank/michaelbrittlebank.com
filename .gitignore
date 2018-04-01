@@ -1,29 +1,25 @@
-# Runtime data
-pids
-*.pid
-*.seed
-npm-debug.log
-
-#build caches
-.sass-cache/
-.grunt/
-
-#dependencies
+# dependencies
 node_modules/
-webapp/bower_components/
 
-#ide
-.idea/
-*.DS_Store
+# testing
+coverage/
 
-#compiled Files
-webapp/public/
+# production
+build/
 
-#config
-.env
+# misc
+.DS_Store
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
 
 #wordpress
-wordpress/wp-config.php
-wordpress/wp-content/aiowps_backups/
-wordpress/wp-content/uploads/
-wordpress/wp-content/upgrade/
+old/wordpress/wp-config.php
+old/wordpress/wp-content/aiowps_backups/
+old/wordpress/wp-content/uploads/
+old/wordpress/wp-content/upgrade/

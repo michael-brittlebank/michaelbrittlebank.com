@@ -1,0 +1,29 @@
+# Runtime data
+pids
+*.pid
+*.seed
+npm-debug.log
+
+#build caches
+../.sass-cache/
+.grunt/
+
+#dependencies
+../mike-stumpf/node_modules/postcss-flexbugs-fixes/node_modules/
+webapp/bower_components/
+
+#ide
+.idea/
+*.DS_Store
+
+#compiled Files
+webapp/public/
+
+#config
+.env
+
+#wordpress
+wordpress/wp-config.php
+wordpress/wp-content/aiowps_backups/
+wordpress/wp-content/uploads/
+wordpress/wp-content/upgrade/

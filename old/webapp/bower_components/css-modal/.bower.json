@@ -1,0 +1,29 @@
+{
+  "name": "css-modal",
+  "main": [
+    "*.scss",
+    "modal.js"
+  ],
+  "author": "Hans Christian Reinl",
+  "ignore": [
+    ".misc",
+    "Gruntfile.js",
+    "node_modules",
+    "package.json",
+    "test/modal.css",
+    ".gitignore",
+    ".travis.yml",
+    "CONTRIBUTE.md"
+  ],
+  "homepage": "https://github.com/drublic/css-modal",
+  "version": "1.5.0",
+  "_release": "1.5.0",
+  "_resolution": {
+    "type": "version",
+    "tag": "v1.5.0",
+    "commit": "20ffd8cb063f1a38b561bd9fbb08ec78614fc5ef"
+  },
+  "_source": "https://github.com/drublic/css-modal.git",
+  "_target": "1.5.0",
+  "_originalSource": "css-modal"
+}
