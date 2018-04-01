@@ -1,14 +1,20 @@
 {
   "name": "Mikestumpf",
-  "version": "3.0.1",
+  "version": "3.0.2",
   "description": "Personal website",
   "private": true,
   "scripts": {
-    "start": "react-scripts-ts start",
-    "build": "react-scripts-ts build",
+    "start-js": "react-scripts-ts start",
+    "start": "npm-run-all -p watch-css start-js",
+    "build-js": "react-scripts-ts build",
+    "build": "npm-run-all build-css build-js",
+    "build-css": "node-sass-chokidar src/ -o src/",
+    "watch-css": "npm run build-css && node-sass-chokidar src/ -o src/ --watch --recursive",
     "test": "react-scripts-ts test --env=jsdom"
   },
   "dependencies": {
+    "node-sass-chokidar": "1.2.2",
+    "npm-run-all": "4.1.2",
     "react": "16.3.0",
     "react-dom": "16.3.0",
     "react-router-dom": "4.2.2",
