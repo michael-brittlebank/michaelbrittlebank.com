@@ -1,6 +1,6 @@
 {
   "name": "Mikestumpf",
-  "version": "3.0.2",
+  "version": "3.0.3",
   "description": "Personal website",
   "private": true,
   "scripts": {
@@ -13,6 +13,7 @@
     "test": "react-scripts-ts test --env=jsdom"
   },
   "dependencies": {
+    "hauptstimme-js": "file:lib/hauptstimme-js-3.0.3.tgz",
     "node-sass-chokidar": "1.2.2",
     "npm-run-all": "4.1.2",
     "react": "^16.3.0",
