@@ -1,3 +1,0 @@
-[submodule "wordpress/wp-content/plugins/wp-reading-list"]
-	path = wordpress/wp-content/plugins/wp-reading-list
-	url = https://github.com/mike-stumpf/wp-reading-list.git
