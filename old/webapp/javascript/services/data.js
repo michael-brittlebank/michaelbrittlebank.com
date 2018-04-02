@@ -674,6 +674,16 @@
                 lat: 53.1491,
                 lng: -6.0793
             },
+            {
+                title: 'Slane, Ireland',
+                lat: 53.7086,
+                lng: -6.5437
+            },
+            {
+                title: 'Newgrange, Ireland',
+                lat: 53.6947,
+                lng: -6.4755
+            },
             //italy
             {
                 title: 'Domodossola, Italy',
