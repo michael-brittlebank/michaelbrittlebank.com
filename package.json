@@ -16,8 +16,8 @@
     "hauptstimme-js": "file:lib/hauptstimme-js-3.0.3.tgz",
     "node-sass-chokidar": "1.2.2",
     "npm-run-all": "4.1.2",
-    "react": "^16.3.0",
-    "react-dom": "^16.3.0",
+    "react": "16.3.0",
+    "react-dom": "16.3.0",
     "react-redux": "5.0.7",
     "react-router-dom": "4.2.2",
     "react-router-redux": "4.0.8",
@@ -27,7 +27,7 @@
   "devDependencies": {
     "@types/jest": "22.2.2",
     "@types/node": "9.6.1",
-    "@types/react": "16.1.0",
+    "@types/react": "16.3.1",
     "@types/react-dom": "16.0.4",
     "typescript": "2.8.1"
   }

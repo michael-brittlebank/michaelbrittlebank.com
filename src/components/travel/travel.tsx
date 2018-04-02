@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { Component } from 'react';
 import {MapMarkerInterface} from '../../interfaces/mapMarker.interface';
+import './travel.css';
 
 export default class Travel extends Component {
 
@@ -8,7 +9,7 @@ export default class Travel extends Component {
         /**
          * africa
          */
-        //morocco
+        // morocco
         {
             title: 'Tangier, Morocco',
             lat: 35.7595,
@@ -32,7 +33,7 @@ export default class Travel extends Component {
         /**
          * asia
          */
-        //australia
+        // australia
         {
             title: 'Sydney, Australia',
             lat: -33.8688,
@@ -43,13 +44,13 @@ export default class Travel extends Component {
             lat: -37.8136,
             lng: 144.9631
         },
-        //brunei
+        // brunei
         {
             title: 'Bandar Seri Begawan, Brunei',
             lat: 4.9031,
             lng: 114.9398
         },
-        //china
+        // china
         {
             title: 'Beijing, China',
             lat: 39.9042,
@@ -90,7 +91,7 @@ export default class Travel extends Component {
             lat: 30.2741,
             lng: 120.1551
         },
-        //india
+        // india
         {
             title: 'Mumbai, India',
             lat: 19.0760,
@@ -136,7 +137,7 @@ export default class Travel extends Component {
             lat: 27.4695,
             lng: 70.6217
         },
-        //indonesia
+        // indonesia
         {
             title: 'Jakarta, Indonesia',
             lat: -6.1745,
@@ -157,7 +158,7 @@ export default class Travel extends Component {
             lat: -7.6079,
             lng: 110.2038
         },
-        //japan
+        // japan
         {
             title: 'Tokyo, Japan',
             lat: 35.6833,
@@ -183,13 +184,13 @@ export default class Travel extends Component {
             lat: 36.7199,
             lng: 139.6982
         },
-        //malaysia
+        // malaysia
         {
             title: 'Kuala Lumpur, Malaysia',
             lat: 3.1390,
             lng: 101.6869
         },
-        //new zealand
+        // new zealand
         {
             title: 'Auckland, New Zealand',
             lat: -36.8485,
@@ -200,22 +201,22 @@ export default class Travel extends Component {
             lat: -41.2865,
             lng: 174.7762
         },
-        // {
-        //     title: 'Dunedin, New Zealand',
-        //     lat: -45.8788,
-        //     lng: 170.5028
-        // },
-        // {
-        //     title: 'Christchurch, New Zealand',
-        //     lat: -43.5321,
-        //     lng: 172.6362
-        // },
+        //  {
+        //      title: 'Dunedin, New Zealand',
+        //      lat: -45.8788,
+        //      lng: 170.5028
+        //  },
+        //  {
+        //      title: 'Christchurch, New Zealand',
+        //      lat: -43.5321,
+        //      lng: 172.6362
+        //  },
         {
             title: 'Picton, New Zealand',
             lat: -41.2906,
             lng: 174.0010
         },
-        //philippines
+        // philippines
         {
             title: 'Manila, Philippines',
             lat: 14.5995,
@@ -236,13 +237,13 @@ export default class Travel extends Component {
             lat: 16.8614,
             lng: 120.9704
         },
-        //singapore
+        // singapore
         {
             title: 'Singapore',
             lat: 1.3521,
             lng: 103.8198
         },
-        //south korea
+        // south korea
         {
             title: 'Seoul, South Korea',
             lat: 37.5665,
@@ -253,7 +254,7 @@ export default class Travel extends Component {
             lat: 35.1796,
             lng: 129.0756
         },
-        //sri lanka
+        // sri lanka
         {
             title: 'Colombo, Sri Lanka',
             lat: 6.9271,
@@ -269,7 +270,7 @@ export default class Travel extends Component {
             lat: 6.0535,
             lng: 80.2210
         },
-        //thailand
+        // thailand
         {
             title: 'Bangkok, Thailand',
             lat: 13.7563,
@@ -310,7 +311,7 @@ export default class Travel extends Component {
             lat: 8.0863,
             lng: 98.9063
         },
-        //vietnam
+        // vietnam
         {
             title: 'Hanoi, Vietnam',
             lat: 21.0278,
@@ -334,7 +335,7 @@ export default class Travel extends Component {
         /**
          * europe
          */
-        //austria
+        // austria
         {
             title: 'Innsbruck, Austria',
             lat: 47.2667,
@@ -355,7 +356,7 @@ export default class Travel extends Component {
             lat: 47.8095,
             lng: 13.0550
         },
-        //belgium
+        // belgium
         {
             title: 'Brussels, Belgium',
             lat: 50.8503,
@@ -366,7 +367,7 @@ export default class Travel extends Component {
             lat: 51.2093,
             lng: 3.2247
         },
-        //bulgaria
+        // bulgaria
         {
             title: 'Sofia, Bulgaria',
             lat: 42.6977,
@@ -387,25 +388,25 @@ export default class Travel extends Component {
             lat: 42.8035,
             lng: 25.3492
         },
-        //croatia
+        // croatia
         {
             title: 'Zagreb, Croatia',
             lat: 45.8150,
             lng: 15.9819
         },
-        //czech republic
+        // czech republic
         {
             title: 'Prague, Czech Republic',
             lat: 50.0833,
             lng: 14.4167
         },
-        //denmark
+        // denmark
         {
             title: 'Copenhagen, Denmark',
             lat: 55.6761,
             lng: 12.5683
         },
-        //england
+        // england
         {
             title: 'London, England',
             lat: 51.5072,
@@ -436,19 +437,19 @@ export default class Travel extends Component {
             lat: 51.7910,
             lng: -2.0077
         },
-        //estonia
+        // estonia
         {
             title: 'Tallinn, Estonia',
             lat: 59.4370,
             lng: 24.7536
         },
-        //finland
+        // finland
         {
             title: 'Helsinki, Finland',
             lat: 60.1699,
             lng: 24.9384
         },
-        //france
+        // france
         {
             title: 'Paris, France',
             lat: 48.8567,
@@ -479,7 +480,7 @@ export default class Travel extends Component {
             lat: 48.8044,
             lng: 2.1232
         },
-        //germany
+        // germany
         {
             title: 'Trier, Germany',
             lat: 49.7500,
@@ -510,13 +511,13 @@ export default class Travel extends Component {
             lat: 50.1109,
             lng: 8.6821
         },
-        //gibraltar
+        // gibraltar
         {
             title: 'Gibraltar',
             lat: 36.1408,
             lng: -5.3536
         },
-        //greece
+        // greece
         {
             title: 'Athens, Greece',
             lat: 37.9838,
@@ -527,13 +528,13 @@ export default class Travel extends Component {
             lat: 40.6401,
             lng: 22.9444
         },
-        //hungary
+        // hungary
         {
             title: 'Budapest, Hungary',
             lat: 47.4925,
             lng: 19.0514
         },
-        //iceland
+        // iceland
         {
             title: 'Reykjavik, Iceland',
             lat: 64.1333,
@@ -559,7 +560,7 @@ export default class Travel extends Component {
             lat: 64.7500,
             lng: -19.9831
         },
-        //ireland
+        // ireland
         {
             title: 'Glenveagh National Park, Ireland',
             lat: 55.0167,
@@ -685,7 +686,7 @@ export default class Travel extends Component {
             lat: 53.6947,
             lng: -6.4755
         },
-        //italy
+        // italy
         {
             title: 'Domodossola, Italy',
             lat: 46.1167,
@@ -766,43 +767,43 @@ export default class Travel extends Component {
             lat: 44.0678,
             lng: 12.5695
         },
-        //latvia
+        // latvia
         {
             title: 'Riga, Latvia',
             lat: 56.9496,
             lng: 24.1052
         },
-        //liechtenstein
+        // liechtenstein
         {
             title: 'Liechtenstein',
             lat: 47.1660,
             lng: 9.5554
         },
-        //lithuania
+        // lithuania
         {
             title: 'Vilnius, Lithuania',
             lat: 54.6872,
             lng: 25.2797
         },
-        //luxembourg
+        // luxembourg
         {
             title: 'Luxembourg City, Luxembourg',
             lat: 49.6000,
             lng: 6.1167
         },
-        //monaco
+        // monaco
         {
             title: 'Monaco',
             lat: 43.7328,
             lng: 7.4197
         },
-        //netherlands
+        // netherlands
         {
             title: 'Amsterdam, Netherlands',
             lat: 52.3667,
             lng: 4.9000
         },
-        //northern ireland
+        // northern ireland
         {
             title: 'Ness Country Park, Northern Ireland',
             lat: 54.9381,
@@ -818,7 +819,7 @@ export default class Travel extends Component {
             lat: 55.2400,
             lng: -6.3310
         },
-        //norway
+        // norway
         {
             title: 'Stavanger, Norway',
             lat: 58.9633,
@@ -839,7 +840,7 @@ export default class Travel extends Component {
             lat: 59.9139,
             lng: 10.7522
         },
-        //poland
+        // poland
         {
             title: 'Warsaw, Poland',
             lat: 52.2297,
@@ -850,7 +851,7 @@ export default class Travel extends Component {
             lat: 50.0647,
             lng: 19.9450
         },
-        //portugal
+        // portugal
         {
             title: 'Lisbon, Portugal',
             lat: 38.7139,
@@ -861,13 +862,13 @@ export default class Travel extends Component {
             lat: 38.7992,
             lng: -9.3883
         },
-        //romania
+        // romania
         {
             title: 'Bucharest, Romania',
             lat: 44.4268,
             lng: 26.1025
         },
-        //russia
+        // russia
         {
             title: 'St. Petersburg, Russia',
             lat: 59.9343,
@@ -878,13 +879,13 @@ export default class Travel extends Component {
             lat: 55.7558,
             lng: 37.6173
         },
-        //san marino
+        // san marino
         {
             title: 'San Marino',
             lat: 43.9424,
             lng: 12.4578
         },
-        //scotland
+        // scotland
         {
             title: 'Glasgow, Scotland',
             lat: 55.8642,
@@ -950,13 +951,13 @@ export default class Travel extends Component {
             lat: 56.7969,
             lng: -5.0036
         },
-        //serbia
+        // serbia
         {
             title: 'Belgrade, Serbia',
             lat: 44.7866,
             lng: 20.4489
         },
-        //spain
+        // spain
         {
             title: 'Barcelona, Spain',
             lat: 41.3851,
@@ -967,13 +968,13 @@ export default class Travel extends Component {
             lat: 40.4168,
             lng: -3.7038
         },
-        //slovakia
+        // slovakia
         {
             title: 'Bratislava, Slovakia',
             lat: 48.1439,
             lng: 17.1097
         },
-        //slovenia
+        // slovenia
         {
             title: 'Ljubljana, Slovenia',
             lat: 46.0556,
@@ -1004,13 +1005,13 @@ export default class Travel extends Component {
             lat: 46.3688,
             lng: 14.1140
         },
-        //sweden
+        // sweden
         {
             title: 'Stockholm, Sweden',
             lat: 59.3294,
             lng: 18.0686
         },
-        //switzerland
+        // switzerland
         {
             title: 'Chur, Switzerland',
             lat: 46.8500,
@@ -1046,7 +1047,7 @@ export default class Travel extends Component {
             lat: 47.5596,
             lng: 7.5886
         },
-        //ukraine
+        // ukraine
         {
             title: 'Kiev, Ukraine',
             lat: 50.4501,
@@ -1057,7 +1058,7 @@ export default class Travel extends Component {
             lat: 49.8397,
             lng: 24.0297
         },
-        //vatican city
+        // vatican city
         {
             title: 'Vatican City',
             lat: 41.9029,
@@ -1066,7 +1067,7 @@ export default class Travel extends Component {
         /**
          * middle east
          */
-        //cyprus
+        // cyprus
         {
             title: 'Nicosia, Cyprus',
             lat: 35.1856,
@@ -1097,7 +1098,7 @@ export default class Travel extends Component {
             lat: 34.8493,
             lng: 32.8099
         },
-        //egypt
+        // egypt
         {
             title: 'Cairo, Egypt',
             lat: 30.0444,
@@ -1118,7 +1119,7 @@ export default class Travel extends Component {
             lat: 29.7932,
             lng: 31.2463
         },
-        //israel
+        // israel
         {
             title: 'Tel Aviv, Israel',
             lat: 32.0853,
@@ -1144,7 +1145,7 @@ export default class Travel extends Component {
             lat: 31.4664,
             lng: 35.3880
         },
-        //palestine
+        // palestine
         {
             title: 'Bethlehem, Palestine',
             lat: 31.7057,
@@ -1155,13 +1156,13 @@ export default class Travel extends Component {
             lat: 31.8711,
             lng: 35.4441
         },
-        //turkey
+        // turkey
         {
             title: 'Istanbul, Turkey',
             lat: 41.0082,
             lng: 28.9784
         },
-        //united arab emirates
+        // united arab emirates
         {
             title: 'Dubai, United Arab Emirates',
             lat: 25.2048,
@@ -1175,7 +1176,7 @@ export default class Travel extends Component {
         /**
          * north america
          */
-        //canada
+        // canada
         {
             title: 'Toronto, Ontario, Canada',
             lat: 43.7000,
@@ -1196,7 +1197,7 @@ export default class Travel extends Component {
             lat: 45.5017,
             lng: -73.5673
         },
-        //mexico
+        // mexico
         {
             title: 'Costa Maya, Mexico',
             lat: 18.7140,
@@ -1207,7 +1208,7 @@ export default class Travel extends Component {
             lat: 20.4167,
             lng: -86.9167
         },
-        //usa
+        // usa
         {
             title: 'Isle Royale National Park, Michigan, USA',
             lat: 48.1000,
@@ -1517,13 +1518,11 @@ export default class Travel extends Component {
             title: 'Wausau, Wisconsin, USA',
             lat: 44.9591,
             lng: -89.6301
-        }//,
+        }// ,
         /**
          * south america
          */
     ];
-
-    componentDidMount() {}
 
     render() {
         console.log('I was triggered during render', this.travelMarkers);
