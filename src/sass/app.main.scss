@@ -1,0 +1,33 @@
+/*
+Imports and settings that might change with theme development
+*/
+
+//source
+//-----------------------------
+@import "./base/media-queries.scss";
+@import "./base/mixins.scss";
+@import "./base/colors.scss";
+@import "./base/fonts.scss";
+@import "./base/grid.scss";
+
+//theme
+//-----------------------------
+@import "./theme/shared.scss";
+@import "./theme/header.scss";
+@import "./theme/footer.scss";
+@import "./theme/errors.scss";
+
+//views
+//-----------------------------
+@import "./views/pages/homepage.scss";
+@import "./views/pages/travel.scss";
+@import "./views/pages/resume.scss";
+
+//portfolio
+@import "./views/portfolio/page.scss";
+@import "./views/portfolio/chorus.scss";
+@import "./views/portfolio/bubbles.scss";
+
+//music
+@import "./views/music/page.scss";
+@import "./views/music/post.scss";

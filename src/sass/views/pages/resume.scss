@@ -1,0 +1,44 @@
+@import "../../base/colors.scss";
+@import "../../base/mixins.scss";
+
+//core
+//----------------------
+#resume-title {
+  border-left: 20px solid $color-badgers-red;
+  padding-left: 15px;
+  margin-left: -10px;
+}
+
+#resume-body {
+  opacity: 0;
+  h2 {
+    border-bottom: 1px solid $color-dark-grey;
+    padding: 20px 0 5px 0;
+    text-align: center;
+    text-transform: uppercase;
+  }
+  h3 {
+    margin: 30px 0 10px 0;
+  }
+  span {
+    display: inline!important;
+    @include transition-with-defaults(color);
+  }
+  a {
+    &:hover {
+      span {
+        color: $color-anchor-hover;
+      }
+    }
+  }
+  ul {
+    list-style: circle;
+    padding: 0 10px;
+  }
+}
+
+#resume-download-button {
+  span:after {
+    content: '\f019';
+  }
+}

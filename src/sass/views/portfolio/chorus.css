@@ -1,0 +1,41 @@
+/*
+these are helper functions for common tasks that are difficult to implement across different browsers and devices.
+*/
+#chorus-main-container {
+  height: 400px;
+  position: relative; }
+
+.chorus-instrument-container {
+  opacity: 0;
+  display: none;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto; }
+  .chorus-instrument-container:first-child {
+    opacity: 1;
+    display: block; }
+
+.chorus-tab {
+  padding: 0.75rem 0.2rem;
+  display: inline-block;
+  text-transform: uppercase;
+  -webkit-transition: background 300ms ease-out 0s,color 300ms ease-out 0s;
+  -moz-transition: background 300ms ease-out 0s,color 300ms ease-out 0s;
+  -o-transition: background 300ms ease-out 0s,color 300ms ease-out 0s;
+  -ms-transition: background 300ms ease-out 0s,color 300ms ease-out 0s;
+  transition: background 300ms ease-out 0s,color 300ms ease-out 0s; }
+  @media (min-width: 768px) {
+    .chorus-tab {
+      padding: 1.25rem 1.5rem; } }
+  .chorus-tab.active {
+    background: #d3d3d3;
+    color: #393939; }
+
+.chorus-result-item-selected span, .chorus-result-item:hover span {
+  color: white; }
+
+.chorus-string-container {
+  margin: 0 0 10px 0; }

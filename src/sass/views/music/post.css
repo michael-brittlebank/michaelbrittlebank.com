@@ -1,0 +1,11 @@
+.music-post-image {
+  margin: auto;
+  max-height: 500px;
+  max-width: calc(100% - 120px); }
+
+#music-post-images-container {
+  width: 100%;
+  opacity: 0;
+  margin-top: 50px; }
+  #music-post-images-container .slick-slide {
+    background-color: rgba(57, 57, 57, 0.3); }

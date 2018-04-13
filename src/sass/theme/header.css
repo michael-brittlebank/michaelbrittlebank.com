@@ -1,0 +1,78 @@
+/*
+these are helper functions for common tasks that are difficult to implement across different browsers and devices.
+*/
+header {
+  background-color: #f8f8f8;
+  box-shadow: 0 0 10px #888888;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999; }
+
+.standard-menu {
+  list-style: none;
+  margin: 0; }
+  .standard-menu > li {
+    display: inline-block;
+    border-bottom: 5px solid transparent;
+    -webkit-transition: border-color 300ms ease-out 0s;
+    -moz-transition: border-color 300ms ease-out 0s;
+    -o-transition: border-color 300ms ease-out 0s;
+    transition: border-color 300ms ease-out 0s; }
+    .standard-menu > li > a {
+      padding: 20px 15px; }
+    .standard-menu > li.active, .standard-menu > li:hover {
+      border-bottom-color: #e3ebee; }
+    .standard-menu > li:hover .sub-menu {
+      opacity: 1;
+      height: auto;
+      overflow: visible; }
+  .standard-menu a {
+    padding: 5px 15px;
+    display: block; }
+
+.sub-menu {
+  position: absolute;
+  opacity: 0;
+  padding: 0;
+  height: 0;
+  overflow: hidden;
+  list-style: none;
+  background-color: white;
+  border: 1px solid #c6c7c8;
+  border-top-color: #e3ebee;
+  text-align: left;
+  min-width: 150px;
+  margin-top: 5px;
+  -webkit-transition: opacity 300ms ease-out 0s;
+  -moz-transition: opacity 300ms ease-out 0s;
+  -o-transition: opacity 300ms ease-out 0s;
+  transition: opacity 300ms ease-out 0s; }
+  .sub-menu a {
+    color: #393939;
+    font-size: 14px;
+    -webkit-transition: background-color 300ms ease-out 0s;
+    -moz-transition: background-color 300ms ease-out 0s;
+    -o-transition: background-color 300ms ease-out 0s;
+    transition: background-color 300ms ease-out 0s; }
+  .sub-menu .active a, .sub-menu a:hover {
+    background-color: #f8f8f8; }
+
+#header-mobile-menu .fa {
+  padding: 20px 15px;
+  font-size: 1.6rem; }
+
+#mobile-menu {
+  list-style: none;
+  padding-left: 0;
+  margin: 0; }
+  #mobile-menu > li {
+    font-size: 1.25rem;
+    margin-top: 15px; }
+
+.mobile-sub-menu {
+  list-style: none;
+  padding-left: 30px; }
+  .mobile-sub-menu > li {
+    margin-top: 5px; }

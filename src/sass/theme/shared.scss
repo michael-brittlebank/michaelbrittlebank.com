@@ -1,0 +1,210 @@
+@import "../base/fonts.scss";
+@import "../base/colors.scss";
+@import "../base/mixins.scss";
+@import "../base/media-queries.scss";
+
+//main styles
+//-----------------------------
+body {
+  //header placeholder
+  padding-top: 65px;
+  font-family: $global-font-proza-libre;
+  color: $color-font-black;
+}
+
+h1,h2,h3,h4,h5 {
+  font-family: $global-font-raleway;
+}
+
+img, input {
+  max-width: 100%;
+}
+
+p {
+  margin: 0 0 10px 0;
+}
+
+hr {
+  border-color: $color-default-hr-border;
+}
+
+a {
+  color: $color-font-black;
+  cursor: pointer;
+  text-decoration: none;
+  @include transition-with-defaults(color);
+  &:hover {
+    color: $color-anchor-hover;
+  }
+}
+
+iframe {
+  width:100%;
+  max-width:100%;
+}
+
+.page-title, .post-title {
+  font-family: $global-font-raleway-thin;
+}
+
+.page-container, .post-container {
+  padding-top: 25px;
+  @include tablet-up {
+    padding-top: 55px;
+  }
+}
+
+.button {
+  display: block;
+  border-radius: 5px;
+  background-color: $color-york-blue;
+  border: none;
+  text-align: center;
+  font-size: 1.25rem;
+  padding: 10px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 10px auto;
+  max-width: 355px;
+  vertical-align: middle;
+  box-shadow: 0 5px 15px 0 $color-box-shadow;
+  span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    color: $color-white;
+    transition: 0.5s;
+    font-family: $global-font-raleway-thin;
+    &:after {
+      font-family: $global-font-font-awesome;
+      position: absolute;
+      opacity: 0;
+      top: 0;
+      transition: 0.5s;
+      font-size: 1.5rem;
+      right: -35px;
+      margin-right: -15px;
+    }
+  }
+  &:hover:not(.disabled) span {
+    padding-right: 25px;
+    &:after {
+      opacity: 1;
+      right: 0;
+    }
+  }
+  &:focus, &:active {
+    outline: none;
+  }
+  &.disabled, &.disabled span {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+}
+
+.modal-content {
+  padding: 10px;
+}
+
+.modal-title {
+  border-bottom: 1px solid $color-dark-grey;
+}
+
+.prettyprint {
+  margin: 0;
+  padding: 10px;
+  width: auto;
+  overflow: auto;
+}
+
+//helper classes
+//-----------------------------
+.faded-out {
+  display: none;
+  opacity: 0;
+}
+
+.hidden {
+  display: none;
+}
+
+.opaque {
+  opacity: 0;
+}
+
+.horizontal-center {
+  margin: 0 auto;
+}
+
+.float-left {
+  float:left;
+}
+
+.float-right {
+  float:right;
+}
+
+.full-width {
+  width:100%;
+}
+
+.position-relative {
+  position: relative;
+}
+
+.no-margin {
+  margin: 0;
+}
+
+.no-padding {
+  padding: 0;
+}
+
+//typography
+//-----------------------------
+.text-bold {
+  font-weight: bold;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-upper {
+  text-transform: uppercase;
+}
+
+
+//visibility
+//-----------------------------
+@include mobile {
+  .hide-for-small {
+    display: none;
+  }
+}
+@include tablet {
+  .hide-for-medium {
+    display: none;
+  }
+}
+@include tablet-up {
+  .hide-for-medium-up {
+    display: none;
+  }
+  .show-for-small {
+    display: none;
+  }
+}
+@include desktop {
+  .hide-for-large {
+    display: none;
+  }
+}

@@ -1,0 +1,14 @@
+/*
+Imports and settings that are not likely to change with theme development
+*/
+//helpers
+@import "./base/colors.scss";
+@import "./base/mixins.scss";
+
+@import "./vendor/normalize.scss";
+//@import "font-awesome";
+
+/*
+Customized modules
+*/
+@import "./vendor/google-code-prettify.scss";

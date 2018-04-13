@@ -1,0 +1,26 @@
+/*
+these are helper functions for common tasks that are difficult to implement across different browsers and devices.
+*/
+.music-post-container {
+  display: flex;
+  margin-bottom: 10px; }
+  .music-post-container:hover .music-post-content {
+    border-color: #E7D9C1; }
+
+.music-post-content {
+  width: 100%;
+  padding: 20px;
+  border: 5px double #393939;
+  color: #393939;
+  -webkit-transition: border-color 300ms ease-out 0s;
+  -moz-transition: border-color 300ms ease-out 0s;
+  -o-transition: border-color 300ms ease-out 0s;
+  transition: border-color 300ms ease-out 0s; }
+
+.music-post-excerpt {
+  text-align: justify; }
+
+.music-post-date {
+  margin: 0; }
+  .music-post-date .fa {
+    margin-right: 5px; }

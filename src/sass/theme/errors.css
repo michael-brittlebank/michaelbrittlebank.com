@@ -1,0 +1,90 @@
+@font-face {
+  font-family: 'Raleway';
+  src: url("/fonts/Raleway/raleway-regular-webfont.woff2") format("woff2"), url("/fonts/Raleway/raleway-regular-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'RalewayThin';
+  src: url("/fonts/Raleway/raleway-thin-webfont.woff2") format("woff2"), url("/fonts/Raleway/raleway-thin-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Proza Libre';
+  src: url("/fonts/ProzaLibre/prozalibre-regular-webfont.woff2") format("woff2"), url("/fonts/ProzaLibre/prozalibre-regular-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal; }
+
+.f--raleway {
+  font-family: Raleway, 'HelveticaNeue', Helvetica Neue, Helvetica, Tahoma, Geneva, Arial, sans-serif; }
+
+.f--raleway-thin {
+  font-family: RalewayThin, 'HelveticaNeue', Helvetica Neue, Helvetica, Tahoma, Geneva, Arial, sans-serif; }
+
+.f--proza-libre {
+  font-family: Proza Libre, 'HelveticaNeue', Helvetica Neue, Helvetica, Tahoma, Geneva, Arial, sans-serif; }
+
+/*
+these are helper functions for common tasks that are difficult to implement across different browsers and devices.
+*/
+.error-page h1, .error-page h3, .error-page span {
+  font-family: RalewayThin, 'HelveticaNeue', Helvetica Neue, Helvetica, Tahoma, Geneva, Arial, sans-serif; }
+
+@media (min-width: 768px) {
+  #error-title-container {
+    border-right: 2px solid #393939;
+    text-align: right;
+    padding-right: 50px; } }
+
+.error-title {
+  font-size: 6rem;
+  margin: 0; }
+
+.error-button {
+  text-align: center;
+  margin-top: 50px; }
+  .error-button span:after {
+    content: '\f105'; }
+
+#error-translations-container {
+  position: relative;
+  height: 75px;
+  margin: 50px 0; }
+
+.error-translations {
+  opacity: 0;
+  display: block !important;
+  font-size: 3rem;
+  line-height: 3rem;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto; }
+
+#error-warning-container {
+  display: block;
+  margin: auto; }
+  #error-warning-container .fa-stack {
+    width: 8.75rem;
+    height: 8.75rem;
+    line-height: 8.75rem;
+    display: block;
+    margin: 0 auto 25px auto;
+    overflow: hidden;
+    border: 5px solid #FFA500;
+    border-radius: 50%;
+    -webkit-transition: border-color 300ms ease-out 0s;
+    -moz-transition: border-color 300ms ease-out 0s;
+    -o-transition: border-color 300ms ease-out 0s;
+    transition: border-color 300ms ease-out 0s; }
+    #error-warning-container .fa-stack:hover {
+      border-color: #FF0000; }
+  #error-warning-container .fa-stack-1x {
+    font-size: 4.375rem;
+    color: #FFA500; }
+  #error-warning-container .fa-stack-2x {
+    font-size: 8.75rem;
+    color: #393939; }

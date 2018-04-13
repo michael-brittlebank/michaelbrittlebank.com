@@ -1,0 +1,105 @@
+/*
+these are helper functions for common tasks that are difficult to implement across different browsers and devices.
+*/
+@font-face {
+  font-family: 'Raleway';
+  src: url("/fonts/Raleway/raleway-regular-webfont.woff2") format("woff2"), url("/fonts/Raleway/raleway-regular-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'RalewayThin';
+  src: url("/fonts/Raleway/raleway-thin-webfont.woff2") format("woff2"), url("/fonts/Raleway/raleway-thin-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Proza Libre';
+  src: url("/fonts/ProzaLibre/prozalibre-regular-webfont.woff2") format("woff2"), url("/fonts/ProzaLibre/prozalibre-regular-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal; }
+
+.f--raleway {
+  font-family: Raleway, 'HelveticaNeue', Helvetica Neue, Helvetica, Tahoma, Geneva, Arial, sans-serif; }
+
+.f--raleway-thin {
+  font-family: RalewayThin, 'HelveticaNeue', Helvetica Neue, Helvetica, Tahoma, Geneva, Arial, sans-serif; }
+
+.f--proza-libre {
+  font-family: Proza Libre, 'HelveticaNeue', Helvetica Neue, Helvetica, Tahoma, Geneva, Arial, sans-serif; }
+
+.homepage-block {
+  text-align: center;
+  position: relative;
+  padding: 0;
+  overflow: hidden; }
+
+.homepage-block-body .fa-stack {
+  color: #393939;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 7rem;
+  height: 7rem;
+  line-height: 7rem; }
+  .homepage-block-body .fa-stack.fa-inverse {
+    color: #fefefe; }
+  .homepage-block-body .fa-stack .fa-stack-2x {
+    font-size: 7rem; }
+  .homepage-block-body .fa-stack .fa-stack-1x {
+    font-size: 3.5rem; }
+  @media (min-width: 768px) {
+    .homepage-block-body .fa-stack {
+      width: 15rem;
+      height: 15rem;
+      line-height: 15rem; }
+      .homepage-block-body .fa-stack .fa-stack-2x {
+        font-size: 15rem; }
+      .homepage-block-body .fa-stack .fa-stack-1x {
+        font-size: 7.5rem; } }
+
+.hover-filter {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto; }
+
+.hover-filter-overlay {
+  cursor: pointer;
+  opacity: 0;
+  height: 0; }
+  .hover-filter-overlay.active {
+    height: 100%; }
+
+.hover-filter-text {
+  height: 2rem;
+  font-size: 2rem;
+  opacity: 0;
+  color: white;
+  font-family: RalewayThin, 'HelveticaNeue', Helvetica Neue, Helvetica, Tahoma, Geneva, Arial, sans-serif; }
+
+.homepage-icon-block .hover-filter-back, .homepage-icon-block .hover-filter-front {
+  height: 0;
+  top: initial; }
+
+.homepage-icon-block .hover-filter-back {
+  background-color: #003DA5;
+  opacity: 0.9; }
+
+.homepage-icon-block .hover-filter-front {
+  background-color: #041E42;
+  opacity: 0.8; }
+
+.homepage-icon-block .hover-filter-text {
+  top: 75px; }
+
+.homepage-image-block .hover-filter-back {
+  height: 100%;
+  width: 0;
+  background-color: #807370;
+  opacity: 0.65; }

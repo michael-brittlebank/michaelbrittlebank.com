@@ -1524,6 +1524,8 @@ export default class Travel extends Component {
          */
     ];
 
+    // todo, https://www.fullstackreact.com/articles/how-to-write-a-google-maps-react-component/
+
     render() {
         console.log('I was triggered during render', this.travelMarkers);
         return (
