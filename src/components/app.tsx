@@ -1,14 +1,16 @@
 import * as React from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom'
-import Header from './header/header'
-import Footer from './footer/footer'
-import Home from './home/home'
-import Portfolio from './portfolio/portfolio'
-import Hauptstimme from './portfolio/hauptstimme/hauptstimme';
-import Travel from './travel/travel';
+import Header from './common/header/header'
+import Footer from './common/footer/footer'
+import Home from './pages/home/home'
+import Portfolio from './pages/portfolio/portfolio'
+import Hauptstimme from './pages/hauptstimme/hauptstimme';
+import Travel from './pages/travel/travel';
+import Head from './common/head/head';
 
 const App = () => (
     <div>
+        <Head />
         <Header />
         <main>
             <Switch>

@@ -1,10 +1,11 @@
 import * as React from 'react';
-import { HauptstimmeJs, NoteConstant, SearchResponseInterface, InstrumentInterface, ScaleInterface, ChordInterface } from '../../../../node_modules/hauptstimme-js/dist';
+import { HauptstimmeJs, NoteConstant, SearchResponseInterface, InstrumentInterface, ScaleInterface, ChordInterface } from 'hauptstimme-js';
 import { Component } from 'react';
+import { Helmet } from 'react-helmet';
 
 export default class Hauptstimme extends Component {
     componentDidMount() {
-        console.log('getting thing here', NoteConstant[NoteConstant.AB]);
+        // console.log('getting thing here', NoteConstant[NoteConstant.AB]);
         HauptstimmeJs.getAvailableInstruments()
             .then((response: InstrumentInterface[]) => {
                 // console.log('instruments', response);
@@ -32,9 +33,11 @@ export default class Hauptstimme extends Component {
     }
 
     render() {
-        console.log('I was triggered during render');
         return (
             <div>
+                <Helmet>
+                    <title>Mike Stumpf | Hauptstimme</title>
+                </Helmet>
                 <h1>Hauptstimme.JS</h1>
             </div>
         )
