@@ -3,12 +3,14 @@ import { Switch, Route, Redirect } from 'react-router-dom'
 import Header from './common/header'
 import Footer from './common/footer'
 import Home from './pages/home'
-import Portfolio from './pages/portfolio'
 import Hauptstimme from './pages/hauptstimme';
 import Travel from './travel/travel';
 import Head from './common/head';
 import NotFound from './common/notFound'
 import * as ReactGA from 'react-ga';
+import ReadingList from './pages/reading-list';
+import Bubbles from './pages/bubbles';
+import Resume from './pages/resume';
 
 ReactGA.initialize(process.env.REACT_APP_GOOGLE_ANALYTICS || '');
 
@@ -39,11 +41,16 @@ export default class App extends React.Component {
                 <main>
                     <Switch>
                         <Route exact={true} path="/" component={Home}/>
-                        <Redirect from="/chorus" to="/hauptstimme-js"/>
-                        <Redirect from="/portfolio/chorus" to="/hauptstimme-js"/>
-                        <Route path="/hauptstimme-js" component={Hauptstimme}/>
-                        <Route path="/portfolio" component={Portfolio}/>
+                        {/*portfolio*/}
+                        <Redirect from="/chorus" to="/hauptstimme"/>
+                        <Redirect from="/portfolio/chorus" to="/hauptstimme"/>
+                        <Redirect from="/portfolio/hauptstimme" to="/hauptstimme"/>
+                        <Route path="/hauptstimme" component={Hauptstimme}/>
+                        <Route path="/portfolio/reading-list" component={ReadingList}/>
+                        <Route path="/portfolio/bubbles" component={Bubbles}/>
+                        {/*pages*/}
                         <Route path="/travel" component={Travel}/>
+                        <Route path="/resume" component={Resume}/>
                         <Route component={NotFound}/>
                     </Switch>
                 </main>
