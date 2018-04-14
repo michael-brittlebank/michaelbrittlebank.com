@@ -1,9 +1,8 @@
 import * as React from 'react';
 import { HauptstimmeJs, NoteConstant, SearchResponseInterface, InstrumentInterface, ScaleInterface, ChordInterface } from 'hauptstimme-js';
-import { Component } from 'react';
 import { Helmet } from 'react-helmet';
 
-export default class Hauptstimme extends Component {
+export default class Hauptstimme extends React.Component {
     componentDidMount() {
         // console.log('getting thing here', NoteConstant[NoteConstant.AB]);
         HauptstimmeJs.getAvailableInstruments()

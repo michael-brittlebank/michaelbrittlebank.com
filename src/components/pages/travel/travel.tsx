@@ -1,9 +1,8 @@
 import * as React from 'react';
-import { Component } from 'react';
 import {MapMarkerInterface} from '../../../interfaces/mapMarker.interface';
 import './travel.css';
 
-export default class Travel extends Component {
+export default class Travel extends React.Component {
 
     private travelMarkers: MapMarkerInterface[] = [
         /**
