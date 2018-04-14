@@ -1,6 +1,7 @@
 import * as React from 'react';
 import {MapMarkerInterface} from '../../interfaces/mapMarker.interface';
 import {TravelMarkers} from './travelMarkers';
+import '../../sass/components/pages/travel.css'
 
 export default class Travel extends React.Component {
 

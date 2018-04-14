@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { HauptstimmeJs, NoteConstant, SearchResponseInterface, InstrumentInterface, ScaleInterface, ChordInterface } from 'hauptstimme-js';
 import { Helmet } from 'react-helmet';
+import '../../sass/components/pages/hauptstimme.css'
 
 export default class Hauptstimme extends React.Component {
     componentDidMount() {

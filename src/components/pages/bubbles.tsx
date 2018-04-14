@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { Helmet } from 'react-helmet';
+import '../../sass/components/pages/bubbles.css'
 
 export default class Bubbles extends React.Component {
     render() {

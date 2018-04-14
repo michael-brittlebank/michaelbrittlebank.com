@@ -1,0 +1,17 @@
+@import "../../base/mixins.scss";
+
+//404
+//----------------------
+#error-translations-container {
+  position: relative;
+  height: 75px;
+  margin: 50px 0;
+}
+
+.error-translations {
+  opacity: 0;
+  display: block!important;
+  font-size: 3rem;
+  line-height: 3rem;
+  @include center-absolute;
+}

@@ -45,7 +45,7 @@ these are helper functions for common tasks that are difficult to implement acro
   text-align: center;
   margin-top: 50px; }
   .error-button span:after {
-    content: '\f105'; }
+    content: '>'; }
 
 #error-translations-container {
   position: relative;

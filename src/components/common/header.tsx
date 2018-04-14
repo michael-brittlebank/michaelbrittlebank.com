@@ -9,6 +9,7 @@ import * as faGlobe from '@fortawesome/fontawesome-free-solid/faGlobe'
 import * as faBook from '@fortawesome/fontawesome-free-solid/faBook'
 import * as faFile from '@fortawesome/fontawesome-free-solid/faFileAlt'
 import * as faTint from '@fortawesome/fontawesome-free-solid/faTint'
+import '../../sass/components/common/header.css'
 
 export default class Header extends React.Component {
 
