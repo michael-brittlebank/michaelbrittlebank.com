@@ -8,6 +8,7 @@ import Hauptstimme from './pages/hauptstimme/hauptstimme';
 import Travel from './pages/travel/travel';
 import Head from './common/head/head';
 
+console.log(process.env.REACT_APP_GOOGLE_MAPS_API);
 const App = () => (
     <div>
         <Head />
