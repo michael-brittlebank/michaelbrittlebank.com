@@ -11,6 +11,10 @@ header {
   left: 0;
   width: 100%;
   z-index: 999;
+  .fa {
+    font-size: 2rem;
+    margin: 10px 0;
+  }
 }
 
 
@@ -64,32 +68,5 @@ header {
   }
   .active a, a:hover {
     background-color: $color-menu-active-state;
-  }
-}
-
-//mobile menu
-//----------------------
-#header-mobile-menu {
-  .fa {
-    padding: 20px 15px;
-    font-size: 1.6rem;
-  }
-}
-
-#mobile-menu {
-  list-style: none;
-  padding-left: 0;
-  margin: 0;
-  & > li {
-    font-size: 1.25rem;
-    margin-top: 15px;
-  }
-}
-
-.mobile-sub-menu {
-  list-style: none;
-  padding-left: 30px;
-  & > li {
-    margin-top: 5px;
   }
 }

@@ -9,7 +9,7 @@ export default class Footer extends React.Component {
     render() {
         return (
             <footer className="grid-container row">
-                <div id="footer-social-container" className="col-sm-12">
+                <div className="col-sm-12 text-right">
                     <h4 id="footer-social-title">Find Me:</h4>
                     <Link to="https://www.linkedin.com/in/mikestumpf" target="_blank">
                         <FontAwesomeIcon icon={faLinkedIn} className="fa"/>

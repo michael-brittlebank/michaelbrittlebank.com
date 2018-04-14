@@ -8,7 +8,7 @@ export default class Home extends React.Component {
                 <Helmet>
                     <title>Mike Stumpf</title>
                 </Helmet>
-                <h1>Welcome to the Tornadoes Website!</h1>
+                <h1>Homepage</h1>
             </div>
         );
     }

@@ -15,16 +15,3 @@ footer {
   display: inline-block;
   margin: 10px 5px 5px 0;
 }
-
-#footer-copyright {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-}
-
-#footer-social-container {
-  text-align: center;
-  @include tablet-up {
-    text-align: right;
-  }
-}
