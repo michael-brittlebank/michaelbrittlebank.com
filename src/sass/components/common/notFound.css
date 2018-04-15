@@ -1,0 +1,34 @@
+/*
+these are helper functions for common tasks that are difficult to implement across different browsers and devices.
+*/
+#error-translations-container {
+  position: relative;
+  height: 75px;
+  margin: 50px 0; }
+
+.error-translations {
+  display: block !important;
+  font-size: 3rem;
+  line-height: 3rem;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto; }
+
+.error-translations-enter {
+  -webkit-transition: opacity 250ms ease-out 0s;
+  -moz-transition: opacity 250ms ease-out 0s;
+  -o-transition: opacity 250ms ease-out 0s;
+  transition: opacity 250ms ease-out 0s;
+  opacity: 0.01; }
+
+.error-translations-enter-active {
+  opacity: 1; }
+
+.error-translations-exit {
+  opacity: 1; }
+
+.error-translations-exit-active {
+  opacity: 0.01; }

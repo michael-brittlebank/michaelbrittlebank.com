@@ -29,7 +29,7 @@ these are helper functions for common tasks that are difficult to implement acro
 
 //transitions and animations
 //-----------------------------
-@mixin transition-with-defaults($element, $duration:300ms, $timingFunction:ease-out, $delay:0s){
+@mixin transition-with-defaults($element, $duration:250ms, $timingFunction:ease-out, $delay:0s){
   //example:   @include transition-with-defaults(color);
   -webkit-transition: $element $duration $timingFunction $delay;
   -moz-transition: $element $duration $timingFunction $delay;

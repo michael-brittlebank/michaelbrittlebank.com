@@ -11,6 +11,7 @@ import * as ReactGA from 'react-ga';
 import ReadingList from './pages/reading-list';
 import Bubbles from './pages/bubbles';
 import Resume from './pages/resume';
+import { TransitionGroup, CSSTransition } from 'react-transition-group';
 
 ReactGA.initialize(process.env.REACT_APP_GOOGLE_ANALYTICS || '');
 
@@ -39,20 +40,28 @@ export default class App extends React.Component {
                 <Head/>
                 <Header/>
                 <main>
-                    <Switch>
-                        <Route exact={true} path="/" component={Home}/>
-                        {/*portfolio*/}
-                        <Redirect from="/chorus" to="/hauptstimme"/>
-                        <Redirect from="/portfolio/chorus" to="/hauptstimme"/>
-                        <Redirect from="/portfolio/hauptstimme" to="/hauptstimme"/>
-                        <Route path="/hauptstimme" component={Hauptstimme}/>
-                        <Route path="/portfolio/reading-list" component={ReadingList}/>
-                        <Route path="/portfolio/bubbles" component={Bubbles}/>
-                        {/*pages*/}
-                        <Route path="/travel" component={Travel}/>
-                        <Route path="/resume" component={Resume}/>
-                        <Route component={NotFound}/>
-                    </Switch>
+                    <Route
+                        render={({ location }) => (
+                            <TransitionGroup>
+                                <CSSTransition key={location.key} classNames="fade" timeout={300}>
+                                    <Switch location={location}>
+                                        <Route exact={true} path="/" component={Home}/>
+                                        {/*portfolio*/}
+                                        <Redirect from="/chorus" to="/hauptstimme"/>
+                                        <Redirect from="/portfolio/chorus" to="/hauptstimme"/>
+                                        <Redirect from="/portfolio/hauptstimme" to="/hauptstimme"/>
+                                        <Route path="/hauptstimme" component={Hauptstimme}/>
+                                        <Route path="/portfolio/reading-list" component={ReadingList}/>
+                                        <Route path="/portfolio/bubbles" component={Bubbles}/>
+                                        {/*pages*/}
+                                        <Route path="/travel" component={Travel}/>
+                                        <Route path="/resume" component={Resume}/>
+                                        <Route component={NotFound}/>
+                                    </Switch>
+                                </CSSTransition>
+                            </TransitionGroup>
+                        )}
+                    />
                 </main>
                 <Footer/>
             </div>

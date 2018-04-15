@@ -237,3 +237,24 @@ iframe {
     content: '>';
   }
 }
+
+//route transitions
+//----------------------
+.fade-enter {
+  @include center-absolute;
+  @include transition-with-defaults(opacity);
+  opacity: 0.01;
+  z-index: 1;
+}
+.fade-enter-active {
+  position: relative;
+  opacity: 1;
+}
+.fade-exit {
+  position: relative;
+  opacity: 1;
+}
+.fade-exit-active {
+  @include center-absolute;
+  opacity: 0.01;
+}

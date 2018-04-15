@@ -17,10 +17,10 @@ these are helper functions for common tasks that are difficult to implement acro
     margin: 30px 0 10px 0; }
   #resume-body span {
     display: inline !important;
-    -webkit-transition: color 300ms ease-out 0s;
-    -moz-transition: color 300ms ease-out 0s;
-    -o-transition: color 300ms ease-out 0s;
-    transition: color 300ms ease-out 0s; }
+    -webkit-transition: color 250ms ease-out 0s;
+    -moz-transition: color 250ms ease-out 0s;
+    -o-transition: color 250ms ease-out 0s;
+    transition: color 250ms ease-out 0s; }
   #resume-body a:hover span {
     color: #d3d3d3; }
   #resume-body ul {

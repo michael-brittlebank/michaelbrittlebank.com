@@ -19,10 +19,10 @@ header {
   .standard-menu > li {
     display: inline-block;
     border-bottom: 5px solid transparent;
-    -webkit-transition: border-color 300ms ease-out 0s;
-    -moz-transition: border-color 300ms ease-out 0s;
-    -o-transition: border-color 300ms ease-out 0s;
-    transition: border-color 300ms ease-out 0s; }
+    -webkit-transition: border-color 250ms ease-out 0s;
+    -moz-transition: border-color 250ms ease-out 0s;
+    -o-transition: border-color 250ms ease-out 0s;
+    transition: border-color 250ms ease-out 0s; }
     .standard-menu > li > a {
       padding: 20px 15px; }
     .standard-menu > li.active, .standard-menu > li:hover {
@@ -48,16 +48,16 @@ header {
   text-align: left;
   min-width: 150px;
   margin-top: 5px;
-  -webkit-transition: opacity 300ms ease-out 0s;
-  -moz-transition: opacity 300ms ease-out 0s;
-  -o-transition: opacity 300ms ease-out 0s;
-  transition: opacity 300ms ease-out 0s; }
+  -webkit-transition: opacity 250ms ease-out 0s;
+  -moz-transition: opacity 250ms ease-out 0s;
+  -o-transition: opacity 250ms ease-out 0s;
+  transition: opacity 250ms ease-out 0s; }
   .sub-menu a {
     color: #393939;
     font-size: 14px;
-    -webkit-transition: background-color 300ms ease-out 0s;
-    -moz-transition: background-color 300ms ease-out 0s;
-    -o-transition: background-color 300ms ease-out 0s;
-    transition: background-color 300ms ease-out 0s; }
+    -webkit-transition: background-color 250ms ease-out 0s;
+    -moz-transition: background-color 250ms ease-out 0s;
+    -o-transition: background-color 250ms ease-out 0s;
+    transition: background-color 250ms ease-out 0s; }
   .sub-menu .active a, .sub-menu a:hover {
     background-color: #f8f8f8; }

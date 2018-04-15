@@ -1,63 +1,47 @@
 import * as React from 'react'
 import '../../sass/components/common/notFound.css'
+import { Helmet } from 'react-helmet'
+import { CSSTransition } from 'react-transition-group';
 
 export default class NotFound extends React.Component {
 
-    // private animateTranslation(element: any): void {
-    //     currentTranslation++;
-    //     if (currentTranslation%translations.length === 0){
-    //         currentTranslation = 0;
-    //     }
-    //     $(element)
-    //         .blast({delimiter: 'character'})
-    //         .velocity('transition.fadeIn', {
-    //             duration: 1000,
-    //             stagger: 100,
-    //             delay: 0,
-    //             begin: function(){
-    //                 $(element).css({opacity:'1'});
-    //             },
-    //             complete: function(){
-    //                 $(element)
-    //                     .blast({delimiter: 'character'})
-    //                     .velocity('transition.fadeOut', {
-    //                         duration: 1000,
-    //                         stagger: 100,
-    //                         delay: 1000,
-    //                         complete: function(){
-    //                             $(element).velocity('transition.fadeOut', {
-    //                                 complete: function(){
-    //                                     animateTranslation(translations[currentTranslation]);
-    //                                 }
-    //                             });
-    //                         }
-    //                     });
-    //             }
-    //         });
-    // }
+    private translations: string[] = [
+        'Me paenitet',
+        'Lo siento',
+        'I\'m sorry',
+        'Je m\'excuse',
+        'Es tut mir Leid'
+    ];
+
+    private visible: boolean = false;
 
     componentDidMount() {
-        // //variables
-        // const translations = $('.error-translations');
-        //
-        // //animation
-        // setTimeout(function () {
-        //     this.animateTranslation(translations[0]);
-        // }, 750);
+        console.log('mounting');
+        this.visible = true;
     }
 
     render() {
         return (
             <div id="page-error-404" className="error-page text-center grid-container row page-container">
+                <Helmet>
+                    <title>Mike Stumpf | Not Found</title>
+                </Helmet>
                 <section id="error-title-container" className="col-sm-12 col-md-4">
                     <h3>Error:</h3>
                     <h1 className="page-title error-title">404</h1>
                 </section>
                 <section className="col-sm-12 col-md-8">
                     <div id="error-translations-container">
-                        {/*{{#each translations}}*/}
-                        {/*<h3 className="error-translations">{{this}}</h3>*/}
-                        {/*{{/each}}*/}
+                        <CSSTransition
+                            in={this.visible}
+                            timeout={300}
+                            classNames="error-translations"
+                            onExited={() => {
+                                console.log('existed');
+                            }}
+                        >
+                            <h3 className="error-translations">{this.translations[0]}</h3>
+                        </CSSTransition>
                     </div>
                     <p>The page you requested could not be found.</p>
                 </section>
