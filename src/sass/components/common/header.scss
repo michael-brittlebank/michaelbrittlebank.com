@@ -44,6 +44,9 @@ header {
   a {
     padding: 5px 15px;
     display: block;
+    &:hover {
+      color: $color-font-black;
+    }
   }
 }
 
@@ -68,5 +71,13 @@ header {
   }
   .active a, a:hover {
     background-color: $color-menu-active-state;
+  }
+}
+
+#mobile-menu {
+  list-style: none;
+  padding: 0;
+  .active .fa {
+    color: $color-anchor-hover;
   }
 }

@@ -24,6 +24,7 @@
     "@types/react-dom": "16.0.5",
     "@types/react-helmet": "5.0.5",
     "@types/react-transition-group": "2.0.8",
+    "classnames": "2.2.5",
     "hauptstimme-js": "3.1.0",
     "lodash": "4.17.5",
     "node-sass-chokidar": "1.2.2",
