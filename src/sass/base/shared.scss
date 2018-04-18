@@ -211,7 +211,11 @@ iframe {
 
 //errors
 //----------------------
-.error-page {
+.error-page-container {
+  padding-top: 25px;
+  @include tablet-up {
+    padding-top: 55px;
+  }
   h1, h3, span {
     font-family: $global-font-raleway-thin;
   }

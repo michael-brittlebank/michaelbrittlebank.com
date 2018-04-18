@@ -186,8 +186,13 @@ iframe {
   .hide-for-large {
     display: none; } }
 
-.error-page h1, .error-page h3, .error-page span {
-  font-family: RalewayThin, 'HelveticaNeue', Helvetica Neue, Helvetica, Tahoma, Geneva, Arial, sans-serif; }
+.error-page-container {
+  padding-top: 25px; }
+  @media (min-width: 768px) {
+    .error-page-container {
+      padding-top: 55px; } }
+  .error-page-container h1, .error-page-container h3, .error-page-container span {
+    font-family: RalewayThin, 'HelveticaNeue', Helvetica Neue, Helvetica, Tahoma, Geneva, Arial, sans-serif; }
 
 @media (min-width: 768px) {
   #error-title-container {
