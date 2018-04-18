@@ -39,7 +39,7 @@ export default class App extends React.Component {
             <div>
                 <Head/>
                 <Header/>
-                <main>
+                <main className="page-container">
                     <Route
                         render={({ location }) => (
                             <TransitionGroup>

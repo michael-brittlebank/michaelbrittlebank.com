@@ -67,7 +67,7 @@ iframe {
   padding-top: 25px; }
   @media (min-width: 768px) {
     .page-container {
-      padding-top: 55px; } }
+      padding-top: 0; } }
 
 .button {
   display: block;

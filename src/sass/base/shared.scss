@@ -50,7 +50,7 @@ iframe {
 .page-container {
   padding-top: 25px;
   @include tablet-up {
-    padding-top: 55px;
+    padding-top: 0;
   }
 }
 

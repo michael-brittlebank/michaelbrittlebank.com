@@ -26,7 +26,7 @@ header {
     .standard-menu > li > a {
       padding: 20px 15px; }
     .standard-menu > li.active, .standard-menu > li:hover {
-      border-bottom-color: #e3ebee; }
+      border-bottom-color: #003DA5; }
     .standard-menu > li:hover .sub-menu {
       opacity: 1;
       height: auto;
