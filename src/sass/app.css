@@ -803,13 +803,13 @@ iframe {
   width: 100%;
   max-width: 100%; }
 
-.page-title, .post-title {
+.page-title {
   font-family: RalewayThin, 'HelveticaNeue', Helvetica Neue, Helvetica, Tahoma, Geneva, Arial, sans-serif; }
 
-.page-container, .post-container {
+.page-container {
   padding-top: 25px; }
   @media (min-width: 768px) {
-    .page-container, .post-container {
+    .page-container {
       padding-top: 55px; } }
 
 .button {

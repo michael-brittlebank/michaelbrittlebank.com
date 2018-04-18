@@ -5,11 +5,13 @@ import '../../sass/components/pages/resume.css'
 export default class Resume extends React.Component {
     render() {
         return (
-            <div>
+            <div className="grid-container row">
                 <Helmet>
                     <title>Mike Stumpf | Resume</title>
                 </Helmet>
-                <h1>Resume</h1>
+                <div className="col-sm-12">
+                    <h1 className="page-title">Resume</h1>
+                </div>
             </div>
         );
     }

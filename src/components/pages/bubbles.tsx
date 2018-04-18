@@ -5,11 +5,13 @@ import '../../sass/components/pages/bubbles.css'
 export default class Bubbles extends React.Component {
     render() {
         return (
-            <div>
+            <div className="grid-container row">
                 <Helmet>
                     <title>Mike Stumpf | Bubbles</title>
                 </Helmet>
-                <h1>Bubbles</h1>
+                <div className="col-sm-12">
+                    <h1 className="page-title">Bubbles</h1>
+                </div>
             </div>
         );
     }

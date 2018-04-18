@@ -43,11 +43,11 @@ iframe {
   max-width:100%;
 }
 
-.page-title, .post-title {
+.page-title {
   font-family: $global-font-raleway-thin;
 }
 
-.page-container, .post-container {
+.page-container {
   padding-top: 25px;
   @include tablet-up {
     padding-top: 55px;

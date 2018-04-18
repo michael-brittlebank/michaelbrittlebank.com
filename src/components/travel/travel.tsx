@@ -12,8 +12,10 @@ export default class Travel extends React.Component {
     render() {
         console.log('I was triggered during render', this.travelMarkers);
         return (
-            <div>
-                <h1>Travel</h1>
+            <div className="grid-container row">
+                <div className="col-sm-12">
+                    <h1 className="page-title">Travel</h1>
+                </div>
             </div>
         )
     }
