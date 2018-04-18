@@ -12,19 +12,10 @@
   display: block!important;
   font-size: 3rem;
   line-height: 3rem;
+  opacity: 0;
   @include center-absolute;
-}
-
-.error-translations-enter {
-  @include transition-with-defaults(opacity);
-  opacity: 0.01;
-}
-.error-translations-enter-active {
-  opacity: 1;
-}
-.error-translations-exit {
-  opacity: 1;
-}
-.error-translations-exit-active {
-  opacity: 0.01;
+  @include transition-raw("opacity 750ms ease-out 0s");
+  &.active {
+    opacity: 1
+  }
 }

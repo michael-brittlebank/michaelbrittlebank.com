@@ -1,23 +1,39 @@
 import * as React from 'react'
 import '../../sass/components/common/notFound.css'
 import { Helmet } from 'react-helmet'
-import { CSSTransition } from 'react-transition-group';
+import * as _ from 'lodash';
+import {UtilsService} from '../../services/utils.service';
+import * as classNames from 'classnames';
 
-export default class NotFound extends React.Component {
+export default class NotFound extends React.Component<any, any> {
 
     private translations: string[] = [
+        'I\'m sorry',
         'Me paenitet',
         'Lo siento',
-        'I\'m sorry',
         'Je m\'excuse',
         'Es tut mir Leid'
     ];
 
-    private visible: boolean = false;
+    constructor(props: any) {
+        super(props);
+        this.state = {
+            translationIndex: 0
+        };
+    }
 
     componentDidMount() {
-        console.log('mounting');
-        this.visible = true;
+        this.setState({
+            translationIndex: UtilsService.getRandomInt(0, this.translations.length - 1)
+        });
+        setInterval(
+            () => {
+                this.setState({
+                    translationIndex: UtilsService.modulo(this.state.translationIndex + 1, this.translations.length)
+                });
+            },
+            3500
+        );
     }
 
     render() {
@@ -32,16 +48,13 @@ export default class NotFound extends React.Component {
                 </section>
                 <section className="col-sm-12 col-md-8">
                     <div id="error-translations-container">
-                        <CSSTransition
-                            in={this.visible}
-                            timeout={300}
-                            classNames="error-translations"
-                            onExited={() => {
-                                console.log('existed');
-                            }}
-                        >
-                            <h3 className="error-translations">{this.translations[0]}</h3>
-                        </CSSTransition>
+                        {
+                            _.map(this.translations, (translation: string, index: number) => {
+                                return (
+                                    <h3 key={index} className={classNames('error-translations', {'active': index === this.state.translationIndex})}>{translation}</h3>
+                                );
+                            })
+                        }
                     </div>
                     <p>The page you requested could not be found.</p>
                 </section>
