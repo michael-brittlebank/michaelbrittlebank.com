@@ -76,39 +76,75 @@ export default class Header extends React.Component {
                         <ul id="mobile-menu" className="row">
                             <li className={classNames('col-sm-2 text-center', {'active': Header.isUrlActive(this.homeMenuOption.url)})}>
                                 {/*home*/}
-                                <Link to={this.homeMenuOption.url}>
-                                    <FontAwesomeIcon icon={faHome} className="fa"/>
-                                </Link>
+                                {
+                                    !Header.isUrlActive(this.homeMenuOption.url) ?
+                                        <Link to={this.homeMenuOption.url}>
+                                            <FontAwesomeIcon icon={faHome} className="fa"/>
+                                        </Link> :
+                                        <a>
+                                            <FontAwesomeIcon icon={faHome} className="fa"/>
+                                        </a>
+                                }
                             </li>
                             <li className={classNames('col-sm-2 text-center', {'active': Header.isUrlActive(this.haupstimmeMenuOption.url)})}>
                                 {/*hauptstimme*/}
-                                <Link to={this.haupstimmeMenuOption.url}>
-                                    <FontAwesomeIcon icon={faMusic} className="fa"/>
-                                </Link>
+                                {
+                                    !Header.isUrlActive(this.haupstimmeMenuOption.url) ?
+                                        <Link to={this.haupstimmeMenuOption.url}>
+                                            <FontAwesomeIcon icon={faMusic} className="fa"/>
+                                        </Link> :
+                                        <a>
+                                            <FontAwesomeIcon icon={faMusic} className="fa"/>
+                                        </a>
+                                }
                             </li>
                             <li className={classNames('col-sm-2 text-center', {'active': Header.isUrlActive(this.readingListMenuOption.url)})}>
                                 {/*reading list*/}
-                                <Link to={this.readingListMenuOption.url}>
-                                    <FontAwesomeIcon icon={faBook} className="fa"/>
-                                </Link>
+                                {
+                                    !Header.isUrlActive(this.readingListMenuOption.url) ?
+                                        <Link to={this.readingListMenuOption.url}>
+                                            <FontAwesomeIcon icon={faBook} className="fa"/>
+                                        </Link> :
+                                        <a>
+                                            <FontAwesomeIcon icon={faBook} className="fa"/>
+                                        </a>
+                                }
                             </li>
                             <li className={classNames('col-sm-2 text-center', {'active': Header.isUrlActive(this.bubbleMenuOption.url)})}>
                                 {/*bubble*/}
-                                <Link to={this.bubbleMenuOption.url}>
-                                    <FontAwesomeIcon icon={faTint} className="fa"/>
-                                </Link>
+                                {
+                                    !Header.isUrlActive(this.bubbleMenuOption.url) ?
+                                        <Link to={this.bubbleMenuOption.url}>
+                                            <FontAwesomeIcon icon={faTint} className="fa"/>
+                                        </Link> :
+                                        <a>
+                                            <FontAwesomeIcon icon={faTint} className="fa"/>
+                                        </a>
+                                }
                             </li>
                             <li className={classNames('col-sm-2 text-center', {'active': Header.isUrlActive(this.travelMenuOption.url)})}>
                                 {/*travel*/}
-                                <Link to={this.travelMenuOption.url}>
-                                    <FontAwesomeIcon icon={faGlobe} className="fa"/>
-                                </Link>
+                                {
+                                    !Header.isUrlActive(this.travelMenuOption.url) ?
+                                        <Link to={this.travelMenuOption.url}>
+                                            <FontAwesomeIcon icon={faGlobe} className="fa"/>
+                                        </Link> :
+                                        <a>
+                                            <FontAwesomeIcon icon={faGlobe} className="fa"/>
+                                        </a>
+                                }
                             </li>
                             <li className={classNames('col-sm-2 text-center', {'active': Header.isUrlActive(this.resumeMenuOption.url)})}>
                                 {/*resume*/}
-                                <Link to={this.resumeMenuOption.url}>
-                                    <FontAwesomeIcon icon={faFile} className="fa"/>
-                                </Link>
+                                {
+                                    !Header.isUrlActive(this.resumeMenuOption.url) ?
+                                        <Link to={this.resumeMenuOption.url}>
+                                            <FontAwesomeIcon icon={faFile} className="fa"/>
+                                        </Link> :
+                                        <a>
+                                            <FontAwesomeIcon icon={faFile} className="fa"/>
+                                        </a>
+                                }
                             </li>
                         </ul>
                     </div>
@@ -120,7 +156,7 @@ export default class Header extends React.Component {
                                     return (
                                         <li key={index} className={classNames({'active': Header.isUrlActive(menuOption.url)})}>
                                             {
-                                                menuOption.url ?
+                                                menuOption.url && !Header.isUrlActive(menuOption.url) ?
                                                     <Link to={menuOption.url}>{menuOption.title}</Link> :
                                                     <a>{menuOption.title}</a>
                                             }
@@ -131,8 +167,11 @@ export default class Header extends React.Component {
                                                             _.map(menuOption.submenu, (innerMenuOption: MenuOptionInterface, innerIndex: number) => {
                                                                 return (
                                                                     <li key={innerIndex} className={classNames({'active': Header.isUrlActive(innerMenuOption.url)})}>
-                                                                        <Link to={innerMenuOption.url}>{innerMenuOption.title}</Link>
-                                                                    </li>
+                                                                        {
+                                                                            innerMenuOption.url && !Header.isUrlActive(innerMenuOption.url) ?
+                                                                                <Link to={innerMenuOption.url}>{innerMenuOption.title}</Link> :
+                                                                                <a>{innerMenuOption.title}</a>
+                                                                        }                                                                    </li>
                                                                 )
                                                             })
                                                         }
