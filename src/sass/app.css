@@ -896,6 +896,9 @@ iframe {
 .no-padding {
   padding: 0; }
 
+.no-border {
+  border: none; }
+
 .text-bold {
   font-weight: bold; }
 
