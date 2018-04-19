@@ -1,6 +1,33 @@
 /*
 these are helper functions for common tasks that are difficult to implement across different browsers and devices.
 */
+@font-face {
+  font-family: 'Raleway';
+  src: url("/fonts/Raleway/raleway-regular-webfont.woff2") format("woff2"), url("/fonts/Raleway/raleway-regular-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'RalewayThin';
+  src: url("/fonts/Raleway/raleway-thin-webfont.woff2") format("woff2"), url("/fonts/Raleway/raleway-thin-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Proza Libre';
+  src: url("/fonts/ProzaLibre/prozalibre-regular-webfont.woff2") format("woff2"), url("/fonts/ProzaLibre/prozalibre-regular-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal; }
+
+.f--raleway {
+  font-family: Raleway, 'HelveticaNeue', Helvetica Neue, Helvetica, Tahoma, Geneva, Arial, sans-serif; }
+
+.f--raleway-thin {
+  font-family: RalewayThin, 'HelveticaNeue', Helvetica Neue, Helvetica, Tahoma, Geneva, Arial, sans-serif; }
+
+.f--proza-libre {
+  font-family: Proza Libre, 'HelveticaNeue', Helvetica Neue, Helvetica, Tahoma, Geneva, Arial, sans-serif; }
+
 #error-translations-container {
   position: relative;
   height: 75px;
@@ -24,3 +51,25 @@ these are helper functions for common tasks that are difficult to implement acro
   transition: opacity 750ms ease-out 0s; }
   .error-translations.active {
     opacity: 1; }
+
+#not-found-button {
+  margin-top: 50px; }
+
+#error-page-container {
+  text-align: center;
+  padding-top: 25px; }
+  @media (min-width: 768px) {
+    #error-page-container {
+      padding-top: 55px; } }
+  #error-page-container h1, #error-page-container h3, #error-page-container span {
+    font-family: RalewayThin, 'HelveticaNeue', Helvetica Neue, Helvetica, Tahoma, Geneva, Arial, sans-serif; }
+
+@media (min-width: 768px) {
+  #error-title-container {
+    border-right: 2px solid #393939;
+    text-align: right;
+    padding-right: 50px; } }
+
+#error-title {
+  font-size: 6rem;
+  margin: 0; }

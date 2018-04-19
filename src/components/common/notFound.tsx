@@ -43,13 +43,13 @@ export default class NotFound extends React.Component<any, any> {
 
     render() {
         return (
-            <div className="error-page-container text-center grid-container row page-container">
+            <div id="error-page-container" className="grid-container row">
                 <Helmet>
                     <title>Mike Stumpf | Not Found</title>
                 </Helmet>
                 <section id="error-title-container" className="col-sm-12 col-md-4">
                     <h3>Error:</h3>
-                    <h1 className="page-title error-title">404</h1>
+                    <h1 id="error-title" className="page-title">404</h1>
                 </section>
                 <section className="col-sm-12 col-md-8">
                     <div id="error-translations-container">

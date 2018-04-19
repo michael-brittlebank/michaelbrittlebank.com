@@ -1,6 +1,7 @@
 @import "../../base/mixins.scss";
 @import "../../base/fonts.scss";
 @import "../../base/colours.scss";
+@import "../../base/media-queries.scss";
 
 //404
 //----------------------
@@ -26,7 +27,8 @@
   margin-top: 50px;
 }
 
-.error-page-container {
+#error-page-container {
+  text-align: center;
   padding-top: 25px;
   @include tablet-up {
     padding-top: 55px;
@@ -44,7 +46,7 @@
   }
 }
 
-.error-title {
+#error-title {
   font-size: 6rem;
   margin: 0;
 }
