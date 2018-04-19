@@ -64,7 +64,7 @@ export default class NotFound extends React.Component<any, any> {
                     <p>The page you requested could not be found.</p>
                 </section>
                 <div className="col-sm-12 col-md-8 col-md-offset-4">
-                    <a className="button error-button" href="/">
+                    <a id="not-found-button" className="button" href="/">
                         <span>Go To Homepage</span>
                     </a>
                 </div>

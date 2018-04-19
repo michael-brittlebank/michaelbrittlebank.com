@@ -1,4 +1,6 @@
 @import "../../base/mixins.scss";
+@import "../../base/fonts.scss";
+@import "../../base/colours.scss";
 
 //404
 //----------------------
@@ -18,4 +20,31 @@
   &.active {
     opacity: 1
   }
+}
+
+#not-found-button {
+  margin-top: 50px;
+}
+
+.error-page-container {
+  padding-top: 25px;
+  @include tablet-up {
+    padding-top: 55px;
+  }
+  h1, h3, span {
+    font-family: $global-font-raleway-thin;
+  }
+}
+
+#error-title-container {
+  @include tablet-up {
+    border-right: 2px solid $color-font-black;
+    text-align: right;
+    padding-right: 50px;
+  }
+}
+
+.error-title {
+  font-size: 6rem;
+  margin: 0;
 }

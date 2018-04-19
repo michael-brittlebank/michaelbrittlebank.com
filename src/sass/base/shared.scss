@@ -84,6 +84,7 @@ iframe {
       line-height: 1.5rem;
       right: -35px;
       margin-right: -15px;
+      content: '=>';
     }
   }
   &:hover:not(.disabled) span {
@@ -102,20 +103,6 @@ iframe {
   }
 }
 
-.modal-content {
-  padding: 10px;
-}
-
-.modal-title {
-  border-bottom: 1px solid $color-dark-grey;
-}
-
-.prettyprint {
-  margin: 0;
-  padding: 10px;
-  width: auto;
-  overflow: auto;
-}
 
 //helper classes
 //-----------------------------
@@ -163,6 +150,7 @@ iframe {
 .no-border {
   border: none;
 }
+
 
 //typography
 //-----------------------------
@@ -213,38 +201,6 @@ iframe {
   }
 }
 
-//errors
-//----------------------
-.error-page-container {
-  padding-top: 25px;
-  @include tablet-up {
-    padding-top: 55px;
-  }
-  h1, h3, span {
-    font-family: $global-font-raleway-thin;
-  }
-}
-
-#error-title-container {
-  @include tablet-up {
-    border-right: 2px solid $color-font-black;
-    text-align: right;
-    padding-right: 50px;
-  }
-}
-
-.error-title {
-  font-size: 6rem;
-  margin: 0;
-}
-
-.error-button {
-  text-align: center;
-  margin-top: 50px;
-  span:after {
-    content: '>';
-  }
-}
 
 //route transitions
 //----------------------
