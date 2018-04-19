@@ -7,6 +7,7 @@ import * as classNames from 'classnames';
 
 export default class NotFound extends React.Component<any, any> {
 
+    private translationInterval: any;
     private translations: string[] = [
         'I\'m sorry',
         'Me paenitet',
@@ -26,7 +27,7 @@ export default class NotFound extends React.Component<any, any> {
         this.setState({
             translationIndex: UtilsService.getRandomInt(0, this.translations.length - 1)
         });
-        setInterval(
+        this.translationInterval = setInterval(
             () => {
                 this.setState({
                     translationIndex: UtilsService.modulo(this.state.translationIndex + 1, this.translations.length)
@@ -34,6 +35,10 @@ export default class NotFound extends React.Component<any, any> {
             },
             3500
         );
+    }
+
+    componentWillUnmount() {
+        clearInterval(this.translationInterval);
     }
 
     render() {
