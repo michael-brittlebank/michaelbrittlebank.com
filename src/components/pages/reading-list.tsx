@@ -3,7 +3,6 @@ import { Helmet } from 'react-helmet';
 import ReactIframeResizer from 'react-iframe-resizer-super';
 import * as Scroll from 'react-scroll';
 import scroll = Scroll.animateScroll;
-import * as Fade from 'react-reveal/Fade';
 
 export default class ReadingList extends React.Component {
 
@@ -24,20 +23,21 @@ export default class ReadingList extends React.Component {
                     <h1 className="page-title">WP Reading List</h1>
                 </div>
                 <div className="col-sm-12">
-                    <Fade>
-                        <ReactIframeResizer
-                            src="http://wordpress.mikestumpf.com/reading-list"
-                            iframeResizerOptions={{
-                                checkOrigin: false,
-                                heightCalculationMethod: 'max',
-                                widthCalculationMethod: 'max',
-                                resizedCallback: this.onResize
-                            }}
-                            className="no-border"
-                            iframeResizerUrl={false}
-                            id="reading-list-frame"
-                        />
-                    </Fade>
+                    <ReactIframeResizer
+                        src="http://wordpress.mikestumpf.com/reading-list"
+                        iframeResizerOptions={{
+                            checkOrigin: false,
+                            heightCalculationMethod: 'max',
+                            widthCalculationMethod: 'max',
+                            resizedCallback: this.onResize
+                        }}
+                        className="no-border"
+                        iframeResizerUrl={false}
+                        id="reading-list-frame"
+                    />
+                    <a href="https://github.com/mike-stumpf/wp-reading-list" className="button" target="_blank">
+                        <span>View Code</span>
+                    </a>
                 </div>
             </div>
         );

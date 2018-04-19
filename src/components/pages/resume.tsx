@@ -33,7 +33,7 @@ export default class Resume extends React.Component {
                             </p>
                             <h3 className="text-center">
                                 <strong>
-                                    <a href="https://www.linkedin.com/in/mikestumpf">
+                                    <a href="https://www.linkedin.com/in/mikestumpf" target="_blank">
                                         View my full CV on Linked<FontAwesomeIcon icon={faLinkedIn} className="fa"/>
                                     </a>
                                 </strong>
