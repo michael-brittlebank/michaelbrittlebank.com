@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { Link } from 'react-router-dom'
-import {MenuOptionInterface} from '../../interfaces/menuOptionInterface';
+import {MenuOptionInterface} from '../../interfaces/menuOption.interface';
 import * as _ from 'lodash';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import * as faMusic from '@fortawesome/fontawesome-free-solid/faMusic'

@@ -1,65 +1,7 @@
-@font-face {
-  font-family: 'Raleway';
-  src: url("/fonts/Raleway/raleway-regular-webfont.woff2") format("woff2"), url("/fonts/Raleway/raleway-regular-webfont.woff") format("woff");
-  font-weight: normal;
-  font-style: normal; }
-
-@font-face {
-  font-family: 'RalewayThin';
-  src: url("/fonts/Raleway/raleway-thin-webfont.woff2") format("woff2"), url("/fonts/Raleway/raleway-thin-webfont.woff") format("woff");
-  font-weight: normal;
-  font-style: normal; }
-
-@font-face {
-  font-family: 'Proza Libre';
-  src: url("/fonts/ProzaLibre/prozalibre-regular-webfont.woff2") format("woff2"), url("/fonts/ProzaLibre/prozalibre-regular-webfont.woff") format("woff");
-  font-weight: normal;
-  font-style: normal; }
-
-.f--raleway {
-  font-family: Raleway, 'HelveticaNeue', Helvetica Neue, Helvetica, Tahoma, Geneva, Arial, sans-serif; }
-
-.f--raleway-thin {
-  font-family: RalewayThin, 'HelveticaNeue', Helvetica Neue, Helvetica, Tahoma, Geneva, Arial, sans-serif; }
-
-.f--proza-libre {
-  font-family: Proza Libre, 'HelveticaNeue', Helvetica Neue, Helvetica, Tahoma, Geneva, Arial, sans-serif; }
-
-#travel-rule {
-  margin: 85px 0 95px 0;
-  width: 100%; }
-
-#travel-images-container {
-  width: 100%;
-  opacity: 0; }
-  #travel-images-container .slick-slide {
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: auto 100%;
-    height: 250px; }
-    @media (min-width: 768px) and (max-width: 1023px) {
-      #travel-images-container .slick-slide {
-        height: 375px; } }
-    @media (min-width: 1024px) {
-      #travel-images-container .slick-slide {
-        height: 500px; } }
-
-.travel-image-caption-container {
-  text-align: center;
-  position: absolute;
-  bottom: 20px;
-  left: 0;
-  right: 0;
-  margin: auto; }
-  .travel-image-caption-container h3 {
-    color: #fefefe;
-    font-size: 1.25rem;
-    display: inline;
-    padding: 5px 15px;
-    font-family: RalewayThin, 'HelveticaNeue', Helvetica Neue, Helvetica, Tahoma, Geneva, Arial, sans-serif;
-    background-color: rgba(57, 57, 57, 0.5); }
-
+/*
+these are helper functions for common tasks that are difficult to implement across different browsers and devices.
+*/
 #travel-map-container {
-  height: 500px;
-  width: 100%;
-  opacity: 0; }
+  position: relative;
+  height: 600px;
+  width: 100%; }
