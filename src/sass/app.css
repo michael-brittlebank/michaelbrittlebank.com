@@ -841,7 +841,8 @@ iframe {
       font-size: 1.5rem;
       line-height: 1.5rem;
       right: -35px;
-      margin-right: -15px; }
+      margin-right: -15px;
+      content: '=>'; }
   .button:hover:not(.disabled) span {
     padding-right: 25px; }
     .button:hover:not(.disabled) span:after {
@@ -852,18 +853,6 @@ iframe {
   .button.disabled, .button.disabled span {
     opacity: 0.6;
     cursor: not-allowed; }
-
-.modal-content {
-  padding: 10px; }
-
-.modal-title {
-  border-bottom: 1px solid #594D4B; }
-
-.prettyprint {
-  margin: 0;
-  padding: 10px;
-  width: auto;
-  overflow: auto; }
 
 .faded-out {
   display: none;
@@ -931,30 +920,6 @@ iframe {
 @media (min-width: 1024px) {
   .hide-for-large {
     display: none; } }
-
-.error-page-container {
-  padding-top: 25px; }
-  @media (min-width: 768px) {
-    .error-page-container {
-      padding-top: 55px; } }
-  .error-page-container h1, .error-page-container h3, .error-page-container span {
-    font-family: RalewayThin, 'HelveticaNeue', Helvetica Neue, Helvetica, Tahoma, Geneva, Arial, sans-serif; }
-
-@media (min-width: 768px) {
-  #error-title-container {
-    border-right: 2px solid #393939;
-    text-align: right;
-    padding-right: 50px; } }
-
-.error-title {
-  font-size: 6rem;
-  margin: 0; }
-
-.error-button {
-  text-align: center;
-  margin-top: 50px; }
-  .error-button span:after {
-    content: '>'; }
 
 .fade-enter {
   position: absolute;

@@ -12,6 +12,11 @@ export default class Resume extends React.Component {
                 <div className="col-sm-12">
                     <h1 className="page-title">Resume</h1>
                 </div>
+                <div className="col-sm-12 text-center">
+                    <a href="/assets/Mike_Stumpf_Resume_2018.pdf" className="button" target="_blank">
+                        <span>Download Resume</span>
+                    </a>
+                </div>
             </div>
         );
     }

@@ -26,6 +26,3 @@ these are helper functions for common tasks that are difficult to implement acro
   #resume-body ul {
     list-style: circle;
     padding: 0 10px; }
-
-#resume-download-button span:after {
-  content: '\f019'; }
