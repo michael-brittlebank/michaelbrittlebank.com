@@ -739,7 +739,7 @@ iframe {
   padding: 10px;
   transition: all 0.5s;
   cursor: pointer;
-  margin: 10px auto;
+  margin: 50px auto 10px auto;
   max-width: 355px;
   vertical-align: middle;
   box-shadow: 0 5px 15px 0 #888888; }
