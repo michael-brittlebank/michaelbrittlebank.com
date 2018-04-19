@@ -1,6 +1,6 @@
-import {MapMarkerInterface} from '../../interfaces/mapMarker.interface';
+import {MapMarkerInterface} from '../interfaces/mapMarker.interface';
 
-export class TravelMarkers {
+export class TravelService {
     public static getAvailableTravelMarkers(): MapMarkerInterface[] {
         return [
             /**

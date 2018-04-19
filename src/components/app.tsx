@@ -4,7 +4,7 @@ import Header from './common/header'
 import Footer from './common/footer'
 import Home from './pages/home'
 import Hauptstimme from './pages/hauptstimme';
-import Travel from './travel/travel';
+import Travel from './pages/travel';
 import Head from './common/head';
 import NotFound from './common/notFound'
 import * as ReactGA from 'react-ga';

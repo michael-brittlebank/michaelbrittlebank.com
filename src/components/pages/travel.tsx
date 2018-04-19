@@ -1,6 +1,6 @@
 import * as React from 'react';
 import {MapMarkerInterface} from '../../interfaces/mapMarker.interface';
-import {TravelMarkers} from './travelMarkers';
+import {TravelService} from '../../services/travel.service';
 import '../../sass/components/pages/travel.css'
 import { Helmet } from 'react-helmet';
 import {Map, InfoWindow, Marker, GoogleApiWrapper} from 'google-maps-react';
@@ -16,7 +16,7 @@ interface Props {
 
 export class Travel extends React.Component<Props, State> {
 
-    private travelMarkers: MapMarkerInterface[] = TravelMarkers.getAvailableTravelMarkers();
+    private travelMarkers: MapMarkerInterface[] = TravelService.getAvailableTravelMarkers();
 
     constructor(props: Props) {
         super(props);
