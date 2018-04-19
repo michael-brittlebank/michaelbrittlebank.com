@@ -59,7 +59,7 @@ export default class Header extends React.Component {
                 return window.location.pathname === '/';
             } else {
                 // non-home url
-                return window.location.pathname.indexOf(url) !== -1;
+                return window.location.pathname === url;
             }
         } else {
             // portfolio urls are special cases
