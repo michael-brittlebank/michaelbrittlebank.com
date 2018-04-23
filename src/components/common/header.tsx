@@ -5,9 +5,7 @@ import * as _ from 'lodash';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import * as faMusic from '@fortawesome/fontawesome-free-solid/faMusic'
 import * as faHome from '@fortawesome/fontawesome-free-solid/faHome'
-import * as faGlobe from '@fortawesome/fontawesome-free-solid/faGlobe'
 import * as faBook from '@fortawesome/fontawesome-free-solid/faBook'
-import * as faFile from '@fortawesome/fontawesome-free-solid/faFileAlt'
 import * as faTint from '@fortawesome/fontawesome-free-solid/faTint'
 import '../../sass/components/common/header.css'
 import * as classNames from 'classnames';
@@ -22,17 +20,9 @@ export default class Header extends React.Component {
         title: 'Hauptstimme.js',
         url: '/hauptstimme'
     };
-    private travelMenuOption: MenuOptionInterface = {
-        title: 'Travel',
-        url: '/travel'
-    };
     private readingListMenuOption: MenuOptionInterface = {
         title: 'WP Reading List',
         url: '/portfolio/reading-list'
-    };
-    private resumeMenuOption: MenuOptionInterface = {
-        title: 'Resume',
-        url: '/resume'
     };
     private bubbleMenuOption: MenuOptionInterface = {
         title: 'Bubbles',
@@ -47,9 +37,7 @@ export default class Header extends React.Component {
                 this.readingListMenuOption,
                 this.bubbleMenuOption
             ]
-        },
-        this.travelMenuOption,
-        this.resumeMenuOption
+        }
     ];
 
     private static isUrlActive(url: string | undefined): boolean {
@@ -119,30 +107,6 @@ export default class Header extends React.Component {
                                         </Link> :
                                         <a>
                                             <FontAwesomeIcon icon={faTint} className="fa"/>
-                                        </a>
-                                }
-                            </li>
-                            <li className={classNames('col-sm-2 text-center', {'active': Header.isUrlActive(this.travelMenuOption.url)})}>
-                                {/*travel*/}
-                                {
-                                    !Header.isUrlActive(this.travelMenuOption.url) ?
-                                        <Link to={this.travelMenuOption.url}>
-                                            <FontAwesomeIcon icon={faGlobe} className="fa"/>
-                                        </Link> :
-                                        <a>
-                                            <FontAwesomeIcon icon={faGlobe} className="fa"/>
-                                        </a>
-                                }
-                            </li>
-                            <li className={classNames('col-sm-2 text-center', {'active': Header.isUrlActive(this.resumeMenuOption.url)})}>
-                                {/*resume*/}
-                                {
-                                    !Header.isUrlActive(this.resumeMenuOption.url) ?
-                                        <Link to={this.resumeMenuOption.url}>
-                                            <FontAwesomeIcon icon={faFile} className="fa"/>
-                                        </Link> :
-                                        <a>
-                                            <FontAwesomeIcon icon={faFile} className="fa"/>
                                         </a>
                                 }
                             </li>

@@ -28,78 +28,30 @@ these are helper functions for common tasks that are difficult to implement acro
 .f--proza-libre {
   font-family: Proza Libre, 'HelveticaNeue', Helvetica Neue, Helvetica, Tahoma, Geneva, Arial, sans-serif; }
 
-.homepage-block {
+#resume-body h2 {
+  border-bottom: 1px solid #594D4B;
+  padding: 20px 0 5px 0;
   text-align: center;
+  text-transform: uppercase; }
+
+#resume-body h3 {
+  margin: 30px 0 10px 0; }
+
+#resume-body span {
+  display: inline !important;
+  -webkit-transition: color 250ms ease-out 0s;
+  -moz-transition: color 250ms ease-out 0s;
+  -o-transition: color 250ms ease-out 0s;
+  transition: color 250ms ease-out 0s; }
+
+#resume-body a:hover span {
+  color: #d3d3d3; }
+
+#resume-body ul {
+  list-style: circle;
+  padding: 0 10px; }
+
+#travel-map-container {
   position: relative;
-  padding: 0;
-  overflow: hidden; }
-
-.homepage-block-body .fa-stack {
-  color: #393939;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  margin: auto;
-  width: 7rem;
-  height: 7rem;
-  line-height: 7rem; }
-  .homepage-block-body .fa-stack.fa-inverse {
-    color: #fefefe; }
-  .homepage-block-body .fa-stack .fa-stack-2x {
-    font-size: 7rem; }
-  .homepage-block-body .fa-stack .fa-stack-1x {
-    font-size: 3.5rem; }
-  @media (min-width: 768px) {
-    .homepage-block-body .fa-stack {
-      width: 15rem;
-      height: 15rem;
-      line-height: 15rem; }
-      .homepage-block-body .fa-stack .fa-stack-2x {
-        font-size: 15rem; }
-      .homepage-block-body .fa-stack .fa-stack-1x {
-        font-size: 7.5rem; } }
-
-.hover-filter {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  margin: auto; }
-
-.hover-filter-overlay {
-  cursor: pointer;
-  opacity: 0;
-  height: 0; }
-  .hover-filter-overlay.active {
-    height: 100%; }
-
-.hover-filter-text {
-  height: 2rem;
-  font-size: 2rem;
-  opacity: 0;
-  color: white;
-  font-family: RalewayThin, 'HelveticaNeue', Helvetica Neue, Helvetica, Tahoma, Geneva, Arial, sans-serif; }
-
-.homepage-icon-block .hover-filter-back, .homepage-icon-block .hover-filter-front {
-  height: 0;
-  top: initial; }
-
-.homepage-icon-block .hover-filter-back {
-  background-color: #003DA5;
-  opacity: 0.9; }
-
-.homepage-icon-block .hover-filter-front {
-  background-color: #041E42;
-  opacity: 0.8; }
-
-.homepage-icon-block .hover-filter-text {
-  top: 75px; }
-
-.homepage-image-block .hover-filter-back {
-  height: 100%;
-  width: 0;
-  background-color: #807370;
-  opacity: 0.65; }
+  height: 600px;
+  width: 100%; }

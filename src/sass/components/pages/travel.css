@@ -1,7 +1,0 @@
-/*
-these are helper functions for common tasks that are difficult to implement across different browsers and devices.
-*/
-#travel-map-container {
-  position: relative;
-  height: 600px;
-  width: 100%; }

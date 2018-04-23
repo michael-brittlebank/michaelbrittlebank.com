@@ -721,7 +721,10 @@ iframe {
   max-width: 100%; }
 
 .page-title {
-  font-family: RalewayThin, 'HelveticaNeue', Helvetica Neue, Helvetica, Tahoma, Geneva, Arial, sans-serif; }
+  font-family: RalewayThin, 'HelveticaNeue', Helvetica Neue, Helvetica, Tahoma, Geneva, Arial, sans-serif;
+  border-left: 20px solid #B70101;
+  padding-left: 15px;
+  margin-left: -10px; }
 
 .page-container {
   padding-top: 25px; }

@@ -1,2 +1,3 @@
 travis integration
-react transitions https://reacttraining.com/react-router/web/example/animated-transitions
+https://github.com/daneden/animate.css
+condense more to home page

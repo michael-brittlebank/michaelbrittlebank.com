@@ -45,6 +45,9 @@ iframe {
 
 .page-title {
   font-family: $global-font-raleway-thin;
+  border-left: 20px solid $color-badgers-red;
+  padding-left: 15px;
+  margin-left: -10px;
 }
 
 .page-container {
