@@ -12,7 +12,7 @@ import * as faStackOverflow from '@fortawesome/fontawesome-free-brands/faStackOv
 export default class Resume extends React.Component {
     render() {
         return (
-            <div className="grid-container row section-container">
+            <div id="resume-container" className="grid-container row section-container">
                 <div className="col-sm-12">
                     <h1 id="resume-title" className="page-title">Mike Stumpf</h1>
                 </div>

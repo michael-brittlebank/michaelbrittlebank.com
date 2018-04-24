@@ -8,6 +8,7 @@ import * as _ from 'lodash';
 import ReadingList from '../sections/reading-list';
 import Hauptstimme from '../sections/hauptstimme';
 import Resume from '../sections/resume';
+import * as pic from '../../assets/face.jpg';
 
 interface State {
     activeMarker: any,
@@ -37,52 +38,59 @@ export class Home extends React.Component<Props, State> {
                 <Helmet>
                     <title>Mike Stumpf</title>
                 </Helmet>
+                <div id="home-container">
+                    <div className="full-screen-grid-container row section-container">
+                        <img src={pic} alt="Logo" />
+                    </div>
+                </div>
                 {/*resume*/}
                 <Resume/>
                 {/*travel*/}
-                <div className="grid-container row">
-                    <div className="col-sm-12">
-                        <h1 id="travel-title" className="page-title">Travel</h1>
+                <div id="travel-container">
+                    <div className="grid-container row">
+                        <div className="col-sm-12">
+                            <h1 id="travel-title" className="page-title">Travel</h1>
+                        </div>
                     </div>
-                </div>
-                <div className="full-screen-grid-container row section-container">
-                    <section id="travel-map-container" className="col-sm-12 no-padding">
-                        <Map
-                            google={this.props.google}
-                            zoom={4}
-                            maxZoom={8}
-                            minZoom={3}
-                            mapTypeControl={false}
-                            streetViewControl={false}
-                            fullscreenControl={false}
-                            initialCenter={{
-                                lat: this.travelMarkers[randomIndex].lat,
-                                lng: this.travelMarkers[randomIndex].lng
-                            }}
-                        >
-                            {
-                                _.map(this.travelMarkers, (mapMarker: MapMarkerInterface, index: number) => {
-                                    return (
-                                        <Marker
-                                            key={index}
-                                            onClick={this._onMarkerClick}
-                                            name={mapMarker.title}
-                                            position={{lat: mapMarker.lat, lng: mapMarker.lng}}
-                                        />
-                                    )
-                                })
-                            }
-                            <InfoWindow
-                                marker={this.state.activeMarker}
-                                visible={!!this.state.activeMarker}
-                                onClose={this._onInfoWindowClose}
+                    <div className="full-screen-grid-container row section-container">
+                        <section id="travel-map-container" className="col-sm-12 no-padding">
+                            <Map
+                                google={this.props.google}
+                                zoom={4}
+                                maxZoom={8}
+                                minZoom={3}
+                                mapTypeControl={false}
+                                streetViewControl={false}
+                                fullscreenControl={false}
+                                initialCenter={{
+                                    lat: this.travelMarkers[randomIndex].lat,
+                                    lng: this.travelMarkers[randomIndex].lng
+                                }}
                             >
-                                <div>
-                                    <p className="no-margin">{this.state.activeMarker ? this.state.activeMarker.name : ''}</p>
-                                </div>
-                            </InfoWindow>
-                        </Map>
-                    </section>
+                                {
+                                    _.map(this.travelMarkers, (mapMarker: MapMarkerInterface, index: number) => {
+                                        return (
+                                            <Marker
+                                                key={index}
+                                                onClick={this._onMarkerClick}
+                                                name={mapMarker.title}
+                                                position={{lat: mapMarker.lat, lng: mapMarker.lng}}
+                                            />
+                                        )
+                                    })
+                                }
+                                <InfoWindow
+                                    marker={this.state.activeMarker}
+                                    visible={!!this.state.activeMarker}
+                                    onClose={this._onInfoWindowClose}
+                                >
+                                    <div>
+                                        <p className="no-margin">{this.state.activeMarker ? this.state.activeMarker.name : ''}</p>
+                                    </div>
+                                </InfoWindow>
+                            </Map>
+                        </section>
+                    </div>
                 </div>
                 {/*hauptstimme*/}
                 <Hauptstimme/>

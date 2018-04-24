@@ -4,17 +4,13 @@
 //core
 //----------------------
 header {
-  background-color: $color-menu-active-state;
+  background-color: rgba(255,255,255,0.90);
   box-shadow: 0 0 10px $color-box-shadow;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   z-index: 999;
-  .fa {
-    font-size: 2rem;
-    margin: 10px 0;
-  }
 }
 
 
@@ -23,61 +19,15 @@ header {
 .standard-menu {
   list-style: none;
   margin: 0;
-  & > li {
+  a {
+    cursor: pointer;
     display: inline-block;
     border-bottom: 5px solid transparent;
     @include transition-with-defaults(border-color);
-    & > a {
-      padding: 20px 15px;
-    }
+    padding: 20px 15px;
     &.active, &:hover {
       border-bottom-color: $color-jays-light-blue;
-    }
-    &:hover {
-      .sub-menu {
-        opacity: 1;
-        height: auto;
-        overflow: visible;
-      }
-    }
-  }
-  a {
-    padding: 5px 15px;
-    display: block;
-    &:hover {
       color: $color-font-black;
     }
-  }
-}
-
-.sub-menu {
-  position: absolute;
-  opacity: 0;
-  padding: 0;
-  height: 0;
-  overflow: hidden;
-  list-style: none;
-  background-color: white;
-  border: 1px solid $color-sub-menu-border;
-  border-top-color: $color-menu-border-active-state;
-  text-align: left;
-  min-width: 150px;
-  margin-top: 5px;
-  @include transition-with-defaults(opacity);
-  a {
-    color: $color-font-black;
-    font-size: 14px;
-    @include transition-with-defaults(background-color);
-  }
-  .active a, a:hover {
-    background-color: $color-menu-active-state;
-  }
-}
-
-#mobile-menu {
-  list-style: none;
-  padding: 0;
-  .active .fa {
-    color: $color-anchor-hover;
   }
 }

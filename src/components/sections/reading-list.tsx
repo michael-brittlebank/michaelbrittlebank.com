@@ -6,7 +6,7 @@ import * as faGithub from '@fortawesome/fontawesome-free-brands/faGithub'
 export default class ReadingList extends React.Component {
     render() {
         return (
-            <div className="grid-container row section-container">
+            <div id="reading-list-container" className="grid-container row section-container">
                 <div className="col-sm-12">
                     <h1 id="reading-list-title" className="page-title">WP Reading List</h1>
                 </div>
