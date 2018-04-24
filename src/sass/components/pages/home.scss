@@ -1,41 +1,11 @@
-@import "../../base/colours.scss";
-@import "../../base/mixins.scss";
-@import "../../base/media-queries.scss";
-@import "../../base/fonts.scss";
-
-//resume
-//----------------------
-#resume-body {
-  h2 {
-    border-bottom: 1px solid $color-dark-grey;
-    padding: 20px 0 5px 0;
-    text-align: center;
-    text-transform: uppercase;
-  }
-  h3 {
-    margin: 30px 0 10px 0;
-  }
-  span {
-    display: inline!important;
-    @include transition-with-defaults(color);
-  }
-  a {
-    &:hover {
-      span {
-        color: $color-anchor-hover;
-      }
-    }
-  }
-  ul {
-    list-style: circle;
-    padding: 0 10px;
-  }
-}
-
 //travel
 //----------------------
 #travel-map-container {
   position: relative;
   height: 600px;
   width: 100%;
+}
+
+.section-container {
+  margin-bottom: 75px;
 }

@@ -1,5 +1,5 @@
 import * as React from 'react'
-import '../../sass/components/common/notFound.css'
+import '../../sass/components/pages/notFound.css'
 import { Helmet } from 'react-helmet'
 import * as _ from 'lodash';
 import {UtilsService} from '../../services/utils.service';

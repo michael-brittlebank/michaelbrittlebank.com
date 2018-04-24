@@ -1,3 +1,6 @@
 travis integration
 https://github.com/daneden/animate.css
 condense more to home page
+
+https://www.npmjs.com/package/react-scroll
+nate cover - https://www.themuse.com/advice/the-35-best-personal-websites-weve-ever-seen
