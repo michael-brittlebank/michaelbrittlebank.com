@@ -1515,7 +1515,12 @@ export class TravelService {
                 title: 'Wausau, Wisconsin, USA',
                 lat: 44.9591,
                 lng: -89.6301
-            }// ,
+            },
+            {
+                title: 'Slide Rock State Park, Arizona, USA',
+                lat: 34.9434,
+                lng: -111.7529
+            }
             /**
              * south america
              */
