@@ -1,6 +1,24 @@
 /*
 these are helper functions for common tasks that are difficult to implement across different browsers and devices.
 */
+@media (max-width: 767px) {
+  .hide-for-small {
+    display: none; } }
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .hide-for-medium {
+    display: none; } }
+
+@media (min-width: 768px) {
+  .hide-for-medium-up {
+    display: none; }
+  .show-for-small {
+    display: none; } }
+
+@media (min-width: 1024px) {
+  .hide-for-large {
+    display: none; } }
+
 #chorus-main-container {
   height: 400px;
   position: relative; }

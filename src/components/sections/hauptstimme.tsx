@@ -33,7 +33,7 @@ export default class Hauptstimme extends React.Component {
 
     render() {
         return (
-            <div id="hauptstimme-container" className="grid-container row section-container">
+            <div id="hauptstimme-container" className="grid-container row">
                 <div className="col-sm-12">
                     <h1 id="hauptstimme-title" className="page-title">Hauptstimme.js</h1>
                 </div>

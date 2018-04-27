@@ -25,3 +25,29 @@ $desktop-width: 1024px;
     @content;
   }
 }
+
+//visibility
+//-----------------------------
+@include mobile {
+  .hide-for-small {
+    display: none;
+  }
+}
+@include tablet {
+  .hide-for-medium {
+    display: none;
+  }
+}
+@include tablet-up {
+  .hide-for-medium-up {
+    display: none;
+  }
+  .show-for-small {
+    display: none;
+  }
+}
+@include desktop {
+  .hide-for-large {
+    display: none;
+  }
+}

@@ -4,14 +4,17 @@ import '../../sass/components/pages/home.css'
 import {MapMarkerInterface} from '../../interfaces/mapMarker.interface';
 import {TravelService} from '../../services/travel.service';
 import {Map, InfoWindow, Marker, GoogleApiWrapper} from 'google-maps-react';
-import * as _ from 'lodash';
+import map = require('lodash/map')
+import random = require('lodash/random')
 import ReadingList from '../sections/reading-list';
 import Hauptstimme from '../sections/hauptstimme';
 import Resume from '../sections/resume';
 import * as pic from '../../assets/face.jpg';
+import * as Fade from 'react-reveal/Fade';
 
 interface State {
-    activeMarker: any,
+    activeMarker: any;
+    isMounted: boolean;
 }
 
 interface Props {
@@ -25,26 +28,38 @@ export class Home extends React.Component<Props, State> {
     constructor(props: Props) {
         super(props);
         this.state = {
-            activeMarker: undefined
+            activeMarker: undefined,
+            isMounted: false
         };
         this._onMarkerClick = this._onMarkerClick.bind(this);
         this._onInfoWindowClose = this._onInfoWindowClose.bind(this);
     }
 
+    componentDidMount() {
+        this.setState({ isMounted: true });
+    }
+
     render() {
-        const randomIndex: number = _.random(0, this.travelMarkers.length);
+        const randomIndex: number = random(0, this.travelMarkers.length - 1);
         return (
-            <main className="page-container">
+            <main id="home-page" className={!this.state.isMounted ? 'faded-out' : ''}>
                 <Helmet>
                     <title>Mike Stumpf</title>
                 </Helmet>
                 <div id="home-container">
-                    <div className="full-screen-grid-container row section-container">
-                        <img src={pic} alt="Logo" />
+                    <div id="home-image-container" className="full-screen-grid-container row section-container">
+                        <Fade>
+                            <img id="home-image" src={pic} alt="Logo" />
+                        </Fade>
+                        <div id="home-logo" className="animated fadeInRight">
+                            <p>Mike</p>
+                            <p>Stumpf</p>
+                        </div>
                     </div>
                 </div>
                 {/*resume*/}
                 <Resume/>
+                <div className="spacer blue"/>
                 {/*travel*/}
                 <div id="travel-container">
                     <div className="grid-container row">
@@ -52,7 +67,7 @@ export class Home extends React.Component<Props, State> {
                             <h1 id="travel-title" className="page-title">Travel</h1>
                         </div>
                     </div>
-                    <div className="full-screen-grid-container row section-container">
+                    <div className="full-screen-grid-container row">
                         <section id="travel-map-container" className="col-sm-12 no-padding">
                             <Map
                                 google={this.props.google}
@@ -68,7 +83,7 @@ export class Home extends React.Component<Props, State> {
                                 }}
                             >
                                 {
-                                    _.map(this.travelMarkers, (mapMarker: MapMarkerInterface, index: number) => {
+                                    map(this.travelMarkers, (mapMarker: MapMarkerInterface, index: number) => {
                                         return (
                                             <Marker
                                                 key={index}
@@ -92,6 +107,7 @@ export class Home extends React.Component<Props, State> {
                         </section>
                     </div>
                 </div>
+                <div className="spacer orange"/>
                 {/*hauptstimme*/}
                 <Hauptstimme/>
                 {/*reading list*/}

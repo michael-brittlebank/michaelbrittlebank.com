@@ -5,14 +5,13 @@ import * as faGithub from '@fortawesome/fontawesome-free-brands/faGithubAlt'
 import * as faStackOverflow from '@fortawesome/fontawesome-free-brands/faStackOverflow'
 import { Link } from 'react-router-dom'
 import '../../sass/components/common/footer.css'
-import * as Fade from 'react-reveal/Fade';
+// import * as Fade from 'react-reveal/Fade';
 
 export default class Footer extends React.Component {
 
     render() {
         return (
-            <Fade>
-                <footer className="grid-container row">
+                <footer className="grid-container row animated fadeInUp">
                     <div className="col-sm-12 text-right">
                         <h4 id="footer-social-title">Find Me:</h4>
                         <Link to="https://www.linkedin.com/in/mikestumpf" target="_blank">
@@ -26,7 +25,6 @@ export default class Footer extends React.Component {
                         </Link>
                     </div>
                 </footer>
-            </Fade>
         );
     }
 }

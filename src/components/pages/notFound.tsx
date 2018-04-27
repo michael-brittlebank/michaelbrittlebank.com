@@ -1,11 +1,17 @@
 import * as React from 'react'
 import '../../sass/components/pages/notFound.css'
 import { Helmet } from 'react-helmet'
-import * as _ from 'lodash';
+import map = require('lodash/map')
 import {UtilsService} from '../../services/utils.service';
 import * as classNames from 'classnames';
 
-export default class NotFound extends React.Component<any, any> {
+interface State {
+    translationIndex: number;
+}
+
+interface Props {}
+
+export default class NotFound extends React.Component<Props, State> {
 
     private translationInterval: any;
     private translations: string[] = [
@@ -16,7 +22,7 @@ export default class NotFound extends React.Component<any, any> {
         'Es tut mir Leid'
     ];
 
-    constructor(props: any) {
+    constructor(props: Props) {
         super(props);
         this.state = {
             translationIndex: 0
@@ -54,7 +60,7 @@ export default class NotFound extends React.Component<any, any> {
                 <section className="col-sm-12 col-md-8">
                     <div id="error-translations-container">
                         {
-                            _.map(this.translations, (translation: string, index: number) => {
+                            map(this.translations, (translation: string, index: number) => {
                                 return (
                                     <h3 key={index} className={classNames('error-translations', {'active': index === this.state.translationIndex})}>{translation}</h3>
                                 );

@@ -28,10 +28,28 @@
 /*
 these are helper functions for common tasks that are difficult to implement across different browsers and devices.
 */
+@media (max-width: 767px) {
+  .hide-for-small {
+    display: none; } }
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .hide-for-medium {
+    display: none; } }
+
+@media (min-width: 768px) {
+  .hide-for-medium-up {
+    display: none; }
+  .show-for-small {
+    display: none; } }
+
+@media (min-width: 1024px) {
+  .hide-for-large {
+    display: none; } }
+
 body {
-  padding-top: 65px;
   font-family: Proza Libre, 'HelveticaNeue', Helvetica Neue, Helvetica, Tahoma, Geneva, Arial, sans-serif;
-  color: #393939; }
+  color: #393939;
+  background: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1IiBoZWlnaHQ9IjUiPgo8cmVjdCB3aWR0aD0iNSIgaGVpZ2h0PSI1IiBmaWxsPSIjZmZmIj48L3JlY3Q+CjxyZWN0IHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9IiNjY2MiPjwvcmVjdD4KPC9zdmc+"); }
 
 h1, h2, h3, h4, h5 {
   font-family: Raleway, 'HelveticaNeue', Helvetica Neue, Helvetica, Tahoma, Geneva, Arial, sans-serif; }
@@ -65,12 +83,6 @@ iframe {
   border-left: 20px solid #B70101;
   padding-left: 15px;
   margin-left: -10px; }
-
-.page-container {
-  padding-top: 25px; }
-  @media (min-width: 768px) {
-    .page-container {
-      padding-top: 0; } }
 
 .button {
   display: block;
@@ -163,24 +175,6 @@ iframe {
 .text-upper {
   text-transform: uppercase; }
 
-@media (max-width: 767px) {
-  .hide-for-small {
-    display: none; } }
-
-@media (min-width: 768px) and (max-width: 1023px) {
-  .hide-for-medium {
-    display: none; } }
-
-@media (min-width: 768px) {
-  .hide-for-medium-up {
-    display: none; }
-  .show-for-small {
-    display: none; } }
-
-@media (min-width: 1024px) {
-  .hide-for-large {
-    display: none; } }
-
 .fade-enter {
   position: absolute;
   top: 0;
@@ -211,3 +205,7 @@ iframe {
   right: 0;
   margin: auto;
   opacity: 0.01; }
+
+@media (min-width: 768px) {
+  body {
+    padding-top: 65px; } }

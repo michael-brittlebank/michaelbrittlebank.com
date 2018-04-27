@@ -3,7 +3,6 @@ import '../../sass/components/sections/resume.css'
 import * as Fade from 'react-reveal/Fade';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import * as faLinkedIn from '@fortawesome/fontawesome-free-brands/faLinkedin'
-import * as moment from 'moment';
 import * as faFile from '@fortawesome/fontawesome-free-solid/faFileAlt'
 import { Link } from 'react-router-dom'
 import * as faGithub from '@fortawesome/fontawesome-free-brands/faGithubAlt'
@@ -12,9 +11,9 @@ import * as faStackOverflow from '@fortawesome/fontawesome-free-brands/faStackOv
 export default class Resume extends React.Component {
     render() {
         return (
-            <div id="resume-container" className="grid-container row section-container">
+            <div id="resume-container" className="grid-container row">
                 <div className="col-sm-12">
-                    <h1 id="resume-title" className="page-title">Mike Stumpf</h1>
+                    <h1 id="resume-title" className="page-title">Resume</h1>
                 </div>
                 <section id="resume-body" className="col-sm-12 row">
                     <Fade>
@@ -77,6 +76,6 @@ export default class Resume extends React.Component {
     }
 
     private _getYearsOfExperience(): number {
-        return moment().year() - 2012;
+        return (new Date()).getFullYear() - 2012;
     }
 }
