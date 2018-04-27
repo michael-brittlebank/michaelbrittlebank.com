@@ -46,12 +46,6 @@ these are helper functions for common tasks that are difficult to implement acro
 .f--proza-libre {
   font-family: Proza Libre, 'HelveticaNeue', Helvetica Neue, Helvetica, Tahoma, Geneva, Arial, sans-serif; }
 
-#resume-body h2 {
-  border-bottom: 1px solid #594D4B;
-  padding: 20px 0 5px 0;
-  text-align: center;
-  text-transform: uppercase; }
-
 #resume-body h3:not(#resume-social-title) {
   margin: 30px 0 10px 0; }
 

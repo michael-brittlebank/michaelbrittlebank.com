@@ -24,11 +24,8 @@ export default class Header extends React.Component {
                             <Link activeClass="active" to="travel-container" spy={true} smooth={true} offset={this.headerOffset} duration={500}>
                                 Travel
                             </Link>
-                            <Link activeClass="active" to="hauptstimme-container" spy={true} smooth={true} offset={this.headerOffset} duration={500}>
-                                Hauptstimme.js
-                            </Link>
-                            <Link activeClass="active" to="reading-list-container" spy={true} smooth={true} offset={this.headerOffset} duration={500}>
-                                WP Reading List
+                            <Link activeClass="active" to="portfolio-container" spy={true} smooth={true} offset={this.headerOffset} duration={500}>
+                                Portfolio
                             </Link>
                         </nav>
                     </div>

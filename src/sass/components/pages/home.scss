@@ -3,14 +3,8 @@
 @import "../../base/media-queries.scss";
 @import "../../base/colours.scss";
 
-//travel
+//home section
 //----------------------
-#travel-map-container {
-  position: relative;
-  height: 600px;
-  width: 100%;
-}
-
 #home-image-container {
   position: relative;
 }
@@ -44,7 +38,6 @@
   &.faded-out {
     opacity: 0;
   }
-
 }
 
 .spacer {
@@ -64,8 +57,23 @@
   }
 }
 
-// desktop styles
+.section-header {
+  border-bottom: 1px solid $color-dark-grey;
+  padding: 20px 0 5px 0;
+  text-align: center;
+  text-transform: uppercase;
+}
 
+//travel section
+//----------------------
+#travel-map-container {
+  position: relative;
+  height: 600px;
+  width: 100%;
+}
+
+//desktop styles
+//----------------------
 @include tablet-up {
   .section-container {
     margin-bottom: 25px;

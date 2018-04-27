@@ -18,7 +18,7 @@ export default class Resume extends React.Component {
                 <section id="resume-body" className="col-sm-12 row">
                     <Fade>
                         <section className="col-sm-12">
-                            <h2>Developer</h2>
+                            <h2 className="section-header">Developer</h2>
                             <p>
                                 DRY programmer with <strong>{this._getYearsOfExperience()} years</strong> of professional web development experience building bespoke websites and RESTful APIs using JavaScript, PHP, CSS, and HTML.
                             </p>
@@ -33,7 +33,7 @@ export default class Resume extends React.Component {
                             </p>
                         </section>
                         <section className="col-sm-12 col-md-6">
-                            <h2>Experience</h2>
+                            <h2 className="section-header">Experience</h2>
                             <h3>Senior Web Developer</h3>
                             <h5>2017&ndash;Present &mdash; <a href="https://www.recommenderx.com/" target="_blank">RecommenderX. Dublin, Ireland</a></h5>
                             <h3>Lead Web Developer</h3>
@@ -44,7 +44,7 @@ export default class Resume extends React.Component {
                             <h5>2012 &mdash; <a href="http://www.purdue.edu/" target="_blank">Purdue University, West Lafayette, USA</a></h5>
                         </section>
                         <section className="col-sm-12 col-md-6">
-                            <h2>Education</h2>
+                            <h2 className="section-header">Education</h2>
                             <h3>Higher Diploma in Science, Computing</h3>
                             <h5>2017 &mdash; <a href="http://www.itb.ie/" target="_blank">Institute of Technology-Blanchardstown. Dublin, Ireland</a></h5>
                             <h3>MA, Renaissance Literature 1500-1700</h3>

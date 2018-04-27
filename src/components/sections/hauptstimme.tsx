@@ -1,6 +1,8 @@
 import * as React from 'react';
 import { HauptstimmeJs, NoteConstant, SearchResponseInterface, InstrumentInterface, ScaleInterface, ChordInterface } from 'hauptstimme-js';
 import '../../sass/components/sections/hauptstimme.css'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import * as faGithub from '@fortawesome/fontawesome-free-brands/faGithub'
 
 export default class Hauptstimme extends React.Component {
     componentDidMount() {
@@ -33,14 +35,15 @@ export default class Hauptstimme extends React.Component {
 
     render() {
         return (
-            <div id="hauptstimme-container" className="grid-container row">
-                <div className="col-sm-12">
-                    <h1 id="hauptstimme-title" className="page-title">Hauptstimme.js</h1>
-                </div>
-                <section className="col-sm-12">
+            <section id="hauptstimme-container" className="col-sm-12">
+                <h2 id="hauptstimme-title" className="section-header">Hauptstimme.js</h2>
+                <p>
                     hauptstimme
-                </section>
-            </div>
+                </p>
+                <a href="https://github.com/mike-stumpf/hauptstimme.js" className="button" target="_blank">
+                    <span>View Code&nbsp;&nbsp;&nbsp;<FontAwesomeIcon icon={faGithub} className="fa"/></span>
+                </a>
+            </section>
 
             //     < main
             // id = "portfolio-chorus"

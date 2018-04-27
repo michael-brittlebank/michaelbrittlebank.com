@@ -6,11 +6,10 @@ import {TravelService} from '../../services/travel.service';
 import {Map, InfoWindow, Marker, GoogleApiWrapper} from 'google-maps-react';
 import map = require('lodash/map')
 import random = require('lodash/random')
-import ReadingList from '../sections/reading-list';
-import Hauptstimme from '../sections/hauptstimme';
 import Resume from '../sections/resume';
 import * as pic from '../../assets/face.jpg';
 import * as Fade from 'react-reveal/Fade';
+import Portfolio from '../sections/portfolio';
 
 interface State {
     activeMarker: any;
@@ -108,10 +107,8 @@ export class Home extends React.Component<Props, State> {
                     </div>
                 </div>
                 <div className="spacer orange"/>
-                {/*hauptstimme*/}
-                <Hauptstimme/>
-                {/*reading list*/}
-                <ReadingList/>
+                {/*portfolio*/}
+                <Portfolio/>
             </main>
         );
     }
