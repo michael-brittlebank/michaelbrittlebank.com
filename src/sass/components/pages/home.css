@@ -103,7 +103,7 @@ these are helper functions for common tasks that are difficult to implement acro
 
 @media (min-width: 768px) {
   .section-container {
-    margin-bottom: 25px; }
+    padding-bottom: 25px; }
   .spacer {
     height: 150px; }
   #home-logo {
