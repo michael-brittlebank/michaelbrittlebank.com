@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { Link, scrollSpy } from 'react-scroll'
+import { Link as ScrollLink, scrollSpy } from 'react-scroll'
 import '../../sass/components/common/header.css'
 
 export default class Header extends React.Component {
@@ -10,27 +10,29 @@ export default class Header extends React.Component {
     }
 
     render () {
-        return (
+        return (window.location.pathname === '/') ? (
             <header>
                 <div className="grid-container row">
                     <div className="col-md-12 text-center hide-for-small">
                         <nav className="standard-menu">
-                            <Link activeClass="active" to="home-container" spy={true} smooth={true} offset={this.headerOffset} duration={500}>
+                            <ScrollLink activeClass="active" to="home-container" spy={true} smooth={true} offset={this.headerOffset} duration={500}>
                                 Home
-                            </Link>
-                            <Link activeClass="active" to="resume-container" spy={true} smooth={true} offset={this.headerOffset} duration={500}>
+                            </ScrollLink>
+                            <ScrollLink activeClass="active" to="resume-container" spy={true} smooth={true} offset={this.headerOffset} duration={500}>
                                 Resume
-                            </Link>
-                            <Link activeClass="active" to="travel-container" spy={true} smooth={true} offset={this.headerOffset} duration={500}>
+                            </ScrollLink>
+                            <ScrollLink activeClass="active" to="travel-container" spy={true} smooth={true} offset={this.headerOffset} duration={500}>
                                 Travel
-                            </Link>
-                            <Link activeClass="active" to="portfolio-container" spy={true} smooth={true} offset={this.headerOffset} duration={500}>
+                            </ScrollLink>
+                            <ScrollLink activeClass="active" to="portfolio-container" spy={true} smooth={true} offset={this.headerOffset} duration={500}>
                                 Portfolio
-                            </Link>
+                            </ScrollLink>
                         </nav>
                     </div>
                 </div>
             </header>
+        ) : (
+            null
         );
     }
 };

@@ -25,7 +25,6 @@
 
 #error-page-container {
   text-align: center;
-  padding-top: 25px;
   h1, h3, span {
     font-family: $global-font-raleway-thin;
   }
@@ -38,9 +37,6 @@
 
 //desktop styles
 @include tablet-up {
-  #error-page-container {
-    padding-top: 55px;
-  }
   #error-title-container {
     border-right: 2px solid $color-font-black;
     text-align: right;

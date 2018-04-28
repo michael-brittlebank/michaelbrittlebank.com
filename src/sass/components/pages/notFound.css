@@ -71,8 +71,7 @@ these are helper functions for common tasks that are difficult to implement acro
     opacity: 1; }
 
 #error-page-container {
-  text-align: center;
-  padding-top: 25px; }
+  text-align: center; }
   #error-page-container h1, #error-page-container h3, #error-page-container span {
     font-family: RalewayThin, 'HelveticaNeue', Helvetica Neue, Helvetica, Tahoma, Geneva, Arial, sans-serif; }
 
@@ -81,8 +80,6 @@ these are helper functions for common tasks that are difficult to implement acro
   margin: 0; }
 
 @media (min-width: 768px) {
-  #error-page-container {
-    padding-top: 55px; }
   #error-title-container {
     border-right: 2px solid #393939;
     text-align: right;

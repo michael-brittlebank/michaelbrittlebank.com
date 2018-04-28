@@ -1,5 +1,6 @@
 @import "../../base/colours.scss";
 @import "../../base/mixins.scss";
+@import "../../base/fonts.scss";
 
 //core
 //----------------------
@@ -23,8 +24,10 @@ header {
     cursor: pointer;
     display: inline-block;
     border-bottom: 5px solid transparent;
-    @include transition-with-defaults(border-color);
     padding: 20px 15px;
+    text-transform: uppercase;
+    font-family: $global-font-raleway;
+    @include transition-with-defaults(border-color);
     &.active, &:hover {
       border-bottom-color: $color-jays-light-blue;
       color: $color-font-black;

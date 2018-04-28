@@ -1,6 +1,33 @@
 /*
 these are helper functions for common tasks that are difficult to implement across different browsers and devices.
 */
+@font-face {
+  font-family: 'Raleway';
+  src: url("/fonts/Raleway/raleway-regular-webfont.woff2") format("woff2"), url("/fonts/Raleway/raleway-regular-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'RalewayThin';
+  src: url("/fonts/Raleway/raleway-thin-webfont.woff2") format("woff2"), url("/fonts/Raleway/raleway-thin-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Proza Libre';
+  src: url("/fonts/ProzaLibre/prozalibre-regular-webfont.woff2") format("woff2"), url("/fonts/ProzaLibre/prozalibre-regular-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal; }
+
+.f--raleway {
+  font-family: Raleway, 'HelveticaNeue', Helvetica Neue, Helvetica, Tahoma, Geneva, Arial, sans-serif; }
+
+.f--raleway-thin {
+  font-family: RalewayThin, 'HelveticaNeue', Helvetica Neue, Helvetica, Tahoma, Geneva, Arial, sans-serif; }
+
+.f--proza-libre {
+  font-family: Proza Libre, 'HelveticaNeue', Helvetica Neue, Helvetica, Tahoma, Geneva, Arial, sans-serif; }
+
 header {
   background-color: rgba(255, 255, 255, 0.9);
   box-shadow: 0 0 10px #888888;
@@ -17,11 +44,13 @@ header {
     cursor: pointer;
     display: inline-block;
     border-bottom: 5px solid transparent;
+    padding: 20px 15px;
+    text-transform: uppercase;
+    font-family: Raleway, 'HelveticaNeue', Helvetica Neue, Helvetica, Tahoma, Geneva, Arial, sans-serif;
     -webkit-transition: border-color 250ms ease-out 0s;
     -moz-transition: border-color 250ms ease-out 0s;
     -o-transition: border-color 250ms ease-out 0s;
-    transition: border-color 250ms ease-out 0s;
-    padding: 20px 15px; }
+    transition: border-color 250ms ease-out 0s; }
     .standard-menu a.active, .standard-menu a:hover {
       border-bottom-color: #003DA5;
       color: #393939; }

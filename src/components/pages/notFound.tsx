@@ -4,6 +4,7 @@ import { Helmet } from 'react-helmet'
 import map = require('lodash/map')
 import {UtilsService} from '../../services/utils.service';
 import * as classNames from 'classnames';
+import { Link } from 'react-router-dom';
 
 interface State {
     translationIndex: number;
@@ -70,9 +71,9 @@ export default class NotFound extends React.Component<Props, State> {
                     <p>The page you requested could not be found.</p>
                 </section>
                 <div className="col-sm-12 col-md-8 col-md-offset-4">
-                    <a className="button" href="/">
+                    <Link className="button" to="/">
                         <span>Go To Homepage</span>
-                    </a>
+                    </Link>
                 </div>
             </div>
         );
