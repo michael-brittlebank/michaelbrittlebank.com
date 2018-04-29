@@ -19,41 +19,52 @@ these are helper functions for common tasks that are difficult to implement acro
   .hide-for-large {
     display: none; } }
 
-#chorus-main-container {
-  height: 400px;
-  position: relative; }
+@font-face {
+  font-family: 'Raleway';
+  src: url("/fonts/Raleway/raleway-regular-webfont.woff2") format("woff2"), url("/fonts/Raleway/raleway-regular-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal; }
 
-.chorus-instrument-container {
-  opacity: 0;
-  display: none;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  margin: auto; }
-  .chorus-instrument-container:first-child {
-    opacity: 1;
-    display: block; }
+@font-face {
+  font-family: 'RalewayThin';
+  src: url("/fonts/Raleway/raleway-thin-webfont.woff2") format("woff2"), url("/fonts/Raleway/raleway-thin-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal; }
 
-.chorus-tab {
-  padding: 0.75rem 0.2rem;
-  display: inline-block;
-  text-transform: uppercase;
-  -webkit-transition: background 300ms ease-out 0s,color 300ms ease-out 0s;
-  -moz-transition: background 300ms ease-out 0s,color 300ms ease-out 0s;
-  -o-transition: background 300ms ease-out 0s,color 300ms ease-out 0s;
-  -ms-transition: background 300ms ease-out 0s,color 300ms ease-out 0s;
-  transition: background 300ms ease-out 0s,color 300ms ease-out 0s; }
-  @media (min-width: 768px) {
-    .chorus-tab {
-      padding: 1.25rem 1.5rem; } }
-  .chorus-tab.active {
-    background: #d3d3d3;
-    color: #393939; }
+@font-face {
+  font-family: 'Proza Libre';
+  src: url("/fonts/ProzaLibre/prozalibre-regular-webfont.woff2") format("woff2"), url("/fonts/ProzaLibre/prozalibre-regular-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal; }
 
-.chorus-result-item-selected span, .chorus-result-item:hover span {
-  color: white; }
+.f--raleway {
+  font-family: Raleway, 'HelveticaNeue', Helvetica Neue, Helvetica, Tahoma, Geneva, Arial, sans-serif; }
 
-.chorus-string-container {
-  margin: 0 0 10px 0; }
+.f--raleway-thin {
+  font-family: RalewayThin, 'HelveticaNeue', Helvetica Neue, Helvetica, Tahoma, Geneva, Arial, sans-serif; }
+
+.f--proza-libre {
+  font-family: Proza Libre, 'HelveticaNeue', Helvetica Neue, Helvetica, Tahoma, Geneva, Arial, sans-serif; }
+
+.instrument-selector {
+  max-height: 150px;
+  overflow-y: scroll;
+  border: 1px solid #888888; }
+
+.available-instrument {
+  display: block;
+  padding: 10px;
+  background-color: white;
+  font-family: Raleway, 'HelveticaNeue', Helvetica Neue, Helvetica, Tahoma, Geneva, Arial, sans-serif;
+  -webkit-transition: background-color 300ms ease-out 0s,color 300ms ease-out 0s;
+  -moz-transition: background-color 300ms ease-out 0s,color 300ms ease-out 0s;
+  -o-transition: background-color 300ms ease-out 0s,color 300ms ease-out 0s;
+  -ms-transition: background-color 300ms ease-out 0s,color 300ms ease-out 0s;
+  transition: background-color 300ms ease-out 0s,color 300ms ease-out 0s; }
+  .available-instrument.selected, .available-instrument:hover {
+    background-color: #18453B;
+    color: white; }
+
+@media (min-width: 768px) {
+  .instrument-selector {
+    max-height: 250px; } }

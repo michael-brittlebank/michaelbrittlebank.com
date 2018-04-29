@@ -1,45 +1,30 @@
 @import "../../base/colours.scss";
 @import "../../base/mixins.scss";
 @import "../../base/media-queries.scss";
+@import "../../base/fonts.scss";
 
-//core
+//hauptstimme
 //----------------------
-#chorus-main-container {
-  height: 400px;
-  position: relative;
+.instrument-selector {
+  max-height: 150px;
+  overflow-y: scroll;
+  border: 1px solid $color-box-shadow;
 }
 
-.chorus-instrument-container {
-  opacity: 0;
-  display: none;
-  @include center-absolute;
-  &:first-child {
-    opacity: 1;
-    display: block;
-  }
-}
-
-.chorus-tab {
-  padding: 0.75rem 0.2rem;
-  display: inline-block;
-  text-transform: uppercase;
-  @include transition-raw("background 300ms ease-out 0s,color 300ms ease-out 0s");
-  @include tablet-up {
-    padding: 1.25rem 1.5rem;
-  }
-  &.active {
-    background: $color-anchor-hover;
-    color: $color-font-black;
-  }
-}
-
-//bug fixes
-.chorus-result-item-selected, .chorus-result-item:hover {
-  span {
+.available-instrument {
+  display: block;
+  padding: 10px;
+  background-color: white;
+  font-family: $global-font-raleway;
+  @include transition-raw("background-color 300ms ease-out 0s,color 300ms ease-out 0s");
+  &.selected, &:hover {
+    background-color: $color-york-green;
     color: white;
   }
 }
 
-.chorus-string-container {
-  margin: 0 0 10px 0;
+@include tablet-up {
+  .instrument-selector {
+    max-height: 250px;
+  }
 }

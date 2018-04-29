@@ -1,9 +1,9 @@
 import * as React from 'react';
 import { Switch, Route } from 'react-router-dom'
-import Header from './partials/header'
-import Footer from './partials/footer'
+import Header from './common/header'
+import Footer from './common/footer'
 import Home from './pages/home'
-import Head from './partials/head';
+import Head from './common/head';
 import NotFound from './pages/notFound'
 import * as ReactGA from 'react-ga';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';

@@ -1,86 +1,131 @@
 import * as React from 'react';
-import { HauptstimmeJs, NoteConstant, SearchResponseInterface, InstrumentInterface, ScaleInterface, ChordInterface } from 'hauptstimme-js';
+import { HauptstimmeJs, SearchResponseInterface, InstrumentInterface, InstrumentTypeConstant, NoteConstant } from 'hauptstimme-js';
 import '../../sass/components/sections/hauptstimme.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import * as faGithub from '@fortawesome/fontawesome-free-brands/faGithub'
+import map = require('lodash/map')
+import filter = require('lodash/filter')
+import * as classNames from 'classnames';
+import find = require('lodash/find')
 
-export default class Hauptstimme extends React.Component {
+interface State {
+    availableInstruments: InstrumentInterface[];
+    availableTunings: InstrumentInterface[];
+    searchResults: SearchResponseInterface;
+    selectedInstrument: InstrumentInterface;
+    selectedTuning: InstrumentInterface;
+    selectedNotes: NoteConstant[];
+}
+
+export default class Hauptstimme extends React.Component<any, State> {
+
+    constructor(props: any) {
+        super(props);
+        this.state = {
+            availableInstruments: [],
+            availableTunings: [],
+            searchResults: undefined,
+            selectedInstrument: undefined,
+            selectedTuning: undefined,
+            selectedNotes: []
+        };
+        this.selectInstrument = this.selectInstrument.bind(this);
+        this.selectTuning = this.selectTuning.bind(this);
+    }
+
     componentDidMount() {
-        // console.log('getting thing here', NoteConstant[NoteConstant.AB]);
         HauptstimmeJs.getAvailableInstruments()
             .then((response: InstrumentInterface[]) => {
-                // console.log('instruments', response);
+                this.setState({ availableInstruments: filter(response, (instrument: InstrumentInterface) => {
+                        return instrument.type === InstrumentTypeConstant.FRETTED_INSTRUMENT || instrument.type === InstrumentTypeConstant.KEYED_INSTRUMENT;
+                    }) });
+                this.setState({ selectedInstrument: find(response, {name: 'Guitar'}) });
+                this.setState({ availableTunings: filter(response, {type: InstrumentTypeConstant.ALTERNATE_TUNING}) });
             });
-        HauptstimmeJs.getAvailableScales()
-            .then((response: ScaleInterface[]) => {
-                // console.log('scales', response);
-            });
-        HauptstimmeJs.getAvailableChords()
-            .then((response: ChordInterface[]) => {
-                // console.log('chords', response);
-            });
-        HauptstimmeJs.search({
-            rootNote: NoteConstant.A,
-            notes: [
-                NoteConstant.C,
-                NoteConstant.D
-            ]
-        })
-            .then((response: SearchResponseInterface) => {
-                // console.log('search', response);
-            });
-
-        // console.log('demo', HauptstimmeJs.demo());
     }
 
     render() {
         return (
             <section id="hauptstimme-container" className="col-sm-12">
                 <h2 id="hauptstimme-title" className="section-header">Hauptstimme.js</h2>
-                <p>
-                    hauptstimme
-                </p>
+                <div>
+                    <h3>About</h3>
+                    <p>
+                        This project is registered as a <a href="http://npmjs.com/package/hauptstimme-js" target="_blank">npm package</a>.
+                    </p>
+                    <p>
+                        * There are <strong>90</strong> different fretted instrument tunings available as well as
+                        piano.
+                    </p>
+                    <p>
+                        * There are <strong>26</strong> searchable scale types resulting
+                        in <strong>300</strong> possible variations based on the root note.
+                    </p>
+                    <p>
+                        * There are <strong>45</strong> chord types which produce
+                        over <strong>600</strong> searchable results.
+                    </p>
+                </div>
+                <div className="col-sm-12 row">
+                    <div className="col-sm-12 col-md-6">
+                        <h4>Instruments</h4>
+                        <div className="instrument-selector">
+                            {map(this.state.availableInstruments, (instrument: InstrumentInterface, index: number) => {
+                                return (
+                                    <a
+                                        key={index}
+                                        className={classNames('available-instrument', {'selected': instrument === this.state.selectedInstrument})}
+                                        onClick={(e) => this.selectInstrument(e, instrument)}
+                                    >
+                                        {instrument.name}
+                                    </a>
+                                )
+                            })}
+                        </div>
+                    </div>
+                    <div className="col-sm-12 col-md-6">
+                        <h4>Guitar Tunings</h4>
+                        <div className="instrument-selector">
+                            {map(this.state.availableTunings, (instrument: InstrumentInterface, index: number) => {
+                                return (
+                                    <a
+                                        key={index}
+                                        className={classNames('available-instrument', {'selected': instrument === this.state.selectedTuning})}
+                                        onClick={(e) => this.selectTuning(e, instrument)}
+                                    >
+                                        {instrument.name}
+                                    </a>
+                                )
+                            })}
+                        </div>
+                    </div>
+                    <div className="col-sm-12">
+                        <button className="button" onClick={(e) => this._search(e)}>
+                            <span>Search</span>
+                        </button>
+                    </div>
+                    <div className="col-sm-12">
+                        {
+                            this.state.selectedInstrument ? (
+                                <p>
+                                    selected instrument {this.state.selectedInstrument.name}
+                                </p>
+                            ) : null
+                        }
+                        {
+                            this.state.selectedTuning ? (
+                                <p>
+                                    selected tuning {this.state.selectedTuning.name}
+                                </p>
+                            ) : null
+                        }
+                    </div>
+                </div>
                 <a href="https://github.com/mike-stumpf/hauptstimme.js" className="button" target="_blank">
                     <span>View Code&nbsp;&nbsp;&nbsp;<FontAwesomeIcon icon={faGithub} className="fa"/></span>
                 </a>
             </section>
 
-            //     < main
-            // id = "portfolio-chorus"
-            // className = "grid-container row page-container" >
-            //     < h1
-            // className = "page-title col-sm-12" > Chorus.js < /h1>
-            // <nav className="col-sm-8 no-padding">
-            //     <a className="chorus-tab active" data-id="chorus-guitar" data-height="400">Guitar</a>
-            //     <a className="chorus-tab" data-id="chorus-piano" data-height="575">Piano</a>
-            //     <a className="chorus-tab" data-id="chorus-bass" data-height="300">Bass</a>
-            // </nav>
-            // < nav
-            // className = "col-sm-4 no-padding text-right" >
-            //     < a
-            // href = "#modal-chorus-help"
-            // className = "chorus-tab" > Help < /a>
-            // <a href="#modal-chorus-info" className="chorus-tab">Info</a>
-            // < /nav>
-            // <section id="chorus-main-container" className="col-sm-12">
-            //     <div id="chorus-guitar" className="chorus-instrument-container"></div>
-            //     <div id="chorus-piano" className="chorus-instrument-container"></div>
-            //     <div id="chorus-bass" className="chorus-instrument-container"></div>
-            // </section>
-            // < section
-            // className = "col-sm-12 col-md-6" >
-            //     < h3 > Scales < /h3>
-            // <div id="results-scales" className="results-container">
-            //     No results yet
-            // </div>
-            // < /section>
-            // <section className="col-sm-12 col-md-6">
-            //     <h3>Chords</h3>
-            //     <div id="results-chords" className="results-container">
-            //         No results yet
-            //     </div>
-            // </section>
-            // < /main>
             // <aside className="modal--fade" id="modal-chorus-info" data-stackable="false" tabIndex="-1" role="dialog"
             //        aria-labelledby="label-fade" aria-hidden="true">
             //     <div className="modal-inner">
@@ -97,18 +142,7 @@ export default class Hauptstimme extends React.Component {
             //             <p>
             //                 * This project is able to search both musical scales and chords to match the selected notes on
             //                 the fretboard or piano keys.
-            //                 <p>
-            //                     * There are <strong>90</strong> different fretted instrument tunings available as well as
-            //                     piano.
-            //                 </p>
-            //                 <p>
-            //                     * There are <strong>26</strong> searchable scale types resulting
-            //                     in <strong>300</strong> possible variations based on the root note.
-            //                 </p>
-            //                 <p>
-            //                     * There are <strong>45</strong> chord types which produce
-            //                     over <strong>600</strong> searchable results.
-            //                 </p>
+
             //                 <h3 className="modal-title">Info &ndash; Notes</h3>
             //                 <p>
             //                     * Search results do not include theoretical scales, i.e. scales that contain notes with more
@@ -176,5 +210,31 @@ export default class Hauptstimme extends React.Component {
             // </aside>
 
         )
+    }
+
+    private selectInstrument(e: React.MouseEvent<HTMLAnchorElement>, instrument: InstrumentInterface): void {
+        e.preventDefault();
+        this.setState({ selectedInstrument: instrument });
+        this.setState({ selectedTuning: undefined });
+    }
+
+    private selectTuning(e: React.MouseEvent<HTMLAnchorElement>, instrument: InstrumentInterface): void {
+        e.preventDefault();
+        this.setState({ selectedTuning: instrument });
+        this.setState({ selectedInstrument: undefined });
+    }
+
+    private _search(e: React.MouseEvent<HTMLButtonElement>): void {
+        e.preventDefault();
+        HauptstimmeJs.search({
+            rootNote: NoteConstant.A,
+            notes: [
+                NoteConstant.C,
+                NoteConstant.D
+            ]
+        })
+            .then((response: SearchResponseInterface) => {
+                console.log('search', response);
+            });
     }
 }
