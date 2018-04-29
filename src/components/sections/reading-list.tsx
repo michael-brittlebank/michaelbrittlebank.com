@@ -8,6 +8,9 @@ export default class ReadingList extends React.Component {
         return (
             <section id="reading-list-container" className="col-sm-12">
                 <h2 id="reading-list-title" className="section-header">WP Reading List</h2>
+                <p>
+                    This <a href="https://wordpress.org/" target="_blank">WordPress</a> plugin is designed to help organise and display books, magazines, articles, and anything else that you have read lately. This plugin allows users to display what they have read, attach text like a review or notes to it, and provide a link to where visitors can find the piece. The plugin comes bundled with two archive templates (as well as templates for single items and "author" & "type" archives) and is easily customizable with CSS.
+                </p>
                 <p className="show-for-small">This project is best viewed on a larger screen and so is hidden for mobile devices.</p>
                 <ReactIframeResizer
                     src="http://wordpress.mikestumpf.com/reading-list"
