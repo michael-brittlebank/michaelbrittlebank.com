@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { HauptstimmeJs, SearchResponseInterface, InstrumentInterface, InstrumentTypeConstant, NoteConstant } from 'hauptstimme-js';
+import { HauptstimmeJs, SearchResponseInterface, InstrumentInterface, InstrumentTypeConstant, NoteConstant, ChordInterface, ScaleInterface } from 'hauptstimme-js';
 import '../../sass/components/sections/hauptstimme.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import * as faGithub from '@fortawesome/fontawesome-free-brands/faGithub'
@@ -19,8 +19,9 @@ interface State {
     selectedInstrument: InstrumentInterface;
     selectedTuning: InstrumentInterface;
     selectedNotes: NoteConstant[];
-    resultNotes: NoteConstant[];
     rootNote: NoteConstant;
+    selectedScale: ScaleInterface;
+    selectedChord: ChordInterface;
 }
 
 export default class Hauptstimme extends React.Component<any, State> {
@@ -34,8 +35,9 @@ export default class Hauptstimme extends React.Component<any, State> {
             selectedInstrument: undefined,
             selectedTuning: undefined,
             selectedNotes: [],
-            resultNotes: [],
-            rootNote: undefined
+            rootNote: undefined,
+            selectedScale: undefined,
+            selectedChord: undefined
         };
         this._selectInstrument = this._selectInstrument.bind(this);
         this._selectTuning = this._selectTuning.bind(this);
@@ -43,6 +45,8 @@ export default class Hauptstimme extends React.Component<any, State> {
         this._renderInstrument = this._renderInstrument.bind(this);
         this._selectNote = this._selectNote.bind(this);
         this._removeNote = this._removeNote.bind(this);
+        this._selectChord = this._selectChord.bind(this);
+        this._selectScale = this._selectScale.bind(this);
     }
 
     componentDidMount() {
@@ -75,12 +79,12 @@ export default class Hauptstimme extends React.Component<any, State> {
                 <div className="col-sm-12 row">
                     <div className="col-sm-12 col-md-6">
                         <h4>Instruments</h4>
-                        <div className="instrument-selector">
+                        <div className="list-item-selector">
                             {map(this.state.availableInstruments, (instrument: InstrumentInterface, index: number) => {
                                 return (
                                     <a
                                         key={index}
-                                        className={classNames('available-instrument', {'selected': instrument === this.state.selectedInstrument})}
+                                        className={classNames('list-item', {'selected': instrument === this.state.selectedInstrument})}
                                         onClick={(e) => this._selectInstrument(e, instrument)}
                                     >
                                         {instrument.name}
@@ -91,12 +95,12 @@ export default class Hauptstimme extends React.Component<any, State> {
                     </div>
                     <div className="col-sm-12 col-md-6">
                         <h4>Guitar Tunings</h4>
-                        <div className="instrument-selector">
+                        <div className="list-item-selector">
                             {map(this.state.availableTunings, (instrument: InstrumentInterface, index: number) => {
                                 return (
                                     <a
                                         key={index}
-                                        className={classNames('available-instrument', {'selected': instrument === this.state.selectedTuning})}
+                                        className={classNames('list-item', {'selected': instrument === this.state.selectedTuning})}
                                         onClick={(e) => this._selectTuning(e, instrument)}
                                     >
                                         {instrument.name}
@@ -105,14 +109,63 @@ export default class Hauptstimme extends React.Component<any, State> {
                             })}
                         </div>
                     </div>
-                    <div className="col-sm-12">
-                        <button className="button" onClick={(e) => this._search(e)}>
-                            <span>Search</span>
-                        </button>
-                    </div>
-                    <div className="col-sm-12">
-                        {this._renderInstrument()}
-                    </div>
+                </div>
+                {this._renderInstrument()}
+                <button className="button" onClick={(e) => this._search(e)}>
+                    <span>Search</span>
+                </button>
+                <div className="col-sm-12 row">
+                    {
+                        this.state.searchResults && this.state.searchResults.chords ? (
+                            <div className="col-sm-12 col-md-6">
+                                <h4>Chord Results</h4>
+                                <div className="list-item-selector">
+                                    {map(this.state.searchResults.chords, (chord: ChordInterface, index: number) => {
+                                        return (
+                                            <a
+                                                key={index}
+                                                className={classNames('list-item', {'selected': chord === this.state.selectedChord})}
+                                                onClick={(e) => this._selectChord(e, chord)}
+                                            >
+                                                {chord.name} – {chord.description}
+                                            </a>
+                                        )
+                                    })}
+                                </div>
+                            </div>
+                        ) : (
+                            null
+                        )
+                    }
+                    {
+                        this.state.searchResults && this.state.searchResults.scales ? (
+                            <div className="col-sm-12 col-md-6">
+                                <h4>Scale Results</h4>
+                                <div className="list-item-selector">
+                                    {map(this.state.searchResults.scales, (scale: ScaleInterface, index: number) => {
+                                        return (
+                                            <a
+                                                key={index}
+                                                className={classNames('list-item', {'selected': scale === this.state.selectedScale})}
+                                                onClick={(e) => this._selectScale(e, scale)}
+                                            >
+                                                {scale.name} – {scale.description}
+                                            </a>
+                                        )
+                                    })}
+                                </div>
+                            </div>
+                        ) : (
+                            null
+                        )
+                    }
+                    {
+                        !this.state.searchResults ? (
+                            <div id="no-results" className="col-sm-12">
+                                <p>Please select some notes and hit the search button to get matching chords and scales</p>
+                            </div>
+                        ) : null
+                    }
                 </div>
                 <a href="https://github.com/mike-stumpf/hauptstimme.js" className="button" target="_blank">
                     <span>View Code&nbsp;&nbsp;&nbsp;<FontAwesomeIcon icon={faGithub} className="fa"/></span>
@@ -126,8 +179,7 @@ export default class Hauptstimme extends React.Component<any, State> {
         if (!this.state.selectedInstrument || this.state.selectedInstrument !== instrument) {
             this.setState({
                 selectedInstrument: instrument,
-                selectedTuning: undefined,
-                selectedNotes: []
+                selectedTuning: undefined
             });
         }
     }
@@ -137,8 +189,7 @@ export default class Hauptstimme extends React.Component<any, State> {
         if (!this.state.selectedTuning || this.state.selectedTuning !== instrument) {
             this.setState({
                 selectedTuning: instrument,
-                selectedInstrument: undefined,
-                selectedNotes: []
+                selectedInstrument: undefined
             });
         }
     }
@@ -146,14 +197,13 @@ export default class Hauptstimme extends React.Component<any, State> {
     private _search(e: React.MouseEvent<HTMLButtonElement>): void {
         e.preventDefault();
         HauptstimmeJs.search({
-            rootNote: NoteConstant.A,
-            notes: [
-                NoteConstant.C,
-                NoteConstant.D
-            ]
+            rootNote: this.state.rootNote,
+            notes: this.state.selectedNotes
         })
             .then((response: SearchResponseInterface) => {
-                console.log('search', response);
+                this.setState({
+                    searchResults: response
+                });
             });
     }
 
@@ -161,7 +211,10 @@ export default class Hauptstimme extends React.Component<any, State> {
         if (!isNaN(this.state.rootNote) && this.state.rootNote === note) {
             // remove note assignment
             this.setState({
-                rootNote: undefined
+                rootNote: undefined,
+                selectedChord: undefined,
+                selectedScale: undefined,
+                searchResults: undefined
             });
         } else if (this.state.selectedNotes.indexOf(note) !== -1) {
             let selectedNotes: NoteConstant[] = this.state.selectedNotes;
@@ -175,13 +228,19 @@ export default class Hauptstimme extends React.Component<any, State> {
             }
             this.setState({
                 selectedNotes: selectedNotes,
-                rootNote: note
+                rootNote: note,
+                selectedChord: undefined,
+                selectedScale: undefined,
+                searchResults: undefined
             });
         } else {
             // add to selected notes
             const selectedNotes = uniq(concat(this.state.selectedNotes, [note]));
             this.setState({
-                selectedNotes: selectedNotes
+                selectedNotes: selectedNotes,
+                selectedChord: undefined,
+                selectedScale: undefined,
+                searchResults: undefined
             });
         }
     }
@@ -190,7 +249,10 @@ export default class Hauptstimme extends React.Component<any, State> {
         if (!isNaN(this.state.rootNote) && this.state.rootNote === note) {
             // remove note assignment
             this.setState({
-                rootNote: undefined
+                rootNote: undefined,
+                selectedChord: undefined,
+                selectedScale: undefined,
+                searchResults: undefined
             });
         } else if (this.state.selectedNotes.indexOf(note) !== -1) {
             let selectedNotes: NoteConstant[] = this.state.selectedNotes;
@@ -199,8 +261,39 @@ export default class Hauptstimme extends React.Component<any, State> {
                 selectedNotes.splice(selectedNotes.indexOf(note), 1);
             }
             this.setState({
-                selectedNotes: selectedNotes
+                selectedNotes: selectedNotes,
+                selectedChord: undefined,
+                selectedScale: undefined,
+                searchResults: undefined
             });
+        }
+    }
+
+    private _selectChord(e: React.MouseEvent<HTMLAnchorElement>, chord: ChordInterface): void {
+        e.preventDefault();
+        if (!this.state.selectedChord || this.state.selectedChord !== chord) {
+            this.setState({
+                selectedChord: chord,
+                selectedScale: undefined
+            });
+        }
+    }
+
+    private _selectScale(e: React.MouseEvent<HTMLAnchorElement>, scale: ScaleInterface): void {
+        e.preventDefault();
+        if (!this.state.selectedScale || this.state.selectedScale !== scale) {
+            this.setState({
+                selectedScale: scale,
+                selectedChord: undefined
+            });
+        }
+    }
+
+    private _getResultNotes(): NoteConstant[] {
+        if (this.state.selectedChord || this.state.selectedScale) {
+            return this.state.selectedChord ? this.state.selectedChord.notes : this.state.selectedScale.notes;
+        } else {
+            return [];
         }
     }
 
@@ -212,7 +305,7 @@ export default class Hauptstimme extends React.Component<any, State> {
                     <KeyedInstrument
                         instrument={instrument}
                         selectedNotes={this.state.selectedNotes}
-                        resultNotes={this.state.resultNotes}
+                        resultNotes={this._getResultNotes()}
                         rootNote={this.state.rootNote}
                         onClick={this._selectNote}
                         onContextMenu={this._removeNote}

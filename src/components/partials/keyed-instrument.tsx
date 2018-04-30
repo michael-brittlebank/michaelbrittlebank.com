@@ -24,7 +24,7 @@ export default class KeyedInstrument extends React.Component<Props, any> {
 
     render() {
         return (
-            <div className="piano-keyboard">
+            <div className="instrument-container piano-keyboard">
                 {
                     map(this.props.instrument.rootNotes, (note: NoteConstant, index: number) => {
                         return (

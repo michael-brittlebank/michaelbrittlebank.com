@@ -46,12 +46,15 @@ these are helper functions for common tasks that are difficult to implement acro
 .f--proza-libre {
   font-family: Proza Libre, 'HelveticaNeue', Helvetica Neue, Helvetica, Tahoma, Geneva, Arial, sans-serif; }
 
-.instrument-selector {
+.instrument-container {
+  margin: 50px 0; }
+
+.list-item-selector {
   max-height: 150px;
   overflow-y: scroll;
   border: 1px solid #888888; }
 
-.available-instrument {
+.list-item {
   display: block;
   padding: 10px;
   background-color: white;
@@ -70,9 +73,13 @@ these are helper functions for common tasks that are difficult to implement acro
   -o-transition: background-color 300ms ease-out 0s,color 300ms ease-out 0s;
   -ms-transition: background-color 300ms ease-out 0s,color 300ms ease-out 0s;
   transition: background-color 300ms ease-out 0s,color 300ms ease-out 0s; }
-  .available-instrument.selected, .available-instrument:hover {
+  .list-item.selected, .list-item:hover {
     background-color: #18453B;
     color: white; }
+
+#no-results {
+  text-align: center;
+  margin-top: 50px; }
 
 @media (min-width: 768px) {
   .instrument-selector {
