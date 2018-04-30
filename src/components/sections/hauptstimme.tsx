@@ -9,6 +9,8 @@ import * as classNames from 'classnames';
 import find = require('lodash/find')
 import FrettedInstrument from '../partials/fretted-instrument';
 import KeyedInstrument from '../partials/keyed-instrument';
+import uniq = require('lodash/uniq')
+import concat = require('lodash/concat')
 
 interface State {
     availableInstruments: InstrumentInterface[];
@@ -17,6 +19,8 @@ interface State {
     selectedInstrument: InstrumentInterface;
     selectedTuning: InstrumentInterface;
     selectedNotes: NoteConstant[];
+    resultNotes: NoteConstant[];
+    rootNote: NoteConstant;
 }
 
 export default class Hauptstimme extends React.Component<any, State> {
@@ -29,12 +33,16 @@ export default class Hauptstimme extends React.Component<any, State> {
             searchResults: undefined,
             selectedInstrument: undefined,
             selectedTuning: undefined,
-            selectedNotes: []
+            selectedNotes: [],
+            resultNotes: [],
+            rootNote: undefined
         };
         this._selectInstrument = this._selectInstrument.bind(this);
         this._selectTuning = this._selectTuning.bind(this);
         this._search = this._search.bind(this);
         this._renderInstrument = this._renderInstrument.bind(this);
+        this._selectNote = this._selectNote.bind(this);
+        this._removeNote = this._removeNote.bind(this);
     }
 
     componentDidMount() {
@@ -43,7 +51,7 @@ export default class Hauptstimme extends React.Component<any, State> {
                 this.setState({ availableInstruments: filter(response, (instrument: InstrumentInterface) => {
                         return instrument.type === InstrumentTypeConstant.FRETTED_INSTRUMENT || instrument.type === InstrumentTypeConstant.KEYED_INSTRUMENT;
                     }) });
-                this.setState({ selectedInstrument: find(response, {name: 'Guitar'}) });
+                this.setState({ selectedInstrument: find(response, {name: 'Piano'}) });
                 this.setState({ availableTunings: filter(response, {type: InstrumentTypeConstant.ALTERNATE_TUNING}) });
             });
     }
@@ -148,13 +156,67 @@ export default class Hauptstimme extends React.Component<any, State> {
                 console.log('search', response);
             });
     }
-    
+
+    private _selectNote(note: NoteConstant): void {
+        if (!isNaN(this.state.rootNote) && this.state.rootNote === note) {
+            // remove note assignment
+            this.setState({
+                rootNote: undefined
+            });
+        } else if (this.state.selectedNotes.indexOf(note) !== -1) {
+            let selectedNotes: NoteConstant[] = this.state.selectedNotes;
+            if (selectedNotes.indexOf(note) !== -1) {
+                // remove root note from selected notes
+                selectedNotes.splice(selectedNotes.indexOf(note), 1);
+            }
+            if (!isNaN(this.state.rootNote)) {
+                // move any previous root note back to selected
+                selectedNotes = uniq(concat(selectedNotes, [this.state.rootNote]));
+            }
+            this.setState({
+                selectedNotes: selectedNotes,
+                rootNote: note
+            });
+        } else {
+            // add to selected notes
+            const selectedNotes = uniq(concat(this.state.selectedNotes, [note]));
+            this.setState({
+                selectedNotes: selectedNotes
+            });
+        }
+    }
+
+    private _removeNote(note: NoteConstant): void {
+        if (!isNaN(this.state.rootNote) && this.state.rootNote === note) {
+            // remove note assignment
+            this.setState({
+                rootNote: undefined
+            });
+        } else if (this.state.selectedNotes.indexOf(note) !== -1) {
+            let selectedNotes: NoteConstant[] = this.state.selectedNotes;
+            if (selectedNotes.indexOf(note) !== -1) {
+                // remove root note from selected notes
+                selectedNotes.splice(selectedNotes.indexOf(note), 1);
+            }
+            this.setState({
+                selectedNotes: selectedNotes
+            });
+        }
+    }
+
     private _renderInstrument(): any {
         if (this.state.selectedInstrument || this.state.selectedTuning) {
             const instrument: InstrumentInterface = this.state.selectedInstrument ? this.state.selectedInstrument : this.state.selectedTuning;
             if (instrument.type === InstrumentTypeConstant.KEYED_INSTRUMENT) {
                 return (
-                    <KeyedInstrument instrument={instrument} selectedNotes={this.state.selectedNotes}/>
+                    <KeyedInstrument
+                        instrument={instrument}
+                        selectedNotes={this.state.selectedNotes}
+                        resultNotes={this.state.resultNotes}
+                        rootNote={this.state.rootNote}
+                        onClick={this._selectNote}
+                        onContextMenu={this._removeNote}
+                    />
                 )
             } else {
                 return (

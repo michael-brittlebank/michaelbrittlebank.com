@@ -33,7 +33,7 @@
 
 //strings
 //-----------------------------
-.chorus-string {
+.string {
   width: 100%;
   clear: both;
   overflow: hidden;
@@ -45,13 +45,13 @@
   }
 }
 
-.chorus-fret-marker {
+.fret-marker {
   position: absolute;
   top: 0;
   bottom: 0;
   margin: auto;
   height: 30px;
-  .chorus-fret {
+  .fret {
     vertical-align: middle;
     border-right-color: transparent;
   }
@@ -65,7 +65,7 @@
   }
 }
 
-.chorus-fret {
+.fret {
   display: inline-block;
   font-size: 16px;
   width: 7.5%;
@@ -100,7 +100,7 @@
     }
   }
   p {
-    @extend .chorus-note;
+    @extend .note;
     span {
       white-space: nowrap;
     }
@@ -110,14 +110,14 @@
 
 //piano
 //-----------------------------
-.chorus-piano-keyboard {
+.piano-keyboard {
   position: relative;
   height: 500px;
   max-width: 100%;
   display: flex;
 }
 
-.chorus-piano-key {
+.piano-key {
   $whiteKeyWidth: 14.15;
   $blackKeyWidth: $whiteKeyWidth*0.6;
   display: inline-block;
@@ -126,6 +126,11 @@
   text-align: center;
   cursor: pointer;
   @include unselectable;
+  @include transition-with-defaults(box-shadow);
+  &:hover {
+    box-shadow: 0 0 15px $color-box-shadow;
+    z-index: 1;
+  }
   &.white {
     position: relative;
     color: black;
@@ -176,13 +181,13 @@
     width: 50px;
     max-width: 100%;
     display: inline-block;
-    @extend .chorus-note;
+    @extend .note;
   }
 }
 
 //notes
 //-----------------------------
-.chorus-note {
+.note {
   text-align: center;
   padding: 5px 0;
   margin: 0 auto;
@@ -194,24 +199,21 @@
     max-width: 100%;
     @include transition-raw("background-color 500ms ease-out 0s,color 500ms ease-out 0s");
   }
-}
-
-.chorus-note-found {
-  span {
-    background-color: $color-badgers-gold !important;
+  &.found {
+    span {
+      background-color: $color-badgers-gold !important;
+    }
   }
-}
-
-.chorus-note-selected {
-  span {
-    color: white;
-    background-color: $color-jays-light-blue!important;
+  &.selected {
+    span {
+      color: white;
+      background-color: $color-jays-light-blue!important;
+    }
   }
-}
-
-.chorus-note-root{
-  span {
-    color: white;
-    background-color: $color-badgers-red!important;
+  &.root{
+    span {
+      color: white;
+      background-color: $color-badgers-red!important;
+    }
   }
 }
