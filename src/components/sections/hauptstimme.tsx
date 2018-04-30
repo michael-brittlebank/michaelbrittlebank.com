@@ -7,6 +7,8 @@ import map = require('lodash/map')
 import filter = require('lodash/filter')
 import * as classNames from 'classnames';
 import find = require('lodash/find')
+import FrettedInstrument from '../partials/fretted-instrument';
+import KeyedInstrument from '../partials/keyed-instrument';
 
 interface State {
     availableInstruments: InstrumentInterface[];
@@ -29,8 +31,10 @@ export default class Hauptstimme extends React.Component<any, State> {
             selectedTuning: undefined,
             selectedNotes: []
         };
-        this.selectInstrument = this.selectInstrument.bind(this);
-        this.selectTuning = this.selectTuning.bind(this);
+        this._selectInstrument = this._selectInstrument.bind(this);
+        this._selectTuning = this._selectTuning.bind(this);
+        this._search = this._search.bind(this);
+        this._renderInstrument = this._renderInstrument.bind(this);
     }
 
     componentDidMount() {
@@ -49,7 +53,7 @@ export default class Hauptstimme extends React.Component<any, State> {
             <section id="hauptstimme-container" className="col-sm-12">
                 <h2 id="hauptstimme-title" className="section-header">Hauptstimme.js</h2>
                 <p>
-                    This project is for searching musical scales and chords which match the selected notes on the fretboard or keys. It is registered as a <a href="http://npmjs.com/package/hauptstimme-js" target="_blank">npm package</a> and built with <a href="https://www.typescriptlang.org/" target="_blank"> TypeScript</a>.
+                    This project is for searching musical scales and chords which match a selection of notes. It is registered as a <a href="http://npmjs.com/package/hauptstimme-js" target="_blank">npm package</a> and built with <a href="https://www.typescriptlang.org/" target="_blank"> TypeScript</a>.
                 </p>
                 <p>
                     There are <strong>91</strong> instrument tunings available and <strong>26</strong> scale and <strong>51</strong> chord types which produce <strong>312</strong> and <strong>612</strong> searchable variations, respectively.
@@ -69,7 +73,7 @@ export default class Hauptstimme extends React.Component<any, State> {
                                     <a
                                         key={index}
                                         className={classNames('available-instrument', {'selected': instrument === this.state.selectedInstrument})}
-                                        onClick={(e) => this.selectInstrument(e, instrument)}
+                                        onClick={(e) => this._selectInstrument(e, instrument)}
                                     >
                                         {instrument.name}
                                     </a>
@@ -85,7 +89,7 @@ export default class Hauptstimme extends React.Component<any, State> {
                                     <a
                                         key={index}
                                         className={classNames('available-instrument', {'selected': instrument === this.state.selectedTuning})}
-                                        onClick={(e) => this.selectTuning(e, instrument)}
+                                        onClick={(e) => this._selectTuning(e, instrument)}
                                     >
                                         {instrument.name}
                                     </a>
@@ -99,20 +103,7 @@ export default class Hauptstimme extends React.Component<any, State> {
                         </button>
                     </div>
                     <div className="col-sm-12">
-                        {
-                            this.state.selectedInstrument ? (
-                                <p>
-                                    selected instrument {this.state.selectedInstrument.name}
-                                </p>
-                            ) : null
-                        }
-                        {
-                            this.state.selectedTuning ? (
-                                <p>
-                                    selected tuning {this.state.selectedTuning.name}
-                                </p>
-                            ) : null
-                        }
+                        {this._renderInstrument()}
                     </div>
                 </div>
                 <a href="https://github.com/mike-stumpf/hauptstimme.js" className="button" target="_blank">
@@ -122,16 +113,26 @@ export default class Hauptstimme extends React.Component<any, State> {
         )
     }
 
-    private selectInstrument(e: React.MouseEvent<HTMLAnchorElement>, instrument: InstrumentInterface): void {
+    private _selectInstrument(e: React.MouseEvent<HTMLAnchorElement>, instrument: InstrumentInterface): void {
         e.preventDefault();
-        this.setState({ selectedInstrument: instrument });
-        this.setState({ selectedTuning: undefined });
+        if (!this.state.selectedInstrument || this.state.selectedInstrument !== instrument) {
+            this.setState({
+                selectedInstrument: instrument,
+                selectedTuning: undefined,
+                selectedNotes: []
+            });
+        }
     }
 
-    private selectTuning(e: React.MouseEvent<HTMLAnchorElement>, instrument: InstrumentInterface): void {
+    private _selectTuning(e: React.MouseEvent<HTMLAnchorElement>, instrument: InstrumentInterface): void {
         e.preventDefault();
-        this.setState({ selectedTuning: instrument });
-        this.setState({ selectedInstrument: undefined });
+        if (!this.state.selectedTuning || this.state.selectedTuning !== instrument) {
+            this.setState({
+                selectedTuning: instrument,
+                selectedInstrument: undefined,
+                selectedNotes: []
+            });
+        }
     }
 
     private _search(e: React.MouseEvent<HTMLButtonElement>): void {
@@ -146,5 +147,22 @@ export default class Hauptstimme extends React.Component<any, State> {
             .then((response: SearchResponseInterface) => {
                 console.log('search', response);
             });
+    }
+    
+    private _renderInstrument(): any {
+        if (this.state.selectedInstrument || this.state.selectedTuning) {
+            const instrument: InstrumentInterface = this.state.selectedInstrument ? this.state.selectedInstrument : this.state.selectedTuning;
+            if (instrument.type === InstrumentTypeConstant.KEYED_INSTRUMENT) {
+                return (
+                    <KeyedInstrument instrument={instrument} selectedNotes={this.state.selectedNotes}/>
+                )
+            } else {
+                return (
+                    <FrettedInstrument instrument={instrument} selectedNotes={this.state.selectedNotes}/>
+                );
+            }
+        } else {
+            return null;
+        }
     }
 }

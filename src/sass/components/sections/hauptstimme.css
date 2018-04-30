@@ -56,6 +56,15 @@ these are helper functions for common tasks that are difficult to implement acro
   padding: 10px;
   background-color: white;
   font-family: Raleway, 'HelveticaNeue', Helvetica Neue, Helvetica, Tahoma, Geneva, Arial, sans-serif;
+  -webkit-user-select: none;
+  /* Chrome all / Safari all */
+  -moz-user-select: none;
+  /* Firefox all */
+  -ms-user-select: none;
+  /* IE 10+ */
+  /* No support for these yet, use at own risk */
+  -o-user-select: none;
+  user-select: none;
   -webkit-transition: background-color 300ms ease-out 0s,color 300ms ease-out 0s;
   -moz-transition: background-color 300ms ease-out 0s,color 300ms ease-out 0s;
   -o-transition: background-color 300ms ease-out 0s,color 300ms ease-out 0s;
@@ -68,3 +77,161 @@ these are helper functions for common tasks that are difficult to implement acro
 @media (min-width: 768px) {
   .instrument-selector {
     max-height: 250px; } }
+
+.chorus-string {
+  width: 100%;
+  clear: both;
+  overflow: hidden; }
+  .chorus-string:nth-child(2) {
+    border-top: 1px solid black; }
+  .chorus-string:last-child {
+    border-bottom: 1px solid black; }
+
+.chorus-fret-marker {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  height: 30px; }
+  .chorus-fret-marker .chorus-fret {
+    vertical-align: middle;
+    border-right-color: transparent; }
+  .chorus-fret-marker p {
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 20px; }
+    .chorus-fret-marker p:before {
+      border: none; }
+
+.chorus-fret {
+  display: inline-block;
+  font-size: 16px;
+  width: 7.5%;
+  text-align: center;
+  cursor: pointer;
+  position: relative;
+  border-right: 1px solid black;
+  float: left;
+  -webkit-user-select: none;
+  /* Chrome all / Safari all */
+  -moz-user-select: none;
+  /* Firefox all */
+  -ms-user-select: none;
+  /* IE 10+ */
+  /* No support for these yet, use at own risk */
+  -o-user-select: none;
+  user-select: none; }
+  .chorus-fret:first-child {
+    border-right: 5px solid black; }
+  .chorus-fret:not(:first-child) p {
+    position: relative;
+    z-index: 1; }
+    .chorus-fret:not(:first-child) p:before {
+      border-top: 2px solid #dfdfdf;
+      content: "";
+      margin: 0 auto;
+      /* this centers the line to the full width specified */
+      position: absolute;
+      /* positioning must be absolute here, and relative positioning must be applied to the parent */
+      top: 50%;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      width: 95%;
+      z-index: -1; }
+    .chorus-fret:not(:first-child) p span {
+      background-color: white;
+      /* to hide the lines from behind the text, you have to set the background color the same as the container */
+      padding: 0 5px; }
+  .chorus-fret p span {
+    white-space: nowrap; }
+
+.chorus-piano-keyboard {
+  position: relative;
+  height: 500px;
+  max-width: 100%;
+  display: flex; }
+
+.chorus-piano-key {
+  display: inline-block;
+  font-size: 16px;
+  margin: 0;
+  text-align: center;
+  cursor: pointer;
+  -webkit-user-select: none;
+  /* Chrome all / Safari all */
+  -moz-user-select: none;
+  /* Firefox all */
+  -ms-user-select: none;
+  /* IE 10+ */
+  /* No support for these yet, use at own risk */
+  -o-user-select: none;
+  user-select: none; }
+  .chorus-piano-key.white {
+    position: relative;
+    color: black;
+    background: white;
+    height: 95.5%;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    border-right: 1px solid black;
+    width: 14.28571%;
+    vertical-align: bottom;
+    float: left; }
+    .chorus-piano-key.white:first-child {
+      border-left: 1px solid black; }
+  .chorus-piano-key.black {
+    position: absolute;
+    top: 0;
+    height: 65%;
+    margin-left: -4.245%;
+    width: 8.49%;
+    background: black;
+    z-index: 10; }
+    .chorus-piano-key.black span {
+      color: white; }
+    .chorus-piano-key.black[data-note="4"] {
+      left: 14.15%; }
+    .chorus-piano-key.black[data-note="6"] {
+      left: 28.3%; }
+    .chorus-piano-key.black[data-note="9"] {
+      left: 56.6%; }
+    .chorus-piano-key.black[data-note="11"] {
+      left: 70.75%; }
+    .chorus-piano-key.black[data-note="1"] {
+      left: 84.9%; }
+  .chorus-piano-key p {
+    position: absolute;
+    bottom: 10%;
+    left: 0;
+    right: 0;
+    width: 50px;
+    max-width: 100%;
+    display: inline-block; }
+
+.chorus-note, .chorus-fret p, .chorus-piano-key p {
+  text-align: center;
+  padding: 5px 0;
+  margin: 0 auto; }
+  .chorus-note span, .chorus-fret p span, .chorus-piano-key p span {
+    padding: 5px 0;
+    border-radius: 15%;
+    width: 55px;
+    display: inline-block;
+    max-width: 100%;
+    -webkit-transition: background-color 500ms ease-out 0s,color 500ms ease-out 0s;
+    -moz-transition: background-color 500ms ease-out 0s,color 500ms ease-out 0s;
+    -o-transition: background-color 500ms ease-out 0s,color 500ms ease-out 0s;
+    -ms-transition: background-color 500ms ease-out 0s,color 500ms ease-out 0s;
+    transition: background-color 500ms ease-out 0s,color 500ms ease-out 0s; }
+
+.chorus-note-found span {
+  background-color: #E7D9C1 !important; }
+
+.chorus-note-selected span {
+  color: white;
+  background-color: #003DA5 !important; }
+
+.chorus-note-root span {
+  color: white;
+  background-color: #B70101 !important; }

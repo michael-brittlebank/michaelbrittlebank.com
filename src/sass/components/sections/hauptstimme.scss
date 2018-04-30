@@ -16,6 +16,7 @@
   padding: 10px;
   background-color: white;
   font-family: $global-font-raleway;
+  @include unselectable;
   @include transition-raw("background-color 300ms ease-out 0s,color 300ms ease-out 0s");
   &.selected, &:hover {
     background-color: $color-york-green;
@@ -26,5 +27,191 @@
 @include tablet-up {
   .instrument-selector {
     max-height: 250px;
+  }
+}
+
+
+//strings
+//-----------------------------
+.chorus-string {
+  width: 100%;
+  clear: both;
+  overflow: hidden;
+  &:nth-child(2){
+    border-top: 1px solid black;
+  }
+  &:last-child{
+    border-bottom: 1px solid black;
+  }
+}
+
+.chorus-fret-marker {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  height: 30px;
+  .chorus-fret {
+    vertical-align: middle;
+    border-right-color: transparent;
+  }
+  p {
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 20px;
+    &:before {
+      border: none;
+    }
+  }
+}
+
+.chorus-fret {
+  display: inline-block;
+  font-size: 16px;
+  width: 7.5%;
+  text-align: center;
+  cursor: pointer;
+  position: relative;
+  border-right: 1px solid black;
+  float: left;
+  @include unselectable;
+  &:first-child{
+    border-right: 5px solid black;
+  }
+  &:not(:first-child){
+    p {
+      //http://codepen.io/ericrasch/pen/Irlpm
+      position: relative;
+      z-index: 1;
+      &:before {
+        border-top: 2px solid #dfdfdf;
+        content: "";
+        margin: 0 auto; /* this centers the line to the full width specified */
+        position: absolute; /* positioning must be absolute here, and relative positioning must be applied to the parent */
+        top: 50%; left: 0; right: 0; bottom: 0;
+        width: 95%;
+        z-index: -1;
+      }
+      span {
+        background-color: white;
+        /* to hide the lines from behind the text, you have to set the background color the same as the container */
+        padding: 0 5px;
+      }
+    }
+  }
+  p {
+    @extend .chorus-note;
+    span {
+      white-space: nowrap;
+    }
+  }
+}
+
+
+//piano
+//-----------------------------
+.chorus-piano-keyboard {
+  position: relative;
+  height: 500px;
+  max-width: 100%;
+  display: flex;
+}
+
+.chorus-piano-key {
+  $whiteKeyWidth: 14.15;
+  $blackKeyWidth: $whiteKeyWidth*0.6;
+  display: inline-block;
+  font-size: 16px;
+  margin: 0;
+  text-align: center;
+  cursor: pointer;
+  @include unselectable;
+  &.white {
+    position: relative;
+    color: black;
+    background: white;
+    height: 95.5%;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    border-right: 1px solid black;
+    width: unquote((100/7)+'%');
+    vertical-align: bottom;
+    float: left;
+    &:first-child {
+      border-left: 1px solid black;
+    }
+  }
+  &.black {
+    position: absolute;
+    top: 0;
+    height: 65%;
+    margin-left: unquote('-'+$blackKeyWidth/2+'%');
+    width: unquote($blackKeyWidth+'%');
+    background: black;
+    span {
+      color: white;
+    }
+    z-index: 10;
+    &[data-note="4"] {
+      left: unquote($whiteKeyWidth*1+'%');
+    }
+    &[data-note="6"] {
+      left: unquote($whiteKeyWidth*2+'%');
+    }
+    &[data-note="9"] {
+      left: unquote($whiteKeyWidth*4+'%');
+    }
+    &[data-note="11"] {
+      left: unquote($whiteKeyWidth*5+'%');
+    }
+    &[data-note="1"] {
+      left: unquote($whiteKeyWidth*6+'%');
+    }
+  }
+  p {
+    position: absolute;
+    bottom: 10%;
+    left: 0;
+    right: 0;
+    width: 50px;
+    max-width: 100%;
+    display: inline-block;
+    @extend .chorus-note;
+  }
+}
+
+//notes
+//-----------------------------
+.chorus-note {
+  text-align: center;
+  padding: 5px 0;
+  margin: 0 auto;
+  span {
+    padding: 5px 0;
+    border-radius: 15%;
+    width: 55px;
+    display: inline-block;
+    max-width: 100%;
+    @include transition-raw("background-color 500ms ease-out 0s,color 500ms ease-out 0s");
+  }
+}
+
+.chorus-note-found {
+  span {
+    background-color: $color-badgers-gold !important;
+  }
+}
+
+.chorus-note-selected {
+  span {
+    color: white;
+    background-color: $color-jays-light-blue!important;
+  }
+}
+
+.chorus-note-root{
+  span {
+    color: white;
+    background-color: $color-badgers-red!important;
   }
 }
