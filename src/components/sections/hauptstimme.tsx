@@ -120,17 +120,23 @@ export default class Hauptstimme extends React.Component<any, State> {
                             <div className="col-sm-12 col-md-6">
                                 <h4>Chord Results</h4>
                                 <div className="list-item-selector">
-                                    {map(this.state.searchResults.chords, (chord: ChordInterface, index: number) => {
-                                        return (
-                                            <a
-                                                key={index}
-                                                className={classNames('list-item', {'selected': chord === this.state.selectedChord})}
-                                                onClick={(e) => this._selectChord(e, chord)}
-                                            >
-                                                {chord.name} – {chord.description}
-                                            </a>
-                                        )
-                                    })}
+                                    {
+                                        this.state.searchResults.chords.length > 0 ?
+                                            map(this.state.searchResults.chords, (chord: ChordInterface, index: number) => {
+                                                return (
+                                                    <a
+                                                        key={index}
+                                                        className={classNames('list-item', {'selected': chord === this.state.selectedChord})}
+                                                        onClick={(e) => this._selectChord(e, chord)}
+                                                    >
+                                                        {chord.name} – {chord.description}
+                                                    </a>
+                                                )
+                                            }) :
+                                            (
+                                                <p className="no-results">No Results.</p>
+                                            )
+                                    }
                                 </div>
                             </div>
                         ) : (
@@ -142,17 +148,23 @@ export default class Hauptstimme extends React.Component<any, State> {
                             <div className="col-sm-12 col-md-6">
                                 <h4>Scale Results</h4>
                                 <div className="list-item-selector">
-                                    {map(this.state.searchResults.scales, (scale: ScaleInterface, index: number) => {
-                                        return (
-                                            <a
-                                                key={index}
-                                                className={classNames('list-item', {'selected': scale === this.state.selectedScale})}
-                                                onClick={(e) => this._selectScale(e, scale)}
-                                            >
-                                                {scale.name} – {scale.description}
-                                            </a>
-                                        )
-                                    })}
+                                    {
+                                        this.state.searchResults.scales.length > 0 ?
+                                            map(this.state.searchResults.scales, (scale: ScaleInterface, index: number) => {
+                                                return (
+                                                    <a
+                                                        key={index}
+                                                        className={classNames('list-item', {'selected': scale === this.state.selectedScale})}
+                                                        onClick={(e) => this._selectScale(e, scale)}
+                                                    >
+                                                        {scale.name} – {scale.description}
+                                                    </a>
+                                                )
+                                            }) :
+                                            (
+                                                <p className="no-results">No Results.</p>
+                                            )
+                                    }
                                 </div>
                             </div>
                         ) : (
@@ -161,7 +173,7 @@ export default class Hauptstimme extends React.Component<any, State> {
                     }
                     {
                         !this.state.searchResults ? (
-                            <div id="no-results" className="col-sm-12">
+                            <div id="no-search" className="col-sm-12">
                                 <p>Please select some notes and hit the search button to get matching chords and scales</p>
                             </div>
                         ) : null

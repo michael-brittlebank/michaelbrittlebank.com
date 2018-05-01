@@ -79,9 +79,23 @@ these are helper functions for common tasks that are difficult to implement acro
     background-color: #18453B;
     color: white; }
 
-#no-results {
+#no-search {
   text-align: center;
   margin-top: 50px; }
+
+.no-results {
+  margin: 0;
+  padding: 10px;
+  font-family: Raleway, 'HelveticaNeue', Helvetica Neue, Helvetica, Tahoma, Geneva, Arial, sans-serif;
+  -webkit-user-select: none;
+  /* Chrome all / Safari all */
+  -moz-user-select: none;
+  /* Firefox all */
+  -ms-user-select: none;
+  /* IE 10+ */
+  /* No support for these yet, use at own risk */
+  -o-user-select: none;
+  user-select: none; }
 
 @media (min-width: 768px) {
   .instrument-selector {

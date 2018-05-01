@@ -30,9 +30,16 @@
   }
 }
 
-#no-results {
+#no-search {
   text-align: center;
   margin-top: 50px;
+}
+
+.no-results {
+  margin: 0;
+  padding: 10px;
+  font-family: $global-font-raleway;
+  @include unselectable;
 }
 
 @include tablet-up {
