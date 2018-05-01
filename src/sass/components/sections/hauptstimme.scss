@@ -97,9 +97,6 @@ $fret-opacity: 0.65;
   @include unselectable;
   &:first-child{
     border-right: 5px solid black;
-    span {
-      display: inline;
-    }
   }
   &:not(:first-child){
     p {
@@ -115,11 +112,12 @@ $fret-opacity: 0.65;
         width: 95%;
         z-index: -1;
       }
-      span {
-        background-color: rgba(255, 255, 255, $fret-opacity);
-        /* to hide the lines from behind the text, you have to set the background color the same as the container */
-        padding: 0 5px;
-      }
+    }
+    span {
+      background-color: rgba(255, 255, 255, $fret-opacity);
+      /* to hide the lines from behind the text, you have to set the background color the same as the container */
+      padding: 0 5px;
+      margin-top: 5px;
     }
   }
   p {

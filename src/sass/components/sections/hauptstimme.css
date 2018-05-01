@@ -147,8 +147,6 @@ these are helper functions for common tasks that are difficult to implement acro
   user-select: none; }
   .fret:first-child {
     border-right: 5px solid black; }
-    .fret:first-child span {
-      display: inline; }
   .fret:not(:first-child) p {
     position: relative;
     z-index: 1; }
@@ -165,10 +163,11 @@ these are helper functions for common tasks that are difficult to implement acro
       bottom: 0;
       width: 95%;
       z-index: -1; }
-    .fret:not(:first-child) p span {
-      background-color: rgba(255, 255, 255, 0.65);
-      /* to hide the lines from behind the text, you have to set the background color the same as the container */
-      padding: 0 5px; }
+  .fret:not(:first-child) span {
+    background-color: rgba(255, 255, 255, 0.65);
+    /* to hide the lines from behind the text, you have to set the background color the same as the container */
+    padding: 0 5px;
+    margin-top: 5px; }
   .fret p span {
     white-space: nowrap; }
 
