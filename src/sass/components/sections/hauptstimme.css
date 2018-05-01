@@ -48,7 +48,8 @@ these are helper functions for common tasks that are difficult to implement acro
 
 .instrument-container {
   margin: 50px 0;
-  position: relative; }
+  position: relative;
+  background-color: white; }
 
 .list-item-selector {
   max-height: 150px;
@@ -103,7 +104,8 @@ these are helper functions for common tasks that are difficult to implement acro
   height: 30px; }
   .fret-marker .fret {
     vertical-align: middle;
-    border-right-color: transparent; }
+    border-right-color: transparent;
+    opacity: 0.65; }
   .fret-marker p {
     font-size: 20px;
     font-weight: bold;
@@ -131,6 +133,8 @@ these are helper functions for common tasks that are difficult to implement acro
   user-select: none; }
   .fret:first-child {
     border-right: 5px solid black; }
+    .fret:first-child span {
+      display: inline; }
   .fret:not(:first-child) p {
     position: relative;
     z-index: 1; }
@@ -148,7 +152,7 @@ these are helper functions for common tasks that are difficult to implement acro
       width: 95%;
       z-index: -1; }
     .fret:not(:first-child) p span {
-      background-color: white;
+      background-color: rgba(255, 255, 255, 0.65);
       /* to hide the lines from behind the text, you have to set the background color the same as the container */
       padding: 0 5px; }
   .fret p span {

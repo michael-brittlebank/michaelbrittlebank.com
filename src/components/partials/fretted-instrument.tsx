@@ -13,9 +13,11 @@ interface Props {
 
 export default class FrettedInstrument extends React.Component<Props, any> {
 
+    private static numberOfFrets: number = 12;
+
     private static _getFretMarkers(): string[] {
         const output = [];
-        for (let i = 0; i < 13; i++) {
+        for (let i = 0; i <= FrettedInstrument.numberOfFrets; i++) {
             if (i === 3 || i === 5 || i ===9) {
                 output.push(String.fromCharCode(9678));
             } else if (i === 7 || i === 12) {
@@ -23,6 +25,16 @@ export default class FrettedInstrument extends React.Component<Props, any> {
             } else {
                 output.push(String.fromCharCode(160));
             }
+        }
+        return output;
+    }
+
+    private static _getFretsFromRootNote(rootNote: NoteConstant): NoteConstant[] {
+        const output: NoteConstant[] = [rootNote];
+        let currentNote: NoteConstant = rootNote;
+        for (let i = 0; i <= FrettedInstrument.numberOfFrets - 1; i++) {
+            currentNote = HauptstimmeJs.addHalfStepsToNote(currentNote, 1);
+            output.push(currentNote);
         }
         return output;
     }
@@ -56,14 +68,21 @@ export default class FrettedInstrument extends React.Component<Props, any> {
                                 onClick={(e) => {e.preventDefault(); this.props.onClick(note)}}
                                 onContextMenu={(e) => {e.preventDefault(); this.props.onContextMenu(note)}}
                             >
-                                <div
-                                    className="fret note"
-                                    data-note={note}
-                                >
-                                    <p>
-                                        <span>{HauptstimmeJs.getFormattedNoteString(note)}</span>
-                                    </p>
-                                </div>
+                                {
+                                    map(FrettedInstrument._getFretsFromRootNote(note), (fret: NoteConstant, innerIndex: number) => {
+                                        return (
+                                            <div
+                                                key={innerIndex}
+                                                className="fret note"
+                                                data-note={fret}
+                                            >
+                                                <p>
+                                                    <span>{HauptstimmeJs.getFormattedNoteString(fret)}</span>
+                                                </p>
+                                            </div>
+                                        );
+                                    })
+                                }
                             </div>
                         )
                     })

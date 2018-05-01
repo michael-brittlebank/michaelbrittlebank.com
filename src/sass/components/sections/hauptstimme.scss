@@ -8,6 +8,7 @@
 .instrument-container {
   margin: 50px 0;
   position: relative;
+  background-color: white;
 }
 
 .list-item-selector {
@@ -43,6 +44,7 @@
 
 //strings
 //-----------------------------
+$fret-opacity: 0.65;
 .string {
   width: 100%;
   clear: both;
@@ -64,6 +66,7 @@
   .fret {
     vertical-align: middle;
     border-right-color: transparent;
+    opacity: $fret-opacity;
   }
   p {
     font-size: 20px;
@@ -87,6 +90,9 @@
   @include unselectable;
   &:first-child{
     border-right: 5px solid black;
+    span {
+      display: inline;
+    }
   }
   &:not(:first-child){
     p {
@@ -103,7 +109,7 @@
         z-index: -1;
       }
       span {
-        background-color: white;
+        background-color: rgba(255, 255, 255, $fret-opacity);
         /* to hide the lines from behind the text, you have to set the background color the same as the container */
         padding: 0 5px;
       }
