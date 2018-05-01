@@ -288,6 +288,10 @@ export default class Hauptstimme extends React.Component<any, State> {
                 selectedChord: chord,
                 selectedScale: undefined
             });
+        } else {
+            this.setState({
+                selectedChord: undefined
+            });
         }
     }
 
@@ -297,6 +301,10 @@ export default class Hauptstimme extends React.Component<any, State> {
             this.setState({
                 selectedScale: scale,
                 selectedChord: undefined
+            });
+        } else {
+            this.setState({
+                selectedScale: undefined
             });
         }
     }
