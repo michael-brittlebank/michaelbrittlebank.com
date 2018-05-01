@@ -58,7 +58,6 @@ export class Home extends React.Component<Props, State> {
                 </div>
                 {/*resume*/}
                 <Resume/>
-                <div className="spacer blue"/>
                 {/*travel*/}
                 <div id="travel-container">
                     <div className="grid-container row">
@@ -105,8 +104,10 @@ export class Home extends React.Component<Props, State> {
                             </Map>
                         </section>
                     </div>
+                    <section className="full-screen-grid-container row">
+                        <div className="col-sm-12 spacer orange"/>
+                    </section>
                 </div>
-                <div className="spacer orange"/>
                 {/*portfolio*/}
                 <Portfolio/>
             </main>
