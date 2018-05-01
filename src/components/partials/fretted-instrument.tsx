@@ -2,6 +2,7 @@ import * as React from 'react';
 import { HauptstimmeJs, InstrumentInterface, NoteConstant } from 'hauptstimme-js';
 import map = require('lodash/map')
 import * as classNames from 'classnames';
+import reverse = require('lodash/reverse')
 
 interface Props {
     instrument: InstrumentInterface;
@@ -12,7 +13,11 @@ interface Props {
     resultNotes: NoteConstant[];
 }
 
-export default class FrettedInstrument extends React.Component<Props, any> {
+interface State {
+    rootNotes: NoteConstant[];
+}
+
+export default class FrettedInstrument extends React.Component<Props, State> {
 
     private static numberOfFrets: number = 12;
 
@@ -42,6 +47,10 @@ export default class FrettedInstrument extends React.Component<Props, any> {
 
     constructor(props: any) {
         super(props);
+        this.state = {
+            // reverse strings to show in correct order
+            rootNotes: this.props.instrument && this.props.instrument.rootNotes ? reverse(this.props.instrument.rootNotes) : []
+        };
     }
 
     render() {
@@ -61,7 +70,7 @@ export default class FrettedInstrument extends React.Component<Props, any> {
                 </div>
                 {/*main strings*/}
                 {
-                    map(this.props.instrument.rootNotes, (note: NoteConstant, index: number) => {
+                    map(this.state.rootNotes, (note: NoteConstant, index: number) => {
                         return (
                             <div
                                 key={index}
@@ -78,11 +87,15 @@ export default class FrettedInstrument extends React.Component<Props, any> {
                                                     'found': this.props.resultNotes.indexOf(fret) !== -1
                                                 })}
                                                 data-note={fret}
-                                                onClick={(e) => {e.preventDefault(); this.props.onClick(fret)}}
-                                                onContextMenu={(e) => {e.preventDefault(); this.props.onContextMenu(fret)}}
+                                                onContextMenu={(e) => {e.preventDefault()}}
                                             >
                                                 <p>
-                                                    <span>{HauptstimmeJs.getFormattedNoteString(fret)}</span>
+                                                    <span
+                                                        onClick={(e) => {e.preventDefault(); this.props.onClick(fret)}}
+                                                        onContextMenu={(e) => {e.preventDefault(); this.props.onContextMenu(fret)}}
+                                                    >
+                                                        {HauptstimmeJs.getFormattedNoteString(fret)}
+                                                    </span>
                                                 </p>
                                             </div>
                                         );

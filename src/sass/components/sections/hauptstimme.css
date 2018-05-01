@@ -132,7 +132,6 @@ these are helper functions for common tasks that are difficult to implement acro
   font-size: 16px;
   width: 7.5%;
   text-align: center;
-  cursor: pointer;
   position: relative;
   border-right: 1px solid black;
   float: left;
@@ -165,11 +164,12 @@ these are helper functions for common tasks that are difficult to implement acro
       z-index: -1; }
   .fret:not(:first-child) span {
     background-color: rgba(255, 255, 255, 0.65);
-    /* to hide the lines from behind the text, you have to set the background color the same as the container */
-    padding: 0 5px;
-    margin-top: 5px; }
+    /* to hide the lines from behind the text, you have to set the background color the same as the container */ }
   .fret p span {
     white-space: nowrap; }
+  .fret span:hover {
+    box-shadow: 0 0 15px #888888;
+    z-index: 1; }
 
 .piano-keyboard {
   height: 500px;
@@ -245,16 +245,17 @@ these are helper functions for common tasks that are difficult to implement acro
   padding: 5px 0;
   margin: 0 auto; }
   .note span, .fret p span, .piano-key p span {
+    cursor: pointer;
     padding: 5px 0;
     border-radius: 15%;
     width: 55px;
     display: inline-block;
     max-width: 100%;
-    -webkit-transition: background-color 500ms ease-out 0s,color 500ms ease-out 0s;
-    -moz-transition: background-color 500ms ease-out 0s,color 500ms ease-out 0s;
-    -o-transition: background-color 500ms ease-out 0s,color 500ms ease-out 0s;
-    -ms-transition: background-color 500ms ease-out 0s,color 500ms ease-out 0s;
-    transition: background-color 500ms ease-out 0s,color 500ms ease-out 0s; }
+    -webkit-transition: background-color 500ms ease-out 0s,color 500ms ease-out 0s,box-shadow 250ms ease-out 0s;
+    -moz-transition: background-color 500ms ease-out 0s,color 500ms ease-out 0s,box-shadow 250ms ease-out 0s;
+    -o-transition: background-color 500ms ease-out 0s,color 500ms ease-out 0s,box-shadow 250ms ease-out 0s;
+    -ms-transition: background-color 500ms ease-out 0s,color 500ms ease-out 0s,box-shadow 250ms ease-out 0s;
+    transition: background-color 500ms ease-out 0s,color 500ms ease-out 0s,box-shadow 250ms ease-out 0s; }
   .note.found span, .fret p.found span, .piano-key p.found span {
     background-color: #E7D9C1 !important; }
   .note.selected span, .fret p.selected span, .piano-key p.selected span {
