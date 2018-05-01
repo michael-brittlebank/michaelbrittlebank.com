@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { HauptstimmeJs, InstrumentInterface, NoteConstant } from 'hauptstimme-js';
 import map = require('lodash/map')
+import * as classNames from 'classnames';
 
 interface Props {
     instrument: InstrumentInterface;
@@ -65,16 +66,20 @@ export default class FrettedInstrument extends React.Component<Props, any> {
                             <div
                                 key={index}
                                 className="string"
-                                onClick={(e) => {e.preventDefault(); this.props.onClick(note)}}
-                                onContextMenu={(e) => {e.preventDefault(); this.props.onContextMenu(note)}}
                             >
                                 {
                                     map(FrettedInstrument._getFretsFromRootNote(note), (fret: NoteConstant, innerIndex: number) => {
                                         return (
                                             <div
                                                 key={innerIndex}
-                                                className="fret note"
+                                                className={classNames('fret note', {
+                                                    'selected': this.props.selectedNotes.indexOf(fret) !== -1,
+                                                    'root': this.props.rootNote === fret,
+                                                    'found': this.props.resultNotes.indexOf(fret) !== -1
+                                                })}
                                                 data-note={fret}
+                                                onClick={(e) => {e.preventDefault(); this.props.onClick(fret)}}
+                                                onContextMenu={(e) => {e.preventDefault(); this.props.onContextMenu(fret)}}
                                             >
                                                 <p>
                                                     <span>{HauptstimmeJs.getFormattedNoteString(fret)}</span>
