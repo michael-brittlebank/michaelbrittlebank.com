@@ -7,6 +7,7 @@
 //----------------------
 .instrument-container {
   margin: 50px 0;
+  position: relative;
 }
 
 .list-item-selector {
@@ -120,7 +121,6 @@
 //piano
 //-----------------------------
 .piano-keyboard {
-  position: relative;
   height: 500px;
   max-width: 100%;
   display: flex;

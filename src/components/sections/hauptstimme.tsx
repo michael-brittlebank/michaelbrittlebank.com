@@ -55,7 +55,7 @@ export default class Hauptstimme extends React.Component<any, State> {
                 this.setState({ availableInstruments: filter(response, (instrument: InstrumentInterface) => {
                         return instrument.type === InstrumentTypeConstant.FRETTED_INSTRUMENT || instrument.type === InstrumentTypeConstant.KEYED_INSTRUMENT;
                     }) });
-                this.setState({ selectedInstrument: find(response, {name: 'Piano'}) });
+                this.setState({ selectedInstrument: find(response, {name: 'Guitar'}) });
                 this.setState({ availableTunings: filter(response, {type: InstrumentTypeConstant.ALTERNATE_TUNING}) });
             });
     }
@@ -313,7 +313,14 @@ export default class Hauptstimme extends React.Component<any, State> {
                 )
             } else {
                 return (
-                    <FrettedInstrument instrument={instrument} selectedNotes={this.state.selectedNotes}/>
+                    <FrettedInstrument
+                        instrument={instrument}
+                        selectedNotes={this.state.selectedNotes}
+                        resultNotes={this._getResultNotes()}
+                        rootNote={this.state.rootNote}
+                        onClick={this._selectNote}
+                        onContextMenu={this._removeNote}
+                    />
                 );
             }
         } else {

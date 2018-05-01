@@ -47,7 +47,8 @@ these are helper functions for common tasks that are difficult to implement acro
   font-family: Proza Libre, 'HelveticaNeue', Helvetica Neue, Helvetica, Tahoma, Geneva, Arial, sans-serif; }
 
 .instrument-container {
-  margin: 50px 0; }
+  margin: 50px 0;
+  position: relative; }
 
 .list-item-selector {
   max-height: 150px;
@@ -154,7 +155,6 @@ these are helper functions for common tasks that are difficult to implement acro
     white-space: nowrap; }
 
 .piano-keyboard {
-  position: relative;
   height: 500px;
   max-width: 100%;
   display: flex; }
