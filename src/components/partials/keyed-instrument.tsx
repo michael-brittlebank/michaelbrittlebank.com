@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { InstrumentInterface, NoteConstant } from 'hauptstimme-js';
+import { HauptstimmeJs, InstrumentInterface, NoteConstant } from 'hauptstimme-js';
 import map = require('lodash/map')
 import * as classNames from 'classnames';
 
@@ -46,7 +46,7 @@ export default class KeyedInstrument extends React.Component<Props, any> {
                                         'found': this.props.resultNotes.indexOf(note) !== -1
                                     })}
                                 >
-                                    <span>{NoteConstant[note]}</span>
+                                    <span>{HauptstimmeJs.getFormattedNoteString(note)}</span>
                                 </p>
                             </div>
                         )
