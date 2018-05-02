@@ -230,11 +230,9 @@ export default class Hauptstimme extends React.Component<any, State> {
         if (!isNaN(this.state.rootNote) && this.state.rootNote === note) {
             // remove note assignment
             this.setState({
-                rootNote: undefined,
-                selectedChord: undefined,
-                selectedScale: undefined,
-                searchResults: undefined
+                rootNote: undefined
             });
+            this._resetSearchResults();
         } else if (this.state.selectedNotes.indexOf(note) !== -1) {
             let selectedNotes: NoteConstant[] = this.state.selectedNotes;
             if (selectedNotes.indexOf(note) !== -1) {
@@ -247,20 +245,16 @@ export default class Hauptstimme extends React.Component<any, State> {
             }
             this.setState({
                 selectedNotes: selectedNotes,
-                rootNote: note,
-                selectedChord: undefined,
-                selectedScale: undefined,
-                searchResults: undefined
+                rootNote: note
             });
+            this._resetSearchResults();
         } else {
             // add to selected notes
             const selectedNotes = uniq(concat(this.state.selectedNotes, [note]));
             this.setState({
-                selectedNotes: selectedNotes,
-                selectedChord: undefined,
-                selectedScale: undefined,
-                searchResults: undefined
+                selectedNotes: selectedNotes
             });
+            this._resetSearchResults();
         }
     }
 
@@ -268,11 +262,9 @@ export default class Hauptstimme extends React.Component<any, State> {
         if (!isNaN(this.state.rootNote) && this.state.rootNote === note) {
             // remove note assignment
             this.setState({
-                rootNote: undefined,
-                selectedChord: undefined,
-                selectedScale: undefined,
-                searchResults: undefined
+                rootNote: undefined
             });
+            this._resetSearchResults();
         } else if (this.state.selectedNotes.indexOf(note) !== -1) {
             let selectedNotes: NoteConstant[] = this.state.selectedNotes;
             if (selectedNotes.indexOf(note) !== -1) {
@@ -280,12 +272,18 @@ export default class Hauptstimme extends React.Component<any, State> {
                 selectedNotes.splice(selectedNotes.indexOf(note), 1);
             }
             this.setState({
-                selectedNotes: selectedNotes,
-                selectedChord: undefined,
-                selectedScale: undefined,
-                searchResults: undefined
+                selectedNotes: selectedNotes
             });
+            this._resetSearchResults();
         }
+    }
+
+    private _resetSearchResults(): void {
+        this.setState({
+            selectedChord: undefined,
+            selectedScale: undefined,
+            searchResults: undefined
+        });
     }
 
     private _selectChord(e: React.MouseEvent<HTMLAnchorElement>, chord: ChordInterface): void {
