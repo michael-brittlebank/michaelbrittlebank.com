@@ -53,6 +53,12 @@ export default class FrettedInstrument extends React.Component<Props, State> {
         };
     }
 
+    componentWillReceiveProps() {
+        this.setState({
+            rootNotes: this.props.instrument && this.props.instrument.rootNotes ? reverse(this.props.instrument.rootNotes) : []
+        });
+    }
+
     render() {
         return (
             <div className="instrument-container">
