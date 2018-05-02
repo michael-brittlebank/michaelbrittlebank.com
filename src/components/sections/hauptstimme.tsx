@@ -113,7 +113,7 @@ export default class Hauptstimme extends React.Component<any, State> {
                 {this._renderInstrument()}
                 <button
                     className={classNames('button', {
-                        'disabled': !this.state.rootNote && this.state.selectedNotes.length < 1
+                        'disabled': isNaN(this.state.rootNote) && this.state.selectedNotes.length < 1
                     })}
                     onClick={(e) => this._search(e)}
                 >
@@ -213,7 +213,7 @@ export default class Hauptstimme extends React.Component<any, State> {
 
     private _search(e: React.MouseEvent<HTMLButtonElement>): void {
         e.preventDefault();
-        if (!!this.state.rootNote || this.state.selectedNotes.length > 0) {
+        if (!isNaN(this.state.rootNote) || this.state.selectedNotes.length > 0) {
             HauptstimmeJs.search({
                 rootNote: this.state.rootNote,
                 notes: this.state.selectedNotes
