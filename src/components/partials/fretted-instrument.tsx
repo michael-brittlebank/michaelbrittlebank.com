@@ -49,14 +49,16 @@ export default class FrettedInstrument extends React.Component<Props, State> {
         super(props);
         this.state = {
             // reverse strings to show in correct order
-            rootNotes: this.props.instrument && this.props.instrument.rootNotes ? reverse(this.props.instrument.rootNotes) : []
+            rootNotes: this.props.instrument && this.props.instrument.rootNotes ? reverse([...this.props.instrument.rootNotes]) : []
         };
     }
 
-    componentWillReceiveProps() {
-        this.setState({
-            rootNotes: this.props.instrument && this.props.instrument.rootNotes ? reverse(this.props.instrument.rootNotes) : []
-        });
+    componentWillReceiveProps(props: any) {
+        if (props.instrument.id !== this.props.instrument.id) {
+            this.setState({
+                rootNotes: reverse([...props.instrument.rootNotes])
+            })
+        }
     }
 
     render() {
