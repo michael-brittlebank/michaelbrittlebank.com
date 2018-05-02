@@ -104,7 +104,8 @@ these are helper functions for common tasks that are difficult to implement acro
 .string {
   width: 100%;
   clear: both;
-  overflow: hidden; }
+  overflow: hidden;
+  display: flex; }
   .string:nth-child(2) {
     border-top: 1px solid black; }
   .string:last-child {
@@ -115,7 +116,8 @@ these are helper functions for common tasks that are difficult to implement acro
   top: 0;
   bottom: 0;
   margin: auto;
-  height: 30px; }
+  height: 30px;
+  word-wrap: break-word; }
   .fret-marker .fret {
     vertical-align: middle;
     border-right-color: transparent;
@@ -130,7 +132,7 @@ these are helper functions for common tasks that are difficult to implement acro
 .fret {
   display: inline-block;
   font-size: 16px;
-  width: 7.5%;
+  width: calc(7.69231% - 1px);
   text-align: center;
   position: relative;
   border-right: 1px solid black;
@@ -145,7 +147,8 @@ these are helper functions for common tasks that are difficult to implement acro
   -o-user-select: none;
   user-select: none; }
   .fret:first-child {
-    border-right: 5px solid black; }
+    border-right: 5px solid black;
+    width: calc(7.69231% - 5px); }
   .fret:not(:first-child) p {
     position: relative;
     z-index: 1; }

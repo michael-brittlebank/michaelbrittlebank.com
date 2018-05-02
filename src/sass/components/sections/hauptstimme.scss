@@ -56,6 +56,7 @@ $fret-opacity: 0.65;
   width: 100%;
   clear: both;
   overflow: hidden;
+  display: flex;
   &:nth-child(2){
     border-top: 1px solid black;
   }
@@ -70,6 +71,7 @@ $fret-opacity: 0.65;
   bottom: 0;
   margin: auto;
   height: 30px;
+  word-wrap: break-word;
   .fret {
     vertical-align: middle;
     border-right-color: transparent;
@@ -84,11 +86,11 @@ $fret-opacity: 0.65;
     }
   }
 }
-
+$fretWidth: (100/13);
 .fret {
   display: inline-block;
   font-size: 16px;
-  width: 7.5%;
+  width: calc(#{$fretWidth+'%'} - 1px);
   text-align: center;
   position: relative;
   border-right: 1px solid black;
@@ -96,6 +98,7 @@ $fret-opacity: 0.65;
   @include unselectable;
   &:first-child{
     border-right: 5px solid black;
+    width: calc(#{$fretWidth+'%'} - 5px);
   }
   &:not(:first-child){
     p {

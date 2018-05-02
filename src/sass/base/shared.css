@@ -98,7 +98,6 @@ iframe {
   width: 355px;
   max-width: calc(100% - 24px);
   vertical-align: middle;
-  box-shadow: 0 5px 15px 0 #888888;
   outline: none; }
   .button span {
     cursor: pointer;
@@ -109,7 +108,8 @@ iframe {
     font-family: RalewayThin, 'HelveticaNeue', Helvetica Neue, Helvetica, Tahoma, Geneva, Arial, sans-serif; }
   .button:hover:not(.disabled) {
     border-radius: 50px;
-    background-color: #fefefe; }
+    background-color: #fefefe;
+    box-shadow: 0 5px 15px 0 #888888; }
     .button:hover:not(.disabled) span {
       color: #002663; }
   .button.disabled, .button.disabled span {
