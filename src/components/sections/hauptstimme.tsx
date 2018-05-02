@@ -111,7 +111,12 @@ export default class Hauptstimme extends React.Component<any, State> {
                     </div>
                 </div>
                 {this._renderInstrument()}
-                <button className="button" onClick={(e) => this._search(e)}>
+                <button
+                    className={classNames('button', {
+                        'disabled': !this.state.rootNote && this.state.selectedNotes.length < 1
+                    })}
+                    onClick={(e) => this._search(e)}
+                >
                     <span>Search</span>
                 </button>
                 <div className="col-sm-12 row">
@@ -208,15 +213,17 @@ export default class Hauptstimme extends React.Component<any, State> {
 
     private _search(e: React.MouseEvent<HTMLButtonElement>): void {
         e.preventDefault();
-        HauptstimmeJs.search({
-            rootNote: this.state.rootNote,
-            notes: this.state.selectedNotes
-        })
-            .then((response: SearchResponseInterface) => {
-                this.setState({
-                    searchResults: response
+        if (!!this.state.rootNote || this.state.selectedNotes.length > 0) {
+            HauptstimmeJs.search({
+                rootNote: this.state.rootNote,
+                notes: this.state.selectedNotes
+            })
+                .then((response: SearchResponseInterface) => {
+                    this.setState({
+                        searchResults: response
+                    });
                 });
-            });
+        }
     }
 
     private _selectNote(note: NoteConstant): void {

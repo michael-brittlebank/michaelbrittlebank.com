@@ -45,7 +45,7 @@ export default class FrettedInstrument extends React.Component<Props, State> {
         return output;
     }
 
-    constructor(props: any) {
+    constructor(props: Props) {
         super(props);
         this.state = {
             // reverse strings to show in correct order

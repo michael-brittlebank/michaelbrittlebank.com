@@ -53,16 +53,18 @@ iframe {
   display: block;
   border-radius: 5px;
   background-color: $color-york-blue;
-  border: none;
+  border: 2px solid $color-york-blue;
   text-align: center;
   font-size: 1.25rem;
   padding: 10px;
   transition: all 0.5s;
   cursor: pointer;
   margin: 50px auto 10px auto;
-  max-width: 355px;
+  width: 355px;
+  max-width: calc(100% - 24px);
   vertical-align: middle;
   box-shadow: 0 5px 15px 0 $color-box-shadow;
+  outline: none;
   span {
     cursor: pointer;
     display: inline-block;
@@ -70,27 +72,13 @@ iframe {
     color: $color-white;
     transition: 0.5s;
     font-family: $global-font-raleway-thin;
-    &:after {
-      position: absolute;
-      opacity: 0;
-      top: 0;
-      transition: 0.5s;
-      font-size: 1.5rem;
-      line-height: 1.5rem;
-      right: -35px;
-      margin-right: -15px;
-      content: '=>';
-    }
   }
-  &:hover:not(.disabled) span {
-    padding-right: 25px;
-    &:after {
-      opacity: 1;
-      right: 0;
+  &:hover:not(.disabled) {
+    border-radius: 50px;
+    background-color: $color-white;
+    span {
+      color: $color-york-blue;
     }
-  }
-  &:focus, &:active {
-    outline: none;
   }
   &.disabled, &.disabled span {
     opacity: 0.6;

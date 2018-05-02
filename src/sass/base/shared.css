@@ -88,16 +88,18 @@ iframe {
   display: block;
   border-radius: 5px;
   background-color: #002663;
-  border: none;
+  border: 2px solid #002663;
   text-align: center;
   font-size: 1.25rem;
   padding: 10px;
   transition: all 0.5s;
   cursor: pointer;
   margin: 50px auto 10px auto;
-  max-width: 355px;
+  width: 355px;
+  max-width: calc(100% - 24px);
   vertical-align: middle;
-  box-shadow: 0 5px 15px 0 #888888; }
+  box-shadow: 0 5px 15px 0 #888888;
+  outline: none; }
   .button span {
     cursor: pointer;
     display: inline-block;
@@ -105,23 +107,11 @@ iframe {
     color: #fefefe;
     transition: 0.5s;
     font-family: RalewayThin, 'HelveticaNeue', Helvetica Neue, Helvetica, Tahoma, Geneva, Arial, sans-serif; }
-    .button span:after {
-      position: absolute;
-      opacity: 0;
-      top: 0;
-      transition: 0.5s;
-      font-size: 1.5rem;
-      line-height: 1.5rem;
-      right: -35px;
-      margin-right: -15px;
-      content: '=>'; }
-  .button:hover:not(.disabled) span {
-    padding-right: 25px; }
-    .button:hover:not(.disabled) span:after {
-      opacity: 1;
-      right: 0; }
-  .button:focus, .button:active {
-    outline: none; }
+  .button:hover:not(.disabled) {
+    border-radius: 50px;
+    background-color: #fefefe; }
+    .button:hover:not(.disabled) span {
+      color: #002663; }
   .button.disabled, .button.disabled span {
     opacity: 0.6;
     cursor: not-allowed; }
