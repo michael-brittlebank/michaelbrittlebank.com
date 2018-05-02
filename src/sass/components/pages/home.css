@@ -101,6 +101,12 @@ these are helper functions for common tasks that are difficult to implement acro
   height: 600px;
   width: 100%; }
 
+#travel-quote {
+  margin: 5px auto;
+  text-align: center; }
+  #travel-quote p {
+    font-family: Raleway, 'HelveticaNeue', Helvetica Neue, Helvetica, Tahoma, Geneva, Arial, sans-serif; }
+
 @media (min-width: 768px) {
   .section-container {
     padding-bottom: 25px; }
@@ -110,4 +116,6 @@ these are helper functions for common tasks that are difficult to implement acro
     height: 12rem; }
     #home-logo p {
       font-size: 6rem;
-      line-height: 6rem; } }
+      line-height: 6rem; }
+  #travel-quote {
+    margin: 0 auto 25px auto; } }
