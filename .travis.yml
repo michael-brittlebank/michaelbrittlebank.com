@@ -1,7 +1,7 @@
 language: node_js
 
 node_js:
-  - stable
+  - "9.11.1"
 
 before_install:
   - curl -o- -L https://yarnpkg.com/install.sh | bash -s -- --version 1.6.0
