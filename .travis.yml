@@ -9,7 +9,6 @@ before_install:
 
 before_script:
   - yarn
-  - yarn run build
 
 script:
-  - yarn run test
+  - yarn build

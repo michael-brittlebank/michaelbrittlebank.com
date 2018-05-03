@@ -54,10 +54,6 @@
   version "3.5.20"
   resolved "https://registry.yarnpkg.com/@types/bluebird/-/bluebird-3.5.20.tgz#f6363172add6f4eabb8cada53ca9af2781e8d6a1"
 
-"@types/jest@22.2.2":
-  version "22.2.2"
-  resolved "https://registry.yarnpkg.com/@types/jest/-/jest-22.2.2.tgz#afe5dacbd00d65325f52da0ed3e76e259629ac9d"
-
 "@types/jquery@2.0.47":
   version "2.0.47"
   resolved "https://registry.yarnpkg.com/@types/jquery/-/jquery-2.0.47.tgz#9665a157519dd48d259f94ac670d332a56561c00"
