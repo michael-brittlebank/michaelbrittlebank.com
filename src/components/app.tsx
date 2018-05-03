@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Switch, Route } from 'react-router-dom'
+import { Switch, Route, Redirect } from 'react-router-dom'
 import Header from './common/header'
 import Footer from './common/footer'
 import Home from './pages/home'
@@ -39,15 +39,15 @@ export default class App extends React.Component {
                         <TransitionGroup>
                             <CSSTransition key={location.key} classNames="fade" timeout={300}>
                                 <Switch location={location}>
+                                    {/*home*/}
                                     <Route exact={true} path="/" component={Home}/>
-                                    {/*portfolio*/}
-                                    {/*<Redirect from="/chorus" to="/hauptstimme"/>*/}
-                                    {/*<Redirect from="/portfolio/chorus" to="/hauptstimme"/>*/}
-                                    {/*<Redirect from="/portfolio/hauptstimme" to="/hauptstimme"/>*/}
-                                    {/*<Route path="/hauptstimme" component={Hauptstimme}/>*/}
-                                    {/*<Route path="/portfolio/reading-list" component={ReadingList}/>*/}
-                                    {/*<Route path="/portfolio/bubbles" component={Bubbles}/>*/}
-                                    {/*pages*/}
+                                    {/*redirects*/}
+                                    <Redirect from="/chorus" to="/" key="r-chorus"/>
+                                    <Redirect from="/travel" to="/" key="r-travel"/>
+                                    <Redirect from="/music" to="/" key="r-music"/>
+                                    <Redirect from="/resume" to="/" key="r-resume"/>
+                                    <Redirect from="/portfolio" to="/" key="r-portfolio"/>
+                                    {/*404*/}
                                     <Route component={NotFound}/>
                                 </Switch>
                             </CSSTransition>
