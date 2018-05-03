@@ -1,29 +1,22 @@
-# Runtime data
-pids
-*.pid
-*.seed
-npm-debug.log
+# See https://help.github.com/ignore-files/ for more about ignoring files.
 
-#build caches
-.sass-cache/
-.grunt/
+# dependencies
+/node_modules
 
-#dependencies
-node_modules/
-webapp/bower_components/
+# testing
+/coverage
 
-#ide
+# production
+/build
+/lib
+
+# misc
+.DS_Store
 .idea/
-*.DS_Store
+.sass-cache/
 
-#compiled Files
-webapp/public/
-
-#config
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
 .env
-
-#wordpress
-wordpress/wp-config.php
-wordpress/wp-content/aiowps_backups/
-wordpress/wp-content/uploads/
-wordpress/wp-content/upgrade/
