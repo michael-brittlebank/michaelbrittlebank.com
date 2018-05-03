@@ -3,6 +3,9 @@
   "version": "3.0.3",
   "description": "Personal website",
   "homepage" : "http://mikestumpf.com",
+  "engines": {
+    "node": ">=4.2.4"
+  },
   "scripts": {
     "start": "npm-run-all -p watch-css watch-js",
     "build": "npm-run-all build-css build-js",

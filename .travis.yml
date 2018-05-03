@@ -8,7 +8,7 @@ before_install:
   - export PATH="$HOME/.yarn/bin:$PATH"
 
 before_script:
-  - yarn install
+  - yarn install --ignore-engines
   - yarn run build
 
 script:
