@@ -6,6 +6,7 @@
   "engines": {
     "node": ">=4.2.4"
   },
+  "license": "MIT",
   "scripts": {
     "start": "npm-run-all -p watch-css watch-js",
     "build": "npm-run-all build-css build-js",
