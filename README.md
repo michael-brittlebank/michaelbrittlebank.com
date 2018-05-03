@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/mike-stumpf/mikestumpf.com.svg?branch=master)](https://travis-ci.org/mike-stumpf/mikestumpf.com)
+
 # Mikestumpf.com #
 
 
