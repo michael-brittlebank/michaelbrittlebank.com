@@ -7,9 +7,13 @@ import {Map, InfoWindow, Marker, GoogleApiWrapper} from 'google-maps-react';
 import map = require('lodash/map')
 import random = require('lodash/random')
 import Resume from '../sections/resume';
-import * as pic from '../../assets/face.jpg';
+import * as faceDesktop from '../../assets/face_desktop.jpg';
+import * as faceTablet from '../../assets/face_tablet.jpg';
+import * as faceMobile from '../../assets/face_mobile.jpg';
 import * as Fade from 'react-reveal/Fade';
 import Portfolio from '../sections/portfolio';
+import MediaQuery from 'react-responsive';
+import {MediaQueriesService} from '../../services/mediaQueries.service';
 
 interface State {
     activeMarker: any;
@@ -48,7 +52,15 @@ export class Home extends React.Component<Props, State> {
                 <div id="home-container">
                     <div id="home-image-container" className="full-screen-grid-container row section-container">
                         <Fade>
-                            <img id="home-image" src={pic} alt="Logo" />
+                            <MediaQuery minWidth={MediaQueriesService.getMinDesktopWidth()}>
+                                <img id="home-image" src={faceDesktop} alt="Logo" />
+                            </MediaQuery>
+                            <MediaQuery maxWidth={MediaQueriesService.getMinDesktopWidth()-1} minWidth={MediaQueriesService.getMinTabletWidth()}>
+                                <img id="home-image" src={faceTablet} alt="Logo" />
+                            </MediaQuery>
+                            <MediaQuery maxWidth={MediaQueriesService.getMinTabletWidth()-1}>
+                                <img id="home-image" src={faceMobile} alt="Logo" />
+                            </MediaQuery>
                         </Fade>
                         <div id="home-logo" className="animated fadeInRight">
                             <p>Mike</p>

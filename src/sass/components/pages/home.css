@@ -46,6 +46,9 @@ these are helper functions for common tasks that are difficult to implement acro
   .hide-for-large {
     display: none; } }
 
+.react-reveal {
+  width: 100%; }
+
 #home-image-container {
   position: relative; }
 
