@@ -14,19 +14,12 @@ export default class App extends React.Component {
 
     private locationHref: string = '';
 
-    onRouteChanged() {
-        if (this.locationHref !== window.location.href) {
-            this.locationHref = window.location.href;
-            ReactGA.pageview(window.location.href);
-        }
-    }
-
     componentDidMount() {
-        this.onRouteChanged();
+        this._onRouteChanged();
     }
 
     componentDidUpdate() {
-        this.onRouteChanged();
+        this._onRouteChanged();
     }
 
     render() {
@@ -42,11 +35,12 @@ export default class App extends React.Component {
                                     {/*home*/}
                                     <Route exact={true} path="/" component={Home}/>
                                     {/*redirects*/}
-                                    <Redirect from="/chorus" to="/" key="r-chorus"/>
-                                    <Redirect from="/travel" to="/" key="r-travel"/>
-                                    <Redirect from="/music" to="/" key="r-music"/>
-                                    <Redirect from="/resume" to="/" key="r-resume"/>
-                                    <Redirect from="/portfolio" to="/" key="r-portfolio"/>
+                                    <Redirect from="/resume" to="/#resume"/>
+                                    <Redirect from="/travel" to="/#travel"/>
+                                    <Redirect from="/portfolio" to="/#portfolio"/>
+                                    <Redirect from="/chorus" to="/#hauptstimme"/>
+                                    <Redirect from="/music" to="/#hauptstimme"/>
+                                    <Redirect from="/reading-list" to="/#reading-list"/>
                                     {/*404*/}
                                     <Route component={NotFound}/>
                                 </Switch>
@@ -57,5 +51,12 @@ export default class App extends React.Component {
                 <Footer/>
             </div>
         );
+    }
+
+    private _onRouteChanged() {
+        if (this.locationHref !== window.location.href) {
+            this.locationHref = window.location.href;
+            ReactGA.pageview(window.location.href);
+        }
     }
 }
