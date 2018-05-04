@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { Link as ScrollLink, scrollSpy } from 'react-scroll'
+import { Link as ScrollLink, scrollSpy, scroller as scroll } from 'react-scroll'
 import '../../sass/components/common/header.css'
 
 export default class Header extends React.Component {
@@ -8,6 +8,15 @@ export default class Header extends React.Component {
 
     componentDidMount() {
         scrollSpy.update();
+        if (window.location.hash.length > 0) {
+            this._scrollTo(window.location.hash.substring(1));
+        }
+    }
+
+    componentDidUpdate() {
+        if (window.location.hash.length > 0) {
+            this._scrollTo(window.location.hash.substring(1));
+        }
     }
 
     render () {
@@ -35,5 +44,57 @@ export default class Header extends React.Component {
         ) : (
             null
         );
+    }
+
+    private _scrollTo(hash: string): void {
+        switch(hash) {
+            case 'resume':
+                scroll.scrollTo('resume-container', {
+                    smooth: true,
+                    offset: this.headerOffset,
+                    duration: this.scrollDuration,
+                    end: this._clearHashFromUrl()
+                });
+                break;
+            case 'travel':
+                scroll.scrollTo('travel-container', {
+                    smooth: true,
+                    offset: this.headerOffset,
+                    duration: this.scrollDuration,
+                    end: this._clearHashFromUrl()
+                });
+                break;
+            case 'portfolio':
+                scroll.scrollTo('portfolio-container', {
+                    smooth: true,
+                    offset: this.headerOffset,
+                    duration: this.scrollDuration,
+                    end: this._clearHashFromUrl()
+                });
+                break;
+            case 'hauptstimme':
+                scroll.scrollTo('hauptstimme-container', {
+                    smooth: true,
+                    offset: this.headerOffset,
+                    duration: this.scrollDuration,
+                    end: this._clearHashFromUrl()
+                });
+                break;
+            case 'reading-list':
+                scroll.scrollTo('hauptstimme-container', {
+                    smooth: true,
+                    offset: this.headerOffset,
+                    duration: this.scrollDuration,
+                    end: this._clearHashFromUrl()
+                });
+                break;
+            default:
+                this._clearHashFromUrl();
+                break;
+        }
+    }
+
+    private _clearHashFromUrl(): void {
+        history.pushState('', document.title, window.location.pathname + window.location.search);
     }
 };
