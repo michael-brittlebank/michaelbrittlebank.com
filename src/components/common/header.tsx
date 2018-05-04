@@ -47,51 +47,55 @@ export default class Header extends React.Component {
     }
 
     private _scrollTo(hash: string): void {
-        switch(hash) {
-            case 'resume':
-                scroll.scrollTo('resume-container', {
-                    smooth: true,
-                    offset: this.headerOffset,
-                    duration: this.scrollDuration,
-                    end: this._clearHashFromUrl()
-                });
-                break;
-            case 'travel':
-                scroll.scrollTo('travel-container', {
-                    smooth: true,
-                    offset: this.headerOffset,
-                    duration: this.scrollDuration,
-                    end: this._clearHashFromUrl()
-                });
-                break;
-            case 'portfolio':
-                scroll.scrollTo('portfolio-container', {
-                    smooth: true,
-                    offset: this.headerOffset,
-                    duration: this.scrollDuration,
-                    end: this._clearHashFromUrl()
-                });
-                break;
-            case 'hauptstimme':
-                scroll.scrollTo('hauptstimme-container', {
-                    smooth: true,
-                    offset: this.headerOffset,
-                    duration: this.scrollDuration,
-                    end: this._clearHashFromUrl()
-                });
-                break;
-            case 'reading-list':
-                scroll.scrollTo('hauptstimme-container', {
-                    smooth: true,
-                    offset: this.headerOffset,
-                    duration: this.scrollDuration,
-                    end: this._clearHashFromUrl()
-                });
-                break;
-            default:
-                this._clearHashFromUrl();
-                break;
-        }
+        setTimeout(
+            () => {
+                switch(hash) {
+                    case 'resume':
+                        scroll.scrollTo('resume-container', {
+                            smooth: true,
+                            offset: this.headerOffset,
+                            duration: this.scrollDuration,
+                            end: this._clearHashFromUrl()
+                        });
+                        break;
+                    case 'travel':
+                        scroll.scrollTo('travel-container', {
+                            smooth: true,
+                            offset: this.headerOffset,
+                            duration: this.scrollDuration,
+                            end: this._clearHashFromUrl()
+                        });
+                        break;
+                    case 'portfolio':
+                        scroll.scrollTo('portfolio-container', {
+                            smooth: true,
+                            offset: this.headerOffset,
+                            duration: this.scrollDuration,
+                            end: this._clearHashFromUrl()
+                        });
+                        break;
+                    case 'hauptstimme':
+                        scroll.scrollTo('hauptstimme-container', {
+                            smooth: true,
+                            offset: this.headerOffset,
+                            duration: this.scrollDuration,
+                            end: this._clearHashFromUrl()
+                        });
+                        break;
+                    case 'reading-list':
+                        scroll.scrollTo('hauptstimme-container', {
+                            smooth: true,
+                            offset: this.headerOffset,
+                            duration: this.scrollDuration,
+                            end: this._clearHashFromUrl()
+                        });
+                        break;
+                    default:
+                        this._clearHashFromUrl();
+                        break;
+                }
+            },
+            500);
     }
 
     private _clearHashFromUrl(): void {
