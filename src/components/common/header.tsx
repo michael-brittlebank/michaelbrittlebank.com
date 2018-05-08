@@ -83,7 +83,7 @@ export default class Header extends React.Component {
                         });
                         break;
                     case 'reading-list':
-                        scroll.scrollTo('hauptstimme-container', {
+                        scroll.scrollTo('reading-list-container', {
                             smooth: true,
                             offset: this.headerOffset,
                             duration: this.scrollDuration,
