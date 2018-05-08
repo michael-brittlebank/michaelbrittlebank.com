@@ -1,6 +1,7 @@
 import * as React from 'react';
-import Hauptstimme from './hauptstimme';
-import ReadingList from './reading-list';
+import Hauptstimme from './portfolio/hauptstimme';
+import ReadingList from './portfolio/reading-list';
+import Metronome from './portfolio/metronome';
 
 export default class Portfolio extends React.Component {
     render() {
@@ -12,6 +13,8 @@ export default class Portfolio extends React.Component {
                 <section id="portfolio-body" className="col-sm-12 row">
                     {/*hauptstimme*/}
                     <Hauptstimme/>
+                    {/*metronome*/}
+                    <Metronome/>
                     {/*reading list*/}
                     <ReadingList/>
                 </section>

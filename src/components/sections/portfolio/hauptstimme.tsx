@@ -1,14 +1,14 @@
 import * as React from 'react';
 import { HauptstimmeJs, SearchResponseInterface, InstrumentInterface, InstrumentTypeConstant, NoteConstant, ChordInterface, ScaleInterface } from 'hauptstimme-js';
-import '../../sass/components/sections/hauptstimme.css'
+import '../../../sass/components/sections/hauptstimme.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import * as faGithub from '@fortawesome/fontawesome-free-brands/faGithub'
 import map = require('lodash/map')
 import filter = require('lodash/filter')
 import * as classNames from 'classnames';
 import find = require('lodash/find')
-import FrettedInstrument from '../partials/fretted-instrument';
-import KeyedInstrument from '../partials/keyed-instrument';
+import FrettedInstrument from './partials/fretted-instrument';
+import KeyedInstrument from './partials/keyed-instrument';
 import uniq = require('lodash/uniq')
 import concat = require('lodash/concat')
 import findIndex = require('lodash/findIndex')
