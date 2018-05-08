@@ -13,7 +13,7 @@ export default class ReadingList extends React.Component {
                 </p>
                 <p className="show-for-small">This project is best viewed on a larger screen and so is hidden for mobile devices.</p>
                 <ReactIframeResizer
-                    src="http://wordpress.mikestumpf.com/reading-list"
+                    src="https://wordpress.mikestumpf.com/reading-list"
                     iframeResizerOptions={{
                         checkOrigin: false,
                         heightCalculationMethod: 'documentElementOffset'
