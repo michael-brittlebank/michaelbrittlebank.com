@@ -52,6 +52,7 @@ these are helper functions for common tasks that are difficult to implement acro
   background-color: white; }
 
 .list-item-selector {
+  position: relative;
   max-height: 150px;
   overflow-y: scroll;
   border: 1px solid #888888; }

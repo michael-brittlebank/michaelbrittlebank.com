@@ -11,6 +11,7 @@ import FrettedInstrument from '../partials/fretted-instrument';
 import KeyedInstrument from '../partials/keyed-instrument';
 import uniq = require('lodash/uniq')
 import concat = require('lodash/concat')
+import findIndex = require('lodash/findIndex')
 
 interface State {
     availableInstruments: InstrumentInterface[];
@@ -52,11 +53,18 @@ export default class Hauptstimme extends React.Component<any, State> {
     componentDidMount() {
         HauptstimmeJs.getAvailableInstruments()
             .then((response: InstrumentInterface[]) => {
-                this.setState({ availableInstruments: filter(response, (instrument: InstrumentInterface) => {
+                this.setState({
+                    availableInstruments: filter(response, (instrument: InstrumentInterface) => {
                         return instrument.type === InstrumentTypeConstant.FRETTED_INSTRUMENT || instrument.type === InstrumentTypeConstant.KEYED_INSTRUMENT;
-                    }) });
-                this.setState({ selectedInstrument: find(response, {name: 'Guitar'}) });
-                this.setState({ availableTunings: filter(response, {type: InstrumentTypeConstant.ALTERNATE_TUNING}) });
+                    }),
+                    selectedInstrument: find(response, {name: 'Guitar'}),
+                    availableTunings: filter(response, {type: InstrumentTypeConstant.ALTERNATE_TUNING})
+                });
+            })
+            .then(() => {
+                // set default scroll in instrument container to show user active state
+                const myElement: HTMLElement = document.getElementById('instrument-'+findIndex(this.state.availableInstruments, {name: this.state.selectedInstrument.name}));
+                document.getElementById('instrument-container').scrollTop = myElement.offsetTop - 55;
             });
     }
 
@@ -79,10 +87,11 @@ export default class Hauptstimme extends React.Component<any, State> {
                 <div className="col-sm-12 row">
                     <div className="col-sm-12 col-md-6">
                         <h4>Instruments</h4>
-                        <div className="list-item-selector">
+                        <div id="instrument-container" className="list-item-selector">
                             {map(this.state.availableInstruments, (instrument: InstrumentInterface, index: number) => {
                                 return (
                                     <a
+                                        id={'instrument-'+index}
                                         key={index}
                                         className={classNames('list-item', {'selected': instrument === this.state.selectedInstrument})}
                                         onClick={(e) => this._selectInstrument(e, instrument)}

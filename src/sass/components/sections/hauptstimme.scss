@@ -12,6 +12,7 @@
 }
 
 .list-item-selector {
+  position: relative;
   max-height: 150px;
   overflow-y: scroll;
   border: 1px solid $color-box-shadow;
