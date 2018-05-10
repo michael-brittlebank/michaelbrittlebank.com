@@ -21,7 +21,15 @@ these are helper functions for common tasks that are difficult to implement acro
 
 .metronome-indicator-container {
   position: relative;
-  margin: auto; }
+  margin: auto;
+  border-radius: 50%;
+  cursor: pointer;
+  -webkit-transition: box-shadow 250ms ease-out 0s;
+  -moz-transition: box-shadow 250ms ease-out 0s;
+  -o-transition: box-shadow 250ms ease-out 0s;
+  transition: box-shadow 250ms ease-out 0s; }
+  .metronome-indicator-container:hover {
+    box-shadow: 0 5px 15px 0 #888888; }
 
 .metronome-indicator {
   background-color: #003DA5;
@@ -35,6 +43,8 @@ these are helper functions for common tasks that are difficult to implement acro
   .metronome-indicator.active {
     background-color: #B70101;
     animation: tick 0.5s; }
+  .metronome-indicator.silent {
+    background-color: black; }
 
 .metronome-indicator-number {
   text-align: center;

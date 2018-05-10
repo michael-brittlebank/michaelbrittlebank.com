@@ -9,6 +9,12 @@ $desktop-size: 75px;
 .metronome-indicator-container {
   position: relative;
   margin: auto;
+  border-radius: 50%;
+  cursor: pointer;
+  @include transition-with-defaults(box-shadow);
+  &:hover {
+    box-shadow: 0 5px 15px 0 $color-box-shadow;
+  }
 }
 
 .metronome-indicator {
@@ -20,6 +26,9 @@ $desktop-size: 75px;
   &.active {
     background-color: $color-badgers-red;
     animation: tick 0.5s;
+  }
+  &.silent {
+    background-color: black;
   }
 }
 

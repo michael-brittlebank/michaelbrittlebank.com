@@ -8,6 +8,7 @@ interface State {
     currentBpm: number;
     metronomeTick: number;
     currentSubdivision: number;
+    mutedIndicators: number[];
 }
 
 export default class Metronome extends React.Component<any, State> {
@@ -25,7 +26,8 @@ export default class Metronome extends React.Component<any, State> {
             isMetronomeStarted: false,
             currentBpm: 100,
             metronomeTick: 0,
-            currentSubdivision: 1
+            currentSubdivision: 1,
+            mutedIndicators: []
         };
         this._start = this._start.bind(this);
         this._stop = this._stop.bind(this);
@@ -112,10 +114,11 @@ export default class Metronome extends React.Component<any, State> {
         const indicators: any = [];
         for(let i = 0; i < this.state.currentSubdivision; i++) {
             indicators.push(
-                <div className="metronome-indicator-container" key={i}>
+                <div className="metronome-indicator-container" key={i} onClick={(e) => this._silenceIndicator(e, i)}>
                     <div
                         className={classNames('metronome-indicator', {
-                            'active': this.state.metronomeTick % this.state.currentSubdivision === i
+                            'active': this.state.metronomeTick % this.state.currentSubdivision === i,
+                            'silent': this.state.mutedIndicators.indexOf(i) !== -1
                         })}
                     >
                         &nbsp;
@@ -187,14 +190,16 @@ export default class Metronome extends React.Component<any, State> {
     }
 
     private _onMessage(e: MessageEvent): void {
-        if (e.data.tick % this.state.currentSubdivision === 0) {
+        if (e.data.tick % this.state.currentSubdivision === 0 && this.state.mutedIndicators.indexOf(0) === -1) {
             // tock
             this.metronomeTock.currentTime = 0;
             this.metronomeTock.play();
         } else {
-            // tick
-            this.metronomeTick.currentTime = 0;
-            this.metronomeTick.play();
+            if (this.state.mutedIndicators.indexOf(e.data.tick % this.state.currentSubdivision) === -1) {
+                // tick
+                this.metronomeTick.currentTime = 0;
+                this.metronomeTick.play();
+            }
         }
         this.setState({
             metronomeTick: parseInt(e.data.tick, 10)
@@ -215,6 +220,22 @@ export default class Metronome extends React.Component<any, State> {
         this.myWorker.postMessage({
             bpm: bpm,
             subdivision: subdivision
+        });
+    }
+
+    private _silenceIndicator(e: React.MouseEvent<HTMLDivElement>, indicatorIndex: number): void {
+        e.preventDefault();
+        const mutedIndicators: number[] = this.state.mutedIndicators;
+        const indexInArray: number = mutedIndicators.indexOf(indicatorIndex);
+        if (indexInArray === -1) {
+            // add to array
+            mutedIndicators.push(indicatorIndex);
+        } else {
+            // remove from array
+            mutedIndicators.splice(indexInArray, 1);
+        }
+        this.setState({
+            mutedIndicators: mutedIndicators
         });
     }
 }
