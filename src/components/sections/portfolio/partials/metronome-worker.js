@@ -1,14 +1,19 @@
 // https://gist.github.com/nick-thompson/4551106
 
+var interval;
+
 onmessage = function(e) {
-    console.log('Message received from main script', e.data);
-    var workerResult = 'Result: play';
-    console.log('Posting message back to main script');
-    setInterval(
-        function() {
-            console.log('in interval');
-            postMessage(workerResult);
-        },
-        e.data.interval
-    );
+    if (e.data.interval === 0) {
+        // stop
+        clearInterval(interval);
+    } else {
+        // set interval
+        clearInterval(interval);
+        interval = setInterval(
+            function () {
+                postMessage(e.data.interval);
+            },
+            e.data.interval
+        );
+    }
 };
