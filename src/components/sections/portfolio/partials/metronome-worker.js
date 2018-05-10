@@ -8,14 +8,14 @@ var tickTimeout,
     timeDifference = 0;
 
 onmessage = function(e) {
-    if (e.data.interval === 0) {
+    if (e.data.bpm === 0) {
         // stop
         resetWorker();
     } else {
         // set interval
         resetWorker();
         startingTime = new Date().getTime();
-        interval = secondsPerMinute * millisecondsPerSecond / e.data.interval;
+        interval = secondsPerMinute * millisecondsPerSecond / e.data.bpm;
         // send initial message to start metronome
         postMessage({
             tick: tick++,

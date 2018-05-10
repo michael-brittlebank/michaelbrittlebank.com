@@ -7,6 +7,7 @@ interface State {
     isMetronomeStarted: boolean;
     currentBpm: number;
     metronomeTick: number;
+    currentSubdivision: number;
 }
 
 export default class Metronome extends React.Component<any, State> {
@@ -15,23 +16,27 @@ export default class Metronome extends React.Component<any, State> {
     private maxValue: number = 220;
     private minValue: number = 40;
     private setBpmDebounceTimeout: any; // https://github.com/Microsoft/TypeScript/issues/842
-    private metronomeElement: any;
+    private metronomeTick: any;
+    private metronomeTock: any;
 
     constructor(props: any) {
         super(props);
         this.state = {
             isMetronomeStarted: false,
             currentBpm: 120,
-            metronomeTick: 0
+            metronomeTick: 0,
+            currentSubdivision: 4
         };
         this._start = this._start.bind(this);
         this._stop = this._stop.bind(this);
         this._setBpm = this._setBpm.bind(this);
         this._onMessage = this._onMessage.bind(this);
+        this._setSubdivision = this._setSubdivision.bind(this);
     }
 
     componentDidMount() {
-        this.metronomeElement = document.getElementById('metronome-click');
+        this.metronomeTick = document.getElementById('metronome-tick');
+        this.metronomeTock = document.getElementById('metronome-tock');
         this.myWorker.onmessage = this._onMessage;
     }
 
@@ -58,13 +63,13 @@ export default class Metronome extends React.Component<any, State> {
                         />
                     </div>
                     <div className="col-sm-6 text-center">
-                        <select>
-                            <option>2/4</option>
-                            <option>3/4</option>
-                            <option selected={true}>4/4</option>
-                            <option>6/8</option>
-                            <option>9/8</option>
-                            <option>12/8</option>
+                        <select onChange={(e) => this._setSubdivision(e)} value={this.state.currentSubdivision}>
+                            <option value="1">Whole Note</option>
+                            <option value="2">Half Note</option>
+                            <option value="3">Triplet Note</option>
+                            <option value="4">Quarter Note</option>
+                            <option value="8">Eighth Note</option>
+                            <option value="16">Sixteenth Note</option>
                         </select>
                     </div>
                 </div>
@@ -99,19 +104,20 @@ export default class Metronome extends React.Component<any, State> {
                         </button>
                     </div>
                 </div>
-                <audio id="metronome-click" src="/assets/click.mp3" preload="auto"/>
+                <audio id="metronome-tick" src="/assets/tick.mp3" preload="auto"/>
+                <audio id="metronome-tock" src="/assets/tock.mp3" preload="auto"/>
             </section>
         );
     }
 
     private _getMetronomeIndicators(): any {
         const indicators: any = [];
-        for(let i = 0; i < 4; i++) {
+        for(let i = 0; i < this.state.currentSubdivision; i++) {
             indicators.push(
                 <div className="metronome-indicator-container" key={i}>
                     <div
                         className={classNames('metronome-indicator', {
-                            'active': this.state.metronomeTick % 4 === i
+                            'active': this.state.metronomeTick % this.state.currentSubdivision === i
                         })}
                     >
                         &nbsp;
@@ -131,7 +137,7 @@ export default class Metronome extends React.Component<any, State> {
             this.setState({
                 isMetronomeStarted: true
             });
-            this.myWorker.postMessage({interval: this.state.currentBpm});
+            this._postWorkerMessage();
         }
     }
 
@@ -141,7 +147,7 @@ export default class Metronome extends React.Component<any, State> {
             this.setState({
                 isMetronomeStarted: false
             });
-            this.myWorker.postMessage({interval: 0});
+            this._postWorkerMessage(0);
         }
     }
 
@@ -175,7 +181,7 @@ export default class Metronome extends React.Component<any, State> {
             // lodash debounce was not getting triggered hence custom debounce
             () => {
                 if (this.state.isMetronomeStarted && !!this.state.currentBpm) {
-                    this.myWorker.postMessage({interval: this.state.currentBpm});
+                    this._postWorkerMessage();
                 }
             },
             500
@@ -183,10 +189,34 @@ export default class Metronome extends React.Component<any, State> {
     }
 
     private _onMessage(e: MessageEvent): void {
-        this.metronomeElement.currentTime = 0;
-        this.metronomeElement.play();
+        if (e.data.tick % this.state.currentSubdivision === 0) {
+            // tock
+            this.metronomeTock.currentTime = 0;
+            this.metronomeTock.play();
+        } else {
+            // tick
+            this.metronomeTick.currentTime = 0;
+            this.metronomeTick.play();
+        }
         this.setState({
             metronomeTick: parseInt(e.data.tick, 10)
+        });
+    }
+
+    private _setSubdivision(e: React.ChangeEvent<HTMLSelectElement>): void {
+        const newSubdivision: number = parseInt((e.target as HTMLSelectElement).value, 10);
+        if (this.state.isMetronomeStarted && !!this.state.currentBpm) {
+            this._postWorkerMessage(undefined, newSubdivision);
+        }
+        this.setState({
+            currentSubdivision: newSubdivision
+        });
+    }
+
+    private _postWorkerMessage(bpm: number = this.state.currentBpm, subdivision: number = this.state.currentSubdivision): void {
+        this.myWorker.postMessage({
+            bpm: bpm,
+            subdivision: subdivision
         });
     }
 }
