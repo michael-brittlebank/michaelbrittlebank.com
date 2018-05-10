@@ -46,17 +46,35 @@ export default class Metronome extends React.Component<any, State> {
                 <p>
                     Range of error is +-2 milliseconds using a Web Worker and self-correcting timer.
                 </p>
-                <div
-                    id="metronome-ball"
-                    className={this.state.metronomeTick%2 === 0 ? 'tick-even' : 'tick-odd'}
-                >
-                    &nbsp;
+                <div className="row">
+                    <div className="col-sm-6 text-center">
+                        <input
+                            type="number"
+                            value={this.state.currentBpm || ''}
+                            onChange={(e) => this._setBpm(e)}
+                            max={this.maxValue}
+                            min={this.minValue}
+                            className="input"
+                        />
+                    </div>
+                    <div className="col-sm-6 text-center">
+                        <select>
+                            <option>2/4</option>
+                            <option>3/4</option>
+                            <option selected={true}>4/4</option>
+                            <option>6/8</option>
+                            <option>9/8</option>
+                            <option>12/8</option>
+                        </select>
+                    </div>
                 </div>
                 <div className="row">
-                    <div className="col-sm-4">
-                        <input type="number" value={this.state.currentBpm || ''} onChange={(e) => this._setBpm(e)} max={this.maxValue} min={this.minValue} />
-                    </div>
-                    <div className="col-sm-4">
+                    {
+                        this._getMetronomeIndicators()
+                    }
+                </div>
+                <div className="row">
+                    <div className="col-sm-6">
                         <button
                             onClick={(e) => this._start(e)}
                             className={classNames('button', {
@@ -68,7 +86,7 @@ export default class Metronome extends React.Component<any, State> {
                             </span>
                         </button>
                     </div>
-                    <div className="col-sm-4">
+                    <div className="col-sm-6">
                         <button
                             onClick={(e) => this._stop(e)}
                             className={classNames('button', {
@@ -84,6 +102,27 @@ export default class Metronome extends React.Component<any, State> {
                 <audio id="metronome-click" src="/assets/click.mp3" preload="auto"/>
             </section>
         );
+    }
+
+    private _getMetronomeIndicators(): any {
+        const indicators: any = [];
+        for(let i = 0; i < 4; i++) {
+            indicators.push(
+                <div className="metronome-indicator-container" key={i}>
+                    <div
+                        className={classNames('metronome-indicator', {
+                            'active': this.state.metronomeTick % 4 === i
+                        })}
+                    >
+                        &nbsp;
+                    </div>
+                    <span className="metronome-indicator-number">
+                    {i + 1}
+                    </span>
+                </div>
+            )
+        }
+        return indicators;
     }
 
     private _start(e: React.MouseEvent<HTMLButtonElement>): void {
@@ -147,7 +186,7 @@ export default class Metronome extends React.Component<any, State> {
         this.metronomeElement.currentTime = 0;
         this.metronomeElement.play();
         this.setState({
-            metronomeTick: parseInt(e.data, 10)
+            metronomeTick: parseInt(e.data.tick, 10)
         });
     }
 }

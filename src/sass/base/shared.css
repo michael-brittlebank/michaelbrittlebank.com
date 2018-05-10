@@ -98,14 +98,32 @@ iframe {
   width: 355px;
   max-width: calc(100% - 24px);
   vertical-align: middle;
-  outline: none; }
+  outline: none;
+  -webkit-user-select: none;
+  /* Chrome all / Safari all */
+  -moz-user-select: none;
+  /* Firefox all */
+  -ms-user-select: none;
+  /* IE 10+ */
+  /* No support for these yet, use at own risk */
+  -o-user-select: none;
+  user-select: none; }
   .button span {
     cursor: pointer;
     display: inline-block;
     position: relative;
     color: #fefefe;
     transition: 0.5s;
-    font-family: RalewayThin, 'HelveticaNeue', Helvetica Neue, Helvetica, Tahoma, Geneva, Arial, sans-serif; }
+    font-family: RalewayThin, 'HelveticaNeue', Helvetica Neue, Helvetica, Tahoma, Geneva, Arial, sans-serif;
+    -webkit-user-select: none;
+    /* Chrome all / Safari all */
+    -moz-user-select: none;
+    /* Firefox all */
+    -ms-user-select: none;
+    /* IE 10+ */
+    /* No support for these yet, use at own risk */
+    -o-user-select: none;
+    user-select: none; }
   .button:hover:not(.disabled) {
     border-radius: 50px;
     background-color: #fefefe;

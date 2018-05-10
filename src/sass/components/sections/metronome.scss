@@ -1,23 +1,54 @@
 @import "../../base/mixins.scss";
+@import "../../base/colours.scss";
+@import "../../base/media-queries.scss";
 
-#metronome-ball {
-  background: black;
-  border-radius: 50%;
-  width: 100px;
-  height: 100px;
+$mobile-size: 25px;
+$tablet-size: 50px;
+$desktop-size: 75px;
+
+.metronome-indicator-container {
+  position: relative;
   margin: auto;
-  @include transition-with-defaults(transform);
 }
 
-.tick-even {
-  animation: tick 0.5s;
+.metronome-indicator {
+  background-color: $color-jays-light-blue;
+  border-radius: 50%;
+  width: $mobile-size;
+  height: $mobile-size;
+  @include transition-with-defaults(all);
+  &.active {
+    background-color: $color-badgers-red;
+    animation: tick 0.5s;
+  }
+}
+
+.metronome-indicator-number {
+  text-align: center;
+  height: 18px;
+  color: white;
+  @include center-absolute;
 }
 
 @keyframes tick {
   0%   {
-    transform: scale(1.5);
+    transform: scale(1.15);
   }
   100% {
     transform: scale(1.0);
+  }
+}
+
+@include tablet-up {
+  .metronome-indicator {
+    width: $tablet-size;
+    height: $tablet-size;
+  }
+}
+
+@include desktop {
+  .metronome-indicator {
+    width: $desktop-size;
+    height: $desktop-size;
   }
 }

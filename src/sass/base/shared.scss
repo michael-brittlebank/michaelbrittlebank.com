@@ -64,6 +64,7 @@ iframe {
   max-width: calc(100% - 24px);
   vertical-align: middle;
   outline: none;
+  @include unselectable;
   span {
     cursor: pointer;
     display: inline-block;
@@ -71,6 +72,7 @@ iframe {
     color: $color-white;
     transition: 0.5s;
     font-family: $global-font-raleway-thin;
+    @include unselectable;
   }
   &:hover:not(.disabled) {
     border-radius: 50px;

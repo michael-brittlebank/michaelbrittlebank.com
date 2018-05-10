@@ -17,7 +17,10 @@ onmessage = function(e) {
         startingTime = new Date().getTime();
         interval = secondsPerMinute * millisecondsPerSecond / e.data.interval;
         // send initial message to start metronome
-        postMessage(timeDifference);
+        postMessage({
+            tick: tick++,
+            difference: timeDifference
+        });
         tickTimeout = setTimeout(
             function () {
                 tickTimer(interval);
@@ -39,7 +42,10 @@ function resetWorker() {
 function tickTimer(interval) {
     executionTime += interval;
     timeDifference = (new Date().getTime() - startingTime) - executionTime;
-    postMessage(timeDifference);
+    postMessage({
+        tick: tick++,
+        difference: timeDifference
+    });
     tickTimeout = setTimeout(
         function () {
             tickTimer(interval);
