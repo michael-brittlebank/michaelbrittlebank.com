@@ -17,6 +17,7 @@ onmessage = function(e) {
         interval = secondsPerMinute * millisecondsPerSecond / e.data.interval;
         tickTimeout = setInterval(
             function () {
+                // todo, add adjustment timeout to try and better map starting time to execution time
                 // var executionTime = new Date();
                 // console.log('interval', interval, executionTime - startingTime);
                 // startingTime = executionTime;

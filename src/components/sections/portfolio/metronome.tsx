@@ -35,6 +35,10 @@ export default class Metronome extends React.Component<any, State> {
         this.myWorker.onmessage = this._onMessage;
     }
 
+    componentWillUnmount() {
+        this.myWorker.terminate();
+    }
+
     render() {
         return (
             <section id="metronome-container" className="col-sm-12">
