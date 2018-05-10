@@ -23,9 +23,9 @@ export default class Metronome extends React.Component<any, State> {
         super(props);
         this.state = {
             isMetronomeStarted: false,
-            currentBpm: 120,
+            currentBpm: 100,
             metronomeTick: 0,
-            currentSubdivision: 4
+            currentSubdivision: 1
         };
         this._start = this._start.bind(this);
         this._stop = this._stop.bind(this);
@@ -68,8 +68,6 @@ export default class Metronome extends React.Component<any, State> {
                             <option value="2">Half Note</option>
                             <option value="3">Triplet Note</option>
                             <option value="4">Quarter Note</option>
-                            <option value="8">Eighth Note</option>
-                            <option value="16">Sixteenth Note</option>
                         </select>
                     </div>
                 </div>

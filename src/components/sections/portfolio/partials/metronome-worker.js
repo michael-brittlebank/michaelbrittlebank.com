@@ -15,7 +15,7 @@ onmessage = function(e) {
         // set interval
         resetWorker();
         startingTime = new Date().getTime();
-        interval = secondsPerMinute * millisecondsPerSecond / e.data.bpm;
+        interval = Math.floor(secondsPerMinute * millisecondsPerSecond / e.data.bpm / e.data.subdivision);
         // send initial message to start metronome
         postMessage({
             tick: tick++,
