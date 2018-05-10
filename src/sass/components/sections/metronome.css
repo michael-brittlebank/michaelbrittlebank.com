@@ -1,0 +1,22 @@
+/*
+these are helper functions for common tasks that are difficult to implement across different browsers and devices.
+*/
+#metronome-ball {
+  background: black;
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  margin: auto;
+  -webkit-transition: transform 250ms ease-out 0s;
+  -moz-transition: transform 250ms ease-out 0s;
+  -o-transition: transform 250ms ease-out 0s;
+  transition: transform 250ms ease-out 0s; }
+
+.tick-even {
+  animation: tick 0.5s; }
+
+@keyframes tick {
+  0% {
+    transform: scale(1.5); }
+  100% {
+    transform: scale(1); } }

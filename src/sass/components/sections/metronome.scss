@@ -1,0 +1,23 @@
+@import "../../base/mixins.scss";
+
+#metronome-ball {
+  background: black;
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  margin: auto;
+  @include transition-with-defaults(transform);
+}
+
+.tick-even {
+  animation: tick 0.5s;
+}
+
+@keyframes tick {
+  0%   {
+    transform: scale(1.5);
+  }
+  100% {
+    transform: scale(1.0);
+  }
+}

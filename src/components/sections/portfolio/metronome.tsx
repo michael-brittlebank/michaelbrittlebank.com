@@ -1,42 +1,54 @@
 import * as React from 'react';
 import * as workerPath from 'file-loader?name=[name].js!./partials/metronome-worker';
 import * as classNames from 'classnames';
+import '../../../sass/components/sections/metronome.css'
 
 interface State {
     isMetronomeStarted: boolean;
     currentBpm: number;
+    metronomeTick: number;
 }
 
 export default class Metronome extends React.Component<any, State> {
 
     private myWorker: any = new Worker(workerPath);
     private maxValue: number = 220;
-    private minValue: number = 1;
+    private minValue: number = 40;
     private setBpmDebounceTimeout: any; // https://github.com/Microsoft/TypeScript/issues/842
+    private metronomeElement: any;
 
     constructor(props: any) {
         super(props);
         this.state = {
             isMetronomeStarted: false,
-            currentBpm: 120
+            currentBpm: 120,
+            metronomeTick: 0
         };
         this._start = this._start.bind(this);
         this._stop = this._stop.bind(this);
         this._setBpm = this._setBpm.bind(this);
+        this._onMessage = this._onMessage.bind(this);
     }
 
     componentDidMount() {
-        const element:any = document.getElementById('metronome-click');
-        this.myWorker.onmessage = function(e: any): void {
-            element.currentTime = 0;
-            element.play();
-        }
+        this.metronomeElement = document.getElementById('metronome-click');
+        this.myWorker.onmessage = this._onMessage;
     }
 
     render() {
         return (
             <section id="metronome-container" className="col-sm-12">
                 <h2 id="metronome-title" className="section-header">Metronome</h2>
+                <p>
+                    It's not perfect with a +-2 millisecond difference from the desired interval when using logging statements.
+                </p>
+                <div
+                    id="metronome-ball"
+                    className={this.state.metronomeTick%2 === 0 ? 'tick-even' : 'tick-odd'}
+                >
+
+                    &nbsp;
+                </div>
                 <div className="row">
                     <div className="col-sm-4">
                         <input type="number" value={this.state.currentBpm || ''} onChange={(e) => this._setBpm(e)} max={this.maxValue} min={this.minValue} />
@@ -124,6 +136,15 @@ export default class Metronome extends React.Component<any, State> {
                     this.myWorker.postMessage({interval: this.state.currentBpm});
                 }
             },
-            500);
+            500
+        );
+    }
+
+    private _onMessage(e: MessageEvent): void {
+        this.metronomeElement.currentTime = 0;
+        this.metronomeElement.play();
+        this.setState({
+            metronomeTick: parseInt(e.data, 10)
+        });
     }
 }
