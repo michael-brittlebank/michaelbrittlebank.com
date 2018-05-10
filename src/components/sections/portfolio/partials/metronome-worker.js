@@ -1,19 +1,21 @@
-// https://gist.github.com/nick-thompson/4551106
-
+var tickTimeout;
+var secondsPerMinute = 60;
+var millisecondsPerSecond = 1000;
 var interval;
 
 onmessage = function(e) {
     if (e.data.interval === 0) {
         // stop
-        clearInterval(interval);
+        clearInterval(tickTimeout);
     } else {
         // set interval
-        clearInterval(interval);
-        interval = setInterval(
+        clearInterval(tickTimeout);
+        interval = secondsPerMinute * millisecondsPerSecond / e.data.interval;
+        tickTimeout = setInterval(
             function () {
-                postMessage(e.data.interval);
+                postMessage('tick');
             },
-            e.data.interval
+            interval
         );
     }
 };
