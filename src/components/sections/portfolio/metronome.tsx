@@ -44,13 +44,12 @@ export default class Metronome extends React.Component<any, State> {
             <section id="metronome-container" className="col-sm-12">
                 <h2 id="metronome-title" className="section-header">Metronome</h2>
                 <p>
-                    It's not perfect with a +-2 millisecond difference from the desired interval when using logging statements.
+                    Range of error is +-2 milliseconds using a Web Worker and self-correcting timer.
                 </p>
                 <div
                     id="metronome-ball"
                     className={this.state.metronomeTick%2 === 0 ? 'tick-even' : 'tick-odd'}
                 >
-
                     &nbsp;
                 </div>
                 <div className="row">
