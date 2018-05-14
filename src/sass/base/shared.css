@@ -59,6 +59,9 @@ img, input {
 
 p {
   margin: 0 0 10px 0; }
+  p.error {
+    margin-top: 10px;
+    color: red; }
 
 hr {
   border-color: #eeeeee; }
@@ -136,7 +139,15 @@ iframe {
 
 .input {
   border: 2px inset #EEEEEE;
-  padding: 7px 5px; }
+  padding: 7px 5px;
+  -webkit-transition: border-color 250ms ease-out 0s;
+  -moz-transition: border-color 250ms ease-out 0s;
+  -o-transition: border-color 250ms ease-out 0s;
+  transition: border-color 250ms ease-out 0s; }
+  .input:focus {
+    outline: none; }
+  .input.error {
+    border-color: red; }
 
 .list-item-selector {
   position: relative;

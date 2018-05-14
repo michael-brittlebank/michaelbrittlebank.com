@@ -12,6 +12,7 @@ interface State {
     metronomeTick: number;
     currentSubdivision: number;
     mutedIndicators: number[];
+    bpmError: boolean;
 }
 
 interface SubdivisionInterface {
@@ -53,7 +54,8 @@ export default class Metronome extends React.Component<any, State> {
             currentBpm: 100,
             metronomeTick: 0,
             currentSubdivision: 1,
-            mutedIndicators: []
+            mutedIndicators: [],
+            bpmError: false
         };
         this._start = this._start.bind(this);
         this._stop = this._stop.bind(this);
@@ -89,6 +91,7 @@ export default class Metronome extends React.Component<any, State> {
                                 Beats Per Minute
                             </label>
                         </p>
+                        <span>-</span>
                         <input
                             id="metronome-bpm-input"
                             type="number"
@@ -96,8 +99,12 @@ export default class Metronome extends React.Component<any, State> {
                             onChange={(e) => this._setBpm(e)}
                             max={this.maxValue}
                             min={this.minValue}
-                            className="input"
+                            className={classNames('input', {'error': this.state.bpmError})}
                         />
+                        <span>+</span>
+                        {
+                            this.state.bpmError ? <p className="error">Please enter a value between 40 and 220</p> : null
+                        }
                     </div>
                     <div className="col-sm-12 col-md-6 metronome-controls-container">
                         <p>
@@ -128,7 +135,7 @@ export default class Metronome extends React.Component<any, State> {
                         <button
                             onClick={(e) => this._start(e)}
                             className={classNames('button', {
-                                'disabled': this.state.isMetronomeStarted
+                                'disabled': this.state.isMetronomeStarted || this.state.bpmError
                             })}
                         >
                             <span>
@@ -206,22 +213,26 @@ export default class Metronome extends React.Component<any, State> {
             if (newBpmValue > this.maxValue) {
                 // set to max bpm
                 this.setState({
-                    currentBpm: this.maxValue
+                    bpmError: true,
+                    currentBpm: newBpmValue
                 });
             } else if (newBpmValue < this.minValue) {
                 // set to min bpm
                 this.setState({
-                    currentBpm: this.minValue
+                    bpmError: true,
+                    currentBpm: newBpmValue
                 });
             } else {
                 // set to new bpm
                 this.setState({
+                    bpmError: false,
                     currentBpm: newBpmValue
                 });
             }
         } else {
             // allow empty inputs
             this.setState({
+                bpmError: true,
                 currentBpm: undefined
             });
         }
@@ -229,7 +240,7 @@ export default class Metronome extends React.Component<any, State> {
         this.setBpmDebounceTimeout = setTimeout(
             // lodash debounce was not getting triggered hence custom debounce
             () => {
-                if (this.state.isMetronomeStarted && !!this.state.currentBpm) {
+                if (this.state.isMetronomeStarted && !!this.state.currentBpm && !this.state.bpmError) {
                     this._postWorkerMessage();
                 }
             },

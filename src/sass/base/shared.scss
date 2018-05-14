@@ -21,6 +21,10 @@ img, input {
 
 p {
   margin: 0 0 10px 0;
+  &.error {
+    margin-top: 10px;
+    color: red;
+  }
 }
 
 hr {
@@ -91,6 +95,13 @@ iframe {
 .input {
   border: 2px inset #EEEEEE;
   padding: 7px 5px;
+  @include transition-with-defaults(border-color);
+  &:focus {
+    outline: none;
+  }
+  &.error {
+    border-color: red;
+  }
 }
 
 .list-item-selector {
