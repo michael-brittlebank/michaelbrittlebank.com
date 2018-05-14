@@ -2,6 +2,8 @@ import * as React from 'react';
 import * as workerPath from 'file-loader?name=[name].js!./partials/metronome-worker';
 import * as classNames from 'classnames';
 import '../../../sass/components/sections/metronome.css'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import * as faGithub from '@fortawesome/fontawesome-free-brands/faGithub'
 
 interface State {
     isMetronomeStarted: boolean;
@@ -51,7 +53,10 @@ export default class Metronome extends React.Component<any, State> {
             <section id="metronome-container" className="col-sm-12">
                 <h2 id="metronome-title" className="section-header">Metronome</h2>
                 <p>
-                    Range of error is +-2 milliseconds using a Web Worker and self-correcting timer.
+                    This metronome (and the larger website) is built with <a href="https://reactjs.org/" target="_blank">React</a> and JavaScript and employs <a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers" target="_blank">Web Workers</a> and self-correcting timer. The range of recorded variance is &#177;2 milliseconds off of true time.
+                </p>
+                <p>
+                    To use the metronome, select your beats per minute using the input box in the top left corner and your note subdivision using the dropdown in the top right. Then press the "Start" button to begin the count. Left click on any subdivision to mute the beat which is indicated by a black icon. Left click again on the black icon to unmute it and remove the black indicator.
                 </p>
                 <div className="row">
                     <div className="col-sm-6 text-center">
@@ -104,6 +109,9 @@ export default class Metronome extends React.Component<any, State> {
                         </button>
                     </div>
                 </div>
+                <a href="https://github.com/mike-stumpf/mikestumpf.com/blob/master/src/components/sections/portfolio/metronome.tsx" className="button" target="_blank">
+                    <span>View Code&nbsp;&nbsp;&nbsp;<FontAwesomeIcon icon={faGithub} className="fa"/></span>
+                </a>
                 <audio id="metronome-tick" src="/assets/tick.mp3" preload="auto"/>
                 <audio id="metronome-tock" src="/assets/tock.mp3" preload="auto"/>
             </section>
