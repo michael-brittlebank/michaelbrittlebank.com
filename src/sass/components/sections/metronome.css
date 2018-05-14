@@ -34,8 +34,8 @@ these are helper functions for common tasks that are difficult to implement acro
 .metronome-indicator {
   background-color: #003DA5;
   border-radius: 50%;
-  width: 25px;
-  height: 25px;
+  width: 35px;
+  height: 35px;
   -webkit-transition: all 250ms ease-out 0s;
   -moz-transition: all 250ms ease-out 0s;
   -o-transition: all 250ms ease-out 0s;
@@ -57,6 +57,10 @@ these are helper functions for common tasks that are difficult to implement acro
   right: 0;
   margin: auto; }
 
+.metronome-controls-container, #metronome-indicators-container {
+  margin: 25px auto 10px auto;
+  text-align: center; }
+
 @keyframes tick {
   0% {
     transform: scale(1.15); }
@@ -65,10 +69,12 @@ these are helper functions for common tasks that are difficult to implement acro
 
 @media (min-width: 768px) {
   .metronome-indicator {
-    width: 50px;
-    height: 50px; } }
+    width: 70px;
+    height: 70px; }
+  .metronome-controls-container, #metronome-indicators-container {
+    margin: 50px auto 10px auto; } }
 
 @media (min-width: 1024px) {
   .metronome-indicator {
-    width: 75px;
-    height: 75px; } }
+    width: 105px;
+    height: 105px; } }

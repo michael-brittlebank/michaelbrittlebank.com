@@ -51,35 +51,6 @@ these are helper functions for common tasks that are difficult to implement acro
   position: relative;
   background-color: white; }
 
-.list-item-selector {
-  position: relative;
-  max-height: 150px;
-  overflow-y: scroll;
-  border: 1px solid #888888; }
-
-.list-item {
-  display: block;
-  padding: 10px;
-  background-color: white;
-  font-family: Raleway, 'HelveticaNeue', Helvetica Neue, Helvetica, Tahoma, Geneva, Arial, sans-serif;
-  -webkit-user-select: none;
-  /* Chrome all / Safari all */
-  -moz-user-select: none;
-  /* Firefox all */
-  -ms-user-select: none;
-  /* IE 10+ */
-  /* No support for these yet, use at own risk */
-  -o-user-select: none;
-  user-select: none;
-  -webkit-transition: background-color 300ms ease-out 0s,color 300ms ease-out 0s;
-  -moz-transition: background-color 300ms ease-out 0s,color 300ms ease-out 0s;
-  -o-transition: background-color 300ms ease-out 0s,color 300ms ease-out 0s;
-  -ms-transition: background-color 300ms ease-out 0s,color 300ms ease-out 0s;
-  transition: background-color 300ms ease-out 0s,color 300ms ease-out 0s; }
-  .list-item.selected, .list-item:hover {
-    background-color: #18453B;
-    color: white; }
-
 #no-search {
   text-align: center;
   margin-top: 50px; }

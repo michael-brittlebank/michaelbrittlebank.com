@@ -4,6 +4,7 @@ import * as classNames from 'classnames';
 import '../../../sass/components/sections/metronome.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import * as faGithub from '@fortawesome/fontawesome-free-brands/faGithub'
+import map = require('lodash/map')
 
 interface State {
     isMetronomeStarted: boolean;
@@ -11,6 +12,11 @@ interface State {
     metronomeTick: number;
     currentSubdivision: number;
     mutedIndicators: number[];
+}
+
+interface SubdivisionInterface {
+    label: string;
+    value: number;
 }
 
 export default class Metronome extends React.Component<any, State> {
@@ -21,6 +27,24 @@ export default class Metronome extends React.Component<any, State> {
     private setBpmDebounceTimeout: any; // https://github.com/Microsoft/TypeScript/issues/842
     private metronomeTick: any;
     private metronomeTock: any;
+    private availableSubdivisions: SubdivisionInterface[] = [
+        {
+            label: 'Whole Note',
+            value: 1
+        },
+        {
+            label: 'Half Note',
+            value: 2
+        },
+        {
+            label: 'Triplet Note',
+            value: 3
+        },
+        {
+            label: 'Quarter Note',
+            value: 4
+        }
+    ];
 
     constructor(props: any) {
         super(props);
@@ -59,8 +83,14 @@ export default class Metronome extends React.Component<any, State> {
                     To use the metronome, select your beats per minute using the input box in the top left corner and your note subdivision using the dropdown in the top right. Then press the "Start" button to begin the count. Left click on any subdivision to mute the beat which is indicated by a black icon. Left click again on the black icon to unmute it and remove the black indicator.
                 </p>
                 <div className="row">
-                    <div className="col-sm-6 text-center">
+                    <div className="col-sm-12 col-md-6 metronome-controls-container">
+                        <p>
+                            <label htmlFor="metronome-bpm-input">
+                                Beats Per Minute
+                            </label>
+                        </p>
                         <input
+                            id="metronome-bpm-input"
                             type="number"
                             value={this.state.currentBpm || ''}
                             onChange={(e) => this._setBpm(e)}
@@ -69,16 +99,26 @@ export default class Metronome extends React.Component<any, State> {
                             className="input"
                         />
                     </div>
-                    <div className="col-sm-6 text-center">
-                        <select onChange={(e) => this._setSubdivision(e)} value={this.state.currentSubdivision}>
-                            <option value="1">Whole Note</option>
-                            <option value="2">Half Note</option>
-                            <option value="3">Triplet Note</option>
-                            <option value="4">Quarter Note</option>
-                        </select>
+                    <div className="col-sm-12 col-md-6 metronome-controls-container">
+                        <p>
+                            Subdivision
+                        </p>
+                        <div className="list-item-selector row">
+                            {map(this.availableSubdivisions, (subdivision: SubdivisionInterface, index: number) => {
+                                return (
+                                    <a
+                                        key={index}
+                                        className={classNames('col-sm-6 list-item', {'selected': subdivision.value === this.state.currentSubdivision})}
+                                        onClick={(e) => this._setSubdivision(e, subdivision)}
+                                    >
+                                        {subdivision.label}
+                                    </a>
+                                )
+                            })}
+                        </div>
                     </div>
                 </div>
-                <div className="row">
+                <div id="metronome-indicators-container" className="row">
                     {
                         this._getMetronomeIndicators()
                     }
@@ -214,8 +254,9 @@ export default class Metronome extends React.Component<any, State> {
         });
     }
 
-    private _setSubdivision(e: React.ChangeEvent<HTMLSelectElement>): void {
-        const newSubdivision: number = parseInt((e.target as HTMLSelectElement).value, 10);
+    private _setSubdivision(e: React.MouseEvent<HTMLAnchorElement>, subdivison: SubdivisionInterface): void {
+        e.preventDefault();
+        const newSubdivision: number = subdivison.value;
         if (this.state.isMetronomeStarted && !!this.state.currentBpm) {
             this._postWorkerMessage(undefined, newSubdivision);
         }

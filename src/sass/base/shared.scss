@@ -88,6 +88,31 @@ iframe {
   }
 }
 
+.input {
+  border: 2px inset #EEEEEE;
+  padding: 7px 5px;
+}
+
+.list-item-selector {
+  position: relative;
+  max-height: 150px;
+  overflow-y: scroll;
+  border: 1px solid $color-box-shadow;
+}
+
+.list-item {
+  display: block;
+  padding: 10px;
+  background-color: white;
+  font-family: $global-font-raleway;
+  @include unselectable;
+  @include transition-raw("background-color 300ms ease-out 0s,color 300ms ease-out 0s");
+  &.selected, &:hover {
+    background-color: $color-york-green;
+    color: white;
+  }
+}
+
 
 //helper classes
 //-----------------------------

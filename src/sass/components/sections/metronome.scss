@@ -2,9 +2,9 @@
 @import "../../base/colours.scss";
 @import "../../base/media-queries.scss";
 
-$mobile-size: 25px;
-$tablet-size: 50px;
-$desktop-size: 75px;
+$mobile-size: 35px;
+$tablet-size: 70px;
+$desktop-size: 105px;
 
 .metronome-indicator-container {
   position: relative;
@@ -39,6 +39,11 @@ $desktop-size: 75px;
   @include center-absolute;
 }
 
+.metronome-controls-container, #metronome-indicators-container {
+  margin: 25px auto 10px auto;
+  text-align: center;
+}
+
 @keyframes tick {
   0%   {
     transform: scale(1.15);
@@ -52,6 +57,9 @@ $desktop-size: 75px;
   .metronome-indicator {
     width: $tablet-size;
     height: $tablet-size;
+  }
+  .metronome-controls-container, #metronome-indicators-container {
+    margin: 50px auto 10px auto;
   }
 }
 
