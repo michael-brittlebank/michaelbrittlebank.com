@@ -68,23 +68,14 @@ iframe {
   max-width: calc(100% - 24px);
   vertical-align: middle;
   outline: none;
+  color: $color-white;
+  font-family: $global-font-raleway-thin;
   @include unselectable;
-  span {
-    cursor: pointer;
-    display: inline-block;
-    position: relative;
-    color: $color-white;
-    transition: 0.5s;
-    font-family: $global-font-raleway-thin;
-    @include unselectable;
-  }
   &:hover:not(.disabled) {
     border-radius: 50px;
     background-color: $color-white;
     box-shadow: 0 5px 15px 0 $color-box-shadow;
-    span {
       color: $color-york-blue;
-    }
   }
   &.disabled, &.disabled span {
     opacity: 0.6;

@@ -126,7 +126,7 @@ export default class Hauptstimme extends React.Component<any, State> {
                     })}
                     onClick={(e) => this._search(e)}
                 >
-                    <span>Search</span>
+                    Search
                 </button>
                 <div className="col-sm-12 row">
                     {
@@ -194,7 +194,7 @@ export default class Hauptstimme extends React.Component<any, State> {
                     }
                 </div>
                 <a href="https://github.com/mike-stumpf/hauptstimme.js" className="button" target="_blank">
-                    <span>View Code&nbsp;&nbsp;&nbsp;<FontAwesomeIcon icon={faGithub} className="fa"/></span>
+                    View Code&nbsp;&nbsp;&nbsp;<FontAwesomeIcon icon={faGithub} className="fa"/>
                 </a>
             </section>
         )

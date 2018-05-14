@@ -148,9 +148,7 @@ export default class Metronome extends React.Component<any, State> {
                                 'disabled': this.state.isMetronomeStarted || this.state.bpmError
                             })}
                         >
-                            <span>
-                                Start
-                            </span>
+                            Start
                         </button>
                     </div>
                     <div className="col-sm-6">
@@ -160,14 +158,12 @@ export default class Metronome extends React.Component<any, State> {
                                 'disabled': !this.state.isMetronomeStarted
                             })}
                         >
-                            <span>
-                                Stop
-                            </span>
+                            Stop
                         </button>
                     </div>
                 </div>
                 <a href="https://github.com/mike-stumpf/mikestumpf.com/blob/master/src/components/sections/portfolio/metronome.tsx" className="button" target="_blank">
-                    <span>View Code&nbsp;&nbsp;&nbsp;<FontAwesomeIcon icon={faGithub} className="fa"/></span>
+                    View Code&nbsp;&nbsp;&nbsp;<FontAwesomeIcon icon={faGithub} className="fa"/>
                 </a>
                 <audio id="metronome-tick" src="/assets/tick.mp3" preload="auto"/>
                 <audio id="metronome-tock" src="/assets/tock.mp3" preload="auto"/>

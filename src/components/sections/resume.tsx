@@ -69,7 +69,7 @@ export default class Resume extends React.Component {
                     </section>
                     <section className="col-sm-12">
                         <a href="/assets/Mike_Stumpf_Resume_2018.pdf" className="button" target="_blank">
-                            <span>Download Resume&nbsp;&nbsp;&nbsp;<FontAwesomeIcon icon={faFile} className="fa"/></span>
+                            Download Resume&nbsp;&nbsp;&nbsp;<FontAwesomeIcon icon={faFile} className="fa"/>
                         </a>
                     </section>
                 </div>
