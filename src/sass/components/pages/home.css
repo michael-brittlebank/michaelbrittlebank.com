@@ -28,6 +28,14 @@
 /*
 these are helper functions for common tasks that are difficult to implement across different browsers and devices.
 */
+.center-absolute {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto; }
+
 @media (max-width: 767px) {
   .hide-for-small {
     display: none; } }

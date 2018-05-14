@@ -171,24 +171,59 @@ export default class Metronome extends React.Component<any, State> {
         );
     }
 
-    private _getMetronomeIndicators(): any {
-        const indicators: any = [];
-        for(let i = 0; i < this.state.currentSubdivision; i++) {
+    private _getMetronomeIndicators(): any[] {
+        const indicators: any[] = [];
+        if (this.state.currentSubdivision === 1) {
             indicators.push(
-                <div className="metronome-indicator-container" key={i} onClick={(e) => this._silenceIndicator(e, i)}>
+                <div
+                    key={0}
+                    className="metronome-indicator-container"
+                    onClick={(e) => this._silenceIndicator(e, 0)}
+                >
+                    <div className="metronome-indicator opaque"/>
                     <div
-                        className={classNames('metronome-indicator', {
-                            'active': this.state.metronomeTick % this.state.currentSubdivision === i,
-                            'silent': this.state.mutedIndicators.indexOf(i) !== -1
+                        className={classNames('metronome-indicator center-absolute', {
+                            'active': this.state.metronomeTick % 2 !== 0,
+                            'silent': this.state.mutedIndicators.indexOf(0) !== -1
+                        })}
+                    >
+                        &nbsp;
+                    </div>
+                    <div
+                        className={classNames('metronome-indicator center-absolute', {
+                            'active': this.state.metronomeTick % 2 === 0,
+                            'silent': this.state.mutedIndicators.indexOf(0) !== -1
                         })}
                     >
                         &nbsp;
                     </div>
                     <span className="metronome-indicator-number">
-                    {i + 1}
+                    1
                     </span>
                 </div>
             )
+        } else {
+            for (let i = 0; i < this.state.currentSubdivision; i++) {
+                indicators.push(
+                    <div
+                        key={i}
+                        className="metronome-indicator-container"
+                        onClick={(e) => this._silenceIndicator(e, i)}
+                    >
+                        <div
+                            className={classNames('metronome-indicator', {
+                                'active': this.state.currentSubdivision === 1 ? this.state.metronomeTick % 2 === 0 : this.state.metronomeTick % this.state.currentSubdivision === i,
+                                'silent': this.state.mutedIndicators.indexOf(i) !== -1
+                            })}
+                        >
+                            &nbsp;
+                        </div>
+                        <span className="metronome-indicator-number">
+                    {i + 1}
+                    </span>
+                    </div>
+                )
+            }
         }
         return indicators;
     }
@@ -263,14 +298,14 @@ export default class Metronome extends React.Component<any, State> {
 
     private _onMessage(e: MessageEvent): void {
         if (e.data.tick % this.state.currentSubdivision === 0 && this.state.mutedIndicators.indexOf(0) === -1) {
-            // tock
-            this.metronomeTock.currentTime = 0;
-            this.metronomeTock.play();
+            // tick
+            this.metronomeTick.currentTime = 0;
+            this.metronomeTick.play();
         } else {
             if (this.state.mutedIndicators.indexOf(e.data.tick % this.state.currentSubdivision) === -1) {
-                // tick
-                this.metronomeTick.currentTime = 0;
-                this.metronomeTick.play();
+                // tock
+                this.metronomeTock.currentTime = 0;
+                this.metronomeTock.play();
             }
         }
         this.setState({

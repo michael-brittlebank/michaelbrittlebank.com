@@ -81,3 +81,7 @@ these are helper functions for common tasks that are difficult to implement acro
   right: 0;
   margin: auto;
 }
+
+.center-absolute {
+  @include center-absolute;
+}

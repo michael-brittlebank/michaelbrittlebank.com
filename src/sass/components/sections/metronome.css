@@ -1,6 +1,14 @@
 /*
 these are helper functions for common tasks that are difficult to implement across different browsers and devices.
 */
+.center-absolute {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto; }
+
 @media (max-width: 767px) {
   .hide-for-small {
     display: none; } }
@@ -59,7 +67,8 @@ these are helper functions for common tasks that are difficult to implement acro
 
 .metronome-controls-container, #metronome-indicators-container {
   margin: 25px auto 10px auto;
-  text-align: center; }
+  text-align: center;
+  position: relative; }
 
 @keyframes tick {
   0% {

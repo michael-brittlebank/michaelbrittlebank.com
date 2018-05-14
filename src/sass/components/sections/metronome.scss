@@ -42,6 +42,7 @@ $desktop-size: 105px;
 .metronome-controls-container, #metronome-indicators-container {
   margin: 25px auto 10px auto;
   text-align: center;
+  position: relative;
 }
 
 @keyframes tick {
