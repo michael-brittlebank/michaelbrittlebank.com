@@ -137,6 +137,33 @@ iframe {
     opacity: 0.6;
     cursor: not-allowed; }
 
+.small-button {
+  display: inline-block;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 1.25rem;
+  cursor: pointer;
+  outline: none;
+  width: 35px;
+  margin: 5px;
+  transition: all 0.5s;
+  background-color: #041E42;
+  border: 2px solid #041E42;
+  color: #fefefe;
+  -webkit-user-select: none;
+  /* Chrome all / Safari all */
+  -moz-user-select: none;
+  /* Firefox all */
+  -ms-user-select: none;
+  /* IE 10+ */
+  /* No support for these yet, use at own risk */
+  -o-user-select: none;
+  user-select: none; }
+  .small-button:hover {
+    background-color: #fefefe;
+    color: #393939;
+    box-shadow: 0 0 15px 0 #888888; }
+
 .input {
   border: 2px inset #EEEEEE;
   padding: 7px 5px;

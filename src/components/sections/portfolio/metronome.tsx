@@ -91,17 +91,27 @@ export default class Metronome extends React.Component<any, State> {
                                 Beats Per Minute
                             </label>
                         </p>
-                        <span>-</span>
+                        <button
+                            onClick={(e) => {e.preventDefault(); this._setBpm(this.state.currentBpm-1)}}
+                            className="small-button"
+                        >
+                            -
+                        </button>
                         <input
                             id="metronome-bpm-input"
                             type="number"
                             value={this.state.currentBpm || ''}
-                            onChange={(e) => this._setBpm(e)}
+                            onChange={(e) => this._getBpmFromInput(e)}
                             max={this.maxValue}
                             min={this.minValue}
                             className={classNames('input', {'error': this.state.bpmError})}
                         />
-                        <span>+</span>
+                        <button
+                            onClick={(e) => {e.preventDefault(); this._setBpm(this.state.currentBpm+1)}}
+                            className="small-button"
+                        >
+                            +
+                        </button>
                         {
                             this.state.bpmError ? <p className="error">Please enter a value between 40 and 220</p> : null
                         }
@@ -207,9 +217,16 @@ export default class Metronome extends React.Component<any, State> {
         }
     }
 
-    private _setBpm(e: React.ChangeEvent<HTMLInputElement>): void {
+    private _getBpmFromInput(e: React.ChangeEvent<HTMLInputElement>): void {
         if (e.target.value.length > 0) {
-            const newBpmValue: number = parseInt(e.target.value, 10);
+            this._setBpm(parseInt(e.target.value, 10));
+        } else {
+            this._setBpm(undefined);
+        }
+    }
+
+    private _setBpm(newBpmValue: number): void {
+        if (!!newBpmValue) {
             if (newBpmValue > this.maxValue) {
                 // set to max bpm
                 this.setState({

@@ -92,6 +92,27 @@ iframe {
   }
 }
 
+.small-button {
+  display: inline-block;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 1.25rem;
+  cursor: pointer;
+  outline: none;
+  width: 35px;
+  margin: 5px;
+  transition: all 0.5s;
+  background-color: $color-jays-dark-blue;
+  border: 2px solid $color-jays-dark-blue;
+  color: $color-white;
+  @include unselectable;
+  &:hover {
+    background-color: $color-white;
+    color: $color-font-black;
+    box-shadow: 0 0 15px 0 $color-box-shadow;
+  }
+}
+
 .input {
   border: 2px inset #EEEEEE;
   padding: 7px 5px;
