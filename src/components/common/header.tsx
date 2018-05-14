@@ -90,6 +90,14 @@ export default class Header extends React.Component {
                             end: this._clearHashFromUrl()
                         });
                         break;
+                    case 'metronome':
+                        scroll.scrollTo('metronome-container', {
+                            smooth: true,
+                            offset: this.headerOffset,
+                            duration: this.scrollDuration,
+                            end: this._clearHashFromUrl()
+                        });
+                        break;
                     default:
                         this._clearHashFromUrl();
                         break;
