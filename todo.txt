@@ -1,0 +1,2 @@
+long press on metronome bpm buttons
+update resume pdf
