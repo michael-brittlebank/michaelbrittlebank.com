@@ -46,6 +46,7 @@ export default class Metronome extends React.Component<any, State> {
             value: 4
         }
     ];
+    private longPressInterval: any; // https://github.com/Microsoft/TypeScript/issues/842
 
     constructor(props: any) {
         super(props);
@@ -62,6 +63,8 @@ export default class Metronome extends React.Component<any, State> {
         this._setBpm = this._setBpm.bind(this);
         this._onMessage = this._onMessage.bind(this);
         this._setSubdivision = this._setSubdivision.bind(this);
+        this._handleLongPress = this._handleLongPress.bind(this);
+        this._clearLongPressInterval = this._clearLongPressInterval.bind(this);
     }
 
     componentDidMount() {
@@ -92,7 +95,11 @@ export default class Metronome extends React.Component<any, State> {
                             </label>
                         </p>
                         <button
-                            onClick={(e) => {e.preventDefault(); this._setBpm(this.state.currentBpm-1)}}
+                            onTouchStart={(e) => {e.preventDefault(); this._handleLongPress(false)}}
+                            onTouchEnd={(e) => {e.preventDefault(); this._clearLongPressInterval(false)}}
+                            onMouseDown={(e) => {e.preventDefault(); this._handleLongPress(false)}}
+                            onMouseUp={(e) => {e.preventDefault(); this._clearLongPressInterval(false)}}
+                            onContextMenu={(e) => {e.preventDefault(); return false;}}
                             className="small-button"
                         >
                             -
@@ -107,7 +114,11 @@ export default class Metronome extends React.Component<any, State> {
                             className={classNames('input', {'error': this.state.bpmError})}
                         />
                         <button
-                            onClick={(e) => {e.preventDefault(); this._setBpm(this.state.currentBpm+1)}}
+                            onTouchStart={(e) => {e.preventDefault(); this._handleLongPress(true)}}
+                            onTouchEnd={(e) => {e.preventDefault(); this._clearLongPressInterval(true)}}
+                            onMouseDown={(e) => {e.preventDefault(); this._handleLongPress(true)}}
+                            onMouseUp={(e) => {e.preventDefault(); this._clearLongPressInterval(true)}}
+                            onContextMenu={(e) => {e.preventDefault(); return false;}}
                             className="small-button"
                         >
                             +
@@ -346,4 +357,37 @@ export default class Metronome extends React.Component<any, State> {
             mutedIndicators: mutedIndicators
         });
     }
+
+    private _handleLongPress(increaseBpm: boolean): void {
+        if (increaseBpm) {
+            if (!this.longPressInterval) {
+                this.longPressInterval = setInterval(
+                    () => {
+                        this._setBpm(this.state.currentBpm + 1)
+                    },
+                    200
+                );
+            }
+        } else {
+            if (!this.longPressInterval) {
+                this.longPressInterval = setInterval(
+                    () => {
+                        this._setBpm(this.state.currentBpm - 1)
+                    },
+                    200
+                );
+            }
+        }
+    }
+
+    private _clearLongPressInterval(increaseBpm: boolean): void {
+        clearInterval(this.longPressInterval);
+        this.longPressInterval = undefined;
+        if (increaseBpm) {
+            this._setBpm(this.state.currentBpm + 1)
+        } else {
+            this._setBpm(this.state.currentBpm - 1)
+        }
+    }
+
 }
