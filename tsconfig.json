@@ -29,5 +29,10 @@
   "typeRoots": [
     "../node_modules/@types",
     "../@types"
+  ],
+  "lib": [
+    "webworker",
+    "es5",
+    "scripthost"
   ]
 }

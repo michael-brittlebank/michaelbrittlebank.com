@@ -1,6 +1,14 @@
 /*
 these are helper functions for common tasks that are difficult to implement across different browsers and devices.
 */
+.center-absolute {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto; }
+
 @font-face {
   font-family: 'Raleway';
   src: url("/fonts/Raleway/raleway-regular-webfont.woff2") format("woff2"), url("/fonts/Raleway/raleway-regular-webfont.woff") format("woff");

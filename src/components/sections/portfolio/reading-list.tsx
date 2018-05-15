@@ -22,7 +22,7 @@ export default class ReadingList extends React.Component {
                     iframeResizerUrl={false}
                 />
                 <a href="https://github.com/mike-stumpf/wp-reading-list" className="button" target="_blank">
-                    <span>View Code&nbsp;&nbsp;&nbsp;<FontAwesomeIcon icon={faGithub} className="fa"/></span>
+                    View Code&nbsp;&nbsp;&nbsp;<FontAwesomeIcon icon={faGithub} className="fa"/>
                 </a>
             </section>
         );

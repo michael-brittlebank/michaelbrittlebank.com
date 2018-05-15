@@ -21,6 +21,10 @@ img, input {
 
 p {
   margin: 0 0 10px 0;
+  &.error {
+    margin-top: 10px;
+    color: red;
+  }
 }
 
 hr {
@@ -64,25 +68,71 @@ iframe {
   max-width: calc(100% - 24px);
   vertical-align: middle;
   outline: none;
-  span {
-    cursor: pointer;
-    display: inline-block;
-    position: relative;
-    color: $color-white;
-    transition: 0.5s;
-    font-family: $global-font-raleway-thin;
-  }
+  color: $color-white;
+  font-family: $global-font-raleway-thin;
+  @include unselectable;
   &:hover:not(.disabled) {
     border-radius: 50px;
     background-color: $color-white;
     box-shadow: 0 5px 15px 0 $color-box-shadow;
-    span {
       color: $color-york-blue;
-    }
   }
   &.disabled, &.disabled span {
     opacity: 0.6;
     cursor: not-allowed;
+  }
+}
+
+.small-button {
+  display: inline-block;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 1.25rem;
+  cursor: pointer;
+  outline: none;
+  width: 35px;
+  margin: 5px;
+  transition: all 0.5s;
+  background-color: $color-jays-dark-blue;
+  border: 2px solid $color-jays-dark-blue;
+  color: $color-white;
+  @include unselectable;
+  &:hover {
+    background-color: $color-white;
+    color: $color-font-black;
+    box-shadow: 0 0 15px 0 $color-box-shadow;
+  }
+}
+
+.input {
+  border: 2px inset #EEEEEE;
+  padding: 7px 5px;
+  @include transition-with-defaults(border-color);
+  &:focus {
+    outline: none;
+  }
+  &.error {
+    border-color: red;
+  }
+}
+
+.list-item-selector {
+  position: relative;
+  max-height: 150px;
+  overflow-y: scroll;
+  border: 1px solid $color-box-shadow;
+}
+
+.list-item {
+  display: block;
+  padding: 10px;
+  background-color: white;
+  font-family: $global-font-raleway;
+  @include unselectable;
+  @include transition-raw("background-color 300ms ease-out 0s,color 300ms ease-out 0s");
+  &.selected, &:hover {
+    background-color: $color-york-green;
+    color: white;
   }
 }
 
