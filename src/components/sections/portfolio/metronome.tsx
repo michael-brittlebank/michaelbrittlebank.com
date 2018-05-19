@@ -5,6 +5,8 @@ import '../../../sass/components/sections/metronome.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import * as faGithub from '@fortawesome/fontawesome-free-brands/faGithub'
 import map = require('lodash/map')
+import * as tick from '../../../assets/tick.mp3';
+import * as tock from '../../../assets/tock.mp3';
 
 interface State {
     isMetronomeStarted: boolean;
@@ -176,8 +178,8 @@ export default class Metronome extends React.Component<any, State> {
                 <a href="https://github.com/mike-stumpf/mikestumpf.com/blob/master/src/components/sections/portfolio/metronome.tsx" className="button" target="_blank">
                     View Code&nbsp;&nbsp;&nbsp;<FontAwesomeIcon icon={faGithub} className="fa"/>
                 </a>
-                <audio id="metronome-tick" src="/assets/tick.mp3" preload="auto"/>
-                <audio id="metronome-tock" src="/assets/tock.mp3" preload="auto"/>
+                <audio id="metronome-tick" src={tick} preload="auto"/>
+                <audio id="metronome-tock" src={tock} preload="auto"/>
             </section>
         );
     }
