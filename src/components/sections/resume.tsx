@@ -7,6 +7,7 @@ import * as faFile from '@fortawesome/fontawesome-free-solid/faFileAlt'
 import { Link } from 'react-router-dom'
 import * as faGithub from '@fortawesome/fontawesome-free-brands/faGithubAlt'
 import * as faStackOverflow from '@fortawesome/fontawesome-free-brands/faStackOverflow'
+import * as resumePdf from '../../assets/Mike_Stumpf_Resume_2018.pdf';
 
 export default class Resume extends React.Component {
     render() {
@@ -68,7 +69,7 @@ export default class Resume extends React.Component {
                         </Fade>
                     </section>
                     <section className="col-sm-12">
-                        <a href="/assets/Mike_Stumpf_Resume_2018.pdf" className="button" target="_blank">
+                        <a href={resumePdf} className="button" target="_blank">
                             Download Resume&nbsp;&nbsp;&nbsp;<FontAwesomeIcon icon={faFile} className="fa"/>
                         </a>
                     </section>
