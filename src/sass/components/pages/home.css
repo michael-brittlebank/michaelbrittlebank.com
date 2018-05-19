@@ -118,6 +118,9 @@ these are helper functions for common tasks that are difficult to implement acro
   #travel-quote p {
     font-family: Raleway, 'HelveticaNeue', Helvetica Neue, Helvetica, Tahoma, Geneva, Arial, sans-serif; }
 
+.portfolio-item {
+  margin-top: 60px; }
+
 @media (min-width: 768px) {
   .section-container {
     padding-bottom: 25px; }
