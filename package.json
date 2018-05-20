@@ -30,7 +30,7 @@
     "@types/react-transition-group": "2.0.8",
     "classnames": "2.2.5",
     "google-maps-react": "2.0.0",
-    "hauptstimme-js": "3.1.5",
+    "hauptstimme-js": "3.2.0",
     "iframe-resizer": "3.6.0",
     "lodash": "4.17.5",
     "node-sass-chokidar": "1.2.2",

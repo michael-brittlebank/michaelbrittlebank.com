@@ -27,6 +27,8 @@ interface State {
 
 export default class Hauptstimme extends React.Component<any, State> {
 
+    private hauptstimme: any;
+
     constructor(props: any) {
         super(props);
         this.state = {
@@ -40,6 +42,7 @@ export default class Hauptstimme extends React.Component<any, State> {
             selectedScale: undefined,
             selectedChord: undefined
         };
+        this.hauptstimme = new HauptstimmeJs();
         this._selectInstrument = this._selectInstrument.bind(this);
         this._selectTuning = this._selectTuning.bind(this);
         this._search = this._search.bind(this);
@@ -51,7 +54,7 @@ export default class Hauptstimme extends React.Component<any, State> {
     }
 
     componentDidMount() {
-        HauptstimmeJs.getAvailableInstruments()
+        this.hauptstimme.getAvailableInstruments()
             .then((response: InstrumentInterface[]) => {
                 this.setState({
                     availableInstruments: filter(response, (instrument: InstrumentInterface) => {
@@ -223,7 +226,7 @@ export default class Hauptstimme extends React.Component<any, State> {
     private _search(e: React.MouseEvent<HTMLButtonElement>): void {
         e.preventDefault();
         if (!isNaN(this.state.rootNote) || this.state.selectedNotes.length > 0) {
-            HauptstimmeJs.search({
+            this.hauptstimme.search({
                 rootNote: this.state.rootNote,
                 notes: this.state.selectedNotes
             })
