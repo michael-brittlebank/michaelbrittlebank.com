@@ -1194,6 +1194,11 @@ export class TravelService {
                 lat: 45.5017,
                 lng: -73.5673
             },
+            {
+                title: 'Barrie, Ontario, Canada',
+                lat: 44.3894,
+                lng: -79.6903
+            },
             // mexico
             {
                 title: 'Costa Maya, Mexico',
@@ -1520,6 +1525,11 @@ export class TravelService {
                 title: 'Slide Rock State Park, Arizona, USA',
                 lat: 34.9434,
                 lng: -111.7529
+            },
+            {
+                title: 'Buffalo, New York, USA',
+                lat: 42.8864,
+                lng: -78.8784
             }
             /**
              * south america
