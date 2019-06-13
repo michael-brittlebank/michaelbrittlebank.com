@@ -3618,9 +3618,9 @@ hash.js@^1.0.0, hash.js@^1.0.3:
     inherits "^2.0.3"
     minimalistic-assert "^1.0.0"
 
-hauptstimme-js@3.1.5:
-  version "3.1.5"
-  resolved "https://registry.yarnpkg.com/hauptstimme-js/-/hauptstimme-js-3.1.5.tgz#048915e09705e4d7e7872f5875a5aca8fa4d85c8"
+hauptstimme-js@3.2.0:
+  version "3.2.0"
+  resolved "https://registry.yarnpkg.com/hauptstimme-js/-/hauptstimme-js-3.2.0.tgz#322bdef7e33c81c7e1590c0407749958c59ec5c2"
   dependencies:
     "@types/node" "8.0.0"
     awesome-typescript-loader "5.0.0"

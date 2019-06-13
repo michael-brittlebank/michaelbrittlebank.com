@@ -1194,6 +1194,21 @@ export class TravelService {
                 lat: 45.5017,
                 lng: -73.5673
             },
+            {
+                title: 'Barrie, Ontario, Canada',
+                lat: 44.3894,
+                lng: -79.6903
+            },
+            {
+                title: 'Vancouver, British Columbia, Canada',
+                lat: 49.2827,
+                lng: -123.1207
+            },
+            {
+                title: 'Nanaimo, British Columbia, Canada',
+                lat: 49.1659,
+                lng: -123.9401
+            },
             // mexico
             {
                 title: 'Costa Maya, Mexico',
@@ -1520,6 +1535,46 @@ export class TravelService {
                 title: 'Slide Rock State Park, Arizona, USA',
                 lat: 34.9434,
                 lng: -111.7529
+            },
+            {
+                title: 'Buffalo, New York, USA',
+                lat: 42.8864,
+                lng: -78.8784
+            },
+            {
+                title: 'Annapolis, Maryland, USA',
+                lat: 38.9784,
+                lng: -76.4922
+            },
+            {
+                title: 'Arlington, Virginia, USA',
+                lat: 38.8783,
+                lng: -77.0687
+            },
+            {
+                title: 'Juneau, Alaska, USA',
+                lat: 58.3019,
+                lng: -134.4197
+            },
+            {
+                title: 'Skagway, Alaska, USA',
+                lat: 59.4554,
+                lng: -135.3153
+            },
+            {
+                title: 'Ketchikan, Alaska, USA',
+                lat: 55.3422,
+                lng: -131.6461
+            },
+            {
+                title: 'Anchorage, Alaska, USA',
+                lat: 61.2181,
+                lng: -149.9003
+            },
+            {
+                title: 'Seattle, Washington, USA',
+                lat: 47.6062,
+                lng: -122.3321
             }
             /**
              * south america
