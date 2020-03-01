@@ -764,6 +764,31 @@ export class TravelService {
                 lat: 44.0678,
                 lng: 12.5695
             },
+            {
+                title: 'Palermo, Italy',
+                lat: 38.1157,
+                lng: 13.3615
+            },
+            {
+                title: 'Messina, Italy',
+                lat: 38.1937,
+                lng: 15.5542
+            },
+            {
+                title: 'Catania, Italy',
+                lat: 37.5079,
+                lng: 15.0830
+            },
+            {
+                title: 'Syracuse, Italy',
+                lat: 37.0755,
+                lng: 15.2866
+            },
+            {
+                title: 'Pozzallo, Italy',
+                lat: 36.7299,
+                lng: 14.8491
+            },
             // latvia
             {
                 title: 'Riga, Latvia',
@@ -787,6 +812,12 @@ export class TravelService {
                 title: 'Luxembourg City, Luxembourg',
                 lat: 49.6000,
                 lng: 6.1167
+            },
+            // malta
+            {
+                title: 'Valleta, Malta',
+                lat: 35.8989,
+                lng: 14.5146
             },
             // monaco
             {
@@ -1575,10 +1606,25 @@ export class TravelService {
                 title: 'Seattle, Washington, USA',
                 lat: 47.6062,
                 lng: -122.3321
-            }
+            },
             /**
              * south america
              */
+            {
+                title: 'Buenos Aires, Argentina',
+                lat: -34.6037,
+                lng: -58.3816
+            },
+            {
+                title: 'Mendoza, Argentina',
+                lat: -32.8895,
+                lng: -68.8458
+            },
+            {
+                title: 'Santiago, Chile',
+                lat: -33.4489,
+                lng: -70.6693
+            }
         ];
     }
 }
