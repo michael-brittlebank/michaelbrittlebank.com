@@ -7,7 +7,7 @@ import * as faFile from '@fortawesome/fontawesome-free-solid/faFileAlt'
 import { Link } from 'react-router-dom'
 import * as faGithub from '@fortawesome/fontawesome-free-brands/faGithubAlt'
 import * as faStackOverflow from '@fortawesome/fontawesome-free-brands/faStackOverflow'
-import * as resumePdf from '../../assets/Mike_Stumpf_Resume_2018.pdf';
+import * as resumePdf from '../../assets/Mike_Stumpf_Resume_2020.pdf';
 
 export default class Resume extends React.Component {
     render() {
@@ -22,7 +22,7 @@ export default class Resume extends React.Component {
                             <section className="col-sm-12">
                                 <h2 className="section-header">Developer</h2>
                                 <p>
-                                    DRY programmer with <strong>{this._getYearsOfExperience()} years</strong> of professional web development experience building bespoke websites and RESTful APIs using JavaScript, PHP, CSS, and HTML.
+                                    DRY programmer with <strong>{this._getYearsOfExperience()} years</strong> of professional web development experience building bespoke websites and RESTful APIs.
                                 </p>
                                 <p>
                                     Equally comfortable in the front-end or the back-end and has a wide range of experience with different languages and frameworks. Familiar with working on several projects simultaneously and switching between different technology stacks on a regular basis.
@@ -36,8 +36,12 @@ export default class Resume extends React.Component {
                             </section>
                             <section className="col-sm-12 col-md-6">
                                 <h2 className="section-header">Experience</h2>
+                                <h3>Senior Software Developer</h3>
+                                <h5>2019&ndash;Present &mdash; <a href="https://www.farmandfleet.com/" target="_blank">Blain Supply. Janesville, WI, USA</a></h5>
+                                <h3>Senior Front-End Software Developer</h3>
+                                <h5>2018&ndash;2019 &mdash; <a href="https://www.propellerhealth.com/" target="_blank">Propeller Health. Madison, WI, USA</a></h5>
                                 <h3>Senior Web Developer</h3>
-                                <h5>2017&ndash;Present &mdash; <a href="https://www.recommenderx.com/" target="_blank">RecommenderX. Dublin, Ireland</a></h5>
+                                <h5>2017&ndash;2018 &mdash; <a href="https://www.recommenderx.com/" target="_blank">RecommenderX. Dublin, Ireland</a></h5>
                                 <h3>Lead Web Developer</h3>
                                 <h5>2013&ndash;2017 &mdash; <a href="http://ollon.ellefsontech.com/" target="_blank">Ellefson Technology. Toronto, Canada</a></h5>
                                 <h3>Project Manager & Web Developer</h3>
