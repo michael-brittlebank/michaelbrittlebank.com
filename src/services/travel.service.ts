@@ -764,31 +764,31 @@ export class TravelService {
                 lat: 44.0678,
                 lng: 12.5695
             },
-            {
-                title: 'Palermo, Italy',
-                lat: 38.1157,
-                lng: 13.3615
-            },
-            {
-                title: 'Messina, Italy',
-                lat: 38.1937,
-                lng: 15.5542
-            },
-            {
-                title: 'Catania, Italy',
-                lat: 37.5079,
-                lng: 15.0830
-            },
-            {
-                title: 'Syracuse, Italy',
-                lat: 37.0755,
-                lng: 15.2866
-            },
-            {
-                title: 'Pozzallo, Italy',
-                lat: 36.7299,
-                lng: 14.8491
-            },
+            // {
+            //     title: 'Palermo, Italy',
+            //     lat: 38.1157,
+            //     lng: 13.3615
+            // },
+            // {
+            //     title: 'Messina, Italy',
+            //     lat: 38.1937,
+            //     lng: 15.5542
+            // },
+            // {
+            //     title: 'Catania, Italy',
+            //     lat: 37.5079,
+            //     lng: 15.0830
+            // },
+            // {
+            //     title: 'Syracuse, Italy',
+            //     lat: 37.0755,
+            //     lng: 15.2866
+            // },
+            // {
+            //     title: 'Pozzallo, Italy',
+            //     lat: 36.7299,
+            //     lng: 14.8491
+            // },
             // latvia
             {
                 title: 'Riga, Latvia',
@@ -1610,10 +1610,11 @@ export class TravelService {
             /**
              * south america
              */
+            // argetina
             {
-                title: 'Buenos Aires, Argentina',
-                lat: -34.6037,
-                lng: -58.3816
+                title: 'Cordoba, Argentina',
+                lat: -31.4201,
+                lng: -64.1888
             },
             {
                 title: 'Mendoza, Argentina',
@@ -1621,10 +1622,21 @@ export class TravelService {
                 lng: -68.8458
             },
             {
+                title: 'Cosquín, Argentina',
+                lat: -31.2468,
+                lng: -64.4704
+            },
+            // chile
+            {
                 title: 'Santiago, Chile',
                 lat: -33.4489,
                 lng: -70.6693
-            }
+            },
+            {
+                title: 'Valparaíso, Chile',
+                lat: -33.0472,
+                lng: -71.6127
+            },
         ];
     }
 }
