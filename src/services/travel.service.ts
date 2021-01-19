@@ -814,11 +814,11 @@ export class TravelService {
                 lng: 6.1167
             },
             // malta
-            {
-                title: 'Valleta, Malta',
-                lat: 35.8989,
-                lng: 14.5146
-            },
+            // {
+            //     title: 'Valleta, Malta',
+            //     lat: 35.8989,
+            //     lng: 14.5146
+            // },
             // monaco
             {
                 title: 'Monaco',
@@ -1607,36 +1607,41 @@ export class TravelService {
                 lat: 47.6062,
                 lng: -122.3321
             },
+            {
+                title: 'Corbin, Kentucky, USA',
+                lat: 36.9487,
+                lng: -84.0969
+            },
             /**
              * south america
              */
             // argetina
-            {
-                title: 'Cordoba, Argentina',
-                lat: -31.4201,
-                lng: -64.1888
-            },
-            {
-                title: 'Mendoza, Argentina',
-                lat: -32.8895,
-                lng: -68.8458
-            },
-            {
-                title: 'Cosquín, Argentina',
-                lat: -31.2468,
-                lng: -64.4704
-            },
+            // {
+            //     title: 'Cordoba, Argentina',
+            //     lat: -31.4201,
+            //     lng: -64.1888
+            // },
+            // {
+            //     title: 'Mendoza, Argentina',
+            //     lat: -32.8895,
+            //     lng: -68.8458
+            // },
+            // {
+            //     title: 'Cosquín, Argentina',
+            //     lat: -31.2468,
+            //     lng: -64.4704
+            // },
             // chile
-            {
-                title: 'Santiago, Chile',
-                lat: -33.4489,
-                lng: -70.6693
-            },
-            {
-                title: 'Valparaíso, Chile',
-                lat: -33.0472,
-                lng: -71.6127
-            },
+            // {
+            //     title: 'Santiago, Chile',
+            //     lat: -33.4489,
+            //     lng: -70.6693
+            // },
+            // {
+            //     title: 'Valparaíso, Chile',
+            //     lat: -33.0472,
+            //     lng: -71.6127
+            // },
         ];
     }
 }

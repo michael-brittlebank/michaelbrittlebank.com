@@ -36,17 +36,19 @@ export default class Resume extends React.Component {
                             </section>
                             <section className="col-sm-12 col-md-6">
                                 <h2 className="section-header">Experience</h2>
+                                <h3>Application Development Senior Engineer</h3>
+                                <h5>2020&ndash;Present &mdash; <a href="https://www.amfam.com/" target="_blank">American Family Insurance. Madison, WI, USA</a></h5>
                                 <h3>Senior Software Developer</h3>
-                                <h5>2019&ndash;Present &mdash; <a href="https://www.farmandfleet.com/" target="_blank">Blain Supply. Janesville, WI, USA</a></h5>
+                                <h5>2019&ndash;2020 &mdash; <a href="https://www.farmandfleet.com/" target="_blank">Blain Supply. Janesville, WI, USA</a></h5>
                                 <h3>Senior Front-End Software Developer</h3>
                                 <h5>2018&ndash;2019 &mdash; <a href="https://www.propellerhealth.com/" target="_blank">Propeller Health. Madison, WI, USA</a></h5>
                                 <h3>Senior Web Developer</h3>
                                 <h5>2017&ndash;2018 &mdash; <a href="https://www.recommenderx.com/" target="_blank">RecommenderX. Dublin, Ireland</a></h5>
                                 <h3>Lead Web Developer</h3>
                                 <h5>2013&ndash;2017 &mdash; <a href="http://ollon.ellefsontech.com/" target="_blank">Ellefson Technology. Toronto, Canada</a></h5>
-                                <h3>Project Manager & Web Developer</h3>
+                                <h3>Project Manager & Web Developer (Contract)</h3>
                                 <h5>2012&ndash;2013 &mdash; <a href="https://www.utoronto.ca/" target="_blank">University of Toronto, Toronto, Canada</a></h5>
-                                <h3>Database Engineer</h3>
+                                <h3>Database Engineer (Contract)</h3>
                                 <h5>2012 &mdash; <a href="http://www.purdue.edu/" target="_blank">Purdue University, West Lafayette, USA</a></h5>
                             </section>
                             <section className="col-sm-12 col-md-6">
