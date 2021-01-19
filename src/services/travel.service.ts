@@ -764,31 +764,31 @@ export class TravelService {
                 lat: 44.0678,
                 lng: 12.5695
             },
-            {
-                title: 'Palermo, Italy',
-                lat: 38.1157,
-                lng: 13.3615
-            },
-            {
-                title: 'Messina, Italy',
-                lat: 38.1937,
-                lng: 15.5542
-            },
-            {
-                title: 'Catania, Italy',
-                lat: 37.5079,
-                lng: 15.0830
-            },
-            {
-                title: 'Syracuse, Italy',
-                lat: 37.0755,
-                lng: 15.2866
-            },
-            {
-                title: 'Pozzallo, Italy',
-                lat: 36.7299,
-                lng: 14.8491
-            },
+            // {
+            //     title: 'Palermo, Italy',
+            //     lat: 38.1157,
+            //     lng: 13.3615
+            // },
+            // {
+            //     title: 'Messina, Italy',
+            //     lat: 38.1937,
+            //     lng: 15.5542
+            // },
+            // {
+            //     title: 'Catania, Italy',
+            //     lat: 37.5079,
+            //     lng: 15.0830
+            // },
+            // {
+            //     title: 'Syracuse, Italy',
+            //     lat: 37.0755,
+            //     lng: 15.2866
+            // },
+            // {
+            //     title: 'Pozzallo, Italy',
+            //     lat: 36.7299,
+            //     lng: 14.8491
+            // },
             // latvia
             {
                 title: 'Riga, Latvia',
@@ -814,11 +814,11 @@ export class TravelService {
                 lng: 6.1167
             },
             // malta
-            {
-                title: 'Valleta, Malta',
-                lat: 35.8989,
-                lng: 14.5146
-            },
+            // {
+            //     title: 'Valleta, Malta',
+            //     lat: 35.8989,
+            //     lng: 14.5146
+            // },
             // monaco
             {
                 title: 'Monaco',
@@ -1607,24 +1607,41 @@ export class TravelService {
                 lat: 47.6062,
                 lng: -122.3321
             },
+            {
+                title: 'Corbin, Kentucky, USA',
+                lat: 36.9487,
+                lng: -84.0969
+            },
             /**
              * south america
              */
-            {
-                title: 'Buenos Aires, Argentina',
-                lat: -34.6037,
-                lng: -58.3816
-            },
-            {
-                title: 'Mendoza, Argentina',
-                lat: -32.8895,
-                lng: -68.8458
-            },
-            {
-                title: 'Santiago, Chile',
-                lat: -33.4489,
-                lng: -70.6693
-            }
+            // argetina
+            // {
+            //     title: 'Cordoba, Argentina',
+            //     lat: -31.4201,
+            //     lng: -64.1888
+            // },
+            // {
+            //     title: 'Mendoza, Argentina',
+            //     lat: -32.8895,
+            //     lng: -68.8458
+            // },
+            // {
+            //     title: 'Cosquín, Argentina',
+            //     lat: -31.2468,
+            //     lng: -64.4704
+            // },
+            // chile
+            // {
+            //     title: 'Santiago, Chile',
+            //     lat: -33.4489,
+            //     lng: -70.6693
+            // },
+            // {
+            //     title: 'Valparaíso, Chile',
+            //     lat: -33.0472,
+            //     lng: -71.6127
+            // },
         ];
     }
 }
