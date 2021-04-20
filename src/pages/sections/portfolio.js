@@ -7,11 +7,8 @@ export default function Portfolio(){
       <h1 id="portfolio-title" className="page-title">Portfolio</h1>
      </div>
      <section id="portfolio-body" className="col-sm-12 row">
-      {/*hauptstimme*/}
       {/*<Hauptstimme/>*/}
-      {/*metronome*/}
       {/*<Metronome/>*/}
-      {/*reading list*/}
       <ReadingList/>
      </section>
     </div>
