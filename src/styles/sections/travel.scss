@@ -1,0 +1,13 @@
+#travel-map-container {
+  position: relative;
+  height: 600px;
+  width: 100%;
+}
+
+#travel-quote {
+  margin: 5px auto;
+  text-align: center;
+  p {
+    font-family: $global-font-raleway;
+  }
+}

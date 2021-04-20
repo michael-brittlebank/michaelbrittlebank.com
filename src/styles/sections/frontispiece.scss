@@ -1,0 +1,34 @@
+#frontispiece-image-container {
+  position: relative;
+}
+
+#frontispiece-image {
+  width: 100%;
+  height: 100%;
+}
+
+#frontispiece-logo {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 5%;
+  margin: auto;
+  height: 8rem;
+  text-align: right;
+  p {
+    $font-size: 4rem;
+    font-family: $global-font-raleway-thin;
+    color: white;
+    font-size: $font-size;
+    line-height: $font-size;
+    margin: 0;
+    text-transform: uppercase;
+  }
+}
+
+#frontispiece-page {
+  @include transition-with-defaults(opacity);
+  &.faded-out {
+    opacity: 0;
+  }
+}

@@ -1,0 +1,20 @@
+@import "../base/media-queries";
+
+//core
+//----------------------
+footer {
+  margin: 50px 0 25px 0;
+  .fa {
+    font-size: 2rem;
+    margin: 0 3px;
+    width: 0.875em;
+    display: inline-block;
+    height: 1em;
+  }
+}
+
+#footer-social-title {
+  vertical-align: text-bottom;
+  display: inline-block;
+  margin: 10px 5px 5px 0;
+}
