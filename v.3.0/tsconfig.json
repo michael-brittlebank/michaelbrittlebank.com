@@ -16,7 +16,7 @@
     "strictNullChecks": false,
     "suppressImplicitAnyIndexErrors": true,
     "noUnusedLocals": true,
-    "baseUrl": "."
+    "baseUrl": ".."
   },
   "exclude": [
     "node_modules",
