@@ -1,4 +1,5 @@
 import ReadingList from "../portfolio/reading-list";
+import Metronome from "../portfolio/metronome";
 
 export default function Portfolio(){
   return (
@@ -8,7 +9,7 @@ export default function Portfolio(){
      </div>
      <section id="portfolio-body" className="col-sm-12 row">
       {/*<Hauptstimme/>*/}
-      {/*<Metronome/>*/}
+      <Metronome/>
       <ReadingList/>
      </section>
     </div>
