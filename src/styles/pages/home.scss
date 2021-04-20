@@ -48,15 +48,4 @@
   .spacer {
     height: 150px;
   }
-  #home-logo {
-    height: 12rem;
-    p {
-      $font-size: 6rem;
-      font-size: $font-size;
-      line-height: $font-size;
-    }
-  }
-  #travel-quote {
-    margin: 0 auto 25px auto;
-  }
 }

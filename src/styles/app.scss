@@ -5,12 +5,18 @@
 @import "base/fonts";
 @import "base/grid";
 @import "base/shared";
+@import "vendor/font-awesome";
 
 
 //components
 //-----------------------------
 @import "components/footer";
 @import "components/header";
+
+
+//pages
+//-----------------------------
+@import "pages/home";
 
 
 //sections

@@ -4,6 +4,8 @@ import {Fragment} from "react";
 import Footer from "./components/footer"
 import Header from './components/header'
 import Frontispiece from './sections/frontispiece'
+import Resume from "./sections/resume";
+import Spacer from "./components/spacer";
 
 export default function Home() {
  return (
@@ -19,6 +21,9 @@ export default function Home() {
     <Header/>
     <main>
      <Frontispiece/>
+     <Resume/>
+     <Spacer color="blue"/>
+     <Spacer color="orange"/>
     </main>
     <Footer/>
    </Fragment>

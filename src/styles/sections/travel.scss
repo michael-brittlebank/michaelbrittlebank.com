@@ -11,3 +11,9 @@
     font-family: $global-font-raleway;
   }
 }
+
+@include tablet-up {
+  #travel-quote {
+    margin: 0 auto 25px auto;
+  }
+}
