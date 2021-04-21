@@ -6,9 +6,9 @@ export default class FrettedInstrument extends React.Component {
 
     numberOfFrets = 12;
 
-    static _getFretMarkers() {
+    _getFretMarkers() {
         const output = [];
-        for (let i = 0; i <= FrettedInstrument.numberOfFrets; i++) {
+        for (let i = 0; i <= this.numberOfFrets; i++) {
             if (i === 3 || i === 5 || i ===9) {
                 output.push(String.fromCharCode(9678));
             } else if (i === 7 || i === 12) {
@@ -20,10 +20,10 @@ export default class FrettedInstrument extends React.Component {
         return output;
     }
 
-     static _getFretsFromRootNote(rootNote) {
+      _getFretsFromRootNote(rootNote) {
         const output = [rootNote];
         let currentNote = rootNote;
-        for (let i = 0; i <= FrettedInstrument.numberOfFrets - 1; i++) {
+        for (let i = 0; i <= this.numberOfFrets - 1; i++) {
             currentNote = HauptstimmeJs.addHalfStepsToNote(currentNote, 1);
             output.push(currentNote);
         }
@@ -55,7 +55,7 @@ export default class FrettedInstrument extends React.Component {
                 {/*fret markers*/}
                 <div className="string fret-marker">
                     {
-                        FrettedInstrument._getFretMarkers().map((fretMarker, index) => {
+                        this._getFretMarkers().map((fretMarker, index) => {
                             return (
                                 <div key={index} className="fret">
                                     {fretMarker}
@@ -73,7 +73,7 @@ export default class FrettedInstrument extends React.Component {
                                 className="string"
                             >
                                 {
-                                    FrettedInstrument._getFretsFromRootNote(note).map((fret, innerIndex) => {
+                                    this._getFretsFromRootNote(note).map((fret, innerIndex) => {
                                         return (
                                             <div
                                                 key={innerIndex}

@@ -39,16 +39,15 @@ export default class Hauptstimme extends React.Component {
   this.hauptstimme.getAvailableInstruments()
     .then((response) => {
      this.setState({
-      availableInstruments: response.filter((instrument) => {
-       return instrument.type === InstrumentTypeConstant.FRETTED_INSTRUMENT || instrument.type === InstrumentTypeConstant.KEYED_INSTRUMENT;
-      }),
-      selectedInstrument: response.find({name: 'Guitar'}),
-      availableTunings: response.filter({type: InstrumentTypeConstant.ALTERNATE_TUNING})
+      availableInstruments: response.filter((instrument) => instrument.type === InstrumentTypeConstant.FRETTED_INSTRUMENT || instrument.type === InstrumentTypeConstant.KEYED_INSTRUMENT),
+      selectedInstrument: response.find((instrument) => instrument.name === 'Guitar'),
+      availableTunings: response.filter((instrument) => instrument.type === InstrumentTypeConstant.ALTERNATE_TUNING)
      });
     })
     .then(() => {
+     const {selectedInstrument, availableInstruments} = this.state;
      // set default scroll in instrument container to show user active state
-     const myElement = document.getElementById('instrument-' + availableInstruments.findIndex({name: selectedInstrument.name}));
+     const myElement = document.getElementById('instrument-' + availableInstruments.findIndex((instrument) => instrument.name === selectedInstrument.name));
      document.getElementById('instrument-container').scrollTop = myElement.offsetTop - 55;
     });
  }
@@ -241,7 +240,7 @@ export default class Hauptstimme extends React.Component {
  }
 
  _selectNote(note) {
-  const {rootNote, selectedNotes} = this.state
+  let {rootNote, selectedNotes} = this.state
   if (!isNaN(rootNote) && rootNote === note) {
    // remove note assignment
    this.setState({
@@ -249,14 +248,13 @@ export default class Hauptstimme extends React.Component {
    });
    this._resetSearchResults();
   } else if (selectedNotes.indexOf(note) !== -1) {
-   let selectedNotes = selectedNotes;
    if (selectedNotes.indexOf(note) !== -1) {
     // remove root note from selected notes
     selectedNotes.splice(selectedNotes.indexOf(note), 1);
    }
    if (!isNaN(rootNote)) {
     // move any previous root note back to selected
-    selectedNotes = [...new Set(selectedNotes.concat([rootNote]))];
+    selectedNotes = [...selectedNotes, rootNote];
    }
    this.setState({
     selectedNotes: selectedNotes,
@@ -265,9 +263,8 @@ export default class Hauptstimme extends React.Component {
    this._resetSearchResults();
   } else {
    // add to selected notes
-   const selectedNotes = [...new Set(selectedNotes.concat([note]))];
    this.setState({
-    selectedNotes: selectedNotes
+    selectedNotes: [...selectedNotes, note]
    });
    this._resetSearchResults();
   }
