@@ -1,12 +1,11 @@
 import * as React from 'react';
 import * as classNames from 'classnames';
-import 'subworkers';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import * as faGithub from '@fortawesome/fontawesome-free-brands/faGithub'
 
 export default class Metronome extends React.Component {
 
- myWorker = new Worker("/files/metronome-worker.js");
+ myWorker;
  maxValue = 220;
  minValue = 40;
  setBpmDebounceTimeout; // https://github.com/Microsoft/TypeScript/issues/842
@@ -54,30 +53,24 @@ export default class Metronome extends React.Component {
  componentDidMount() {
   this.metronomeTick = document.getElementById('metronome-tick');
   this.metronomeTock = document.getElementById('metronome-tock');
-  this.myWorker.onmessage = this._onMessage;
+  if ("serviceWorker" in navigator) {
+   // https://medium.com/@anatomic/using-a-service-worker-with-next-js-460e0168a60a
+   navigator.serviceWorker.register("/files/metronome.worker.js")
+     .then((resp) => {
+      this.myWorker = new Worker(resp.active.scriptURL);
+      this.myWorker.onmessage = this._onMessage;
+     })
+     .catch(err => {
+      console.error("Service worker registration failed", err)
+     });
+  } else {
+   console.warn("Service worker not supported");
+  }
  }
 
  componentWillUnmount() {
   this.myWorker.terminate();
  }
-/*
-
- useEffect() {
-  if("serviceWorker" in navigator) {
-   window.addEventListener("load", function () {
-    navigator.serviceWorker.register("./partials/metronome-worker").then(
-      function (registration) {
-       console.log("Service Worker registration successful with scope: ", registration.scope);
-       // this.myWorker = new Worker(registration)
-      },
-      function (err) {
-       console.log("Service Worker registration failed: ", err);
-      }
-    );
-   });
-  }
- }
-*/
 
  render() {
   const {currentBpm, bpmError, currentSubdivision, isMetronomeStarted} = this.state

@@ -1,14 +1,10 @@
 import dynamic from 'next/dynamic'
 
 import ReadingList from "../portfolio/reading-list";
+import Metronome from "../portfolio/metronome";
 
 const DynamicHauptstimme = dynamic(
   () => import('../portfolio/hauptstimme'),
-  { ssr: false }
-)
-
-const DynamicMetronome = dynamic(
-  () => import('../portfolio/metronome'),
   { ssr: false }
 )
 
@@ -20,7 +16,7 @@ export default function Portfolio(){
      </div>
      <section id="portfolio-body" className="col-sm-12 row">
       <DynamicHauptstimme/>
-      <DynamicMetronome/>
+      <Metronome/>
       <ReadingList/>
      </section>
     </div>
