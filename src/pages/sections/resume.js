@@ -3,6 +3,7 @@ import * as faLinkedIn from "@fortawesome/fontawesome-free-brands/faLinkedin";
 import * as faGithub from "@fortawesome/fontawesome-free-brands/faGithubAlt";
 import * as faStackOverflow from "@fortawesome/fontawesome-free-brands/faStackOverflow";
 import * as faFile from '@fortawesome/fontawesome-free-solid/faFileAlt'
+import Spacer from "../components/spacer";
 
 export default function Resume() {
  return (
@@ -72,6 +73,7 @@ export default function Resume() {
       </a>
      </section>
     </div>
+    <Spacer color="blue"/>
    </div>
  )
 }

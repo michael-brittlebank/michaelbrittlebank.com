@@ -169,7 +169,7 @@ export default class Metronome extends React.Component {
        </button>
       </div>
      </div>
-     <a href="https://github.com/mike-stumpf/mikestumpf.com/blob/master/src/components/sections/portfolio/metronome.tsx" className="button" target="_blank">
+     <a href="https://github.com/mike-stumpf/mikestumpf.com/blob/master/src/pages/portfolio/metronome.js" className="button" target="_blank">
       View Code&nbsp;&nbsp;&nbsp;<FontAwesomeIcon icon={faGithub} className="fa"/>
      </a>
      <audio id="metronome-tick" src={'/files/tick.mp3'} preload="auto"/>
