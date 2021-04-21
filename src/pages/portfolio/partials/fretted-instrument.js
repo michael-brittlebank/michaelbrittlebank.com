@@ -39,10 +39,11 @@ export default class FrettedInstrument extends React.Component {
         };
     }
 
-    componentWillReceiveProps(props) {
-        if (props.instrument.id !== this.props.instrument.id) {
+    componentDidUpdate(prevProps) {
+        const {instrument} = this.props;
+        if (prevProps.instrument.id !== instrument.id) {
             this.setState({
-                rootNotes: [...props.instrument.rootNotes].reverse()
+                rootNotes: [...instrument.rootNotes].reverse()
             })
         }
     }
