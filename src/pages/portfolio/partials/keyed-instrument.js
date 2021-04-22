@@ -1,11 +1,11 @@
 import * as React from 'react';
-import { HauptstimmeJs, NoteConstant } from 'hauptstimme-js';
+import { Util as HauptstimmeJs, Constants } from 'hauptstimme-js';
 import * as classNames from 'classnames';
 
 export default class KeyedInstrument extends React.Component {
 
     static _isBlackKey(note) {
-        return note === NoteConstant.AB || note === NoteConstant.CD || note === NoteConstant.DE || note === NoteConstant.FG || note === NoteConstant.GA;
+        return note === Constants.noteConstant.AB || note === Constants.noteConstant.CD || note === Constants.noteConstant.DE || note === Constants.noteConstant.FG || note === Constants.noteConstant.GA;
     }
 
     render() {
@@ -13,7 +13,7 @@ export default class KeyedInstrument extends React.Component {
         return (
             <div className="instrument-container piano-keyboard">
                 {
-                    instrument.rootNotes.map((note, index) => {
+                    instrument && instrument.rootNotes.map((note, index) => {
                         return (
                             <div
                                 key={index}
@@ -33,7 +33,7 @@ export default class KeyedInstrument extends React.Component {
                                         'found': resultNotes.indexOf(note) !== -1
                                     })}
                                 >
-                                    <span>{HauptstimmeJs.getFormattedNoteString(note)}</span>
+                                    <span>{HauptstimmeJs.getFormattedLetterFromNote({note})}</span>
                                 </p>
                             </div>
                         )

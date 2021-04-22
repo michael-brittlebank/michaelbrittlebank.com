@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { HauptstimmeJs } from 'hauptstimme-js';
+import { Util as HauptstimmeJs } from 'hauptstimme-js';
 import * as classNames from 'classnames';
 
 export default class FrettedInstrument extends React.Component {
@@ -24,7 +24,7 @@ export default class FrettedInstrument extends React.Component {
         const output = [rootNote];
         let currentNote = rootNote;
         for (let i = 0; i <= this.numberOfFrets - 1; i++) {
-            currentNote = HauptstimmeJs.addHalfStepsToNote(currentNote, 1);
+            currentNote = HauptstimmeJs.adjustNoteBySteps({note: currentNote, halfSteps: 1});
             output.push(currentNote);
         }
         return output;
@@ -91,7 +91,7 @@ export default class FrettedInstrument extends React.Component {
                                                         onClick={(e) => {e.preventDefault(); onClick(fret)}}
                                                         onContextMenu={(e) => {e.preventDefault(); onContextMenu(fret)}}
                                                     >
-                                                        {HauptstimmeJs.getFormattedNoteString(fret)}
+                                                        {HauptstimmeJs.getFormattedLetterFromNote({note: fret})}
                                                     </span>
                                                 </p>
                                             </div>

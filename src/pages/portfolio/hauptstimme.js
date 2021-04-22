@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {HauptstimmeJs, InstrumentTypeConstant} from 'hauptstimme-js';
+import {Hauptstimme as HauptstimmeJs, Constants} from 'hauptstimme-js';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import * as faGithub from '@fortawesome/fontawesome-free-brands/faGithub'
 import * as classNames from 'classnames';
@@ -7,8 +7,6 @@ import FrettedInstrument from './partials/fretted-instrument';
 import KeyedInstrument from './partials/keyed-instrument';
 
 export default class Hauptstimme extends React.Component {
-
- hauptstimme;
 
  constructor(props) {
   super(props);
@@ -21,7 +19,9 @@ export default class Hauptstimme extends React.Component {
    selectedNotes: [],
    rootNote: undefined,
    selectedScale: undefined,
-   selectedChord: undefined
+   selectedChord: undefined,
+   chords: [],
+   scales: []
   };
   this._selectInstrument = this._selectInstrument.bind(this);
   this._selectTuning = this._selectTuning.bind(this);
@@ -34,14 +34,15 @@ export default class Hauptstimme extends React.Component {
  }
 
  componentDidMount() {
-  const {availableInstruments, selectedInstrument} = this.state;
-  this.hauptstimme = new HauptstimmeJs();
-  this.hauptstimme.getAvailableInstruments()
+  HauptstimmeJs.getAvailableData()
     .then((response) => {
+     const {chords, scales, instruments} = response;
      this.setState({
-      availableInstruments: response.filter((instrument) => instrument.type === InstrumentTypeConstant.FRETTED_INSTRUMENT || instrument.type === InstrumentTypeConstant.KEYED_INSTRUMENT),
-      selectedInstrument: response.find((instrument) => instrument.name === 'Guitar'),
-      availableTunings: response.filter((instrument) => instrument.type === InstrumentTypeConstant.ALTERNATE_TUNING)
+      chords,
+      scales,
+      availableInstruments: instruments.filter((instrument) => instrument.type === Constants.instrumentTypeConstant.FRETTED_INSTRUMENT || instrument.type === Constants.instrumentTypeConstant.KEYED_INSTRUMENT),
+      selectedInstrument: instruments.find((instrument) => instrument.name === 'Guitar'),
+      availableTunings: instruments.filter((instrument) => instrument.type === Constants.instrumentTypeConstant.ALTERNATE_TUNING)
      });
     })
     .then(() => {
@@ -141,7 +142,7 @@ export default class Hauptstimme extends React.Component {
           <div className="list-item-selector">
            {
             searchResults.chords.length > 0 ?
-             searchResults.chords.map((chord, index) => {
+              searchResults.chords.map((chord, index) => {
                return (
                  <a
                    key={index}
@@ -225,11 +226,15 @@ export default class Hauptstimme extends React.Component {
 
  _search(e) {
   e.preventDefault();
-  const {rootNote, selectedNotes} = this.state
+  const {rootNote, selectedNotes, chords, scales} = this.state
   if (!isNaN(rootNote) || selectedNotes.length > 0) {
-   this.hauptstimme.search({
-    rootNote: rootNote,
-    notes: selectedNotes
+   HauptstimmeJs.search({
+    searchRequest:{
+     rootNote: rootNote,
+     notes: selectedNotes
+    },
+    chords,
+    scales
    })
      .then((response) => {
       this.setState({
@@ -341,7 +346,7 @@ export default class Hauptstimme extends React.Component {
   const {selectedInstrument, selectedTuning, selectedNotes, rootNote}= this.state
   if (selectedInstrument || selectedTuning) {
    const instrument = selectedInstrument ? selectedInstrument : selectedTuning;
-   if (instrument.type === InstrumentTypeConstant.KEYED_INSTRUMENT) {
+   if (instrument.type === Constants.instrumentTypeConstant.KEYED_INSTRUMENT) {
     return (
       <KeyedInstrument
         instrument={instrument}
