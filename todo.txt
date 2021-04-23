@@ -1,0 +1,3 @@
+add bubbles project
+add tap tempo button to metronome, clean up metronome react code; fix bug where changing the bpm with typing doesn't adjust timer
+update wp reading list
