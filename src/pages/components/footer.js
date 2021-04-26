@@ -1,3 +1,4 @@
+import packageJson from '/package.json';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import * as faLinkedIn from '@fortawesome/fontawesome-free-brands/faLinkedin'
 import * as faGithub from '@fortawesome/fontawesome-free-brands/faGithubAlt'
@@ -6,8 +7,13 @@ import * as faStackOverflow from '@fortawesome/fontawesome-free-brands/faStackOv
 export default function Footer() {
  return (
    <footer className="grid-container row animated fadeInUp">
-    <div className="col-sm-12 text-right">
-     <h4 id="footer-social-title">Find Me:</h4>
+    <div className="col-sm-12 col-md-6">
+     <p className="footer-text">
+      v{packageJson.version} built with <a href="https://nextjs.org/">Next.js</a>
+     </p>
+    </div>
+    <div className="col-sm-12 col-md-6 text-right">
+     <h4 className="footer-text">Find Me:</h4>
      <a href="https://www.linkedin.com/in/mikestumpf" target="_blank">
       <FontAwesomeIcon icon={faLinkedIn} className="fa"/>
      </a>
