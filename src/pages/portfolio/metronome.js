@@ -61,7 +61,7 @@ export default class Metronome extends React.Component {
       this.myWorker.onmessage = this._onMessage;
      })
      .catch(err => {
-      console.error("Service worker registration failed", err)
+      console.warn("Service worker registration failed", err)
      });
   } else {
    console.warn("Service worker not supported");
@@ -91,10 +91,10 @@ export default class Metronome extends React.Component {
         </label>
        </p>
        <button
-         onTouchStart={(e) => {e.preventDefault(); this._handleLongPress(false)}}
-         onTouchEnd={(e) => {e.preventDefault(); this._clearLongPressInterval(false)}}
-         onMouseDown={(e) => {e.preventDefault(); this._handleLongPress(false)}}
-         onMouseUp={(e) => {e.preventDefault(); this._clearLongPressInterval(false)}}
+         onTouchStart={() => {this._handleLongPress(false)}}
+         onTouchEnd={() => {this._clearLongPressInterval(false)}}
+         onMouseDown={() => {this._handleLongPress(false)}}
+         onMouseUp={() => {this._clearLongPressInterval(false)}}
          onContextMenu={(e) => {e.preventDefault(); return false;}}
          className="small-button"
        >
@@ -110,10 +110,10 @@ export default class Metronome extends React.Component {
          className={classNames('input', {'error': bpmError})}
        />
        <button
-         onTouchStart={(e) => {e.preventDefault(); this._handleLongPress(true)}}
-         onTouchEnd={(e) => {e.preventDefault(); this._clearLongPressInterval(true)}}
-         onMouseDown={(e) => {e.preventDefault(); this._handleLongPress(true)}}
-         onMouseUp={(e) => {e.preventDefault(); this._clearLongPressInterval(true)}}
+         onTouchStart={() => { this._handleLongPress(true)}}
+         onTouchEnd={() => { this._clearLongPressInterval(true)}}
+         onMouseDown={() => { this._handleLongPress(true)}}
+         onMouseUp={() => { this._clearLongPressInterval(true)}}
          onContextMenu={(e) => {e.preventDefault(); return false;}}
          className="small-button"
        >
@@ -133,7 +133,7 @@ export default class Metronome extends React.Component {
            <a
              key={index}
              className={classNames('col-sm-6 list-item', {'selected': subdivision.value === currentSubdivision})}
-             onClick={(e) => this._setSubdivision(e, subdivision)}
+             onClick={() => this._setSubdivision(subdivision)}
            >
             {subdivision.label}
            </a>
@@ -150,7 +150,7 @@ export default class Metronome extends React.Component {
      <div className="row">
       <div className="col-sm-6">
        <button
-         onClick={(e) => this._start(e)}
+         onClick={this._start}
          className={classNames('button', {
           'disabled': isMetronomeStarted || bpmError
          })}
@@ -160,7 +160,7 @@ export default class Metronome extends React.Component {
       </div>
       <div className="col-sm-6">
        <button
-         onClick={(e) => this._stop(e)}
+         onClick={this._stop}
          className={classNames('button', {
           'disabled': !isMetronomeStarted
          })}
@@ -186,7 +186,7 @@ export default class Metronome extends React.Component {
      <div
        key={0}
        className="metronome-indicator-container"
-       onClick={(e) => this._silenceIndicator(e, 0)}
+       onClick={() => this._silenceIndicator( 0)}
      >
       <div className="metronome-indicator opaque"/>
       <div
@@ -216,7 +216,7 @@ export default class Metronome extends React.Component {
       <div
         key={i}
         className="metronome-indicator-container"
-        onClick={(e) => this._silenceIndicator(e, i)}
+        onClick={() => this._silenceIndicator(i)}
       >
        <div
          className={classNames('metronome-indicator', {
@@ -236,8 +236,7 @@ export default class Metronome extends React.Component {
   return indicators;
  }
 
- _start(e) {
-  e.preventDefault();
+ _start() {
   const {isMetronomeStarted} = this.state
   if (!isMetronomeStarted) {
    this.setState({
@@ -247,8 +246,7 @@ export default class Metronome extends React.Component {
   }
  }
 
- _stop(e) {
-  e.preventDefault();
+ _stop() {
   const {isMetronomeStarted} = this.state
   if (isMetronomeStarted) {
    this.setState({
@@ -267,38 +265,41 @@ export default class Metronome extends React.Component {
  }
 
  _setBpm(newBpmValue) {
+  const {isMetronomeStarted} = this.state
+  let modifiedState = {};
   if (!!newBpmValue) {
    if (newBpmValue > this.maxValue) {
     // set to max bpm
-    this.setState({
+    modifiedState = {
      bpmError: true,
      currentBpm: newBpmValue
-    });
+    };
    } else if (newBpmValue < this.minValue) {
     // set to min bpm
-    this.setState({
+    modifiedState = {
      bpmError: true,
      currentBpm: newBpmValue
-    });
+    };
    } else {
     // set to new bpm
-    this.setState({
+    modifiedState= {
      bpmError: false,
      currentBpm: newBpmValue
-    });
+    };
    }
   } else {
    // allow empty inputs
-   this.setState({
+   modifiedState = {
     bpmError: true,
     currentBpm: undefined
-   });
+   };
   }
+  this.setState(modifiedState)
   clearTimeout(this.setBpmDebounceTimeout);
-  const {isMetronomeStarted, currentBpm, bpmError} = this.state
   this.setBpmDebounceTimeout = setTimeout(
     // lodash debounce was not getting triggered hence custom debounce
     () => {
+     const {currentBpm, bpmError} = modifiedState;
      if (isMetronomeStarted && !!currentBpm && !bpmError) {
       this._postWorkerMessage();
      }
@@ -324,8 +325,7 @@ export default class Metronome extends React.Component {
   });
  }
 
- _setSubdivision(e, subdivison) {
-  e.preventDefault();
+ _setSubdivision(subdivison) {
   const newSubdivision = subdivison.value;
   if (this.state.isMetronomeStarted && !!this.state.currentBpm) {
    this._postWorkerMessage(undefined, newSubdivision);
@@ -342,8 +342,7 @@ export default class Metronome extends React.Component {
   });
  }
 
- _silenceIndicator(e, indicatorIndex) {
-  e.preventDefault();
+ _silenceIndicator(indicatorIndex) {
   const mutedIndicators = this.state.mutedIndicators;
   const indexInArray = mutedIndicators.indexOf(indicatorIndex);
   if (indexInArray === -1) {

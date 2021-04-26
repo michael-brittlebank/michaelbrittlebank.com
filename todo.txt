@@ -1,2 +1,2 @@
-add tap tempo button to metronome, clean up metronome react code; fix bug where changing the bpm with typing doesn't adjust timer
+add tap tempo button to metronome
 update wp reading list
