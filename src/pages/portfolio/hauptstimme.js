@@ -1,8 +1,8 @@
-import * as React from 'react';
+import React from 'react';
 import {Hauptstimme as HauptstimmeJs, Constants} from 'hauptstimme-js';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import * as faGithub from '@fortawesome/fontawesome-free-brands/faGithub'
-import * as classNames from 'classnames';
+import classNames from 'classnames';
 import FrettedInstrument from './partials/fretted-instrument';
 import KeyedInstrument from './partials/keyed-instrument';
 

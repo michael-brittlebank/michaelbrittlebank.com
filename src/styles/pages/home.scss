@@ -5,6 +5,10 @@
 
 //home section
 //----------------------
+#home-page {
+  @include transition-with-defaults(opacity)
+}
+
 .react-reveal {
   width: 100%;
 }

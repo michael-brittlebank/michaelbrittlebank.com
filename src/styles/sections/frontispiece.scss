@@ -1,3 +1,6 @@
+@import '../base/mixins';
+@import '../base/media-queries';
+
 #frontispiece-image-container {
   position: relative;
 }
@@ -23,13 +26,6 @@
     line-height: $font-size;
     margin: 0;
     text-transform: uppercase;
-  }
-}
-
-#frontispiece-page {
-  @include transition-with-defaults(opacity);
-  &.faded-out {
-    opacity: 0;
   }
 }
 

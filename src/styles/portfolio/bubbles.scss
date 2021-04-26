@@ -19,7 +19,4 @@ $bubble-container-height: 500px;
   overflow: hidden;
   height: $bubble-container-height;
   @include transition-with-defaults(opacity);
-  &.opaque {
-    opacity: 0;
-  }
 }
