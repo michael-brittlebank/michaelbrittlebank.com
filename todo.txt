@@ -1,2 +1,1 @@
 add tap tempo button to metronome
-add prettier on git hook

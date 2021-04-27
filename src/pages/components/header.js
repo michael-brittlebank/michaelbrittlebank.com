@@ -3,7 +3,7 @@ import {
   Link as ScrollLink,
   scrollSpy,
   scroller as scroll,
-} from 'react-scroll';
+} from "react-scroll";
 
 export default class Header extends React.Component {
   headerOffset = -65;
