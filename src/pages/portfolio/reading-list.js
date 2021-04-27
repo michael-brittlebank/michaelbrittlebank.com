@@ -9,21 +9,12 @@ export default function ReadingList() {
         WP Reading List
       </h2>
       <p>
-        This{' '}
-        <a href="https://wordpress.org/" target="_blank">
-          WordPress
-        </a>{' '}
-        plugin is designed to help organise and display books, magazines,
+        This <a href="https://wordpress.org/plugins/wp-reading-list/" target="_blank">
+          WordPress plugin
+        </a> is designed to help organise and display books, magazines,
         articles, and anything else that you have read lately. This plugin
         allows users to display what they have read, attach text like a review
         or notes to it, and provide a link to where visitors can find the piece.
-        The plugin comes bundled with two archive templates (as well as
-        templates for single items and "author" & "type" archives) and is easily
-        customizable with CSS.
-      </p>
-      <p className="show-for-small">
-        This project is best viewed on a larger screen and so is hidden for
-        mobile devices.
       </p>
       <ReactIframeResizer
         src="https://wordpress.mikestumpf.com/reading-list"
@@ -31,7 +22,7 @@ export default function ReadingList() {
           checkOrigin: false,
           heightCalculationMethod: 'documentElementOffset',
         }}
-        className="no-border hide-for-small"
+        className="no-border"
         iframeResizerUrl={false}
       />
       <a
