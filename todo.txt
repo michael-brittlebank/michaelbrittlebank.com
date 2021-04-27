@@ -1,2 +1,2 @@
 add tap tempo button to metronome
-update wp reading list
+add prettier on git hook

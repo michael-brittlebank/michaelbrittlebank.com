@@ -6,7 +6,18 @@
     "dev": "NODE_OPTIONS='--inspect' next dev",
     "build": "next build",
     "start": "next start",
-    "export": "next build && next export"
+    "export": "next build && next export",
+    "prettier": "prettier --write src/**/*.{js,scss}"
+  },
+  "lint-staged": {
+    "linters": {
+      "src/**/*.{js,scss}": ["prettier --write", "git add"]
+    }
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
   },
   "dependencies": {
     "@fortawesome/fontawesome": "1.1.8",
@@ -25,5 +36,10 @@
     "react-iframe-resizer-super": "0.2.2",
     "react-scroll": "1.8.2",
     "sass": "1.32.11"
+  },
+  "devDependencies": {
+    "husky": "6.0.0",
+    "lint-staged": "10.5.4",
+    "prettier": "2.2.1"
   }
 }

@@ -11,11 +11,16 @@ body {
   background: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1IiBoZWlnaHQ9IjUiPgo8cmVjdCB3aWR0aD0iNSIgaGVpZ2h0PSI1IiBmaWxsPSIjZmZmIj48L3JlY3Q+CjxyZWN0IHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9IiNjY2MiPjwvcmVjdD4KPC9zdmc+");
 }
 
-h1,h2,h3,h4,h5 {
+h1,
+h2,
+h3,
+h4,
+h5 {
   font-family: $global-font-raleway;
 }
 
-img, input {
+img,
+input {
   max-width: 100%;
 }
 
@@ -42,8 +47,8 @@ a {
 }
 
 iframe {
-  width:100%;
-  max-width:100%;
+  width: 100%;
+  max-width: 100%;
 }
 
 .page-title {
@@ -75,9 +80,10 @@ iframe {
     border-radius: 50px;
     background-color: $color-white;
     box-shadow: 0 5px 15px 0 $color-box-shadow;
-      color: $color-york-blue;
+    color: $color-york-blue;
   }
-  &.disabled, &.disabled span {
+  &.disabled,
+  &.disabled span {
     opacity: 0.6;
     cursor: not-allowed;
   }
@@ -105,7 +111,7 @@ iframe {
 }
 
 .input {
-  border: 2px inset #EEEEEE;
+  border: 2px inset #eeeeee;
   padding: 7px 5px;
   @include transition-with-defaults(border-color);
   &:focus {
@@ -129,13 +135,15 @@ iframe {
   background-color: white;
   font-family: $global-font-raleway;
   @include unselectable;
-  @include transition-raw("background-color 300ms ease-out 0s,color 300ms ease-out 0s");
-  &.selected, &:hover {
+  @include transition-raw(
+    "background-color 300ms ease-out 0s,color 300ms ease-out 0s"
+  );
+  &.selected,
+  &:hover {
     background-color: $color-york-green;
     color: white;
   }
 }
-
 
 //helper classes
 //-----------------------------
@@ -157,15 +165,15 @@ iframe {
 }
 
 .float-left {
-  float:left;
+  float: left;
 }
 
 .float-right {
-  float:right;
+  float: right;
 }
 
 .full-width {
-  width:100%;
+  width: 100%;
 }
 
 .position-relative {
@@ -183,7 +191,6 @@ iframe {
 .no-border {
   border: none;
 }
-
 
 //typography
 //-----------------------------
@@ -207,7 +214,6 @@ iframe {
   text-transform: uppercase;
 }
 
-
 //route transitions
 //----------------------
 .fade-enter {
@@ -228,7 +234,6 @@ iframe {
   @include center-absolute;
   opacity: 0.01;
 }
-
 
 //desktop styles
 @include tablet-up {

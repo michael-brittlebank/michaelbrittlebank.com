@@ -43,14 +43,14 @@ $large-grid-padding: 0 5px;
 
 /* mobile */
 .col-sm-1 {
-  flex-basis: unquote((1/12*100)+'%');
-  max-width: unquote((1/12*100)+'%');
+  flex-basis: unquote((1/12 * 100)+"%");
+  max-width: unquote((1/12 * 100)+"%");
   padding: $small-grid-padding;
 }
 
 .col-sm-2 {
-  flex-basis: unquote((2/12*100)+'%');
-  max-width: unquote((2/12*100)+'%');
+  flex-basis: unquote((2/12 * 100)+"%");
+  max-width: unquote((2/12 * 100)+"%");
   padding: $small-grid-padding;
 }
 
@@ -61,14 +61,14 @@ $large-grid-padding: 0 5px;
 }
 
 .col-sm-4 {
-  flex-basis: unquote((4/12*100)+'%');
-  max-width: unquote((4/12*100)+'%');
+  flex-basis: unquote((4/12 * 100)+"%");
+  max-width: unquote((4/12 * 100)+"%");
   padding: $small-grid-padding;
 }
 
 .col-sm-5 {
-  flex-basis: unquote((5/12*100)+'%');
-  max-width: unquote((5/12*100)+'%');
+  flex-basis: unquote((5/12 * 100)+"%");
+  max-width: unquote((5/12 * 100)+"%");
   padding: $small-grid-padding;
 }
 
@@ -79,14 +79,14 @@ $large-grid-padding: 0 5px;
 }
 
 .col-sm-7 {
-  flex-basis: unquote((7/12*100)+'%');
-  max-width: unquote((7/12*100)+'%');
+  flex-basis: unquote((7/12 * 100)+"%");
+  max-width: unquote((7/12 * 100)+"%");
   padding: $small-grid-padding;
 }
 
 .col-sm-8 {
-  flex-basis: unquote((8/12*100)+'%');
-  max-width: unquote((8/12*100)+'%');
+  flex-basis: unquote((8/12 * 100)+"%");
+  max-width: unquote((8/12 * 100)+"%");
   padding: $small-grid-padding;
 }
 
@@ -97,14 +97,14 @@ $large-grid-padding: 0 5px;
 }
 
 .col-sm-10 {
-  flex-basis: unquote((10/12*100)+'%');
-  max-width: unquote((10/12*100)+'%');
+  flex-basis: unquote((10/12 * 100)+"%");
+  max-width: unquote((10/12 * 100)+"%");
   padding: $small-grid-padding;
 }
 
 .col-sm-11 {
-  flex-basis: unquote((11/12*100)+'%');
-  max-width: unquote((11/12*100)+'%');
+  flex-basis: unquote((11/12 * 100)+"%");
+  max-width: unquote((11/12 * 100)+"%");
   padding: $small-grid-padding;
 }
 
@@ -115,11 +115,11 @@ $large-grid-padding: 0 5px;
 }
 
 .col-sm-offset-1 {
-  margin-left: unquote((1/12*100)+'%');
+  margin-left: unquote((1/12 * 100)+"%");
 }
 
 .col-sm-offset-2 {
-  margin-left: unquote((2/12*100)+'%');
+  margin-left: unquote((2/12 * 100)+"%");
 }
 
 .col-sm-offset-3 {
@@ -127,11 +127,11 @@ $large-grid-padding: 0 5px;
 }
 
 .col-sm-offset-4 {
-  margin-left: unquote((4/12*100)+'%');
+  margin-left: unquote((4/12 * 100)+"%");
 }
 
 .col-sm-offset-5 {
-  margin-left: unquote((5/12*100)+'%');
+  margin-left: unquote((5/12 * 100)+"%");
 }
 
 .col-sm-offset-6 {
@@ -139,11 +139,11 @@ $large-grid-padding: 0 5px;
 }
 
 .col-sm-offset-7 {
-  margin-left: unquote((7/12*100)+'%');
+  margin-left: unquote((7/12 * 100)+"%");
 }
 
 .col-sm-offset-8 {
-  margin-left: unquote((8/12*100)+'%');
+  margin-left: unquote((8/12 * 100)+"%");
 }
 
 .col-sm-offset-9 {
@@ -151,25 +151,24 @@ $large-grid-padding: 0 5px;
 }
 
 .col-sm-offset-10 {
-  margin-left: unquote((10/12*100)+'%');
+  margin-left: unquote((10/12 * 100)+"%");
 }
 
 .col-sm-offset-11 {
-  margin-left: unquote((11/12*100)+'%');
+  margin-left: unquote((11/12 * 100)+"%");
 }
-
 
 /* tablet */
 @include tablet-up {
   .col-md-1 {
-    flex-basis: unquote((1/12*100)+'%');
-    max-width: unquote((1/12*100)+'%');
+    flex-basis: unquote((1/12 * 100)+"%");
+    max-width: unquote((1/12 * 100)+"%");
     padding: $medium-grid-padding;
   }
 
   .col-md-2 {
-    flex-basis: unquote((2/12*100)+'%');
-    max-width: unquote((2/12*100)+'%');
+    flex-basis: unquote((2/12 * 100)+"%");
+    max-width: unquote((2/12 * 100)+"%");
     padding: $medium-grid-padding;
   }
 
@@ -180,14 +179,14 @@ $large-grid-padding: 0 5px;
   }
 
   .col-md-4 {
-    flex-basis: unquote((4/12*100)+'%');
-    max-width: unquote((4/12*100)+'%');
+    flex-basis: unquote((4/12 * 100)+"%");
+    max-width: unquote((4/12 * 100)+"%");
     padding: $medium-grid-padding;
   }
 
   .col-md-5 {
-    flex-basis: unquote((5/12*100)+'%');
-    max-width: unquote((5/12*100)+'%');
+    flex-basis: unquote((5/12 * 100)+"%");
+    max-width: unquote((5/12 * 100)+"%");
     padding: $medium-grid-padding;
   }
 
@@ -198,14 +197,14 @@ $large-grid-padding: 0 5px;
   }
 
   .col-md-7 {
-    flex-basis: unquote((7/12*100)+'%');
-    max-width: unquote((7/12*100)+'%');
+    flex-basis: unquote((7/12 * 100)+"%");
+    max-width: unquote((7/12 * 100)+"%");
     padding: $medium-grid-padding;
   }
 
   .col-md-8 {
-    flex-basis: unquote((8/12*100)+'%');
-    max-width: unquote((8/12*100)+'%');
+    flex-basis: unquote((8/12 * 100)+"%");
+    max-width: unquote((8/12 * 100)+"%");
     padding: $medium-grid-padding;
   }
 
@@ -216,14 +215,14 @@ $large-grid-padding: 0 5px;
   }
 
   .col-md-10 {
-    flex-basis: unquote((10/12*100)+'%');
-    max-width: unquote((10/12*100)+'%');
+    flex-basis: unquote((10/12 * 100)+"%");
+    max-width: unquote((10/12 * 100)+"%");
     padding: $medium-grid-padding;
   }
 
   .col-md-11 {
-    flex-basis: unquote((11/12*100)+'%');
-    max-width: unquote((11/12*100)+'%');
+    flex-basis: unquote((11/12 * 100)+"%");
+    max-width: unquote((11/12 * 100)+"%");
     padding: $medium-grid-padding;
   }
 
@@ -234,11 +233,11 @@ $large-grid-padding: 0 5px;
   }
 
   .col-md-offset-1 {
-    margin-left: unquote((1/12*100)+'%');
+    margin-left: unquote((1/12 * 100)+"%");
   }
 
   .col-md-offset-2 {
-    margin-left: unquote((2/12*100)+'%');
+    margin-left: unquote((2/12 * 100)+"%");
   }
 
   .col-md-offset-3 {
@@ -246,11 +245,11 @@ $large-grid-padding: 0 5px;
   }
 
   .col-md-offset-4 {
-    margin-left: unquote((4/12*100)+'%');
+    margin-left: unquote((4/12 * 100)+"%");
   }
 
   .col-md-offset-5 {
-    margin-left: unquote((5/12*100)+'%');
+    margin-left: unquote((5/12 * 100)+"%");
   }
 
   .col-md-offset-6 {
@@ -258,11 +257,11 @@ $large-grid-padding: 0 5px;
   }
 
   .col-md-offset-7 {
-    margin-left: unquote((7/12*100)+'%');
+    margin-left: unquote((7/12 * 100)+"%");
   }
 
   .col-md-offset-8 {
-    margin-left: unquote((8/12*100)+'%');
+    margin-left: unquote((8/12 * 100)+"%");
   }
 
   .col-md-offset-9 {
@@ -270,25 +269,25 @@ $large-grid-padding: 0 5px;
   }
 
   .col-md-offset-10 {
-    margin-left: unquote((10/12*100)+'%');
+    margin-left: unquote((10/12 * 100)+"%");
   }
 
   .col-md-offset-11 {
-    margin-left: unquote((11/12*100)+'%');
+    margin-left: unquote((11/12 * 100)+"%");
   }
 }
 
 /* desktop */
 @include desktop {
   .col-lg-1 {
-    flex-basis: unquote((1/12*100)+'%');
-    max-width: unquote((1/12*100)+'%');
+    flex-basis: unquote((1/12 * 100)+"%");
+    max-width: unquote((1/12 * 100)+"%");
     padding: $large-grid-padding;
   }
 
   .col-lg-2 {
-    flex-basis: unquote((2/12*100)+'%');
-    max-width: unquote((2/12*100)+'%');
+    flex-basis: unquote((2/12 * 100)+"%");
+    max-width: unquote((2/12 * 100)+"%");
     padding: $large-grid-padding;
   }
 
@@ -299,14 +298,14 @@ $large-grid-padding: 0 5px;
   }
 
   .col-lg-4 {
-    flex-basis: unquote((4/12*100)+'%');
-    max-width: unquote((4/12*100)+'%');
+    flex-basis: unquote((4/12 * 100)+"%");
+    max-width: unquote((4/12 * 100)+"%");
     padding: $large-grid-padding;
   }
 
   .col-lg-5 {
-    flex-basis: unquote((5/12*100)+'%');
-    max-width: unquote((5/12*100)+'%');
+    flex-basis: unquote((5/12 * 100)+"%");
+    max-width: unquote((5/12 * 100)+"%");
     padding: $large-grid-padding;
   }
 
@@ -317,14 +316,14 @@ $large-grid-padding: 0 5px;
   }
 
   .col-lg-7 {
-    flex-basis: unquote((7/12*100)+'%');
-    max-width: unquote((7/12*100)+'%');
+    flex-basis: unquote((7/12 * 100)+"%");
+    max-width: unquote((7/12 * 100)+"%");
     padding: $large-grid-padding;
   }
 
   .col-lg-8 {
-    flex-basis: unquote((8/12*100)+'%');
-    max-width: unquote((8/12*100)+'%');
+    flex-basis: unquote((8/12 * 100)+"%");
+    max-width: unquote((8/12 * 100)+"%");
     padding: $large-grid-padding;
   }
 
@@ -335,14 +334,14 @@ $large-grid-padding: 0 5px;
   }
 
   .col-lg-10 {
-    flex-basis: unquote((10/12*100)+'%');
-    max-width: unquote((10/12*100)+'%');
+    flex-basis: unquote((10/12 * 100)+"%");
+    max-width: unquote((10/12 * 100)+"%");
     padding: $large-grid-padding;
   }
 
   .col-lg-11 {
-    flex-basis: unquote((11/12*100)+'%');
-    max-width: unquote((11/12*100)+'%');
+    flex-basis: unquote((11/12 * 100)+"%");
+    max-width: unquote((11/12 * 100)+"%");
     padding: $large-grid-padding;
   }
 
@@ -353,11 +352,11 @@ $large-grid-padding: 0 5px;
   }
 
   .col-lg-offset-1 {
-    margin-left: unquote((1/12*100)+'%');
+    margin-left: unquote((1/12 * 100)+"%");
   }
 
   .col-lg-offset-2 {
-    margin-left: unquote((2/12*100)+'%');
+    margin-left: unquote((2/12 * 100)+"%");
   }
 
   .col-lg-offset-3 {
@@ -365,11 +364,11 @@ $large-grid-padding: 0 5px;
   }
 
   .col-lg-offset-4 {
-    margin-left: unquote((4/12*100)+'%');
+    margin-left: unquote((4/12 * 100)+"%");
   }
 
   .col-lg-offset-5 {
-    margin-left: unquote((5/12*100)+'%');
+    margin-left: unquote((5/12 * 100)+"%");
   }
 
   .col-lg-offset-6 {
@@ -377,11 +376,11 @@ $large-grid-padding: 0 5px;
   }
 
   .col-lg-offset-7 {
-    margin-left: unquote((7/12*100)+'%');
+    margin-left: unquote((7/12 * 100)+"%");
   }
 
   .col-lg-offset-8 {
-    margin-left: unquote((8/12*100)+'%');
+    margin-left: unquote((8/12 * 100)+"%");
   }
 
   .col-lg-offset-9 {
@@ -389,10 +388,10 @@ $large-grid-padding: 0 5px;
   }
 
   .col-lg-offset-10 {
-    margin-left: unquote((10/12*100)+'%');
+    margin-left: unquote((10/12 * 100)+"%");
   }
 
   .col-lg-offset-11 {
-    margin-left: unquote((11/12*100)+'%');
+    margin-left: unquote((11/12 * 100)+"%");
   }
 }

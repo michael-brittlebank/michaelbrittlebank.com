@@ -1,30 +1,33 @@
 //font declarations
 //-----------------------------
-$sansSerifDefault: ', \'HelveticaNeue\', Helvetica Neue, Helvetica, Tahoma, Geneva, Arial, sans-serif';
+$sansSerifDefault: ", 'HelveticaNeue', Helvetica Neue, Helvetica, Tahoma, Geneva, Arial, sans-serif";
 
 @font-face {
-  font-family: 'Raleway';
-  src: url('/fonts/Raleway/raleway-regular-webfont.woff2') format('woff2'), url('/fonts/Raleway/raleway-regular-webfont.woff') format('woff');
-  font-weight: normal;
-  font-style: normal
-}
-$global-font-raleway: unquote('Raleway'+$sansSerifDefault);
-
-@font-face {
-  font-family: 'RalewayThin';
-  src: url('/fonts/Raleway/raleway-thin-webfont.woff2') format('woff2'), url('/fonts/Raleway/raleway-thin-webfont.woff') format('woff');
+  font-family: "Raleway";
+  src: url("/fonts/Raleway/raleway-regular-webfont.woff2") format("woff2"),
+    url("/fonts/Raleway/raleway-regular-webfont.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
-$global-font-raleway-thin: unquote('RalewayThin'+$sansSerifDefault);
+$global-font-raleway: unquote("Raleway" + $sansSerifDefault);
 
 @font-face {
-  font-family: 'Proza Libre';
-  src: url('/fonts/ProzaLibre/prozalibre-regular-webfont.woff2') format('woff2'), url('/fonts/ProzaLibre/prozalibre-regular-webfont.woff') format('woff');
+  font-family: "RalewayThin";
+  src: url("/fonts/Raleway/raleway-thin-webfont.woff2") format("woff2"),
+    url("/fonts/Raleway/raleway-thin-webfont.woff") format("woff");
   font-weight: normal;
-  font-style: normal
+  font-style: normal;
 }
-$global-font-proza-libre: unquote('Proza Libre'+$sansSerifDefault);
+$global-font-raleway-thin: unquote("RalewayThin" + $sansSerifDefault);
+
+@font-face {
+  font-family: "Proza Libre";
+  src: url("/fonts/ProzaLibre/prozalibre-regular-webfont.woff2") format("woff2"),
+    url("/fonts/ProzaLibre/prozalibre-regular-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+$global-font-proza-libre: unquote("Proza Libre" + $sansSerifDefault);
 
 //extensible classes
 //-----------------------------

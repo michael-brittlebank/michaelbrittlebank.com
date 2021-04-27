@@ -29,7 +29,6 @@
   }
 }
 
-
 //strings
 //-----------------------------
 $fret-opacity: 0.65;
@@ -38,10 +37,10 @@ $fret-opacity: 0.65;
   clear: both;
   overflow: hidden;
   display: flex;
-  &:nth-child(2){
+  &:nth-child(2) {
     border-top: 1px solid black;
   }
-  &:last-child{
+  &:last-child {
     border-bottom: 1px solid black;
   }
 }
@@ -71,17 +70,17 @@ $fretWidth: (100/13);
 .fret {
   display: inline-block;
   font-size: 16px;
-  width: calc(#{$fretWidth+'%'} - 1px);
+  width: calc(#{$fretWidth+"%"} - 1px);
   text-align: center;
   position: relative;
   border-right: 1px solid black;
   float: left;
   @include unselectable;
-  &:first-child{
+  &:first-child {
     border-right: 5px solid black;
-    width: calc(#{$fretWidth+'%'} - 5px);
+    width: calc(#{$fretWidth+"%"} - 5px);
   }
-  &:not(:first-child){
+  &:not(:first-child) {
     p {
       //http://codepen.io/ericrasch/pen/Irlpm
       position: relative;
@@ -91,7 +90,10 @@ $fretWidth: (100/13);
         content: "";
         margin: 0 auto; /* this centers the line to the full width specified */
         position: absolute; /* positioning must be absolute here, and relative positioning must be applied to the parent */
-        top: 50%; left: 0; right: 0; bottom: 0;
+        top: 50%;
+        left: 0;
+        right: 0;
+        bottom: 0;
         width: 95%;
         z-index: -1;
       }
@@ -115,7 +117,6 @@ $fretWidth: (100/13);
   }
 }
 
-
 //piano
 //-----------------------------
 .piano-keyboard {
@@ -126,7 +127,7 @@ $fretWidth: (100/13);
 
 .piano-key {
   $whiteKeyWidth: 14.15;
-  $blackKeyWidth: $whiteKeyWidth*0.6;
+  $blackKeyWidth: $whiteKeyWidth * 0.6;
   display: inline-block;
   font-size: 16px;
   margin: 0;
@@ -146,7 +147,7 @@ $fretWidth: (100/13);
     border-top: 1px solid black;
     border-bottom: 1px solid black;
     border-right: 1px solid black;
-    width: unquote((100/7)+'%');
+    width: unquote((100/7)+"%");
     vertical-align: bottom;
     float: left;
     &:first-child {
@@ -157,27 +158,27 @@ $fretWidth: (100/13);
     position: absolute;
     top: 0;
     height: 65%;
-    margin-left: unquote('-'+$blackKeyWidth/2+'%');
-    width: unquote($blackKeyWidth+'%');
+    margin-left: unquote("-" + $blackKeyWidth/2 + "%");
+    width: unquote($blackKeyWidth + "%");
     background: black;
     span {
       color: white;
     }
     z-index: 10;
     &[data-note="4"] {
-      left: unquote($whiteKeyWidth*1+'%');
+      left: unquote($whiteKeyWidth * 1+"%");
     }
     &[data-note="6"] {
-      left: unquote($whiteKeyWidth*2+'%');
+      left: unquote($whiteKeyWidth * 2+"%");
     }
     &[data-note="9"] {
-      left: unquote($whiteKeyWidth*4+'%');
+      left: unquote($whiteKeyWidth * 4+"%");
     }
     &[data-note="11"] {
-      left: unquote($whiteKeyWidth*5+'%');
+      left: unquote($whiteKeyWidth * 5+"%");
     }
     &[data-note="1"] {
-      left: unquote($whiteKeyWidth*6+'%');
+      left: unquote($whiteKeyWidth * 6+"%");
     }
   }
   p {
@@ -205,7 +206,9 @@ $fretWidth: (100/13);
     width: 55px;
     display: inline-block;
     max-width: 100%;
-    @include transition-raw("background-color 500ms ease-out 0s,color 500ms ease-out 0s,box-shadow 250ms ease-out 0s");
+    @include transition-raw(
+      "background-color 500ms ease-out 0s,color 500ms ease-out 0s,box-shadow 250ms ease-out 0s"
+    );
   }
   &.found {
     span {
@@ -215,13 +218,13 @@ $fretWidth: (100/13);
   &.selected {
     span {
       color: white;
-      background-color: $color-jays-light-blue!important;
+      background-color: $color-jays-light-blue !important;
     }
   }
-  &.root{
+  &.root {
     span {
       color: white;
-      background-color: $color-badgers-red!important;
+      background-color: $color-badgers-red !important;
     }
   }
 }

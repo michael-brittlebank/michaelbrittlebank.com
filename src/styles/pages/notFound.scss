@@ -12,20 +12,22 @@
 }
 
 .error-translations {
-  display: block!important;
+  display: block !important;
   font-size: 3rem;
   line-height: 3rem;
   opacity: 0;
   @include center-absolute;
   @include transition-raw("opacity 750ms ease-out 0s");
   &.active {
-    opacity: 1
+    opacity: 1;
   }
 }
 
 #error-page-container {
   text-align: center;
-  h1, h3, span {
+  h1,
+  h3,
+  span {
     font-family: $global-font-raleway-thin;
   }
 }

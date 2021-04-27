@@ -1,4 +1,4 @@
-@import '../base/mixins';
+@import "../base/mixins";
 
 $bubble-container-height: 500px;
 
@@ -9,8 +9,8 @@ $bubble-container-height: 500px;
 
 .bubble {
   position: absolute;
-  background-color:purple;
-  border-radius:50%;
+  background-color: purple;
+  border-radius: 50%;
   opacity: 0.4;
 }
 

@@ -2,7 +2,6 @@
 these are helper functions for common tasks that are difficult to implement across different browsers and devices.
 */
 
-
 //style html input placeholder text
 //-----------------------------
 @mixin placeholder {
@@ -13,23 +12,27 @@ these are helper functions for common tasks that are difficult to implement acro
   }
   */
   &::-webkit-input-placeholder {
-    @content
+    @content;
   }
   &:-moz-placeholder {
-    @content
+    @content;
   }
   &::-moz-placeholder {
-    @content
+    @content;
   }
   &:-ms-input-placeholder {
-    @content
+    @content;
   }
 }
 
-
 //transitions and animations
 //-----------------------------
-@mixin transition-with-defaults($element, $duration:250ms, $timingFunction:ease-out, $delay:0s){
+@mixin transition-with-defaults(
+  $element,
+  $duration: 250ms,
+  $timingFunction: ease-out,
+  $delay: 0s
+) {
   //example:   @include transition-with-defaults(color);
   -webkit-transition: $element $duration $timingFunction $delay;
   -moz-transition: $element $duration $timingFunction $delay;
@@ -37,11 +40,22 @@ these are helper functions for common tasks that are difficult to implement acro
   transition: $element $duration $timingFunction $delay;
 }
 
-@mixin animate-with-defaults ($animationName, $duration:2s, $timingFunction:linear, $delay:0s, $iterationCount:infinite, $direction:normal){
-  -webkit-animation: $animationName $duration $timingFunction $delay $iterationCount $direction;
-  -moz-animation: $animationName $duration $timingFunction $delay $iterationCount $direction;
-  -o-animation: $animationName $duration $timingFunction $delay $iterationCount $direction;
-  animation: $animationName $duration $timingFunction $delay $iterationCount $direction;
+@mixin animate-with-defaults(
+  $animationName,
+  $duration: 2s,
+  $timingFunction: linear,
+  $delay: 0s,
+  $iterationCount: infinite,
+  $direction: normal
+) {
+  -webkit-animation: $animationName $duration $timingFunction $delay
+    $iterationCount $direction;
+  -moz-animation: $animationName $duration $timingFunction $delay
+    $iterationCount $direction;
+  -o-animation: $animationName $duration $timingFunction $delay $iterationCount
+    $direction;
+  animation: $animationName $duration $timingFunction $delay $iterationCount
+    $direction;
 }
 
 @mixin transition-raw($args) {
@@ -54,18 +68,16 @@ these are helper functions for common tasks that are difficult to implement acro
   transition: $args;
 }
 
-
 //make text unselectable
 //-----------------------------
 @mixin unselectable {
-  -webkit-user-select: none;  /* Chrome all / Safari all */
-  -moz-user-select: none;     /* Firefox all */
-  -ms-user-select: none;      /* IE 10+ */
+  -webkit-user-select: none; /* Chrome all / Safari all */
+  -moz-user-select: none; /* Firefox all */
+  -ms-user-select: none; /* IE 10+ */
   /* No support for these yet, use at own risk */
   -o-user-select: none;
   user-select: none;
 }
-
 
 //helpers
 //-----------------------------
