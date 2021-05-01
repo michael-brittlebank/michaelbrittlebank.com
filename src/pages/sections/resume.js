@@ -145,7 +145,7 @@ export default function Resume() {
         </section>
         <section className="col-sm-12">
           <a
-            href="/files/Mike_Stumpf_Resume_2020.pdf"
+            href="/files/Mike_Stumpf_Resume_2021.pdf"
             className="button"
             target="_blank">
             Download Resume&nbsp;&nbsp;&nbsp;
