@@ -86,13 +86,13 @@ export default class Metronome extends React.Component {
         </h2>
         <p>
           This metronome (and the larger website) is built with{' '}
-          <a href="https://reactjs.org/" target="_blank">
+          <a href="https://reactjs.org/" target="_blank" rel="noreferrer">
             React
           </a>{' '}
           and JavaScript and employs{' '}
           <a
             href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers"
-            target="_blank">
+            target="_blank" rel="noreferrer">
             Web Workers
           </a>{' '}
           and self-correcting timer. The range of recorded variance is &#177;2
@@ -208,7 +208,7 @@ export default class Metronome extends React.Component {
         <a
           href="https://github.com/mike-stumpf/mikestumpf.com/blob/master/src/pages/portfolio/metronome.js"
           className="button"
-          target="_blank">
+          target="_blank" rel="noreferrer">
           View Code&nbsp;&nbsp;&nbsp;
           <FontAwesomeIcon icon={faGithub} className="fa" />
         </a>

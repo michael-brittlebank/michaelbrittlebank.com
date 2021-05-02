@@ -9,7 +9,7 @@ export default function ReadingList() {
         WP Reading List
       </h2>
       <p>
-        This <a href="https://wordpress.org/plugins/wp-reading-list/" target="_blank">
+        This <a href="https://wordpress.org/plugins/wp-reading-list/" target="_blank" rel="noreferrer">
           WordPress plugin
         </a> is designed to help organise and display books, magazines,
         articles, and anything else that you have read lately. This plugin
@@ -17,6 +17,7 @@ export default function ReadingList() {
         or notes to it, and provide a link to where visitors can find the piece.
       </p>
       <ReactIframeResizer
+        title="WP Reading List"
         src="https://wordpress.mikestumpf.com/reading-list"
         iframeResizerOptions={{
           checkOrigin: false,
@@ -28,7 +29,8 @@ export default function ReadingList() {
       <a
         href="https://github.com/mike-stumpf/wp-reading-list"
         className="button"
-        target="_blank">
+        target="_blank"
+        rel="noreferrer">
         View Code&nbsp;&nbsp;&nbsp;
         <FontAwesomeIcon icon={faGithub} className="fa" />
       </a>

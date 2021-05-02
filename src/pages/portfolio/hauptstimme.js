@@ -90,11 +90,11 @@ export default class Hauptstimme extends React.Component {
         <p>
           This project is for searching musical scales and chords which match a
           selection of notes. It is registered as a{' '}
-          <a href="http://npmjs.com/package/hauptstimme-js" target="_blank">
+          <a href="http://npmjs.com/package/hauptstimme-js" target="_blank" rel="noreferrer">
             npm package
           </a>{' '}
           and built with{' '}
-          <a href="https://www.typescriptlang.org/" target="_blank">
+          <a href="https://www.typescriptlang.org/" target="_blank" rel="noreferrer">
             {' '}
             TypeScript
           </a>
@@ -227,7 +227,8 @@ export default class Hauptstimme extends React.Component {
         <a
           href="https://github.com/mike-stumpf/hauptstimme.js"
           className="button"
-          target="_blank">
+          target="_blank"
+          rel="noreferrer">
           View Code&nbsp;&nbsp;&nbsp;
           <FontAwesomeIcon icon={faGithub} className="fa" />
         </a>

@@ -152,19 +152,19 @@ export default class Bubbles extends React.Component {
         </h2>
         <p>
           This animation is derived from an exhibit created for the{' '}
-          <a href="https://www.ontariosciencecentre.ca/" target="_blank">
+          <a href="https://www.ontariosciencecentre.ca/" target="_blank" rel="noreferrer">
             Ontario Science Centre
           </a>{' '}
           implementing{' '}
-          <a href="https://aprilage.com/" target="_blank">
+          <a href="https://aprilage.com/" target="_blank" rel="noreferrer">
             AprilAge's
           </a>{' '}
           face aging kiosk. Originally built in{' '}
-          <a href="http://velocityjs.org/" target="_blank">
+          <a href="http://velocityjs.org/" target="_blank" rel="noreferrer">
             Velocity.js
           </a>{' '}
           and ported over to{' '}
-          <a href="https://www.framer.com/api/motion/" target="_blank">
+          <a href="https://www.framer.com/api/motion/" target="_blank" rel="noreferrer">
             Framer Motion
           </a>
           .
@@ -203,7 +203,8 @@ export default class Bubbles extends React.Component {
         <a
           href="https://github.com/mike-stumpf/mikestumpf.com/blob/master/src/pages/portfolio/bubbles.js"
           className="button"
-          target="_blank">
+          target="_blank"
+          rel="noreferrer">
           View Code&nbsp;&nbsp;&nbsp;
           <FontAwesomeIcon icon={faGithub} className="fa" />
         </a>
