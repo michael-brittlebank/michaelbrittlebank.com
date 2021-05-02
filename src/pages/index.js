@@ -19,11 +19,9 @@ export default class Home extends Component {
   }
 
   componentDidMount() {
-    setTimeout(() => {
-      this.setState({
-        hasMounted: true,
-      });
-    }, 350);
+    this.setState({
+      hasMounted: true,
+    });
   }
 
   render() {
