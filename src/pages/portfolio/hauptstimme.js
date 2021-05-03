@@ -93,7 +93,7 @@ export default class Hauptstimme extends React.Component {
           <a href="http://npmjs.com/package/hauptstimme-js" target="_blank" rel="noreferrer">
             npm package
           </a>{' '}
-          and built with{' '}
+          and originally built with{' '}
           <a href="https://www.typescriptlang.org/" target="_blank" rel="noreferrer">
             {' '}
             TypeScript
