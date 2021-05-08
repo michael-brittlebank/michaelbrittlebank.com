@@ -67,8 +67,8 @@ export default class Bubbles extends React.Component {
       ];
       const delayModifier =
         Math.round(i / UtilService.getRandomIntInclusive(1, 4)) * 0.3;
-      const arcDuration = UtilService.getRandomIntInclusive(2, 3);
-      const waveDuration = UtilService.getRandomIntInclusive(8, 10);
+      const arcDuration = UtilService.getRandomIntInclusive(3, 5);
+      const waveDuration = UtilService.getRandomIntInclusive(9, 11);
       bubbleList.push(
         <motion.div
           key={`${bubbleType}-${bubbleList.length}`}
