@@ -3,7 +3,7 @@ import classNames from 'classnames';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import * as faGithub from '@fortawesome/fontawesome-free-brands/faGithub';
 
-export default class Metronome extends React.Component {
+export default class Metronome extends React.PureComponent {
   myWorker;
   maxValue = 220;
   minValue = 40;

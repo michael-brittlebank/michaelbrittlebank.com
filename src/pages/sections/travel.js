@@ -5,7 +5,7 @@ import UtilService from '../../services/util.service';
 import TravelService from '../../services/travel.service';
 import Spacer from '../components/spacer';
 
-class Travel extends React.Component {
+class Travel extends React.PureComponent {
   constructor(props) {
     super(props);
     const travelMarkers = TravelService.availableTravelMarkers;

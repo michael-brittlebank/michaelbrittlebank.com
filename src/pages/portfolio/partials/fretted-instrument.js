@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Util as HauptstimmeJs } from 'hauptstimme-js';
 import * as classNames from 'classnames';
 
-export default class FrettedInstrument extends React.Component {
+export default class FrettedInstrument extends React.PureComponent {
   numberOfFrets = 12;
 
   _getFretMarkers() {

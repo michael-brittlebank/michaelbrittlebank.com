@@ -5,7 +5,7 @@ import * as faGithub from '@fortawesome/fontawesome-free-brands/faGithub';
 import classNames from 'classnames';
 import UtilService from '../../services/util.service';
 
-export default class Bubbles extends React.Component {
+export default class Bubbles extends React.PureComponent {
   smallBubbleType = 'small-bubble';
   mediumBubbleType = 'medium-bubble';
   largeBubbleType = 'large-bubble';

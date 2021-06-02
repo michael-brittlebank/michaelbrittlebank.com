@@ -5,7 +5,7 @@ import {
   scroller as scroll,
 } from 'react-scroll';
 
-export default class Header extends React.Component {
+export default class Header extends React.PureComponent {
   headerOffset = -65;
   scrollDuration = 750;
 

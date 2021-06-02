@@ -6,7 +6,7 @@ import classNames from 'classnames';
 import FrettedInstrument from './partials/fretted-instrument';
 import KeyedInstrument from './partials/keyed-instrument';
 
-export default class Hauptstimme extends React.Component {
+export default class Hauptstimme extends React.PureComponent {
   constructor(props) {
     super(props);
     this.state = {

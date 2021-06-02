@@ -24,6 +24,12 @@ export default class TravelService {
       lat: 31.1377,
       lng: -7.9198,
     },
+    // zimbabwe
+    {
+      title: 'Harare, Zimbabwe',
+      lat: -17.8216,
+      lng: 31.0492,
+    },
     /**
      * asia
      */

@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Util as HauptstimmeJs, Constants } from 'hauptstimme-js';
 import * as classNames from 'classnames';
 
-export default class KeyedInstrument extends React.Component {
+export default class KeyedInstrument extends React.PureComponent {
   static _isBlackKey(note) {
     return (
       note === Constants.noteConstant.AB ||
