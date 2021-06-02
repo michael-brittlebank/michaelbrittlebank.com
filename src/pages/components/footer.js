@@ -10,7 +10,11 @@ export default function Footer() {
       <div className="col-sm-12 col-md-6">
         <p className="footer-text">
           v{packageJson.version} built with{' '}
-          <a href="https://nextjs.org/" name="Next.js" rel="noreferrer">Next.js</a>
+          <a href="https://nextjs.org/"
+             name="Next.js"
+             rel="noreferrer"
+             target="_blank"
+             rel="noreferrer">Next.js</a>
         </p>
       </div>
       <div className="col-sm-12 col-md-6 text-right">
