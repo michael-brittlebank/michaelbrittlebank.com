@@ -1,4 +1,4 @@
-import packageJson from '/package.json';
+import packageJson from '/Users/mstumpf/Work/mikestumpf.com/package.json';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import * as faLinkedIn from '@fortawesome/fontawesome-free-brands/faLinkedin';
 import * as faGithub from '@fortawesome/fontawesome-free-brands/faGithubAlt';

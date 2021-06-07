@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import * as faGithub from '@fortawesome/fontawesome-free-brands/faGithub';
 import classNames from 'classnames';
-import UtilService from '../../services/util.service';
+import UtilService from '../services/util.service';
 
 export default class Bubbles extends React.PureComponent {
   smallBubbleType = 'small-bubble';

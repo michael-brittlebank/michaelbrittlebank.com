@@ -1,13 +1,13 @@
 import Head from 'next/head';
 import { Fragment, Component } from 'react';
 
-import Footer from './components/footer';
-import Header from './components/header';
+import Footer from '../components/footer';
+import Header from '../components/header';
 
-import Frontispiece from './sections/frontispiece';
-import Resume from './sections/resume';
-import Travel from './sections/travel';
-import Portfolio from './sections/portfolio';
+import Frontispiece from '../sections/frontispiece';
+import Resume from '../sections/resume';
+import Travel from '../sections/travel';
+import Portfolio from '../sections/portfolio';
 import classNames from 'classnames';
 
 export default class Home extends Component {
