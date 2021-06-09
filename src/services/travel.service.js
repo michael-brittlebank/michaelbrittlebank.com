@@ -30,6 +30,21 @@ export default class TravelService {
       lat: -17.8216,
       lng: 31.0492,
     },
+    {
+      title: 'Victoria Falls, Zimbabwe',
+      lat: -17.9316,
+      lng: 25.8302,
+    },
+    {
+      title: 'Hwange National Park, Zimbabwe',
+      lat: -19.1241,
+      lng: 26.5926,
+    },
+    {
+      title: 'Bulawayo, Zimbabwe',
+      lat: -20.1457,
+      lng: 28.5873,
+    },
     /**
      * asia
      */
