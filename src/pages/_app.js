@@ -1,12 +1,15 @@
 import '../styles/app.scss';
 import Header from '../components/header';
 import Footer from '../components/footer';
+import PageContainer from '../components/page-container';
 
 function AppContainer({ Component, pageProps }) {
   return (
     <>
       <Header />
-      <Component {...pageProps} />
+      <PageContainer>
+        <Component {...pageProps} />
+      </PageContainer>
       <Footer />
     </>
   );
