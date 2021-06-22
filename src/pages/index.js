@@ -1,8 +1,4 @@
-import Head from 'next/head';
-import { Fragment, Component } from 'react';
-
-import Footer from '../components/footer';
-import Header from '../components/header';
+import { Component } from 'react';
 
 import Frontispiece from '../sections/frontispiece';
 import Resume from '../sections/resume';
@@ -27,27 +23,16 @@ export default class Home extends Component {
   render() {
     const { hasMounted } = this.state;
     return (
-      <Fragment>
-        <Head>
-          <title>Mike Stumpf</title>
-          <meta
-            name="viewport"
-            content="width=device-width, initial-scale=1, shrink-to-fit=no"
-          />
-        </Head>
-        <Header />
-        <main
-          id="home-page"
-          className={classNames({
-            opaque: !hasMounted,
-          })}>
-          <Frontispiece />
-          <Resume />
-          <Travel />
-          <Portfolio />
-        </main>
-        <Footer />
-      </Fragment>
+      <main
+        id="home-page"
+        className={classNames({
+          opaque: !hasMounted,
+        })}>
+        <Frontispiece />
+        <Resume />
+        <Travel />
+        <Portfolio />
+      </main>
     );
   }
 }

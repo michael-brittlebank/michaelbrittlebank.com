@@ -6,7 +6,8 @@
     "dev": "NODE_OPTIONS='--inspect' next dev",
     "build": "next build",
     "start": "next start",
-    "export": "next build && next export"
+    "export": "next build && next export",
+    "husky:setup": "husky install && npx husky add .husky/pre-commit \"npx pretty-quick --staged\""
   },
   "husky": {
     "hooks": {

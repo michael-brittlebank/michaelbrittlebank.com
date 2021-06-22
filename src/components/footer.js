@@ -1,4 +1,4 @@
-import packageJson from '/Users/mstumpf/Work/mikestumpf.com/package.json';
+import packageJson from '../../package.json';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import * as faLinkedIn from '@fortawesome/fontawesome-free-brands/faLinkedin';
 import * as faGithub from '@fortawesome/fontawesome-free-brands/faGithubAlt';
@@ -10,19 +10,29 @@ export default function Footer() {
       <div className="col-sm-12 col-md-6">
         <p className="footer-text">
           v{packageJson.version} built with{' '}
-          <a href="https://nextjs.org/"
-             name="Next.js"
-             rel="noreferrer"
-             target="_blank"
-             rel="noreferrer">Next.js</a>
+          <a
+            href="https://nextjs.org/"
+            name="Next.js"
+            target="_blank"
+            rel="noreferrer">
+            Next.js
+          </a>
         </p>
       </div>
       <div className="col-sm-12 col-md-6 text-right">
         <h4 className="footer-text">Find Me:</h4>
-        <a href="https://www.linkedin.com/in/mikestumpf" target="_blank" name="LinkedIn" rel="noreferrer">
+        <a
+          href="https://www.linkedin.com/in/mikestumpf"
+          target="_blank"
+          name="LinkedIn"
+          rel="noreferrer">
           <FontAwesomeIcon icon={faLinkedIn} className="fa" />
         </a>
-        <a href="https://github.com/mike-stumpf" target="_blank" name="Github" rel="noreferrer">
+        <a
+          href="https://github.com/mike-stumpf"
+          target="_blank"
+          name="Github"
+          rel="noreferrer">
           <FontAwesomeIcon icon={faGithub} className="fa" />
         </a>
         <a
