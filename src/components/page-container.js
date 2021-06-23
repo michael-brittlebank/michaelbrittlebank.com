@@ -20,12 +20,11 @@ export default class PageContainer extends PureComponent {
     const { hasMounted } = this.state;
     return (
       <main
-        id="home-page"
         className={classNames(
           {
             opaque: !hasMounted,
           },
-          'container',
+          'container page-container',
         )}>
         {children}
       </main>

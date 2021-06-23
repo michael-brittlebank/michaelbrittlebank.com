@@ -1,29 +1,30 @@
 //base
 //-----------------------------
-@import "base/media-queries";
-@import "vendor/normalise";
-@import "base/fonts";
-@import "base/grid";
-@import "base/shared";
-@import "vendor/font-awesome";
+@import 'base/media-queries';
+@import 'vendor/normalise';
+@import 'base/fonts';
+@import 'base/grid';
+@import 'base/shared';
+@import 'vendor/font-awesome';
 
 //components
 //-----------------------------
-@import "components/footer";
-@import "components/header";
+@import 'components/footer';
+@import 'components/header';
+@import 'components/page-container';
 
 //pages
 //-----------------------------
-@import "pages/home";
+@import 'pages/home';
 
 //sections
 //-----------------------------
-@import "sections/frontispiece";
-@import "sections/resume";
-@import "sections/travel";
+@import 'sections/frontispiece';
+@import 'sections/resume';
+@import 'sections/travel';
 
 //portfolio
 //-----------------------------
-@import "portfolio/hauptstimme";
-@import "portfolio/metronome";
-@import "portfolio/bubbles";
+@import 'portfolio/hauptstimme';
+@import 'portfolio/metronome';
+@import 'portfolio/bubbles';
