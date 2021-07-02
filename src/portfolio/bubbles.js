@@ -1,9 +1,9 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import * as faGithub from '@fortawesome/fontawesome-free-brands/faGithub';
 import classNames from 'classnames';
 import UtilService from '../services/util.service';
+import AnalyticsButton from '../components/analytics-button';
+import AnalyticsService from '../services/analytics.service';
 
 export default class Bubbles extends React.PureComponent {
   smallBubbleType = 'small-bubble';
@@ -105,6 +105,9 @@ export default class Bubbles extends React.PureComponent {
       mediumBubbleCount,
       largeBubbleCount,
     } = this.state;
+    AnalyticsService.event({
+      action: 'bubblesStartButtonClick',
+    });
     this.setState({
       bubblesCreated: true,
       bubblesMoving: true,
@@ -124,6 +127,9 @@ export default class Bubbles extends React.PureComponent {
   };
 
   clearBubbles = () => {
+    AnalyticsService.event({
+      action: 'bubblesStopButtonClick',
+    });
     this.setState({
       bubblesCreated: false,
     });
@@ -152,7 +158,10 @@ export default class Bubbles extends React.PureComponent {
         </h2>
         <p>
           This animation is derived from an exhibit created for the{' '}
-          <a href="https://www.ontariosciencecentre.ca/" target="_blank" rel="noreferrer">
+          <a
+            href="https://www.ontariosciencecentre.ca/"
+            target="_blank"
+            rel="noreferrer">
             Ontario Science Centre
           </a>{' '}
           implementing{' '}
@@ -164,7 +173,10 @@ export default class Bubbles extends React.PureComponent {
             Velocity.js
           </a>{' '}
           and ported over to{' '}
-          <a href="https://www.framer.com/api/motion/" target="_blank" rel="noreferrer">
+          <a
+            href="https://www.framer.com/api/motion/"
+            target="_blank"
+            rel="noreferrer">
             Framer Motion
           </a>
           .
@@ -200,14 +212,10 @@ export default class Bubbles extends React.PureComponent {
             </button>
           </div>
         </div>
-        <a
-          href="https://github.com/mike-stumpf/mikestumpf.com/blob/master/src/pages/portfolio/bubbles.js"
-          className="button"
-          target="_blank"
-          rel="noreferrer">
-          View Code&nbsp;&nbsp;&nbsp;
-          <FontAwesomeIcon icon={faGithub} className="fa" />
-        </a>
+        <AnalyticsButton
+          href="https://github.com/mike-stumpf/mikestumpf.com/blob/master/src/portfolio/bubbles.js"
+          action="bubblesButtonClick"
+        />
       </section>
     );
   }

@@ -1,1 +1,2 @@
 add tap tempo button to metronome
+note sequence transposer

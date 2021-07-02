@@ -1,10 +1,10 @@
 import React from 'react';
 import { Hauptstimme as HauptstimmeJs, Constants } from 'hauptstimme-js';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import * as faGithub from '@fortawesome/fontawesome-free-brands/faGithub';
 import classNames from 'classnames';
 import FrettedInstrument from './partials/fretted-instrument';
 import KeyedInstrument from './partials/keyed-instrument';
+import AnalyticsButton from '../components/analytics-button';
+import AnalyticsService from '../services/analytics.service';
 
 export default class Hauptstimme extends React.PureComponent {
   constructor(props) {
@@ -90,11 +90,17 @@ export default class Hauptstimme extends React.PureComponent {
         <p>
           This project is for searching musical scales and chords which match a
           selection of notes. It is registered as a{' '}
-          <a href="http://npmjs.com/package/hauptstimme-js" target="_blank" rel="noreferrer">
+          <a
+            href="http://npmjs.com/package/hauptstimme-js"
+            target="_blank"
+            rel="noreferrer">
             npm package
           </a>{' '}
           and originally built with{' '}
-          <a href="https://www.typescriptlang.org/" target="_blank" rel="noreferrer">
+          <a
+            href="https://www.typescriptlang.org/"
+            target="_blank"
+            rel="noreferrer">
             {' '}
             TypeScript
           </a>
@@ -224,14 +230,10 @@ export default class Hauptstimme extends React.PureComponent {
             </div>
           ) : null}
         </div>
-        <a
+        <AnalyticsButton
           href="https://github.com/mike-stumpf/hauptstimme.js"
-          className="button"
-          target="_blank"
-          rel="noreferrer">
-          View Code&nbsp;&nbsp;&nbsp;
-          <FontAwesomeIcon icon={faGithub} className="fa" />
-        </a>
+          action="hauptstimmeButtonClick"
+        />
       </section>
     );
   }
@@ -262,6 +264,9 @@ export default class Hauptstimme extends React.PureComponent {
     e.preventDefault();
     const { rootNote, selectedNotes, chords, scales } = this.state;
     if (!isNaN(rootNote) || selectedNotes.length > 0) {
+      AnalyticsService.event({
+        action: 'hauptstimmeSearchButtonClick',
+      });
       HauptstimmeJs.search({
         searchRequest: {
           rootNote: rootNote,
