@@ -3,8 +3,8 @@ import { Hauptstimme as HauptstimmeJs, Constants } from 'hauptstimme-js';
 import classNames from 'classnames';
 import FrettedInstrument from './partials/fretted-instrument';
 import KeyedInstrument from './partials/keyed-instrument';
-import AnalyticsButton from "../components/analytics-button";
-import AnalyticsService from "../services/analytics.service";
+import AnalyticsButton from '../components/analytics-button';
+import AnalyticsService from '../services/analytics.service';
 
 export default class Hauptstimme extends React.PureComponent {
   constructor(props) {
@@ -90,11 +90,17 @@ export default class Hauptstimme extends React.PureComponent {
         <p>
           This project is for searching musical scales and chords which match a
           selection of notes. It is registered as a{' '}
-          <a href="http://npmjs.com/package/hauptstimme-js" target="_blank" rel="noreferrer">
+          <a
+            href="http://npmjs.com/package/hauptstimme-js"
+            target="_blank"
+            rel="noreferrer">
             npm package
           </a>{' '}
           and originally built with{' '}
-          <a href="https://www.typescriptlang.org/" target="_blank" rel="noreferrer">
+          <a
+            href="https://www.typescriptlang.org/"
+            target="_blank"
+            rel="noreferrer">
             {' '}
             TypeScript
           </a>
@@ -224,7 +230,10 @@ export default class Hauptstimme extends React.PureComponent {
             </div>
           ) : null}
         </div>
-        <AnalyticsButton href="https://github.com/mike-stumpf/hauptstimme.js" action="hauptstimmeButtonClick"/>
+        <AnalyticsButton
+          href="https://github.com/mike-stumpf/hauptstimme.js"
+          action="hauptstimmeButtonClick"
+        />
       </section>
     );
   }
