@@ -2,8 +2,8 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import classNames from 'classnames';
 import UtilService from '../services/util.service';
-import AnalyticsButton from '../components/analytics-button';
-import AnalyticsService from '../services/analytics.service';
+import AnalyticsButton from "../components/analytics-button";
+import AnalyticsService from "../services/analytics.service";
 
 export default class Bubbles extends React.PureComponent {
   smallBubbleType = 'small-bubble';
@@ -158,10 +158,7 @@ export default class Bubbles extends React.PureComponent {
         </h2>
         <p>
           This animation is derived from an exhibit created for the{' '}
-          <a
-            href="https://www.ontariosciencecentre.ca/"
-            target="_blank"
-            rel="noreferrer">
+          <a href="https://www.ontariosciencecentre.ca/" target="_blank" rel="noreferrer">
             Ontario Science Centre
           </a>{' '}
           implementing{' '}
@@ -173,10 +170,7 @@ export default class Bubbles extends React.PureComponent {
             Velocity.js
           </a>{' '}
           and ported over to{' '}
-          <a
-            href="https://www.framer.com/api/motion/"
-            target="_blank"
-            rel="noreferrer">
+          <a href="https://www.framer.com/api/motion/" target="_blank" rel="noreferrer">
             Framer Motion
           </a>
           .
@@ -212,10 +206,7 @@ export default class Bubbles extends React.PureComponent {
             </button>
           </div>
         </div>
-        <AnalyticsButton
-          href="https://github.com/mike-stumpf/mikestumpf.com/blob/master/src/portfolio/bubbles.js"
-          action="bubblesButtonClick"
-        />
+        <AnalyticsButton href="https://github.com/mike-stumpf/mikestumpf.com/blob/master/src/portfolio/bubbles.js" action="bubblesButtonClick"/>
       </section>
     );
   }

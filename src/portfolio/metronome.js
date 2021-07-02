@@ -1,7 +1,7 @@
 import React from 'react';
 import classNames from 'classnames';
-import AnalyticsButton from '../components/analytics-button';
-import AnalyticsService from '../services/analytics.service';
+import AnalyticsButton from "../components/analytics-button";
+import AnalyticsService from "../services/analytics.service";
 
 export default class Metronome extends React.PureComponent {
   myWorker;
@@ -206,10 +206,7 @@ export default class Metronome extends React.PureComponent {
             </button>
           </div>
         </div>
-        <AnalyticsButton
-          href="https://github.com/mike-stumpf/mikestumpf.com/blob/master/src/portfolio/metronome.js"
-          action="metronomeButtonClick"
-        />
+        <AnalyticsButton href="https://github.com/mike-stumpf/mikestumpf.com/blob/master/src/portfolio/metronome.js" action="metronomeButtonClick"/>
         <audio id="metronome-tick" src={'/files/tick.mp3'} preload="auto" />
         <audio id="metronome-tock" src={'/files/tock.mp3'} preload="auto" />
       </section>
