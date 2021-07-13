@@ -45,6 +45,16 @@ export default class TravelService {
       lat: -20.1457,
       lng: 28.5873,
     },
+    {
+      title: 'Gweru, Zimbabwe',
+      lat: -19.4657,
+      lng: 29.8124,
+    },
+    {
+      title: 'Matapos, Zimbabwe',
+      lat: -20.3797,
+      lng: 28.5083,
+    },
     /**
      * asia
      */
