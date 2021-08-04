@@ -46,14 +46,14 @@ export default class TravelService {
       lng: 28.5873,
     },
     {
-      title: 'Gweru, Zimbabwe',
-      lat: -19.4657,
-      lng: 29.8124,
+      title: 'Antelope Park, Zimbabwe',
+      lat: -19.5071,
+      lng: 29.7161,
     },
     {
-      title: 'Matapos, Zimbabwe',
-      lat: -20.3797,
-      lng: 28.5083,
+      title: 'Matobo National Park, Zimbabwe',
+      lat: -20.5572,
+      lng: 28.5125,
     },
     /**
      * asia
