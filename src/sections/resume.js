@@ -97,10 +97,7 @@ export default function Resume() {
             <h3>Lead Web Developer</h3>
             <h5>
               2013&ndash;2017 &mdash;{' '}
-              <a
-                href="http://ollon.ellefsontech.com/"
-                target="_blank"
-                rel="noreferrer">
+              <a href="http://ollon.ca/" target="_blank" rel="noreferrer">
                 Ellefson Technology. Toronto, Canada
               </a>
             </h5>
