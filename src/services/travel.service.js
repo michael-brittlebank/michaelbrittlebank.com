@@ -45,6 +45,16 @@ export default class TravelService {
       lat: -20.1457,
       lng: 28.5873,
     },
+    {
+      title: 'Antelope Park, Zimbabwe',
+      lat: -19.5071,
+      lng: 29.7161,
+    },
+    {
+      title: 'Matobo National Park, Zimbabwe',
+      lat: -20.5572,
+      lng: 28.5125,
+    },
     /**
      * asia
      */

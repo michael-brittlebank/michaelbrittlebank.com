@@ -1,7 +1,7 @@
 import React from 'react';
 import classNames from 'classnames';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import * as faGithub from '@fortawesome/fontawesome-free-brands/faGithub';
+import AnalyticsButton from '../components/analytics-button';
+import AnalyticsService from '../services/analytics.service';
 
 export default class Metronome extends React.PureComponent {
   myWorker;
@@ -206,14 +206,10 @@ export default class Metronome extends React.PureComponent {
             </button>
           </div>
         </div>
-        <a
-          href="https://github.com/mike-stumpf/mikestumpf.com/blob/master/src/pages/portfolio/metronome.js"
-          className="button"
-          target="_blank"
-          rel="noreferrer">
-          View Code&nbsp;&nbsp;&nbsp;
-          <FontAwesomeIcon icon={faGithub} className="fa" />
-        </a>
+        <AnalyticsButton
+          href="https://github.com/mike-stumpf/mikestumpf.com/blob/master/src/portfolio/metronome.js"
+          action="metronomeButtonClick"
+        />
         <audio id="metronome-tick" src={'/files/tick.mp3'} preload="auto" />
         <audio id="metronome-tock" src={'/files/tock.mp3'} preload="auto" />
       </section>
@@ -275,6 +271,9 @@ export default class Metronome extends React.PureComponent {
   _start() {
     const { isMetronomeStarted } = this.state;
     if (!isMetronomeStarted) {
+      AnalyticsService.event({
+        action: 'metronomeStartButtonClick',
+      });
       this.setState({
         isMetronomeStarted: true,
       });
@@ -285,6 +284,9 @@ export default class Metronome extends React.PureComponent {
   _stop() {
     const { isMetronomeStarted } = this.state;
     if (isMetronomeStarted) {
+      AnalyticsService.event({
+        action: 'metronomeStopButtonClick',
+      });
       this.setState({
         isMetronomeStarted: false,
       });
