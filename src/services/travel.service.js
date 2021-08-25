@@ -1640,6 +1640,11 @@ export default class TravelService {
       lat: 36.9487,
       lng: -84.0969,
     },
+    {
+      title: 'State College, Pennsylvania, USA',
+      lat: 40.7934,
+      lng: -77.86,
+    },
     /**
      * south america
      */
