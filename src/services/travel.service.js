@@ -462,6 +462,56 @@ export default class TravelService {
       lat: 51.791,
       lng: -2.0077,
     },
+    {
+      title: 'Petersfield, England',
+      lat: 51.0076,
+      lng: -0.939,
+    },
+    {
+      title: 'Guildford, England',
+      lat: 51.2362,
+      lng: -0.5704,
+    },
+    {
+      title: 'Greenwich, England',
+      lat: 51.4934,
+      lng: -0.0098,
+    },
+    {
+      title: 'Brighton, England',
+      lat: 50.8225,
+      lng: -0.1372,
+    },
+    {
+      title: 'Godalming, England',
+      lat: 51.1857,
+      lng: -0.6128,
+    },
+    {
+      title: 'Chichester, England',
+      lat: 50.8376,
+      lng: -0.7749,
+    },
+    {
+      title: 'Winchester, England',
+      lat: 51.0598,
+      lng: -1.3101,
+    },
+    {
+      title: 'Midhurst, England',
+      lat: 50.9869,
+      lng: -0.7373,
+    },
+    {
+      title: 'Goodwood Aerodrome, England',
+      lat: 50.8579,
+      lng: -0.7542,
+    },
+    {
+      title: 'Portsmouth, England',
+      lat: 50.8198,
+      lng: -1.088,
+    },
     // estonia
     {
       title: 'Tallinn, Estonia',
@@ -1639,6 +1689,26 @@ export default class TravelService {
       title: 'Corbin, Kentucky, USA',
       lat: 36.9487,
       lng: -84.0969,
+    },
+    {
+      title: 'State College, Pennsylvania, USA',
+      lat: 40.7934,
+      lng: -77.86,
+    },
+    {
+      title: 'Boalsburg, Pennsylvania, USA',
+      lat: 40.7756,
+      lng: -77.7925,
+    },
+    {
+      title: 'Bellefonte, Pennsylvania, USA',
+      lat: 40.9134,
+      lng: -77.7783,
+    },
+    {
+      title: 'Raystown Lake, Pennsylvania, USA',
+      lat: 40.3702,
+      lng: -78.0909,
     },
     /**
      * south america
