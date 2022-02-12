@@ -35,7 +35,13 @@ Use the npm version command like
 npm version patch
 ```
 
-to update the package.json and create a tag. Then be sure to push the tag and the code up to the remote where it can be merged into the master branch.
+to update the package.json and create a tag. Run
+
+```
+yarn export
+```
+
+to build the code. Then be sure to push the tag and the code up to the remote where it can be merged into the master branch.
 
 ```
 git push —-tags origin master
