@@ -124,8 +124,11 @@ export default function Resume() {
             <h3>Higher Diploma in Science, Computing</h3>
             <h5>
               2017 &mdash;{' '}
-              <a href="http://www.itb.ie/" target="_blank" rel="noreferrer">
-                Institute of Technology-Blanchardstown. Dublin, Ireland
+              <a
+                href="https://www.tudublin.ie/"
+                target="_blank"
+                rel="noreferrer">
+                Technical University Dublin. Dublin, Ireland
               </a>
             </h5>
             <h3>MA, Renaissance Literature 1500-1700</h3>
