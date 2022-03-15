@@ -1710,6 +1710,11 @@ export default class TravelService {
       lat: 40.3702,
       lng: -78.0909,
     },
+    {
+      title: 'Philadelphia, Pennsylvania, USA',
+      lat: 39.9526,
+      lng: -75.1652,
+    },
     /**
      * south america
      */
