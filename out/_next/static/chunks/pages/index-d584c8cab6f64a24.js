@@ -19,8 +19,8 @@
           },
         });
       var l = n(5893),
-        r = n(7294);
-      function a() {
+        a = n(7294);
+      function r() {
         var e = '/images/face_desktop.jpg';
         return (0, l.jsx)('div', {
           id: 'frontispiece-container',
@@ -128,32 +128,11 @@
                         }),
                         (0, l.jsx)('p', {
                           children:
-                            'Advocate for native or \u201cvanilla\u201d JavaScript, equally comfortable in the front-end or the back-end, and has a wide range of experience with different languages and frameworks. Familiar with working on several projects simultaneously and switching between different technology stacks on a regular basis.',
+                            'Respected leader and experienced communicator who is experienced in guiding and developing remote/distributed teams while remaining a hands-on programmer. Able to plan for both long and short-term deadlines while continuously managing internal and external expectations as well as accommodating unexpected events.',
                         }),
                         (0, l.jsx)('p', {
                           children:
-                            'Respected leader and experienced communicator who is able to plan for both long and short-term deadlines while continuously managing internal and external expectations and accommodating unexpected events.',
-                        }),
-                        (0, l.jsxs)('p', {
-                          children: [
-                            'Personal projects include creating a',
-                            ' ',
-                            (0, l.jsx)('a', {
-                              href: 'https://github.com/mike-stumpf/hauptstimme.js',
-                              target: '_blank',
-                              rel: 'noreferrer',
-                              children: 'JavaScript library for music theory',
-                            }),
-                            ', collaborating on a Bluetooth-synchronized metronome mobile app, and developing a',
-                            ' ',
-                            (0, l.jsx)('a', {
-                              href: 'https://github.com/mike-stumpf/wp-reading-list',
-                              target: '_blank',
-                              rel: 'noreferrer',
-                              children: 'reading list plugin for WordPress',
-                            }),
-                            '.',
-                          ],
+                            'Advocate for test-driven development (TDD) who is equally comfortable in the front-end or the back-end and who has a broad array of experiences with different languages and frameworks. Familiar with working on several projects simultaneously and switching between different technology stacks on a regular basis.',
                         }),
                       ],
                     }),
@@ -286,11 +265,11 @@
                             '2017 \u2014',
                             ' ',
                             (0, l.jsx)('a', {
-                              href: 'http://www.itb.ie/',
+                              href: 'https://www.tudublin.ie/',
                               target: '_blank',
                               rel: 'noreferrer',
                               children:
-                                'Institute of Technology-Blanchardstown. Dublin, Ireland',
+                                'Technical University Dublin. Dublin, Ireland',
                             }),
                           ],
                         }),
@@ -882,6 +861,11 @@
           lat: 40.3702,
           lng: -78.0909,
         },
+        {
+          title: 'Philadelphia, Pennsylvania, USA',
+          lat: 39.9526,
+          lng: -75.1652,
+        },
       ]);
       var C = function (e) {
         return e && 'undefined' !== typeof Symbol && e.constructor === Symbol
@@ -908,8 +892,8 @@
           var n,
             l = w(e);
           if (t) {
-            var r = w(this).constructor;
-            n = Reflect.construct(l, arguments, r);
+            var a = w(this).constructor;
+            n = Reflect.construct(l, arguments, a);
           } else n = l.apply(this, arguments);
           return N(this, n);
         };
@@ -927,15 +911,15 @@
           })(i, e);
           var t,
             n,
-            r,
-            a = I(i);
+            a,
+            r = I(i);
           function i(e) {
             var t;
             !(function (e, t) {
               if (!(e instanceof t))
                 throw new TypeError('Cannot call a class as a function');
             })(this, i),
-              (t = a.call(this, e));
+              (t = r.call(this, e));
             var n = j.availableTravelMarkers,
               l = S.getRandomIntInclusive(0, n.length);
             return (
@@ -970,8 +954,8 @@
                   var e = this,
                     t = this.props.google,
                     n = this.state,
-                    r = n.randomIndex,
-                    a = n.activeMarker,
+                    a = n.randomIndex,
+                    r = n.activeMarker,
                     i = n.travelMarkers;
                   return (0, l.jsxs)('div', {
                     id: 'travel-container',
@@ -1019,20 +1003,20 @@
                               mapTypeControl: !1,
                               streetViewControl: !1,
                               fullscreenControl: !1,
-                              initialCenter: { lat: i[r].lat, lng: i[r].lng },
+                              initialCenter: { lat: i[a].lat, lng: i[a].lng },
                               children: [
                                 i.map(function (t, n) {
                                   return (0,
                                   l.jsx)(y.Marker, { onClick: e._onMarkerClick, name: t.title, position: { lat: t.lat, lng: t.lng } }, n);
                                 }),
                                 (0, l.jsx)(y.InfoWindow, {
-                                  marker: a,
-                                  visible: !!a,
+                                  marker: r,
+                                  visible: !!r,
                                   onClose: this._onInfoWindowClose,
                                   children: (0, l.jsx)('div', {
                                     children: (0, l.jsx)('p', {
                                       className: 'no-margin',
-                                      children: a ? a.name : '',
+                                      children: r ? r.name : '',
                                     }),
                                   }),
                                 }),
@@ -1047,10 +1031,10 @@
                 },
               },
             ]) && x(t.prototype, n),
-            r && x(t, r),
+            a && x(t, a),
             i
           );
-        })(r.PureComponent),
+        })(a.PureComponent),
         A = (0, y.GoogleApiWrapper)({
           apiKey: 'AIzaSyDcq7rKnYBv21k9L_nmUp8hCddq5g6GLhw',
         })(B),
@@ -1169,8 +1153,8 @@
           var n,
             l = W(e);
           if (t) {
-            var r = W(this).constructor;
-            n = Reflect.construct(l, arguments, r);
+            var a = W(this).constructor;
+            n = Reflect.construct(l, arguments, a);
           } else n = l.apply(this, arguments);
           return L(this, n);
         };
@@ -1188,8 +1172,8 @@
           })(i, e);
           var t,
             n,
-            r,
-            a = F(i);
+            a,
+            r = F(i);
           function i(e) {
             var t;
             return (
@@ -1197,7 +1181,7 @@
                 if (!(e instanceof t))
                   throw new TypeError('Cannot call a class as a function');
               })(this, i),
-              E(R((t = a.call(this, e))), 'myWorker', void 0),
+              E(R((t = r.call(this, e))), 'myWorker', void 0),
               E(R(t), 'maxValue', 220),
               E(R(t), 'minValue', 40),
               E(R(t), 'setBpmDebounceTimeout', void 0),
@@ -1268,8 +1252,8 @@
                   var e = this,
                     t = this.state,
                     n = t.currentBpm,
-                    r = t.bpmError,
-                    a = t.currentSubdivision,
+                    a = t.bpmError,
+                    r = t.currentSubdivision,
                     i = t.isMetronomeStarted;
                   return (0, l.jsxs)('section', {
                     id: 'metronome-container',
@@ -1348,7 +1332,7 @@
                                 },
                                 max: this.maxValue,
                                 min: this.minValue,
-                                className: O()('input', { error: r }),
+                                className: O()('input', { error: a }),
                               }),
                               (0, l.jsx)('button', {
                                 onTouchStart: function () {
@@ -1369,7 +1353,7 @@
                                 className: 'small-button',
                                 children: '+',
                               }),
-                              r
+                              a
                                 ? (0, l.jsx)('p', {
                                     className: 'error',
                                     children:
@@ -1387,15 +1371,15 @@
                                 className: 'list-item-selector row',
                                 children: this.availableSubdivisions.map(
                                   function (t, n) {
-                                    var r = e;
+                                    var a = e;
                                     return (0, l.jsx)(
                                       'a',
                                       {
                                         className: O()('col-sm-6 list-item', {
-                                          selected: t.value === a,
+                                          selected: t.value === r,
                                         }),
                                         onClick: function () {
-                                          return r._setSubdivision(t);
+                                          return a._setSubdivision(t);
                                         },
                                         children: t.label,
                                       },
@@ -1420,7 +1404,7 @@
                             className: 'col-sm-6',
                             children: (0, l.jsx)('button', {
                               onClick: this._start,
-                              className: O()('button', { disabled: i || r }),
+                              className: O()('button', { disabled: i || a }),
                               children: 'Start',
                             }),
                           }),
@@ -1458,11 +1442,11 @@
                   var e = this.state,
                     t = e.currentSubdivision,
                     n = e.metronomeTick,
-                    r = e.mutedIndicators,
-                    a = [];
+                    a = e.mutedIndicators,
+                    r = [];
                   if (1 === t) {
                     var i = this;
-                    a.push(
+                    r.push(
                       (0, l.jsxs)(
                         'div',
                         {
@@ -1479,7 +1463,7 @@
                                 'metronome-indicator center-absolute',
                                 {
                                   active: n % 2 !== 0,
-                                  silent: -1 !== r.indexOf(0),
+                                  silent: -1 !== a.indexOf(0),
                                 },
                               ),
                               children: '\xa0',
@@ -1489,7 +1473,7 @@
                                 'metronome-indicator center-absolute',
                                 {
                                   active: n % 2 === 0,
-                                  silent: -1 !== r.indexOf(0),
+                                  silent: -1 !== a.indexOf(0),
                                 },
                               ),
                               children: '\xa0',
@@ -1508,7 +1492,7 @@
                       var o = this,
                         s = function (e) {
                           var i = o;
-                          a.push(
+                          r.push(
                             (0, l.jsxs)(
                               'div',
                               {
@@ -1521,7 +1505,7 @@
                                     className: O()('metronome-indicator', {
                                       active:
                                         1 === t ? n % 2 === 0 : n % t === e,
-                                      silent: -1 !== r.indexOf(e),
+                                      silent: -1 !== a.indexOf(e),
                                     }),
                                     children: '\xa0',
                                   }),
@@ -1540,7 +1524,7 @@
                       c++
                     )
                       s(c);
-                  return a;
+                  return r;
                 },
               },
               {
@@ -1584,8 +1568,8 @@
                     clearTimeout(this.setBpmDebounceTimeout),
                     (this.setBpmDebounceTimeout = setTimeout(function () {
                       var e = l.currentBpm,
-                        r = l.bpmError;
-                      n && e && !r && t._postWorkerMessage();
+                        a = l.bpmError;
+                      n && e && !a && t._postWorkerMessage();
                     }, 500));
                 },
               },
@@ -1667,10 +1651,10 @@
                 },
               },
             ]) && U(t.prototype, n),
-            r && U(t, r),
+            a && U(t, a),
             i
           );
-        })(r.PureComponent),
+        })(a.PureComponent),
         z = n(6444);
       function V(e, t) {
         (null == t || t > e.length) && (t = e.length);
@@ -1766,8 +1750,8 @@
           var n,
             l = Z(e);
           if (t) {
-            var r = Z(this).constructor;
-            n = Reflect.construct(l, arguments, r);
+            var a = Z(this).constructor;
+            n = Reflect.construct(l, arguments, a);
           } else n = l.apply(this, arguments);
           return Y(this, n);
         };
@@ -1785,8 +1769,8 @@
         })(i, e);
         var t,
           n,
-          r,
-          a = $(i);
+          a,
+          r = $(i);
         function i(e) {
           var t;
           !(function (e, t) {
@@ -1802,7 +1786,7 @@
                     writable: !0,
                   })
                 : (e[t] = n);
-            })(H((t = a.call(this, e))), 'numberOfFrets', 12);
+            })(H((t = r.call(this, e))), 'numberOfFrets', 12);
           var n = t.props.instrument;
           return (
             (t.state = {
@@ -1855,8 +1839,8 @@
                 var e = this,
                   t = this.props,
                   n = t.selectedNotes,
-                  r = t.rootNote,
-                  a = t.resultNotes,
+                  a = t.rootNote,
+                  r = t.resultNotes,
                   i = t.onClick,
                   o = t.onContextMenu,
                   s = this.state.rootNotes;
@@ -1883,8 +1867,8 @@
                                 {
                                   className: M('fret note', {
                                     selected: -1 !== n.indexOf(e),
-                                    root: r === e,
-                                    found: -1 !== a.indexOf(e),
+                                    root: a === e,
+                                    found: -1 !== r.indexOf(e),
                                   }),
                                   'data-note': e,
                                   onContextMenu: function (e) {
@@ -1917,10 +1901,10 @@
               },
             },
           ]) && J(t.prototype, n),
-          r && J(t, r),
+          a && J(t, a),
           i
         );
-      })(r.PureComponent);
+      })(a.PureComponent);
       function te(e, t) {
         if (!(e instanceof t))
           throw new TypeError('Cannot call a class as a function');
@@ -1941,7 +1925,7 @@
               return e.__proto__ || Object.getPrototypeOf(e);
             })(e);
       }
-      function re(e, t) {
+      function ae(e, t) {
         return !t || ('object' !== ie(t) && 'function' !== typeof t)
           ? (function (e) {
               if (void 0 === e)
@@ -1952,8 +1936,8 @@
             })(e)
           : t;
       }
-      function ae(e, t) {
-        return (ae =
+      function re(e, t) {
+        return (re =
           Object.setPrototypeOf ||
           function (e, t) {
             return (e.__proto__ = t), e;
@@ -1984,10 +1968,10 @@
           var n,
             l = le(e);
           if (t) {
-            var r = le(this).constructor;
-            n = Reflect.construct(l, arguments, r);
+            var a = le(this).constructor;
+            n = Reflect.construct(l, arguments, a);
           } else n = l.apply(this, arguments);
-          return re(this, n);
+          return ae(this, n);
         };
       }
       var se = (function (e) {
@@ -1999,18 +1983,18 @@
           (e.prototype = Object.create(t && t.prototype, {
             constructor: { value: e, writable: !0, configurable: !0 },
           })),
-            t && ae(e, t);
+            t && re(e, t);
         })(i, e);
         var t,
           n,
-          r,
-          a = oe(i);
+          a,
+          r = oe(i);
         function i() {
-          return te(this, i), a.apply(this, arguments);
+          return te(this, i), r.apply(this, arguments);
         }
         return (
           (t = i),
-          (r = [
+          (a = [
             {
               key: '_isBlackKey',
               value: function (e) {
@@ -2031,8 +2015,8 @@
                 var e = this.props,
                   t = e.instrument,
                   n = e.selectedNotes,
-                  r = e.onClick,
-                  a = e.rootNote,
+                  a = e.onClick,
+                  r = e.rootNote,
                   o = e.resultNotes,
                   s = e.onContextMenu;
                 return (0, l.jsx)('div', {
@@ -2050,7 +2034,7 @@
                           }),
                           'data-note': e,
                           onClick: function (t) {
-                            t.preventDefault(), r(e);
+                            t.preventDefault(), a(e);
                           },
                           onContextMenu: function (t) {
                             t.preventDefault(), s(e);
@@ -2058,7 +2042,7 @@
                           children: (0, l.jsx)('p', {
                             className: M('note', {
                               selected: -1 !== n.indexOf(e),
-                              root: a === e,
+                              root: r === e,
                               found: -1 !== o.indexOf(e),
                             }),
                             children: (0, l.jsx)('span', {
@@ -2075,10 +2059,10 @@
               },
             },
           ]) && ne(t.prototype, n),
-          r && ne(t, r),
+          a && ne(t, a),
           i
         );
-      })(r.PureComponent);
+      })(a.PureComponent);
       function ce(e, t) {
         (null == t || t > e.length) && (t = e.length);
         for (var n = 0, l = new Array(t); n < t; n++) l[n] = e[n];
@@ -2175,8 +2159,8 @@
           var n,
             l = he(e);
           if (t) {
-            var r = he(this).constructor;
-            n = Reflect.construct(l, arguments, r);
+            var a = he(this).constructor;
+            n = Reflect.construct(l, arguments, a);
           } else n = l.apply(this, arguments);
           return fe(this, n);
         };
@@ -2194,8 +2178,8 @@
           })(i, e);
           var t,
             n,
-            r,
-            a = be(i);
+            a,
+            r = be(i);
           function i(e) {
             var t;
             return (
@@ -2203,7 +2187,7 @@
                 if (!(e instanceof t))
                   throw new TypeError('Cannot call a class as a function');
               })(this, i),
-              ((t = a.call(this, e)).state = {
+              ((t = r.call(this, e)).state = {
                 availableInstruments: [],
                 availableTunings: [],
                 searchResults: void 0,
@@ -2238,11 +2222,11 @@
                     .then(function (t) {
                       var n = t.chords,
                         l = t.scales,
-                        r = t.instruments;
+                        a = t.instruments;
                       e.setState({
                         chords: n,
                         scales: l,
-                        availableInstruments: r.filter(function (e) {
+                        availableInstruments: a.filter(function (e) {
                           return (
                             e.type ===
                               z.Constants.instrumentTypeConstant
@@ -2252,10 +2236,10 @@
                                 .KEYED_INSTRUMENT
                           );
                         }),
-                        selectedInstrument: r.find(function (e) {
+                        selectedInstrument: a.find(function (e) {
                           return 'Guitar' === e.name;
                         }),
-                        availableTunings: r.filter(function (e) {
+                        availableTunings: a.filter(function (e) {
                           return (
                             e.type ===
                             z.Constants.instrumentTypeConstant.ALTERNATE_TUNING
@@ -2267,7 +2251,7 @@
                       var t = e.state,
                         n = t.selectedInstrument,
                         l = t.availableInstruments,
-                        r = document.getElementById(
+                        a = document.getElementById(
                           'instrument-' +
                             l.findIndex(function (e) {
                               return e.name === n.name;
@@ -2275,7 +2259,7 @@
                         );
                       document.getElementById(
                         'instrument-container',
-                      ).scrollTop = r.offsetTop - 55;
+                      ).scrollTop = a.offsetTop - 55;
                     });
                 },
               },
@@ -2285,8 +2269,8 @@
                   var e = this,
                     t = this.state,
                     n = t.availableInstruments,
-                    r = t.availableTunings,
-                    a = t.selectedInstrument,
+                    a = t.availableTunings,
+                    r = t.selectedInstrument,
                     i = t.selectedTuning,
                     o = t.rootNote,
                     s = t.selectedNotes,
@@ -2359,16 +2343,16 @@
                                 id: 'instrument-container',
                                 className: 'list-item-selector',
                                 children: n.map(function (t, n) {
-                                  var r = e;
+                                  var a = e;
                                   return (0, l.jsx)(
                                     'a',
                                     {
                                       id: 'instrument-' + n,
                                       className: O()('list-item', {
-                                        selected: t === a,
+                                        selected: t === r,
                                       }),
                                       onClick: function (e) {
-                                        return r._selectInstrument(e, t);
+                                        return a._selectInstrument(e, t);
                                       },
                                       children: t.name,
                                     },
@@ -2384,8 +2368,8 @@
                               (0, l.jsx)('h4', { children: 'Guitar Tunings' }),
                               (0, l.jsx)('div', {
                                 className: 'list-item-selector',
-                                children: r.map(function (t, n) {
-                                  var r = e;
+                                children: a.map(function (t, n) {
+                                  var a = e;
                                   return (0, l.jsx)(
                                     'a',
                                     {
@@ -2393,7 +2377,7 @@
                                         selected: t === i,
                                       }),
                                       onClick: function (e) {
-                                        return r._selectTuning(e, t);
+                                        return a._selectTuning(e, t);
                                       },
                                       children: t.name,
                                     },
@@ -2430,7 +2414,7 @@
                                     children:
                                       c.chords.length > 0
                                         ? c.chords.map(function (t, n) {
-                                            var r = e;
+                                            var a = e;
                                             return (0, l.jsxs)(
                                               'a',
                                               {
@@ -2438,7 +2422,7 @@
                                                   selected: t === u,
                                                 }),
                                                 onClick: function (e) {
-                                                  return r._selectChord(e, t);
+                                                  return a._selectChord(e, t);
                                                 },
                                                 children: [
                                                   t.name,
@@ -2469,7 +2453,7 @@
                                     children:
                                       c.scales.length > 0
                                         ? c.scales.map(function (t, n) {
-                                            var r = e;
+                                            var a = e;
                                             return (0, l.jsxs)(
                                               'a',
                                               {
@@ -2477,7 +2461,7 @@
                                                   selected: t === d,
                                                 }),
                                                 onClick: function (e) {
-                                                  return r._selectScale(e, t);
+                                                  return a._selectScale(e, t);
                                                 },
                                                 children: [
                                                   t.name,
@@ -2547,15 +2531,15 @@
                   var t = this.state,
                     n = t.rootNote,
                     l = t.selectedNotes,
-                    r = t.chords,
-                    a = t.scales;
+                    a = t.chords,
+                    r = t.scales;
                   if (!isNaN(n) || l.length > 0) {
                     var i = this;
                     p.event({ action: 'hauptstimmeSearchButtonClick' }),
                       z.Hauptstimme.search({
                         searchRequest: { rootNote: n, notes: l },
-                        chords: r,
-                        scales: a,
+                        chords: a,
+                        scales: r,
                       }).then(function (e) {
                         i.setState({ searchResults: e });
                       });
@@ -2646,25 +2630,25 @@
                   var e = this.state,
                     t = e.selectedInstrument,
                     n = e.selectedTuning,
-                    r = e.selectedNotes,
-                    a = e.rootNote;
+                    a = e.selectedNotes,
+                    r = e.rootNote;
                   if (t || n) {
                     var i = t || n;
                     return i.type ===
                       z.Constants.instrumentTypeConstant.KEYED_INSTRUMENT
                       ? (0, l.jsx)(se, {
                           instrument: i,
-                          selectedNotes: r,
+                          selectedNotes: a,
                           resultNotes: this._getResultNotes(),
-                          rootNote: a,
+                          rootNote: r,
                           onClick: this._selectNote,
                           onContextMenu: this._removeNote,
                         })
                       : (0, l.jsx)(ee, {
                           instrument: i,
-                          selectedNotes: r,
+                          selectedNotes: a,
                           resultNotes: this._getResultNotes(),
-                          rootNote: a,
+                          rootNote: r,
                           onClick: this._selectNote,
                           onContextMenu: this._removeNote,
                         });
@@ -2673,10 +2657,10 @@
                 },
               },
             ]) && de(t.prototype, n),
-            r && de(t, r),
+            a && de(t, a),
             i
           );
-        })(r.PureComponent),
+        })(a.PureComponent),
         ye = n(664);
       function Se(e) {
         if (void 0 === e)
@@ -2751,8 +2735,8 @@
           var n,
             l = xe(e);
           if (t) {
-            var r = xe(this).constructor;
-            n = Reflect.construct(l, arguments, r);
+            var a = xe(this).constructor;
+            n = Reflect.construct(l, arguments, a);
           } else n = l.apply(this, arguments);
           return we(this, n);
         };
@@ -2770,7 +2754,7 @@
         })(o, e);
         var t,
           n,
-          a,
+          r,
           i = Ce(o);
         function o(e) {
           var t;
@@ -2784,10 +2768,10 @@
             ke(Se(t), 'largeBubbleType', 'large-bubble'),
             ke(Se(t), 'createBubbles', function (e, n) {
               for (
-                var r = [],
-                  a = t.state,
-                  i = a.containerWidth,
-                  o = a.containerHeight,
+                var a = [],
+                  r = t.state,
+                  i = r.containerWidth,
+                  o = r.containerHeight,
                   s = 0;
                 s < e;
                 s += 1
@@ -2811,11 +2795,11 @@
                   m = 0.3 * Math.round(s / S.getRandomIntInclusive(1, 4)),
                   p = S.getRandomIntInclusive(3, 5),
                   b = S.getRandomIntInclusive(9, 11);
-                r.push(
+                a.push(
                   (0, l.jsx)(
                     ye.E.div,
                     {
-                      id: ''.concat(n, '-').concat(r.length),
+                      id: ''.concat(n, '-').concat(a.length),
                       className: O()(n, 'bubble'),
                       style: {
                         width: ''.concat(c, 'px'),
@@ -2833,24 +2817,24 @@
                         y: { duration: b, delay: m, repeat: 1 / 0 },
                       },
                     },
-                    ''.concat(n, '-').concat(r.length),
+                    ''.concat(n, '-').concat(a.length),
                   ),
                 );
               }
-              return r;
+              return a;
             }),
             ke(Se(t), 'startBubbles', function () {
               var e = t.state,
                 n = e.smallBubbleCount,
                 l = e.mediumBubbleCount,
-                r = e.largeBubbleCount;
+                a = e.largeBubbleCount;
               p.event({ action: 'bubblesStartButtonClick' }),
                 t.setState({
                   bubblesCreated: !0,
                   bubblesMoving: !0,
                   smallBubbleList: t.createBubbles(n, t.smallBubbleType),
                   mediumBubbleList: t.createBubbles(l, t.mediumBubbleType),
-                  largeBubbleList: t.createBubbles(r, t.largeBubbleType),
+                  largeBubbleList: t.createBubbles(a, t.largeBubbleType),
                 });
             }),
             ke(Se(t), 'clearBubbles', function () {
@@ -2877,7 +2861,7 @@
               containerWidth: 0,
               containerHeight: 0,
             }),
-            (t.bubbleContainerRef = r.createRef()),
+            (t.bubbleContainerRef = a.createRef()),
             t
           );
         }
@@ -2899,8 +2883,8 @@
                 var e = this.state,
                   t = e.bubblesCreated,
                   n = e.smallBubbleList,
-                  r = e.mediumBubbleList,
-                  a = e.largeBubbleList,
+                  a = e.mediumBubbleList,
+                  r = e.largeBubbleList,
                   i = e.bubblesMoving;
                 return (0, l.jsxs)('section', {
                   id: 'reading-list-container',
@@ -2957,7 +2941,7 @@
                       children: (0, l.jsxs)('div', {
                         id: 'bubbles-inner-container',
                         className: O()({ opaque: !t }),
-                        children: [n, r, a],
+                        children: [n, a, r],
                       }),
                     }),
                     (0, l.jsxs)('div', {
@@ -2990,10 +2974,10 @@
               },
             },
           ]) && je(t.prototype, n),
-          a && je(t, a),
+          r && je(t, r),
           o
         );
-      })(r.PureComponent);
+      })(a.PureComponent);
       function Be() {
         return (0, l.jsxs)('div', {
           id: 'portfolio-container',
@@ -3083,8 +3067,8 @@
           var n,
             l = Te(e);
           if (t) {
-            var r = Te(this).constructor;
-            n = Reflect.construct(l, arguments, r);
+            var a = Te(this).constructor;
+            n = Reflect.construct(l, arguments, a);
           } else n = l.apply(this, arguments);
           return Me(this, n);
         };
@@ -3102,7 +3086,7 @@
         })(o, e);
         var t,
           n,
-          r,
+          a,
           i = Ue(o);
         function o() {
           return Ae(this, o), i.apply(this, arguments);
@@ -3115,7 +3099,7 @@
               value: function () {
                 return (0, l.jsxs)(l.Fragment, {
                   children: [
-                    (0, l.jsx)(a, {}),
+                    (0, l.jsx)(r, {}),
                     (0, l.jsx)(v, {}),
                     (0, l.jsx)(A, {}),
                     (0, l.jsx)(Be, {}),
@@ -3124,10 +3108,10 @@
               },
             },
           ]) && Pe(t.prototype, n),
-          r && Pe(t, r),
+          a && Pe(t, a),
           o
         );
-      })(r.Component);
+      })(a.Component);
     },
   },
   function (e) {
