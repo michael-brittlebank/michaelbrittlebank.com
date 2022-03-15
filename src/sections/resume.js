@@ -24,35 +24,18 @@ export default function Resume() {
               cloud DevOps solutions.
             </p>
             <p>
-              Advocate for native or “vanilla” JavaScript, equally comfortable
-              in the front-end or the back-end, and has a wide range of
-              experience with different languages and frameworks. Familiar with
-              working on several projects simultaneously and switching between
-              different technology stacks on a regular basis.
+              Respected leader and experienced communicator who is experienced
+              in guiding and developing remote/distributed teams while remaining
+              a hands-on programmer. Able to plan for both long and short-term
+              deadlines while continuously managing internal and external
+              expectations as well as accommodating unexpected events.
             </p>
             <p>
-              Respected leader and experienced communicator who is able to plan
-              for both long and short-term deadlines while continuously managing
-              internal and external expectations and accommodating unexpected
-              events.
-            </p>
-            <p>
-              Personal projects include creating a{' '}
-              <a
-                href="https://github.com/mike-stumpf/hauptstimme.js"
-                target="_blank"
-                rel="noreferrer">
-                JavaScript library for music theory
-              </a>
-              , collaborating on a Bluetooth-synchronized metronome mobile app,
-              and developing a{' '}
-              <a
-                href="https://github.com/mike-stumpf/wp-reading-list"
-                target="_blank"
-                rel="noreferrer">
-                reading list plugin for WordPress
-              </a>
-              .
+              Advocate for test-driven development (TDD) who is equally
+              comfortable in the front-end or the back-end and who has a broad
+              array of experiences with different languages and frameworks.
+              Familiar with working on several projects simultaneously and
+              switching between different technology stacks on a regular basis.
             </p>
           </section>
           <section className="col-sm-12 col-md-6">
@@ -124,8 +107,11 @@ export default function Resume() {
             <h3>Higher Diploma in Science, Computing</h3>
             <h5>
               2017 &mdash;{' '}
-              <a href="http://www.itb.ie/" target="_blank" rel="noreferrer">
-                Institute of Technology-Blanchardstown. Dublin, Ireland
+              <a
+                href="https://www.tudublin.ie/"
+                target="_blank"
+                rel="noreferrer">
+                Technical University Dublin. Dublin, Ireland
               </a>
             </h5>
             <h3>MA, Renaissance Literature 1500-1700</h3>
