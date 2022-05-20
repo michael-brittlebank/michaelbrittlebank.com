@@ -1715,6 +1715,16 @@ export default class TravelService {
       lat: 39.9526,
       lng: -75.1652,
     },
+    {
+      title: 'Mammoth Cave National Park, Kentucky, USA',
+      lat: 37.1862,
+      lng: -86.1,
+    },
+    {
+      title: 'Gateway Arch National Park, Kentucky, USA',
+      lat: 38.6251,
+      lng: -90.1868,
+    },
     /**
      * south america
      */
