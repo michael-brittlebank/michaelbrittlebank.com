@@ -1725,6 +1725,16 @@ export default class TravelService {
       lat: 38.6251,
       lng: -90.1868,
     },
+    {
+      title: 'Harrisburg, Pennsylvania, USA',
+      lat: 40.2732,
+      lng: -76.8867,
+    },
+    {
+      title: 'Pittsburgh, Pennsylvania, USA',
+      lat: 40.4406,
+      lng: -79.9959,
+    },
     /**
      * south america
      */
