@@ -1735,6 +1735,126 @@ export default class TravelService {
       lat: 40.4406,
       lng: -79.9959,
     },
+    {
+      title: 'Sioux Falls, South Dakota, USA',
+      lat: 43.546,
+      lng: -96.7313,
+    },
+    {
+      title: 'Chamberlain, South Dakota, USA',
+      lat: 43.8108,
+      lng: -99.3307,
+    },
+    {
+      title: 'Badlands National Park, South Dakota, USA',
+      lat: 43.8554,
+      lng: -102.3397,
+    },
+    {
+      title: 'Wind Cave National Park, South Dakota, USA',
+      lat: 43.5724,
+      lng: -103.4416,
+    },
+    {
+      title: 'Custer State Park, South Dakota, USA',
+      lat: 43.7616,
+      lng: -103.3703,
+    },
+    {
+      title: 'Mt. Rushmore, South Dakota, USA',
+      lat: 43.8791,
+      lng: -103.4591,
+    },
+    {
+      title: 'Crazyhorse, South Dakota, USA',
+      lat: 43.8366,
+      lng: -103.6234,
+    },
+    {
+      title: 'Crazyhorse, South Dakota, USA',
+      lat: 43.8366,
+      lng: -103.6234,
+    },
+    {
+      title: 'Meadowlark Lake, Wyoming, USA',
+      lat: 44.1755,
+      lng: -107.2534,
+    },
+    {
+      title: 'Cody, Wyoming, USA',
+      lat: 44.5263,
+      lng: -109.0565,
+    },
+    {
+      title: 'Yellowstone National Park, Wyoming, USA',
+      lat: 44.428,
+      lng: -110.5885,
+    },
+    {
+      title: 'Grand Teton National Park, Wyoming, USA',
+      lat: 43.7904,
+      lng: -110.6818,
+    },
+    {
+      title: 'Salt Lake City, Utah, USA',
+      lat: 40.7608,
+      lng: -111.891,
+    },
+    {
+      title: 'Big Cottonwood Canyon, Utah, USA',
+      lat: 40.6373,
+      lng: -111.633,
+    },
+    {
+      title: 'Moab, Utah, USA',
+      lat: 38.5733,
+      lng: -109.5498,
+    },
+    {
+      title: 'Arches National Park, Utah, USA',
+      lat: 38.7331,
+      lng: -109.5925,
+    },
+    {
+      title: 'Canyonlands National Park, Utah, USA',
+      lat: 38.2136,
+      lng: -109.9025,
+    },
+    {
+      title: 'Mesa Verde National Park, Colorado, USA',
+      lat: 37.2309,
+      lng: -108.4618,
+    },
+    {
+      title: 'Mount Evans, Colorado, USA',
+      lat: 39.5883,
+      lng: -105.6438,
+    },
+    {
+      title: 'Denver, Colorado, USA',
+      lat: 39.7392,
+      lng: -104.9903,
+    },
+    {
+      title: 'Rocky Mountain National Park, Colorado, USA',
+      lat: 40.3428,
+      lng: -105.6836,
+    },
+    {
+      title: 'Ogallala, Nebraska, USA',
+      lat: 41.1282,
+      lng: -101.7204,
+    },
+    {
+      title: 'Lincoln, Nebraska, USA',
+      lat: 40.8136,
+      lng: -96.7026,
+    },
+    {
+      title: 'Omaha, Nebraska, USA',
+      lat: 41.2565,
+      lng: -95.9345,
+    },
     /**
      * south america
      */
