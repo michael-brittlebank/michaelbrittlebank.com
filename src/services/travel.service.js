@@ -1766,16 +1766,6 @@ export default class TravelService {
       lng: -103.4591,
     },
     {
-      title: 'Crazyhorse, South Dakota, USA',
-      lat: 43.8366,
-      lng: -103.6234,
-    },
-    {
-      title: 'Crazyhorse, South Dakota, USA',
-      lat: 43.8366,
-      lng: -103.6234,
-    },
-    {
       title: 'Meadowlark Lake, Wyoming, USA',
       lat: 44.1755,
       lng: -107.2534,
@@ -1854,6 +1844,21 @@ export default class TravelService {
       title: 'Omaha, Nebraska, USA',
       lat: 41.2565,
       lng: -95.9345,
+    },
+    {
+      title: 'Buffalo Bill State Park, Wyoming, USA',
+      lat: 44.503,
+      lng: -109.2443,
+    },
+    {
+      title: 'Wall, South Dakota, USA',
+      lat: 43.9925,
+      lng: -102.2415,
+    },
+    {
+      title: 'Antelope Island State Park, Utah, USA',
+      lat: 40.9581,
+      lng: -112.2146,
     },
     /**
      * south america
