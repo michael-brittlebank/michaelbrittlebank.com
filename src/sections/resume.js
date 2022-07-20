@@ -35,9 +35,8 @@ export default function Resume() {
               SOLID, DRY software engineer with a wide range of experience
               building bespoke websites, RESTful APIs, cross-platform mobile
               apps, and cloud DevOps solutions. Advocate for test-driven
-              development (TDD) accustomed to working on a variety of projects,
-              languages, and frameworks simultaneously and switching between
-              them on a regular basis.
+              development (TDD) and accustomed to context switching between a
+              variety of projects, languages, and frameworks.
             </p>
           </section>
           <section className="col-sm-12 col-md-6">
