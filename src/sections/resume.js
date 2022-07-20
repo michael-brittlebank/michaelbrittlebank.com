@@ -19,23 +19,25 @@ export default function Resume() {
           <section className="col-sm-12">
             <h2 className="section-header">Software Engineer</h2>
             <p>
-              DRY software engineer with a wide range of experience building
-              bespoke websites, RESTful APIs, cross-platform mobile apps, and
-              cloud DevOps solutions.
+              Respected leader skilled in guiding and growing remote/distributed
+              cross-disciplinary teams. Thoroughly invested in professional
+              development, both technical and business breadth and depth, while
+              remaining a hands-on programmer.
             </p>
             <p>
-              Respected leader and experienced communicator who is experienced
-              in guiding and developing remote/distributed teams while remaining
-              a hands-on programmer. Able to plan for both long and short-term
-              deadlines while continuously managing internal and external
-              expectations as well as accommodating unexpected events.
+              Effective communicator who is able to plan for and coordinate
+              diverse deadlines while continuously managing expectations as well
+              as unexpected events. Doggedly focused on delivering iterative,
+              future-proof solutions which satisfy stakeholders across the
+              organization.
             </p>
             <p>
-              Advocate for test-driven development (TDD) who is equally
-              comfortable in the front-end or the back-end and who has a broad
-              array of experiences with different languages and frameworks.
-              Familiar with working on several projects simultaneously and
-              switching between different technology stacks on a regular basis.
+              SOLID, DRY software engineer with a wide range of experience
+              building bespoke websites, RESTful APIs, cross-platform mobile
+              apps, and cloud DevOps solutions. Advocate for test-driven
+              development (TDD) accustomed to working on a variety of projects,
+              languages, and frameworks simultaneously and switching between
+              them on a regular basis.
             </p>
           </section>
           <section className="col-sm-12 col-md-6">
@@ -156,7 +158,7 @@ export default function Resume() {
         </section>
         <section className="col-sm-12">
           <AnalyticsButton
-            href="/files/Mike_Stumpf_Resume_2021.pdf"
+            href="/files/Mike_Stumpf_Resume_2022.pdf"
             action="resumeButtonClick"
             content={
               <>

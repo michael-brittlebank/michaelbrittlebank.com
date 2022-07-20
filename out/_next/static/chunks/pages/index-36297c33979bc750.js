@@ -2,7 +2,7 @@
   ('undefined' !== typeof self ? self : this).webpackChunk_N_E || []).push([
   [405],
   {
-    8581: function (e, t, n) {
+    8581: function (t, e, n) {
       (window.__NEXT_P = window.__NEXT_P || []).push([
         '/',
         function () {
@@ -10,18 +10,18 @@
         },
       ]);
     },
-    4501: function (e, t, n) {
+    4501: function (t, e, n) {
       'use strict';
-      n.r(t),
-        n.d(t, {
+      n.r(e),
+        n.d(e, {
           default: function () {
-            return Ee;
+            return Et;
           },
         });
       var l = n(5893),
         a = n(7294);
-      function r() {
-        var e = '/images/face_desktop.jpg';
+      function i() {
+        var t = '/images/face_desktop.jpg';
         return (0, l.jsx)('div', {
           id: 'frontispiece-container',
           children: (0, l.jsxs)('div', {
@@ -30,14 +30,14 @@
             children: [
               (0, l.jsx)('img', {
                 id: 'frontispiece-image',
-                src: e,
+                src: t,
                 alt: 'Logo',
                 width: 1280,
                 height: 960,
                 srcSet: ''
                   .concat('/images/face_mobile.jpg', ' 414w, ')
                   .concat('/images/face_tablet.jpg', ' 768w, ')
-                  .concat(e, ' 1280w'),
+                  .concat(t, ' 1280w'),
               }),
               (0, l.jsxs)('div', {
                 id: 'frontispiece-logo',
@@ -51,17 +51,17 @@
           }),
         });
       }
-      var i = n(2814),
+      var r = n(2814),
         o = n(7409),
         s = n(9295),
         c = n(6732),
         u = n(7786);
-      function d(e) {
-        var t = 'blue' === e.color ? 'blue' : 'orange';
+      function d(t) {
+        var e = 'blue' === t.color ? 'blue' : 'orange';
         return (0, l.jsx)('section', {
           className: 'full-screen-grid-container row',
           children: (0, l.jsx)('div', {
-            className: 'col-sm-12 spacer '.concat(t),
+            className: 'col-sm-12 spacer '.concat(e),
           }),
         });
       }
@@ -69,29 +69,29 @@
       var f,
         g,
         m,
-        p = function e() {
-          !(function (e, t) {
-            if (!(e instanceof t))
+        p = function t() {
+          !(function (t, e) {
+            if (!(t instanceof e))
               throw new TypeError('Cannot call a class as a function');
-          })(this, e);
+          })(this, t);
         };
-      function b(e) {
-        var t = e.content;
+      function b(t) {
+        var e = t.content;
         return (0, l.jsx)('a', {
           onClick: function () {
-            var t = e.href,
-              n = e.action;
-            p.event({ action: n }), window.open(t, '_blank');
+            var e = t.href,
+              n = t.action;
+            p.event({ action: n }), window.open(e, '_blank');
           },
           className: 'button',
           target: '_blank',
           rel: 'noreferrer',
           children:
-            t ||
+            e ||
             (0, l.jsxs)(l.Fragment, {
               children: [
                 'View Code\xa0\xa0\xa0',
-                (0, l.jsx)(i.G, { icon: h, className: 'fa' }),
+                (0, l.jsx)(r.G, { icon: h, className: 'fa' }),
               ],
             }),
         });
@@ -124,15 +124,15 @@
                         }),
                         (0, l.jsx)('p', {
                           children:
-                            'DRY software engineer with a wide range of experience building bespoke websites, RESTful APIs, cross-platform mobile apps, and cloud DevOps solutions.',
+                            'Respected leader skilled in guiding and growing remote/distributed cross-disciplinary teams. Thoroughly invested in professional development, both technical and business breadth and depth, while remaining a hands-on programmer.',
                         }),
                         (0, l.jsx)('p', {
                           children:
-                            'Respected leader and experienced communicator who is experienced in guiding and developing remote/distributed teams while remaining a hands-on programmer. Able to plan for both long and short-term deadlines while continuously managing internal and external expectations as well as accommodating unexpected events.',
+                            'Effective communicator who is able to plan for and coordinate diverse deadlines while continuously managing expectations as well as unexpected events. Doggedly focused on delivering iterative, future-proof solutions which satisfy stakeholders across the organization.',
                         }),
                         (0, l.jsx)('p', {
                           children:
-                            'Advocate for test-driven development (TDD) who is equally comfortable in the front-end or the back-end and who has a broad array of experiences with different languages and frameworks. Familiar with working on several projects simultaneously and switching between different technology stacks on a regular basis.',
+                            'SOLID, DRY software engineer with a wide range of experience building bespoke websites, RESTful APIs, cross-platform mobile apps, and cloud DevOps solutions. Advocate for test-driven development (TDD) accustomed to working on a variety of projects, languages, and frameworks simultaneously and switching between them on a regular basis.',
                         }),
                       ],
                     }),
@@ -316,7 +316,7 @@
                               target: '_blank',
                               name: 'LinkedIn',
                               rel: 'noreferrer',
-                              children: (0, l.jsx)(i.G, {
+                              children: (0, l.jsx)(r.G, {
                                 icon: o,
                                 className: 'fa',
                               }),
@@ -326,7 +326,7 @@
                               target: '_blank',
                               name: 'Github',
                               rel: 'noreferrer',
-                              children: (0, l.jsx)(i.G, {
+                              children: (0, l.jsx)(r.G, {
                                 icon: s,
                                 className: 'fa',
                               }),
@@ -336,7 +336,7 @@
                               target: '_blank',
                               name: 'Stack Exchange',
                               rel: 'noreferrer',
-                              children: (0, l.jsx)(i.G, {
+                              children: (0, l.jsx)(r.G, {
                                 icon: c,
                                 className: 'fa',
                               }),
@@ -350,12 +350,12 @@
                 (0, l.jsx)('section', {
                   className: 'col-sm-12',
                   children: (0, l.jsx)(b, {
-                    href: '/files/Mike_Stumpf_Resume_2021.pdf',
+                    href: '/files/Mike_Stumpf_Resume_2022.pdf',
                     action: 'resumeButtonClick',
                     content: (0, l.jsxs)(l.Fragment, {
                       children: [
                         'Download Resume\xa0\xa0\xa0',
-                        (0, l.jsx)(i.G, { icon: u, className: 'fa' }),
+                        (0, l.jsx)(r.G, { icon: u, className: 'fa' }),
                       ],
                     }),
                   }),
@@ -366,10 +366,10 @@
           ],
         });
       }
-      (m = function (e) {
-        var t = e.action,
-          n = e.params;
-        window.gtag('event', t, n);
+      (m = function (t) {
+        var e = t.action,
+          n = t.params;
+        window.gtag('event', e, n);
       }),
         (g = 'event') in (f = p)
           ? Object.defineProperty(f, g, {
@@ -380,77 +380,77 @@
             })
           : (f[g] = m);
       var y = n(5642);
-      var S = function e() {
-        !(function (e, t) {
-          if (!(e instanceof t))
+      var S = function t() {
+        !(function (t, e) {
+          if (!(t instanceof e))
             throw new TypeError('Cannot call a class as a function');
-        })(this, e);
+        })(this, t);
       };
-      !(function (e, t, n) {
-        t in e
-          ? Object.defineProperty(e, t, {
+      !(function (t, e, n) {
+        e in t
+          ? Object.defineProperty(t, e, {
               value: n,
               enumerable: !0,
               configurable: !0,
               writable: !0,
             })
-          : (e[t] = n);
-      })(S, 'getRandomIntInclusive', function (e, t) {
+          : (t[e] = n);
+      })(S, 'getRandomIntInclusive', function (t, e) {
         return (
-          (e = Math.ceil(e)),
-          (t = Math.floor(t)),
-          Math.floor(Math.random() * (t - e + 1) + e)
+          (t = Math.ceil(t)),
+          (e = Math.floor(e)),
+          Math.floor(Math.random() * (e - t + 1) + t)
         );
       });
-      var j = function e() {
-        !(function (e, t) {
-          if (!(e instanceof t))
+      var k = function t() {
+        !(function (t, e) {
+          if (!(t instanceof e))
             throw new TypeError('Cannot call a class as a function');
-        })(this, e);
+        })(this, t);
       };
-      function k(e) {
-        if (void 0 === e)
+      function j(t) {
+        if (void 0 === t)
           throw new ReferenceError(
             "this hasn't been initialised - super() hasn't been called",
           );
-        return e;
+        return t;
       }
-      function x(e, t) {
-        for (var n = 0; n < t.length; n++) {
-          var l = t[n];
+      function x(t, e) {
+        for (var n = 0; n < e.length; n++) {
+          var l = e[n];
           (l.enumerable = l.enumerable || !1),
             (l.configurable = !0),
             'value' in l && (l.writable = !0),
-            Object.defineProperty(e, l.key, l);
+            Object.defineProperty(t, l.key, l);
         }
       }
-      function w(e) {
+      function w(t) {
         return (w = Object.setPrototypeOf
           ? Object.getPrototypeOf
-          : function (e) {
-              return e.__proto__ || Object.getPrototypeOf(e);
-            })(e);
+          : function (t) {
+              return t.__proto__ || Object.getPrototypeOf(t);
+            })(t);
       }
-      function N(e, t) {
-        return !t || ('object' !== C(t) && 'function' !== typeof t) ? k(e) : t;
+      function N(t, e) {
+        return !e || ('object' !== _(e) && 'function' !== typeof e) ? j(t) : e;
       }
-      function _(e, t) {
-        return (_ =
+      function C(t, e) {
+        return (C =
           Object.setPrototypeOf ||
-          function (e, t) {
-            return (e.__proto__ = t), e;
-          })(e, t);
+          function (t, e) {
+            return (t.__proto__ = e), t;
+          })(t, e);
       }
-      !(function (e, t, n) {
-        t in e
-          ? Object.defineProperty(e, t, {
+      !(function (t, e, n) {
+        e in t
+          ? Object.defineProperty(t, e, {
               value: n,
               enumerable: !0,
               configurable: !0,
               writable: !0,
             })
-          : (e[t] = n);
-      })(j, 'availableTravelMarkers', [
+          : (t[e] = n);
+      })(k, 'availableTravelMarkers', [
         { title: 'Tangier, Morocco', lat: 35.7595, lng: -5.834 },
         { title: 'Marrakech, Morocco', lat: 31.6295, lng: -7.9811 },
         { title: 'Casablanca, Morocco', lat: 33.5731, lng: -7.5898 },
@@ -866,14 +866,116 @@
           lat: 39.9526,
           lng: -75.1652,
         },
+        {
+          title: 'Mammoth Cave National Park, Kentucky, USA',
+          lat: 37.1862,
+          lng: -86.1,
+        },
+        {
+          title: 'Gateway Arch National Park, Kentucky, USA',
+          lat: 38.6251,
+          lng: -90.1868,
+        },
+        { title: 'Harrisburg, Pennsylvania, USA', lat: 40.2732, lng: -76.8867 },
+        { title: 'Pittsburgh, Pennsylvania, USA', lat: 40.4406, lng: -79.9959 },
+        { title: 'Sioux Falls, South Dakota, USA', lat: 43.546, lng: -96.7313 },
+        {
+          title: 'Chamberlain, South Dakota, USA',
+          lat: 43.8108,
+          lng: -99.3307,
+        },
+        {
+          title: 'Badlands National Park, South Dakota, USA',
+          lat: 43.8554,
+          lng: -102.3397,
+        },
+        {
+          title: 'Wind Cave National Park, South Dakota, USA',
+          lat: 43.5724,
+          lng: -103.4416,
+        },
+        {
+          title: 'Custer State Park, South Dakota, USA',
+          lat: 43.7616,
+          lng: -103.3703,
+        },
+        {
+          title: 'Mt. Rushmore, South Dakota, USA',
+          lat: 43.8791,
+          lng: -103.4591,
+        },
+        {
+          title: 'Meadowlark Lake, Wyoming, USA',
+          lat: 44.1755,
+          lng: -107.2534,
+        },
+        { title: 'Cody, Wyoming, USA', lat: 44.5263, lng: -109.0565 },
+        {
+          title: 'Yellowstone National Park, Wyoming, USA',
+          lat: 44.428,
+          lng: -110.5885,
+        },
+        {
+          title: 'Grand Teton National Park, Wyoming, USA',
+          lat: 43.7904,
+          lng: -110.6818,
+        },
+        { title: 'Salt Lake City, Utah, USA', lat: 40.7608, lng: -111.891 },
+        {
+          title: 'Big Cottonwood Canyon, Utah, USA',
+          lat: 40.6373,
+          lng: -111.633,
+        },
+        { title: 'Moab, Utah, USA', lat: 38.5733, lng: -109.5498 },
+        {
+          title: 'Arches National Park, Utah, USA',
+          lat: 38.7331,
+          lng: -109.5925,
+        },
+        {
+          title: 'Canyonlands National Park, Utah, USA',
+          lat: 38.2136,
+          lng: -109.9025,
+        },
+        {
+          title: 'Mesa Verde National Park, Colorado, USA',
+          lat: 37.2309,
+          lng: -108.4618,
+        },
+        { title: 'Mount Evans, Colorado, USA', lat: 39.5883, lng: -105.6438 },
+        { title: 'Denver, Colorado, USA', lat: 39.7392, lng: -104.9903 },
+        {
+          title: 'Rocky Mountain National Park, Colorado, USA',
+          lat: 40.3428,
+          lng: -105.6836,
+        },
+        { title: 'Ogallala, Nebraska, USA', lat: 41.1282, lng: -101.7204 },
+        { title: 'Lincoln, Nebraska, USA', lat: 40.8136, lng: -96.7026 },
+        { title: 'Omaha, Nebraska, USA', lat: 41.2565, lng: -95.9345 },
+        {
+          title: 'Buffalo Bill State Park, Wyoming, USA',
+          lat: 44.503,
+          lng: -109.2443,
+        },
+        { title: 'Wall, South Dakota, USA', lat: 43.9925, lng: -102.2415 },
+        {
+          title: 'Antelope Island State Park, Utah, USA',
+          lat: 40.9581,
+          lng: -112.2146,
+        },
+        {
+          title: 'Dead Horse Point State Park, Utah, USA',
+          lat: 38.4748,
+          lng: -109.7406,
+        },
       ]);
-      var C = function (e) {
-        return e && 'undefined' !== typeof Symbol && e.constructor === Symbol
+      var _ = function (t) {
+        return t && 'undefined' !== typeof Symbol && t.constructor === Symbol
           ? 'symbol'
-          : typeof e;
+          : typeof t;
       };
-      function I(e) {
-        var t = (function () {
+      function I(t) {
+        var e = (function () {
           if ('undefined' === typeof Reflect || !Reflect.construct) return !1;
           if (Reflect.construct.sham) return !1;
           if ('function' === typeof Proxy) return !0;
@@ -884,62 +986,62 @@
               ),
               !0
             );
-          } catch (e) {
+          } catch (t) {
             return !1;
           }
         })();
         return function () {
           var n,
-            l = w(e);
-          if (t) {
+            l = w(t);
+          if (e) {
             var a = w(this).constructor;
             n = Reflect.construct(l, arguments, a);
           } else n = l.apply(this, arguments);
           return N(this, n);
         };
       }
-      var B = (function (e) {
-          !(function (e, t) {
-            if ('function' !== typeof t && null !== t)
+      var A = (function (t) {
+          !(function (t, e) {
+            if ('function' !== typeof e && null !== e)
               throw new TypeError(
                 'Super expression must either be null or a function',
               );
-            (e.prototype = Object.create(t && t.prototype, {
-              constructor: { value: e, writable: !0, configurable: !0 },
+            (t.prototype = Object.create(e && e.prototype, {
+              constructor: { value: t, writable: !0, configurable: !0 },
             })),
-              t && _(e, t);
-          })(i, e);
-          var t,
+              e && C(t, e);
+          })(r, t);
+          var e,
             n,
             a,
-            r = I(i);
-          function i(e) {
-            var t;
-            !(function (e, t) {
-              if (!(e instanceof t))
+            i = I(r);
+          function r(t) {
+            var e;
+            !(function (t, e) {
+              if (!(t instanceof e))
                 throw new TypeError('Cannot call a class as a function');
-            })(this, i),
-              (t = r.call(this, e));
-            var n = j.availableTravelMarkers,
+            })(this, r),
+              (e = i.call(this, t));
+            var n = k.availableTravelMarkers,
               l = S.getRandomIntInclusive(0, n.length);
             return (
-              (t.state = {
+              (e.state = {
                 activeMarker: null,
                 randomIndex: l,
                 travelMarkers: n,
               }),
-              (t._onMarkerClick = t._onMarkerClick.bind(k(t))),
-              (t._onInfoWindowClose = t._onInfoWindowClose.bind(k(t))),
-              t
+              (e._onMarkerClick = e._onMarkerClick.bind(j(e))),
+              (e._onInfoWindowClose = e._onInfoWindowClose.bind(j(e))),
+              e
             );
           }
           return (
-            (t = i),
+            (e = r),
             (n = [
               {
                 key: '_onMarkerClick',
-                value: function (e, t, n) {
-                  this.setState({ activeMarker: t });
+                value: function (t, e, n) {
+                  this.setState({ activeMarker: e });
                 },
               },
               {
@@ -951,12 +1053,12 @@
               {
                 key: 'render',
                 value: function () {
-                  var e = this,
-                    t = this.props.google,
+                  var t = this,
+                    e = this.props.google,
                     n = this.state,
                     a = n.randomIndex,
-                    r = n.activeMarker,
-                    i = n.travelMarkers;
+                    i = n.activeMarker,
+                    r = n.travelMarkers;
                   return (0, l.jsxs)('div', {
                     id: 'travel-container',
                     children: [
@@ -996,27 +1098,27 @@
                             id: 'travel-map-container',
                             className: 'col-sm-12 no-padding',
                             children: (0, l.jsxs)(y.Map, {
-                              google: t,
+                              google: e,
                               zoom: 4,
                               maxZoom: 8,
                               minZoom: 3,
                               mapTypeControl: !1,
                               streetViewControl: !1,
                               fullscreenControl: !1,
-                              initialCenter: { lat: i[a].lat, lng: i[a].lng },
+                              initialCenter: { lat: r[a].lat, lng: r[a].lng },
                               children: [
-                                i.map(function (t, n) {
+                                r.map(function (e, n) {
                                   return (0,
-                                  l.jsx)(y.Marker, { onClick: e._onMarkerClick, name: t.title, position: { lat: t.lat, lng: t.lng } }, n);
+                                  l.jsx)(y.Marker, { onClick: t._onMarkerClick, name: e.title, position: { lat: e.lat, lng: e.lng } }, n);
                                 }),
                                 (0, l.jsx)(y.InfoWindow, {
-                                  marker: r,
-                                  visible: !!r,
+                                  marker: i,
+                                  visible: !!i,
                                   onClose: this._onInfoWindowClose,
                                   children: (0, l.jsx)('div', {
                                     children: (0, l.jsx)('p', {
                                       className: 'no-margin',
-                                      children: r ? r.name : '',
+                                      children: i ? i.name : '',
                                     }),
                                   }),
                                 }),
@@ -1030,16 +1132,16 @@
                   });
                 },
               },
-            ]) && x(t.prototype, n),
-            a && x(t, a),
-            i
+            ]) && x(e.prototype, n),
+            a && x(e, a),
+            r
           );
         })(a.PureComponent),
-        A = (0, y.GoogleApiWrapper)({
+        B = (0, y.GoogleApiWrapper)({
           apiKey: 'AIzaSyDcq7rKnYBv21k9L_nmUp8hCddq5g6GLhw',
-        })(B),
+        })(A),
         P = n(6439);
-      function T() {
+      function U() {
         return (0, l.jsxs)('section', {
           id: 'reading-list-container',
           className: 'col-sm-12 portfolio-item',
@@ -1080,61 +1182,61 @@
           ],
         });
       }
-      var M = n(4184),
-        O = n.n(M);
-      function R(e) {
-        if (void 0 === e)
+      var T = n(4184),
+        M = n.n(T);
+      function O(t) {
+        if (void 0 === t)
           throw new ReferenceError(
             "this hasn't been initialised - super() hasn't been called",
           );
-        return e;
+        return t;
       }
-      function U(e, t) {
-        for (var n = 0; n < t.length; n++) {
-          var l = t[n];
+      function R(t, e) {
+        for (var n = 0; n < e.length; n++) {
+          var l = e[n];
           (l.enumerable = l.enumerable || !1),
             (l.configurable = !0),
             'value' in l && (l.writable = !0),
-            Object.defineProperty(e, l.key, l);
+            Object.defineProperty(t, l.key, l);
         }
       }
-      function E(e, t, n) {
+      function E(t, e, n) {
         return (
-          t in e
-            ? Object.defineProperty(e, t, {
+          e in t
+            ? Object.defineProperty(t, e, {
                 value: n,
                 enumerable: !0,
                 configurable: !0,
                 writable: !0,
               })
-            : (e[t] = n),
-          e
+            : (t[e] = n),
+          t
         );
       }
-      function W(e) {
+      function W(t) {
         return (W = Object.setPrototypeOf
           ? Object.getPrototypeOf
-          : function (e) {
-              return e.__proto__ || Object.getPrototypeOf(e);
-            })(e);
+          : function (t) {
+              return t.__proto__ || Object.getPrototypeOf(t);
+            })(t);
       }
-      function L(e, t) {
-        return !t || ('object' !== G(t) && 'function' !== typeof t) ? R(e) : t;
+      function L(t, e) {
+        return !e || ('object' !== G(e) && 'function' !== typeof e) ? O(t) : e;
       }
-      function D(e, t) {
+      function D(t, e) {
         return (D =
           Object.setPrototypeOf ||
-          function (e, t) {
-            return (e.__proto__ = t), e;
-          })(e, t);
+          function (t, e) {
+            return (t.__proto__ = e), t;
+          })(t, e);
       }
-      var G = function (e) {
-        return e && 'undefined' !== typeof Symbol && e.constructor === Symbol
+      var G = function (t) {
+        return t && 'undefined' !== typeof Symbol && t.constructor === Symbol
           ? 'symbol'
-          : typeof e;
+          : typeof t;
       };
-      function F(e) {
-        var t = (function () {
+      function F(t) {
+        var e = (function () {
           if ('undefined' === typeof Reflect || !Reflect.construct) return !1;
           if (Reflect.construct.sham) return !1;
           if ('function' === typeof Proxy) return !0;
@@ -1145,56 +1247,56 @@
               ),
               !0
             );
-          } catch (e) {
+          } catch (t) {
             return !1;
           }
         })();
         return function () {
           var n,
-            l = W(e);
-          if (t) {
+            l = W(t);
+          if (e) {
             var a = W(this).constructor;
             n = Reflect.construct(l, arguments, a);
           } else n = l.apply(this, arguments);
           return L(this, n);
         };
       }
-      var K = (function (e) {
-          !(function (e, t) {
-            if ('function' !== typeof t && null !== t)
+      var K = (function (t) {
+          !(function (t, e) {
+            if ('function' !== typeof e && null !== e)
               throw new TypeError(
                 'Super expression must either be null or a function',
               );
-            (e.prototype = Object.create(t && t.prototype, {
-              constructor: { value: e, writable: !0, configurable: !0 },
+            (t.prototype = Object.create(e && e.prototype, {
+              constructor: { value: t, writable: !0, configurable: !0 },
             })),
-              t && D(e, t);
-          })(i, e);
-          var t,
+              e && D(t, e);
+          })(r, t);
+          var e,
             n,
             a,
-            r = F(i);
-          function i(e) {
-            var t;
+            i = F(r);
+          function r(t) {
+            var e;
             return (
-              (function (e, t) {
-                if (!(e instanceof t))
+              (function (t, e) {
+                if (!(t instanceof e))
                   throw new TypeError('Cannot call a class as a function');
-              })(this, i),
-              E(R((t = r.call(this, e))), 'myWorker', void 0),
-              E(R(t), 'maxValue', 220),
-              E(R(t), 'minValue', 40),
-              E(R(t), 'setBpmDebounceTimeout', void 0),
-              E(R(t), 'metronomeTick', void 0),
-              E(R(t), 'metronomeTock', void 0),
-              E(R(t), 'availableSubdivisions', [
+              })(this, r),
+              E(O((e = i.call(this, t))), 'myWorker', void 0),
+              E(O(e), 'maxValue', 220),
+              E(O(e), 'minValue', 40),
+              E(O(e), 'setBpmDebounceTimeout', void 0),
+              E(O(e), 'metronomeTick', void 0),
+              E(O(e), 'metronomeTock', void 0),
+              E(O(e), 'availableSubdivisions', [
                 { label: 'Whole Note', value: 1 },
                 { label: 'Half Note', value: 2 },
                 { label: 'Triplet Note', value: 3 },
                 { label: 'Quarter Note', value: 4 },
               ]),
-              E(R(t), 'longPressInterval', void 0),
-              (t.state = {
+              E(O(e), 'longPressInterval', void 0),
+              (e.state = {
                 isMetronomeStarted: !1,
                 currentBpm: 100,
                 metronomeTick: 0,
@@ -1202,20 +1304,20 @@
                 mutedIndicators: [],
                 bpmError: !1,
               }),
-              (t._start = t._start.bind(R(t))),
-              (t._stop = t._stop.bind(R(t))),
-              (t._setBpm = t._setBpm.bind(R(t))),
-              (t._onMessage = t._onMessage.bind(R(t))),
-              (t._setSubdivision = t._setSubdivision.bind(R(t))),
-              (t._handleLongPress = t._handleLongPress.bind(R(t))),
-              (t._clearLongPressInterval = t._clearLongPressInterval.bind(
-                R(t),
+              (e._start = e._start.bind(O(e))),
+              (e._stop = e._stop.bind(O(e))),
+              (e._setBpm = e._setBpm.bind(O(e))),
+              (e._onMessage = e._onMessage.bind(O(e))),
+              (e._setSubdivision = e._setSubdivision.bind(O(e))),
+              (e._handleLongPress = e._handleLongPress.bind(O(e))),
+              (e._clearLongPressInterval = e._clearLongPressInterval.bind(
+                O(e),
               )),
-              t
+              e
             );
           }
           return (
-            (t = i),
+            (e = r),
             (n = [
               {
                 key: 'componentDidMount',
@@ -1227,15 +1329,15 @@
                       document.getElementById('metronome-tock')),
                     'serviceWorker' in navigator)
                   ) {
-                    var e = this;
+                    var t = this;
                     navigator.serviceWorker
                       .register('/files/metronome.worker.js')
-                      .then(function (t) {
-                        (e.myWorker = new Worker(t.active.scriptURL)),
-                          (e.myWorker.onmessage = e._onMessage);
+                      .then(function (e) {
+                        (t.myWorker = new Worker(e.active.scriptURL)),
+                          (t.myWorker.onmessage = t._onMessage);
                       })
-                      .catch(function (e) {
-                        console.warn('Service worker registration failed', e);
+                      .catch(function (t) {
+                        console.warn('Service worker registration failed', t);
                       });
                   } else console.warn('Service worker not supported');
                 },
@@ -1249,12 +1351,12 @@
               {
                 key: 'render',
                 value: function () {
-                  var e = this,
-                    t = this.state,
-                    n = t.currentBpm,
-                    a = t.bpmError,
-                    r = t.currentSubdivision,
-                    i = t.isMetronomeStarted;
+                  var t = this,
+                    e = this.state,
+                    n = e.currentBpm,
+                    a = e.bpmError,
+                    i = e.currentSubdivision,
+                    r = e.isMetronomeStarted;
                   return (0, l.jsxs)('section', {
                     id: 'metronome-container',
                     className: 'col-sm-12 portfolio-item',
@@ -1306,19 +1408,19 @@
                               }),
                               (0, l.jsx)('button', {
                                 onTouchStart: function () {
-                                  e._handleLongPress(!1);
+                                  t._handleLongPress(!1);
                                 },
                                 onTouchEnd: function () {
-                                  e._clearLongPressInterval(!1);
+                                  t._clearLongPressInterval(!1);
                                 },
                                 onMouseDown: function () {
-                                  e._handleLongPress(!1);
+                                  t._handleLongPress(!1);
                                 },
                                 onMouseUp: function () {
-                                  e._clearLongPressInterval(!1);
+                                  t._clearLongPressInterval(!1);
                                 },
-                                onContextMenu: function (e) {
-                                  return e.preventDefault(), !1;
+                                onContextMenu: function (t) {
+                                  return t.preventDefault(), !1;
                                 },
                                 className: 'small-button',
                                 children: '-',
@@ -1327,28 +1429,28 @@
                                 id: 'metronome-bpm-input',
                                 type: 'number',
                                 value: n || '',
-                                onChange: function (t) {
-                                  return e._getBpmFromInput(t);
+                                onChange: function (e) {
+                                  return t._getBpmFromInput(e);
                                 },
                                 max: this.maxValue,
                                 min: this.minValue,
-                                className: O()('input', { error: a }),
+                                className: M()('input', { error: a }),
                               }),
                               (0, l.jsx)('button', {
                                 onTouchStart: function () {
-                                  e._handleLongPress(!0);
+                                  t._handleLongPress(!0);
                                 },
                                 onTouchEnd: function () {
-                                  e._clearLongPressInterval(!0);
+                                  t._clearLongPressInterval(!0);
                                 },
                                 onMouseDown: function () {
-                                  e._handleLongPress(!0);
+                                  t._handleLongPress(!0);
                                 },
                                 onMouseUp: function () {
-                                  e._clearLongPressInterval(!0);
+                                  t._clearLongPressInterval(!0);
                                 },
-                                onContextMenu: function (e) {
-                                  return e.preventDefault(), !1;
+                                onContextMenu: function (t) {
+                                  return t.preventDefault(), !1;
                                 },
                                 className: 'small-button',
                                 children: '+',
@@ -1370,18 +1472,18 @@
                               (0, l.jsx)('div', {
                                 className: 'list-item-selector row',
                                 children: this.availableSubdivisions.map(
-                                  function (t, n) {
-                                    var a = e;
+                                  function (e, n) {
+                                    var a = t;
                                     return (0, l.jsx)(
                                       'a',
                                       {
-                                        className: O()('col-sm-6 list-item', {
-                                          selected: t.value === r,
+                                        className: M()('col-sm-6 list-item', {
+                                          selected: e.value === i,
                                         }),
                                         onClick: function () {
-                                          return a._setSubdivision(t);
+                                          return a._setSubdivision(e);
                                         },
-                                        children: t.label,
+                                        children: e.label,
                                       },
                                       n,
                                     );
@@ -1404,7 +1506,7 @@
                             className: 'col-sm-6',
                             children: (0, l.jsx)('button', {
                               onClick: this._start,
-                              className: O()('button', { disabled: i || a }),
+                              className: M()('button', { disabled: r || a }),
                               children: 'Start',
                             }),
                           }),
@@ -1412,7 +1514,7 @@
                             className: 'col-sm-6',
                             children: (0, l.jsx)('button', {
                               onClick: this._stop,
-                              className: O()('button', { disabled: !i }),
+                              className: M()('button', { disabled: !r }),
                               children: 'Stop',
                             }),
                           }),
@@ -1439,27 +1541,27 @@
               {
                 key: '_getMetronomeIndicators',
                 value: function () {
-                  var e = this.state,
-                    t = e.currentSubdivision,
-                    n = e.metronomeTick,
-                    a = e.mutedIndicators,
-                    r = [];
-                  if (1 === t) {
-                    var i = this;
-                    r.push(
+                  var t = this.state,
+                    e = t.currentSubdivision,
+                    n = t.metronomeTick,
+                    a = t.mutedIndicators,
+                    i = [];
+                  if (1 === e) {
+                    var r = this;
+                    i.push(
                       (0, l.jsxs)(
                         'div',
                         {
                           className: 'metronome-indicator-container',
                           onClick: function () {
-                            return i._silenceIndicator(0);
+                            return r._silenceIndicator(0);
                           },
                           children: [
                             (0, l.jsx)('div', {
                               className: 'metronome-indicator opaque',
                             }),
                             (0, l.jsx)('div', {
-                              className: O()(
+                              className: M()(
                                 'metronome-indicator center-absolute',
                                 {
                                   active: n % 2 !== 0,
@@ -1469,7 +1571,7 @@
                               children: '\xa0',
                             }),
                             (0, l.jsx)('div', {
-                              className: O()(
+                              className: M()(
                                 'metronome-indicator center-absolute',
                                 {
                                   active: n % 2 === 0,
@@ -1490,41 +1592,41 @@
                   } else
                     for (
                       var o = this,
-                        s = function (e) {
-                          var i = o;
-                          r.push(
+                        s = function (t) {
+                          var r = o;
+                          i.push(
                             (0, l.jsxs)(
                               'div',
                               {
                                 className: 'metronome-indicator-container',
                                 onClick: function () {
-                                  return i._silenceIndicator(e);
+                                  return r._silenceIndicator(t);
                                 },
                                 children: [
                                   (0, l.jsx)('div', {
-                                    className: O()('metronome-indicator', {
+                                    className: M()('metronome-indicator', {
                                       active:
-                                        1 === t ? n % 2 === 0 : n % t === e,
-                                      silent: -1 !== a.indexOf(e),
+                                        1 === e ? n % 2 === 0 : n % e === t,
+                                      silent: -1 !== a.indexOf(t),
                                     }),
                                     children: '\xa0',
                                   }),
                                   (0, l.jsx)('span', {
                                     className: 'metronome-indicator-number',
-                                    children: e + 1,
+                                    children: t + 1,
                                   }),
                                 ],
                               },
-                              e,
+                              t,
                             ),
                           );
                         },
                         c = 0;
-                      c < t;
+                      c < e;
                       c++
                     )
                       s(c);
-                  return r;
+                  return i;
                 },
               },
               {
@@ -1547,89 +1649,89 @@
               },
               {
                 key: '_getBpmFromInput',
-                value: function (e) {
-                  e.target.value.length > 0
-                    ? this._setBpm(parseInt(e.target.value, 10))
+                value: function (t) {
+                  t.target.value.length > 0
+                    ? this._setBpm(parseInt(t.target.value, 10))
                     : this._setBpm(void 0);
                 },
               },
               {
                 key: '_setBpm',
-                value: function (e) {
-                  var t = this,
+                value: function (t) {
+                  var e = this,
                     n = this.state.isMetronomeStarted,
                     l = {};
-                  (l = e
-                    ? e > this.maxValue || e < this.minValue
-                      ? { bpmError: !0, currentBpm: e }
-                      : { bpmError: !1, currentBpm: e }
+                  (l = t
+                    ? t > this.maxValue || t < this.minValue
+                      ? { bpmError: !0, currentBpm: t }
+                      : { bpmError: !1, currentBpm: t }
                     : { bpmError: !0, currentBpm: void 0 }),
                     this.setState(l),
                     clearTimeout(this.setBpmDebounceTimeout),
                     (this.setBpmDebounceTimeout = setTimeout(function () {
-                      var e = l.currentBpm,
+                      var t = l.currentBpm,
                         a = l.bpmError;
-                      n && e && !a && t._postWorkerMessage();
+                      n && t && !a && e._postWorkerMessage();
                     }, 500));
                 },
               },
               {
                 key: '_onMessage',
-                value: function (e) {
-                  e.data.tick % this.state.currentSubdivision === 0 &&
+                value: function (t) {
+                  t.data.tick % this.state.currentSubdivision === 0 &&
                   -1 === this.state.mutedIndicators.indexOf(0)
                     ? ((this.metronomeTick.currentTime = 0),
                       this.metronomeTick.play())
                     : -1 ===
                         this.state.mutedIndicators.indexOf(
-                          e.data.tick % this.state.currentSubdivision,
+                          t.data.tick % this.state.currentSubdivision,
                         ) &&
                       ((this.metronomeTock.currentTime = 0),
                       this.metronomeTock.play()),
-                    this.setState({ metronomeTick: parseInt(e.data.tick, 10) });
+                    this.setState({ metronomeTick: parseInt(t.data.tick, 10) });
                 },
               },
               {
                 key: '_setSubdivision',
-                value: function (e) {
-                  var t = e.value;
+                value: function (t) {
+                  var e = t.value;
                   this.state.isMetronomeStarted &&
                     this.state.currentBpm &&
-                    this._postWorkerMessage(void 0, t),
-                    this.setState({ currentSubdivision: t });
+                    this._postWorkerMessage(void 0, e),
+                    this.setState({ currentSubdivision: e });
                 },
               },
               {
                 key: '_postWorkerMessage',
                 value: function () {
-                  var e =
+                  var t =
                       arguments.length > 0 && void 0 !== arguments[0]
                         ? arguments[0]
                         : this.state.currentBpm,
-                    t =
+                    e =
                       arguments.length > 1 && void 0 !== arguments[1]
                         ? arguments[1]
                         : this.state.currentSubdivision;
-                  this.myWorker.postMessage({ bpm: e, subdivision: t });
+                  this.myWorker.postMessage({ bpm: t, subdivision: e });
                 },
               },
               {
                 key: '_silenceIndicator',
-                value: function (e) {
-                  var t = this.state.mutedIndicators,
-                    n = t.indexOf(e);
-                  -1 === n ? t.push(e) : t.splice(n, 1),
-                    this.setState({ mutedIndicators: t });
+                value: function (t) {
+                  var e = this.state.mutedIndicators,
+                    n = e.indexOf(t);
+                  -1 === n ? e.push(t) : e.splice(n, 1),
+                    this.setState({ mutedIndicators: e });
                 },
               },
               {
                 key: '_handleLongPress',
-                value: function (e) {
-                  if (e) {
+                value: function (t) {
+                  if (t) {
                     if (!this.longPressInterval) {
-                      var t = this;
+                      var e = this;
                       this.longPressInterval = setInterval(function () {
-                        t._setBpm(t.state.currentBpm + 1);
+                        e._setBpm(e.state.currentBpm + 1);
                       }, 200);
                     }
                   } else if (!this.longPressInterval) {
@@ -1642,82 +1744,82 @@
               },
               {
                 key: '_clearLongPressInterval',
-                value: function (e) {
+                value: function (t) {
                   clearInterval(this.longPressInterval),
                     (this.longPressInterval = void 0),
-                    e
+                    t
                       ? this._setBpm(this.state.currentBpm + 1)
                       : this._setBpm(this.state.currentBpm - 1);
                 },
               },
-            ]) && U(t.prototype, n),
-            a && U(t, a),
-            i
+            ]) && R(e.prototype, n),
+            a && R(e, a),
+            r
           );
         })(a.PureComponent),
         z = n(6444);
-      function V(e, t) {
-        (null == t || t > e.length) && (t = e.length);
-        for (var n = 0, l = new Array(t); n < t; n++) l[n] = e[n];
+      function V(t, e) {
+        (null == e || e > t.length) && (e = t.length);
+        for (var n = 0, l = new Array(e); n < e; n++) l[n] = t[n];
         return l;
       }
-      function H(e) {
-        if (void 0 === e)
+      function H(t) {
+        if (void 0 === t)
           throw new ReferenceError(
             "this hasn't been initialised - super() hasn't been called",
           );
-        return e;
+        return t;
       }
-      function J(e, t) {
-        for (var n = 0; n < t.length; n++) {
-          var l = t[n];
+      function J(t, e) {
+        for (var n = 0; n < e.length; n++) {
+          var l = e[n];
           (l.enumerable = l.enumerable || !1),
             (l.configurable = !0),
             'value' in l && (l.writable = !0),
-            Object.defineProperty(e, l.key, l);
+            Object.defineProperty(t, l.key, l);
         }
       }
-      function Z(e) {
+      function Z(t) {
         return (Z = Object.setPrototypeOf
           ? Object.getPrototypeOf
-          : function (e) {
-              return e.__proto__ || Object.getPrototypeOf(e);
-            })(e);
+          : function (t) {
+              return t.__proto__ || Object.getPrototypeOf(t);
+            })(t);
       }
-      function Y(e, t) {
-        return !t || ('object' !== X(t) && 'function' !== typeof t) ? H(e) : t;
+      function Y(t, e) {
+        return !e || ('object' !== X(e) && 'function' !== typeof e) ? H(t) : e;
       }
-      function q(e, t) {
+      function q(t, e) {
         return (q =
           Object.setPrototypeOf ||
-          function (e, t) {
-            return (e.__proto__ = t), e;
-          })(e, t);
+          function (t, e) {
+            return (t.__proto__ = e), t;
+          })(t, e);
       }
-      function Q(e) {
+      function Q(t) {
         return (
-          (function (e) {
-            if (Array.isArray(e)) return V(e);
-          })(e) ||
-          (function (e) {
+          (function (t) {
+            if (Array.isArray(t)) return V(t);
+          })(t) ||
+          (function (t) {
             if (
-              ('undefined' !== typeof Symbol && null != e[Symbol.iterator]) ||
-              null != e['@@iterator']
+              ('undefined' !== typeof Symbol && null != t[Symbol.iterator]) ||
+              null != t['@@iterator']
             )
-              return Array.from(e);
-          })(e) ||
-          (function (e, t) {
-            if (!e) return;
-            if ('string' === typeof e) return V(e, t);
-            var n = Object.prototype.toString.call(e).slice(8, -1);
-            'Object' === n && e.constructor && (n = e.constructor.name);
+              return Array.from(t);
+          })(t) ||
+          (function (t, e) {
+            if (!t) return;
+            if ('string' === typeof t) return V(t, e);
+            var n = Object.prototype.toString.call(t).slice(8, -1);
+            'Object' === n && t.constructor && (n = t.constructor.name);
             if ('Map' === n || 'Set' === n) return Array.from(n);
             if (
               'Arguments' === n ||
               /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)
             )
-              return V(e, t);
-          })(e) ||
+              return V(t, e);
+          })(t) ||
           (function () {
             throw new TypeError(
               'Invalid attempt to spread non-iterable instance.\\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.',
@@ -1725,13 +1827,13 @@
           })()
         );
       }
-      var X = function (e) {
-        return e && 'undefined' !== typeof Symbol && e.constructor === Symbol
+      var X = function (t) {
+        return t && 'undefined' !== typeof Symbol && t.constructor === Symbol
           ? 'symbol'
-          : typeof e;
+          : typeof t;
       };
-      function $(e) {
-        var t = (function () {
+      function $(t) {
+        var e = (function () {
           if ('undefined' === typeof Reflect || !Reflect.construct) return !1;
           if (Reflect.construct.sham) return !1;
           if ('function' === typeof Proxy) return !0;
@@ -1742,154 +1844,154 @@
               ),
               !0
             );
-          } catch (e) {
+          } catch (t) {
             return !1;
           }
         })();
         return function () {
           var n,
-            l = Z(e);
-          if (t) {
+            l = Z(t);
+          if (e) {
             var a = Z(this).constructor;
             n = Reflect.construct(l, arguments, a);
           } else n = l.apply(this, arguments);
           return Y(this, n);
         };
       }
-      var ee = (function (e) {
-        !(function (e, t) {
-          if ('function' !== typeof t && null !== t)
+      var tt = (function (t) {
+        !(function (t, e) {
+          if ('function' !== typeof e && null !== e)
             throw new TypeError(
               'Super expression must either be null or a function',
             );
-          (e.prototype = Object.create(t && t.prototype, {
-            constructor: { value: e, writable: !0, configurable: !0 },
+          (t.prototype = Object.create(e && e.prototype, {
+            constructor: { value: t, writable: !0, configurable: !0 },
           })),
-            t && q(e, t);
-        })(i, e);
-        var t,
+            e && q(t, e);
+        })(r, t);
+        var e,
           n,
           a,
-          r = $(i);
-        function i(e) {
-          var t;
-          !(function (e, t) {
-            if (!(e instanceof t))
+          i = $(r);
+        function r(t) {
+          var e;
+          !(function (t, e) {
+            if (!(t instanceof e))
               throw new TypeError('Cannot call a class as a function');
-          })(this, i),
-            (function (e, t, n) {
-              t in e
-                ? Object.defineProperty(e, t, {
+          })(this, r),
+            (function (t, e, n) {
+              e in t
+                ? Object.defineProperty(t, e, {
                     value: n,
                     enumerable: !0,
                     configurable: !0,
                     writable: !0,
                   })
-                : (e[t] = n);
-            })(H((t = r.call(this, e))), 'numberOfFrets', 12);
-          var n = t.props.instrument;
+                : (t[e] = n);
+            })(H((e = i.call(this, t))), 'numberOfFrets', 12);
+          var n = e.props.instrument;
           return (
-            (t.state = {
+            (e.state = {
               rootNotes: n && n.rootNotes ? Q(n.rootNotes).reverse() : [],
             }),
-            t
+            e
           );
         }
         return (
-          (t = i),
+          (e = r),
           (n = [
             {
               key: '_getFretMarkers',
               value: function () {
-                for (var e = [], t = 0; t <= this.numberOfFrets; t++)
-                  3 === t || 5 === t || 9 === t
-                    ? e.push(String.fromCharCode(9678))
-                    : 7 === t || 12 === t
-                    ? e.push(
+                for (var t = [], e = 0; e <= this.numberOfFrets; e++)
+                  3 === e || 5 === e || 9 === e
+                    ? t.push(String.fromCharCode(9678))
+                    : 7 === e || 12 === e
+                    ? t.push(
                         String.fromCharCode(9673) + String.fromCharCode(9673),
                       )
-                    : e.push(String.fromCharCode(160));
-                return e;
-              },
-            },
-            {
-              key: '_getFretsFromRootNote',
-              value: function (e) {
-                for (
-                  var t = [e], n = e, l = 0;
-                  l <= this.numberOfFrets - 1;
-                  l++
-                )
-                  (n = z.Util.adjustNoteBySteps({ note: n, halfSteps: 1 })),
-                    t.push(n);
+                    : t.push(String.fromCharCode(160));
                 return t;
               },
             },
             {
+              key: '_getFretsFromRootNote',
+              value: function (t) {
+                for (
+                  var e = [t], n = t, l = 0;
+                  l <= this.numberOfFrets - 1;
+                  l++
+                )
+                  (n = z.Util.adjustNoteBySteps({ note: n, halfSteps: 1 })),
+                    e.push(n);
+                return e;
+              },
+            },
+            {
               key: 'componentDidUpdate',
-              value: function (e) {
-                var t = this.props.instrument;
-                e.instrument.id !== t.id &&
-                  this.setState({ rootNotes: Q(t.rootNotes).reverse() });
+              value: function (t) {
+                var e = this.props.instrument;
+                t.instrument.id !== e.id &&
+                  this.setState({ rootNotes: Q(e.rootNotes).reverse() });
               },
             },
             {
               key: 'render',
               value: function () {
-                var e = this,
-                  t = this.props,
-                  n = t.selectedNotes,
-                  a = t.rootNote,
-                  r = t.resultNotes,
-                  i = t.onClick,
-                  o = t.onContextMenu,
+                var t = this,
+                  e = this.props,
+                  n = e.selectedNotes,
+                  a = e.rootNote,
+                  i = e.resultNotes,
+                  r = e.onClick,
+                  o = e.onContextMenu,
                   s = this.state.rootNotes;
                 return (0, l.jsxs)('div', {
                   className: 'instrument-container',
                   children: [
                     (0, l.jsx)('div', {
                       className: 'string fret-marker',
-                      children: this._getFretMarkers().map(function (e, t) {
+                      children: this._getFretMarkers().map(function (t, e) {
                         return (0,
-                        l.jsx)('div', { className: 'fret', children: e }, t);
+                        l.jsx)('div', { className: 'fret', children: t }, e);
                       }),
                     }),
-                    s.map(function (t, s) {
+                    s.map(function (e, s) {
                       return (0, l.jsx)(
                         'div',
                         {
                           className: 'string',
-                          children: e
-                            ._getFretsFromRootNote(t)
-                            .map(function (e, t) {
+                          children: t
+                            ._getFretsFromRootNote(e)
+                            .map(function (t, e) {
                               return (0, l.jsx)(
                                 'div',
                                 {
-                                  className: M('fret note', {
-                                    selected: -1 !== n.indexOf(e),
-                                    root: a === e,
-                                    found: -1 !== r.indexOf(e),
+                                  className: T('fret note', {
+                                    selected: -1 !== n.indexOf(t),
+                                    root: a === t,
+                                    found: -1 !== i.indexOf(t),
                                   }),
-                                  'data-note': e,
-                                  onContextMenu: function (e) {
-                                    e.preventDefault();
+                                  'data-note': t,
+                                  onContextMenu: function (t) {
+                                    t.preventDefault();
                                   },
                                   children: (0, l.jsx)('p', {
                                     children: (0, l.jsx)('span', {
-                                      onClick: function (t) {
-                                        t.preventDefault(), i(e);
+                                      onClick: function (e) {
+                                        e.preventDefault(), r(t);
                                       },
-                                      onContextMenu: function (t) {
-                                        t.preventDefault(), o(e);
+                                      onContextMenu: function (e) {
+                                        e.preventDefault(), o(t);
                                       },
                                       children:
                                         z.Util.getFormattedLetterFromNote({
-                                          note: e,
+                                          note: t,
                                         }),
                                     }),
                                   }),
                                 },
-                                t,
+                                e,
                               );
                             }),
                         },
@@ -1900,56 +2002,56 @@
                 });
               },
             },
-          ]) && J(t.prototype, n),
-          a && J(t, a),
-          i
+          ]) && J(e.prototype, n),
+          a && J(e, a),
+          r
         );
       })(a.PureComponent);
-      function te(e, t) {
-        if (!(e instanceof t))
+      function et(t, e) {
+        if (!(t instanceof e))
           throw new TypeError('Cannot call a class as a function');
       }
-      function ne(e, t) {
-        for (var n = 0; n < t.length; n++) {
-          var l = t[n];
+      function nt(t, e) {
+        for (var n = 0; n < e.length; n++) {
+          var l = e[n];
           (l.enumerable = l.enumerable || !1),
             (l.configurable = !0),
             'value' in l && (l.writable = !0),
-            Object.defineProperty(e, l.key, l);
+            Object.defineProperty(t, l.key, l);
         }
       }
-      function le(e) {
-        return (le = Object.setPrototypeOf
+      function lt(t) {
+        return (lt = Object.setPrototypeOf
           ? Object.getPrototypeOf
-          : function (e) {
-              return e.__proto__ || Object.getPrototypeOf(e);
-            })(e);
+          : function (t) {
+              return t.__proto__ || Object.getPrototypeOf(t);
+            })(t);
       }
-      function ae(e, t) {
-        return !t || ('object' !== ie(t) && 'function' !== typeof t)
-          ? (function (e) {
-              if (void 0 === e)
+      function at(t, e) {
+        return !e || ('object' !== rt(e) && 'function' !== typeof e)
+          ? (function (t) {
+              if (void 0 === t)
                 throw new ReferenceError(
                   "this hasn't been initialised - super() hasn't been called",
                 );
-              return e;
-            })(e)
-          : t;
+              return t;
+            })(t)
+          : e;
       }
-      function re(e, t) {
-        return (re =
+      function it(t, e) {
+        return (it =
           Object.setPrototypeOf ||
-          function (e, t) {
-            return (e.__proto__ = t), e;
-          })(e, t);
+          function (t, e) {
+            return (t.__proto__ = e), t;
+          })(t, e);
       }
-      var ie = function (e) {
-        return e && 'undefined' !== typeof Symbol && e.constructor === Symbol
+      var rt = function (t) {
+        return t && 'undefined' !== typeof Symbol && t.constructor === Symbol
           ? 'symbol'
-          : typeof e;
+          : typeof t;
       };
-      function oe(e) {
-        var t = (function () {
+      function ot(t) {
+        var e = (function () {
           if ('undefined' === typeof Reflect || !Reflect.construct) return !1;
           if (Reflect.construct.sham) return !1;
           if ('function' === typeof Proxy) return !0;
@@ -1960,50 +2062,50 @@
               ),
               !0
             );
-          } catch (e) {
+          } catch (t) {
             return !1;
           }
         })();
         return function () {
           var n,
-            l = le(e);
-          if (t) {
-            var a = le(this).constructor;
+            l = lt(t);
+          if (e) {
+            var a = lt(this).constructor;
             n = Reflect.construct(l, arguments, a);
           } else n = l.apply(this, arguments);
-          return ae(this, n);
+          return at(this, n);
         };
       }
-      var se = (function (e) {
-        !(function (e, t) {
-          if ('function' !== typeof t && null !== t)
+      var st = (function (t) {
+        !(function (t, e) {
+          if ('function' !== typeof e && null !== e)
             throw new TypeError(
               'Super expression must either be null or a function',
             );
-          (e.prototype = Object.create(t && t.prototype, {
-            constructor: { value: e, writable: !0, configurable: !0 },
+          (t.prototype = Object.create(e && e.prototype, {
+            constructor: { value: t, writable: !0, configurable: !0 },
           })),
-            t && re(e, t);
-        })(i, e);
-        var t,
+            e && it(t, e);
+        })(r, t);
+        var e,
           n,
           a,
-          r = oe(i);
-        function i() {
-          return te(this, i), r.apply(this, arguments);
+          i = ot(r);
+        function r() {
+          return et(this, r), i.apply(this, arguments);
         }
         return (
-          (t = i),
+          (e = r),
           (a = [
             {
               key: '_isBlackKey',
-              value: function (e) {
+              value: function (t) {
                 return (
-                  e === z.Constants.noteConstant.AB ||
-                  e === z.Constants.noteConstant.CD ||
-                  e === z.Constants.noteConstant.DE ||
-                  e === z.Constants.noteConstant.FG ||
-                  e === z.Constants.noteConstant.GA
+                  t === z.Constants.noteConstant.AB ||
+                  t === z.Constants.noteConstant.CD ||
+                  t === z.Constants.noteConstant.DE ||
+                  t === z.Constants.noteConstant.FG ||
+                  t === z.Constants.noteConstant.GA
                 );
               },
             },
@@ -2012,121 +2114,121 @@
             {
               key: 'render',
               value: function () {
-                var e = this.props,
-                  t = e.instrument,
-                  n = e.selectedNotes,
-                  a = e.onClick,
-                  r = e.rootNote,
-                  o = e.resultNotes,
-                  s = e.onContextMenu;
+                var t = this.props,
+                  e = t.instrument,
+                  n = t.selectedNotes,
+                  a = t.onClick,
+                  i = t.rootNote,
+                  o = t.resultNotes,
+                  s = t.onContextMenu;
                 return (0, l.jsx)('div', {
                   className: 'instrument-container piano-keyboard',
                   children:
-                    t &&
-                    t.rootNotes.map(function (e, t) {
+                    e &&
+                    e.rootNotes.map(function (t, e) {
                       return (0, l.jsx)(
                         'div',
                         {
-                          className: M('piano-key', {
-                            selected: -1 !== n.indexOf(e),
-                            black: i._isBlackKey(e),
-                            white: !i._isBlackKey(e),
+                          className: T('piano-key', {
+                            selected: -1 !== n.indexOf(t),
+                            black: r._isBlackKey(t),
+                            white: !r._isBlackKey(t),
                           }),
-                          'data-note': e,
-                          onClick: function (t) {
-                            t.preventDefault(), a(e);
+                          'data-note': t,
+                          onClick: function (e) {
+                            e.preventDefault(), a(t);
                           },
-                          onContextMenu: function (t) {
-                            t.preventDefault(), s(e);
+                          onContextMenu: function (e) {
+                            e.preventDefault(), s(t);
                           },
                           children: (0, l.jsx)('p', {
-                            className: M('note', {
-                              selected: -1 !== n.indexOf(e),
-                              root: r === e,
-                              found: -1 !== o.indexOf(e),
+                            className: T('note', {
+                              selected: -1 !== n.indexOf(t),
+                              root: i === t,
+                              found: -1 !== o.indexOf(t),
                             }),
                             children: (0, l.jsx)('span', {
                               children: z.Util.getFormattedLetterFromNote({
-                                note: e,
+                                note: t,
                               }),
                             }),
                           }),
                         },
-                        t,
+                        e,
                       );
                     }),
                 });
               },
             },
-          ]) && ne(t.prototype, n),
-          a && ne(t, a),
-          i
+          ]) && nt(e.prototype, n),
+          a && nt(e, a),
+          r
         );
       })(a.PureComponent);
-      function ce(e, t) {
-        (null == t || t > e.length) && (t = e.length);
-        for (var n = 0, l = new Array(t); n < t; n++) l[n] = e[n];
+      function ct(t, e) {
+        (null == e || e > t.length) && (e = t.length);
+        for (var n = 0, l = new Array(e); n < e; n++) l[n] = t[n];
         return l;
       }
-      function ue(e) {
-        if (void 0 === e)
+      function ut(t) {
+        if (void 0 === t)
           throw new ReferenceError(
             "this hasn't been initialised - super() hasn't been called",
           );
-        return e;
+        return t;
       }
-      function de(e, t) {
-        for (var n = 0; n < t.length; n++) {
-          var l = t[n];
+      function dt(t, e) {
+        for (var n = 0; n < e.length; n++) {
+          var l = e[n];
           (l.enumerable = l.enumerable || !1),
             (l.configurable = !0),
             'value' in l && (l.writable = !0),
-            Object.defineProperty(e, l.key, l);
+            Object.defineProperty(t, l.key, l);
         }
       }
-      function he(e) {
-        return (he = Object.setPrototypeOf
+      function ht(t) {
+        return (ht = Object.setPrototypeOf
           ? Object.getPrototypeOf
-          : function (e) {
-              return e.__proto__ || Object.getPrototypeOf(e);
-            })(e);
+          : function (t) {
+              return t.__proto__ || Object.getPrototypeOf(t);
+            })(t);
       }
-      function fe(e, t) {
-        return !t || ('object' !== pe(t) && 'function' !== typeof t)
-          ? ue(e)
-          : t;
+      function ft(t, e) {
+        return !e || ('object' !== pt(e) && 'function' !== typeof e)
+          ? ut(t)
+          : e;
       }
-      function ge(e, t) {
-        return (ge =
+      function gt(t, e) {
+        return (gt =
           Object.setPrototypeOf ||
-          function (e, t) {
-            return (e.__proto__ = t), e;
-          })(e, t);
+          function (t, e) {
+            return (t.__proto__ = e), t;
+          })(t, e);
       }
-      function me(e) {
+      function mt(t) {
         return (
-          (function (e) {
-            if (Array.isArray(e)) return ce(e);
-          })(e) ||
-          (function (e) {
+          (function (t) {
+            if (Array.isArray(t)) return ct(t);
+          })(t) ||
+          (function (t) {
             if (
-              ('undefined' !== typeof Symbol && null != e[Symbol.iterator]) ||
-              null != e['@@iterator']
+              ('undefined' !== typeof Symbol && null != t[Symbol.iterator]) ||
+              null != t['@@iterator']
             )
-              return Array.from(e);
-          })(e) ||
-          (function (e, t) {
-            if (!e) return;
-            if ('string' === typeof e) return ce(e, t);
-            var n = Object.prototype.toString.call(e).slice(8, -1);
-            'Object' === n && e.constructor && (n = e.constructor.name);
+              return Array.from(t);
+          })(t) ||
+          (function (t, e) {
+            if (!t) return;
+            if ('string' === typeof t) return ct(t, e);
+            var n = Object.prototype.toString.call(t).slice(8, -1);
+            'Object' === n && t.constructor && (n = t.constructor.name);
             if ('Map' === n || 'Set' === n) return Array.from(n);
             if (
               'Arguments' === n ||
               /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)
             )
-              return ce(e, t);
-          })(e) ||
+              return ct(t, e);
+          })(t) ||
           (function () {
             throw new TypeError(
               'Invalid attempt to spread non-iterable instance.\\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.',
@@ -2134,13 +2236,13 @@
           })()
         );
       }
-      var pe = function (e) {
-        return e && 'undefined' !== typeof Symbol && e.constructor === Symbol
+      var pt = function (t) {
+        return t && 'undefined' !== typeof Symbol && t.constructor === Symbol
           ? 'symbol'
-          : typeof e;
+          : typeof t;
       };
-      function be(e) {
-        var t = (function () {
+      function bt(t) {
+        var e = (function () {
           if ('undefined' === typeof Reflect || !Reflect.construct) return !1;
           if (Reflect.construct.sham) return !1;
           if ('function' === typeof Proxy) return !0;
@@ -2151,43 +2253,43 @@
               ),
               !0
             );
-          } catch (e) {
+          } catch (t) {
             return !1;
           }
         })();
         return function () {
           var n,
-            l = he(e);
-          if (t) {
-            var a = he(this).constructor;
+            l = ht(t);
+          if (e) {
+            var a = ht(this).constructor;
             n = Reflect.construct(l, arguments, a);
           } else n = l.apply(this, arguments);
-          return fe(this, n);
+          return ft(this, n);
         };
       }
-      var ve = (function (e) {
-          !(function (e, t) {
-            if ('function' !== typeof t && null !== t)
+      var vt = (function (t) {
+          !(function (t, e) {
+            if ('function' !== typeof e && null !== e)
               throw new TypeError(
                 'Super expression must either be null or a function',
               );
-            (e.prototype = Object.create(t && t.prototype, {
-              constructor: { value: e, writable: !0, configurable: !0 },
+            (t.prototype = Object.create(e && e.prototype, {
+              constructor: { value: t, writable: !0, configurable: !0 },
             })),
-              t && ge(e, t);
-          })(i, e);
-          var t,
+              e && gt(t, e);
+          })(r, t);
+          var e,
             n,
             a,
-            r = be(i);
-          function i(e) {
-            var t;
+            i = bt(r);
+          function r(t) {
+            var e;
             return (
-              (function (e, t) {
-                if (!(e instanceof t))
+              (function (t, e) {
+                if (!(t instanceof e))
                   throw new TypeError('Cannot call a class as a function');
-              })(this, i),
-              ((t = r.call(this, e)).state = {
+              })(this, r),
+              ((e = i.call(this, t)).state = {
                 availableInstruments: [],
                 availableTunings: [],
                 searchResults: void 0,
@@ -2200,61 +2302,61 @@
                 chords: [],
                 scales: [],
               }),
-              (t._selectInstrument = t._selectInstrument.bind(ue(t))),
-              (t._selectTuning = t._selectTuning.bind(ue(t))),
-              (t._search = t._search.bind(ue(t))),
-              (t._renderInstrument = t._renderInstrument.bind(ue(t))),
-              (t._selectNote = t._selectNote.bind(ue(t))),
-              (t._removeNote = t._removeNote.bind(ue(t))),
-              (t._selectChord = t._selectChord.bind(ue(t))),
-              (t._selectScale = t._selectScale.bind(ue(t))),
-              t
+              (e._selectInstrument = e._selectInstrument.bind(ut(e))),
+              (e._selectTuning = e._selectTuning.bind(ut(e))),
+              (e._search = e._search.bind(ut(e))),
+              (e._renderInstrument = e._renderInstrument.bind(ut(e))),
+              (e._selectNote = e._selectNote.bind(ut(e))),
+              (e._removeNote = e._removeNote.bind(ut(e))),
+              (e._selectChord = e._selectChord.bind(ut(e))),
+              (e._selectScale = e._selectScale.bind(ut(e))),
+              e
             );
           }
           return (
-            (t = i),
+            (e = r),
             (n = [
               {
                 key: 'componentDidMount',
                 value: function () {
-                  var e = this;
+                  var t = this;
                   z.Hauptstimme.getAvailableData()
-                    .then(function (t) {
-                      var n = t.chords,
-                        l = t.scales,
-                        a = t.instruments;
-                      e.setState({
+                    .then(function (e) {
+                      var n = e.chords,
+                        l = e.scales,
+                        a = e.instruments;
+                      t.setState({
                         chords: n,
                         scales: l,
-                        availableInstruments: a.filter(function (e) {
+                        availableInstruments: a.filter(function (t) {
                           return (
-                            e.type ===
+                            t.type ===
                               z.Constants.instrumentTypeConstant
                                 .FRETTED_INSTRUMENT ||
-                            e.type ===
+                            t.type ===
                               z.Constants.instrumentTypeConstant
                                 .KEYED_INSTRUMENT
                           );
                         }),
-                        selectedInstrument: a.find(function (e) {
-                          return 'Guitar' === e.name;
+                        selectedInstrument: a.find(function (t) {
+                          return 'Guitar' === t.name;
                         }),
-                        availableTunings: a.filter(function (e) {
+                        availableTunings: a.filter(function (t) {
                           return (
-                            e.type ===
+                            t.type ===
                             z.Constants.instrumentTypeConstant.ALTERNATE_TUNING
                           );
                         }),
                       });
                     })
                     .then(function () {
-                      var t = e.state,
-                        n = t.selectedInstrument,
-                        l = t.availableInstruments,
+                      var e = t.state,
+                        n = e.selectedInstrument,
+                        l = e.availableInstruments,
                         a = document.getElementById(
                           'instrument-' +
-                            l.findIndex(function (e) {
-                              return e.name === n.name;
+                            l.findIndex(function (t) {
+                              return t.name === n.name;
                             }),
                         );
                       document.getElementById(
@@ -2266,17 +2368,17 @@
               {
                 key: 'render',
                 value: function () {
-                  var e = this,
-                    t = this.state,
-                    n = t.availableInstruments,
-                    a = t.availableTunings,
-                    r = t.selectedInstrument,
-                    i = t.selectedTuning,
-                    o = t.rootNote,
-                    s = t.selectedNotes,
-                    c = t.searchResults,
-                    u = t.selectedChord,
-                    d = t.selectedScale;
+                  var t = this,
+                    e = this.state,
+                    n = e.availableInstruments,
+                    a = e.availableTunings,
+                    i = e.selectedInstrument,
+                    r = e.selectedTuning,
+                    o = e.rootNote,
+                    s = e.selectedNotes,
+                    c = e.searchResults,
+                    u = e.selectedChord,
+                    d = e.selectedScale;
                   return (0, l.jsxs)('section', {
                     id: 'hauptstimme-container',
                     className: 'col-sm-12',
@@ -2342,19 +2444,19 @@
                               (0, l.jsx)('div', {
                                 id: 'instrument-container',
                                 className: 'list-item-selector',
-                                children: n.map(function (t, n) {
-                                  var a = e;
+                                children: n.map(function (e, n) {
+                                  var a = t;
                                   return (0, l.jsx)(
                                     'a',
                                     {
                                       id: 'instrument-' + n,
-                                      className: O()('list-item', {
-                                        selected: t === r,
+                                      className: M()('list-item', {
+                                        selected: e === i,
                                       }),
-                                      onClick: function (e) {
-                                        return a._selectInstrument(e, t);
+                                      onClick: function (t) {
+                                        return a._selectInstrument(t, e);
                                       },
-                                      children: t.name,
+                                      children: e.name,
                                     },
                                     n,
                                   );
@@ -2368,18 +2470,18 @@
                               (0, l.jsx)('h4', { children: 'Guitar Tunings' }),
                               (0, l.jsx)('div', {
                                 className: 'list-item-selector',
-                                children: a.map(function (t, n) {
-                                  var a = e;
+                                children: a.map(function (e, n) {
+                                  var a = t;
                                   return (0, l.jsx)(
                                     'a',
                                     {
-                                      className: O()('list-item', {
-                                        selected: t === i,
+                                      className: M()('list-item', {
+                                        selected: e === r,
                                       }),
-                                      onClick: function (e) {
-                                        return a._selectTuning(e, t);
+                                      onClick: function (t) {
+                                        return a._selectTuning(t, e);
                                       },
-                                      children: t.name,
+                                      children: e.name,
                                     },
                                     n,
                                   );
@@ -2391,11 +2493,11 @@
                       }),
                       this._renderInstrument(),
                       (0, l.jsx)('button', {
-                        className: O()('button', {
+                        className: M()('button', {
                           disabled: isNaN(o) && s.length < 1,
                         }),
-                        onClick: function (t) {
-                          return e._search(t);
+                        onClick: function (e) {
+                          return t._search(e);
                         },
                         children: 'Search',
                       }),
@@ -2413,21 +2515,21 @@
                                     className: 'list-item-selector',
                                     children:
                                       c.chords.length > 0
-                                        ? c.chords.map(function (t, n) {
-                                            var a = e;
+                                        ? c.chords.map(function (e, n) {
+                                            var a = t;
                                             return (0, l.jsxs)(
                                               'a',
                                               {
-                                                className: O()('list-item', {
-                                                  selected: t === u,
+                                                className: M()('list-item', {
+                                                  selected: e === u,
                                                 }),
-                                                onClick: function (e) {
-                                                  return a._selectChord(e, t);
+                                                onClick: function (t) {
+                                                  return a._selectChord(t, e);
                                                 },
                                                 children: [
-                                                  t.name,
+                                                  e.name,
                                                   ' \u2013 ',
-                                                  t.description,
+                                                  e.description,
                                                 ],
                                               },
                                               n,
@@ -2452,21 +2554,21 @@
                                     className: 'list-item-selector',
                                     children:
                                       c.scales.length > 0
-                                        ? c.scales.map(function (t, n) {
-                                            var a = e;
+                                        ? c.scales.map(function (e, n) {
+                                            var a = t;
                                             return (0, l.jsxs)(
                                               'a',
                                               {
-                                                className: O()('list-item', {
-                                                  selected: t === d,
+                                                className: M()('list-item', {
+                                                  selected: e === d,
                                                 }),
-                                                onClick: function (e) {
-                                                  return a._selectScale(e, t);
+                                                onClick: function (t) {
+                                                  return a._selectScale(t, e);
                                                 },
                                                 children: [
-                                                  t.name,
+                                                  e.name,
                                                   ' \u2013 ',
-                                                  t.description,
+                                                  e.description,
                                                 ],
                                               },
                                               n,
@@ -2502,63 +2604,63 @@
               },
               {
                 key: '_selectInstrument',
-                value: function (e, t) {
-                  e.preventDefault();
+                value: function (t, e) {
+                  t.preventDefault();
                   var n = this.state.selectedInstrument;
-                  (n && n === t) ||
+                  (n && n === e) ||
                     this.setState({
-                      selectedInstrument: t,
+                      selectedInstrument: e,
                       selectedTuning: void 0,
                     });
                 },
               },
               {
                 key: '_selectTuning',
-                value: function (e, t) {
-                  e.preventDefault();
+                value: function (t, e) {
+                  t.preventDefault();
                   var n = this.state.selectedTuning;
-                  (n && n === t) ||
+                  (n && n === e) ||
                     this.setState({
-                      selectedTuning: t,
+                      selectedTuning: e,
                       selectedInstrument: void 0,
                     });
                 },
               },
               {
                 key: '_search',
-                value: function (e) {
-                  e.preventDefault();
-                  var t = this.state,
-                    n = t.rootNote,
-                    l = t.selectedNotes,
-                    a = t.chords,
-                    r = t.scales;
+                value: function (t) {
+                  t.preventDefault();
+                  var e = this.state,
+                    n = e.rootNote,
+                    l = e.selectedNotes,
+                    a = e.chords,
+                    i = e.scales;
                   if (!isNaN(n) || l.length > 0) {
-                    var i = this;
+                    var r = this;
                     p.event({ action: 'hauptstimmeSearchButtonClick' }),
                       z.Hauptstimme.search({
                         searchRequest: { rootNote: n, notes: l },
                         chords: a,
-                        scales: r,
-                      }).then(function (e) {
-                        i.setState({ searchResults: e });
+                        scales: i,
+                      }).then(function (t) {
+                        r.setState({ searchResults: t });
                       });
                   }
                 },
               },
               {
                 key: '_selectNote',
-                value: function (e) {
-                  var t = this.state,
-                    n = t.rootNote,
-                    l = t.selectedNotes;
-                  isNaN(n) || n !== e
-                    ? -1 !== l.indexOf(e)
-                      ? (-1 !== l.indexOf(e) && l.splice(l.indexOf(e), 1),
-                        isNaN(n) || (l = me(l).concat([n])),
-                        this.setState({ selectedNotes: l, rootNote: e }),
+                value: function (t) {
+                  var e = this.state,
+                    n = e.rootNote,
+                    l = e.selectedNotes;
+                  isNaN(n) || n !== t
+                    ? -1 !== l.indexOf(t)
+                      ? (-1 !== l.indexOf(t) && l.splice(l.indexOf(t), 1),
+                        isNaN(n) || (l = mt(l).concat([n])),
+                        this.setState({ selectedNotes: l, rootNote: t }),
                         this._resetSearchResults())
-                      : (this.setState({ selectedNotes: me(l).concat([e]) }),
+                      : (this.setState({ selectedNotes: mt(l).concat([t]) }),
                         this._resetSearchResults())
                     : (this.setState({ rootNote: void 0 }),
                       this._resetSearchResults());
@@ -2566,13 +2668,13 @@
               },
               {
                 key: '_removeNote',
-                value: function (e) {
-                  var t = this.state,
-                    n = t.rootNote,
-                    l = t.selectedNotes;
-                  isNaN(n) || n !== e
-                    ? -1 !== l.indexOf(e) &&
-                      (-1 !== l.indexOf(e) && l.splice(l.indexOf(e), 1),
+                value: function (t) {
+                  var e = this.state,
+                    n = e.rootNote,
+                    l = e.selectedNotes;
+                  isNaN(n) || n !== t
+                    ? -1 !== l.indexOf(t) &&
+                      (-1 !== l.indexOf(t) && l.splice(l.indexOf(t), 1),
                       this.setState({ selectedNotes: l }),
                       this._resetSearchResults())
                     : (this.setState({ rootNote: void 0 }),
@@ -2591,26 +2693,26 @@
               },
               {
                 key: '_selectChord',
-                value: function (e, t) {
-                  e.preventDefault();
+                value: function (t, e) {
+                  t.preventDefault();
                   var n = this.state.selectedChord;
-                  n && n === t
+                  n && n === e
                     ? this.setState({ selectedChord: void 0 })
                     : this.setState({
-                        selectedChord: t,
+                        selectedChord: e,
                         selectedScale: void 0,
                       });
                 },
               },
               {
                 key: '_selectScale',
-                value: function (e, t) {
-                  e.preventDefault();
+                value: function (t, e) {
+                  t.preventDefault();
                   var n = this.state.selectedScale;
-                  n && n === t
+                  n && n === e
                     ? this.setState({ selectedScale: void 0 })
                     : this.setState({
-                        selectedScale: t,
+                        selectedScale: e,
                         selectedChord: void 0,
                       });
                 },
@@ -2618,37 +2720,37 @@
               {
                 key: '_getResultNotes',
                 value: function () {
-                  var e = this.state,
-                    t = e.selectedChord,
-                    n = e.selectedScale;
-                  return t || n ? (t ? t.notes : n.notes) : [];
+                  var t = this.state,
+                    e = t.selectedChord,
+                    n = t.selectedScale;
+                  return e || n ? (e ? e.notes : n.notes) : [];
                 },
               },
               {
                 key: '_renderInstrument',
                 value: function () {
-                  var e = this.state,
-                    t = e.selectedInstrument,
-                    n = e.selectedTuning,
-                    a = e.selectedNotes,
-                    r = e.rootNote;
-                  if (t || n) {
-                    var i = t || n;
-                    return i.type ===
+                  var t = this.state,
+                    e = t.selectedInstrument,
+                    n = t.selectedTuning,
+                    a = t.selectedNotes,
+                    i = t.rootNote;
+                  if (e || n) {
+                    var r = e || n;
+                    return r.type ===
                       z.Constants.instrumentTypeConstant.KEYED_INSTRUMENT
-                      ? (0, l.jsx)(se, {
-                          instrument: i,
+                      ? (0, l.jsx)(st, {
+                          instrument: r,
                           selectedNotes: a,
                           resultNotes: this._getResultNotes(),
-                          rootNote: r,
+                          rootNote: i,
                           onClick: this._selectNote,
                           onContextMenu: this._removeNote,
                         })
-                      : (0, l.jsx)(ee, {
-                          instrument: i,
+                      : (0, l.jsx)(tt, {
+                          instrument: r,
                           selectedNotes: a,
                           resultNotes: this._getResultNotes(),
-                          rootNote: r,
+                          rootNote: i,
                           onClick: this._selectNote,
                           onContextMenu: this._removeNote,
                         });
@@ -2656,67 +2758,67 @@
                   return null;
                 },
               },
-            ]) && de(t.prototype, n),
-            a && de(t, a),
-            i
+            ]) && dt(e.prototype, n),
+            a && dt(e, a),
+            r
           );
         })(a.PureComponent),
-        ye = n(664);
-      function Se(e) {
-        if (void 0 === e)
+        yt = n(664);
+      function St(t) {
+        if (void 0 === t)
           throw new ReferenceError(
             "this hasn't been initialised - super() hasn't been called",
           );
-        return e;
+        return t;
       }
-      function je(e, t) {
-        for (var n = 0; n < t.length; n++) {
-          var l = t[n];
+      function kt(t, e) {
+        for (var n = 0; n < e.length; n++) {
+          var l = e[n];
           (l.enumerable = l.enumerable || !1),
             (l.configurable = !0),
             'value' in l && (l.writable = !0),
-            Object.defineProperty(e, l.key, l);
+            Object.defineProperty(t, l.key, l);
         }
       }
-      function ke(e, t, n) {
+      function jt(t, e, n) {
         return (
-          t in e
-            ? Object.defineProperty(e, t, {
+          e in t
+            ? Object.defineProperty(t, e, {
                 value: n,
                 enumerable: !0,
                 configurable: !0,
                 writable: !0,
               })
-            : (e[t] = n),
-          e
+            : (t[e] = n),
+          t
         );
       }
-      function xe(e) {
-        return (xe = Object.setPrototypeOf
+      function xt(t) {
+        return (xt = Object.setPrototypeOf
           ? Object.getPrototypeOf
-          : function (e) {
-              return e.__proto__ || Object.getPrototypeOf(e);
-            })(e);
+          : function (t) {
+              return t.__proto__ || Object.getPrototypeOf(t);
+            })(t);
       }
-      function we(e, t) {
-        return !t || ('object' !== _e(t) && 'function' !== typeof t)
-          ? Se(e)
-          : t;
+      function wt(t, e) {
+        return !e || ('object' !== Ct(e) && 'function' !== typeof e)
+          ? St(t)
+          : e;
       }
-      function Ne(e, t) {
-        return (Ne =
+      function Nt(t, e) {
+        return (Nt =
           Object.setPrototypeOf ||
-          function (e, t) {
-            return (e.__proto__ = t), e;
-          })(e, t);
+          function (t, e) {
+            return (t.__proto__ = e), t;
+          })(t, e);
       }
-      var _e = function (e) {
-        return e && 'undefined' !== typeof Symbol && e.constructor === Symbol
+      var Ct = function (t) {
+        return t && 'undefined' !== typeof Symbol && t.constructor === Symbol
           ? 'symbol'
-          : typeof e;
+          : typeof t;
       };
-      function Ce(e) {
-        var t = (function () {
+      function _t(t) {
+        var e = (function () {
           if ('undefined' === typeof Reflect || !Reflect.construct) return !1;
           if (Reflect.construct.sham) return !1;
           if ('function' === typeof Proxy) return !0;
@@ -2727,80 +2829,80 @@
               ),
               !0
             );
-          } catch (e) {
+          } catch (t) {
             return !1;
           }
         })();
         return function () {
           var n,
-            l = xe(e);
-          if (t) {
-            var a = xe(this).constructor;
+            l = xt(t);
+          if (e) {
+            var a = xt(this).constructor;
             n = Reflect.construct(l, arguments, a);
           } else n = l.apply(this, arguments);
-          return we(this, n);
+          return wt(this, n);
         };
       }
-      var Ie = (function (e) {
-        !(function (e, t) {
-          if ('function' !== typeof t && null !== t)
+      var It = (function (t) {
+        !(function (t, e) {
+          if ('function' !== typeof e && null !== e)
             throw new TypeError(
               'Super expression must either be null or a function',
             );
-          (e.prototype = Object.create(t && t.prototype, {
-            constructor: { value: e, writable: !0, configurable: !0 },
+          (t.prototype = Object.create(e && e.prototype, {
+            constructor: { value: t, writable: !0, configurable: !0 },
           })),
-            t && Ne(e, t);
-        })(o, e);
-        var t,
+            e && Nt(t, e);
+        })(o, t);
+        var e,
           n,
-          r,
-          i = Ce(o);
-        function o(e) {
-          var t;
+          i,
+          r = _t(o);
+        function o(t) {
+          var e;
           return (
-            (function (e, t) {
-              if (!(e instanceof t))
+            (function (t, e) {
+              if (!(t instanceof e))
                 throw new TypeError('Cannot call a class as a function');
             })(this, o),
-            ke(Se((t = i.call(this, e))), 'smallBubbleType', 'small-bubble'),
-            ke(Se(t), 'mediumBubbleType', 'medium-bubble'),
-            ke(Se(t), 'largeBubbleType', 'large-bubble'),
-            ke(Se(t), 'createBubbles', function (e, n) {
+            jt(St((e = r.call(this, t))), 'smallBubbleType', 'small-bubble'),
+            jt(St(e), 'mediumBubbleType', 'medium-bubble'),
+            jt(St(e), 'largeBubbleType', 'large-bubble'),
+            jt(St(e), 'createBubbles', function (t, n) {
               for (
                 var a = [],
-                  r = t.state,
-                  i = r.containerWidth,
-                  o = r.containerHeight,
+                  i = e.state,
+                  r = i.containerWidth,
+                  o = i.containerHeight,
                   s = 0;
-                s < e;
+                s < t;
                 s += 1
               ) {
                 var c = void 0;
                 switch (n) {
-                  case t.smallBubbleType:
+                  case e.smallBubbleType:
                     c = S.getRandomIntInclusive(5, 25);
                     break;
-                  case t.mediumBubbleType:
+                  case e.mediumBubbleType:
                     c = S.getRandomIntInclusive(25, 50);
                     break;
-                  case t.largeBubbleType:
+                  case e.largeBubbleType:
                     c = S.getRandomIntInclusive(50, 125);
                 }
-                var u = i / 5,
-                  d = S.getRandomIntInclusive(u, i - u),
+                var u = r / 5,
+                  d = S.getRandomIntInclusive(u, r - u),
                   h = [o, 0 - c],
-                  f = S.getRandomIntInclusive(i / 6, i / 3) / 2,
+                  f = S.getRandomIntInclusive(r / 6, r / 3) / 2,
                   g = [d - f, d + f],
                   m = 0.3 * Math.round(s / S.getRandomIntInclusive(1, 4)),
                   p = S.getRandomIntInclusive(3, 5),
                   b = S.getRandomIntInclusive(9, 11);
                 a.push(
                   (0, l.jsx)(
-                    ye.E.div,
+                    yt.E.div,
                     {
                       id: ''.concat(n, '-').concat(a.length),
-                      className: O()(n, 'bubble'),
+                      className: M()(n, 'bubble'),
                       style: {
                         width: ''.concat(c, 'px'),
                         height: ''.concat(c, 'px'),
@@ -2823,25 +2925,25 @@
               }
               return a;
             }),
-            ke(Se(t), 'startBubbles', function () {
-              var e = t.state,
-                n = e.smallBubbleCount,
-                l = e.mediumBubbleCount,
-                a = e.largeBubbleCount;
+            jt(St(e), 'startBubbles', function () {
+              var t = e.state,
+                n = t.smallBubbleCount,
+                l = t.mediumBubbleCount,
+                a = t.largeBubbleCount;
               p.event({ action: 'bubblesStartButtonClick' }),
-                t.setState({
+                e.setState({
                   bubblesCreated: !0,
                   bubblesMoving: !0,
-                  smallBubbleList: t.createBubbles(n, t.smallBubbleType),
-                  mediumBubbleList: t.createBubbles(l, t.mediumBubbleType),
-                  largeBubbleList: t.createBubbles(a, t.largeBubbleType),
+                  smallBubbleList: e.createBubbles(n, e.smallBubbleType),
+                  mediumBubbleList: e.createBubbles(l, e.mediumBubbleType),
+                  largeBubbleList: e.createBubbles(a, e.largeBubbleType),
                 });
             }),
-            ke(Se(t), 'clearBubbles', function () {
+            jt(St(e), 'clearBubbles', function () {
               p.event({ action: 'bubblesStopButtonClick' }),
-                t.setState({ bubblesCreated: !1 }),
+                e.setState({ bubblesCreated: !1 }),
                 setTimeout(function () {
-                  t.setState({
+                  e.setState({
                     bubblesMoving: !1,
                     smallBubbleList: [],
                     mediumBubbleList: [],
@@ -2849,7 +2951,7 @@
                   });
                 }, 300);
             }),
-            (t.state = {
+            (e.state = {
               bubblesCreated: !1,
               bubblesMoving: !1,
               smallBubbleList: [],
@@ -2861,12 +2963,12 @@
               containerWidth: 0,
               containerHeight: 0,
             }),
-            (t.bubbleContainerRef = a.createRef()),
-            t
+            (e.bubbleContainerRef = a.createRef()),
+            e
           );
         }
         return (
-          (t = o),
+          (e = o),
           (n = [
             {
               key: 'componentDidMount',
@@ -2880,12 +2982,12 @@
             {
               key: 'render',
               value: function () {
-                var e = this.state,
-                  t = e.bubblesCreated,
-                  n = e.smallBubbleList,
-                  a = e.mediumBubbleList,
-                  r = e.largeBubbleList,
-                  i = e.bubblesMoving;
+                var t = this.state,
+                  e = t.bubblesCreated,
+                  n = t.smallBubbleList,
+                  a = t.mediumBubbleList,
+                  i = t.largeBubbleList,
+                  r = t.bubblesMoving;
                 return (0, l.jsxs)('section', {
                   id: 'reading-list-container',
                   className: 'col-sm-12 portfolio-item',
@@ -2940,8 +3042,8 @@
                       ref: this.bubbleContainerRef,
                       children: (0, l.jsxs)('div', {
                         id: 'bubbles-inner-container',
-                        className: O()({ opaque: !t }),
-                        children: [n, a, r],
+                        className: M()({ opaque: !e }),
+                        children: [n, a, i],
                       }),
                     }),
                     (0, l.jsxs)('div', {
@@ -2951,7 +3053,7 @@
                           className: 'col-sm-6',
                           children: (0, l.jsx)('button', {
                             onClick: this.startBubbles,
-                            className: O()('button', { disabled: t || i }),
+                            className: M()('button', { disabled: e || r }),
                             children: 'Start Bubbles',
                           }),
                         }),
@@ -2959,7 +3061,7 @@
                           className: 'col-sm-6',
                           children: (0, l.jsx)('button', {
                             onClick: this.clearBubbles,
-                            className: O()('button', { disabled: !t }),
+                            className: M()('button', { disabled: !e }),
                             children: 'Stop Bubbles',
                           }),
                         }),
@@ -2973,12 +3075,12 @@
                 });
               },
             },
-          ]) && je(t.prototype, n),
-          r && je(t, r),
+          ]) && kt(e.prototype, n),
+          i && kt(e, i),
           o
         );
       })(a.PureComponent);
-      function Be() {
+      function At() {
         return (0, l.jsxs)('div', {
           id: 'portfolio-container',
           className: 'grid-container row',
@@ -2995,60 +3097,60 @@
               id: 'portfolio-body',
               className: 'col-sm-12 row',
               children: [
-                (0, l.jsx)(ve, {}),
+                (0, l.jsx)(vt, {}),
                 (0, l.jsx)(K, {}),
-                (0, l.jsx)(Ie, {}),
-                (0, l.jsx)(T, {}),
+                (0, l.jsx)(It, {}),
+                (0, l.jsx)(U, {}),
               ],
             }),
           ],
         });
       }
-      function Ae(e, t) {
-        if (!(e instanceof t))
+      function Bt(t, e) {
+        if (!(t instanceof e))
           throw new TypeError('Cannot call a class as a function');
       }
-      function Pe(e, t) {
-        for (var n = 0; n < t.length; n++) {
-          var l = t[n];
+      function Pt(t, e) {
+        for (var n = 0; n < e.length; n++) {
+          var l = e[n];
           (l.enumerable = l.enumerable || !1),
             (l.configurable = !0),
             'value' in l && (l.writable = !0),
-            Object.defineProperty(e, l.key, l);
+            Object.defineProperty(t, l.key, l);
         }
       }
-      function Te(e) {
-        return (Te = Object.setPrototypeOf
+      function Ut(t) {
+        return (Ut = Object.setPrototypeOf
           ? Object.getPrototypeOf
-          : function (e) {
-              return e.__proto__ || Object.getPrototypeOf(e);
-            })(e);
+          : function (t) {
+              return t.__proto__ || Object.getPrototypeOf(t);
+            })(t);
       }
-      function Me(e, t) {
-        return !t || ('object' !== Re(t) && 'function' !== typeof t)
-          ? (function (e) {
-              if (void 0 === e)
+      function Tt(t, e) {
+        return !e || ('object' !== Ot(e) && 'function' !== typeof e)
+          ? (function (t) {
+              if (void 0 === t)
                 throw new ReferenceError(
                   "this hasn't been initialised - super() hasn't been called",
                 );
-              return e;
-            })(e)
-          : t;
+              return t;
+            })(t)
+          : e;
       }
-      function Oe(e, t) {
-        return (Oe =
+      function Mt(t, e) {
+        return (Mt =
           Object.setPrototypeOf ||
-          function (e, t) {
-            return (e.__proto__ = t), e;
-          })(e, t);
+          function (t, e) {
+            return (t.__proto__ = e), t;
+          })(t, e);
       }
-      var Re = function (e) {
-        return e && 'undefined' !== typeof Symbol && e.constructor === Symbol
+      var Ot = function (t) {
+        return t && 'undefined' !== typeof Symbol && t.constructor === Symbol
           ? 'symbol'
-          : typeof e;
+          : typeof t;
       };
-      function Ue(e) {
-        var t = (function () {
+      function Rt(t) {
+        var e = (function () {
           if ('undefined' === typeof Reflect || !Reflect.construct) return !1;
           if (Reflect.construct.sham) return !1;
           if ('function' === typeof Proxy) return !0;
@@ -3059,67 +3161,67 @@
               ),
               !0
             );
-          } catch (e) {
+          } catch (t) {
             return !1;
           }
         })();
         return function () {
           var n,
-            l = Te(e);
-          if (t) {
-            var a = Te(this).constructor;
+            l = Ut(t);
+          if (e) {
+            var a = Ut(this).constructor;
             n = Reflect.construct(l, arguments, a);
           } else n = l.apply(this, arguments);
-          return Me(this, n);
+          return Tt(this, n);
         };
       }
-      var Ee = (function (e) {
-        !(function (e, t) {
-          if ('function' !== typeof t && null !== t)
+      var Et = (function (t) {
+        !(function (t, e) {
+          if ('function' !== typeof e && null !== e)
             throw new TypeError(
               'Super expression must either be null or a function',
             );
-          (e.prototype = Object.create(t && t.prototype, {
-            constructor: { value: e, writable: !0, configurable: !0 },
+          (t.prototype = Object.create(e && e.prototype, {
+            constructor: { value: t, writable: !0, configurable: !0 },
           })),
-            t && Oe(e, t);
-        })(o, e);
-        var t,
+            e && Mt(t, e);
+        })(o, t);
+        var e,
           n,
           a,
-          i = Ue(o);
+          r = Rt(o);
         function o() {
-          return Ae(this, o), i.apply(this, arguments);
+          return Bt(this, o), r.apply(this, arguments);
         }
         return (
-          (t = o),
+          (e = o),
           (n = [
             {
               key: 'render',
               value: function () {
                 return (0, l.jsxs)(l.Fragment, {
                   children: [
-                    (0, l.jsx)(r, {}),
+                    (0, l.jsx)(i, {}),
                     (0, l.jsx)(v, {}),
-                    (0, l.jsx)(A, {}),
-                    (0, l.jsx)(Be, {}),
+                    (0, l.jsx)(B, {}),
+                    (0, l.jsx)(At, {}),
                   ],
                 });
               },
             },
-          ]) && Pe(t.prototype, n),
-          a && Pe(t, a),
+          ]) && Pt(e.prototype, n),
+          a && Pt(e, a),
           o
         );
       })(a.Component);
     },
   },
-  function (e) {
-    e.O(0, [774, 657, 888, 179], function () {
-      return (t = 8581), e((e.s = t));
-      var t;
+  function (t) {
+    t.O(0, [774, 657, 888, 179], function () {
+      return (e = 8581), t((t.s = e));
+      var e;
     });
-    var t = e.O();
-    _N_E = t;
+    var e = t.O();
+    _N_E = e;
   },
 ]);
