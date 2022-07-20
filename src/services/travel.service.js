@@ -1860,6 +1860,11 @@ export default class TravelService {
       lat: 40.9581,
       lng: -112.2146,
     },
+    {
+      title: 'Dead Horse Point State Park, Utah, USA',
+      lat: 38.4748,
+      lng: -109.7406,
+    },
     /**
      * south america
      */
