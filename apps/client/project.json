@@ -15,9 +15,6 @@
         "development": {
           "outputPath": "dist/apps/dev/client"
         },
-        "staging": {
-          "outputPath": "dist/apps/staging/client"
-        },
         "production": {}
       }
     },
@@ -33,9 +30,6 @@
         "development": {
           "buildTarget": "client:build:development"
         },
-        "staging": {
-          "buildTarget": "client:build:staging"
-        },
         "production": {
           "buildTarget": "client:build:production"
         }
@@ -47,9 +41,6 @@
         "buildTarget": "client:build:production"
       },
       "configurations": {
-        "staging": {
-          "buildTarget": "client:build:staging"
-        },
         "production": {}
       }
     },
