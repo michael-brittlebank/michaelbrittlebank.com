@@ -1,0 +1,26 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "rootDir": ".",
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "target": "es2017",
+    "module": "commonjs",
+    "lib": ["es2017", "dom"],
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "@mikestumpf/components": ["libs/components/src/index.ts"],
+      "@mikestumpf/data": ["libs/data/src/index.ts"],
+      "@mikestumpf/services": ["libs/services/src/index.ts"]
+    },
+    "resolveJsonModule": true,
+    "jsx": "react"
+  },
+  "exclude": ["node_modules", "tmp"]
+}
