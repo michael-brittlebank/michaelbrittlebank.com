@@ -6,14 +6,14 @@ import { ResumeEntry } from '@mikestumpf/types';
 
 const joinWithElement = (entries: (string | number)[]) =>
   entries.map((year, index) => (
-    <>
+    <span key={index}>
       {index !== 0 && <>&ndash;</>}
       {year}
-    </>
+    </span>
   ));
 
 const renderPrimaryResumeEntry = (resumeEntry: ResumeEntry) => (
-  <>
+  <div key={resumeEntry.title}>
     <h3>{resumeEntry.title}</h3>
     <h5>
       {joinWithElement(resumeEntry.years)} &mdash;{' '}
@@ -21,11 +21,11 @@ const renderPrimaryResumeEntry = (resumeEntry: ResumeEntry) => (
         {resumeEntry.location}
       </a>
     </h5>
-  </>
+  </div>
 );
 
 const renderSecondaryResumeEntry = (resumeEntry: ResumeEntry) => (
-  <h4>
+  <h4 key={resumeEntry.title}>
     {joinWithElement(resumeEntry.years)} &mdash;{' '}
     <a href={resumeEntry.url} target="_blank" rel="noreferrer">
       {resumeEntry.title}

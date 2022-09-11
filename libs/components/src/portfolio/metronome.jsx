@@ -57,7 +57,7 @@ export class Metronome extends PureComponent {
       navigator.serviceWorker
         .register('/files/metronome.worker.js')
         .then((resp) => {
-          this.myWorker = new Worker(resp.active.scriptURL);
+          this.myWorker = new Worker(resp?.active?.scriptURL);
           this.myWorker.onmessage = this._onMessage;
         })
         .catch((err) => {
@@ -69,7 +69,7 @@ export class Metronome extends PureComponent {
   }
 
   componentWillUnmount() {
-    this.myWorker.terminate();
+    this.myWorker?.terminate();
   }
 
   render() {

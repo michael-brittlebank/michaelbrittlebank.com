@@ -22,13 +22,13 @@
 First install dependencies:
 
 ```bash
-yarn install
+pnpm install --frozen-lockfile
 ```
 
 Then run the development server:
 
 ```bash
-yarn dev
+pnpm dev
 ```
 
 ### Creating a new library
@@ -62,7 +62,7 @@ npm version patch
 to update the package.json and create a tag. Run
 
 ```
-yarn export
+pnpm export
 ```
 
 to build the code. Then be sure to push the tag and the code up to the remote where it can be merged into the master
