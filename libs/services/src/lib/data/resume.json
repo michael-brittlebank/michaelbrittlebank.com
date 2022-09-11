@@ -1,0 +1,83 @@
+{
+  "work": [
+    {
+      "title": "Technical Solutions Delivery Manager",
+      "years": [2020, "Present"],
+      "url": "https://www.amfam.com/",
+      "location": "American Family Insurance. Madison, WI, USA"
+    },
+    {
+      "title": "Senior Software Developer",
+      "years": [2019, 2020],
+      "url": "https://www.farmandfleet.com/",
+      "location": "Blain Supply. Janesville, WI, USA"
+    },
+    {
+      "title": "Senior Front-End Software Developer",
+      "years": [2018, 2019],
+      "url": "https://www.propellerhealth.com/",
+      "location": " Propeller Health. Madison, WI, USA"
+    },
+    {
+      "title": "Senior Web Developer",
+      "years": [2017, 2018],
+      "url": "https://www.recommenderx.com/",
+      "location": "RecommenderX. Dublin, Ireland"
+    },
+    {
+      "title": "Lead Web Developer",
+      "years": [2013, 2017],
+      "url": "https://ollon.ca/",
+      "location": "Ellefson Technology. Toronto, Canada"
+    },
+    {
+      "title": "Project Manager & Web Developer (Contract)",
+      "years": [2012, 2013],
+      "url": "https://www.utoronto.ca/",
+      "location": "University of Toronto, Toronto, Canada"
+    },
+    {
+      "title": "Database Engineer (Contract)",
+      "years": [2012],
+      "url": "https://www.purdue.edu/",
+      "location": "Purdue University, West Lafayette, USA"
+    }
+  ],
+  "education": [
+    {
+      "title": "Higher Diploma in Science, Computing",
+      "years": [2017],
+      "url": "https://www.tudublin.ie/",
+      "location": "Technical University Dublin. Dublin, Ireland"
+    },
+    {
+      "title": "MA, Renaissance Literature 1500-1700",
+      "years": [2013],
+      "url": "https://www.york.ac.uk/",
+      "location": "University of York. York, England"
+    },
+    {
+      "title": "BS, English Language & Literature",
+      "years": [2011],
+      "url": "https://www.wisc.edu/",
+      "location": "University of Wisconsin-Madison. Madison, USA"
+    }
+  ],
+  "certificates": [
+    {
+      "title": "Google Cloud Certified – Associate Cloud Engineer",
+      "years": [2022],
+      "url": "https://www.credential.net/cb532277-9544-4ef9-b757-6f129467351c"
+    },
+    {
+      "title": "Leading SAFe, Certified SAFe 5 Agilist",
+      "years": [2021],
+      "url": "https://www.credly.com/badges/08765e92-c2fd-4eed-a08c-738cd59835e9"
+    },
+    {
+      "title": "AWS Certified Developer – Associate",
+      "years": [2020],
+      "url": "https://www.credly.com/badges/1453a04d-da48-4d94-a3d0-1c642d144fee"
+    }
+  ]
+}

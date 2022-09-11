@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-import { Hauptstimme as HauptstimmeJs, Constants } from 'hauptstimme-js';
+import { Constants, Hauptstimme as HauptstimmeJs } from 'hauptstimme-js';
 import classNames from 'classnames';
 import { FrettedInstrument } from './fretted-instrument';
 import { KeyedInstrument } from './keyed-instrument';
@@ -87,7 +87,7 @@ export class Hauptstimme extends PureComponent {
         <h2 id="hauptstimme-title" className="section-header">
           Hauptstimme.js
         </h2>
-        <p>
+        <p className="section-description">
           This project is for searching musical scales and chords which match a
           selection of notes. It is registered as a{' '}
           <a
@@ -105,14 +105,14 @@ export class Hauptstimme extends PureComponent {
             TypeScript
           </a>
           .
-        </p>
-        <p>
+          <br />
+          <br />
           There are <strong>91</strong> instrument tunings available and{' '}
           <strong>26</strong> scale and <strong>51</strong> chord types which
           produce <strong>312</strong> and <strong>612</strong> searchable
           variations, respectively.
-        </p>
-        <p>
+          <br />
+          <br />
           When using the interface, left click on any instrument fret or key to
           select a note. Your selection will be indicated by a blue background
           around the note you chose. Clicking a second time designates this note
@@ -120,8 +120,8 @@ export class Hauptstimme extends PureComponent {
           on any selected note or root note to clear it. After you are finished
           selecting the combination of notes you want to search for, hit the
           search button.
-        </p>
-        <p>
+          <br />
+          <br />
           When the search has finished, the lists below the instrument will be
           populated with results that match the selected notes. Left click on
           any of these search results to apply it to the instrument above. Notes

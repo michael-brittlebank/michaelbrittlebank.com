@@ -1,12 +1,11 @@
-import { Map, InfoWindow, Marker, GoogleApiWrapper } from 'google-maps-react';
+import { GoogleApiWrapper, InfoWindow, Map, Marker } from 'google-maps-react';
 import { PureComponent } from 'react';
-import { TravelMarkers } from '@mikestumpf/data';
-import { UtilService } from '@mikestumpf/services';
+import { DataService, UtilService } from '@mikestumpf/services';
 
 class BaseLocationMap extends PureComponent {
   constructor(props) {
     super(props);
-    const travelMarkers = TravelMarkers.markers;
+    const travelMarkers = DataService.getTravelMarkers();
     const randomIndex = UtilService.getRandomIntInclusive(
       0,
       travelMarkers.length,

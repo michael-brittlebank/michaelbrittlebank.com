@@ -8,7 +8,7 @@ export function ReadingList() {
       <h2 id="reading-list-title" className="section-header">
         WP Reading List
       </h2>
-      <p>
+      <p className="section-description">
         This{' '}
         <a
           href="libs/components/src/portfolio/reading-list"

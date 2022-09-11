@@ -4,7 +4,7 @@
   "projects": {
     "client": "apps/client",
     "components": "libs/components",
-    "data": "libs/data",
-    "services": "libs/services"
+    "services": "libs/services",
+    "types": "libs/types"
   }
 }
