@@ -8,6 +8,7 @@
 
 ## Architecture
 
+- v.5.0 (2022) - [NX](https://nx.dev/) with [Next.js](https://nextjs.org/) and [TypeScript](https://www.typescriptlang.org/)
 - v.4.0 (2021) - [Next.js](https://nextjs.org/)
 - v.3.0 (2018) - [React](https://reactjs.org/) with [TypeScript](https://www.typescriptlang.org/)
 - v.2.0. (2016) - Extended v1 custom frontend framework to use [Foreman](https://www.npmjs.com/package/foreman) with a [WordPress](https://wordpress.com/) backend
