@@ -16,8 +16,8 @@
     "baseUrl": ".",
     "paths": {
       "@mikestumpf/components": ["libs/components/src/index.ts"],
-      "@mikestumpf/data": ["libs/data/src/index.ts"],
-      "@mikestumpf/services": ["libs/services/src/index.ts"]
+      "@mikestumpf/services": ["libs/services/src/index.ts"],
+      "@mikestumpf/types": ["libs/types/src/index.ts"]
     },
     "resolveJsonModule": true,
     "jsx": "react"

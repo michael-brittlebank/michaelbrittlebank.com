@@ -1,8 +1,42 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFileAlt } from '@fortawesome/free-solid-svg-icons';
 import { AnalyticsButton, SocialMedia, Spacer } from '../shared';
+import { DataService } from '@mikestumpf/services';
+import { ResumeEntry } from '@mikestumpf/types';
+
+const joinWithElement = (entries: (string | number)[]) =>
+  entries.map((year, index) => (
+    <>
+      {index !== 0 && <>&ndash;</>}
+      {year}
+    </>
+  ));
+
+const renderPrimaryResumeEntry = (resumeEntry: ResumeEntry) => (
+  <>
+    <h3>{resumeEntry.title}</h3>
+    <h5>
+      {joinWithElement(resumeEntry.years)} &mdash;{' '}
+      <a href={resumeEntry.url} target="_blank" rel="noreferrer">
+        {resumeEntry.location}
+      </a>
+    </h5>
+  </>
+);
+
+const renderSecondaryResumeEntry = (resumeEntry: ResumeEntry) => (
+  <h4>
+    {joinWithElement(resumeEntry.years)} &mdash;{' '}
+    <a href={resumeEntry.url} target="_blank" rel="noreferrer">
+      {resumeEntry.title}
+    </a>
+  </h4>
+);
 
 export function Resume() {
+  const workExperiences = DataService.getResumeExperience();
+  const education = DataService.getResumeEducation();
+  const certificates = DataService.getResumeCertificates();
   return (
     <div id="resume-container">
       <div className="grid-container row">
@@ -13,9 +47,9 @@ export function Resume() {
         </div>
         <section id="resume-body" className="col-sm-12 row">
           <section className="col-sm-12">
-            <h2 className="section-header">Software Engineer</h2>
+            <h2 className="section-header">Technological Leader</h2>
             <p>
-              Respected leader skilled in guiding remote/hybrid
+              Respected technological leader skilled in guiding remote/hybrid
               cross-disciplinary teams. Lifelong mentor and teacher committed to
               raising others up holistically. Thoroughly invested in a
               continuous learning mindset focusing on business and technology,
@@ -40,137 +74,13 @@ export function Resume() {
           </section>
           <section className="col-sm-12 col-md-6">
             <h2 className="section-header">Experience</h2>
-            <h3>Technical Solutions Delivery Manager</h3>
-            <h5>
-              2020&ndash;Present &mdash;{' '}
-              <a
-                href="libs/components/src/sections/resume"
-                target="_blank"
-                rel="noreferrer">
-                American Family Insurance. Madison, WI, USA
-              </a>
-            </h5>
-            <h3>Senior Software Developer</h3>
-            <h5>
-              2019&ndash;2020 &mdash;{' '}
-              <a
-                href="libs/components/src/sections/resume"
-                target="_blank"
-                rel="noreferrer">
-                Blain Supply. Janesville, WI, USA
-              </a>
-            </h5>
-            <h3>Senior Front-End Software Developer</h3>
-            <h5>
-              2018&ndash;2019 &mdash;{' '}
-              <a
-                href="libs/components/src/sections/resume"
-                target="_blank"
-                rel="noreferrer">
-                Propeller Health. Madison, WI, USA
-              </a>
-            </h5>
-            <h3>Senior Web Developer</h3>
-            <h5>
-              2017&ndash;2018 &mdash;{' '}
-              <a
-                href="libs/components/src/sections/resume"
-                target="_blank"
-                rel="noreferrer">
-                RecommenderX. Dublin, Ireland
-              </a>
-            </h5>
-            <h3>Lead Web Developer</h3>
-            <h5>
-              2013&ndash;2017 &mdash;{' '}
-              <a
-                href="libs/components/src/sections/resume"
-                target="_blank"
-                rel="noreferrer">
-                Ellefson Technology. Toronto, Canada
-              </a>
-            </h5>
-            <h3>Project Manager & Web Developer (Contract)</h3>
-            <h5>
-              2012&ndash;2013 &mdash;{' '}
-              <a
-                href="libs/components/src/sections/resume"
-                target="_blank"
-                rel="noreferrer">
-                University of Toronto, Toronto, Canada
-              </a>
-            </h5>
-            <h3>Database Engineer (Contract)</h3>
-            <h5>
-              2012 &mdash;{' '}
-              <a
-                href="libs/components/src/sections/resume"
-                target="_blank"
-                rel="noreferrer">
-                Purdue University, West Lafayette, USA
-              </a>
-            </h5>
+            {workExperiences.map(renderPrimaryResumeEntry)}
           </section>
           <section className="col-sm-12 col-md-6">
             <h2 className="section-header">Education</h2>
-            <h3>Higher Diploma in Science, Computing</h3>
-            <h5>
-              2017 &mdash;{' '}
-              <a
-                href="libs/components/src/sections/resume"
-                target="_blank"
-                rel="noreferrer">
-                Technical University Dublin. Dublin, Ireland
-              </a>
-            </h5>
-            <h3>MA, Renaissance Literature 1500-1700</h3>
-            <h5>
-              2013 &mdash;{' '}
-              <a
-                href="libs/components/src/sections/resume"
-                target="_blank"
-                rel="noreferrer">
-                University of York. York, England
-              </a>
-            </h5>
-            <h3>BS, English Language & Literature</h3>
-            <h5>
-              2011 &mdash;{' '}
-              <a
-                href="libs/components/src/sections/resume"
-                target="_blank"
-                rel="noreferrer">
-                University of Wisconsin-Madison. Madison, USA
-              </a>
-            </h5>
+            {education.map(renderPrimaryResumeEntry)}
             <h2 className="section-header">Certifications</h2>
-            <h4>
-              2022 &mdash;{' '}
-              <a
-                href="https://www.credential.net/cb532277-9544-4ef9-b757-6f129467351c"
-                target="_blank"
-                rel="noreferrer">
-                Google Cloud Certified – Associate Cloud Engineer
-              </a>
-            </h4>
-            <h4>
-              2021 &mdash;{' '}
-              <a
-                href="https://www.credly.com/badges/08765e92-c2fd-4eed-a08c-738cd59835e9"
-                target="_blank"
-                rel="noreferrer">
-                Leading SAFe, Certified SAFe 5 Agilist
-              </a>
-            </h4>
-            <h4>
-              2020 &mdash;{' '}
-              <a
-                href="https://www.credly.com/badges/1453a04d-da48-4d94-a3d0-1c642d144fee"
-                target="_blank"
-                rel="noreferrer">
-                AWS Certified Developer – Associate
-              </a>
-            </h4>
+            {certificates.map(renderSecondaryResumeEntry)}
             <div id="resume-social-icons">
               <h3 id="resume-social-title">Find Me:</h3>
               <SocialMedia />

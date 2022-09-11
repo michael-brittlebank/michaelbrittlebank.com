@@ -11,7 +11,7 @@ export function Travel() {
           </h1>
         </div>
       </div>
-      <div className="full-screen-grid-container row">
+      <div id="travel-quote-container" className="grid-container row">
         <div id="travel-quote">
           <p>
             {String.fromCharCode(8220)}Go n-éirí an bóthar leat.

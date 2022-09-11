@@ -7,8 +7,15 @@
 #travel-quote {
   margin: 5px auto;
   text-align: center;
+
   p {
     font-family: $global-font-raleway;
+  }
+}
+
+@include mobile() {
+  #travel-quote-container {
+    padding: 0;
   }
 }
 

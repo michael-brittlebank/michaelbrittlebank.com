@@ -1,7 +1,7 @@
 import React, { PureComponent, ReactNode } from 'react';
 import { motion } from 'framer-motion';
 import classNames from 'classnames';
-import { UtilService, AnalyticsService } from '@mikestumpf/services';
+import { AnalyticsService, UtilService } from '@mikestumpf/services';
 import { AnalyticsButton } from '../shared';
 
 type BubbleType = 'small-bubble' | 'medium-bubble' | 'large-bubble';
@@ -159,7 +159,7 @@ export class Bubbles extends PureComponent<unknown, State> {
         <h2 id="reading-list-title" className="section-header">
           Bubbles
         </h2>
-        <p>
+        <p className="section-description">
           This animation is derived from an exhibit created for the{' '}
           <a
             href="libs/components/src/portfolio/bubbles"

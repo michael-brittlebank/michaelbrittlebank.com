@@ -80,7 +80,7 @@ export class Metronome extends PureComponent {
         <h2 id="metronome-title" className="section-header">
           Metronome
         </h2>
-        <p>
+        <p className="section-description">
           This metronome (and the larger website) is built with{' '}
           <a
             href="libs/components/src/portfolio/metronome.jsx"
