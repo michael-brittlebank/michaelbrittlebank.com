@@ -5,7 +5,7 @@
   "scripts": {
     "prod": "nx build client && nx serve client --prod",
     "dev": "nx serve client",
-    "husky:setup": "husky install && npx husky add .husky/pre-commit \"yarn lint:staged && yarn tsc && npx pretty-quick --staged\"",
+    "husky:setup": "husky install && npx husky add .husky/pre-commit \"pnpm lint:staged && pnpm tsc && npx pretty-quick --staged\"",
     "tsc": "nx run-many --all --target=tsc",
     "lint:staged": "nx affected:lint --fix --parallel --uncommitted",
     "export": "nx export client"
