@@ -5,6 +5,7 @@
 /out-tsc
 tsconfig.tsbuildinfo
 dist/libs/
+dist/apps/dev/
 
 # dependencies
 node_modules
