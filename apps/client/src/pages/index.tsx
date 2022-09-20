@@ -4,7 +4,6 @@ import {
   Resume,
   Travel,
 } from '@mikestumpf/components';
-import classNames from 'classnames';
 import { useEffect, useState } from 'react';
 
 export default function Home() {
@@ -18,13 +17,12 @@ export default function Home() {
     <>
       <Frontispiece />
       <Resume />
-      <div
-        className={classNames({
-          opaque: !hasMounted,
-        })}>
-        <Travel />
-        <Portfolio />
-      </div>
+      {hasMounted && (
+        <>
+          <Travel />
+          <Portfolio />
+        </>
+      )}
     </>
   );
 }

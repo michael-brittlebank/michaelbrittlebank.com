@@ -8,7 +8,7 @@
 body {
   font-family: $global-font-proza-libre;
   color: $color-font-black;
-  background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1IiBoZWlnaHQ9IjUiPgo8cmVjdCB3aWR0aD0iNSIgaGVpZ2h0PSI1IiBmaWxsPSIjZmZmIj48L3JlY3Q+CjxyZWN0IHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9IiNjY2MiPjwvcmVjdD4KPC9zdmc+');
+  background: url('/images/background.svg');
 }
 
 h1,
@@ -26,6 +26,7 @@ input {
 
 p {
   margin: 0 0 10px 0;
+
   &.error {
     margin-top: 10px;
     color: red;
@@ -41,6 +42,7 @@ a {
   cursor: pointer;
   text-decoration: none;
   @include transition-with-defaults(color);
+
   &:hover {
     color: $color-anchor-hover;
   }
@@ -76,12 +78,14 @@ iframe {
   color: $color-white;
   font-family: $global-font-raleway-thin;
   @include unselectable;
+
   &:hover:not(.disabled) {
     border-radius: 50px;
     background-color: $color-white;
     box-shadow: 0 5px 15px 0 $color-box-shadow;
     color: $color-york-blue;
   }
+
   &.disabled,
   &.disabled span {
     opacity: 0.6;
@@ -103,6 +107,7 @@ iframe {
   border: 2px solid $color-jays-dark-blue;
   color: $color-white;
   @include unselectable;
+
   &:hover {
     background-color: $color-white;
     color: $color-font-black;
@@ -114,9 +119,11 @@ iframe {
   border: 2px inset #eeeeee;
   padding: 7px 5px;
   @include transition-with-defaults(border-color);
+
   &:focus {
     outline: none;
   }
+
   &.error {
     border-color: red;
   }
@@ -138,6 +145,7 @@ iframe {
   @include transition-raw(
     'background-color 300ms ease-out 0s,color 300ms ease-out 0s'
   );
+
   &.selected,
   &:hover {
     background-color: $color-york-green;
@@ -222,14 +230,17 @@ iframe {
   opacity: 0.01;
   z-index: 1;
 }
+
 .fade-enter-active {
   position: relative;
   opacity: 1;
 }
+
 .fade-exit {
   position: relative;
   opacity: 1;
 }
+
 .fade-exit-active {
   @include center-absolute;
   opacity: 0.01;
