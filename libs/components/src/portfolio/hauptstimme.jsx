@@ -47,7 +47,7 @@ export class Hauptstimme extends PureComponent {
                 Constants.instrumentTypeConstant.KEYED_INSTRUMENT,
           ),
           selectedInstrument: instruments.find(
-            (instrument) => instrument.name === 'Guitar',
+            (instrument) => instrument.name === 'Piano',
           ),
           availableTunings: instruments.filter(
             (instrument) =>

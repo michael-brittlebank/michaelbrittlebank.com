@@ -50,26 +50,29 @@ export function Resume() {
             <h2 className="section-header">Technological Leader</h2>
             <p>
               Respected technological leader skilled in guiding remote/hybrid
-              cross-disciplinary teams. Lifelong mentor and teacher committed to
-              raising others up holistically. Thoroughly invested in a
-              continuous learning mindset focusing on business and technology,
-              breadth and depth.
+              high performance teams across a range of disciplines. Lifelong
+              mentor and teacher committed to talent development and raising
+              others up holistically. Personally invested in a continuous
+              learning mindset focusing on business and technology, breadth and
+              depth.
             </p>
             <p>
-              Effective communicator who is able to plan for and coordinate
-              diverse deadlines while continuously managing expectations as well
-              as unexpected events. Agile evangelist incorporating the best of
-              Lean, SAFe, Six Sigma, and other frameworks to meet deliverables
-              despite dependencies and roadblocks. Doggedly focused on
-              delivering iterative, future-proof solutions which satisfy
-              stakeholders across the organization.
+              Effective communicator and project manager experienced in change
+              management and workforce planning who is able to influence,
+              promote, and implement transformative technologies and processes.
+              Agile evangelist incorporating the best of Scrum, Kanban, Lean,
+              SAFe, Six Sigma, and other frameworks to meet deliverables despite
+              dependencies and roadblocks. Doggedly focused on delivering
+              iterative, future-proof solutions which satisfy stakeholders
+              across the organization.
             </p>
             <p>
-              SOLID, DRY software engineer with a wide range of experience
-              building bespoke websites, RESTful APIs, cross-platform mobile
-              apps, and cloud DevOps solutions. Advocate for test-driven
-              development (TDD) and accustomed to context switching between a
-              variety of projects, languages, and frameworks.
+              SOLID, DRY solutions architect and software engineer with a wide
+              range of experience building bespoke websites, RESTful APIs,
+              cross-platform mobile apps, and cloud DevOps solutions. Advocate
+              for test-driven development (TDD) and accustomed to context
+              switching between a variety of projects, languages, and
+              frameworks.
             </p>
           </section>
           <section className="col-sm-12 col-md-6">
