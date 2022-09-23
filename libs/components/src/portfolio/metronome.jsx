@@ -2,6 +2,7 @@ import React, { PureComponent } from 'react';
 import classNames from 'classnames';
 import { AnalyticsButton } from '../shared';
 import { AnalyticsService } from '@mikestumpf/services';
+import { PortfolioQuote } from '../shared/portfolio-quote';
 
 export class Metronome extends PureComponent {
   myWorker;
@@ -76,114 +77,118 @@ export class Metronome extends PureComponent {
     const { currentBpm, bpmError, currentSubdivision, isMetronomeStarted } =
       this.state;
     return (
-      <section id="metronome-container" className="col-sm-12 portfolio-item">
+      <section id="metronome-container" className="col-sm-12">
         <h2 id="metronome-title" className="section-header">
           Metronome
         </h2>
         <p className="section-description">
-          This metronome (and the larger website) is built with{' '}
-          <a
-            href="libs/components/src/portfolio/metronome.jsx"
-            target="_blank"
-            rel="noreferrer">
-            React
-          </a>{' '}
-          and JavaScript and employs{' '}
-          <a
-            href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers"
-            target="_blank"
-            rel="noreferrer">
-            Web Workers
-          </a>{' '}
-          and a self-correcting timer. The range of recorded variance is &#177;2
-          milliseconds off of true time.
+          <PortfolioQuote>
+            This metronome (and the larger website) is built with{' '}
+            <a
+              href="libs/components/src/portfolio/metronome.jsx"
+              target="_blank"
+              rel="noreferrer">
+              React
+            </a>{' '}
+            and JavaScript and employs{' '}
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers"
+              target="_blank"
+              rel="noreferrer">
+              Web Workers
+            </a>{' '}
+            and a self-correcting timer. The range of recorded variance is
+            &#177;2 milliseconds off of true time.
+            <br />
+            <br />
+            To use the metronome, select your beats per minute using the input
+            box in the top left corner and your note subdivision using the
+            dropdown in the top right. Then press the "Start" button to begin
+            the count. Left click on any subdivision to mute the beat which is
+            indicated by a black icon. Left click again on the black icon to
+            unmute it and remove the black indicator.
+          </PortfolioQuote>
         </p>
-        <p>
-          To use the metronome, select your beats per minute using the input box
-          in the top left corner and your note subdivision using the dropdown in
-          the top right. Then press the "Start" button to begin the count. Left
-          click on any subdivision to mute the beat which is indicated by a
-          black icon. Left click again on the black icon to unmute it and remove
-          the black indicator.
-        </p>
-        <div className="row">
-          <div className="col-sm-12 col-md-6 metronome-controls-container">
-            <p>
-              <label htmlFor="metronome-bpm-input">Beats Per Minute</label>
-            </p>
-            <button
-              onTouchStart={() => {
-                this._handleLongPress(false);
-              }}
-              onTouchEnd={() => {
-                this._clearLongPressInterval(false);
-              }}
-              onMouseDown={() => {
-                this._handleLongPress(false);
-              }}
-              onMouseUp={() => {
-                this._clearLongPressInterval(false);
-              }}
-              onContextMenu={(e) => {
-                e.preventDefault();
-                return false;
-              }}
-              className="small-button">
-              -
-            </button>
-            <input
-              id="metronome-bpm-input"
-              type="number"
-              value={currentBpm || ''}
-              onChange={(e) => this._getBpmFromInput(e)}
-              max={this.maxValue}
-              min={this.minValue}
-              className={classNames('input', { error: bpmError })}
-            />
-            <button
-              onTouchStart={() => {
-                this._handleLongPress(true);
-              }}
-              onTouchEnd={() => {
-                this._clearLongPressInterval(true);
-              }}
-              onMouseDown={() => {
-                this._handleLongPress(true);
-              }}
-              onMouseUp={() => {
-                this._clearLongPressInterval(true);
-              }}
-              onContextMenu={(e) => {
-                e.preventDefault();
-                return false;
-              }}
-              className="small-button">
-              +
-            </button>
-            {bpmError ? (
-              <p className="error">Please enter a value between 40 and 220</p>
-            ) : null}
-          </div>
-          <div className="col-sm-12 col-md-6 metronome-controls-container">
-            <p>Subdivision</p>
-            <div className="list-item-selector row">
-              {this.availableSubdivisions.map((subdivision, index) => {
-                return (
-                  <a
-                    key={index}
-                    className={classNames('col-sm-6 list-item', {
-                      selected: subdivision.value === currentSubdivision,
-                    })}
-                    onClick={() => this._setSubdivision(subdivision)}>
-                    {subdivision.label}
-                  </a>
-                );
-              })}
+        <div className="border-frame">
+          <div className="row">
+            <div className="col-sm-12 col-md-6 metronome-controls-container">
+              <p>
+                <label htmlFor="metronome-bpm-input">Beats Per Minute</label>
+              </p>
+              <button
+                onTouchStart={() => {
+                  this._handleLongPress(false);
+                }}
+                onTouchEnd={() => {
+                  this._clearLongPressInterval(false);
+                }}
+                onMouseDown={() => {
+                  this._handleLongPress(false);
+                }}
+                onMouseUp={() => {
+                  this._clearLongPressInterval(false);
+                }}
+                onContextMenu={(e) => {
+                  e.preventDefault();
+                  return false;
+                }}
+                className="small-button">
+                -
+              </button>
+              <input
+                id="metronome-bpm-input"
+                type="number"
+                value={currentBpm || ''}
+                onChange={(e) => this._getBpmFromInput(e)}
+                max={this.maxValue}
+                min={this.minValue}
+                className={classNames('input', { error: bpmError })}
+              />
+              <button
+                onTouchStart={() => {
+                  this._handleLongPress(true);
+                }}
+                onTouchEnd={() => {
+                  this._clearLongPressInterval(true);
+                }}
+                onMouseDown={() => {
+                  this._handleLongPress(true);
+                }}
+                onMouseUp={() => {
+                  this._clearLongPressInterval(true);
+                }}
+                onContextMenu={(e) => {
+                  e.preventDefault();
+                  return false;
+                }}
+                className="small-button">
+                +
+              </button>
+              {bpmError ? (
+                <p className="error">Please enter a value between 40 and 220</p>
+              ) : null}
+            </div>
+            <div className="col-sm-12 col-md-6 metronome-controls-container">
+              <p>Subdivision</p>
+              <div className="list-item-selector row">
+                {this.availableSubdivisions.map((subdivision, index) => {
+                  return (
+                    <a
+                      key={index}
+                      className={classNames('col-sm-6 list-item', {
+                        selected: subdivision.value === currentSubdivision,
+                      })}
+                      onClick={() => this._setSubdivision(subdivision)}>
+                      {subdivision.label}
+                    </a>
+                  );
+                })}
+              </div>
             </div>
           </div>
-        </div>
-        <div id="metronome-indicators-container" className="row">
-          {this._getMetronomeIndicators()}
+          <div id="metronome-indicators-container" className="row">
+            {this._getMetronomeIndicators()}
+          </div>
         </div>
         <div className="row">
           <div className="col-sm-6">

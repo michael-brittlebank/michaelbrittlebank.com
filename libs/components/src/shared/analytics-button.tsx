@@ -22,7 +22,7 @@ export function AnalyticsButton(props: Props) {
     <button onClick={onButtonClick} className="button" type="button">
       {content || (
         <>
-          View Code&nbsp;&nbsp;&nbsp;
+          View The Code&nbsp;&nbsp;&nbsp;
           <FontAwesomeIcon icon={faGithub} className="fa" />
         </>
       )}

@@ -12,6 +12,7 @@ $desktop-size: 105px;
   border-radius: 50%;
   cursor: pointer;
   @include transition-with-defaults(box-shadow);
+
   &:hover {
     box-shadow: 0 5px 15px 0 $color-box-shadow;
   }
@@ -23,10 +24,12 @@ $desktop-size: 105px;
   width: $mobile-size;
   height: $mobile-size;
   @include transition-with-defaults(all);
+
   &.active {
     background-color: $color-badgers-red;
     animation: tick 0.5s;
   }
+
   &.silent {
     background-color: black;
   }
@@ -41,7 +44,7 @@ $desktop-size: 105px;
 
 .metronome-controls-container,
 #metronome-indicators-container {
-  margin: 25px auto 10px auto;
+  margin: 15px auto;
   text-align: center;
   position: relative;
 }
@@ -59,10 +62,6 @@ $desktop-size: 105px;
   .metronome-indicator {
     width: $tablet-size;
     height: $tablet-size;
-  }
-  .metronome-controls-container,
-  #metronome-indicators-container {
-    margin: 50px auto 10px auto;
   }
 }
 

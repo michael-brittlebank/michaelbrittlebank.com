@@ -141,6 +141,7 @@ iframe {
   padding: 10px;
   background-color: white;
   font-family: $global-font-raleway;
+  -webkit-appearance: none;
   @include unselectable;
   @include transition-raw(
     'background-color 300ms ease-out 0s,color 300ms ease-out 0s'
@@ -198,6 +199,10 @@ iframe {
 
 .no-border {
   border: none;
+}
+
+.border-frame {
+  border: 5px double #333333;
 }
 
 //typography

@@ -1,13 +1,19 @@
 @import '../base/mixins';
 @import '../base/media-queries';
+@import '../base/colours';
 
-#frontispiece-image-container {
+#frontispiece-image-logo-container {
   position: relative;
+  background-color: $color-york-blue;
 }
 
-#frontispiece-image {
-  width: 100%;
-  height: 100%;
+#frontispiece-image-container {
+  width: 25%;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  overflow: hidden;
+  margin: 5%;
+  @include transition-with-defaults(border-color);
 }
 
 #frontispiece-logo {
@@ -31,7 +37,7 @@
 }
 
 @include mobile {
-  #frontispiece-image-container {
+  #frontispiece-image-logo-container {
     padding: 0;
   }
 }
@@ -45,5 +51,9 @@
       font-size: $font-size;
       line-height: $font-size;
     }
+  }
+
+  #frontispiece-image-container {
+    border-width: 5px;
   }
 }
