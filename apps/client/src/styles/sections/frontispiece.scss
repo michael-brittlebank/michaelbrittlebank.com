@@ -10,9 +10,10 @@
 #frontispiece-image-container {
   width: 25%;
   border-radius: 50%;
-  border: 2px solid white;
+  border: 2px solid transparent;
   overflow: hidden;
   margin: 5%;
+  @include transition-with-defaults(border-color);
 }
 
 #frontispiece-logo {
