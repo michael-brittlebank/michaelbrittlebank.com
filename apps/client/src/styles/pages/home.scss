@@ -45,8 +45,10 @@
 
 //portfolio section
 //----------------------
-.portfolio-item {
-  margin-top: 60px;
+#portfolio-body {
+  > :not(:first-child) {
+    margin-top: 60px;
+  }
 }
 
 //desktop styles

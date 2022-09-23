@@ -2,6 +2,7 @@ import React, { PureComponent } from 'react';
 import classNames from 'classnames';
 import { AnalyticsButton } from '../shared';
 import { AnalyticsService } from '@mikestumpf/services';
+import { PortfolioQuote } from '../shared/portfolio-quote';
 
 export class Metronome extends PureComponent {
   myWorker;
@@ -76,35 +77,37 @@ export class Metronome extends PureComponent {
     const { currentBpm, bpmError, currentSubdivision, isMetronomeStarted } =
       this.state;
     return (
-      <section id="metronome-container" className="col-sm-12 portfolio-item">
+      <section id="metronome-container" className="col-sm-12">
         <h2 id="metronome-title" className="section-header">
           Metronome
         </h2>
         <p className="section-description">
-          This metronome (and the larger website) is built with{' '}
-          <a
-            href="libs/components/src/portfolio/metronome.jsx"
-            target="_blank"
-            rel="noreferrer">
-            React
-          </a>{' '}
-          and JavaScript and employs{' '}
-          <a
-            href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers"
-            target="_blank"
-            rel="noreferrer">
-            Web Workers
-          </a>{' '}
-          and a self-correcting timer. The range of recorded variance is &#177;2
-          milliseconds off of true time.
-        </p>
-        <p>
-          To use the metronome, select your beats per minute using the input box
-          in the top left corner and your note subdivision using the dropdown in
-          the top right. Then press the "Start" button to begin the count. Left
-          click on any subdivision to mute the beat which is indicated by a
-          black icon. Left click again on the black icon to unmute it and remove
-          the black indicator.
+          <PortfolioQuote>
+            This metronome (and the larger website) is built with{' '}
+            <a
+              href="libs/components/src/portfolio/metronome.jsx"
+              target="_blank"
+              rel="noreferrer">
+              React
+            </a>{' '}
+            and JavaScript and employs{' '}
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers"
+              target="_blank"
+              rel="noreferrer">
+              Web Workers
+            </a>{' '}
+            and a self-correcting timer. The range of recorded variance is
+            &#177;2 milliseconds off of true time.
+            <br />
+            <br />
+            To use the metronome, select your beats per minute using the input
+            box in the top left corner and your note subdivision using the
+            dropdown in the top right. Then press the "Start" button to begin
+            the count. Left click on any subdivision to mute the beat which is
+            indicated by a black icon. Left click again on the black icon to
+            unmute it and remove the black indicator.
+          </PortfolioQuote>
         </p>
         <div className="border-frame">
           <div className="row">

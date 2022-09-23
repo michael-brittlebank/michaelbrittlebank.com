@@ -1,10 +1,6 @@
-import {
-  Frontispiece,
-  Portfolio,
-  Resume,
-  Travel,
-} from '@mikestumpf/components';
+import { Frontispiece, Personal, Resume, Travel } from '@mikestumpf/components';
 import { useEffect, useState } from 'react';
+import profile from '../../public/images/profile.jpeg';
 
 export default function Home() {
   const [hasMounted, setHasMounted] = useState<boolean>(false);
@@ -15,12 +11,12 @@ export default function Home() {
 
   return (
     <>
-      <Frontispiece />
+      <Frontispiece photo={profile} />
       <Resume />
       {hasMounted && (
         <>
           <Travel />
-          <Portfolio />
+          <Personal />
         </>
       )}
     </>

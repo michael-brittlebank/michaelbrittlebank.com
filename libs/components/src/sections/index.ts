@@ -1,4 +1,4 @@
 export { Frontispiece } from './frontispiece';
-export { Portfolio } from './portfolio';
+export { Personal } from './personal';
 export { Resume } from './resume';
 export { Travel } from './travel';

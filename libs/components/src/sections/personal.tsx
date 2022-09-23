@@ -1,18 +1,18 @@
 import { Bubbles, Hauptstimme, Metronome, ReadingList } from '../portfolio';
 
-export function Portfolio() {
+export function Personal() {
   return (
-    <div id="portfolio-container" className="grid-container row">
+    <div id="personal-container" className="grid-container row">
       <div className="col-sm-12">
         <h1 id="portfolio-title" className="page-title">
-          Personal Projects
+          Personal
         </h1>
       </div>
       <section id="portfolio-body" className="col-sm-12 row">
+        <ReadingList />
         <Hauptstimme />
         <Metronome />
         <Bubbles />
-        <ReadingList />
       </section>
     </div>
   );

@@ -5,6 +5,7 @@ import { FrettedInstrument } from './fretted-instrument';
 import { KeyedInstrument } from './keyed-instrument';
 import { AnalyticsButton } from '../shared';
 import { AnalyticsService } from '@mikestumpf/services';
+import { PortfolioQuote } from '../shared/portfolio-quote';
 
 export class Hauptstimme extends PureComponent {
   constructor(props) {
@@ -85,49 +86,58 @@ export class Hauptstimme extends PureComponent {
     return (
       <section id="hauptstimme-container" className="col-sm-12">
         <h2 id="hauptstimme-title" className="section-header">
-          Hauptstimme.js
+          Music Theory
         </h2>
         <p className="section-description">
-          This project is for searching musical scales and chords which match a
-          selection of notes. It is registered as a{' '}
-          <a
-            href="http://npmjs.com/package/hauptstimme-js"
-            target="_blank"
-            rel="noreferrer">
-            npm package
-          </a>{' '}
-          and originally built with{' '}
-          <a
-            href="libs/components/src/portfolio/hauptstimme.jsx"
-            target="_blank"
-            rel="noreferrer">
-            {' '}
-            TypeScript
-          </a>
-          .
-          <br />
-          <br />
-          There are <strong>91</strong> instrument tunings available and{' '}
-          <strong>26</strong> scale and <strong>51</strong> chord types which
-          produce <strong>312</strong> and <strong>612</strong> searchable
-          variations, respectively.
-          <br />
-          <br />
-          When using the interface, left click on any instrument fret or key to
-          select a note. Your selection will be indicated by a blue background
-          around the note you chose. Clicking a second time designates this note
-          as the root note. This is illustrated by a red background. Right click
-          on any selected note or root note to clear it. After you are finished
-          selecting the combination of notes you want to search for, hit the
-          search button.
-          <br />
-          <br />
-          When the search has finished, the lists below the instrument will be
-          populated with results that match the selected notes. Left click on
-          any of these search results to apply it to the instrument above. Notes
-          that are in the search result you selected but are not a user selected
-          note will have a gold background. Click again on the same result to
-          clear it from the instrument.
+          <PortfolioQuote>
+            This project is for searching musical scales and chords which match
+            a selection of notes. It is registered as a{' '}
+            <a
+              href="http://npmjs.com/package/hauptstimme-js"
+              target="_blank"
+              rel="noreferrer">
+              npm package
+            </a>{' '}
+            and originally built with{' '}
+            <a
+              href="libs/components/src/portfolio/hauptstimme.jsx"
+              target="_blank"
+              rel="noreferrer">
+              {' '}
+              TypeScript
+            </a>
+            .
+            <br />
+            <br />
+            There are <strong>91</strong> instrument tunings available and{' '}
+            <strong>26</strong> scale and <strong>51</strong> chord types which
+            produce <strong>312</strong> and <strong>612</strong> searchable
+            variations, respectively.
+            <br />
+            <br />
+            When using the interface, left click on any instrument fret or key
+            to select a note. Your selection will be indicated by a blue
+            background around the note you chose. Clicking a second time
+            designates this note as the root note. This is illustrated by a red
+            background. Right click on any selected note or root note to clear
+            it. After you are finished selecting the combination of notes you
+            want to search for, hit the search button.
+            <br />
+            <br />
+            When the search has finished, the lists below the instrument will be
+            populated with results that match the selected notes. Left click on
+            any of these search results to apply it to the instrument above.
+            Notes that are in the search result you selected but are not a user
+            selected note will have a gold background. Click again on the same
+            result to clear it from the instrument.
+          </PortfolioQuote>
+        </p>
+        <p className="section-description">
+          I am a primarily self-taught musician and when I started learning
+          music theory I struggled to understand the relationship between notes
+          in scales and chords across various instruments. I created this
+          library to visually explore musical relationships in a more organised
+          manner.
         </p>
         <div className="col-sm-12 row">
           <div className="col-sm-12 col-md-6">

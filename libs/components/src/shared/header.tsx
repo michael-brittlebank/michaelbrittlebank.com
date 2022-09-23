@@ -1,22 +1,39 @@
 import React, { PureComponent } from 'react';
 import {
   Link as ScrollLink,
-  scrollSpy,
   scroller as scroll,
+  scrollSpy,
 } from 'react-scroll';
+
+type HashType =
+  | 'resume'
+  | 'travel'
+  | 'personal'
+  | 'haupstimme'
+  | 'reading-list'
+  | 'metronome';
+
+type ContainerType =
+  | 'frontispiece-container'
+  | 'resume-container'
+  | 'travel-container'
+  | 'personal-container'
+  | 'hauptstimme-container'
+  | 'reading-list-container'
+  | 'metronome-container';
 
 type HeaderLink = {
   label: string;
-  container: string;
+  container: ContainerType;
 };
 
 const headerOffset = -65;
 const scrollDuration = 750;
 
-const hashLinkMap: Record<string, string> = {
+const hashLinkMap: Record<HashType, ContainerType> = {
   resume: 'resume-container',
   travel: 'travel-container',
-  portfolio: 'portfolio-container',
+  personal: 'personal-container',
   haupstimme: 'hauptstimme-container',
   'reading-list': 'reading-list-container',
   metronome: 'metronome-container',
@@ -24,11 +41,11 @@ const hashLinkMap: Record<string, string> = {
 
 const headerLinkMap: HeaderLink[] = [
   {
-    label: 'Home',
+    label: 'Mike Stumpf',
     container: 'frontispiece-container',
   },
   {
-    label: 'Resume',
+    label: 'Professional',
     container: 'resume-container',
   },
   {
@@ -36,8 +53,8 @@ const headerLinkMap: HeaderLink[] = [
     container: 'travel-container',
   },
   {
-    label: 'Portfolio',
-    container: 'portfolio-container',
+    label: 'Personal',
+    container: 'personal-container',
   },
 ];
 
@@ -62,7 +79,7 @@ export class Header extends PureComponent {
       // get hash before setting timeout
       const hash = window.location.hash.substring(1);
       this.scrollTimeout = setTimeout(() => {
-        scroll.scrollTo(hashLinkMap[hash], {
+        scroll.scrollTo(hashLinkMap[hash as HashType], {
           smooth: true,
           offset: headerOffset,
           duration: scrollDuration,

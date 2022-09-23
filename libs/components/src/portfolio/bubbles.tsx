@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import classNames from 'classnames';
 import { AnalyticsService, UtilService } from '@mikestumpf/services';
 import { AnalyticsButton } from '../shared';
+import { PortfolioQuote } from '../shared/portfolio-quote';
 
 type BubbleType = 'small-bubble' | 'medium-bubble' | 'large-bubble';
 
@@ -155,40 +156,42 @@ export class Bubbles extends PureComponent<unknown, State> {
       bubblesMoving,
     } = this.state;
     return (
-      <section id="reading-list-container" className="col-sm-12 portfolio-item">
+      <section id="reading-list-container" className="col-sm-12">
         <h2 id="reading-list-title" className="section-header">
           Bubbles
         </h2>
         <p className="section-description">
-          This animation is derived from an exhibit created for the{' '}
-          <a
-            href="libs/components/src/portfolio/bubbles"
-            target="_blank"
-            rel="noreferrer">
-            Ontario Science Centre
-          </a>{' '}
-          implementing{' '}
-          <a
-            href="libs/components/src/portfolio/bubbles"
-            target="_blank"
-            rel="noreferrer">
-            AprilAge's
-          </a>{' '}
-          face aging kiosk. Originally built in{' '}
-          <a
-            href="libs/components/src/portfolio/bubbles"
-            target="_blank"
-            rel="noreferrer">
-            Velocity.js
-          </a>{' '}
-          and ported over to{' '}
-          <a
-            href="libs/components/src/portfolio/bubbles"
-            target="_blank"
-            rel="noreferrer">
-            Framer Motion
-          </a>
-          .
+          <PortfolioQuote>
+            This animation is derived from an exhibit created for the{' '}
+            <a
+              href="libs/components/src/portfolio/bubbles"
+              target="_blank"
+              rel="noreferrer">
+              Ontario Science Centre
+            </a>{' '}
+            implementing{' '}
+            <a
+              href="libs/components/src/portfolio/bubbles"
+              target="_blank"
+              rel="noreferrer">
+              AprilAge's
+            </a>{' '}
+            face aging kiosk. Originally built in{' '}
+            <a
+              href="libs/components/src/portfolio/bubbles"
+              target="_blank"
+              rel="noreferrer">
+              Velocity.js
+            </a>{' '}
+            and ported over to{' '}
+            <a
+              href="libs/components/src/portfolio/bubbles"
+              target="_blank"
+              rel="noreferrer">
+              Framer Motion
+            </a>
+            .
+          </PortfolioQuote>
         </p>
         <div
           id="bubbles-container"
