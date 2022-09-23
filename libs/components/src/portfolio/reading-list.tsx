@@ -24,7 +24,7 @@ export function ReadingList() {
       <IframeResizer
         log={ConfigService.isDevEnvironment()}
         src="https://wordpress.mikestumpf.com/reading-list"
-        className="reading-list-iframe-container"
+        className="reading-list-iframe-container border-frame"
         bodyPadding="15px"
       />
       <AnalyticsButton

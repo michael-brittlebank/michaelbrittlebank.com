@@ -190,7 +190,10 @@ export class Bubbles extends PureComponent<unknown, State> {
           </a>
           .
         </p>
-        <div id="bubbles-container" ref={this.bubbleContainerRef}>
+        <div
+          id="bubbles-container"
+          ref={this.bubbleContainerRef}
+          className="border-frame">
           <div
             id="bubbles-inner-container"
             className={classNames({
