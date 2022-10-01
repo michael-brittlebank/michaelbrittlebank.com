@@ -54,7 +54,8 @@ export function Resume() {
               mentor and teacher committed to talent development and raising
               others up holistically. Personally invested in a continuous
               learning mindset focusing on business and technology, breadth and
-              depth.
+              depth. Current professional interests are focused on Team of Teams
+              culture, Lean Portfolio Management, and Agile at Scale operations.
             </p>
             <p>
               Effective communicator and project manager experienced in change
