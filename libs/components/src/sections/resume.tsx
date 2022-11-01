@@ -49,41 +49,45 @@ export function Resume() {
           <section className="col-sm-12">
             <h2 className="section-header">Technological Leader</h2>
             <p>
-              Respected technological leader skilled in guiding remote/hybrid
-              high performance teams across a range of disciplines. Lifelong
-              mentor and teacher committed to talent development and raising
-              others up holistically. Personally invested in a continuous
-              learning mindset focusing on business and technology, breadth and
-              depth. Current professional interests are focused on Team of Teams
-              culture, Lean Portfolio Management, and Agile at Scale operations.
+              Respected technological leader who drives culture and delivers
+              value. Skilled in managing remote & hybrid multidisciplinary teams
+              and guiding organizations to create better software products.
+              Lifelong mentor, teacher, and coach committed to people
+              development and raising others up holistically. Personally
+              invested in a continuous learning mindset focusing on business and
+              technology, breadth and depth. Current professional interests are
+              on Team of Teams agility, Lean Portfolio Management, and
+              Agile@Scale operations.
             </p>
             <p>
-              Effective communicator and project manager experienced in change
-              management and workforce planning who is able to influence,
-              promote, and implement transformative technologies and processes.
-              Agile evangelist incorporating the best of Scrum, Kanban, Lean,
-              SAFe, Six Sigma, and other frameworks to meet deliverables despite
-              dependencies and roadblocks. Doggedly focused on delivering
-              iterative, future-proof solutions which satisfy stakeholders
-              across the organization.
+              Effective communicator and project manager experienced in process
+              improvement, change management and workforce planning who is able
+              to influence, promote, and implement transformative technologies
+              and processes. Agile evangelist incorporating the best of Scrum,
+              Kanban, Lean, SAFe, Six Sigma, and other frameworks to meet
+              deliverables despite roadblocks. Doggedly focused on outcomes
+              rather than outputs in order to deliver iterative, future-proof
+              solutions which satisfy stakeholders across the organization.
             </p>
             <p>
-              SOLID, DRY solutions architect and software engineer with a wide
-              range of experience building bespoke websites, RESTful APIs,
-              cross-platform mobile apps, and cloud DevOps solutions. Advocate
-              for test-driven development (TDD) and accustomed to context
-              switching between a variety of projects, languages, and
-              frameworks.
+              Strong background as a SOLID, DRY solutions architect and software
+              engineer with a wide range of experience building bespoke
+              websites, RESTful APIs, cross-platform mobile apps, and cloud
+              DevOps solutions. Advocate for test-driven development (TDD) and
+              accustomed to context switching between a variety of projects and
+              languages.
             </p>
           </section>
           <section className="col-sm-12 col-md-6">
-            <h2 className="section-header">Experience</h2>
+            <h2 className="section-header">Experience &ndash; (Selected)</h2>
             {workExperiences.map(renderPrimaryResumeEntry)}
           </section>
           <section className="col-sm-12 col-md-6">
             <h2 className="section-header">Education</h2>
             {education.map(renderPrimaryResumeEntry)}
-            <h2 className="section-header">Certifications</h2>
+            <h2 className="section-header">
+              Professional Development &ndash; (Selected)
+            </h2>
             {certificates.map(renderSecondaryResumeEntry)}
             <div id="resume-social-icons">
               <h3 id="resume-social-title">Find Me:</h3>
