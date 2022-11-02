@@ -13,7 +13,10 @@
   border: 2px solid transparent;
   overflow: hidden;
   margin: 5%;
-  @include transition-with-defaults(border-color);
+  background-color: transparent;
+  @include transition-raw(
+    'border-color 300ms ease-out 0s,background-color 300ms ease-out 0s'
+  );
 }
 
 #frontispiece-logo {

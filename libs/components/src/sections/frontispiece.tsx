@@ -21,14 +21,17 @@ export function Frontispiece(props: Props) {
           className="grid-container row">
           <div
             id="frontispiece-image-container"
-            style={{ borderColor: hasLoaded ? 'white' : 'transparent' }}>
+            style={{
+              borderColor: hasLoaded ? 'white' : 'transparent',
+              backgroundColor: hasLoaded ? 'white' : 'transparent',
+            }}>
             <Image
               id="frontispiece-image"
               alt="Mike Stumpf"
               src={photo}
               placeholder="empty"
-              width={848}
-              height={848}
+              width={300}
+              height={300}
               onLoadingComplete={handleHasLoaded}
             />
           </div>
