@@ -35,7 +35,7 @@ export function Renovation() {
         front walk, driveway, and landscaping. This resulted in every room in
         the house changing to some degree which I really enjoyed from the
         architecture and layout perspective. I am eagerly looking forward to
-        more house projects to keep me busy.
+        more DIY projects to keep me busy.
       </p>
       <BeforeAfterSlider
         beforeImage="front-before"

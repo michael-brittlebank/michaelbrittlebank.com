@@ -79,14 +79,14 @@ export function Resume() {
             </p>
           </section>
           <section className="col-sm-12 col-md-6">
-            <h2 className="section-header">Experience &ndash; (Selected)</h2>
+            <h2 className="section-header">Experience &nbsp;(Selected)</h2>
             {workExperiences.map(renderPrimaryResumeEntry)}
           </section>
           <section className="col-sm-12 col-md-6">
             <h2 className="section-header">Education</h2>
             {education.map(renderPrimaryResumeEntry)}
             <h2 className="section-header">
-              Professional Development &ndash; (Selected)
+              Professional Development &nbsp;(Selected)
             </h2>
             {certificates.map(renderSecondaryResumeEntry)}
             <div id="resume-social-icons">
