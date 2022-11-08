@@ -49,15 +49,15 @@ export function Resume() {
           <section className="col-sm-12">
             <h2 className="section-header">Technological Leader</h2>
             <p>
-              Respected technological leader who drives culture and delivers
-              value. Skilled in managing remote & hybrid multidisciplinary teams
-              and guiding organizations to create better software products.
-              Lifelong mentor, teacher, and coach committed to people
-              development and raising others up holistically. Personally
-              invested in a continuous learning mindset focusing on business and
-              technology, breadth and depth. Current professional interests are
-              on Team of Teams agility, Lean Portfolio Management, and
-              Agile@Scale operations.
+              Technological leader who empathetically drives culture and
+              systematically delivers value. Skilled in managing remote & hybrid
+              multidisciplinary teams and guiding organizations to create better
+              software products. Lifelong mentor, teacher, and coach committed
+              to people development and raising others up holistically.
+              Personally invested in a continuous learning mindset focusing on
+              business and technology, breadth and depth. Current professional
+              interests are Team of Teams agility, Lean Portfolio Management,
+              and Agile@Scale operations.
             </p>
             <p>
               Effective communicator and project manager experienced in process
