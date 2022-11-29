@@ -97,7 +97,7 @@ export function Resume() {
         </section>
         <section className="col-sm-12">
           <AnalyticsButton
-            href="/files/Mike_Stumpf_Resume_2022.pdf"
+            href="/files/Mike_Stumpf_Resume.pdf"
             action="resumeButtonClick"
             content={
               <>
