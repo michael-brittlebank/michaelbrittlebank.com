@@ -34,7 +34,7 @@ class BaseLocationMap extends PureComponent {
       <Map
         google={google}
         zoom={4}
-        maxZoom={8}
+        maxZoom={9}
         minZoom={3}
         mapTypeControl={false}
         streetViewControl={false}
