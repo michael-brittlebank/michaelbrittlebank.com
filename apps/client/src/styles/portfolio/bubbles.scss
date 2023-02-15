@@ -2,7 +2,7 @@
 
 $bubble-container-height: 500px;
 
-#bubbles-container {
+#bubbles-frame {
   height: $bubble-container-height;
 }
 
@@ -13,7 +13,7 @@ $bubble-container-height: 500px;
   opacity: 0.4;
 }
 
-#bubbles-inner-container {
+#bubbles-inner-frame {
   position: relative;
   overflow: hidden;
   height: $bubble-container-height;
