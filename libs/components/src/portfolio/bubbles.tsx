@@ -156,8 +156,8 @@ export class Bubbles extends PureComponent<unknown, State> {
       bubblesMoving,
     } = this.state;
     return (
-      <section id="reading-list-container" className="col-sm-12">
-        <h2 id="reading-list-title" className="section-header">
+      <section id="bubbles-container" className="col-sm-12">
+        <h2 id="bubbles-title" className="section-header">
           Bubbles
         </h2>
         <p className="section-description">

@@ -49,6 +49,13 @@
   > :not(:first-child) {
     margin-top: 60px;
   }
+
+  > :first-child .section-header {
+    margin-top: 0;
+    @include mobile {
+      padding-top: 0;
+    }
+  }
 }
 
 //desktop styles
