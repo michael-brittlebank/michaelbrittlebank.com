@@ -194,11 +194,11 @@ export class Bubbles extends PureComponent<unknown, State> {
           </PortfolioQuote>
         </p>
         <div
-          id="bubbles-container"
+          id="bubbles-frame"
           ref={this.bubbleContainerRef}
           className="border-frame">
           <div
-            id="bubbles-inner-container"
+            id="bubbles-inner-frame"
             className={classNames({
               opaque: !bubblesCreated,
             })}>
