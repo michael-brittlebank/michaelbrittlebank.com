@@ -5,6 +5,7 @@ import {
   ReadingList,
   Renovation,
 } from '../portfolio';
+import { Quote } from '../shared';
 
 export function Personal() {
   return (
@@ -13,6 +14,12 @@ export function Personal() {
         <h1 id="portfolio-title" className="page-title">
           Personal
         </h1>
+      </div>
+      <div className="col-sm-12 row">
+        <Quote
+          message="Plans are nothing, planning is everything."
+          author="Dwight D. Eisenhower"
+        />
       </div>
       <section id="portfolio-body" className="col-sm-12 row">
         <ReadingList />

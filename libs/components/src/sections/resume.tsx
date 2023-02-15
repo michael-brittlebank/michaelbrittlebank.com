@@ -1,6 +1,6 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFileAlt } from '@fortawesome/free-solid-svg-icons';
-import { AnalyticsButton, SocialMedia, Spacer } from '../shared';
+import { AnalyticsButton, Quote, SocialMedia, Spacer } from '../shared';
 import { DataService } from '@mikestumpf/services';
 import { ResumeEntry } from '@mikestumpf/types';
 
@@ -45,9 +45,12 @@ export function Resume() {
             Resume
           </h1>
         </div>
-        <section id="resume-body" className="col-sm-12 row">
+        <Quote
+          message="Experience is simply the name we give our mistakes."
+          author="Oscar Wilde"
+        />
+        <section id="resume-body" className="row">
           <section className="col-sm-12">
-            <h2 className="section-header">Technological Leader</h2>
             <p>
               Technological leader who empathetically drives culture and
               systematically delivers value. Skilled in managing remote & hybrid

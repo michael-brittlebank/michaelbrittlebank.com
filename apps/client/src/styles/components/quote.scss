@@ -1,0 +1,19 @@
+.quote {
+  margin: 0 auto 25px auto;
+  padding: 10px;
+  text-align: center;
+  font-family: $global-font-raleway;
+  background-color: rgba($color-box-shadow, 0.1);
+  border-radius: 5px;
+  @include unselectable();
+}
+
+.quote-divider {
+  line-height: 1rem;
+}
+
+@include tablet-up {
+  .quote-divider {
+    line-height: 2.5rem;
+  }
+}

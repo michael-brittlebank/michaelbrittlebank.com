@@ -56,8 +56,8 @@ iframe {
 .page-title {
   font-family: $global-font-raleway-thin;
   border-left: 20px solid $color-badgers-red;
-  padding-left: 15px;
-  margin-left: -10px;
+  margin: 10px 0 1.5rem -10px;
+  padding: 0 0 0 15px;
 }
 
 .button {
@@ -256,5 +256,8 @@ iframe {
   body {
     //header placeholder
     padding-top: 65px;
+  }
+  .page-title {
+    margin-bottom: 0;
   }
 }
