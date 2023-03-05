@@ -3,6 +3,7 @@ import { faFileAlt } from '@fortawesome/free-solid-svg-icons';
 import { AnalyticsButton, Quote, SocialMedia, Spacer } from '../shared';
 import { DataService } from '@mikestumpf/services';
 import { ResumeEntry } from '@mikestumpf/types';
+import classNames from 'classnames';
 
 const joinWithElement = (entries: (string | number)[]) =>
   entries.map((year, index) => (
@@ -12,10 +13,18 @@ const joinWithElement = (entries: (string | number)[]) =>
     </span>
   ));
 
-const renderPrimaryResumeEntry = (resumeEntry: ResumeEntry) => (
-  <div key={resumeEntry.title}>
-    <h3>{resumeEntry.title}</h3>
-    <h5>
+const renderMultilineResumeEntry = (
+  resumeEntry: ResumeEntry,
+  isSecondary?: boolean,
+) => (
+  <div
+    key={resumeEntry.title}
+    className={classNames('resume-entry', {
+      primary: !isSecondary,
+      secondary: isSecondary,
+    })}>
+    <h3 className="resume-entry-title">{resumeEntry.title}</h3>
+    <h5 className="resume-entry-subtitle">
       {joinWithElement(resumeEntry.years)} &mdash;{' '}
       <a href={resumeEntry.url} target="_blank" rel="noreferrer">
         {resumeEntry.location}
@@ -24,8 +33,8 @@ const renderPrimaryResumeEntry = (resumeEntry: ResumeEntry) => (
   </div>
 );
 
-const renderSecondaryResumeEntry = (resumeEntry: ResumeEntry) => (
-  <h4 key={resumeEntry.title}>
+const renderMonolineResumeEntry = (resumeEntry: ResumeEntry) => (
+  <h4 key={resumeEntry.title} className="resume-entry-title">
     {joinWithElement(resumeEntry.years)} &mdash;{' '}
     <a href={resumeEntry.url} target="_blank" rel="noreferrer">
       {resumeEntry.title}
@@ -52,46 +61,47 @@ export function Resume() {
         <section id="resume-body" className="row">
           <section className="col-sm-12">
             <p>
-              Technological leader who empathetically drives culture and
+              Technology leader who empathetically drives culture and
               systematically delivers value. Skilled in managing remote & hybrid
-              multidisciplinary teams and guiding organizations to create better
-              software products. Lifelong mentor, teacher, and coach committed
-              to people development and raising others up holistically.
-              Personally invested in a continuous learning mindset focusing on
-              business and technology, breadth and depth. Current professional
-              interests are Team of Teams agility, Lean Portfolio Management,
-              and Agile@Scale operations.
+              multidisciplinary teams and guiding organizations to more
+              efficiently develop software products. Lifelong mentor, teacher,
+              and coach committed to people development and raising others up
+              holistically. Personally invested in a continuous learning mindset
+              focusing on business and technology, breadth and depth. Current
+              professional interests are Team of Teams agility, Agile@Scale
+              operations, and Digital Transformation & Innovation.
             </p>
             <p>
-              Effective communicator and project manager experienced in process
-              improvement, change management and workforce planning who is able
-              to influence, promote, and implement transformative technologies
-              and processes. Agile evangelist incorporating the best of Scrum,
-              Kanban, Lean, SAFe, Six Sigma, and other frameworks to meet
-              deliverables despite roadblocks. Doggedly focused on outcomes
-              rather than outputs in order to deliver iterative, future-proof
-              solutions which satisfy stakeholders across the organization.
+              Effective communicator, project manager, and product owner
+              experienced in workflow process improvement, organizational change
+              management, and workforce planning who is able to influence,
+              promote, and implement transformative technologies and processes.
+              Agile evangelist incorporating the best of Scrum, Kanban, Lean,
+              SAFe, Six Sigma, and other frameworks to meet deliverables.
+              Doggedly focused on outcomes rather than outputs in order to
+              deliver iterative, future-proof solutions which satisfy
+              stakeholders across the organization.
             </p>
             <p>
-              Strong background as a SOLID, DRY solutions architect and software
-              engineer with a wide range of experience building bespoke
+              Strong background as a SOLID, DRY business solutions architect and
+              software engineer with a wide range of experience building bespoke
               websites, RESTful APIs, cross-platform mobile apps, and cloud
               DevOps solutions. Advocate for test-driven development (TDD) and
-              accustomed to context switching between a variety of projects and
-              languages.
+              accustomed to context switching between a variety of projects,
+              languages, and frameworks.
             </p>
           </section>
           <section className="col-sm-12 col-md-6">
             <h2 className="section-header">Experience &nbsp;(Selected)</h2>
-            {workExperiences.map(renderPrimaryResumeEntry)}
+            {workExperiences.map((entry) => renderMultilineResumeEntry(entry))}
           </section>
           <section className="col-sm-12 col-md-6">
             <h2 className="section-header">Education</h2>
-            {education.map(renderPrimaryResumeEntry)}
+            {education.map((entry) => renderMultilineResumeEntry(entry, true))}
             <h2 className="section-header">
               Professional Development &nbsp;(Selected)
             </h2>
-            {certificates.map(renderSecondaryResumeEntry)}
+            {certificates.map(renderMonolineResumeEntry)}
             <div id="resume-social-icons">
               <h3 id="resume-social-title">Find Me:</h3>
               <SocialMedia />
