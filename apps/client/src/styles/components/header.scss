@@ -19,6 +19,7 @@ header {
 .standard-menu {
   list-style: none;
   margin: 0;
+
   a {
     cursor: pointer;
     display: inline-block;
@@ -27,6 +28,8 @@ header {
     text-transform: uppercase;
     font-family: $global-font-raleway;
     @include transition-with-defaults(border-color);
+    @include unselectable();
+
     &.active,
     &:hover {
       border-bottom-color: $color-jays-light-blue;

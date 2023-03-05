@@ -5,20 +5,6 @@
 
 //resume
 //----------------------
-#resume-body {
-  h3:not(#resume-social-title) {
-    margin-bottom: 10px;
-  }
-
-  h5 {
-    margin-top: 0;
-  }
-
-  h4 {
-    margin-bottom: 0;
-  }
-}
-
 #resume-social-icons {
   margin-top: 50px;
 
@@ -34,10 +20,29 @@
   margin: 10px 5px 5px 0;
 }
 
-@include tablet-up() {
-  #resume-body {
-    h3:not(#resume-social-title) {
-      margin: 30px 0 10px 0;
+.resume-entry-title,
+.resume-entry-subtitle {
+  margin-top: 0;
+}
+
+.resume-entry-title {
+  margin-bottom: 10px;
+}
+
+.resume-entry-subtitle {
+  margin-bottom: 0;
+}
+
+.resume-entry {
+  &.primary {
+    margin-bottom: 30px;
+  }
+
+  &.secondary {
+    margin-bottom: 20px;
+
+    .resume-entry-title {
+      @extend .h4;
     }
   }
 }
