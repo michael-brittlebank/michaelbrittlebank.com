@@ -1,6 +1,6 @@
 {
   "name": "mikestumpf",
-  "version": "5.0.13",
+  "version": "5.0.14",
   "license": "MIT",
   "scripts": {
     "prod": "nx build client && nx serve client --prod",
@@ -33,7 +33,7 @@
     "sass": "1.54.8"
   },
   "devDependencies": {
-    "@babel/core": "7.12.13",
+    "@babel/core": "7.21.8",
     "@nrwl/cli": "14.5.8",
     "@nrwl/cypress": "14.5.8",
     "@nrwl/eslint-plugin-nx": "14.5.8",
