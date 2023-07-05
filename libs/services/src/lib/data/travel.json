@@ -531,6 +531,146 @@
       "lng": -1.088
     },
     {
+      "title": "Liverpool, England",
+      "lat": 53.4084,
+      "lng": -2.9916
+    },
+    {
+      "title": "Bristol, England",
+      "lat": 51.4545,
+      "lng": -2.5879
+    },
+    {
+      "title": "Cheddar Gorge, England",
+      "lat": 51.2864,
+      "lng": -2.7603
+    },
+    {
+      "title": "Sherborne, England",
+      "lat": 50.9478,
+      "lng": -2.5145
+    },
+    {
+      "title": "Cambridge, England",
+      "lat": 52.1951,
+      "lng": 0.1313
+    },
+    {
+      "title": "Honiton, England",
+      "lat": 50.7995,
+      "lng": -3.1887
+    },
+    {
+      "title": "Stonehenge, England",
+      "lat": 51.1789,
+      "lng": -1.8262
+    },
+    {
+      "title": "Oxford, England",
+      "lat": 51.752,
+      "lng": -1.2577
+    },
+    {
+      "title": "Llandudno, Wales",
+      "lat": 53.3241,
+      "lng": -3.8276
+    },
+    {
+      "title": "Conwy, Wales",
+      "lat": 53.2829,
+      "lng": -3.8295
+    },
+    {
+      "title": "Llanddoged, Wales",
+      "lat": 53.1572,
+      "lng": -3.786
+    },
+    {
+      "title": "Beaumaris, Wales",
+      "lat": 53.2659,
+      "lng": -4.092
+    },
+    {
+      "title": "Moelfre, Wales",
+      "lat": 53.3523,
+      "lng": -4.2373
+    },
+    {
+      "title": "Newborough, Wales",
+      "lat": 53.1649,
+      "lng": -4.3591
+    },
+    {
+      "title": "Caernarfon, Wales",
+      "lat": 53.1396,
+      "lng": -4.2739
+    },
+    {
+      "title": "Llanberis, Wales",
+      "lat": 53.118,
+      "lng": -4.1275
+    },
+    {
+      "title": "Yr Wyddfa, Wales",
+      "lat": 53.0685,
+      "lng": -4.0763
+    },
+    {
+      "title": "Harlech, Wales",
+      "lat": 52.8589,
+      "lng": -4.1079
+    },
+    {
+      "title": "Aberystwyth, Wales",
+      "lat": 52.4153,
+      "lng": -4.0829
+    },
+    {
+      "title": "Bala, Wales",
+      "lat": 52.9099,
+      "lng": -3.6016
+    },
+    {
+      "title": "St Davids, Wales",
+      "lat": 51.8812,
+      "lng": -5.266
+    },
+    {
+      "title": "Tenby, Wales",
+      "lat": 51.6727,
+      "lng": -4.7036
+    },
+    {
+      "title": "Rhossili, Wales",
+      "lat": 51.569,
+      "lng": -4.2868
+    },
+    {
+      "title": "Swansea, Wales",
+      "lat": 51.6214,
+      "lng": -3.9436
+    },
+    {
+      "title": "Cardiff, Wales",
+      "lat": 51.4837,
+      "lng": -3.1681
+    },
+    {
+      "title": "Pen y Fan, Wales",
+      "lat": 51.884,
+      "lng": -3.4364
+    },
+    {
+      "title": "Pembroke, Wales",
+      "lat": 51.6762,
+      "lng": -4.9184
+    },
+    {
+      "title": "Caerphilly, Wales",
+      "lat": 51.5788,
+      "lng": -3.2181
+    },
+    {
       "title": "Tallinn, Estonia",
       "lat": 59.437,
       "lng": 24.7536
