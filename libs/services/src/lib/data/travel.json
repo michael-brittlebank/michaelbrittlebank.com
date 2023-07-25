@@ -916,6 +916,11 @@
       "lng": -6.4755
     },
     {
+      "title": "Trieste, Italy",
+      "lat": 45.6495,
+      "lng": 13.7768
+    },
+    {
       "title": "Domodossola, Italy",
       "lat": 46.1167,
       "lng": 8.2833
@@ -1214,6 +1219,11 @@
       "title": "Bled, Slovenia",
       "lat": 46.3688,
       "lng": 14.114
+    },
+    {
+      "title": "Predjama, Slovenia",
+      "lat": 45.8146,
+      "lng": 14.1282
     },
     {
       "title": "Stockholm, Sweden",
@@ -1964,11 +1974,6 @@
       "title": "Brookfield, WI, USA",
       "lat": 43.0609,
       "lng": -88.1261
-    },
-    {
-      "title": "Brookfield, WI, USA",
-      "lat": 43.0108,
-      "lng": -88.2292
     }
   ]
 }
