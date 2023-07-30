@@ -22,12 +22,8 @@
   }
 
   .before-after-title-container {
-    margin: 15px;
-    padding: 5px 10px;
+    @extend .overlay-text;
     font-size: 2em;
-    color: white;
-    background: rgba(0, 0, 0, 0.5);
-    display: inline-block;
   }
 
   .before-after-background-img {

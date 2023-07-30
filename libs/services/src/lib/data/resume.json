@@ -106,5 +106,17 @@
       "years": [2020],
       "url": "https://www.credly.com/badges/1453a04d-da48-4d94-a3d0-1c642d144fee"
     }
+  ],
+  "freelancing": [
+    {
+      "image": "juke.jpg",
+      "title": "Shoemaker Jukebox Rentals",
+      "url": "https://client.shoemakerjukebox.com/"
+    },
+    {
+      "image": "dossin.jpg",
+      "title": "Purdue University\nModern & Contemporary Art",
+      "url": "https://cla.purdue.edu/courses/modernandcontemporaryart"
+    }
   ]
 }

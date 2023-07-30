@@ -1,4 +1,5 @@
 import {
+  FreelancingProject,
   ResumeData as ResumeDataType,
   ResumeEntry,
   TravelMarker,
@@ -24,5 +25,9 @@ export class DataService {
 
   static getResumeCertificates = memoize(
     (): ResumeEntry[] => DataService.getResumeData().certificates,
+  );
+
+  static getFreelancingProjects = memoize(
+    (): FreelancingProject[] => DataService.getResumeData().freelancing,
   );
 }
