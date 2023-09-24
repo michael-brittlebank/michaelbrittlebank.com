@@ -33,6 +33,7 @@ export function Frontispiece(props: Props) {
               width={300}
               height={300}
               onLoadingComplete={handleHasLoaded}
+              priority={true}
             />
           </div>
           <div id="frontispiece-logo" className="animated fadeInRight">

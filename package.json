@@ -1,6 +1,6 @@
 {
   "name": "michaelbrittlebank",
-  "version": "5.0.16",
+  "version": "5.0.17",
   "license": "MIT",
   "scripts": {
     "prod": "nx build client && nx serve client --prod",
