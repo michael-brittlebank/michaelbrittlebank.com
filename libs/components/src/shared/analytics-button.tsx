@@ -1,6 +1,6 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
-import { AnalyticsService } from '@mikestumpf/services';
+import { AnalyticsService } from '@michaelbrittlebank/services';
 import React, { ReactNode } from 'react';
 
 interface Props {

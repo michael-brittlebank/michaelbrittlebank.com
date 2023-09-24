@@ -1,4 +1,4 @@
-import { CarouselSlide } from '@mikestumpf/types';
+import { CarouselSlide } from '@michaelbrittlebank/types';
 import { useState } from 'react';
 
 interface Props {

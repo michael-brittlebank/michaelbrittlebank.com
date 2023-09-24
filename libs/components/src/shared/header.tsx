@@ -41,7 +41,7 @@ const hashLinkMap: Record<HashType, ContainerType> = {
 
 const headerLinkMap: HeaderLink[] = [
   {
-    label: 'Mike Stumpf',
+    label: 'Michael Brittlebank',
     container: 'frontispiece-container',
   },
   {

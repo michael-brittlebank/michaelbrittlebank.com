@@ -4,7 +4,7 @@ import classNames from 'classnames';
 import { FrettedInstrument } from './fretted-instrument';
 import { KeyedInstrument } from './keyed-instrument';
 import { AnalyticsButton } from '../shared';
-import { AnalyticsService } from '@mikestumpf/services';
+import { AnalyticsService } from '@michaelbrittlebank/services';
 import { PortfolioQuote } from '../shared/portfolio-quote';
 
 export class Hauptstimme extends PureComponent {
@@ -241,7 +241,7 @@ export class Hauptstimme extends PureComponent {
           ) : null}
         </div>
         <AnalyticsButton
-          href="https://github.com/mike-stumpf/hauptstimme.js"
+          href="https://github.com/michael-brittlebank/hauptstimme.js"
           action="hauptstimmeButtonClick"
         />
       </section>

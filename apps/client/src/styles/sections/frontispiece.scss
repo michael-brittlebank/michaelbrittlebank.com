@@ -25,11 +25,11 @@
   bottom: 0;
   right: 5%;
   margin: auto;
-  height: 6rem;
+  height: 7rem;
   text-align: right;
 
   p {
-    $font-size: 3rem;
+    $font-size: 2.25rem;
     font-family: $global-font-raleway-thin;
     color: white;
     font-size: $font-size;
@@ -47,7 +47,7 @@
 
 @include tablet-up {
   #frontispiece-logo {
-    height: 12rem;
+    height: 18rem;
 
     p {
       $font-size: 6rem;

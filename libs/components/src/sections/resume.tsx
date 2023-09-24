@@ -1,8 +1,8 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFileAlt } from '@fortawesome/free-solid-svg-icons';
 import { AnalyticsButton, Quote, SocialMedia, Spacer } from '../shared';
-import { DataService } from '@mikestumpf/services';
-import { ResumeEntry } from '@mikestumpf/types';
+import { DataService } from '@michaelbrittlebank/services';
+import { ResumeEntry } from '@michaelbrittlebank/types';
 import classNames from 'classnames';
 import Carousel from '../shared/carousel';
 
@@ -112,7 +112,7 @@ export function Resume() {
         </section>
         <section className="col-sm-12">
           <AnalyticsButton
-            href="/files/Mike_Stumpf_Resume.pdf"
+            href="/files/Michael_Brittlebank_Resume.pdf"
             action="resumeButtonClick"
             content={
               <>

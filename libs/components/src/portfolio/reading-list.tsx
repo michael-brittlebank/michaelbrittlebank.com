@@ -1,6 +1,6 @@
 import IframeResizer from 'iframe-resizer-react';
 import { AnalyticsButton } from '../shared';
-import { ConfigService } from '@mikestumpf/services';
+import { ConfigService } from '@michaelbrittlebank/services';
 import { PortfolioQuote } from '../shared/portfolio-quote';
 
 export function ReadingList() {
@@ -35,12 +35,12 @@ export function ReadingList() {
       </p>
       <IframeResizer
         log={ConfigService.isDevEnvironment()}
-        src="https://wordpress.mikestumpf.com/reading-list"
+        src="https://wordpress.michaelbrittlebank.com/reading-list"
         className="reading-list-iframe-container border-frame"
         bodyPadding="15px"
       />
       <AnalyticsButton
-        href="https://github.com/mike-stumpf/wp-reading-list"
+        href="https://github.com/michael-brittlebank/wp-reading-list"
         action="readingListButtonClick"
       />
     </section>

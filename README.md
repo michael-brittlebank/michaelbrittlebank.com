@@ -1,10 +1,10 @@
-[![Build Status](https://travis-ci.org/mike-stumpf/mikestumpf.com.svg?branch=master)](https://travis-ci.org/mike-stumpf/mikestumpf.com)
+[![Build Status](https://travis-ci.org/michael-brittlebank/michaelbrittlebank.com.svg?branch=master)](https://travis-ci.org/michael-brittlebank/michaelbrittlebank.com)
 
-# Mikestumpf.com
+# MichaelBrittlebank.com
 
 ## Description
 
-- This is my personal site: [https://www.mikestumpf.com/](https://www.mikestumpf.com/)
+- This is my personal site: [https://www.michaelbrittlebank.com/](https://www.michaelbrittlebank.com/)
 
 ## Architecture
 

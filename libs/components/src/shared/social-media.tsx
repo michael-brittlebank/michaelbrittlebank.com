@@ -9,16 +9,16 @@ export function SocialMedia() {
   return (
     <>
       <a
-        href="https://www.linkedin.com/in/mikestumpf"
+        href="https://www.linkedin.com/in/michaelbrittlebank"
         target="_blank"
         rel="noreferrer">
         <FontAwesomeIcon icon={faLinkedin} className="fa" />
       </a>
-      <a href="https://github.com/mike-stumpf" target="_blank" rel="noreferrer">
+      <a href="https://github.com/michael-brittlebank" target="_blank" rel="noreferrer">
         <FontAwesomeIcon icon={faGithub} className="fa" />
       </a>
       <a
-        href="http://stackexchange.com/users/1282257/mike-stumpf?tab=accounts"
+        href="http://stackexchange.com/users/1282257/michael-brittlebank?tab=accounts"
         target="_blank"
         rel="noreferrer">
         <FontAwesomeIcon icon={faStackOverflow} className="fa" />

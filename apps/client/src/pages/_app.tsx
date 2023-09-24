@@ -1,4 +1,4 @@
-import { PageContainer } from '@mikestumpf/components';
+import { PageContainer } from '@michaelbrittlebank/components';
 import Head from 'next/head';
 import { AppProps } from 'next/app';
 import '../styles/app.scss';
@@ -15,7 +15,7 @@ function AppContainer({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head>
-        <title>Mike Stumpf</title>
+        <title>Michael Brittlebank</title>
         <meta
           name="viewport"
           content="width=device-width, initial-scale=1, shrink-to-fit=no"
