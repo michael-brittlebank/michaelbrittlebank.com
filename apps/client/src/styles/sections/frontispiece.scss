@@ -15,7 +15,7 @@
   margin: 5%;
   background-color: transparent;
   @include transition-raw(
-    'border-color 300ms ease-out 0s,background-color 300ms ease-out 0s'
+      'border-color 300ms ease-out 0s,background-color 300ms ease-out 0s'
   );
 }
 
@@ -47,10 +47,10 @@
 
 @include tablet-up {
   #frontispiece-logo {
-    height: 18rem;
+    height: 12rem;
 
     p {
-      $font-size: 6rem;
+      $font-size: 4rem;
       font-size: $font-size;
       line-height: $font-size;
     }
@@ -58,5 +58,17 @@
 
   #frontispiece-image-container {
     border-width: 5px;
+  }
+}
+
+@include desktop {
+  #frontispiece-logo {
+    height: 18rem;
+
+    p {
+      $font-size: 6rem;
+      font-size: $font-size;
+      line-height: $font-size;
+    }
   }
 }
