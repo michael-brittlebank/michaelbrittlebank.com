@@ -1,6 +1,6 @@
 import Document, { Html, Head, Main, NextScript } from 'next/document';
 
-class MikeStumpfDocument extends Document {
+class CustomDocument extends Document {
   static async getInitialProps(ctx) {
     const initialProps = await Document.getInitialProps(ctx);
     return { ...initialProps };
@@ -16,7 +16,7 @@ class MikeStumpfDocument extends Document {
           <meta httpEquiv="Content-Language" content="en" />
           <meta
             name="description"
-            content="Personal website and portfolio for Mike Stumpf"
+            content="Personal website and portfolio for Michael (Brittlebank) Brittlebank"
           />
           {/* Global Site Tag (gtag.js) - Google Analytics */}
           <script
@@ -45,4 +45,4 @@ class MikeStumpfDocument extends Document {
   }
 }
 
-export default MikeStumpfDocument;
+export default CustomDocument;

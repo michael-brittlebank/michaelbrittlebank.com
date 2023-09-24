@@ -9,10 +9,17 @@ export interface ResumeData {
   work: ResumeEntry[];
   education: ResumeEntry[];
   certificates: ResumeEntry[];
+  freelancing: FreelancingProject[];
 }
 
 export interface TravelMarker {
   title: string;
   lat: number;
   lng: number;
+}
+
+export interface FreelancingProject {
+  image: string;
+  title: string;
+  url: string;
 }

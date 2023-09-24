@@ -1,6 +1,6 @@
 import { GoogleApiWrapper, InfoWindow, Map, Marker } from 'google-maps-react';
 import { PureComponent } from 'react';
-import { DataService, UtilService } from '@mikestumpf/services';
+import { DataService, UtilService } from '@michaelbrittlebank/services';
 
 class BaseLocationMap extends PureComponent {
   constructor(props) {

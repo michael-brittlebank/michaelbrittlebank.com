@@ -30,7 +30,6 @@ export function BeforeAfterSlider(props: Props) {
              height: ${height}px;
              }`,
         }}></style>
-      <div className="my-special-div"></div>
       <div
         className="before-after-img before-after-background-img"
         style={{

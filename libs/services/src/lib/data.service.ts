@@ -1,8 +1,9 @@
 import {
+  FreelancingProject,
   ResumeData as ResumeDataType,
   ResumeEntry,
   TravelMarker,
-} from '@mikestumpf/types';
+} from '@michaelbrittlebank/types';
 import TravelMarkers from './data/travel.json';
 import ResumeData from './data/resume.json';
 import { memoize } from 'lodash';
@@ -24,5 +25,9 @@ export class DataService {
 
   static getResumeCertificates = memoize(
     (): ResumeEntry[] => DataService.getResumeData().certificates,
+  );
+
+  static getFreelancingProjects = memoize(
+    (): FreelancingProject[] => DataService.getResumeData().freelancing,
   );
 }

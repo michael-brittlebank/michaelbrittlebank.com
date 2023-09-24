@@ -1,7 +1,7 @@
 import React, { PureComponent, ReactNode } from 'react';
 import { motion } from 'framer-motion';
 import classNames from 'classnames';
-import { AnalyticsService, UtilService } from '@mikestumpf/services';
+import { AnalyticsService, UtilService } from '@michaelbrittlebank/services';
 import { AnalyticsButton } from '../shared';
 import { PortfolioQuote } from '../shared/portfolio-quote';
 
@@ -228,7 +228,7 @@ export class Bubbles extends PureComponent<unknown, State> {
           </div>
         </div>
         <AnalyticsButton
-          href="https://github.com/mike-stumpf/mikestumpf.com/blob/master/src/portfolio/bubbles.js"
+          href="https://github.com/michael-brittlebank/michaelbrittlebank.com/blob/master/src/portfolio/bubbles.js"
           action="bubblesButtonClick"
         />
       </section>

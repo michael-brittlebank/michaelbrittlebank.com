@@ -27,7 +27,7 @@ export function Frontispiece(props: Props) {
             }}>
             <Image
               id="frontispiece-image"
-              alt="Mike Stumpf"
+              alt="Michael Brittlebank"
               src={photo}
               placeholder="empty"
               width={300}
@@ -36,8 +36,13 @@ export function Frontispiece(props: Props) {
             />
           </div>
           <div id="frontispiece-logo" className="animated fadeInRight">
-            <p>Mike</p>
-            <p>Stumpf</p>
+            <p>
+              Michael
+              <br />
+              (Stumpf)
+              <br />
+              Brittlebank
+            </p>
           </div>
         </div>
       </div>

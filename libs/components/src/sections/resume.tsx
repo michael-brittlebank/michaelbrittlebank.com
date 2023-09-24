@@ -1,9 +1,10 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFileAlt } from '@fortawesome/free-solid-svg-icons';
 import { AnalyticsButton, Quote, SocialMedia, Spacer } from '../shared';
-import { DataService } from '@mikestumpf/services';
-import { ResumeEntry } from '@mikestumpf/types';
+import { DataService } from '@michaelbrittlebank/services';
+import { ResumeEntry } from '@michaelbrittlebank/types';
 import classNames from 'classnames';
+import Carousel from '../shared/carousel';
 
 const joinWithElement = (entries: (string | number)[]) =>
   entries.map((year, index) => (
@@ -46,6 +47,7 @@ export function Resume() {
   const workExperiences = DataService.getResumeExperience();
   const education = DataService.getResumeEducation();
   const certificates = DataService.getResumeCertificates();
+  const freelanceProjects = DataService.getFreelancingProjects();
   return (
     <div id="resume-container">
       <div className="grid-container row">
@@ -110,7 +112,7 @@ export function Resume() {
         </section>
         <section className="col-sm-12">
           <AnalyticsButton
-            href="/files/Mike_Stumpf_Resume.pdf"
+            href="/files/Michael_Brittlebank_Resume.pdf"
             action="resumeButtonClick"
             content={
               <>
@@ -119,6 +121,12 @@ export function Resume() {
               </>
             }
           />
+        </section>
+      </div>
+      <div className="grid-container row">
+        <section className="col-sm-12 no-padding">
+          <h2 className="section-header">Freelancing &nbsp;(Selected)</h2>
+          <Carousel slides={freelanceProjects} />
         </section>
       </div>
       <Spacer color="blue" />

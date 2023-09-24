@@ -15,9 +15,9 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@mikestumpf/components": ["libs/components/src/index.ts"],
-      "@mikestumpf/services": ["libs/services/src/index.ts"],
-      "@mikestumpf/types": ["libs/types/src/index.ts"]
+      "@michaelbrittlebank/components": ["libs/components/src/index.ts"],
+      "@michaelbrittlebank/services": ["libs/services/src/index.ts"],
+      "@michaelbrittlebank/types": ["libs/types/src/index.ts"]
     },
     "resolveJsonModule": true,
     "jsx": "react"

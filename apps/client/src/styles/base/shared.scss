@@ -252,6 +252,15 @@ iframe {
   text-transform: uppercase;
 }
 
+.overlay-text {
+  margin: 15px;
+  padding: 5px 10px;
+  font-size: 1.5em;
+  color: white;
+  background: rgba(0, 0, 0, 0.5);
+  display: inline-block;
+}
+
 //route transitions
 //----------------------
 .fade-enter {

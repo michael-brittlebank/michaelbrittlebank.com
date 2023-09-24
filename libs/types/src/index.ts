@@ -1,1 +1,7 @@
-export type { ResumeData, TravelMarker, ResumeEntry } from './lib/data';
+export type {
+  ResumeData,
+  TravelMarker,
+  ResumeEntry,
+  FreelancingProject,
+} from './lib/data';
+export type { CarouselSlide } from './lib/carousel';

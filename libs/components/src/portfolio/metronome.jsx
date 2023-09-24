@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import classNames from 'classnames';
 import { AnalyticsButton } from '../shared';
-import { AnalyticsService } from '@mikestumpf/services';
+import { AnalyticsService } from '@michaelbrittlebank/services';
 import { PortfolioQuote } from '../shared/portfolio-quote';
 
 export class Metronome extends PureComponent {
@@ -211,7 +211,7 @@ export class Metronome extends PureComponent {
           </div>
         </div>
         <AnalyticsButton
-          href="https://github.com/mike-stumpf/mikestumpf.com/blob/master/src/portfolio/metronome.js"
+          href="https://github.com/michael-brittlebank/michaelbrittlebank.com/blob/master/src/portfolio/metronome.js"
           action="metronomeButtonClick"
         />
         <audio id="metronome-tick" src={'/files/tick.mp3'} preload="auto" />
