@@ -112,7 +112,7 @@ export function Resume() {
         </section>
         <section className="col-sm-12">
           <AnalyticsButton
-            href="/files/Michael_Brittlebank_Resume.pdf"
+            href="/files/Resume_Michael_Brittlebank.pdf"
             action="resumeButtonClick"
             content={
               <>
