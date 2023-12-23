@@ -1961,19 +1961,84 @@
       "lng": -109.7406
     },
     {
-      "title": "Indiana Dunes National Park, IN, USA",
+      "title": "Indiana Dunes National Park, Indiana, USA",
       "lat": 41.6533,
       "lng": -87.0524
     },
     {
-      "title": "Shenandoah National Park, VA, USA",
+      "title": "Shenandoah National Park, Virginia, USA",
       "lat": 38.4755,
       "lng": -78.4535
     },
     {
-      "title": "Brookfield, WI, USA",
+      "title": "Brookfield, Wisconsin, USA",
       "lat": 43.0609,
       "lng": -88.1261
+    },
+    {
+      "title": "Ellicottville, New York, USA",
+      "lat": 42.2751,
+      "lng": -78.6728
+    },
+    {
+      "title": "East Aurora, New York, USA",
+      "lat": 42.7678,
+      "lng": -78.6134
+    },
+    {
+      "title": "West Seneca, New York, USA",
+      "lat": 42.8359,
+      "lng": -78.7539
+    },
+    {
+      "title": "Lancaster, Pennsylvania, USA",
+      "lat": 40.0379,
+      "lng": -76.3055
+    },
+    {
+      "title": "San Juan, Puerto Rico",
+      "lat": 18.4671,
+      "lng": -66.1185
+    },
+    {
+      "title": "Piñones, Puerto Rico",
+      "lat": 18.4465,
+      "lng": -65.9690
+    },
+    {
+      "title": "El Yunque National Forest, Puerto Rico",
+      "lat": 18.2951,
+      "lng": -65.8000
+    },
+    {
+      "title": "Las Croabas, Puerto Rico",
+      "lat": 18.3647,
+      "lng": -65.6260
+    },
+    {
+      "title": "Vieques, Puerto Rico",
+      "lat": 18.1263,
+      "lng": -65.4401
+    },
+    {
+      "title": "Culebra, Puerto Rico",
+      "lat": 18.3081,
+      "lng": -65.3038
+    },
+    {
+      "title": "Ponce, Puerto Rico",
+      "lat": 18.0111,
+      "lng": -66.6141
+    },
+    {
+      "title": "Utuado, Puerto Rico",
+      "lat": 18.2655,
+      "lng": -66.7005
+    },
+    {
+      "title": "Caguana Ceremonial Indigenous Heritage Center, Puerto Rico",
+      "lat": 18.2954,
+      "lng": -66.7783
     }
   ]
 }
