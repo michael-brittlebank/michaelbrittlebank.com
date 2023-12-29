@@ -152,14 +152,14 @@
   ],
   "freelancing": [
     {
-      "image": "freelancing/juke.jpg",
-      "title": "Shoemaker Jukebox Rentals",
-      "url": "https://client.shoemakerjukebox.com/"
-    },
-    {
       "image": "freelancing/purdue-delueze.jpg",
       "title": "Purdue University\nThe Deleuze Seminars",
       "url": "https://deleuze.cla.purdue.edu/"
+    },
+    {
+      "image": "freelancing/juke.jpg",
+      "title": "Shoemaker Jukebox Rentals",
+      "url": "https://client.shoemakerjukebox.com/"
     },
     {
       "image": "freelancing/purdue-art.jpg",
