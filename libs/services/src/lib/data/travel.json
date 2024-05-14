@@ -2039,6 +2039,56 @@
       "title": "Caguana Ceremonial Indigenous Heritage Center, Puerto Rico",
       "lat": 18.2954,
       "lng": -66.7783
+    },
+    {
+      "title": "McLean, Virginia, USA",
+      "lat": 38.9339,
+      "lng": -77.1773
+    },
+    {
+      "title": "Richmond, Virginia, USA",
+      "lat": 37.5407,
+      "lng": -77.4360
+    },
+    {
+      "title": "Champaign, Illinois, USA",
+      "lat": 40.1164,
+      "lng": -88.2434
+    },
+    {
+      "title": "Chobe National Park, Botswana",
+      "lat": -18.4559,
+      "lng": 24.3657
+    },
+    {
+      "title": "Domboshava, Zimbabwe",
+      "lat": -17.6118,
+      "lng": 31.1432
+    },
+    {
+      "title": "Imire, Zimbabwe",
+      "lat": -18.4727,
+      "lng": 31.4897
+    },
+    {
+      "title": "Helensvale, Zimbabwe",
+      "lat": -17.7420,
+      "lng": 31.1768
+    },
+    {
+      "title": "Columbus, Ohio, USA",
+      "lat": 39.9612,
+      "lng": -82.9988
+    },
+    {
+      "title": "Cleveland, Ohio, USA",
+      "lat": 41.4993,
+      "lng": -81.6944
+    },
+    {
+      "title": "Zambezi National Park, Zimbabwe",
+      "lat": -17.9783,
+      "lng": 25.7102
     }
   ]
 }
