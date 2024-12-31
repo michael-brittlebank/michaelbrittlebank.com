@@ -371,7 +371,7 @@
       "lng": 105.8342
     },
     {
-      "title": "Saigon, Vietnam",
+      "title": "Ho Chi Minh City, Vietnam",
       "lat": 10.8231,
       "lng": 106.6297
     },
@@ -569,6 +569,31 @@
       "title": "Oxford, England",
       "lat": 51.752,
       "lng": -1.2577
+    },
+    {
+      "title": "Alresford, England",
+      "lat": 51.0856,
+      "lng": -1.1656
+    },
+    {
+      "title": "Horsham, England",
+      "lat": 51.0629,
+      "lng": -0.3259
+    },
+    {
+      "title": "The Witterings, England",
+      "lat": 50.7805,
+      "lng": -0.8959
+    },
+    {
+      "title": "Emsworth, England",
+      "lat": 50.8481,
+      "lng": -0.9379
+    },
+    {
+      "title": "Bembridge, England",
+      "lat": 50.6860,
+      "lng": -1.0835
     },
     {
       "title": "Llandudno, Wales",
