@@ -2111,9 +2111,69 @@
       "lng": -81.6944
     },
     {
+      "title": "West Lafayette, Indiana, USA",
+      "lat": 40.4259,
+      "lng": -86.9081
+    },
+    {
       "title": "Zambezi National Park, Zimbabwe",
       "lat": -17.9783,
       "lng": 25.7102
+    },
+    {
+      "title": "Las Vegas, Nevada, USA",
+      "lat": 36.1716,
+      "lng": -115.1391
+    },
+    {
+      "title": "Zion National Park, Utah, USA",
+      "lat": 37.2982,
+      "lng": -113.0263
+    },
+    {
+      "title": "Bryce Canyon National Park, Utah, USA",
+      "lat": 37.5930,
+      "lng": -112.1871
+    },
+    {
+      "title": "St. George, Utah, USA",
+      "lat": 37.0965,
+      "lng": -113.5684
+    },
+    {
+      "title": "Death Valley National Park, California, USA",
+      "lat": 36.5054,
+      "lng": -117.0794
+    },
+    {
+      "title": "Isabella Lake, California, USA",
+      "lat": 35.6691,
+      "lng": -118.4338
+    },
+    {
+      "title": "Bakersfield, California, USA",
+      "lat": 35.3735,
+      "lng": -119.0205
+    },
+    {
+      "title": "Yosemite National Park, California, USA",
+      "lat": 37.8651,
+      "lng": -119.5383
+    },
+    {
+      "title": "Sequoia National Park, California, USA",
+      "lat": 36.4864,
+      "lng": -118.5658
+    },
+    {
+      "title": "Joshua Tree National Park, California, USA",
+      "lat": 33.8734,
+      "lng": -115.9010
+    },
+    {
+      "title": "Hoover Dam, Nevada, USA",
+      "lat": 36.0161,
+      "lng": -114.7377
     }
   ]
 }
