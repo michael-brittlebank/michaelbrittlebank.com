@@ -2174,6 +2174,36 @@
       "title": "Hoover Dam, Nevada, USA",
       "lat": 36.0161,
       "lng": -114.7377
+    },
+    {
+      "title": "Knoxville, Tennessee, USA",
+      "lat": 35.9653,
+      "lng": -83.9233
+    },
+    {
+      "title": "Great Smoky Mountains National Park, Tennessee, USA",
+      "lat": 35.6131,
+      "lng": -83.5532
+    },
+    {
+      "title": "Gatlinburg, Tennessee, USA",
+      "lat": 35.7143,
+      "lng": -83.5102
+    },
+    {
+      "title": "Alexandria, Virginia, USA",
+      "lat": 38.8047,
+      "lng": -77.0435
+    },
+    {
+      "title": "Shirlington, Virginia, USA",
+      "lat": 38.8418,
+      "lng": -77.0883
+    },
+    {
+      "title": "Lexington, Kentucky, USA",
+      "lat": 38.0389,
+      "lng": -84.5153
     }
   ]
 }
