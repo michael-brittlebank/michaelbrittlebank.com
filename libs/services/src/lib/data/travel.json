@@ -261,6 +261,11 @@
       "lng": 101.6869
     },
     {
+      "title": "Batu Caves, Malaysia",
+      "lat": 3.2379,
+      "lng": 101.6840
+    },
+    {
       "title": "Auckland, New Zealand",
       "lat": -36.8485,
       "lng": 174.7633
@@ -2204,6 +2209,31 @@
       "title": "Lexington, Kentucky, USA",
       "lat": 38.0389,
       "lng": -84.5153
+    },
+    {
+      "title": "Phoenix, Arizona, USA",
+      "lat": 33.4482,
+      "lng": -112.0777
+    },
+    {
+      "title": "Haleakalā National Park, Hawaii, USA",
+      "lat": 20.7204,
+      "lng": -156.1552
+    },
+    {
+      "title": "Brooklyn, New York, USA",
+      "lat": 40.6782,
+      "lng": -73.9442
+    },
+    {
+      "title": "Coney Island, New York, USA",
+      "lat": 40.5755,
+      "lng": -73.9707
+    },
+    {
+      "title": "New Haven, Connecticut, USA",
+      "lat": 41.3083,
+      "lng": -72.9279
     }
   ]
 }
