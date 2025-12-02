@@ -1,10 +1,4 @@
-import {
-  Bubbles,
-  Hauptstimme,
-  Metronome,
-  ReadingList,
-  Renovation,
-} from '../portfolio';
+import { Bubbles, Hauptstimme, Metronome, ReadingList } from '../portfolio';
 import { Quote } from '../shared';
 
 export function Personal() {
@@ -23,7 +17,7 @@ export function Personal() {
       </div>
       <section id="portfolio-body" className="col-sm-12 row">
         <ReadingList />
-        <Renovation />
+        {/*<Renovation />*/}
         <Hauptstimme />
         <Bubbles />
         <Metronome />
