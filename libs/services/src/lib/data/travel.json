@@ -2234,6 +2234,21 @@
       "title": "New Haven, Connecticut, USA",
       "lat": 41.3083,
       "lng": -72.9279
+    },
+    {
+      "title": "Fort Wayne, Indiana, USA",
+      "lat": 41.0795,
+      "lng": -85.1363
+    },
+    {
+      "title": "Cincinnati, Ohio, USA",
+      "lat": 39.1031,
+      "lng": -84.5120
+    },
+    {
+      "title": "Kickapoo State Recreation Area, Illinois, USA",
+      "lat": 40.1383,
+      "lng": -87.7382
     }
   ]
 }
