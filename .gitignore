@@ -1,43 +1,37 @@
-# See http://help.github.com/ignore-files/ for more about ignoring files.
-
-# compiled output
-/tmp
-/out-tsc
-tsconfig.tsbuildinfo
-dist/libs/
-dist/apps/dev/
-
-# dependencies
+# dependencies (bun install)
 node_modules
 
-# IDEs and editors
-/.idea
-.project
-.classpath
-.c9/
-*.launch
-.settings/
-*.sublime-workspace
+# output
+out
+dist
+*.tgz
 
-# IDE - VSCode
-.vscode/extensions.json
-!.vscode/settings.json
-!.vscode/tasks.json
-!.vscode/launch.json
-!.vscode/extensions.json
+# code coverage
+coverage
+*.lcov
 
-# misc
-/.sass-cache
-/connect.lock
-/coverage
-/libpeerconnection.log
-npm-debug.log
-testem.log
-/typings
+# logs
+logs
+_.log
+report.[0-9]_.[0-9]_.[0-9]_.[0-9]_.json
 
-# System Files
+# dotenv environment variable files
+.env
+.env.development.local
+.env.test.local
+.env.production.local
+.env.local
+
+# caches
+.eslintcache
+.cache
+*.tsbuildinfo
+
+# IntelliJ based IDEs
+.idea
+
+# Finder (MacOS) folder config
 .DS_Store
-Thumbs.db
 
 # local env files
 .env*

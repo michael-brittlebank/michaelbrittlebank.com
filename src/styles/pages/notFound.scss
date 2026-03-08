@@ -1,0 +1,49 @@
+@use '../base/mixins';
+@use '../base/fonts';
+@use '../base/colours';
+@use '../base/media-queries';
+
+//404
+//----------------------
+#error-translations-container {
+  position: relative;
+  height: 75px;
+  margin: 50px 0;
+}
+
+.error-translations {
+  display: block !important;
+  font-size: 3rem;
+  line-height: 3rem;
+  opacity: 0;
+  @include mixins.center-absolute;
+  @include mixins.transition-raw('opacity 750ms ease-out 0s');
+
+  &.active {
+    opacity: 1;
+  }
+}
+
+#error-page-container {
+  text-align: center;
+
+  h1,
+  h3,
+  span {
+    font-family: fonts.$global-font-raleway-thin;
+  }
+}
+
+#error-title {
+  font-size: 6rem;
+  margin: 0;
+}
+
+//desktop styles
+@include media-queries.tablet-up {
+  #error-title-container {
+    border-right: 2px solid colours.$color-font-black;
+    text-align: right;
+    padding-right: 50px;
+  }
+}

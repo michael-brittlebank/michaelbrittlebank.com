@@ -1,0 +1,5 @@
+@use '../base/mixins';
+
+.page-container {
+  @include mixins.transition-with-defaults(opacity);
+}

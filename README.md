@@ -8,6 +8,7 @@
 
 ## Architecture
 
+- v.6.0 (2026) - [Bun](https://bun.com/) with [Next.js](https://nextjs.org/)
 - v.5.0 (2022) - [NX](https://nx.dev/) with [Next.js](https://nextjs.org/)
   and [TypeScript](https://www.typescriptlang.org/)
 - v.4.0 (2021) - [Next.js](https://nextjs.org/)
@@ -22,33 +23,19 @@
 First install dependencies:
 
 ```bash
-pnpm install --frozen-lockfile
+bun install
 ```
 
 Then run the development server:
 
 ```bash
-pnpm dev
+bun dev
 ```
 
-### Creating a new library
+To run for production:
 
-For only TypeScript use
-
-```
-npx nx generate @nrwl/js:lib my-lib
-```
-
-for a React TypeScript library use:
-
-```
-npx nx generate @nrwl/react:lib my-lib
-```
-
-### Create a new app
-
-```
-npx nx generate @nrwl/next:app my-app
+```bash
+bun start
 ```
 
 ## Publishing a new version
@@ -62,7 +49,7 @@ npm version patch
 to update the package.json and create a tag. Run
 
 ```
-pnpm export
+bun build
 ```
 
 to build the code. Then be sure to push the tag and the code up to the remote where it can be merged into the master

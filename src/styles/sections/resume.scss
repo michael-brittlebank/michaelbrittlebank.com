@@ -1,0 +1,49 @@
+@use '../base/colours';
+@use '../base/mixins';
+@use '../base/media-queries';
+@use '../base/fonts';
+@use '../base/shared';
+
+//resume
+//----------------------
+#resume-social-icons {
+  margin-top: 50px;
+
+  .fa {
+    font-size: 2rem;
+    margin: 0 3px;
+  }
+}
+
+#resume-social-title {
+  vertical-align: text-bottom;
+  display: inline-block;
+  margin: 10px 5px 5px 0;
+}
+
+.resume-entry-title,
+.resume-entry-subtitle {
+  margin-top: 0;
+}
+
+.resume-entry-title {
+  margin-bottom: 10px;
+}
+
+.resume-entry-subtitle {
+  margin-bottom: 0;
+}
+
+.resume-entry {
+  &.primary {
+    margin-bottom: 30px;
+  }
+
+  &.secondary {
+    margin-bottom: 20px;
+
+    .resume-entry-title {
+      @extend .h4;
+    }
+  }
+}

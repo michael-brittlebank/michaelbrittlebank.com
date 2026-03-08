@@ -1,0 +1,24 @@
+@use "../base/fonts";
+@use "../base/mixins";
+@use "../base/media-queries";
+@use "../base/colours";
+
+.quote {
+  margin: 0 auto 25px auto;
+  padding: 10px;
+  text-align: center;
+  font-family: fonts.$global-font-raleway;
+  background-color: rgba(colours.$color-box-shadow, 0.1);
+  border-radius: 5px;
+  @include mixins.unselectable();
+}
+
+.quote-divider {
+  line-height: 1rem;
+}
+
+@include media-queries.tablet-up {
+  .quote-divider {
+    line-height: 2.5rem;
+  }
+}
