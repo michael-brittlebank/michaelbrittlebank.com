@@ -3,6 +3,11 @@
 @use '../base/colours';
 @use '../base/fonts';
 
+#frontispiece-image {
+  width: 300px;
+  height: auto;
+}
+
 #frontispiece-image-logo-container {
   position: relative;
   background-color: colours.$color-york-blue;

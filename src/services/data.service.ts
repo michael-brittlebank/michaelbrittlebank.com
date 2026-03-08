@@ -3,8 +3,8 @@ import ResumeData from '@/data/resume.json';
 
 export class DataService {
 
-  static getTravelMarkers = TravelMarkers.markers;
-  
+  static getTravelMarkers = () => TravelMarkers.markers;
+
   static getResumeExperience = () =>
     ResumeData.work;
 
