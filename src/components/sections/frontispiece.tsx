@@ -1,12 +1,8 @@
-import Image, { type StaticImageData } from 'next/image';
+import Image from 'next/image';
 import { useState } from 'react';
+import profile from '../../../public/images/profile.jpg';
 
-interface Props {
-  photo: StaticImageData | string;
-}
-
-export function Frontispiece(props: Props) {
-  const { photo } = props;
+export function Frontispiece() {
   const [hasLoaded, setHasLoaded] = useState(false);
   const handleHasLoaded = () => {
     setHasLoaded(true);
@@ -28,12 +24,11 @@ export function Frontispiece(props: Props) {
             <Image
               id='frontispiece-image'
               alt='Michael Brittlebank'
-              src={photo}
+              src={profile}
               placeholder='empty'
               width={300}
               height={300}
               onLoad={handleHasLoaded}
-              priority={true}
             />
           </div>
           <div id='frontispiece-logo' className='animated fadeInRight'>

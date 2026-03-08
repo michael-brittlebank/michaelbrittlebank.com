@@ -49,12 +49,12 @@ npm version patch
 to update the package.json and create a tag. Run
 
 ```
-bun build
+bun run build
 ```
 
-to build the code. Then be sure to push the tag and the code up to the remote where it can be merged into the master
+to build the code. Then be sure to push the tag and the code up to the remote where it can be merged into the main
 branch.
 
 ```
-git push —-tags origin master
+git push —-tags origin main
 ```

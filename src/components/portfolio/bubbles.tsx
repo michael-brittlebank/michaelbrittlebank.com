@@ -22,7 +22,6 @@ export function Bubbles() {
 
 
   useEffect(() => {
-    // You can access the DOM node here (e.g., to focus it)
     setContainerWidth(bubbleContainerRef?.current?.offsetWidth || containerWidth);
     setContainerHeight(bubbleContainerRef?.current?.offsetHeight || containerWidth);
   }, [bubbleContainerRef, setContainerWidth, setContainerHeight]);

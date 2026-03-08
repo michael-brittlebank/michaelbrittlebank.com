@@ -2,7 +2,6 @@
 
 import { Footer, Frontispiece, Personal, Resume, Travel } from '@/components';
 import { useEffect, useState } from 'react';
-import profile from '../../public/images/profile.jpg';
 
 export default function Page() {
   const [hasMounted, setHasMounted] = useState<boolean>(false);
@@ -13,7 +12,7 @@ export default function Page() {
 
   return (
     <>
-      <Frontispiece photo={profile} />
+      <Frontispiece />
       <Resume />
       {hasMounted && (
         <>
