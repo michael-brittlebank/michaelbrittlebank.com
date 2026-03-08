@@ -211,7 +211,7 @@ export class Metronome extends PureComponent {
           </div>
         </div>
         <AnalyticsButton
-          href='https://github.com/michael-brittlebank/michaelbrittlebank.com/blob/master/src/portfolio/metronome.js'
+          href='https://github.com/michael-brittlebank/michaelbrittlebank.com/blob/main/src/components/portfolio/metronome.jsx'
           action='metronomeButtonClick'
         />
         <audio id='metronome-tick' src={'/files/tick.mp3'} preload='auto' />

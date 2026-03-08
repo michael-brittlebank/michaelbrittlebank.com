@@ -191,7 +191,7 @@ export function Bubbles() {
         </div>
       </div>
       <AnalyticsButton
-        href='https://github.com/michael-brittlebank/michaelbrittlebank.com/blob/master/src/portfolio/bubbles.js'
+        href='https://github.com/michael-brittlebank/michaelbrittlebank.com/blob/main/src/components/portfolio/bubbles.tsx'
         action='bubblesButtonClick'
       />
     </section>
