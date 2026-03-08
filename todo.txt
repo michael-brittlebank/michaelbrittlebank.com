@@ -1,2 +1,9 @@
 add tap tempo button to metronome
 note sequence transposer
+
+
+
+bubbles jumpy on turning corner
+
+Detected legacy version of child page script. It is recommended to update the page in the iframe to use @iframe-resizer/child.
+See https://iframe-resizer.com/setup/#child-page-setup for more details.

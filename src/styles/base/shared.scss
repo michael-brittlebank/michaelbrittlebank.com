@@ -1,0 +1,297 @@
+@use 'fonts';
+@use 'colours';
+@use 'mixins';
+@use 'media-queries';
+
+//main styles
+//-----------------------------
+body {
+  font-family: fonts.$global-font-proza-libre;
+  color: colours.$color-font-black;
+  background: url('/images/background.svg');
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: fonts.$global-font-raleway;
+}
+
+h1,
+.h1 {
+  font-size: 2em;
+}
+
+h2,
+.h2 {
+  font-size: 1.5em;
+}
+
+h3,
+.h3 {
+  font-size: 1.17em;
+}
+
+h4,
+.h4 {
+  font-size: 1em;
+}
+
+h5,
+.h5 {
+  font-size: 0.83em;
+}
+
+img,
+input {
+  max-width: 100%;
+}
+
+p {
+  margin: 0 0 10px 0;
+
+  &.error {
+    margin-top: 10px;
+    color: red;
+  }
+}
+
+hr {
+  border-color: colours.$color-default-hr-border;
+}
+
+a {
+  color: colours.$color-font-black;
+  cursor: pointer;
+  text-decoration: none;
+  @include mixins.transition-with-defaults(color);
+
+  &:hover {
+    color: colours.$color-anchor-hover;
+  }
+}
+
+iframe {
+  width: 100%;
+  max-width: 100%;
+}
+
+.page-title {
+  font-family: fonts.$global-font-raleway-thin;
+  border-left: 20px solid colours.$color-badgers-red;
+  margin: 10px 0 1.5rem -10px;
+  padding: 0 0 0 15px;
+}
+
+.button {
+  display: block;
+  border-radius: 5px;
+  background-color: colours.$color-york-blue;
+  border: 2px solid colours.$color-york-blue;
+  text-align: center;
+  font-size: 1.25rem;
+  padding: 10px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 50px auto 10px auto;
+  width: 355px;
+  max-width: calc(100% - 24px);
+  vertical-align: middle;
+  outline: none;
+  color: colours.$color-white;
+  font-family: fonts.$global-font-raleway-thin;
+  @include mixins.unselectable;
+
+  &:hover:not(.disabled) {
+    border-radius: 50px;
+    background-color: colours.$color-white;
+    box-shadow: 0 5px 15px 0 colours.$color-box-shadow;
+    color: colours.$color-york-blue;
+  }
+
+  &.disabled,
+  &.disabled span {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+}
+
+.small-button {
+  display: inline-block;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 1.25rem;
+  cursor: pointer;
+  outline: none;
+  width: 35px;
+  margin: 5px;
+  transition: all 0.5s;
+  background-color: colours.$color-jays-dark-blue;
+  border: 2px solid colours.$color-jays-dark-blue;
+  color: colours.$color-white;
+  @include mixins.unselectable;
+
+  &:hover {
+    background-color: colours.$color-white;
+    color: colours.$color-font-black;
+    box-shadow: 0 0 15px 0 colours.$color-box-shadow;
+  }
+}
+
+.input {
+  border: 2px inset #eeeeee;
+  padding: 7px 5px;
+  @include mixins.transition-with-defaults(border-color);
+
+  &:focus {
+    outline: none;
+  }
+
+  &.error {
+    border-color: red;
+  }
+}
+
+.list-item-selector {
+  position: relative;
+  max-height: 150px;
+  overflow-y: scroll;
+  border: 1px solid colours.$color-box-shadow;
+}
+
+.list-item {
+  display: block;
+  padding: 10px;
+  background-color: white;
+  font-family: fonts.$global-font-raleway;
+  -webkit-appearance: none;
+  @include mixins.unselectable;
+  @include mixins.transition-raw(
+      'background-color 300ms ease-out 0s,color 300ms ease-out 0s'
+  );
+
+  &.selected,
+  &:hover {
+    background-color: colours.$color-york-green;
+    color: white;
+  }
+}
+
+//helper classes
+//-----------------------------
+.faded-out {
+  display: none;
+  opacity: 0;
+}
+
+.hidden {
+  display: none;
+}
+
+.opaque {
+  opacity: 0;
+}
+
+.horizontal-center {
+  margin: 0 auto;
+}
+
+.float-left {
+  float: left;
+}
+
+.float-right {
+  float: right;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.position-relative {
+  position: relative;
+}
+
+.no-margin {
+  margin: 0;
+}
+
+.no-padding {
+  padding: 0;
+}
+
+.no-border {
+  border: none;
+}
+
+.border-frame {
+  border: 5px double #333333;
+}
+
+//typography
+//-----------------------------
+.text-bold {
+  font-weight: bold;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-upper {
+  text-transform: uppercase;
+}
+
+.overlay-text {
+  margin: 15px;
+  padding: 5px 10px;
+  font-size: 1.5em;
+  color: white;
+  background: rgba(0, 0, 0, 0.5);
+  display: inline-block;
+}
+
+//route transitions
+//----------------------
+.fade-enter {
+  @include mixins.center-absolute;
+  @include mixins.transition-with-defaults(opacity);
+  opacity: 0.01;
+  z-index: 1;
+}
+
+.fade-enter-active {
+  position: relative;
+  opacity: 1;
+}
+
+.fade-exit {
+  position: relative;
+  opacity: 1;
+}
+
+.fade-exit-active {
+  @include mixins.center-absolute;
+  opacity: 0.01;
+}
+
+//desktop styles
+@include media-queries.tablet-up {
+  body {
+    //header placeholder
+    padding-top: 65px;
+  }
+  .page-title {
+    margin-bottom: 0;
+  }
+}
