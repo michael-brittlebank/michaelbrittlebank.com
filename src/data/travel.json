@@ -2296,9 +2296,24 @@
       "lng": -94.7950
     },
     {
-      "title": "Huntsville State Park, Texas, USA",
-      "lat": 30.6264,
-      "lng": -95.5279
+      "title": "Lake Corpus Christi State Park, Texas, USA",
+      "lat": 28.0631,
+      "lng": -97.8722
+    },
+    {
+      "title": "Port Aransas, Texas, USA",
+      "lat": 27.8339,
+      "lng": -97.0611
+    },
+    {
+      "title": "Lake Jackson, Texas, USA",
+      "lat": 29.0339,
+      "lng": -95.4344
+    },
+    {
+      "title": "Port Lavaca, Texas, USA",
+      "lat": 28.6150,
+      "lng": -96.6261
     }
   ]
 }
