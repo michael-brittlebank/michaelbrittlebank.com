@@ -64,34 +64,56 @@ export function Resume() {
         <section id='resume-body' className='row'>
           <section className='col-sm-12'>
             <p>
-              Technology leader who empathetically drives culture and
-              systematically delivers value. Skilled in managing remote & hybrid
-              multidisciplinary teams and guiding organizations to more
-              efficiently develop software products. Lifelong mentor, teacher,
-              and coach committed to people development and raising others up
-              holistically. Personally invested in a continuous learning mindset
-              focusing on business and technology, breadth and depth. Current
-              professional interests are Team of Teams agility, Agile@Scale
-              operations, and Digital Transformation & Innovation.
+              I bridge the gap between business strategy and highly efficient, scalable software delivery to help
+              organizations systematically deliver iterative, high-impact products.
             </p>
             <p>
-              Effective communicator, project manager, and product owner
-              experienced in workflow process improvement, organizational change
-              management, and workforce planning who is able to influence,
-              promote, and implement transformative technologies and processes.
-              Agile evangelist incorporating the best of Scrum, Kanban, Lean,
-              SAFe, Six Sigma, and other frameworks to meet deliverables.
-              Doggedly focused on outcomes rather than outputs in order to
-              deliver iterative, future-proof solutions which satisfy
-              stakeholders across the organization.
+              As an engineering leader I specialize in guiding remote and hybrid multidisciplinary teams through the
+              realities of Digital Transformation, Lean/Agile operations, and volatile, ever-changing technical and
+              business environments. I drive sustainable outcomes that align engineering output to business value by
+              leveraging my deep technical breadth to build innovative solutions that delight stakeholders.
             </p>
             <p>
-              Strong background as a SOLID, DRY business solutions architect and
-              software engineer with a wide range of experience building bespoke
-              websites, RESTful APIs, cross-platform mobile apps, and cloud
-              DevOps solutions. Advocate for test-driven development (TDD) and
-              accustomed to context switching between a variety of projects,
-              languages, and frameworks.
+              <br />
+              How I Deliver Impact:
+              <ul>
+                <li>
+                  <strong>Strategic Leadership & Scale:</strong> Experienced in driving Team-of-Teams agility,
+                  Agile@Scale (SAFe, Scrum,
+                  Kanban), and workforce planning for distributed remote/hybrid teams. I convert broad organizational
+                  vision
+                  into practical, highly functional delivery roadmaps and product portfolios.
+                </li>
+                <li>
+                  <strong>Engineering Excellence:</strong> Grounded in a strong background as a business solutions
+                  architect and
+                  remaining a
+                  hands-on polyglot engineer myself. My teams build scalable RESTful microservice APIs, cross-platform
+                  mobile and web applications, and resilient cloud DevOps environments (AWS, GCP) utilizing TDD and
+                  DRY/SOLID principles.
+                </li>
+                <li>
+                  <strong>People & Culture First:</strong> Passionate about empathetic leadership, servant coaching, and
+                  continuous
+                  learning.
+                  I am deeply invested in raising others up and building psychologically safe, high-trust team cultures.
+                </li>
+              </ul>
+            </p>
+            <p>
+              <br />
+              Core Expertise: Software Engineering Leadership | Digital Transformation | Agile@Scale Operations |
+              Workforce Planning | Team of Teams Agility | Cloud Architecture (AWS, GCP) | Solutions Architecture |
+              Product, Project, & Portfolio Management
+            </p>
+            <p>
+              Industry Experience: E-Commerce, Consulting, FinTech, Big Data & Data Visualization, Healthtech/Medtech,
+              Retail, Warehouse Tech, Insurance & Insurtech, Small Business & Business to Business (B2B), Banking &
+              Financial Services
+            </p>
+            <p>
+              <br />
+              Family first | Lifelong leader, teacher, and coach | Expert generalist
             </p>
           </section>
           <section className='col-sm-12 col-md-6'>
