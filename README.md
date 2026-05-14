@@ -58,3 +58,5 @@ branch.
 ```
 git push —-tags origin main
 ```
+
+Use SFTP to upload the changes

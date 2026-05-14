@@ -64,52 +64,36 @@ export function Resume() {
         <section id='resume-body' className='row'>
           <section className='col-sm-12'>
             <p>
-              I bridge the gap between business strategy and highly efficient, scalable software delivery to help
-              organizations systematically deliver iterative, high-impact products.
+              <strong>
+                Strategic technology leader with over 14 years of experience driving digital transformation and
+                high-impact software delivery across a wide range of industries
+              </strong>
             </p>
             <p>
-              As an engineering leader I specialize in guiding remote and hybrid multidisciplinary teams through the
-              realities of Digital Transformation, Lean/Agile operations, and volatile, ever-changing technical and
-              business environments. I drive sustainable outcomes that align engineering output to business value by
-              leveraging my deep technical breadth to build innovative solutions that delight stakeholders.
+              <strong>
+                Track record of delivering business value at every stage of implementation and in fostering innovative
+                and high-performing engineering cultures with a continuous growth mindset
+              </strong>
             </p>
             <p>
-              <br />
-              How I Deliver Impact:
-              <ul>
-                <li>
-                  <strong>Strategic Leadership & Scale:</strong> Experienced in driving Team-of-Teams agility,
-                  Agile@Scale (SAFe, Scrum,
-                  Kanban), and workforce planning for distributed remote/hybrid teams. I convert broad organizational
-                  vision
-                  into practical, highly functional delivery roadmaps and product portfolios.
-                </li>
-                <li>
-                  <strong>Engineering Excellence:</strong> Grounded in a strong background as a business solutions
-                  architect and
-                  remaining a
-                  hands-on polyglot engineer myself. My teams build scalable RESTful microservice APIs, cross-platform
-                  mobile and web applications, and resilient cloud DevOps environments (AWS, GCP) utilizing TDD and
-                  DRY/SOLID principles.
-                </li>
-                <li>
-                  <strong>People & Culture First:</strong> Passionate about empathetic leadership, servant coaching, and
-                  continuous
-                  learning.
-                  I am deeply invested in raising others up and building psychologically safe, high-trust team cultures.
-                </li>
-              </ul>
+              <strong>
+                Adept at bridging gaps and navigating business, technology, and humanities concerns
+              </strong>
             </p>
             <p>
               <br />
-              Core Expertise: Software Engineering Leadership | Digital Transformation | Agile@Scale Operations |
-              Workforce Planning | Team of Teams Agility | Cloud Architecture (AWS, GCP) | Solutions Architecture |
-              Product, Project, & Portfolio Management
+              <small>
+                Core Expertise: Software Engineering Leadership | Digital Transformation | Agile@Scale Operations |
+                Workforce Planning | Team of Teams Agility | Cloud Architecture (AWS, GCP) | Solutions Architecture |
+                Product, Project, & Portfolio Management
+              </small>
             </p>
             <p>
-              Industry Experience: E-Commerce, Consulting, FinTech, Big Data & Data Visualization, Healthtech/Medtech,
-              Retail, Warehouse Tech, Insurance & Insurtech, Small Business & Business to Business (B2B), Banking &
-              Financial Services
+              <small>
+                Industry Experience: E-Commerce, Consulting, FinTech, Big Data & Data Visualization, Healthtech/Medtech,
+                Retail, Warehouse Tech, Insurance & Insurtech, Small Business & Business to Business (B2B), Banking &
+                Financial Services
+              </small>
             </p>
             <p>
               <br />
