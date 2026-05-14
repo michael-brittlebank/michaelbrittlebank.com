@@ -20,7 +20,7 @@
     "framer-motion": "12.35.1",
     "hauptstimme-js": "4.0.1",
     "lodash": "4.17.23",
-    "next": "16.2.1",
+    "next": "16.2.6",
     "react": "19.2.3",
     "react-dom": "19.2.3",
     "react-scroll": "1.8.9"
