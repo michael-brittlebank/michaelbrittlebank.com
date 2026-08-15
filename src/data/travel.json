@@ -2314,6 +2314,46 @@
       "title": "Port Lavaca, Texas, USA",
       "lat": 28.6150,
       "lng": -96.6261
+    },
+    {
+      "title": "Vail, Colorado, USA",
+      "lat": 39.643,
+      "lng": -106.373445
+    },
+    {
+      "title": "Garden of the Gods, Colorado, USA",
+      "lat": 38.878445,
+      "lng": -104.869789
+    },
+    {
+      "title": "Colorado Springs, Colorado, USA",
+      "lat": 38.8353,
+      "lng": -104.8216
+    },
+    {
+      "title": "Pikes Pike, Colorado, USA",
+      "lat": 38.8405,
+      "lng": -105.0444
+    },
+    {
+      "title": "Boulder, Colorado, USA",
+      "lat": 40.0190,
+      "lng": -105.2747
+    },
+    {
+      "title": "Avon, Colorado, USA",
+      "lat": 39.633,
+      "lng": -106.522
+    },
+    {
+      "title": "Golden, Colorado, USA",
+      "lat": 39.7555,
+      "lng": -105.2211
+    },
+    {
+      "title": "Schaumburg, Colorado, USA",
+      "lat": 42.0334,
+      "lng": -88.0834
     }
   ]
 }

@@ -68,7 +68,7 @@ export default function LocationMap() {
     0,
     travelMarkers.length,
   );
-
+  const randomLocation = travelMarkers[randomIndex];
   return (
     <APIProvider apiKey={process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY || ''}>
       <Map
@@ -78,9 +78,9 @@ export default function LocationMap() {
         mapTypeControl={false}
         streetViewControl={false}
         fullscreenControl={false}
-        defaultCenter={{
-          lat: travelMarkers[randomIndex].lat,
-          lng: travelMarkers[randomIndex].lng,
+        defaultCenter={randomLocation && {
+          lat: randomLocation.lat,
+          lng: randomLocation.lng,
         }}
         gestureHandling='greedy'
         mapId='MICHAEL_BRITTLEBANK'>
